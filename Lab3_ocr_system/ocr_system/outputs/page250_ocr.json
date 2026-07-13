@@ -1,0 +1,2222 @@
+{
+  "source_path": "data\\input\\page250.jpg",
+  "engine": "tesseract",
+  "text": "--- Page 1 ---\n249\nuna,\n2\nstan\n|\nsain\n|\nsate\nP\naduwa.\n|\noduwe\n|\nature\ndain\nony\nepcsle]\n(se\nENGLISH\nFOR\nCOMMUNICATIVE\nWRITING\nENGLISH\nFOR\nPROFESSIONAL\nCOMMUNICATION\nENGLISH\nFOR\nFURTHER\nSTUDIES\nENGLISH\nFOR\nINDUSTRY\nENGLISH\nFOR\nBUSINESS\nENGLISH\nFOR\nMARKETING\nENGLISH\nFOR\nMANAGEMENT\nEE\nENGLISH\nFOR\nMEDIA\nENGLISH\nFOR\nINTERCULTURAL\nCOMMUNICATION\npre]\n[eres\n|\nENGLISH\nFOR\nPROFESSIONAL\nPURPOSES\n=\nEee,\n|\nENGLISH\nFOR\nWORK\nPREPARATION\nENGLISH\nFOR\nTOURISM\nAND\nTRAVELLING\neee\nENGLISH\nFOR\nARCHITECTURAL\nARTS\n&\nDESIGN\nCOMMUNICATION\na\nENGLISH\nFOR\nARCHITECTURAL\nARTS\n&\nDESIGN\nPRESENTATION\n139\nmu\nGneinsteyauaemstanentegaia)\nav\nawineimitayauaemuaneniegae\npusimeluladarvauime\nava.",
+  "pages": [
+    {
+      "page": 1,
+      "text": "249\nuna,\n2\nstan\n|\nsain\n|\nsate\nP\naduwa.\n|\noduwe\n|\nature\ndain\nony\nepcsle]\n(se\nENGLISH\nFOR\nCOMMUNICATIVE\nWRITING\nENGLISH\nFOR\nPROFESSIONAL\nCOMMUNICATION\nENGLISH\nFOR\nFURTHER\nSTUDIES\nENGLISH\nFOR\nINDUSTRY\nENGLISH\nFOR\nBUSINESS\nENGLISH\nFOR\nMARKETING\nENGLISH\nFOR\nMANAGEMENT\nEE\nENGLISH\nFOR\nMEDIA\nENGLISH\nFOR\nINTERCULTURAL\nCOMMUNICATION\npre]\n[eres\n|\nENGLISH\nFOR\nPROFESSIONAL\nPURPOSES\n=\nEee,\n|\nENGLISH\nFOR\nWORK\nPREPARATION\nENGLISH\nFOR\nTOURISM\nAND\nTRAVELLING\neee\nENGLISH\nFOR\nARCHITECTURAL\nARTS\n&\nDESIGN\nCOMMUNICATION\na\nENGLISH\nFOR\nARCHITECTURAL\nARTS\n&\nDESIGN\nPRESENTATION\n139\nmu\nGneinsteyauaemstanentegaia)\nav\nawineimitayauaemuaneniegae\npusimeluladarvauime\nava.",
+      "lines": [
+        {
+          "text": "249",
+          "confidence": 0.95,
+          "box": [
+            [
+              738,
+              99
+            ],
+            [
+              774,
+              99
+            ],
+            [
+              774,
+              117
+            ],
+            [
+              738,
+              117
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "una,",
+          "confidence": 0.75,
+          "box": [
+            [
+              1203,
+              175
+            ],
+            [
+              1250,
+              175
+            ],
+            [
+              1250,
+              191
+            ],
+            [
+              1203,
+              191
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "2",
+          "confidence": 0.96,
+          "box": [
+            [
+              1259,
+              172
+            ],
+            [
+              1272,
+              172
+            ],
+            [
+              1272,
+              190
+            ],
+            [
+              1259,
+              190
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "stan",
+          "confidence": 0.54,
+          "box": [
+            [
+              331,
+              339
+            ],
+            [
+              398,
+              339
+            ],
+            [
+              398,
+              360
+            ],
+            [
+              331,
+              360
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "|",
+          "confidence": 0.69,
+          "box": [
+            [
+              417,
+              335
+            ],
+            [
+              432,
+              335
+            ],
+            [
+              432,
+              371
+            ],
+            [
+              417,
+              371
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "sain",
+          "confidence": 0.29,
+          "box": [
+            [
+              449,
+              339
+            ],
+            [
+              516,
+              339
+            ],
+            [
+              516,
+              360
+            ],
+            [
+              449,
+              360
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "|",
+          "confidence": 0.72,
+          "box": [
+            [
+              537,
+              335
+            ],
+            [
+              552,
+              335
+            ],
+            [
+              552,
+              371
+            ],
+            [
+              537,
+              371
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "sate",
+          "confidence": 0.37,
+          "box": [
+            [
+              566,
+              339
+            ],
+            [
+              634,
+              339
+            ],
+            [
+              634,
+              360
+            ],
+            [
+              566,
+              360
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "P",
+          "confidence": 0.0,
+          "box": [
+            [
+              1198,
+              356
+            ],
+            [
+              1204,
+              356
+            ],
+            [
+              1204,
+              362
+            ],
+            [
+              1198,
+              362
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "aduwa.",
+          "confidence": 0.41,
+          "box": [
+            [
+              325,
+              372
+            ],
+            [
+              405,
+              372
+            ],
+            [
+              405,
+              392
+            ],
+            [
+              325,
+              392
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "|",
+          "confidence": 0.87,
+          "box": [
+            [
+              420,
+              364
+            ],
+            [
+              431,
+              364
+            ],
+            [
+              431,
+              405
+            ],
+            [
+              420,
+              405
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "oduwe",
+          "confidence": 0.56,
+          "box": [
+            [
+              443,
+              372
+            ],
+            [
+              524,
+              372
+            ],
+            [
+              524,
+              392
+            ],
+            [
+              443,
+              392
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "|",
+          "confidence": 0.9,
+          "box": [
+            [
+              536,
+              364
+            ],
+            [
+              550,
+              364
+            ],
+            [
+              550,
+              405
+            ],
+            [
+              536,
+              405
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ature",
+          "confidence": 0.23,
+          "box": [
+            [
+              560,
+              372
+            ],
+            [
+              642,
+              372
+            ],
+            [
+              642,
+              392
+            ],
+            [
+              560,
+              392
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "dain",
+          "confidence": 0.54,
+          "box": [
+            [
+              885,
+              368
+            ],
+            [
+              942,
+              368
+            ],
+            [
+              942,
+              392
+            ],
+            [
+              885,
+              392
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ony",
+          "confidence": 0.15,
+          "box": [
+            [
+              1192,
+              362
+            ],
+            [
+              1250,
+              362
+            ],
+            [
+              1250,
+              395
+            ],
+            [
+              1192,
+              395
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "epcsle]",
+          "confidence": 0.0,
+          "box": [
+            [
+              303,
+              329
+            ],
+            [
+              690,
+              329
+            ],
+            [
+              690,
+              474
+            ],
+            [
+              303,
+              474
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "(se",
+          "confidence": 0.12,
+          "box": [
+            [
+              943,
+              329
+            ],
+            [
+              1270,
+              329
+            ],
+            [
+              1270,
+              474
+            ],
+            [
+              943,
+              474
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ENGLISH",
+          "confidence": 0.96,
+          "box": [
+            [
+              670,
+              490
+            ],
+            [
+              743,
+              490
+            ],
+            [
+              743,
+              506
+            ],
+            [
+              670,
+              506
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.94,
+          "box": [
+            [
+              750,
+              490
+            ],
+            [
+              787,
+              490
+            ],
+            [
+              787,
+              506
+            ],
+            [
+              750,
+              506
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "COMMUNICATIVE",
+          "confidence": 0.96,
+          "box": [
+            [
+              792,
+              490
+            ],
+            [
+              943,
+              490
+            ],
+            [
+              943,
+              506
+            ],
+            [
+              792,
+              506
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "WRITING",
+          "confidence": 0.95,
+          "box": [
+            [
+              949,
+              490
+            ],
+            [
+              1023,
+              490
+            ],
+            [
+              1023,
+              506
+            ],
+            [
+              949,
+              506
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ENGLISH",
+          "confidence": 0.96,
+          "box": [
+            [
+              670,
+              570
+            ],
+            [
+              743,
+              570
+            ],
+            [
+              743,
+              586
+            ],
+            [
+              670,
+              586
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.96,
+          "box": [
+            [
+              750,
+              570
+            ],
+            [
+              787,
+              570
+            ],
+            [
+              787,
+              586
+            ],
+            [
+              750,
+              586
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "PROFESSIONAL",
+          "confidence": 0.94,
+          "box": [
+            [
+              793,
+              570
+            ],
+            [
+              923,
+              570
+            ],
+            [
+              923,
+              586
+            ],
+            [
+              793,
+              586
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "COMMUNICATION",
+          "confidence": 0.94,
+          "box": [
+            [
+              931,
+              570
+            ],
+            [
+              1087,
+              570
+            ],
+            [
+              1087,
+              585
+            ],
+            [
+              931,
+              585
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ENGLISH",
+          "confidence": 0.91,
+          "box": [
+            [
+              670,
+              649
+            ],
+            [
+              743,
+              649
+            ],
+            [
+              743,
+              666
+            ],
+            [
+              670,
+              666
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.91,
+          "box": [
+            [
+              750,
+              650
+            ],
+            [
+              787,
+              650
+            ],
+            [
+              787,
+              666
+            ],
+            [
+              750,
+              666
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "FURTHER",
+          "confidence": 0.96,
+          "box": [
+            [
+              793,
+              650
+            ],
+            [
+              874,
+              650
+            ],
+            [
+              874,
+              666
+            ],
+            [
+              793,
+              666
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "STUDIES",
+          "confidence": 0.93,
+          "box": [
+            [
+              879,
+              650
+            ],
+            [
+              952,
+              650
+            ],
+            [
+              952,
+              666
+            ],
+            [
+              879,
+              666
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ENGLISH",
+          "confidence": 0.96,
+          "box": [
+            [
+              670,
+              729
+            ],
+            [
+              743,
+              729
+            ],
+            [
+              743,
+              745
+            ],
+            [
+              670,
+              745
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.96,
+          "box": [
+            [
+              750,
+              729
+            ],
+            [
+              787,
+              729
+            ],
+            [
+              787,
+              745
+            ],
+            [
+              750,
+              745
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "INDUSTRY",
+          "confidence": 0.96,
+          "box": [
+            [
+              793,
+              729
+            ],
+            [
+              880,
+              729
+            ],
+            [
+              880,
+              745
+            ],
+            [
+              793,
+              745
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ENGLISH",
+          "confidence": 0.96,
+          "box": [
+            [
+              670,
+              809
+            ],
+            [
+              743,
+              809
+            ],
+            [
+              743,
+              825
+            ],
+            [
+              670,
+              825
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.96,
+          "box": [
+            [
+              750,
+              809
+            ],
+            [
+              787,
+              809
+            ],
+            [
+              787,
+              825
+            ],
+            [
+              750,
+              825
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "BUSINESS",
+          "confidence": 0.92,
+          "box": [
+            [
+              793,
+              808
+            ],
+            [
+              877,
+              808
+            ],
+            [
+              877,
+              825
+            ],
+            [
+              793,
+              825
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ENGLISH",
+          "confidence": 0.96,
+          "box": [
+            [
+              670,
+              888
+            ],
+            [
+              743,
+              888
+            ],
+            [
+              743,
+              904
+            ],
+            [
+              670,
+              904
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.96,
+          "box": [
+            [
+              750,
+              888
+            ],
+            [
+              787,
+              888
+            ],
+            [
+              787,
+              904
+            ],
+            [
+              750,
+              904
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "MARKETING",
+          "confidence": 0.96,
+          "box": [
+            [
+              793,
+              888
+            ],
+            [
+              894,
+              888
+            ],
+            [
+              894,
+              904
+            ],
+            [
+              793,
+              904
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ENGLISH",
+          "confidence": 0.96,
+          "box": [
+            [
+              670,
+              968
+            ],
+            [
+              743,
+              968
+            ],
+            [
+              743,
+              984
+            ],
+            [
+              670,
+              984
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.96,
+          "box": [
+            [
+              750,
+              968
+            ],
+            [
+              787,
+              968
+            ],
+            [
+              787,
+              984
+            ],
+            [
+              750,
+              984
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "MANAGEMENT",
+          "confidence": 0.9,
+          "box": [
+            [
+              793,
+              968
+            ],
+            [
+              920,
+              968
+            ],
+            [
+              920,
+              984
+            ],
+            [
+              793,
+              984
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "EE",
+          "confidence": 0.15,
+          "box": [
+            [
+              307,
+              993
+            ],
+            [
+              1272,
+              993
+            ],
+            [
+              1272,
+              1070
+            ],
+            [
+              307,
+              1070
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ENGLISH",
+          "confidence": 0.96,
+          "box": [
+            [
+              670,
+              1048
+            ],
+            [
+              743,
+              1048
+            ],
+            [
+              743,
+              1065
+            ],
+            [
+              670,
+              1065
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.96,
+          "box": [
+            [
+              750,
+              1049
+            ],
+            [
+              787,
+              1049
+            ],
+            [
+              787,
+              1065
+            ],
+            [
+              750,
+              1065
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "MEDIA",
+          "confidence": 0.94,
+          "box": [
+            [
+              793,
+              1049
+            ],
+            [
+              849,
+              1049
+            ],
+            [
+              849,
+              1064
+            ],
+            [
+              793,
+              1064
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ENGLISH",
+          "confidence": 0.96,
+          "box": [
+            [
+              670,
+              1128
+            ],
+            [
+              743,
+              1128
+            ],
+            [
+              743,
+              1144
+            ],
+            [
+              670,
+              1144
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.96,
+          "box": [
+            [
+              750,
+              1128
+            ],
+            [
+              787,
+              1128
+            ],
+            [
+              787,
+              1144
+            ],
+            [
+              750,
+              1144
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "INTERCULTURAL",
+          "confidence": 0.93,
+          "box": [
+            [
+              793,
+              1128
+            ],
+            [
+              936,
+              1128
+            ],
+            [
+              936,
+              1144
+            ],
+            [
+              793,
+              1144
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "COMMUNICATION",
+          "confidence": 0.96,
+          "box": [
+            [
+              943,
+              1128
+            ],
+            [
+              1099,
+              1128
+            ],
+            [
+              1099,
+              1144
+            ],
+            [
+              943,
+              1144
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "pre]",
+          "confidence": 0.36,
+          "box": [
+            [
+              303,
+              1148
+            ],
+            [
+              466,
+              1148
+            ],
+            [
+              466,
+              1263
+            ],
+            [
+              303,
+              1263
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "[eres",
+          "confidence": 0.13,
+          "box": [
+            [
+              425,
+              1152
+            ],
+            [
+              1272,
+              1152
+            ],
+            [
+              1272,
+              1230
+            ],
+            [
+              425,
+              1230
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "|",
+          "confidence": 0.63,
+          "box": [
+            [
+              1117,
+              1148
+            ],
+            [
+              1271,
+              1148
+            ],
+            [
+              1271,
+              1263
+            ],
+            [
+              1117,
+              1263
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ENGLISH",
+          "confidence": 0.96,
+          "box": [
+            [
+              670,
+              1208
+            ],
+            [
+              743,
+              1208
+            ],
+            [
+              743,
+              1224
+            ],
+            [
+              670,
+              1224
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.96,
+          "box": [
+            [
+              750,
+              1208
+            ],
+            [
+              787,
+              1208
+            ],
+            [
+              787,
+              1224
+            ],
+            [
+              750,
+              1224
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "PROFESSIONAL",
+          "confidence": 0.95,
+          "box": [
+            [
+              793,
+              1208
+            ],
+            [
+              924,
+              1208
+            ],
+            [
+              924,
+              1224
+            ],
+            [
+              793,
+              1224
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "PURPOSES",
+          "confidence": 0.95,
+          "box": [
+            [
+              931,
+              1208
+            ],
+            [
+              1024,
+              1208
+            ],
+            [
+              1024,
+              1224
+            ],
+            [
+              931,
+              1224
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "=",
+          "confidence": 0.33,
+          "box": [
+            [
+              307,
+              1232
+            ],
+            [
+              520,
+              1232
+            ],
+            [
+              520,
+              1310
+            ],
+            [
+              307,
+              1310
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "Eee,",
+          "confidence": 0.33,
+          "box": [
+            [
+              543,
+              1232
+            ],
+            [
+              1272,
+              1232
+            ],
+            [
+              1272,
+              1310
+            ],
+            [
+              543,
+              1310
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "|",
+          "confidence": 0.19,
+          "box": [
+            [
+              1110,
+              1186
+            ],
+            [
+              1269,
+              1186
+            ],
+            [
+              1269,
+              1359
+            ],
+            [
+              1110,
+              1359
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ENGLISH",
+          "confidence": 0.96,
+          "box": [
+            [
+              670,
+              1288
+            ],
+            [
+              743,
+              1288
+            ],
+            [
+              743,
+              1304
+            ],
+            [
+              670,
+              1304
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.96,
+          "box": [
+            [
+              750,
+              1288
+            ],
+            [
+              787,
+              1288
+            ],
+            [
+              787,
+              1304
+            ],
+            [
+              750,
+              1304
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "WORK",
+          "confidence": 0.96,
+          "box": [
+            [
+              791,
+              1288
+            ],
+            [
+              847,
+              1288
+            ],
+            [
+              847,
+              1304
+            ],
+            [
+              791,
+              1304
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "PREPARATION",
+          "confidence": 0.96,
+          "box": [
+            [
+              853,
+              1288
+            ],
+            [
+              972,
+              1288
+            ],
+            [
+              972,
+              1304
+            ],
+            [
+              853,
+              1304
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ENGLISH",
+          "confidence": 0.96,
+          "box": [
+            [
+              670,
+              1367
+            ],
+            [
+              743,
+              1367
+            ],
+            [
+              743,
+              1384
+            ],
+            [
+              670,
+              1384
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.96,
+          "box": [
+            [
+              750,
+              1367
+            ],
+            [
+              787,
+              1367
+            ],
+            [
+              787,
+              1384
+            ],
+            [
+              750,
+              1384
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "TOURISM",
+          "confidence": 0.94,
+          "box": [
+            [
+              792,
+              1367
+            ],
+            [
+              873,
+              1367
+            ],
+            [
+              873,
+              1384
+            ],
+            [
+              792,
+              1384
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "AND",
+          "confidence": 0.94,
+          "box": [
+            [
+              879,
+              1367
+            ],
+            [
+              918,
+              1367
+            ],
+            [
+              918,
+              1383
+            ],
+            [
+              879,
+              1383
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "TRAVELLING",
+          "confidence": 0.96,
+          "box": [
+            [
+              923,
+              1367
+            ],
+            [
+              1030,
+              1367
+            ],
+            [
+              1030,
+              1384
+            ],
+            [
+              923,
+              1384
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "eee",
+          "confidence": 0.23,
+          "box": [
+            [
+              307,
+              1392
+            ],
+            [
+              1272,
+              1392
+            ],
+            [
+              1272,
+              1496
+            ],
+            [
+              307,
+              1496
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ENGLISH",
+          "confidence": 0.96,
+          "box": [
+            [
+              670,
+              1440
+            ],
+            [
+              743,
+              1440
+            ],
+            [
+              743,
+              1457
+            ],
+            [
+              670,
+              1457
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.96,
+          "box": [
+            [
+              750,
+              1441
+            ],
+            [
+              786,
+              1441
+            ],
+            [
+              786,
+              1457
+            ],
+            [
+              750,
+              1457
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ARCHITECTURAL",
+          "confidence": 0.96,
+          "box": [
+            [
+              792,
+              1440
+            ],
+            [
+              936,
+              1440
+            ],
+            [
+              936,
+              1457
+            ],
+            [
+              792,
+              1457
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ARTS",
+          "confidence": 0.93,
+          "box": [
+            [
+              941,
+              1441
+            ],
+            [
+              986,
+              1441
+            ],
+            [
+              986,
+              1457
+            ],
+            [
+              941,
+              1457
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "&",
+          "confidence": 0.92,
+          "box": [
+            [
+              993,
+              1440
+            ],
+            [
+              1007,
+              1440
+            ],
+            [
+              1007,
+              1457
+            ],
+            [
+              993,
+              1457
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "DESIGN",
+          "confidence": 0.96,
+          "box": [
+            [
+              1012,
+              1440
+            ],
+            [
+              1075,
+              1440
+            ],
+            [
+              1075,
+              1457
+            ],
+            [
+              1012,
+              1457
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "COMMUNICATION",
+          "confidence": 0.96,
+          "box": [
+            [
+              669,
+              1473
+            ],
+            [
+              825,
+              1473
+            ],
+            [
+              825,
+              1490
+            ],
+            [
+              669,
+              1490
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "a",
+          "confidence": 0.34,
+          "box": [
+            [
+              307,
+              1498
+            ],
+            [
+              1272,
+              1498
+            ],
+            [
+              1272,
+              1602
+            ],
+            [
+              307,
+              1602
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ENGLISH",
+          "confidence": 0.96,
+          "box": [
+            [
+              670,
+              1547
+            ],
+            [
+              743,
+              1547
+            ],
+            [
+              743,
+              1563
+            ],
+            [
+              670,
+              1563
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "FOR",
+          "confidence": 0.96,
+          "box": [
+            [
+              750,
+              1547
+            ],
+            [
+              786,
+              1547
+            ],
+            [
+              786,
+              1563
+            ],
+            [
+              750,
+              1563
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ARCHITECTURAL",
+          "confidence": 0.96,
+          "box": [
+            [
+              792,
+              1547
+            ],
+            [
+              936,
+              1547
+            ],
+            [
+              936,
+              1563
+            ],
+            [
+              792,
+              1563
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ARTS",
+          "confidence": 0.93,
+          "box": [
+            [
+              942,
+              1547
+            ],
+            [
+              986,
+              1547
+            ],
+            [
+              986,
+              1563
+            ],
+            [
+              942,
+              1563
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "&",
+          "confidence": 0.92,
+          "box": [
+            [
+              993,
+              1546
+            ],
+            [
+              1006,
+              1546
+            ],
+            [
+              1006,
+              1563
+            ],
+            [
+              993,
+              1563
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "DESIGN",
+          "confidence": 0.95,
+          "box": [
+            [
+              1013,
+              1547
+            ],
+            [
+              1075,
+              1547
+            ],
+            [
+              1075,
+              1563
+            ],
+            [
+              1013,
+              1563
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "PRESENTATION",
+          "confidence": 0.95,
+          "box": [
+            [
+              670,
+              1581
+            ],
+            [
+              801,
+              1581
+            ],
+            [
+              801,
+              1596
+            ],
+            [
+              670,
+              1596
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "139",
+          "confidence": 0.91,
+          "box": [
+            [
+              788,
+              1662
+            ],
+            [
+              818,
+              1662
+            ],
+            [
+              818,
+              1679
+            ],
+            [
+              788,
+              1679
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "mu",
+          "confidence": 0.6,
+          "box": [
+            [
+              240,
+              1897
+            ],
+            [
+              288,
+              1897
+            ],
+            [
+              288,
+              1912
+            ],
+            [
+              240,
+              1912
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "Gneinsteyauaemstanentegaia)",
+          "confidence": 0.0,
+          "box": [
+            [
+              299,
+              1887
+            ],
+            [
+              706,
+              1887
+            ],
+            [
+              706,
+              1921
+            ],
+            [
+              299,
+              1921
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "av",
+          "confidence": 0.0,
+          "box": [
+            [
+              719,
+              1896
+            ],
+            [
+              751,
+              1896
+            ],
+            [
+              751,
+              1912
+            ],
+            [
+              719,
+              1912
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "awineimitayauaemuaneniegae",
+          "confidence": 0.0,
+          "box": [
+            [
+              754,
+              1887
+            ],
+            [
+              1195,
+              1887
+            ],
+            [
+              1195,
+              1921
+            ],
+            [
+              754,
+              1921
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "pusimeluladarvauime",
+          "confidence": 0.0,
+          "box": [
+            [
+              241,
+              1929
+            ],
+            [
+              488,
+              1929
+            ],
+            [
+              488,
+              1954
+            ],
+            [
+              241,
+              1954
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        },
+        {
+          "text": "ava.",
+          "confidence": 0.83,
+          "box": [
+            [
+              498,
+              1937
+            ],
+            [
+              543,
+              1937
+            ],
+            [
+              543,
+              1954
+            ],
+            [
+              498,
+              1954
+            ]
+          ],
+          "engine": "tesseract",
+          "page": 1
+        }
+      ],
+      "image_path": "data\\input\\page250.jpg"
+    }
+  ]
+}
