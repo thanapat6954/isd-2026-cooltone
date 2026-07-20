@@ -2,6 +2,7 @@ import numpy as np
 from .base import BaseOCREngine
 from ocr_system.schemas import OCRLine
 
+
 class PaddleOCREngine(BaseOCREngine):
     name = "paddle"
 
