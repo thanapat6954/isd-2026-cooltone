@@ -1,0 +1,73 @@
+{
+  "source": "OCR curriculum extraction",
+  "description": "Extracted academic plan from OCR for DSBA (no_coop)",
+  "program": "DSBA",
+  "plan": "no_coop",
+  "courses": [
+    {
+      "code": "01236049",
+      "name_th": null,
+      "name_en": null,
+      "credits": "3(3-0-6)",
+      "year": 1,
+      "semester": 1,
+      "category": null,
+      "type": null,
+      "prerequisite": null,
+      "flexible_year_semester": null,
+      "note": null
+    },
+    {
+      "code": "01236122",
+      "name_th": null,
+      "name_en": "DATA STRUCTURES AND DATA STRUCTURES AND ALGORITHMS ALGORITHMS E SERVICE TECHNOLOGY",
+      "credits": "3(2-3-6)",
+      "year": 1,
+      "semester": 1,
+      "category": null,
+      "type": null,
+      "prerequisite": null,
+      "flexible_year_semester": null,
+      "note": null
+    },
+    {
+      "code": "01236051",
+      "name_th": "เปลี่ยนรหัสวิชา ปรับชื่อวิชา เครือข่าย คอมพิวเตอร์",
+      "name_en": "PRINCIPLES OF DATA DATA COMMUNICATON COMMUNICATIONS AND COMPUTER NETWORKS NEIWORKS TELECOMMUNICATION TELECOMMUNICATION SVSTEMS NEIWORK INFORMATIOM THEORY INFORMATION THEORY AND CODINC AND CODNC DATABASE SVSIEMS DATABASE SYSTEMS WEB AND MOBIL WEB TECHNOLOCY TECHNOLOGIES INFORMATION ENGINEERING INFORMATIOM ENGIEERING ' ABORATORY LABORATORY",
+      "credits": "3(3-0-6)",
+      "year": 1,
+      "semester": 1,
+      "category": null,
+      "type": null,
+      "prerequisite": null,
+      "flexible_year_semester": null,
+      "note": null
+    },
+    {
+      "code": "01236057",
+      "name_th": "(3-0-6)",
+      "name_en": null,
+      "credits": null,
+      "year": 1,
+      "semester": 1,
+      "category": null,
+      "type": null,
+      "prerequisite": null,
+      "flexible_year_semester": null,
+      "note": null
+    },
+    {
+      "code": "01236135",
+      "name_th": null,
+      "name_en": "DATA MINING DATA MINING WIRELESS INFORMATION WIRELESS COMMUNICATION NETWORK TECHNOLOGIES SYSTEM ANALYSIS AND OBECT ORLENTED ANALYSIS AND DESIGN DESIGN WEB SERVICES MULTIMEDLA ENGINEERINC INTERNEIWORKING DESIGN INTERNEIWORKING AND PRACTICE DESIGN AND PRACIICE",
+      "credits": "3(3-0-6)",
+      "year": 1,
+      "semester": 1,
+      "category": null,
+      "type": null,
+      "prerequisite": null,
+      "flexible_year_semester": null,
+      "note": null
+    }
+  ]
+}
