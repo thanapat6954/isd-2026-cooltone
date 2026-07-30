@@ -1,18 +1,3 @@
-"""
-Generate Q&A pairs CSV from DSBA curriculum ground truth.
-
-Produces questions that can be answered from the DSBA academic plan (coop),
-with answers referencing the curriculum page/section (year/semester)
-and regulation clauses where applicable.
-
-Usage:
-    python dsba_curriculum_qa_pairs.py [input_json] [output_csv]
-
-Defaults:
-    input  = data/input/DSBA_academic_plan_coop.json
-    output = dsba_curriculum_qa_pairs.csv
-"""
-
 import csv
 import json
 import re
