@@ -1,15 +1,3 @@
-"""
-Convert DSBA curriculum ground truth JSON (DSBA_academic_plan_coop.json)
-to a flat CSV mapping file for evaluation and comparison.
-
-Usage:
-    python dsba_curriculum_gt_mapping.py [input_json] [output_csv]
-
-Defaults:
-    input  = data/input/DSBA_academic_plan_coop.json
-    output = dsba_curriculum_gt_mapping.csv
-"""
-
 import csv
 import json
 import re
