@@ -76,18 +76,6 @@
 
 ---
 
-### 4. ตัวอย่างไฟล์กลางทาง (Intermediate VLM Output)
-
-ตัวอย่างผลลัพธ์ข้อความดิบ (Raw Text Output) ที่สกัดได้จากโมเดล OCR (`scb10x/typhoon-ocr1.5-3b`) ในไฟล์ `intermediate_vlm.md`:
-
-```markdown
-<!-- ตัวอย่างข้อความตารางที่ OCR อ่านได้จากหน้า 30 -->
-| รหัสวิชา | ชื่อวิชา | จำนวนหน่วยกิต |
-| :--- | :--- | :--- |
-| DSBA101 | Intro to Data Science and Business Analytics | 3(3-0-6) |
-| MATH105 | Calculus for Business I | 3(3-0-6) |
-
----
 
 ### 5. ข้อสรุปการเลือก Pipeline (Pipeline Selection Conclusion)
 
