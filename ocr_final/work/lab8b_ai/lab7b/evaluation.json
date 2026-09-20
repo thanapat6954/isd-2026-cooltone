@@ -1,0 +1,224 @@
+{
+  "vlm": {
+    "tokenizer": "whitespace (fallback)",
+    "attributes": {
+      "code": {
+        "label": "รหัสวิชา",
+        "n_items": 37,
+        "cer": 0.0,
+        "wer": null,
+        "exact_match_acc": 1.0,
+        "n_sub": 0,
+        "n_del": 0,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 308,
+        "error_samples": []
+      },
+      "name_th": {
+        "label": "ชื่อวิชา (ไทย) ⭐",
+        "n_items": 37,
+        "cer": 0.043103,
+        "wer": 0.021277,
+        "exact_match_acc": 0.972973,
+        "n_sub": 0,
+        "n_del": 45,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 1044,
+        "error_samples": [
+          {
+            "key": "06046443 หรือ 06046444",
+            "gt": "สหกิจศึกษาทางเทคโนโลยีปัญญาประดิษฐ์ \nสหกิจศึกษาต่างประเทศทางเทคโนโลยีปัญญาประดิษฐ์",
+            "pred": "สหกิจศึกษาทางเทคโนโลยีปัญญาประดิษฐ์"
+          }
+        ]
+      },
+      "name_en": {
+        "label": "ชื่อวิชา (อังกฤษ) ⭐",
+        "n_items": 37,
+        "cer": 0.019213,
+        "wer": 0.041379,
+        "exact_match_acc": 0.918919,
+        "n_sub": 0,
+        "n_del": 14,
+        "n_ins": 7,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 1093,
+        "error_samples": [
+          {
+            "key": "06066303",
+            "gt": "PROBLEM SOLVING AND COMPUTER PROGRAMMING\nPROGRAMMING",
+            "pred": "PROBLEM SOLVING AND COMPUTER PROGRAMMING"
+          },
+          {
+            "key": "06046413",
+            "gt": "ARTIFICIAL INTELLIGIENCE AND INTERNET OF THING",
+            "pred": "ARTIFICIAL INTELLIGENCE AND INTERNET OF THING"
+          },
+          {
+            "key": "06046443 หรือ 06046444",
+            "gt": "COOPERATIVE EDUCATION IN ARTIFICIAL INTELLIGIENCE TECHNOLOGY \nOVERSEA COOPERATIVE EDUCATION IN ARTIFICIAL INTELLIGIENCE TECHNOLOGY",
+            "pred": "COOPERATIVE EDUCATION IN ARTIFICIAL INTELLIGENCE TECHNOLOGY หรือ OVERSEA COOPERPERATIVE EDUCATION IN ARTIFICIAL INTELLIGENCE TECHNOLOGY"
+          }
+        ]
+      },
+      "credits": {
+        "label": "หน่วยกิต",
+        "n_items": 37,
+        "cer": 0.0,
+        "wer": null,
+        "exact_match_acc": 1.0,
+        "n_sub": 0,
+        "n_del": 0,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 298,
+        "error_samples": []
+      },
+      "year_sem": {
+        "label": "ปี/ภาค",
+        "n_items": 37,
+        "cer": 0.0,
+        "wer": null,
+        "exact_match_acc": 1.0,
+        "n_sub": 0,
+        "n_del": 0,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 111,
+        "error_samples": []
+      },
+      "category": {
+        "label": "หมวดวิชา",
+        "n_items": 37,
+        "cer": 0.0,
+        "wer": null,
+        "exact_match_acc": 1.0,
+        "n_sub": 0,
+        "n_del": 0,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 541,
+        "error_samples": []
+      },
+      "ctype": {
+        "label": "บังคับ/เลือก",
+        "n_items": 37,
+        "cer": 0.082569,
+        "wer": null,
+        "exact_match_acc": 0.918919,
+        "n_sub": 15,
+        "n_del": 3,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 218,
+        "error_samples": [
+          {
+            "key": "06046441",
+            "gt": "บังคับ",
+            "pred": "เลือก"
+          },
+          {
+            "key": "90641006",
+            "gt": "บังคับ",
+            "pred": "เลือก"
+          },
+          {
+            "key": "06046443 หรือ 06046444",
+            "gt": "บังคับ",
+            "pred": "เลือก"
+          }
+        ]
+      },
+      "prereq": {
+        "label": "วิชาบังคับก่อน",
+        "n_items": 37,
+        "cer": 0.211823,
+        "wer": null,
+        "exact_match_acc": 0.864865,
+        "n_sub": 15,
+        "n_del": 28,
+        "n_ins": 0,
+        "n_missing": 2,
+        "n_hallucinated": 0,
+        "n_ref_chars": 203,
+        "error_samples": [
+          {
+            "key": "06046401",
+            "gt": "06046400",
+            "pred": "ไม่มี"
+          },
+          {
+            "key": "06046405",
+            "gt": "06066001",
+            "pred": "ไม่มี"
+          },
+          {
+            "key": "06046406",
+            "gt": "06046401, 06046402",
+            "pred": "ไม่มี"
+          },
+          {
+            "key": "06046442",
+            "gt": "ไม่มี",
+            "pred": "None"
+          },
+          {
+            "key": "9064xxxx",
+            "gt": "ไม่มี",
+            "pred": "None"
+          }
+        ]
+      },
+      "flexible": {
+        "label": "ปี/ภาคยืดหยุ่น",
+        "n_items": 37,
+        "cer": 0.0,
+        "wer": null,
+        "exact_match_acc": 1.0,
+        "n_sub": 0,
+        "n_del": 0,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 0,
+        "error_samples": []
+      }
+    },
+    "overall_micro_cer": 0.033281,
+    "alignment": {
+      "matched": 37,
+      "missed": 4,
+      "spurious": 3,
+      "precision": 0.925,
+      "recall": 0.9024,
+      "f1": 0.9136,
+      "gt_total": 41,
+      "pred_total": 40
+    },
+    "internal_check": {
+      "ok": true,
+      "n_courses": 40,
+      "credits_by_term": {
+        "1/1": 15,
+        "1/2": 19,
+        "2/1": 18,
+        "2/2": 19,
+        "3/1": 18,
+        "3/2": 13,
+        "4/1": 12,
+        "4/2": 6
+      },
+      "total_credits_fixed_terms": 120,
+      "issues": []
+    }
+  }
+}

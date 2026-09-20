@@ -1,0 +1,782 @@
+[
+  {
+    "question": "วิชาคณิตศาสตร์สำหรับเทคโนโลยีสารสนเทศมีรหัสอะไร",
+    "expect": {
+      "type": "value",
+      "value": "06016401"
+    },
+    "sql": "SELECT code FROM course WHERE name_th LIKE '%คณิตศาสตร์สำหรับเทคโนโลยีสารสนเทศ%' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": null,
+    "answer_model_output": null,
+    "answer": "รหัสวิชาคือ 06016401 (อ้างอิง: IT.pdf หน้า 38)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          38
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.0
+  },
+  {
+    "question": "วิชา 06016401 มีกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 3
+    },
+    "sql": "SELECT credits FROM course WHERE code = '06016401' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM course WHERE code = '06016401'\" }",
+    "answer_model_output": "{\n  \"answer\": \"3 หน่วยกิต\"\n}",
+    "answer": "3 หน่วยกิต (อ้างอิง: IT.pdf หน้า 38)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          38
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.212
+  },
+  {
+    "question": "วิชา 06016401 อยู่ปีที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 1
+    },
+    "sql": "SELECT year FROM plan_item WHERE code = '06016401' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT year FROM plan_item WHERE code = '06016401'\" }",
+    "answer_model_output": "{\"answer\": \"1\"}",
+    "answer": "1 (อ้างอิง: IT.pdf หน้า 38)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          38
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.119
+  },
+  {
+    "question": "วิชา 06016401 อยู่เทอมที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 1
+    },
+    "sql": "SELECT semester FROM plan_item WHERE code = '06016401' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT semester FROM plan_item WHERE code = '06016401'\"}",
+    "answer_model_output": "{\n  \"answer\": \"1\"\n}",
+    "answer": "1 (อ้างอิง: IT.pdf หน้า 38)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          38
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.191
+  },
+  {
+    "question": "วิชาการสร้างโปรแกรมเชิงวัตถุมีรหัสอะไร",
+    "expect": {
+      "type": "value",
+      "value": "06016408"
+    },
+    "sql": "SELECT code FROM course WHERE name_th LIKE '%การสร้างโปรแกรมเชิงวัตถุ%' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": null,
+    "answer_model_output": null,
+    "answer": "รหัสวิชาคือ 06016408 (อ้างอิง: IT.pdf หน้า 39)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          39
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.001
+  },
+  {
+    "question": "วิชา 06016408 มีกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 3
+    },
+    "sql": "SELECT credits FROM course WHERE code = '06016408' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM course WHERE code = '06016408'\" }",
+    "answer_model_output": "{\n  \"answer\": \"3 หน่วยกิต\"\n}",
+    "answer": "3 หน่วยกิต (อ้างอิง: IT.pdf หน้า 39)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          39
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.195
+  },
+  {
+    "question": "วิชา 06016408 อยู่ปีที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 1
+    },
+    "sql": "SELECT year FROM plan_item WHERE code = '06016408' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT year FROM plan_item WHERE code = '06016408'\" }",
+    "answer_model_output": "{\"answer\": \"1\"}",
+    "answer": "1 (อ้างอิง: IT.pdf หน้า 39)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          39
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.121
+  },
+  {
+    "question": "วิชา 06016408 อยู่เทอมที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 2
+    },
+    "sql": "SELECT semester FROM plan_item WHERE code = '06016408' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT semester FROM plan_item WHERE code = '06016408'\"}",
+    "answer_model_output": "{\"answer\": \"2 เทอม\"}",
+    "answer": "2 เทอม (อ้างอิง: IT.pdf หน้า 39)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          39
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.176
+  },
+  {
+    "question": "วิชาเทคโนโลยีสื่อประสมมีรหัสอะไร",
+    "expect": {
+      "type": "value",
+      "value": "06016403"
+    },
+    "sql": "SELECT code FROM course WHERE name_th LIKE '%เทคโนโลยีสื่อประสม%' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": null,
+    "answer_model_output": null,
+    "answer": "รหัสวิชาคือ 06016403 (อ้างอิง: IT.pdf หน้า 40)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          40
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.001
+  },
+  {
+    "question": "วิชา 06016403 มีกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 3
+    },
+    "sql": "SELECT credits FROM course WHERE code = '06016403' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM course WHERE code = '06016403'\" }",
+    "answer_model_output": "{\"answer\": \"3 หน่วยกิต\"}",
+    "answer": "3 หน่วยกิต (อ้างอิง: IT.pdf หน้า 40)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          40
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.196
+  },
+  {
+    "question": "วิชา 06016403 อยู่ปีที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 2
+    },
+    "sql": "SELECT year FROM plan_item WHERE code = '06016403' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT year FROM plan_item WHERE code = '06016403'\" }",
+    "answer_model_output": "{\"answer\": \"2\"}",
+    "answer": "2 (อ้างอิง: IT.pdf หน้า 40)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          40
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.23
+  },
+  {
+    "question": "วิชา 06016403 อยู่เทอมที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 1
+    },
+    "sql": "SELECT semester FROM plan_item WHERE code = '06016403' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT semester FROM plan_item WHERE code = '06016403'\"}",
+    "answer_model_output": "{\"answer\": \"1 ภาคการศึกษา\"}",
+    "answer": "1 ภาคการศึกษา (อ้างอิง: IT.pdf หน้า 40)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          40
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.455
+  },
+  {
+    "question": "วิชาพื้นฐานความมั่นคงปลอดภัยไซเบอร์มีรหัสอะไร",
+    "expect": {
+      "type": "value",
+      "value": "06016405"
+    },
+    "sql": "SELECT code FROM course WHERE name_th LIKE '%พื้นฐานความมั่นคงปลอดภัยไซเบอร์%' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": null,
+    "answer_model_output": null,
+    "answer": "รหัสวิชาคือ 06016405 (อ้างอิง: IT.pdf หน้า 41)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          41
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.0
+  },
+  {
+    "question": "วิชา 06016405 มีกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 3
+    },
+    "sql": "SELECT credits FROM course WHERE code = '06016405' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM course WHERE code = '06016405'\" }",
+    "answer_model_output": "{\"answer\": \"3 หน่วยกิต\"}",
+    "answer": "3 หน่วยกิต (อ้างอิง: IT.pdf หน้า 41)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          41
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.307
+  },
+  {
+    "question": "วิชา 06016405 อยู่ปีที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 2
+    },
+    "sql": "SELECT year FROM plan_item WHERE code = '06016405' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT year FROM plan_item WHERE code = '06016405'\" }",
+    "answer_model_output": "{\n  \"answer\": \"2\"\n}",
+    "answer": "2 (อ้างอิง: IT.pdf หน้า 41)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          41
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.253
+  },
+  {
+    "question": "วิชา 06016405 อยู่เทอมที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 2
+    },
+    "sql": "SELECT semester FROM plan_item WHERE code = '06016405' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT semester FROM plan_item WHERE code = '06016405'\"}",
+    "answer_model_output": "{\"answer\": \"2 ภาคการศึกษา\"}",
+    "answer": "2 ภาคการศึกษา (อ้างอิง: IT.pdf หน้า 41)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          41
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.391
+  },
+  {
+    "question": "ปี 1 เทอม 1 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 18
+    },
+    "sql": "SELECT credits FROM v_semester_credits WHERE year=1 AND semester=1 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM v_semester_credits WHERE year=1 AND semester=1\"}",
+    "answer_model_output": "{\n  \"answer\": \"18 หน่วยกิต\"\n}",
+    "answer": "18 หน่วยกิต (อ้างอิง: IT.pdf หน้า 38)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          38
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.34
+  },
+  {
+    "question": "ปี 1 เทอม 2 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 18
+    },
+    "sql": "SELECT credits FROM v_semester_credits WHERE year=1 AND semester=2 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM v_semester_credits WHERE year=1 AND semester=2\"}",
+    "answer_model_output": "{\n  \"answer\": \"18 หน่วยกิต\"\n}",
+    "answer": "18 หน่วยกิต (อ้างอิง: IT.pdf หน้า 39)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          39
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.447
+  },
+  {
+    "question": "ปี 2 เทอม 1 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 18
+    },
+    "sql": "SELECT credits FROM v_semester_credits WHERE year=2 AND semester=1 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM v_semester_credits WHERE year=2 AND semester=1\"}",
+    "answer_model_output": "{\n  \"answer\": \"18 หน่วยกิต\"\n}",
+    "answer": "18 หน่วยกิต (อ้างอิง: IT.pdf หน้า 40)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          40
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.369
+  },
+  {
+    "question": "ปี 2 เทอม 2 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 18
+    },
+    "sql": "SELECT credits FROM v_semester_credits WHERE year=2 AND semester=2 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM v_semester_credits WHERE year=2 AND semester=2\"}",
+    "answer_model_output": "{\"answer\": \"18 หน่วยกิต\"}",
+    "answer": "18 หน่วยกิต (อ้างอิง: IT.pdf หน้า 41)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          41
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.395
+  },
+  {
+    "question": "ปี 3 เทอม 1 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 18
+    },
+    "sql": "SELECT credits FROM v_semester_credits WHERE year=3 AND semester=1 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM v_semester_credits WHERE year=3 AND semester=1\"}",
+    "answer_model_output": "{\n  \"answer\": \"18 หน่วยกิต\"\n}",
+    "answer": "18 หน่วยกิต (อ้างอิง: IT.pdf หน้า 42)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          42
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.402
+  },
+  {
+    "question": "ปี 3 เทอม 2 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 6
+    },
+    "sql": "SELECT credits FROM v_semester_credits WHERE year=3 AND semester=2 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM v_semester_credits WHERE year=3 AND semester=2\"}",
+    "answer_model_output": "{\n  \"answer\": \"6 หน่วยกิต\"\n}",
+    "answer": "6 หน่วยกิต (อ้างอิง: IT.pdf หน้า 43)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          43
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.446
+  },
+  {
+    "question": "ปี 4 เทอม 1 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 18
+    },
+    "sql": "SELECT credits FROM v_semester_credits WHERE year=4 AND semester=1 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM v_semester_credits WHERE year=4 AND semester=1\"}",
+    "answer_model_output": "{\n  \"answer\": \"18 หน่วยกิต\"\n}",
+    "answer": "18 หน่วยกิต (อ้างอิง: IT.pdf หน้า 43)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          43
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.328
+  },
+  {
+    "question": "ปี 4 เทอม 2 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 15
+    },
+    "sql": "SELECT credits FROM v_semester_credits WHERE year=4 AND semester=2 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM v_semester_credits WHERE year=4 AND semester=2\"}",
+    "answer_model_output": "{\n  \"answer\": \"15 หน่วยกิต\"\n}",
+    "answer": "15 หน่วยกิต (อ้างอิง: IT.pdf หน้า 44)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          44
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.145
+  },
+  {
+    "question": "หลักสูตรนี้มีทั้งหมดกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 129
+    },
+    "sql": "SELECT total_credits FROM program LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT total_credits FROM program\"}",
+    "answer_model_output": "{\"answer\": \"129 หน่วยกิต\"}",
+    "answer": "129 หน่วยกิต (อ้างอิง: IT.pdf หน้า 44)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          44
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.065
+  },
+  {
+    "question": "หลักสูตรนี้มีกี่ปี",
+    "expect": {
+      "type": "value",
+      "value": 4
+    },
+    "sql": "SELECT years FROM program LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": null,
+    "answer_model_output": null,
+    "answer": "หลักสูตรนี้มี 4 ปี (อ้างอิง: IT.pdf หน้า 44)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          44
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.0
+  },
+  {
+    "question": "ปี 1 เทอม 1 มีกี่วิชา",
+    "expect": {
+      "type": "count",
+      "value": 7
+    },
+    "sql": "SELECT n_courses FROM v_semester_credits WHERE year=1 AND semester=1 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": null,
+    "answer_model_output": null,
+    "answer": "มี 7 วิชา (อ้างอิง: IT.pdf หน้า 38)",
+    "correct": true,
+    "why": "ได้ 7 คาด 7",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          38
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.001
+  },
+  {
+    "question": "ปี 4 เทอม 2 มีกี่วิชา",
+    "expect": {
+      "type": "count",
+      "value": 5
+    },
+    "sql": "SELECT n_courses FROM v_semester_credits WHERE year=4 AND semester=2 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": null,
+    "answer_model_output": null,
+    "answer": "มี 5 วิชา (อ้างอิง: IT.pdf หน้า 44)",
+    "correct": true,
+    "why": "ได้ 5 คาด 5",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          44
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.0
+  },
+  {
+    "question": "วิชา 09999999 ชื่ออะไร",
+    "expect": {
+      "type": "none",
+      "value": null
+    },
+    "sql": "SELECT name_th FROM course WHERE code = '09999999' LIMIT 200",
+    "n_rows": 0,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT name_th FROM course WHERE code = '09999999'\" }",
+    "answer_model_output": null,
+    "answer": "ไม่พบข้อมูลนี้ในเล่มหลักสูตร (อ้างอิง: IT.pdf หน้า 44)",
+    "correct": true,
+    "why": "ตอบว่าไม่พบตามที่ควร",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          44
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": false,
+    "seconds": 0.664
+  },
+  {
+    "question": "ปี 5 เทอม 1 เรียนวิชาอะไรบ้าง",
+    "expect": {
+      "type": "none",
+      "value": null
+    },
+    "sql": "SELECT p.code, c.name_th FROM v_plan p JOIN course c ON c.code = p.code WHERE p.year = 5 AND p.semester = 1 LIMIT 200",
+    "n_rows": 0,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT p.code, c.name_th FROM v_plan p JOIN course c ON c.code = p.code WHERE p.year = 5 AND p.semester = 1\"}",
+    "answer_model_output": null,
+    "answer": "ไม่พบข้อมูลนี้ในเล่มหลักสูตร (อ้างอิง: IT.pdf หน้า 44)",
+    "correct": true,
+    "why": "ตอบว่าไม่พบตามที่ควร",
+    "citations": [
+      {
+        "source_file": "IT.pdf",
+        "pages": [
+          44
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": false,
+    "seconds": 0.824
+  }
+]

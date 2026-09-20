@@ -211,7 +211,7 @@ STRINGS = {
     "unverified_abstain_n": "- JSON ไม่เก็บตัวหาร n ของ abstain Precision จึงยืนยันได้เฉพาะค่าร้อยละ",
     "unverified_independence": "- JSON ยืนยันไม่ได้ว่าคำถาม held-out เคยถูกใช้ในขั้นพัฒนาหรือไม่",
     "unverified_misalignment_cause": "- การแยก row misalignment เป็น heuristic จาก char-level similarity และการเทียบ GT จึงยังยืนยันสาเหตุเชิงกระบวนการไม่ได้",
-    "rerun": "*สร้างสรุปนี้ใหม่ด้วยคำสั่ง:* `python scripts/make_eval_summary.py --json work/robustness_summary.json --readme README.md`",
+    "rerun": "*สร้างสรุปนี้ใหม่ด้วยคำสั่ง:* `python scripts/make_eval_summary.py --json work/robustness_summary.json --readme Lab09_report.md`",
     "chart_ocr_alt": "กราฟสรุปค่า OCR F1",
     "chart_rag_alt": "กราฟสรุปความแม่นยำ held-out",
     "chart_ocr_axis": "ค่า OCR alignment F1",
@@ -1010,7 +1010,7 @@ def audit(section: str, data: dict[str, Any]) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--json", default="work/robustness_summary.json")
-    parser.add_argument("--readme", default="README.md")
+    parser.add_argument("--readme", default="Lab09_report.md")
     parser.add_argument("--image-dir", default="docs/img")
     parser.add_argument("--no-charts", action="store_true")
     args = parser.parse_args()

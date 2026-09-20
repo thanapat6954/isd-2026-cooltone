@@ -1,0 +1,271 @@
+{
+  "vlm": {
+    "tokenizer": "whitespace (fallback)",
+    "attributes": {
+      "code": {
+        "label": "รหัสวิชา",
+        "n_items": 41,
+        "cer": 0.0,
+        "wer": null,
+        "exact_match_acc": 1.0,
+        "n_sub": 0,
+        "n_del": 0,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 328,
+        "error_samples": []
+      },
+      "name_th": {
+        "label": "ชื่อวิชา (ไทย) ⭐",
+        "n_items": 41,
+        "cer": 0.009245,
+        "wer": 0.104478,
+        "exact_match_acc": 0.829268,
+        "n_sub": 1,
+        "n_del": 2,
+        "n_ins": 9,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 1298,
+        "error_samples": [
+          {
+            "key": "06066303",
+            "gt": "การแก้ปัญหาและโปรแกรมคอมพิวเตอร์",
+            "pred": "การแก้ปัญหาและการโปรแกรมคอมพิวเตอร์"
+          },
+          {
+            "key": "90641001",
+            "gt": "โรงเรียนสร้างเสน่าห์",
+            "pred": "โรงเรียนสร้างเสน่ห์"
+          },
+          {
+            "key": "06026205",
+            "gt": "การตลาดเบื้อต้น",
+            "pred": "การตลาดเบื้องต้น"
+          },
+          {
+            "key": "06066304",
+            "gt": "การวิเคราะห์และอออกแบบระบบสารสนเทศ",
+            "pred": "การวิเคราะห์และออกแบบระบบสารสนเทศ"
+          },
+          {
+            "key": "90644xxx",
+            "gt": "วิชาเลือกภาษาและการสื่อสาร",
+            "pred": "วิชาเลือกด้านภาษาและการสื่อสาร"
+          }
+        ]
+      },
+      "name_en": {
+        "label": "ชื่อวิชา (อังกฤษ) ⭐",
+        "n_items": 41,
+        "cer": 0.036735,
+        "wer": 0.042553,
+        "exact_match_acc": 0.95122,
+        "n_sub": 0,
+        "n_del": 19,
+        "n_ins": 26,
+        "n_missing": 1,
+        "n_hallucinated": 0,
+        "n_ref_chars": 1225,
+        "error_samples": [
+          {
+            "key": "90642033",
+            "gt": "LAW FOR NEW GENERATION",
+            "pred": "None"
+          },
+          {
+            "key": "9064xxxx",
+            "gt": "ELECTIVE IN GENERAL EDUCATION",
+            "pred": "ELECTIVE IN GENERAL EDUCATION\nELECTIVE IN GENERAL EDUCATION"
+          }
+        ]
+      },
+      "credits": {
+        "label": "หน่วยกิต",
+        "n_items": 41,
+        "cer": 0.145631,
+        "wer": null,
+        "exact_match_acc": 0.878049,
+        "n_sub": 0,
+        "n_del": 60,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 412,
+        "error_samples": [
+          {
+            "key": "06026xxx",
+            "gt": "3(3-0-6) หรือ 3(2-2-5)",
+            "pred": "3(3-0-6)"
+          },
+          {
+            "key": "06026xxx",
+            "gt": "3(3-0-6) หรือ 3(2-2-5)",
+            "pred": "3(3-0-6)"
+          },
+          {
+            "key": "9064xxxx",
+            "gt": "3(3-0-6) หรือ 3(2-2-5)",
+            "pred": "3(3-0-6)"
+          },
+          {
+            "key": "06026xxx",
+            "gt": "3(3-0-6) หรือ 3(2-2-5)",
+            "pred": "3(3-0-6)"
+          },
+          {
+            "key": "06026xxx",
+            "gt": "3(3-0-6) หรือ 3(2-2-5)",
+            "pred": "3(3-0-6)"
+          }
+        ]
+      },
+      "year_sem": {
+        "label": "ปี/ภาค",
+        "n_items": 41,
+        "cer": 0.0,
+        "wer": null,
+        "exact_match_acc": 1.0,
+        "n_sub": 0,
+        "n_del": 0,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 123,
+        "error_samples": []
+      },
+      "category": {
+        "label": "หมวดวิชา",
+        "n_items": 41,
+        "cer": 0.016863,
+        "wer": null,
+        "exact_match_acc": 0.97561,
+        "n_sub": 4,
+        "n_del": 0,
+        "n_ins": 6,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 593,
+        "error_samples": [
+          {
+            "key": "9064xxxx",
+            "gt": "หมวดวิชาเฉพาะ",
+            "pred": "หมวดวิชาศึกษาทั่วไป"
+          }
+        ]
+      },
+      "ctype": {
+        "label": "บังคับ/เลือก",
+        "n_items": 41,
+        "cer": 0.075314,
+        "wer": null,
+        "exact_match_acc": 0.926829,
+        "n_sub": 15,
+        "n_del": 3,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 239,
+        "error_samples": [
+          {
+            "key": "06066100",
+            "gt": "บังคับ",
+            "pred": "เลือก"
+          },
+          {
+            "key": "90643021",
+            "gt": "บังคับ",
+            "pred": "เลือก"
+          },
+          {
+            "key": "90644042",
+            "gt": "บังคับ",
+            "pred": "เลือก"
+          }
+        ]
+      },
+      "prereq": {
+        "label": "วิชาบังคับก่อน",
+        "n_items": 41,
+        "cer": 0.181818,
+        "wer": null,
+        "exact_match_acc": 0.878049,
+        "n_sub": 25,
+        "n_del": 15,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 220,
+        "error_samples": [
+          {
+            "key": "06026201",
+            "gt": "06026200",
+            "pred": "ไม่มี"
+          },
+          {
+            "key": "06066102",
+            "gt": "06066101",
+            "pred": "ไม่มี"
+          },
+          {
+            "key": "06026212",
+            "gt": "06066300",
+            "pred": "ไม่มี"
+          },
+          {
+            "key": "06026213",
+            "gt": "06066300",
+            "pred": "ไม่มี"
+          },
+          {
+            "key": "06026215",
+            "gt": "06026214",
+            "pred": "ไม่มี"
+          }
+        ]
+      },
+      "flexible": {
+        "label": "ปี/ภาคยืดหยุ่น",
+        "n_items": 41,
+        "cer": 0.0,
+        "wer": null,
+        "exact_match_acc": 1.0,
+        "n_sub": 0,
+        "n_del": 0,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 0,
+        "error_samples": []
+      }
+    },
+    "overall_micro_cer": 0.041685,
+    "alignment": {
+      "matched": 41,
+      "missed": 3,
+      "spurious": 4,
+      "precision": 0.9111,
+      "recall": 0.9318,
+      "f1": 0.9213,
+      "gt_total": 44,
+      "pred_total": 45
+    },
+    "internal_check": {
+      "ok": true,
+      "n_courses": 45,
+      "credits_by_term": {
+        "1/1": 18,
+        "1/2": 21,
+        "2/1": 18,
+        "2/2": 21,
+        "3/1": 18,
+        "3/2": 18,
+        "4/1": 12,
+        "4/2": 12
+      },
+      "total_credits_fixed_terms": 138,
+      "issues": []
+    }
+  }
+}

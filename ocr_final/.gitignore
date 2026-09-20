@@ -7,6 +7,13 @@ output/
 output_clean/
 data/input/
 *.db
-work/lab8b_*/
+work/lab8b_*/**
+!work/lab8b_*/
+!work/lab8b_*/eval_result.json
+!work/lab8b_*/gold_questions.json
+!work/lab8b_*/verify.json
+!work/lab8b_*/lab7b/
+!work/lab8b_*/lab7b/evaluation.json
+!work/lab8b_*/robustness/
+!work/lab8b_*/robustness/robustness_report_v2.json
 work/_archive_candidates_*/
-

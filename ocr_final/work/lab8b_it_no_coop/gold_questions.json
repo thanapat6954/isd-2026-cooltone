@@ -1,0 +1,212 @@
+[
+  {
+    "question": "วิชาคณิตศาสตร์สำหรับเทคโนโลยีสารสนเทศมีรหัสอะไร",
+    "expect": {
+      "type": "value",
+      "value": "06016401"
+    }
+  },
+  {
+    "question": "วิชา 06016401 มีกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 3
+    }
+  },
+  {
+    "question": "วิชา 06016401 อยู่ปีที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 1
+    }
+  },
+  {
+    "question": "วิชา 06016401 อยู่เทอมที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 1
+    }
+  },
+  {
+    "question": "วิชาการสร้างโปรแกรมเชิงวัตถุมีรหัสอะไร",
+    "expect": {
+      "type": "value",
+      "value": "06016408"
+    }
+  },
+  {
+    "question": "วิชา 06016408 มีกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 3
+    }
+  },
+  {
+    "question": "วิชา 06016408 อยู่ปีที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 1
+    }
+  },
+  {
+    "question": "วิชา 06016408 อยู่เทอมที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 2
+    }
+  },
+  {
+    "question": "วิชาเทคโนโลยีสื่อประสมมีรหัสอะไร",
+    "expect": {
+      "type": "value",
+      "value": "06016403"
+    }
+  },
+  {
+    "question": "วิชา 06016403 มีกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 3
+    }
+  },
+  {
+    "question": "วิชา 06016403 อยู่ปีที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 2
+    }
+  },
+  {
+    "question": "วิชา 06016403 อยู่เทอมที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 1
+    }
+  },
+  {
+    "question": "วิชาพื้นฐานความมั่นคงปลอดภัยไซเบอร์มีรหัสอะไร",
+    "expect": {
+      "type": "value",
+      "value": "06016405"
+    }
+  },
+  {
+    "question": "วิชา 06016405 มีกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 3
+    }
+  },
+  {
+    "question": "วิชา 06016405 อยู่ปีที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 2
+    }
+  },
+  {
+    "question": "วิชา 06016405 อยู่เทอมที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 2
+    }
+  },
+  {
+    "question": "ปี 1 เทอม 1 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 18
+    }
+  },
+  {
+    "question": "ปี 1 เทอม 2 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 18
+    }
+  },
+  {
+    "question": "ปี 2 เทอม 1 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 18
+    }
+  },
+  {
+    "question": "ปี 2 เทอม 2 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 18
+    }
+  },
+  {
+    "question": "ปี 3 เทอม 1 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 18
+    }
+  },
+  {
+    "question": "ปี 3 เทอม 2 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 15
+    }
+  },
+  {
+    "question": "ปี 4 เทอม 1 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 15
+    }
+  },
+  {
+    "question": "ปี 4 เทอม 2 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 9
+    }
+  },
+  {
+    "question": "หลักสูตรนี้มีทั้งหมดกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 129
+    }
+  },
+  {
+    "question": "หลักสูตรนี้มีกี่ปี",
+    "expect": {
+      "type": "value",
+      "value": 4
+    }
+  },
+  {
+    "question": "ปี 1 เทอม 1 มีกี่วิชา",
+    "expect": {
+      "type": "count",
+      "value": 7
+    }
+  },
+  {
+    "question": "ปี 4 เทอม 2 มีกี่วิชา",
+    "expect": {
+      "type": "count",
+      "value": 3
+    }
+  },
+  {
+    "question": "วิชา 09999999 ชื่ออะไร",
+    "expect": {
+      "type": "none",
+      "value": null
+    }
+  },
+  {
+    "question": "ปี 5 เทอม 1 เรียนวิชาอะไรบ้าง",
+    "expect": {
+      "type": "none",
+      "value": null
+    }
+  }
+]

@@ -82,12 +82,12 @@ python .\robustness_eval.py --program all --repeats 3
 
 คำสั่งนี้จะอัปเดต `work/robustness_summary.json` และรายงานย่อยในโฟลเดอร์ `robustness/` ของแต่ละ profile
 
-### 7. สร้างส่วนผลประเมินใน README ใหม่
+### 7. สร้างส่วนผลประเมินใน Lab09 report ใหม่
 
 ห้ามแก้ข้อความระหว่าง comment `EVAL:START` และ `EVAL:END` ด้วยตนเอง ให้สร้างจาก JSON ด้วยคำสั่ง:
 
 ```powershell
-python .\scripts\make_eval_summary.py --json .\work\robustness_summary.json --readme .\README.md
+python .\scripts\make_eval_summary.py --json .\work\robustness_summary.json --readme .\Lab09_report.md
 ```
 
 ### 8. รัน tests
@@ -338,7 +338,7 @@ OCR F1 เท่าเดิมจาก baseline v1 ในทุก profile ท
 
 ---
 
-*สร้างสรุปนี้ใหม่ด้วยคำสั่ง:* `python scripts/make_eval_summary.py --json work/robustness_summary.json --readme README.md`
+*สร้างสรุปนี้ใหม่ด้วยคำสั่ง:* `python scripts/make_eval_summary.py --json work/robustness_summary.json --readme Lab09_report.md`
 
 #### สิ่งที่ยังยืนยันไม่ได้
 

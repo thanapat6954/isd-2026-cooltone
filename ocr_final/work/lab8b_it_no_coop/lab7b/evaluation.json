@@ -1,0 +1,275 @@
+{
+  "vlm": {
+    "tokenizer": "whitespace (fallback)",
+    "attributes": {
+      "code": {
+        "label": "รหัสวิชา",
+        "n_items": 50,
+        "cer": 0.0,
+        "wer": null,
+        "exact_match_acc": 1.0,
+        "n_sub": 0,
+        "n_del": 0,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 400,
+        "error_samples": []
+      },
+      "name_th": {
+        "label": "ชื่อวิชา (ไทย) ⭐",
+        "n_items": 50,
+        "cer": 0.154982,
+        "wer": 0.220339,
+        "exact_match_acc": 0.82,
+        "n_sub": 85,
+        "n_del": 26,
+        "n_ins": 99,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 1355,
+        "error_samples": [
+          {
+            "key": "06066301",
+            "gt": "โครงสร้างข้อมูลและอัลกอรึทึม",
+            "pred": "โครงสร้างข้อมูลและอัลกอริทึม"
+          },
+          {
+            "key": "06016409",
+            "gt": "การประมวลผลทางกายภาพ",
+            "pred": "การประมวลทางกายภาพ"
+          },
+          {
+            "key": "06016412",
+            "gt": "โครงสร้างระบบคอมพิวเตอร์และระบบปฎิบัติการ",
+            "pred": "โครงสร้างระบบคอมพิวเตอร์และระบบปฏิบัติการ"
+          },
+          {
+            "key": "06016422",
+            "gt": "อินเทอร์เน็ตของสรรพสิ่ง",
+            "pred": "คอมพิวเตอร์กราฟิกส์และแอนิเมชัน"
+          },
+          {
+            "key": "06016423",
+            "gt": "การออโตเมชั่นและโครงสร้างพื้นฐานที่สามารถโปรแกรมได้",
+            "pred": "การออกแบบและพัฒนาเกมเบื้องต้น"
+          }
+        ]
+      },
+      "name_en": {
+        "label": "ชื่อวิชา (อังกฤษ) ⭐",
+        "n_items": 50,
+        "cer": 0.085322,
+        "wer": 0.10989,
+        "exact_match_acc": 0.9,
+        "n_sub": 62,
+        "n_del": 23,
+        "n_ins": 33,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 1383,
+        "error_samples": [
+          {
+            "key": "06016422",
+            "gt": "INTERNET OF THINGS",
+            "pred": "COMPUTER GRAPHICS AND ANIMATION"
+          },
+          {
+            "key": "06016423",
+            "gt": "INFRASTRUCTURE PROGRAMMABILITY AND AUTOMATION",
+            "pred": "INTRODUCTION TO GAME DESIGN AND DEVELOPMENT"
+          },
+          {
+            "key": "06016426",
+            "gt": "COMPUTER GRAPHICS AND ANIMATION",
+            "pred": "SERVER-SIDE WEB DEVELOPMENT"
+          },
+          {
+            "key": "06016427",
+            "gt": "INTRODUCTION TO GAME DESIGN AND DEVELOPMENT",
+            "pred": "SERVER-SIDE WEB DEVELOPMENT"
+          },
+          {
+            "key": "90642033",
+            "gt": "LAW FOR NEW GENERATION",
+            "pred": "Faculty requirement\nLAW FOR NEW GENERATION"
+          }
+        ]
+      },
+      "credits": {
+        "label": "หน่วยกิต",
+        "n_items": 50,
+        "cer": 0.012712,
+        "wer": null,
+        "exact_match_acc": 0.96,
+        "n_sub": 6,
+        "n_del": 0,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 472,
+        "error_samples": [
+          {
+            "key": "06016425",
+            "gt": "3(3-0-6)",
+            "pred": "3(2-2-5)"
+          },
+          {
+            "key": "06016416",
+            "gt": "3(3-0-6)",
+            "pred": "3(2-2-5)"
+          }
+        ]
+      },
+      "year_sem": {
+        "label": "ปี/ภาค",
+        "n_items": 50,
+        "cer": 0.0,
+        "wer": null,
+        "exact_match_acc": 1.0,
+        "n_sub": 0,
+        "n_del": 0,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 150,
+        "error_samples": []
+      },
+      "category": {
+        "label": "หมวดวิชา",
+        "n_items": 50,
+        "cer": 0.0,
+        "wer": null,
+        "exact_match_acc": 1.0,
+        "n_sub": 0,
+        "n_del": 0,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 710,
+        "error_samples": []
+      },
+      "ctype": {
+        "label": "บังคับ/เลือก",
+        "n_items": 50,
+        "cer": 0.306122,
+        "wer": null,
+        "exact_match_acc": 0.7,
+        "n_sub": 75,
+        "n_del": 15,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 294,
+        "error_samples": [
+          {
+            "key": "06016414",
+            "gt": "บังคับ",
+            "pred": "เลือก"
+          },
+          {
+            "key": "06016415",
+            "gt": "บังคับ",
+            "pred": "เลือก"
+          },
+          {
+            "key": "06016420",
+            "gt": "บังคับ",
+            "pred": "เลือก"
+          },
+          {
+            "key": "06016424",
+            "gt": "บังคับ",
+            "pred": "เลือก"
+          },
+          {
+            "key": "06016425",
+            "gt": "บังคับ",
+            "pred": "เลือก"
+          }
+        ]
+      },
+      "prereq": {
+        "label": "วิชาบังคับก่อน",
+        "n_items": 50,
+        "cer": 0.253731,
+        "wer": null,
+        "exact_match_acc": 0.8,
+        "n_sub": 30,
+        "n_del": 38,
+        "n_ins": 0,
+        "n_missing": 4,
+        "n_hallucinated": 0,
+        "n_ref_chars": 268,
+        "error_samples": [
+          {
+            "key": "06016419",
+            "gt": "06016413",
+            "pred": "ไม่มี"
+          },
+          {
+            "key": "06016420",
+            "gt": "06016413",
+            "pred": "ไม่มี"
+          },
+          {
+            "key": "06066102",
+            "gt": "06066101",
+            "pred": "ไม่มี"
+          },
+          {
+            "key": "060164xx",
+            "gt": "ไม่มี",
+            "pred": "None"
+          },
+          {
+            "key": "060164xx",
+            "gt": "ไม่มี",
+            "pred": "None"
+          }
+        ]
+      },
+      "flexible": {
+        "label": "ปี/ภาคยืดหยุ่น",
+        "n_items": 50,
+        "cer": 0.0,
+        "wer": null,
+        "exact_match_acc": 1.0,
+        "n_sub": 0,
+        "n_del": 0,
+        "n_ins": 0,
+        "n_missing": 0,
+        "n_hallucinated": 0,
+        "n_ref_chars": 0,
+        "error_samples": []
+      }
+    },
+    "overall_micro_cer": 0.097774,
+    "alignment": {
+      "matched": 50,
+      "missed": 4,
+      "spurious": 3,
+      "precision": 0.9434,
+      "recall": 0.9259,
+      "f1": 0.9346,
+      "gt_total": 54,
+      "pred_total": 53
+    },
+    "internal_check": {
+      "ok": true,
+      "n_courses": 53,
+      "credits_by_term": {
+        "1/1": 18,
+        "1/2": 18,
+        "2/1": 18,
+        "2/2": 30,
+        "3/1": 33,
+        "3/2": 15,
+        "4/1": 15,
+        "4/2": 9
+      },
+      "total_credits_fixed_terms": 156,
+      "issues": []
+    }
+  }
+}

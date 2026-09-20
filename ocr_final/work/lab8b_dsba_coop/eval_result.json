@@ -1,0 +1,797 @@
+[
+  {
+    "question": "วิชาแคลคูลัส 1 มีรหัสอะไร",
+    "expect": {
+      "type": "value",
+      "value": "06026200"
+    },
+    "sql": "SELECT code FROM course WHERE name_th LIKE '%แคลคูลัส 1%' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": null,
+    "answer_model_output": null,
+    "answer": "รหัสวิชาคือ 06026200 (อ้างอิง: DSBA.pdf หน้า 30)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          30
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.001
+  },
+  {
+    "question": "วิชา 06026200 มีกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 3
+    },
+    "sql": "SELECT credits FROM course WHERE code = '06026200' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM course WHERE code = '06026200'\" }",
+    "answer_model_output": "{\"answer\": \"3 หน่วยกิต\"}",
+    "answer": "3 หน่วยกิต (อ้างอิง: DSBA.pdf หน้า 30)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          30
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.012
+  },
+  {
+    "question": "วิชา 06026200 อยู่ปีที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 1
+    },
+    "sql": "SELECT year FROM plan_item WHERE code = '06026200' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT year FROM plan_item WHERE code = '06026200'\"}",
+    "answer_model_output": "{\n  \"answer\": \"1\"\n}",
+    "answer": "1 (อ้างอิง: DSBA.pdf หน้า 30)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          30
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.969
+  },
+  {
+    "question": "วิชา 06026200 อยู่เทอมที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 1
+    },
+    "sql": "SELECT semester FROM plan_item WHERE code = '06026200' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT semester FROM plan_item WHERE code = '06026200'\"}",
+    "answer_model_output": "{\n  \"answer\": \"1\"\n}",
+    "answer": "1 (อ้างอิง: DSBA.pdf หน้า 30)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          30
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.949
+  },
+  {
+    "question": "วิชากีฬาและนันทนาการมีกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 1
+    },
+    "sql": "SELECT credits FROM course WHERE name_th LIKE '%กีฬาและนันทนาการ%' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM course WHERE name_th LIKE '%กีฬาและนันทนาการ%'\" }",
+    "answer_model_output": "{\n  \"answer\": \"1 หน่วยกิต\"\n}",
+    "answer": "1 หน่วยกิต (อ้างอิง: DSBA.pdf หน้า 30)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          30
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.084
+  },
+  {
+    "question": "วิชาโรงเรียนสร้างเสน่ห์มีกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 2
+    },
+    "sql": "SELECT credits FROM course WHERE name_th LIKE '%โรงเรียนสร้างเสน่ห์%' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM course WHERE name_th LIKE '%โรงเรียนสร้างเสน่ห์%'\" }",
+    "answer_model_output": "{\n  \"answer\": \"2 หน่วยกิต\"\n}",
+    "answer": "2 หน่วยกิต (อ้างอิง: DSBA.pdf หน้า 30)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          30
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.061
+  },
+  {
+    "question": "ปี 1 เทอม 1 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 18
+    },
+    "sql": "SELECT credits FROM v_semester_credits WHERE year=1 AND semester=1 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM v_semester_credits WHERE year=1 AND semester=1\"}",
+    "answer_model_output": "{\n  \"answer\": \"18 หน่วยกิต\"\n}",
+    "answer": "18 หน่วยกิต (อ้างอิง: DSBA.pdf หน้า 30)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          30
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.999
+  },
+  {
+    "question": "ปี 1 เทอม 2 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 21
+    },
+    "sql": "SELECT credits FROM v_semester_credits WHERE year=1 AND semester=2 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM v_semester_credits WHERE year=1 AND semester=2\"}",
+    "answer_model_output": "{\n  \"answer\": \"21 หน่วยกิต\"\n}",
+    "answer": "21 หน่วยกิต (อ้างอิง: DSBA.pdf หน้า 31)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          31
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.024
+  },
+  {
+    "question": "ปี 2 เทอม 1 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 18
+    },
+    "sql": "SELECT credits FROM v_semester_credits WHERE year=2 AND semester=1 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM v_semester_credits WHERE year=2 AND semester=1\"}",
+    "answer_model_output": "{\n  \"answer\": \"18 หน่วยกิต\"\n}",
+    "answer": "18 หน่วยกิต (อ้างอิง: DSBA.pdf หน้า 32)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          32
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.012
+  },
+  {
+    "question": "ปี 2 เทอม 2 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 21
+    },
+    "sql": "SELECT credits FROM v_semester_credits WHERE year=2 AND semester=2 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM v_semester_credits WHERE year=2 AND semester=2\"}",
+    "answer_model_output": "{\"answer\": \"21 หน่วยกิต\"}",
+    "answer": "21 หน่วยกิต (อ้างอิง: DSBA.pdf หน้า 33)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          33
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.986
+  },
+  {
+    "question": "ปี 3 เทอม 1 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 18
+    },
+    "sql": "SELECT credits FROM v_semester_credits WHERE year=3 AND semester=1 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM v_semester_credits WHERE year=3 AND semester=1\"}",
+    "answer_model_output": "{\n  \"answer\": \"18 หน่วยกิต\"\n}",
+    "answer": "18 หน่วยกิต (อ้างอิง: DSBA.pdf หน้า 34)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          34
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.019
+  },
+  {
+    "question": "ปี 3 เทอม 2 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 18
+    },
+    "sql": "SELECT credits FROM v_semester_credits WHERE year=3 AND semester=2 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM v_semester_credits WHERE year=3 AND semester=2\"}",
+    "answer_model_output": "{\n  \"answer\": \"18 หน่วยกิต\"\n}",
+    "answer": "18 หน่วยกิต (อ้างอิง: DSBA.pdf หน้า 35)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          35
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.0
+  },
+  {
+    "question": "ปี 4 เทอม 1 เรียนกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 12
+    },
+    "sql": "SELECT credits FROM v_semester_credits WHERE year=4 AND semester=1 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM v_semester_credits WHERE year=4 AND semester=1\"}",
+    "answer_model_output": "{\"answer\": \"12 หน่วยกิต\"}",
+    "answer": "12 หน่วยกิต (อ้างอิง: DSBA.pdf หน้า 36)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          36
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.988
+  },
+  {
+    "question": "ปี 1 เทอม 1 มีกี่วิชา",
+    "expect": {
+      "type": "count",
+      "value": 7
+    },
+    "sql": "SELECT n_courses FROM v_semester_credits WHERE year=1 AND semester=1 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": null,
+    "answer_model_output": null,
+    "answer": "มี 7 วิชา (อ้างอิง: DSBA.pdf หน้า 30)",
+    "correct": true,
+    "why": "ได้ 7 คาด 7",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          30
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.0
+  },
+  {
+    "question": "ปี 2 เทอม 1 มีกี่วิชา",
+    "expect": {
+      "type": "count",
+      "value": 6
+    },
+    "sql": "SELECT n_courses FROM v_semester_credits WHERE year=2 AND semester=1 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": null,
+    "answer_model_output": null,
+    "answer": "มี 6 วิชา (อ้างอิง: DSBA.pdf หน้า 32)",
+    "correct": true,
+    "why": "ได้ 6 คาด 6",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          32
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.0
+  },
+  {
+    "question": "ปี 3 เทอม 1 มีกี่วิชา",
+    "expect": {
+      "type": "count",
+      "value": 6
+    },
+    "sql": "SELECT n_courses FROM v_semester_credits WHERE year=3 AND semester=1 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": null,
+    "answer_model_output": null,
+    "answer": "มี 6 วิชา (อ้างอิง: DSBA.pdf หน้า 34)",
+    "correct": true,
+    "why": "ได้ 6 คาด 6",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          34
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.0
+  },
+  {
+    "question": "ปี 1 เทอม 1 เรียนวิชาอะไรบ้าง",
+    "expect": {
+      "type": "set",
+      "value": [
+        "06026200",
+        "06026202",
+        "06066101",
+        "06066303",
+        "90641001",
+        "90641003",
+        "90644007"
+      ]
+    },
+    "sql": "SELECT p.code, c.name_th FROM v_plan p JOIN course c ON c.code = p.code WHERE p.year = 1 AND p.semester = 1 LIMIT 200",
+    "n_rows": 7,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT p.code, c.name_th FROM v_plan p JOIN course c ON c.code = p.code WHERE p.year = 1 AND p.semester = 1\"}",
+    "answer_model_output": "{\"answer\": \"แคลคูลัส 1, พีชคณิตเชิงเส้น, พื้นฐานทางธุรกิจสำหรับเทคโนโลยีสารสนเทศ, การแก้ปัญหาและโปรแกรมคอมพิวเตอร์, โรงเรียนสร้างเสน่ห์, กีฬาและนันทนาการ, ภาษาอังกฤษพื้นฐาน 1\"}",
+    "answer": "แคลคูลัส 1, พีชคณิตเชิงเส้น, พื้นฐานทางธุรกิจสำหรับเทคโนโลยีสารสนเทศ, การแก้ปัญหาและโปรแกรมคอมพิวเตอร์, โรงเรียนสร้างเสน่ห์, กีฬาและนันทนาการ, ภาษาอังกฤษพื้นฐาน 1 (อ้างอิง: DSBA.pdf หน้า 30)",
+    "correct": true,
+    "why": "ครบ",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          30
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 2.604
+  },
+  {
+    "question": "ปี 3 เทอม 1 เรียนวิชาอะไรบ้าง",
+    "expect": {
+      "type": "set",
+      "value": [
+        "06026211",
+        "06026212",
+        "90644042"
+      ]
+    },
+    "sql": "SELECT p.code, c.name_th FROM v_plan p JOIN course c ON c.code = p.code WHERE p.year = 3 AND p.semester = 1 LIMIT 200",
+    "n_rows": 3,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT p.code, c.name_th FROM v_plan p JOIN course c ON c.code = p.code WHERE p.year = 3 AND p.semester = 1\"}",
+    "answer_model_output": "{\"answer\": \"การเรียนรู้ของเครื่องเชิงประยุกต์ (06026211), การสร้างคลังข้อมูล (060 26212), การสื่อสารและการนำเสนออย่างมืออาชีพ (90644042)\" }",
+    "answer": "การเรียนรู้ของเครื่องเชิงประยุกต์ (06026211), การสร้างคลังข้อมูล (060 26212), การสื่อสารและการนำเสนออย่างมืออาชีพ (90644042) (อ้างอิง: DSBA.pdf หน้า 34)",
+    "correct": true,
+    "why": "ครบ",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          34
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 2.484
+  },
+  {
+    "question": "วิชา 06026215 อยู่ปีที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 4
+    },
+    "sql": "SELECT year FROM plan_item WHERE code = '06026215' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT year FROM plan_item WHERE code = '06026215'\" }",
+    "answer_model_output": "{\n  \"answer\": \"4\"\n}",
+    "answer": "4 (อ้างอิง: DSBA.pdf หน้า 36)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          36
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.079
+  },
+  {
+    "question": "วิชา 06026215 อยู่เทอมที่เท่าไร",
+    "expect": {
+      "type": "value",
+      "value": 1
+    },
+    "sql": "SELECT semester FROM plan_item WHERE code = '06026215' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT semester FROM plan_item WHERE code = '06026215'\" }",
+    "answer_model_output": "{\n  \"answer\": \"1\"\n}",
+    "answer": "1 (อ้างอิง: DSBA.pdf หน้า 36)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          36
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.07
+  },
+  {
+    "question": "วิชาสหกิจศึกษาทางวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจมีรหัสอะไรบ้าง",
+    "expect": {
+      "type": "set",
+      "value": [
+        "06026259",
+        "06026260"
+      ]
+    },
+    "sql": "SELECT code FROM course WHERE name_th LIKE '%สหกิจศึกษา%' LIMIT 200",
+    "n_rows": 2,
+    "error": null,
+    "sql_model_output": null,
+    "answer_model_output": null,
+    "answer": "รหัสวิชา ได้แก่ 06026259, 06026260 (อ้างอิง: DSBA.pdf หน้า 36)",
+    "correct": true,
+    "why": "ครบ",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          36
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.0
+  },
+  {
+    "question": "วิชา 06026259 มีกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 6
+    },
+    "sql": "SELECT credits FROM course WHERE code = '06026259' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM course WHERE code = '06026259'\" }",
+    "answer_model_output": "{\n  \"answer\": \"6 หน่วยกิต\"\n}",
+    "answer": "6 หน่วยกิต (อ้างอิง: DSBA.pdf หน้า 36)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          36
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.102
+  },
+  {
+    "question": "วิชา 06026260 มีกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 6
+    },
+    "sql": "SELECT credits FROM course WHERE code = '06026260' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT credits FROM course WHERE code = '06026260'\" }",
+    "answer_model_output": "{\"answer\": \"6 หน่วยกิต\"}",
+    "answer": "6 หน่วยกิต (อ้างอิง: DSBA.pdf หน้า 36)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          36
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.069
+  },
+  {
+    "question": "วิชา 06026215 ต้องเรียนวิชาอะไรมาก่อน",
+    "expect": {
+      "type": "value",
+      "value": "06026214"
+    },
+    "sql": "SELECT requires FROM prerequisite WHERE code='06026215' AND kind='pre' LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT requires FROM prerequisite WHERE code='06026215' AND kind='pre'\" }",
+    "answer_model_output": "{\n  \"answer\": \"06026214\"\n}",
+    "answer": "06026214 (อ้างอิง: DSBA.pdf หน้า 36)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          36
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 1.195
+  },
+  {
+    "question": "วิชา 06026200 ต้องเรียนวิชาอะไรมาก่อน",
+    "expect": {
+      "type": "none",
+      "value": null
+    },
+    "sql": "SELECT requires FROM prerequisite WHERE code='06026200' AND kind='pre' LIMIT 200",
+    "n_rows": 0,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT requires FROM prerequisite WHERE code='06026200' AND kind='pre'\" }",
+    "answer_model_output": null,
+    "answer": "ไม่พบข้อมูลนี้ในเล่มหลักสูตร (อ้างอิง: DSBA.pdf หน้า 30)",
+    "correct": true,
+    "why": "ตอบว่าไม่พบตามที่ควร",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          30
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": false,
+    "seconds": 0.659
+  },
+  {
+    "question": "วิชา 09999999 ชื่ออะไร",
+    "expect": {
+      "type": "none",
+      "value": null
+    },
+    "sql": "SELECT name_th FROM course WHERE code = '09999999' LIMIT 200",
+    "n_rows": 0,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT name_th FROM course WHERE code = '09999999'\" }",
+    "answer_model_output": null,
+    "answer": "ไม่พบข้อมูลนี้ในเล่มหลักสูตร (อ้างอิง: DSBA.pdf หน้า 36)",
+    "correct": true,
+    "why": "ตอบว่าไม่พบตามที่ควร",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          36
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": false,
+    "seconds": 0.574
+  },
+  {
+    "question": "ปี 5 เทอม 1 เรียนวิชาอะไรบ้าง",
+    "expect": {
+      "type": "none",
+      "value": null
+    },
+    "sql": "SELECT p.code, c.name_th FROM v_plan p JOIN course c ON c.code = p.code WHERE p.year = 5 AND p.semester = 1 LIMIT 200",
+    "n_rows": 0,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT p.code, c.name_th FROM v_plan p JOIN course c ON c.code = p.code WHERE p.year = 5 AND p.semester = 1\"}",
+    "answer_model_output": null,
+    "answer": "ไม่พบข้อมูลนี้ในเล่มหลักสูตร (อ้างอิง: DSBA.pdf หน้า 36)",
+    "correct": true,
+    "why": "ตอบว่าไม่พบตามที่ควร",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          36
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": false,
+    "seconds": 0.801
+  },
+  {
+    "question": "หลักสูตรนี้มีทั้งหมดกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 132
+    },
+    "sql": "SELECT total_credits FROM program LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": "{\"sql\": \"SELECT total_credits FROM program\"}",
+    "answer_model_output": "{\"answer\": \"132 หน่วยกิต\"}",
+    "answer": "132 หน่วยกิต (อ้างอิง: DSBA.pdf หน้า 36)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          36
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.913
+  },
+  {
+    "question": "หลักสูตรนี้มีกี่ปี",
+    "expect": {
+      "type": "value",
+      "value": 4
+    },
+    "sql": "SELECT years FROM program LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": null,
+    "answer_model_output": null,
+    "answer": "หลักสูตรนี้มี 4 ปี (อ้างอิง: DSBA.pdf หน้า 36)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          36
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.0
+  },
+  {
+    "question": "วิชาที่มีหน่วยกิตมากที่สุดในปี 4 เทอม 2 มีกี่หน่วยกิต",
+    "expect": {
+      "type": "value",
+      "value": 6
+    },
+    "sql": "SELECT MAX(credits) FROM v_plan WHERE year=4 AND semester=2 LIMIT 200",
+    "n_rows": 1,
+    "error": null,
+    "sql_model_output": null,
+    "answer_model_output": null,
+    "answer": "6 หน่วยกิต (อ้างอิง: DSBA.pdf หน้า 36)",
+    "correct": true,
+    "why": "ตรง",
+    "citations": [
+      {
+        "source_file": "DSBA.pdf",
+        "pages": [
+          36
+        ]
+      }
+    ],
+    "citation_covered": true,
+    "grounded": true,
+    "seconds": 0.0
+  }
+]
