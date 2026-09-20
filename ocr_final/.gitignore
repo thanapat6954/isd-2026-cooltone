@@ -1,0 +1,12 @@
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+tmp/
+output/
+output_clean/
+data/input/
+*.db
+work/lab8b_*/
+work/_archive_candidates_*/
+

@@ -1,0 +1,22 @@
+{
+  "degraded-profile": {
+    "heldout": {
+      "correct": 1,
+      "total": 2
+    },
+    "stability": null,
+    "ocr": {
+      "alignment": null,
+      "attributes": {
+        "name_th": {
+          "label": "Thai name",
+          "n_items": 2,
+          "cer": null,
+          "wer": null,
+          "exact_match_acc": null,
+          "error_samples": []
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+easyocr
+matplotlib
+numpy
+opencv-python
+pdfplumber
+Pillow
+pydantic>=2,<3
+PyMuPDF
+pythainlp
+requests
+torch
+
