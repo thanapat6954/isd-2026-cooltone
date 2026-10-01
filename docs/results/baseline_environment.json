@@ -1,0 +1,32 @@
+{
+  "captured_at": "2026-10-01",
+  "branch": "audit/curriculum-challenge",
+  "python_launchers": {
+    "default": "Python 3.14.2",
+    "available_3_11": "C:/Users/thana/AppData/Local/Python/pythoncore-3.11-64/python.exe",
+    "repository_venv_before_setup": false
+  },
+  "initial_commands": [
+    {
+      "command": ".\\venv\\Scripts\\python.exe -m unittest discover -s tests -v",
+      "exit_code": 1,
+      "result": "PowerShell could not find the repository-local Python executable"
+    },
+    {
+      "command": ".\\venv\\Scripts\\python.exe .\\scr\\ocr_system\\lab7b_curriculum.py --check",
+      "exit_code": 1,
+      "result": "PowerShell could not find the repository-local Python executable"
+    },
+    {
+      "command": ".\\venv\\Scripts\\python.exe .\\run_lab8b.py --program all",
+      "exit_code": 1,
+      "result": "PowerShell could not find the repository-local Python executable"
+    },
+    {
+      "command": ".\\venv\\Scripts\\python.exe -m uvicorn lab10_fastapi.curriculum_app.main:app --host 127.0.0.1 --port 8010",
+      "exit_code": 1,
+      "result": "PowerShell could not find the repository-local Python executable"
+    }
+  ],
+  "interpretation": "This is a fresh-clone setup checkpoint, not yet a product-code failure. Lab09_report.md explicitly instructs the user to create a Python 3.11 venv and install dependencies."
+}

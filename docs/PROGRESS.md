@@ -16,14 +16,15 @@
 
 - Phase: **A0 — baseline execution and evidence capture**.
 - Done: located the real repository; confirmed it was clean on `week9` at `0b4a33a`; created feature branch `audit/curriculum-challenge`; inventoried the committed architecture in `docs/results/architecture_inventory.json`.
-- In progress: running the committed commands exactly as documented and saving their stdout/stderr to establish the Phase A failure baseline.
+- In progress: creating the documented Python 3.11 `venv` and installing committed requirements. The first command attempts failed because a fresh clone has no local environment; this is recorded in `docs/results/baseline_environment.json` and is not yet counted as a product defect.
 - Important: substantial version-support work exists in the separate working folder `C:/Users/thana/OneDrive/เอกสาร/ocr_final`; it has not yet been copied into this repository and must not be treated as the Phase A baseline.
-- **NEXT ACTION:** execute the documented tests, Lab 7 readiness check, `run_lab8b.py --program all`, and attempted web-app startup; save raw results under `docs/results/`, then write `docs/AUDIT_PHASE_A.md` before importing any fixes from the external working folder.
+- **NEXT ACTION:** run `py -3.11 -m venv venv`, install `ocr_final/requirements.txt`, then rerun tests, Lab 7 readiness, `run_lab8b.py --program all`, and web startup; save the post-setup results under `docs/results/`.
 
 ## 3. DONE LOG
 
 - 2026-10-01 — Created `audit/curriculum-challenge` from clean `week9` commit `0b4a33a`; added this initial `docs/PROGRESS.md` handoff file.
 - 2026-10-01 — Completed A0 architecture inventory at `docs/results/architecture_inventory.json`: committed baseline has five 2565/current profiles, but no BIT/2560 profiles, API, frontend, PDFs, or SQLite DBs; `clean_curriculum_db.py` is absent.
+- 2026-10-01 — Captured fresh-clone environment checkpoint in `docs/results/baseline_environment.json`: repository-local `venv` did not exist; Python 3.11 is available and the documented setup can proceed.
 
 ## 4. FINDINGS AND PROBLEMS
 
