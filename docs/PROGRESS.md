@@ -20,9 +20,10 @@
 - Done: copied all six authoritative PDFs into the gitignored input folder and recorded SHA-256 hashes in `docs/results/pdf_manifest.json`; confirmed embedded Thai text is font-corrupted and unsuitable as ground truth.
 - Done: froze all 12 prior OCR candidate outputs under `docs/results/a1_candidates/`; added `ocr_final/scripts/build_a1_review_set.py`; generated `docs/results/a1_ground_truth_review.json` with 180 candidate rows (30 per program-version, split 15 coop/15 no-coop). Every row is explicitly `candidate_only`, not ground truth.
 - Done: rendered/reused 36 unique plan pages at 180 DPI; checkpoint is `docs/results/a1_render_checkpoint.json`; visually inspected contact sheets for every program-version.
-- In progress: expanding A1 beyond plan tables to course-description and curriculum-structure pages, because prerequisite/category/type cannot be verified from plan pages alone.
+- Done: added exact-code course-description locator; 128/180 samples map to a page containing the same 8-digit code and a `PREREQUISITE` heading. The 52 unmatched samples are mainly wildcards, free-elective labels, combined alternatives, or rows without a matching description page.
+- In progress: rendering all unique located description pages at 180 DPI with a resumable checkpoint before prerequisite review.
 - Important: substantial version-support work exists in the separate working folder `C:/Users/thana/OneDrive/เอกสาร/ocr_final`; it has not yet been copied into this repository and must not be treated as the Phase A baseline.
-- **NEXT ACTION:** locate course-description pages for the sampled codes in each PDF, add prerequisite-heavy and Thai-English mixed pages to the review manifest, render them resumably, then populate ground-truth fields and implement the comparator.
+- **NEXT ACTION:** run `render_a1_description_pages.py`; inspect the rendered pages; populate prerequisite and course-header ground truth for the 128 located rows; classify the 52 unmatched rows as not-applicable, missing-description, wildcard, or extraction error.
 
 ## 3. DONE LOG
 
@@ -33,6 +34,7 @@
 - 2026-10-01 — Staged six local source PDFs (gitignored) and recorded authoritative program/version mapping plus SHA-256 hashes in `docs/results/pdf_manifest.json`; all files copied successfully.
 - 2026-10-01 — Added resumable A1 sampling/render tooling and generated 180 stratified candidate rows (30 for each of DSBA-2565, DSBA-2560, IT-2565, IT-2560, BIT-2565, BIT-2560). Candidates remain unverified pending page-image review.
 - 2026-10-01 — Rendered and visually inspected 36 early/middle/late plan pages. Found fragmented BIT-2565 page 35 rows and split DSBA-2560 cooperative alternatives; determined prerequisite/category audit needs course-description/structure pages.
+- 2026-10-01 — Added description-page locator and mapped 128/180 review samples by exact course code plus `PREREQUISITE` heading; 52 rows need explicit unmatched classification.
 
 ## 4. FINDINGS AND PROBLEMS
 

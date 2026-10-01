@@ -1,0 +1,1919 @@
+{
+  "method": "exact 8-digit code + PREREQUISITE heading; no value inference",
+  "located": 128,
+  "not_located": 52,
+  "items": [
+    {
+      "sample_id": "BIT-2560-coop-01",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036001",
+      "plan_page": 27,
+      "description_page": 171,
+      "all_description_page_matches": [
+        171
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-coop-02",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036021",
+      "plan_page": 27,
+      "description_page": 178,
+      "all_description_page_matches": [
+        178
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-coop-03",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036027",
+      "plan_page": 27,
+      "description_page": 180,
+      "all_description_page_matches": [
+        180
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-coop-04",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036081",
+      "plan_page": 27,
+      "description_page": 188,
+      "all_description_page_matches": [
+        188
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-coop-05",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036083",
+      "plan_page": 27,
+      "description_page": 189,
+      "all_description_page_matches": [
+        189
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-coop-06",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036007",
+      "plan_page": 29,
+      "description_page": 173,
+      "all_description_page_matches": [
+        173
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-coop-07",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036009",
+      "plan_page": 29,
+      "description_page": 173,
+      "all_description_page_matches": [
+        173
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-coop-08",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036010",
+      "plan_page": 29,
+      "description_page": 174,
+      "all_description_page_matches": [
+        174
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-coop-09",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036014",
+      "plan_page": 29,
+      "description_page": 175,
+      "all_description_page_matches": [
+        175
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-coop-10",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036025",
+      "plan_page": 29,
+      "description_page": 180,
+      "all_description_page_matches": [
+        180
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-coop-11",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036046 หรือ 06036047",
+      "plan_page": 30,
+      "description_page": 188,
+      "all_description_page_matches": [
+        188
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-coop-12",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036002",
+      "plan_page": 27,
+      "description_page": 171,
+      "all_description_page_matches": [
+        171
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-coop-13",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036004",
+      "plan_page": 27,
+      "description_page": 172,
+      "all_description_page_matches": [
+        172
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-coop-14",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036022",
+      "plan_page": 27,
+      "description_page": 179,
+      "all_description_page_matches": [
+        179
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-coop-15",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036082",
+      "plan_page": 27,
+      "description_page": 189,
+      "all_description_page_matches": [
+        189
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-01",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036001",
+      "plan_page": 23,
+      "description_page": 171,
+      "all_description_page_matches": [
+        171
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-02",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036021",
+      "plan_page": 23,
+      "description_page": 178,
+      "all_description_page_matches": [
+        178
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-03",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036027",
+      "plan_page": 23,
+      "description_page": 180,
+      "all_description_page_matches": [
+        180
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-04",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036081",
+      "plan_page": 23,
+      "description_page": 188,
+      "all_description_page_matches": [
+        188
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-05",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036083",
+      "plan_page": 23,
+      "description_page": 189,
+      "all_description_page_matches": [
+        189
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-06",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036007",
+      "plan_page": 25,
+      "description_page": 173,
+      "all_description_page_matches": [
+        173
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-07",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036009",
+      "plan_page": 25,
+      "description_page": 173,
+      "all_description_page_matches": [
+        173
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-08",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036010",
+      "plan_page": 25,
+      "description_page": 174,
+      "all_description_page_matches": [
+        174
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-09",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036014",
+      "plan_page": 25,
+      "description_page": 175,
+      "all_description_page_matches": [
+        175
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-10",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036025",
+      "plan_page": 25,
+      "description_page": 180,
+      "all_description_page_matches": [
+        180
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-11",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036019",
+      "plan_page": 26,
+      "description_page": 178,
+      "all_description_page_matches": [
+        178
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-12",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036086",
+      "plan_page": 26,
+      "description_page": 190,
+      "all_description_page_matches": [
+        190
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-13",
+      "source_pdf": "BIT-60.pdf",
+      "code": "วิชาเลือกเสรี 1",
+      "plan_page": 26,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-14",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036020",
+      "plan_page": 26,
+      "description_page": 178,
+      "all_description_page_matches": [
+        178
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-15",
+      "source_pdf": "BIT-60.pdf",
+      "code": "06036088",
+      "plan_page": 26,
+      "description_page": 191,
+      "all_description_page_matches": [
+        191
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2565-coop-01",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036100",
+      "plan_page": 31,
+      "description_page": 238,
+      "all_description_page_matches": [
+        238
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2565-coop-02",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036101",
+      "plan_page": 31,
+      "description_page": 238,
+      "all_description_page_matches": [
+        238
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2565-coop-03",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036118",
+      "plan_page": 31,
+      "description_page": 246,
+      "all_description_page_matches": [
+        246
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2565-coop-04",
+      "source_pdf": "BIT-65.pdf",
+      "code": "96641001",
+      "plan_page": 31,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "BIT-2565-coop-05",
+      "source_pdf": "BIT-65.pdf",
+      "code": "96641003",
+      "plan_page": 31,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "BIT-2565-coop-06",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036108",
+      "plan_page": 33,
+      "description_page": 242,
+      "all_description_page_matches": [
+        242
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2565-coop-07",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036111",
+      "plan_page": 33,
+      "description_page": 243,
+      "all_description_page_matches": [
+        243
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2565-coop-08",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036112",
+      "plan_page": 33,
+      "description_page": 243,
+      "all_description_page_matches": [
+        243,
+        249
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2565-coop-09",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036113",
+      "plan_page": 33,
+      "description_page": 244,
+      "all_description_page_matches": [
+        244
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2565-coop-10",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036124",
+      "plan_page": 33,
+      "description_page": 248,
+      "all_description_page_matches": [
+        248
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2565-coop-11",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036115",
+      "plan_page": 35,
+      "description_page": 245,
+      "all_description_page_matches": [
+        245
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2565-coop-12",
+      "source_pdf": "BIT-65.pdf",
+      "code": "96642033",
+      "plan_page": 35,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "BIT-2565-coop-13",
+      "source_pdf": "BIT-65.pdf",
+      "code": "96642033",
+      "plan_page": 35,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "BIT-2565-coop-14",
+      "source_pdf": "BIT-65.pdf",
+      "code": "96642033",
+      "plan_page": 35,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "BIT-2565-coop-15",
+      "source_pdf": "BIT-65.pdf",
+      "code": "วิชาเลือกเสรี 2",
+      "plan_page": 35,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-01",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036100",
+      "plan_page": 26,
+      "description_page": 238,
+      "all_description_page_matches": [
+        238
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-02",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036101",
+      "plan_page": 26,
+      "description_page": 238,
+      "all_description_page_matches": [
+        238
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-03",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036118",
+      "plan_page": 26,
+      "description_page": 246,
+      "all_description_page_matches": [
+        246
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-04",
+      "source_pdf": "BIT-65.pdf",
+      "code": "96641001",
+      "plan_page": 26,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-05",
+      "source_pdf": "BIT-65.pdf",
+      "code": "96641003",
+      "plan_page": 26,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-06",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036108",
+      "plan_page": 28,
+      "description_page": 242,
+      "all_description_page_matches": [
+        242
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-07",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036111",
+      "plan_page": 28,
+      "description_page": 243,
+      "all_description_page_matches": [
+        243
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-08",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036112",
+      "plan_page": 28,
+      "description_page": 243,
+      "all_description_page_matches": [
+        243,
+        249
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-09",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036113",
+      "plan_page": 28,
+      "description_page": 244,
+      "all_description_page_matches": [
+        244
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-10",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036124",
+      "plan_page": 28,
+      "description_page": 248,
+      "all_description_page_matches": [
+        248
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-11",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036xxx",
+      "plan_page": 30,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-12",
+      "source_pdf": "BIT-65.pdf",
+      "code": "06036xxx",
+      "plan_page": 30,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-13",
+      "source_pdf": "BIT-65.pdf",
+      "code": "วิชาเลือกเสรี 1",
+      "plan_page": 30,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-14",
+      "source_pdf": "BIT-65.pdf",
+      "code": "วิชาเลือกเสรี 2",
+      "plan_page": 30,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-15",
+      "source_pdf": "BIT-65.pdf",
+      "code": "96644007",
+      "plan_page": 26,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-01",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026100",
+      "plan_page": 30,
+      "description_page": 176,
+      "all_description_page_matches": [
+        176
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-02",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026104",
+      "plan_page": 30,
+      "description_page": 178,
+      "all_description_page_matches": [
+        178,
+        179,
+        182
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-03",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "90101007",
+      "plan_page": 30,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-04",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "90201001",
+      "plan_page": 30,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-05",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "90401013",
+      "plan_page": 30,
+      "description_page": 180,
+      "all_description_page_matches": [
+        180,
+        191,
+        198
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-06",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026112",
+      "plan_page": 32,
+      "description_page": 182,
+      "all_description_page_matches": [
+        182,
+        196
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-07",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026113",
+      "plan_page": 32,
+      "description_page": 182,
+      "all_description_page_matches": [
+        182
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-08",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026114",
+      "plan_page": 32,
+      "description_page": 183,
+      "all_description_page_matches": [
+        183
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-09",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026115",
+      "plan_page": 32,
+      "description_page": 183,
+      "all_description_page_matches": [
+        183,
+        186
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-10",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026116",
+      "plan_page": 32,
+      "description_page": 184,
+      "all_description_page_matches": [
+        184,
+        188
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-11",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026130",
+      "plan_page": 34,
+      "description_page": 190,
+      "all_description_page_matches": [
+        190
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-12",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026131",
+      "plan_page": 34,
+      "description_page": 190,
+      "all_description_page_matches": [
+        190
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-13",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026101",
+      "plan_page": 30,
+      "description_page": 176,
+      "all_description_page_matches": [
+        176
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-14",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026105",
+      "plan_page": 30,
+      "description_page": 178,
+      "all_description_page_matches": [
+        178
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-15",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026106",
+      "plan_page": 30,
+      "description_page": 179,
+      "all_description_page_matches": [
+        179,
+        181,
+        185,
+        197,
+        198
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-01",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026100",
+      "plan_page": 25,
+      "description_page": 176,
+      "all_description_page_matches": [
+        176
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-02",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026104",
+      "plan_page": 25,
+      "description_page": 178,
+      "all_description_page_matches": [
+        178,
+        179,
+        182
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-03",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "90101007",
+      "plan_page": 25,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-04",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "90201001",
+      "plan_page": 25,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-05",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "90401013",
+      "plan_page": 25,
+      "description_page": 180,
+      "all_description_page_matches": [
+        180,
+        191,
+        198
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-06",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026112",
+      "plan_page": 27,
+      "description_page": 182,
+      "all_description_page_matches": [
+        182,
+        196
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-07",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026113",
+      "plan_page": 27,
+      "description_page": 182,
+      "all_description_page_matches": [
+        182
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-08",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026114",
+      "plan_page": 27,
+      "description_page": 183,
+      "all_description_page_matches": [
+        183
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-09",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026115",
+      "plan_page": 27,
+      "description_page": 183,
+      "all_description_page_matches": [
+        183,
+        186
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-10",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026116",
+      "plan_page": 27,
+      "description_page": 184,
+      "all_description_page_matches": [
+        184,
+        188
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-11",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "06026128",
+      "plan_page": 29,
+      "description_page": 189,
+      "all_description_page_matches": [
+        189
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-12",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "060261xx",
+      "plan_page": 29,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-13",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "วิชาเลือกเสรี 1",
+      "plan_page": 29,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-14",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "วิชาเลือกเสรี 2",
+      "plan_page": 29,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-15",
+      "source_pdf": "DSBA-60.pdf",
+      "code": "90xxxxxx",
+      "plan_page": 29,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "DSBA-2565-coop-01",
+      "source_pdf": "DSBA.pdf",
+      "code": "06026200",
+      "plan_page": 30,
+      "description_page": 314,
+      "all_description_page_matches": [
+        314
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-coop-02",
+      "source_pdf": "DSBA.pdf",
+      "code": "06026202",
+      "plan_page": 30,
+      "description_page": 315,
+      "all_description_page_matches": [
+        315
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-coop-03",
+      "source_pdf": "DSBA.pdf",
+      "code": "06066101",
+      "plan_page": 30,
+      "description_page": 317,
+      "all_description_page_matches": [
+        317,
+        318
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-coop-04",
+      "source_pdf": "DSBA.pdf",
+      "code": "06066303",
+      "plan_page": 30,
+      "description_page": 319,
+      "all_description_page_matches": [
+        319
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-coop-05",
+      "source_pdf": "DSBA.pdf",
+      "code": "90641001",
+      "plan_page": 30,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "DSBA-2565-coop-06",
+      "source_pdf": "DSBA.pdf",
+      "code": "06026204",
+      "plan_page": 33,
+      "description_page": 316,
+      "all_description_page_matches": [
+        316
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-coop-07",
+      "source_pdf": "DSBA.pdf",
+      "code": "06026207",
+      "plan_page": 33,
+      "description_page": 321,
+      "all_description_page_matches": [
+        321
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-coop-08",
+      "source_pdf": "DSBA.pdf",
+      "code": "06026208",
+      "plan_page": 33,
+      "description_page": 322,
+      "all_description_page_matches": [
+        322
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-coop-09",
+      "source_pdf": "DSBA.pdf",
+      "code": "06026209",
+      "plan_page": 33,
+      "description_page": 322,
+      "all_description_page_matches": [
+        322
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-coop-10",
+      "source_pdf": "DSBA.pdf",
+      "code": "06026210",
+      "plan_page": 33,
+      "description_page": 322,
+      "all_description_page_matches": [
+        322
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-coop-11",
+      "source_pdf": "DSBA.pdf",
+      "code": "06026215",
+      "plan_page": 36,
+      "description_page": 325,
+      "all_description_page_matches": [
+        325
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-coop-12",
+      "source_pdf": "DSBA.pdf",
+      "code": "9064xxxx",
+      "plan_page": 36,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "DSBA-2565-coop-13",
+      "source_pdf": "DSBA.pdf",
+      "code": "วิชาเลือกเสรี 1",
+      "plan_page": 36,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "DSBA-2565-coop-14",
+      "source_pdf": "DSBA.pdf",
+      "code": "วิชาเลือกเสรี 2",
+      "plan_page": 36,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "DSBA-2565-coop-15",
+      "source_pdf": "DSBA.pdf",
+      "code": "06026259",
+      "plan_page": 36,
+      "description_page": 341,
+      "all_description_page_matches": [
+        341
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-01",
+      "source_pdf": "DSBA.pdf",
+      "code": "06026200",
+      "plan_page": 23,
+      "description_page": 314,
+      "all_description_page_matches": [
+        314
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-02",
+      "source_pdf": "DSBA.pdf",
+      "code": "06026202",
+      "plan_page": 23,
+      "description_page": 315,
+      "all_description_page_matches": [
+        315
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-03",
+      "source_pdf": "DSBA.pdf",
+      "code": "06066101",
+      "plan_page": 23,
+      "description_page": 317,
+      "all_description_page_matches": [
+        317,
+        318
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-04",
+      "source_pdf": "DSBA.pdf",
+      "code": "06066303",
+      "plan_page": 23,
+      "description_page": 319,
+      "all_description_page_matches": [
+        319
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-05",
+      "source_pdf": "DSBA.pdf",
+      "code": "90641001",
+      "plan_page": 23,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-06",
+      "source_pdf": "DSBA.pdf",
+      "code": "06026204",
+      "plan_page": 26,
+      "description_page": 316,
+      "all_description_page_matches": [
+        316
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-07",
+      "source_pdf": "DSBA.pdf",
+      "code": "06026207",
+      "plan_page": 26,
+      "description_page": 321,
+      "all_description_page_matches": [
+        321
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-08",
+      "source_pdf": "DSBA.pdf",
+      "code": "06026208",
+      "plan_page": 26,
+      "description_page": 322,
+      "all_description_page_matches": [
+        322
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-09",
+      "source_pdf": "DSBA.pdf",
+      "code": "06026209",
+      "plan_page": 26,
+      "description_page": 322,
+      "all_description_page_matches": [
+        322
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-10",
+      "source_pdf": "DSBA.pdf",
+      "code": "06026210",
+      "plan_page": 26,
+      "description_page": 322,
+      "all_description_page_matches": [
+        322
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-11",
+      "source_pdf": "DSBA.pdf",
+      "code": "06026215",
+      "plan_page": 29,
+      "description_page": 325,
+      "all_description_page_matches": [
+        325
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-12",
+      "source_pdf": "DSBA.pdf",
+      "code": "06026xxx",
+      "plan_page": 29,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-13",
+      "source_pdf": "DSBA.pdf",
+      "code": "9064xxxx",
+      "plan_page": 29,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-14",
+      "source_pdf": "DSBA.pdf",
+      "code": "วิชาเลือกเสรี 1",
+      "plan_page": 29,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-15",
+      "source_pdf": "DSBA.pdf",
+      "code": "วิชาเลือกเสรี 2",
+      "plan_page": 29,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2560-coop-01",
+      "source_pdf": "IT-60.pdf",
+      "code": "06016301",
+      "plan_page": 34,
+      "description_page": 223,
+      "all_description_page_matches": [
+        223,
+        253
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2560-coop-02",
+      "source_pdf": "IT-60.pdf",
+      "code": "06016314",
+      "plan_page": 34,
+      "description_page": 229,
+      "all_description_page_matches": [
+        229,
+        230
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2560-coop-03",
+      "source_pdf": "IT-60.pdf",
+      "code": "06016319",
+      "plan_page": 34,
+      "description_page": 231,
+      "all_description_page_matches": [
+        231,
+        252,
+        254
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2560-coop-04",
+      "source_pdf": "IT-60.pdf",
+      "code": "90101007",
+      "plan_page": 34,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2560-coop-05",
+      "source_pdf": "IT-60.pdf",
+      "code": "90201001",
+      "plan_page": 34,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2560-coop-06",
+      "source_pdf": "IT-60.pdf",
+      "code": "06016309",
+      "plan_page": 37,
+      "description_page": 227,
+      "all_description_page_matches": [
+        227
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2560-coop-07",
+      "source_pdf": "IT-60.pdf",
+      "code": "06016310",
+      "plan_page": 37,
+      "description_page": 227,
+      "all_description_page_matches": [
+        227
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2560-coop-08",
+      "source_pdf": "IT-60.pdf",
+      "code": "90304004",
+      "plan_page": 37,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2560-coop-09",
+      "source_pdf": "IT-60.pdf",
+      "code": "06016323",
+      "plan_page": 37,
+      "description_page": 233,
+      "all_description_page_matches": [
+        233
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2560-coop-10",
+      "source_pdf": "IT-60.pdf",
+      "code": "06016324",
+      "plan_page": 37,
+      "description_page": 233,
+      "all_description_page_matches": [
+        233
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2560-coop-11",
+      "source_pdf": "IT-60.pdf",
+      "code": "90401011",
+      "plan_page": 40,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2560-coop-12",
+      "source_pdf": "IT-60.pdf",
+      "code": "060163xx",
+      "plan_page": 40,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2560-coop-13",
+      "source_pdf": "IT-60.pdf",
+      "code": "90xxxxxx",
+      "plan_page": 40,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2560-coop-14",
+      "source_pdf": "IT-60.pdf",
+      "code": "90xxxxxx",
+      "plan_page": 40,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2560-coop-15",
+      "source_pdf": "IT-60.pdf",
+      "code": "วิชาเลือกเสรี 1",
+      "plan_page": 40,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-01",
+      "source_pdf": "IT-60.pdf",
+      "code": "06016301",
+      "plan_page": 27,
+      "description_page": 223,
+      "all_description_page_matches": [
+        223,
+        253
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-02",
+      "source_pdf": "IT-60.pdf",
+      "code": "06016314",
+      "plan_page": 27,
+      "description_page": 229,
+      "all_description_page_matches": [
+        229,
+        230
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-03",
+      "source_pdf": "IT-60.pdf",
+      "code": "06016319",
+      "plan_page": 27,
+      "description_page": 231,
+      "all_description_page_matches": [
+        231,
+        252,
+        254
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-04",
+      "source_pdf": "IT-60.pdf",
+      "code": "90101007",
+      "plan_page": 27,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-05",
+      "source_pdf": "IT-60.pdf",
+      "code": "90201001",
+      "plan_page": 27,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-06",
+      "source_pdf": "IT-60.pdf",
+      "code": "06016309",
+      "plan_page": 30,
+      "description_page": 227,
+      "all_description_page_matches": [
+        227
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-07",
+      "source_pdf": "IT-60.pdf",
+      "code": "06016310",
+      "plan_page": 30,
+      "description_page": 227,
+      "all_description_page_matches": [
+        227
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-08",
+      "source_pdf": "IT-60.pdf",
+      "code": "90304004",
+      "plan_page": 30,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-09",
+      "source_pdf": "IT-60.pdf",
+      "code": "06016323",
+      "plan_page": 30,
+      "description_page": 233,
+      "all_description_page_matches": [
+        233
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-10",
+      "source_pdf": "IT-60.pdf",
+      "code": "06016324",
+      "plan_page": 30,
+      "description_page": 233,
+      "all_description_page_matches": [
+        233
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-11",
+      "source_pdf": "IT-60.pdf",
+      "code": "90401011",
+      "plan_page": 33,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-12",
+      "source_pdf": "IT-60.pdf",
+      "code": "06016330",
+      "plan_page": 33,
+      "description_page": 236,
+      "all_description_page_matches": [
+        236
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-13",
+      "source_pdf": "IT-60.pdf",
+      "code": "06016340",
+      "plan_page": 33,
+      "description_page": 242,
+      "all_description_page_matches": [
+        242
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-14",
+      "source_pdf": "IT-60.pdf",
+      "code": "06016350",
+      "plan_page": 33,
+      "description_page": 247,
+      "all_description_page_matches": [
+        247
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-15",
+      "source_pdf": "IT-60.pdf",
+      "code": "90401013",
+      "plan_page": 27,
+      "description_page": 225,
+      "all_description_page_matches": [
+        225,
+        259,
+        261
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-coop-01",
+      "source_pdf": "IT.pdf",
+      "code": "06016401",
+      "plan_page": 38,
+      "description_page": 324,
+      "all_description_page_matches": [
+        324
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-coop-02",
+      "source_pdf": "IT.pdf",
+      "code": "06016402",
+      "plan_page": 38,
+      "description_page": 324,
+      "all_description_page_matches": [
+        324
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-coop-03",
+      "source_pdf": "IT.pdf",
+      "code": "06016411",
+      "plan_page": 38,
+      "description_page": 328,
+      "all_description_page_matches": [
+        328
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-coop-04",
+      "source_pdf": "IT.pdf",
+      "code": "06066303",
+      "plan_page": 38,
+      "description_page": 359,
+      "all_description_page_matches": [
+        359
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-coop-05",
+      "source_pdf": "IT.pdf",
+      "code": "90641001",
+      "plan_page": 38,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2565-coop-06",
+      "source_pdf": "IT.pdf",
+      "code": "06016405",
+      "plan_page": 41,
+      "description_page": 325,
+      "all_description_page_matches": [
+        325
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-coop-07",
+      "source_pdf": "IT.pdf",
+      "code": "06016410",
+      "plan_page": 41,
+      "description_page": 327,
+      "all_description_page_matches": [
+        327
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-coop-08",
+      "source_pdf": "IT.pdf",
+      "code": "06016412",
+      "plan_page": 41,
+      "description_page": 328,
+      "all_description_page_matches": [
+        328
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-coop-09",
+      "source_pdf": "IT.pdf",
+      "code": "06066302",
+      "plan_page": 41,
+      "description_page": 336,
+      "all_description_page_matches": [
+        336,
+        342,
+        359
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-coop-10",
+      "source_pdf": "IT.pdf",
+      "code": "06016414",
+      "plan_page": 41,
+      "description_page": 329,
+      "all_description_page_matches": [
+        329
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-coop-11",
+      "source_pdf": "IT.pdf",
+      "code": "06016407",
+      "plan_page": 44,
+      "description_page": 326,
+      "all_description_page_matches": [
+        326
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-coop-12",
+      "source_pdf": "IT.pdf",
+      "code": "06066100",
+      "plan_page": 44,
+      "description_page": 357,
+      "all_description_page_matches": [
+        357
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-coop-13",
+      "source_pdf": "IT.pdf",
+      "code": "90642033",
+      "plan_page": 44,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2565-coop-14",
+      "source_pdf": "IT.pdf",
+      "code": "90642033",
+      "plan_page": 44,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2565-coop-15",
+      "source_pdf": "IT.pdf",
+      "code": "9064xxxx",
+      "plan_page": 44,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-01",
+      "source_pdf": "IT.pdf",
+      "code": "06016401",
+      "plan_page": 31,
+      "description_page": 324,
+      "all_description_page_matches": [
+        324
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-02",
+      "source_pdf": "IT.pdf",
+      "code": "06016402",
+      "plan_page": 31,
+      "description_page": 324,
+      "all_description_page_matches": [
+        324
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-03",
+      "source_pdf": "IT.pdf",
+      "code": "06016411",
+      "plan_page": 31,
+      "description_page": 328,
+      "all_description_page_matches": [
+        328
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-04",
+      "source_pdf": "IT.pdf",
+      "code": "06066303",
+      "plan_page": 31,
+      "description_page": 359,
+      "all_description_page_matches": [
+        359
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-05",
+      "source_pdf": "IT.pdf",
+      "code": "90641001",
+      "plan_page": 31,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-06",
+      "source_pdf": "IT.pdf",
+      "code": "06016405",
+      "plan_page": 34,
+      "description_page": 325,
+      "all_description_page_matches": [
+        325
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-07",
+      "source_pdf": "IT.pdf",
+      "code": "06016410",
+      "plan_page": 34,
+      "description_page": 327,
+      "all_description_page_matches": [
+        327
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-08",
+      "source_pdf": "IT.pdf",
+      "code": "06016412",
+      "plan_page": 34,
+      "description_page": 328,
+      "all_description_page_matches": [
+        328
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-09",
+      "source_pdf": "IT.pdf",
+      "code": "06066302",
+      "plan_page": 34,
+      "description_page": 336,
+      "all_description_page_matches": [
+        336,
+        342,
+        359
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-10",
+      "source_pdf": "IT.pdf",
+      "code": "06016414",
+      "plan_page": 34,
+      "description_page": 329,
+      "all_description_page_matches": [
+        329
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-11",
+      "source_pdf": "IT.pdf",
+      "code": "06016406",
+      "plan_page": 37,
+      "description_page": 326,
+      "all_description_page_matches": [
+        326
+      ],
+      "status": "located"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-12",
+      "source_pdf": "IT.pdf",
+      "code": "060164xx",
+      "plan_page": 37,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-13",
+      "source_pdf": "IT.pdf",
+      "code": "90643021",
+      "plan_page": 37,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-14",
+      "source_pdf": "IT.pdf",
+      "code": "9064xxxx",
+      "plan_page": 37,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-15",
+      "source_pdf": "IT.pdf",
+      "code": "วิชาเลือกเสรี 1",
+      "plan_page": 37,
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
+    }
+  ]
+}
