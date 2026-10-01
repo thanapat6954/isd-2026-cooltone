@@ -5,34 +5,34 @@
     "visually_verified"
   ],
   "candidate_rows": 180,
-  "approved_rows": 0,
-  "unapproved_rows": 180,
+  "approved_rows": 18,
+  "unapproved_rows": 162,
   "overall": {
     "fields": {
       "code": {
-        "correct": 0,
-        "n": 0,
-        "accuracy": null
+        "correct": 18,
+        "n": 18,
+        "accuracy": 1.0
       },
       "name_th": {
-        "correct": 0,
-        "n": 0,
-        "accuracy": null
+        "correct": 13,
+        "n": 18,
+        "accuracy": 0.722222
       },
       "name_en": {
-        "correct": 0,
-        "n": 0,
-        "accuracy": null
+        "correct": 16,
+        "n": 18,
+        "accuracy": 0.888889
       },
       "credits": {
-        "correct": 0,
-        "n": 0,
-        "accuracy": null
+        "correct": 18,
+        "n": 18,
+        "accuracy": 1.0
       },
       "prerequisite": {
         "correct": 0,
-        "n": 0,
-        "accuracy": null
+        "n": 18,
+        "accuracy": 0.0
       },
       "category": {
         "correct": 0,
@@ -45,48 +45,470 @@
         "accuracy": null
       },
       "year": {
-        "correct": 0,
-        "n": 0,
-        "accuracy": null
+        "correct": 18,
+        "n": 18,
+        "accuracy": 1.0
       },
       "semester": {
-        "correct": 0,
-        "n": 0,
-        "accuracy": null
+        "correct": 18,
+        "n": 18,
+        "accuracy": 1.0
       },
       "plan": {
-        "correct": 0,
-        "n": 0,
-        "accuracy": null
+        "correct": 18,
+        "n": 18,
+        "accuracy": 1.0
       },
       "page_number": {
-        "correct": 0,
-        "n": 0,
-        "accuracy": null
+        "correct": 18,
+        "n": 18,
+        "accuracy": 1.0
       },
       "lecture_hours": {
-        "correct": 0,
-        "n": 0,
-        "accuracy": null
+        "correct": 18,
+        "n": 18,
+        "accuracy": 1.0
       },
       "lab_hours": {
-        "correct": 0,
-        "n": 0,
-        "accuracy": null
+        "correct": 18,
+        "n": 18,
+        "accuracy": 1.0
       },
       "self_study_hours": {
-        "correct": 0,
-        "n": 0,
-        "accuracy": null
+        "correct": 18,
+        "n": 18,
+        "accuracy": 1.0
       }
     }
   },
-  "per_program_version": {},
+  "per_program_version": {
+    "BIT-2560": {
+      "approved_rows": 3,
+      "fields": {
+        "code": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 1.0
+        },
+        "name_th": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 1.0
+        },
+        "name_en": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 1.0
+        },
+        "credits": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 1.0
+        },
+        "prerequisite": {
+          "correct": 0,
+          "n": 3,
+          "accuracy": 0.0
+        },
+        "category": {
+          "correct": 0,
+          "n": 0,
+          "accuracy": null
+        },
+        "type": {
+          "correct": 0,
+          "n": 0,
+          "accuracy": null
+        },
+        "year": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 1.0
+        },
+        "semester": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 1.0
+        },
+        "plan": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 1.0
+        },
+        "page_number": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 1.0
+        },
+        "lecture_hours": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 1.0
+        },
+        "lab_hours": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 1.0
+        },
+        "self_study_hours": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 1.0
+        }
+      }
+    },
+    "DSBA-2560": {
+      "approved_rows": 9,
+      "fields": {
+        "code": {
+          "correct": 9,
+          "n": 9,
+          "accuracy": 1.0
+        },
+        "name_th": {
+          "correct": 9,
+          "n": 9,
+          "accuracy": 1.0
+        },
+        "name_en": {
+          "correct": 9,
+          "n": 9,
+          "accuracy": 1.0
+        },
+        "credits": {
+          "correct": 9,
+          "n": 9,
+          "accuracy": 1.0
+        },
+        "prerequisite": {
+          "correct": 0,
+          "n": 9,
+          "accuracy": 0.0
+        },
+        "category": {
+          "correct": 0,
+          "n": 0,
+          "accuracy": null
+        },
+        "type": {
+          "correct": 0,
+          "n": 0,
+          "accuracy": null
+        },
+        "year": {
+          "correct": 9,
+          "n": 9,
+          "accuracy": 1.0
+        },
+        "semester": {
+          "correct": 9,
+          "n": 9,
+          "accuracy": 1.0
+        },
+        "plan": {
+          "correct": 9,
+          "n": 9,
+          "accuracy": 1.0
+        },
+        "page_number": {
+          "correct": 9,
+          "n": 9,
+          "accuracy": 1.0
+        },
+        "lecture_hours": {
+          "correct": 9,
+          "n": 9,
+          "accuracy": 1.0
+        },
+        "lab_hours": {
+          "correct": 9,
+          "n": 9,
+          "accuracy": 1.0
+        },
+        "self_study_hours": {
+          "correct": 9,
+          "n": 9,
+          "accuracy": 1.0
+        }
+      }
+    },
+    "IT-2560": {
+      "approved_rows": 5,
+      "fields": {
+        "code": {
+          "correct": 5,
+          "n": 5,
+          "accuracy": 1.0
+        },
+        "name_th": {
+          "correct": 0,
+          "n": 5,
+          "accuracy": 0.0
+        },
+        "name_en": {
+          "correct": 3,
+          "n": 5,
+          "accuracy": 0.6
+        },
+        "credits": {
+          "correct": 5,
+          "n": 5,
+          "accuracy": 1.0
+        },
+        "prerequisite": {
+          "correct": 0,
+          "n": 5,
+          "accuracy": 0.0
+        },
+        "category": {
+          "correct": 0,
+          "n": 0,
+          "accuracy": null
+        },
+        "type": {
+          "correct": 0,
+          "n": 0,
+          "accuracy": null
+        },
+        "year": {
+          "correct": 5,
+          "n": 5,
+          "accuracy": 1.0
+        },
+        "semester": {
+          "correct": 5,
+          "n": 5,
+          "accuracy": 1.0
+        },
+        "plan": {
+          "correct": 5,
+          "n": 5,
+          "accuracy": 1.0
+        },
+        "page_number": {
+          "correct": 5,
+          "n": 5,
+          "accuracy": 1.0
+        },
+        "lecture_hours": {
+          "correct": 5,
+          "n": 5,
+          "accuracy": 1.0
+        },
+        "lab_hours": {
+          "correct": 5,
+          "n": 5,
+          "accuracy": 1.0
+        },
+        "self_study_hours": {
+          "correct": 5,
+          "n": 5,
+          "accuracy": 1.0
+        }
+      }
+    },
+    "IT-2565": {
+      "approved_rows": 1,
+      "fields": {
+        "code": {
+          "correct": 1,
+          "n": 1,
+          "accuracy": 1.0
+        },
+        "name_th": {
+          "correct": 1,
+          "n": 1,
+          "accuracy": 1.0
+        },
+        "name_en": {
+          "correct": 1,
+          "n": 1,
+          "accuracy": 1.0
+        },
+        "credits": {
+          "correct": 1,
+          "n": 1,
+          "accuracy": 1.0
+        },
+        "prerequisite": {
+          "correct": 0,
+          "n": 1,
+          "accuracy": 0.0
+        },
+        "category": {
+          "correct": 0,
+          "n": 0,
+          "accuracy": null
+        },
+        "type": {
+          "correct": 0,
+          "n": 0,
+          "accuracy": null
+        },
+        "year": {
+          "correct": 1,
+          "n": 1,
+          "accuracy": 1.0
+        },
+        "semester": {
+          "correct": 1,
+          "n": 1,
+          "accuracy": 1.0
+        },
+        "plan": {
+          "correct": 1,
+          "n": 1,
+          "accuracy": 1.0
+        },
+        "page_number": {
+          "correct": 1,
+          "n": 1,
+          "accuracy": 1.0
+        },
+        "lecture_hours": {
+          "correct": 1,
+          "n": 1,
+          "accuracy": 1.0
+        },
+        "lab_hours": {
+          "correct": 1,
+          "n": 1,
+          "accuracy": 1.0
+        },
+        "self_study_hours": {
+          "correct": 1,
+          "n": 1,
+          "accuracy": 1.0
+        }
+      }
+    }
+  },
   "row_quality": {
-    "wrong_rows": [],
-    "wrong_row_count": 0,
-    "candidate_missing_value_rows": [],
-    "candidate_missing_value_row_count": 0,
+    "wrong_rows": [
+      {
+        "sample_id": "BIT-2560-coop-08",
+        "fields": [
+          "prerequisite"
+        ]
+      },
+      {
+        "sample_id": "BIT-2560-no-coop-08",
+        "fields": [
+          "prerequisite"
+        ]
+      },
+      {
+        "sample_id": "BIT-2560-no-coop-14",
+        "fields": [
+          "prerequisite"
+        ]
+      },
+      {
+        "sample_id": "DSBA-2560-coop-07",
+        "fields": [
+          "prerequisite"
+        ]
+      },
+      {
+        "sample_id": "DSBA-2560-coop-08",
+        "fields": [
+          "prerequisite"
+        ]
+      },
+      {
+        "sample_id": "DSBA-2560-coop-09",
+        "fields": [
+          "prerequisite"
+        ]
+      },
+      {
+        "sample_id": "DSBA-2560-coop-10",
+        "fields": [
+          "prerequisite"
+        ]
+      },
+      {
+        "sample_id": "DSBA-2560-no-coop-07",
+        "fields": [
+          "prerequisite"
+        ]
+      },
+      {
+        "sample_id": "DSBA-2560-no-coop-08",
+        "fields": [
+          "prerequisite"
+        ]
+      },
+      {
+        "sample_id": "DSBA-2560-no-coop-09",
+        "fields": [
+          "prerequisite"
+        ]
+      },
+      {
+        "sample_id": "DSBA-2560-no-coop-10",
+        "fields": [
+          "prerequisite"
+        ]
+      },
+      {
+        "sample_id": "DSBA-2560-no-coop-11",
+        "fields": [
+          "prerequisite"
+        ]
+      },
+      {
+        "sample_id": "IT-2560-coop-09",
+        "fields": [
+          "name_th",
+          "name_en",
+          "prerequisite"
+        ]
+      },
+      {
+        "sample_id": "IT-2560-no-coop-09",
+        "fields": [
+          "name_th",
+          "name_en",
+          "prerequisite"
+        ]
+      },
+      {
+        "sample_id": "IT-2560-no-coop-12",
+        "fields": [
+          "name_th",
+          "prerequisite"
+        ]
+      },
+      {
+        "sample_id": "IT-2560-no-coop-13",
+        "fields": [
+          "name_th",
+          "prerequisite"
+        ]
+      },
+      {
+        "sample_id": "IT-2560-no-coop-14",
+        "fields": [
+          "name_th",
+          "prerequisite"
+        ]
+      },
+      {
+        "sample_id": "IT-2565-coop-11",
+        "fields": [
+          "prerequisite"
+        ]
+      }
+    ],
+    "wrong_row_count": 18,
+    "candidate_missing_value_rows": [
+      "DSBA-2560-no-coop-11",
+      "IT-2560-no-coop-12",
+      "IT-2560-no-coop-13",
+      "IT-2560-no-coop-14"
+    ],
+    "candidate_missing_value_row_count": 4,
     "duplicate_groups": [
       {
         "identity": [
@@ -135,8 +557,8 @@
     ],
     "duplicate_group_count": 4,
     "garbled_thai_rows": 0,
-    "garbled_thai_n": 0,
-    "garbled_thai_rate": null
+    "garbled_thai_n": 18,
+    "garbled_thai_rate": 0.0
   },
   "limitations": [
     "This stratified candidate sample cannot measure full-database spurious or missing-row recall.",

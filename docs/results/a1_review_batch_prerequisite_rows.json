@@ -1,0 +1,133 @@
+{
+  "batch_id": "a1-prerequisite-rows-2026-10-01",
+  "method": "Manual visual comparison of each plan-table row and its rendered course-description prerequisite page",
+  "copy_candidate_fields": [
+    "code",
+    "name_th",
+    "name_en",
+    "credits",
+    "year",
+    "semester",
+    "page_number"
+  ],
+  "verified_fields": [
+    "code",
+    "name_th",
+    "name_en",
+    "credits",
+    "prerequisite",
+    "year",
+    "semester",
+    "plan",
+    "page_number"
+  ],
+  "items": [
+    {
+      "sample_id": "BIT-2560-coop-08",
+      "prerequisite": "06036006",
+      "evidence": ["BIT-60.pdf p.29 plan", "BIT-60.pdf p.174 description"]
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-08",
+      "prerequisite": "06036006",
+      "evidence": ["BIT-60.pdf p.25 plan", "BIT-60.pdf p.174 description"]
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-14",
+      "prerequisite": "06036019",
+      "evidence": ["BIT-60.pdf p.26 plan", "BIT-60.pdf p.178 description"]
+    },
+    {
+      "sample_id": "DSBA-2560-coop-07",
+      "prerequisite": "06026104",
+      "evidence": ["DSBA-60.pdf p.32 plan", "DSBA-60.pdf p.182 description"]
+    },
+    {
+      "sample_id": "DSBA-2560-coop-08",
+      "prerequisite": "06026108",
+      "evidence": ["DSBA-60.pdf p.32 plan", "DSBA-60.pdf p.183 description"]
+    },
+    {
+      "sample_id": "DSBA-2560-coop-09",
+      "prerequisite": "06026108",
+      "evidence": ["DSBA-60.pdf p.32 plan", "DSBA-60.pdf p.183 description"]
+    },
+    {
+      "sample_id": "DSBA-2560-coop-10",
+      "prerequisite": "06026103",
+      "evidence": ["DSBA-60.pdf p.32 plan", "DSBA-60.pdf p.184 description"]
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-07",
+      "prerequisite": "06026104",
+      "evidence": ["DSBA-60.pdf p.27 plan", "DSBA-60.pdf p.182 description"]
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-08",
+      "prerequisite": "06026108",
+      "evidence": ["DSBA-60.pdf p.27 plan", "DSBA-60.pdf p.183 description"]
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-09",
+      "prerequisite": "06026108",
+      "evidence": ["DSBA-60.pdf p.27 plan", "DSBA-60.pdf p.183 description"]
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-10",
+      "prerequisite": "06026103",
+      "evidence": ["DSBA-60.pdf p.27 plan", "DSBA-60.pdf p.184 description"]
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-11",
+      "prerequisite": "06026127",
+      "evidence": ["DSBA-60.pdf p.29 plan", "DSBA-60.pdf p.189 description"]
+    },
+    {
+      "sample_id": "IT-2560-coop-09",
+      "prerequisite": "06016317",
+      "overrides": {
+        "name_th": "การโปรแกรมอุปกรณ์เคลื่อนที่",
+        "name_en": "MOBILE DEVICE PROGRAMMING"
+      },
+      "evidence": ["IT-60.pdf p.37 plan", "IT-60.pdf p.233 description"]
+    },
+    {
+      "sample_id": "IT-2560-no-coop-09",
+      "prerequisite": "06016317",
+      "overrides": {
+        "name_th": "การโปรแกรมอุปกรณ์เคลื่อนที่",
+        "name_en": "MOBILE DEVICE PROGRAMMING"
+      },
+      "evidence": ["IT-60.pdf p.30 plan", "IT-60.pdf p.233 description"]
+    },
+    {
+      "sample_id": "IT-2560-no-coop-12",
+      "prerequisite": "06016329",
+      "overrides": {
+        "name_th": "โครงงานทางด้านวิศวกรรมซอฟต์แวร์ 2"
+      },
+      "evidence": ["IT-60.pdf p.33 plan", "IT-60.pdf p.236 description"]
+    },
+    {
+      "sample_id": "IT-2560-no-coop-13",
+      "prerequisite": "06016339",
+      "overrides": {
+        "name_th": "โครงงานทางด้านเทคโนโลยีเครือข่ายและระบบ 2"
+      },
+      "evidence": ["IT-60.pdf p.33 plan", "IT-60.pdf p.242 description"]
+    },
+    {
+      "sample_id": "IT-2560-no-coop-14",
+      "prerequisite": "06016349",
+      "overrides": {
+        "name_th": "โครงงานทางด้านการพัฒนาสื่อประสมและเกม 2"
+      },
+      "evidence": ["IT-60.pdf p.33 plan", "IT-60.pdf p.247 description"]
+    },
+    {
+      "sample_id": "IT-2565-coop-11",
+      "prerequisite": "06016406",
+      "evidence": ["IT.pdf p.44 plan", "IT.pdf p.326 description"]
+    }
+  ]
+}

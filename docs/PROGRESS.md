@@ -24,8 +24,9 @@
 - Done: rendered/reused 43 unique corrected description pages at 180 DPI; checkpoint is `docs/results/a1_description_render_checkpoint.json`.
 - Done: extracted auditable prerequisite evidence for all 180 samples: 85 explicit `NONE`, 18 explicit prerequisite-code cases, and 77 not applicable/unlocated (including one combined-code row). Representative visual checks on IT-2565 page 326, DSBA-2560 page 183, and BIT-2560 page 174 agree with the extracted evidence. Every item still requires its own visual approval before it becomes final ground truth.
 - Done: added the field-level A1 comparator and tests. It scores only `visually_verified` or `corrected_after_visual_review` rows, derives lecture/lab/self-study hours from the credit pattern, reports per-field/per-program-version metrics, wrong/missing/duplicate rows, and garbled Thai, and emits null accuracy when `n=0`. Current honest result is 0 approved and 180 unapproved rows; tests pass 15/15.
+- Done: visually reviewed the first 18 prerequisite-bearing samples against both plan and description renders. Preliminary, deliberately biased batch metrics: code/credits/year/semester/plan/page/hours 100% (18/18), Thai name 72.22% (13/18), English name 88.89% (16/18), prerequisite 0% (0/18). Found two IT-2560 row-name misalignments and three IT-2560 Thai-name header bleed-ins. Category/type remain unverified and `n=0`. Full tests pass 17/17.
 - Important: substantial version-support work exists in the separate working folder `C:/Users/thana/OneDrive/เอกสาร/ocr_final`; it has not yet been copied into this repository and must not be treated as the Phase A baseline.
-- **NEXT ACTION:** populate visual-review status and PDF-derived ground-truth fields incrementally, beginning with the 18 prerequisite-code cases and representative early/middle/late plan rows; run `compare_a1_field_accuracy.py` after each reviewed batch and calculate metrics only over approved rows.
+- **NEXT ACTION:** review representative early/middle/late rows for the four program-versions still below coverage, prioritizing DSBA-2565, IT-2565, BIT-2565 (currently 0/1/0 approved) and then completing each program-version to 30 approved rows. Run the comparator after each batch; do not generalize the prerequisite-heavy 18-row result to overall accuracy.
 
 ## 3. DONE LOG
 
@@ -39,6 +40,7 @@
 - 2026-10-01 — Added description-page locator and mapped 128/180 review samples by exact course code plus `PREREQUISITE` heading; 52 rows need explicit unmatched classification.
 - 2026-10-01 — Corrected description-page detection to distinguish true course headers from prerequisite references; final mapping is 104/180. Rendered/reused 43 description pages and extracted prerequisite evidence: 85 explicit-none, 18 code-valued, 77 not-applicable/unlocated. Raw results: `docs/results/a1_description_locator.json`, `docs/results/a1_description_render_checkpoint.json`, and `docs/results/a1_prerequisite_ground_truth.json`.
 - 2026-10-01 — Added safe field comparator `ocr_final/scripts/compare_a1_field_accuracy.py` with three audit-specific tests. Initial `docs/results/a1_field_metrics.json` correctly reports 0 approved / 180 unapproved and null metrics instead of self-scoring OCR candidates; full test suite passes 15/15.
+- 2026-10-01 — Completed visual review batch `a1-prerequisite-rows-2026-10-01` for 18 plan/description pairs. All 18 OCR candidates omitted or denied a real prerequisite; IT-2560 also has two name-row misalignments and three Thai heading bleed-ins. Raw batch and metrics are in `docs/results/a1_review_batch_prerequisite_rows.json` and `docs/results/a1_field_metrics.json`; 17 tests pass.
 
 ## 4. FINDINGS AND PROBLEMS
 
@@ -51,6 +53,8 @@
 7. **Rubric 2–3 / row integrity — open, verified visually.** BIT-2565 coop page 35 contains fragmented OCR rows with repeated `96642033`; DSBA-2560 coop page 34 splits a six-credit alternative and leaves one candidate without credits. Evidence: rendered source pages and sample IDs recorded in `docs/AUDIT_PHASE_A.md`. Fix commit: n/a.
 8. **Rubric 2–3 / prerequisite coverage — open.** Current Lab7 profiles OCR only plan-table page ranges, which do not contain prerequisite fields; a zero/`ไม่มี` value cannot be treated as verified. Evidence: 36-page visual pass. Fix commit: n/a.
 9. **Rubric 2–3 / PDF text matching — fixed in audit tooling, visually spot-checked.** A raw exact-code search confused codes cited as prerequisites with course headers (for example IT `06066302` and DSBA `90401013`). Header detection now requires credits before the course's prerequisite heading and rejects an intervening course code. Evidence: corrected locator and prerequisite JSON; product fix commit: n/a (audit tooling only).
+10. **Rubric 2–3 / prerequisite accuracy — open, critical, visually verified on biased slice.** Every one of the first 18 prerequisite-bearing samples is wrong in the OCR candidate (0/18): candidates say `ไม่มี` or null while the PDF names a prerequisite code. This is not an overall rate because the batch intentionally selected prerequisite-bearing rows. Evidence: `docs/results/a1_review_batch_prerequisite_rows.json` and field metrics. Fix commit: n/a.
+11. **Rubric 2–3 / IT-2560 row alignment — open, high.** Code `06016323` is paired with the next row's Requirement Engineering name in both sampled plans; three project rows include the specialization heading inside the Thai course name. Evidence: IT-60 plan pages 30/33/37 and description pages 233/236/242/247. Fix commit: n/a.
 
 ## 5. DECISIONS AND REASONS
 
@@ -80,6 +84,7 @@ $env:PYTHONUTF8 = "1"
 .\ocr_final\venv\Scripts\python.exe .\ocr_final\scripts\locate_a1_description_pages.py
 .\ocr_final\venv\Scripts\python.exe .\ocr_final\scripts\render_a1_description_pages.py
 .\ocr_final\venv\Scripts\python.exe .\ocr_final\scripts\extract_a1_prerequisites.py
+.\ocr_final\venv\Scripts\python.exe .\ocr_final\scripts\apply_a1_review_batch.py .\docs\results\a1_review_batch_prerequisite_rows.json
 .\ocr_final\venv\Scripts\python.exe .\ocr_final\scripts\compare_a1_field_accuracy.py
 ```
 

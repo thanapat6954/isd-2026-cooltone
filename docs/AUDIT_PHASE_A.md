@@ -89,3 +89,21 @@ The resumable renderer produced or reused 43 corrected description pages. The ev
 Raw evidence is stored in `docs/results/a1_description_locator.json`, `docs/results/a1_description_render_checkpoint.json`, and `docs/results/a1_prerequisite_ground_truth.json`. The prerequisite result deliberately records `requires_visual_confirmation: true`; no row becomes independent ground truth until its rendered source is approved.
 
 The field comparator at `ocr_final/scripts/compare_a1_field_accuracy.py` enforces that boundary in code. It scores only rows marked `visually_verified` or `corrected_after_visual_review`, derives lecture/lab/self-study hours from the verified credit pattern, and reports null accuracy when no approved value exists. Its initial result in `docs/results/a1_field_metrics.json` is therefore 0 approved and 180 unapproved rows, not a fabricated accuracy percentage. Three comparator tests raise the repository total to 15 passing tests.
+
+### First approved field batch: prerequisite-bearing rows
+
+The first approved batch contains 18 rows selected specifically because their description pages state a prerequisite code. Each row was checked against both its rendered plan-table page and rendered description page. The raw human-review decisions are in `docs/results/a1_review_batch_prerequisite_rows.json`; the original OCR candidates remain frozen.
+
+| Field | Correct / n | Preliminary accuracy |
+|---|---:|---:|
+| Course code | 18/18 | 100% |
+| Thai name | 13/18 | 72.22% |
+| English name | 16/18 | 88.89% |
+| Credits and each hour component | 18/18 | 100% |
+| Prerequisite | 0/18 | 0% |
+| Year / semester / plan / page | 18/18 each | 100% |
+| Category / type | 0 reviewed | n/a |
+
+**Rubric 2/3 warning:** these percentages are not overall OCR accuracy. The batch is intentionally prerequisite-heavy and currently covers DSBA-2560 (9), IT-2560 (5), BIT-2560 (3), and IT-2565 (1), with no approved DSBA-2565 or BIT-2565 rows yet. It proves a severe prerequisite extraction gap: all 18 candidates either say `ไม่มี` or return null although the source names a prerequisite code.
+
+**Rubric 2/3 row-integrity finding:** IT-2560 code `06016323` is paired with the following row's Requirement Engineering name in both sampled plans; the correct PDF row is Mobile Device Programming. Three IT-2560 project rows also include the bold specialization heading inside `name_th`. These five corrections explain the Thai-name and English-name failures above. The repository test total is now 17 passing tests.

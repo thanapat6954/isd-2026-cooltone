@@ -1293,20 +1293,24 @@
         "source_file": "DSBA-60.pdf"
       },
       "ground_truth": {
-        "code": null,
-        "name_th": null,
-        "name_en": null,
-        "credits": null,
-        "prerequisite": null,
+        "code": "06026113",
+        "name_th": "การสร้างโปรแกรมทางสถิติ",
+        "name_en": "STATISTICAL PROGRAMMING",
+        "credits": "1(0-2-1)",
+        "prerequisite": "06026104",
         "category": null,
         "type": null,
-        "year": null,
-        "semester": null,
-        "page_number": null
+        "year": 2,
+        "semester": 2,
+        "page_number": 32,
+        "plan": "coop"
       },
-      "review_status": "candidate_only",
-      "review_evidence": null,
-      "review_notes": null
+      "review_status": "corrected_after_visual_review",
+      "review_evidence": [
+        "DSBA-60.pdf p.32 plan",
+        "DSBA-60.pdf p.182 description"
+      ],
+      "review_notes": "Batch a1-prerequisite-rows-2026-10-01; verified fields: code, name_th, name_en, credits, prerequisite, year, semester, plan, page_number. Category and type remain unverified and are excluded from metrics."
     },
     {
       "sample_id": "DSBA-2560-coop-08",
@@ -1328,20 +1332,24 @@
         "source_file": "DSBA-60.pdf"
       },
       "ground_truth": {
-        "code": null,
-        "name_th": null,
-        "name_en": null,
-        "credits": null,
-        "prerequisite": null,
+        "code": "06026114",
+        "name_th": "กระบวนการธุรกิจและการวางแผนทรัพยากรองค์กร",
+        "name_en": "BUSINESS PROCESSES AND ENTERPRISE RESOURCE PLANNING",
+        "credits": "3(2-2-5)",
+        "prerequisite": "06026108",
         "category": null,
         "type": null,
-        "year": null,
-        "semester": null,
-        "page_number": null
+        "year": 2,
+        "semester": 2,
+        "page_number": 32,
+        "plan": "coop"
       },
-      "review_status": "candidate_only",
-      "review_evidence": null,
-      "review_notes": null
+      "review_status": "corrected_after_visual_review",
+      "review_evidence": [
+        "DSBA-60.pdf p.32 plan",
+        "DSBA-60.pdf p.183 description"
+      ],
+      "review_notes": "Batch a1-prerequisite-rows-2026-10-01; verified fields: code, name_th, name_en, credits, prerequisite, year, semester, plan, page_number. Category and type remain unverified and are excluded from metrics."
     },
     {
       "sample_id": "DSBA-2560-coop-09",
@@ -1363,20 +1371,24 @@
         "source_file": "DSBA-60.pdf"
       },
       "ground_truth": {
-        "code": null,
-        "name_th": null,
-        "name_en": null,
-        "credits": null,
-        "prerequisite": null,
+        "code": "06026115",
+        "name_th": "อัจฉริยะทางธุรกิจเบื้องต้น",
+        "name_en": "INTRODUCTION TO BUSINESS INTELLIGENCE",
+        "credits": "3(2-2-5)",
+        "prerequisite": "06026108",
         "category": null,
         "type": null,
-        "year": null,
-        "semester": null,
-        "page_number": null
+        "year": 2,
+        "semester": 2,
+        "page_number": 32,
+        "plan": "coop"
       },
-      "review_status": "candidate_only",
-      "review_evidence": null,
-      "review_notes": null
+      "review_status": "corrected_after_visual_review",
+      "review_evidence": [
+        "DSBA-60.pdf p.32 plan",
+        "DSBA-60.pdf p.183 description"
+      ],
+      "review_notes": "Batch a1-prerequisite-rows-2026-10-01; verified fields: code, name_th, name_en, credits, prerequisite, year, semester, plan, page_number. Category and type remain unverified and are excluded from metrics."
     },
     {
       "sample_id": "DSBA-2560-coop-10",
@@ -1398,20 +1410,24 @@
         "source_file": "DSBA-60.pdf"
       },
       "ground_truth": {
-        "code": null,
-        "name_th": null,
-        "name_en": null,
-        "credits": null,
-        "prerequisite": null,
+        "code": "06026116",
+        "name_th": "การวิเคราะห์ข้อมูลเชิงธุรกิจ",
+        "name_en": "BUSINESS DATA ANALYTICS",
+        "credits": "3(2-2-5)",
+        "prerequisite": "06026103",
         "category": null,
         "type": null,
-        "year": null,
-        "semester": null,
-        "page_number": null
+        "year": 2,
+        "semester": 2,
+        "page_number": 32,
+        "plan": "coop"
       },
-      "review_status": "candidate_only",
-      "review_evidence": null,
-      "review_notes": null
+      "review_status": "corrected_after_visual_review",
+      "review_evidence": [
+        "DSBA-60.pdf p.32 plan",
+        "DSBA-60.pdf p.184 description"
+      ],
+      "review_notes": "Batch a1-prerequisite-rows-2026-10-01; verified fields: code, name_th, name_en, credits, prerequisite, year, semester, plan, page_number. Category and type remain unverified and are excluded from metrics."
     },
     {
       "sample_id": "DSBA-2560-coop-11",
@@ -1818,20 +1834,24 @@
         "source_file": "DSBA-60.pdf"
       },
       "ground_truth": {
-        "code": null,
-        "name_th": null,
-        "name_en": null,
-        "credits": null,
-        "prerequisite": null,
+        "code": "06026113",
+        "name_th": "การสร้างโปรแกรมทางสถิติ",
+        "name_en": "STATISTICAL PROGRAMMING",
+        "credits": "1(0-2-1)",
+        "prerequisite": "06026104",
         "category": null,
         "type": null,
-        "year": null,
-        "semester": null,
-        "page_number": null
+        "year": 2,
+        "semester": 2,
+        "page_number": 27,
+        "plan": "no-coop"
       },
-      "review_status": "candidate_only",
-      "review_evidence": null,
-      "review_notes": null
+      "review_status": "corrected_after_visual_review",
+      "review_evidence": [
+        "DSBA-60.pdf p.27 plan",
+        "DSBA-60.pdf p.182 description"
+      ],
+      "review_notes": "Batch a1-prerequisite-rows-2026-10-01; verified fields: code, name_th, name_en, credits, prerequisite, year, semester, plan, page_number. Category and type remain unverified and are excluded from metrics."
     },
     {
       "sample_id": "DSBA-2560-no-coop-08",
@@ -1853,20 +1873,24 @@
         "source_file": "DSBA-60.pdf"
       },
       "ground_truth": {
-        "code": null,
-        "name_th": null,
-        "name_en": null,
-        "credits": null,
-        "prerequisite": null,
+        "code": "06026114",
+        "name_th": "กระบวนการธุรกิจและการวางแผนทรัพยากรองค์กร",
+        "name_en": "BUSINESS PROCESSES AND ENTERPRISE RESOURCE PLANNING",
+        "credits": "3(2-2-5)",
+        "prerequisite": "06026108",
         "category": null,
         "type": null,
-        "year": null,
-        "semester": null,
-        "page_number": null
+        "year": 2,
+        "semester": 2,
+        "page_number": 27,
+        "plan": "no-coop"
       },
-      "review_status": "candidate_only",
-      "review_evidence": null,
-      "review_notes": null
+      "review_status": "corrected_after_visual_review",
+      "review_evidence": [
+        "DSBA-60.pdf p.27 plan",
+        "DSBA-60.pdf p.183 description"
+      ],
+      "review_notes": "Batch a1-prerequisite-rows-2026-10-01; verified fields: code, name_th, name_en, credits, prerequisite, year, semester, plan, page_number. Category and type remain unverified and are excluded from metrics."
     },
     {
       "sample_id": "DSBA-2560-no-coop-09",
@@ -1888,20 +1912,24 @@
         "source_file": "DSBA-60.pdf"
       },
       "ground_truth": {
-        "code": null,
-        "name_th": null,
-        "name_en": null,
-        "credits": null,
-        "prerequisite": null,
+        "code": "06026115",
+        "name_th": "อัจฉริยะทางธุรกิจเบื้องต้น",
+        "name_en": "INTRODUCTION TO BUSINESS INTELLIGENCE",
+        "credits": "3(2-2-5)",
+        "prerequisite": "06026108",
         "category": null,
         "type": null,
-        "year": null,
-        "semester": null,
-        "page_number": null
+        "year": 2,
+        "semester": 2,
+        "page_number": 27,
+        "plan": "no-coop"
       },
-      "review_status": "candidate_only",
-      "review_evidence": null,
-      "review_notes": null
+      "review_status": "corrected_after_visual_review",
+      "review_evidence": [
+        "DSBA-60.pdf p.27 plan",
+        "DSBA-60.pdf p.183 description"
+      ],
+      "review_notes": "Batch a1-prerequisite-rows-2026-10-01; verified fields: code, name_th, name_en, credits, prerequisite, year, semester, plan, page_number. Category and type remain unverified and are excluded from metrics."
     },
     {
       "sample_id": "DSBA-2560-no-coop-10",
@@ -1923,20 +1951,24 @@
         "source_file": "DSBA-60.pdf"
       },
       "ground_truth": {
-        "code": null,
-        "name_th": null,
-        "name_en": null,
-        "credits": null,
-        "prerequisite": null,
+        "code": "06026116",
+        "name_th": "การวิเคราะห์ข้อมูลเชิงธุรกิจ",
+        "name_en": "BUSINESS DATA ANALYTICS",
+        "credits": "3(2-2-5)",
+        "prerequisite": "06026103",
         "category": null,
         "type": null,
-        "year": null,
-        "semester": null,
-        "page_number": null
+        "year": 2,
+        "semester": 2,
+        "page_number": 27,
+        "plan": "no-coop"
       },
-      "review_status": "candidate_only",
-      "review_evidence": null,
-      "review_notes": null
+      "review_status": "corrected_after_visual_review",
+      "review_evidence": [
+        "DSBA-60.pdf p.27 plan",
+        "DSBA-60.pdf p.184 description"
+      ],
+      "review_notes": "Batch a1-prerequisite-rows-2026-10-01; verified fields: code, name_th, name_en, credits, prerequisite, year, semester, plan, page_number. Category and type remain unverified and are excluded from metrics."
     },
     {
       "sample_id": "DSBA-2560-no-coop-11",
@@ -1958,20 +1990,24 @@
         "source_file": "DSBA-60.pdf"
       },
       "ground_truth": {
-        "code": null,
-        "name_th": null,
-        "name_en": null,
-        "credits": null,
-        "prerequisite": null,
+        "code": "06026128",
+        "name_th": "โครงงานวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ 2",
+        "name_en": "PROJECT IN DATA SCIENCE AND BUSINESS ANALYTICS 2",
+        "credits": "3(0-9-0)",
+        "prerequisite": "06026127",
         "category": null,
         "type": null,
-        "year": null,
-        "semester": null,
-        "page_number": null
+        "year": 4,
+        "semester": 1,
+        "page_number": 29,
+        "plan": "no-coop"
       },
-      "review_status": "candidate_only",
-      "review_evidence": null,
-      "review_notes": null
+      "review_status": "corrected_after_visual_review",
+      "review_evidence": [
+        "DSBA-60.pdf p.29 plan",
+        "DSBA-60.pdf p.189 description"
+      ],
+      "review_notes": "Batch a1-prerequisite-rows-2026-10-01; verified fields: code, name_th, name_en, credits, prerequisite, year, semester, plan, page_number. Category and type remain unverified and are excluded from metrics."
     },
     {
       "sample_id": "DSBA-2560-no-coop-12",
@@ -2483,20 +2519,24 @@
         "source_file": "IT.pdf"
       },
       "ground_truth": {
-        "code": null,
-        "name_th": null,
-        "name_en": null,
-        "credits": null,
-        "prerequisite": null,
+        "code": "06016407",
+        "name_th": "โครงงาน 2",
+        "name_en": "PROJECT 2",
+        "credits": "3(0-9-0)",
+        "prerequisite": "06016406",
         "category": null,
         "type": null,
-        "year": null,
-        "semester": null,
-        "page_number": null
+        "year": 4,
+        "semester": 2,
+        "page_number": 44,
+        "plan": "coop"
       },
-      "review_status": "candidate_only",
-      "review_evidence": null,
-      "review_notes": null
+      "review_status": "corrected_after_visual_review",
+      "review_evidence": [
+        "IT.pdf p.44 plan",
+        "IT.pdf p.326 description"
+      ],
+      "review_notes": "Batch a1-prerequisite-rows-2026-10-01; verified fields: code, name_th, name_en, credits, prerequisite, year, semester, plan, page_number. Category and type remain unverified and are excluded from metrics."
     },
     {
       "sample_id": "IT-2565-coop-12",
@@ -3463,20 +3503,24 @@
         "source_file": "IT-60.pdf"
       },
       "ground_truth": {
-        "code": null,
-        "name_th": null,
-        "name_en": null,
-        "credits": null,
-        "prerequisite": null,
+        "code": "06016323",
+        "name_th": "การโปรแกรมอุปกรณ์เคลื่อนที่",
+        "name_en": "MOBILE DEVICE PROGRAMMING",
+        "credits": "3(2-2-5)",
+        "prerequisite": "06016317",
         "category": null,
         "type": null,
-        "year": null,
-        "semester": null,
-        "page_number": null
+        "year": 3,
+        "semester": 1,
+        "page_number": 37,
+        "plan": "coop"
       },
-      "review_status": "candidate_only",
-      "review_evidence": null,
-      "review_notes": null
+      "review_status": "corrected_after_visual_review",
+      "review_evidence": [
+        "IT-60.pdf p.37 plan",
+        "IT-60.pdf p.233 description"
+      ],
+      "review_notes": "Batch a1-prerequisite-rows-2026-10-01; verified fields: code, name_th, name_en, credits, prerequisite, year, semester, plan, page_number. Category and type remain unverified and are excluded from metrics."
     },
     {
       "sample_id": "IT-2560-coop-10",
@@ -3988,20 +4032,24 @@
         "source_file": "IT-60.pdf"
       },
       "ground_truth": {
-        "code": null,
-        "name_th": null,
-        "name_en": null,
-        "credits": null,
-        "prerequisite": null,
+        "code": "06016323",
+        "name_th": "การโปรแกรมอุปกรณ์เคลื่อนที่",
+        "name_en": "MOBILE DEVICE PROGRAMMING",
+        "credits": "3(2-2-5)",
+        "prerequisite": "06016317",
         "category": null,
         "type": null,
-        "year": null,
-        "semester": null,
-        "page_number": null
+        "year": 3,
+        "semester": 1,
+        "page_number": 30,
+        "plan": "no-coop"
       },
-      "review_status": "candidate_only",
-      "review_evidence": null,
-      "review_notes": null
+      "review_status": "corrected_after_visual_review",
+      "review_evidence": [
+        "IT-60.pdf p.30 plan",
+        "IT-60.pdf p.233 description"
+      ],
+      "review_notes": "Batch a1-prerequisite-rows-2026-10-01; verified fields: code, name_th, name_en, credits, prerequisite, year, semester, plan, page_number. Category and type remain unverified and are excluded from metrics."
     },
     {
       "sample_id": "IT-2560-no-coop-10",
@@ -4093,20 +4141,24 @@
         "source_file": "IT-60.pdf"
       },
       "ground_truth": {
-        "code": null,
-        "name_th": null,
-        "name_en": null,
-        "credits": null,
-        "prerequisite": null,
+        "code": "06016330",
+        "name_th": "โครงงานทางด้านวิศวกรรมซอฟต์แวร์ 2",
+        "name_en": "PROJECT IN SOFTWARE ENGINEERING 2",
+        "credits": "3(0-9-0)",
+        "prerequisite": "06016329",
         "category": null,
         "type": null,
-        "year": null,
-        "semester": null,
-        "page_number": null
+        "year": 4,
+        "semester": 2,
+        "page_number": 33,
+        "plan": "no-coop"
       },
-      "review_status": "candidate_only",
-      "review_evidence": null,
-      "review_notes": null
+      "review_status": "corrected_after_visual_review",
+      "review_evidence": [
+        "IT-60.pdf p.33 plan",
+        "IT-60.pdf p.236 description"
+      ],
+      "review_notes": "Batch a1-prerequisite-rows-2026-10-01; verified fields: code, name_th, name_en, credits, prerequisite, year, semester, plan, page_number. Category and type remain unverified and are excluded from metrics."
     },
     {
       "sample_id": "IT-2560-no-coop-13",
@@ -4128,20 +4180,24 @@
         "source_file": "IT-60.pdf"
       },
       "ground_truth": {
-        "code": null,
-        "name_th": null,
-        "name_en": null,
-        "credits": null,
-        "prerequisite": null,
+        "code": "06016340",
+        "name_th": "โครงงานทางด้านเทคโนโลยีเครือข่ายและระบบ 2",
+        "name_en": "PROJECT IN NETWORK AND SYSTEM TECHNOLOGY 2",
+        "credits": "3(0-9-0)",
+        "prerequisite": "06016339",
         "category": null,
         "type": null,
-        "year": null,
-        "semester": null,
-        "page_number": null
+        "year": 4,
+        "semester": 2,
+        "page_number": 33,
+        "plan": "no-coop"
       },
-      "review_status": "candidate_only",
-      "review_evidence": null,
-      "review_notes": null
+      "review_status": "corrected_after_visual_review",
+      "review_evidence": [
+        "IT-60.pdf p.33 plan",
+        "IT-60.pdf p.242 description"
+      ],
+      "review_notes": "Batch a1-prerequisite-rows-2026-10-01; verified fields: code, name_th, name_en, credits, prerequisite, year, semester, plan, page_number. Category and type remain unverified and are excluded from metrics."
     },
     {
       "sample_id": "IT-2560-no-coop-14",
@@ -4163,20 +4219,24 @@
         "source_file": "IT-60.pdf"
       },
       "ground_truth": {
-        "code": null,
-        "name_th": null,
-        "name_en": null,
-        "credits": null,
-        "prerequisite": null,
+        "code": "06016350",
+        "name_th": "โครงงานทางด้านการพัฒนาสื่อประสมและเกม 2",
+        "name_en": "PROJECT IN MULTIMEDIA AND GAME DEVELOPMENT 2",
+        "credits": "3(0-9-0)",
+        "prerequisite": "06016349",
         "category": null,
         "type": null,
-        "year": null,
-        "semester": null,
-        "page_number": null
+        "year": 4,
+        "semester": 2,
+        "page_number": 33,
+        "plan": "no-coop"
       },
-      "review_status": "candidate_only",
-      "review_evidence": null,
-      "review_notes": null
+      "review_status": "corrected_after_visual_review",
+      "review_evidence": [
+        "IT-60.pdf p.33 plan",
+        "IT-60.pdf p.247 description"
+      ],
+      "review_notes": "Batch a1-prerequisite-rows-2026-10-01; verified fields: code, name_th, name_en, credits, prerequisite, year, semester, plan, page_number. Category and type remain unverified and are excluded from metrics."
     },
     {
       "sample_id": "IT-2560-no-coop-15",
@@ -5528,20 +5588,24 @@
         "source_file": "BIT-60.pdf"
       },
       "ground_truth": {
-        "code": null,
-        "name_th": null,
-        "name_en": null,
-        "credits": null,
-        "prerequisite": null,
+        "code": "06036010",
+        "name_th": "กระบวนการธุรกิจและการวางแผนทรัพยากรองค์กร",
+        "name_en": "BUSINESS PROCESSES AND ENTERPRISE RESOURCE PLANNING",
+        "credits": "3(2-2-5)",
+        "prerequisite": "06036006",
         "category": null,
         "type": null,
-        "year": null,
-        "semester": null,
-        "page_number": null
+        "year": 3,
+        "semester": 1,
+        "page_number": 29,
+        "plan": "coop"
       },
-      "review_status": "candidate_only",
-      "review_evidence": null,
-      "review_notes": null
+      "review_status": "corrected_after_visual_review",
+      "review_evidence": [
+        "BIT-60.pdf p.29 plan",
+        "BIT-60.pdf p.174 description"
+      ],
+      "review_notes": "Batch a1-prerequisite-rows-2026-10-01; verified fields: code, name_th, name_en, credits, prerequisite, year, semester, plan, page_number. Category and type remain unverified and are excluded from metrics."
     },
     {
       "sample_id": "BIT-2560-coop-09",
@@ -6053,20 +6117,24 @@
         "source_file": "BIT-60.pdf"
       },
       "ground_truth": {
-        "code": null,
-        "name_th": null,
-        "name_en": null,
-        "credits": null,
-        "prerequisite": null,
+        "code": "06036010",
+        "name_th": "กระบวนการธุรกิจและการวางแผนทรัพยากรองค์กร",
+        "name_en": "BUSINESS PROCESSES AND ENTERPRISE RESOURCE PLANNING",
+        "credits": "3(2-2-5)",
+        "prerequisite": "06036006",
         "category": null,
         "type": null,
-        "year": null,
-        "semester": null,
-        "page_number": null
+        "year": 3,
+        "semester": 1,
+        "page_number": 25,
+        "plan": "no-coop"
       },
-      "review_status": "candidate_only",
-      "review_evidence": null,
-      "review_notes": null
+      "review_status": "corrected_after_visual_review",
+      "review_evidence": [
+        "BIT-60.pdf p.25 plan",
+        "BIT-60.pdf p.174 description"
+      ],
+      "review_notes": "Batch a1-prerequisite-rows-2026-10-01; verified fields: code, name_th, name_en, credits, prerequisite, year, semester, plan, page_number. Category and type remain unverified and are excluded from metrics."
     },
     {
       "sample_id": "BIT-2560-no-coop-09",
@@ -6263,20 +6331,24 @@
         "source_file": "BIT-60.pdf"
       },
       "ground_truth": {
-        "code": null,
-        "name_th": null,
-        "name_en": null,
-        "credits": null,
-        "prerequisite": null,
+        "code": "06036020",
+        "name_th": "โครงงาน 2",
+        "name_en": "PROJECT 2",
+        "credits": "3(0-9-0)",
+        "prerequisite": "06036019",
         "category": null,
         "type": null,
-        "year": null,
-        "semester": null,
-        "page_number": null
+        "year": 4,
+        "semester": 2,
+        "page_number": 26,
+        "plan": "no-coop"
       },
-      "review_status": "candidate_only",
-      "review_evidence": null,
-      "review_notes": null
+      "review_status": "corrected_after_visual_review",
+      "review_evidence": [
+        "BIT-60.pdf p.26 plan",
+        "BIT-60.pdf p.178 description"
+      ],
+      "review_notes": "Batch a1-prerequisite-rows-2026-10-01; verified fields: code, name_th, name_en, credits, prerequisite, year, semester, plan, page_number. Category and type remain unverified and are excluded from metrics."
     },
     {
       "sample_id": "BIT-2560-no-coop-15",
