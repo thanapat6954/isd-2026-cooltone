@@ -1,0 +1,45 @@
+{
+  "captured_at": "2026-10-01",
+  "repository": "C:/Users/thana/OneDrive/เอกสาร/isd-2026-cooltone",
+  "branch": "audit/curriculum-challenge",
+  "baseline_commit": "0b4a33a",
+  "pipeline_root": "ocr_final",
+  "present": {
+    "legacy_easyocr_pipeline": "ocr_final/curriculum_ocr.py",
+    "vlm_ocr_pipeline": "ocr_final/scr/ocr_system/lab7b_curriculum.py",
+    "sqlite_pipeline": "ocr_final/scr/ocr_system/lab8b_curriculum_db.py",
+    "orchestrator": "ocr_final/run_lab8b.py",
+    "evaluation_summary": "ocr_final/work/robustness_summary.json",
+    "committed_profiles": [
+      "ai",
+      "dsba-coop",
+      "dsba-no-coop",
+      "it-coop",
+      "it-no-coop"
+    ]
+  },
+  "absent": {
+    "clean_curriculum_db.py": true,
+    "fastapi_application": true,
+    "frontend": true,
+    "committed_sqlite_databases": true,
+    "committed_source_pdfs": true,
+    "bit_profiles": true,
+    "curriculum_2560_profiles": true
+  },
+  "schema_summary": {
+    "lab8b_tables": ["program", "course", "plan_item", "prerequisite"],
+    "lab8b_views": ["v_plan", "v_semester_credits", "v_year_credits", "v_category_credits", "v_total_credits"],
+    "lab8b_indexes": ["ix_plan_sem", "ix_plan_code"],
+    "version_columns_present": false,
+    "plan_column_on_program_present": false,
+    "foreign_keys_from_prerequisite_to_course": false,
+    "fts_on_lab8b_schema": false,
+    "legacy_fts": "FTS5 default tokenizer over course code, English name, Thai name and raw text"
+  },
+  "baseline_run_blockers": [
+    "ocr_final/data/input is not committed",
+    "ocr_final/work contains reports but no curriculum.db files",
+    "there is no web application or browser UI in the committed pipeline"
+  ]
+}

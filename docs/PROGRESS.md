@@ -14,26 +14,31 @@
 
 ## 2. CURRENT STATUS
 
-- Phase: **A0 — repository and architecture discovery**.
-- Done: located the real repository; confirmed it was clean on `week9` at `0b4a33a`; created feature branch `audit/curriculum-challenge`.
-- In progress: documenting the current OCR, database, API, frontend, schema, and run commands before any product-code change.
+- Phase: **A0 — baseline execution and evidence capture**.
+- Done: located the real repository; confirmed it was clean on `week9` at `0b4a33a`; created feature branch `audit/curriculum-challenge`; inventoried the committed architecture in `docs/results/architecture_inventory.json`.
+- In progress: running the committed commands exactly as documented and saving their stdout/stderr to establish the Phase A failure baseline.
 - Important: substantial version-support work exists in the separate working folder `C:/Users/thana/OneDrive/เอกสาร/ocr_final`; it has not yet been copied into this repository and must not be treated as the Phase A baseline.
-- **NEXT ACTION:** inspect `curriculum_ocr.py`, locate or confirm the absence of `clean_curriculum_db.py`, inspect schema/database creation code, API, frontend, existing tests, and the current committed data/work artifacts; record the baseline architecture and gaps here.
+- **NEXT ACTION:** execute the documented tests, Lab 7 readiness check, `run_lab8b.py --program all`, and attempted web-app startup; save raw results under `docs/results/`, then write `docs/AUDIT_PHASE_A.md` before importing any fixes from the external working folder.
 
 ## 3. DONE LOG
 
 - 2026-10-01 — Created `audit/curriculum-challenge` from clean `week9` commit `0b4a33a`; added this initial `docs/PROGRESS.md` handoff file.
+- 2026-10-01 — Completed A0 architecture inventory at `docs/results/architecture_inventory.json`: committed baseline has five 2565/current profiles, but no BIT/2560 profiles, API, frontend, PDFs, or SQLite DBs; `clean_curriculum_db.py` is absent.
 
 ## 4. FINDINGS AND PROBLEMS
 
-1. **Process integrity / all rubric items — open.** The audit has not yet established a committed baseline by actually running the repository version. Evidence pending. Fix commit: n/a.
-2. **Potential source/repo divergence / all rubric items — open.** A separate working folder contains newer uncommitted implementation and result files; the Git repository must be audited independently before deciding what to port. Evidence: repository path and clean status above. Fix commit: n/a.
+1. **Rubric 5 / working app — open, critical.** The committed baseline contains no API or frontend files, so the required real-web-UI audit cannot run from the repository. Evidence: `docs/results/architecture_inventory.json`. Fix commit: n/a.
+2. **Rubric 4 + L4 bonus / versions — open, critical.** The committed orchestrator supports only AI plus DSBA/IT current profiles; BIT and every 2560 profile are absent, and the schema has no version metadata. Evidence: `ocr_final/run_lab8b.py`, `ocr_final/scr/ocr_system/lab8b_curriculum_db.py`, inventory JSON. Fix commit: n/a.
+3. **Rubric 2–3 / reproducibility — open, critical.** PDFs and `curriculum.db` files are not committed, so the documented `--program all` command cannot reproduce current reports from a fresh clone. Evidence: inventory JSON. Fix commit: n/a.
+4. **Rubric 1 / DB design — open.** Lab8B has normalized tables and useful credit views, but `prerequisite` lacks declared foreign keys, only two plan indexes exist, version/plan metadata is missing, and the default legacy FTS5 tokenizer is unsuitable evidence for Thai word retrieval. Evidence: committed DDL. Fix commit: n/a.
+5. **Potential source/repo divergence / all rubric items — open.** A separate working folder contains newer implementation and results; the Git baseline must be measured before selected changes are ported. Fix commit: n/a.
 
 ## 5. DECISIONS AND REASONS
 
 - Use a new branch from `week9` so audit tooling and later fixes cannot affect `main` and the existing submitted branch remains recoverable.
 - Treat the committed repository as the Phase A baseline. The separate `ocr_final` working folder is evidence/reference only until specific changes are reviewed and intentionally ported.
 - Store raw machine-readable evidence under `docs/results/` and screenshots under `docs/results/screenshots/`; reports will reference those paths.
+- Do not invent a `clean_curriculum_db.py`; record its absence and use the actual active Lab7/Lab8 pipeline.
 
 ## 6. HOW TO RERUN
 
@@ -52,15 +57,15 @@ Current known application commands (must be verified during A0 before relying on
 .\venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-- Database path(s): pending A0 discovery.
+- Expected generated database paths: `ocr_final/work/lab8b_<profile>/curriculum.db`; none are committed at the baseline.
 - Backup path(s): not created yet; required before Phase B.
 - OCR/ingest, evaluation, UI automation, and latency commands: pending A0 discovery and audit-tool implementation.
 
 ## 7. OPEN QUESTIONS / THINGS NOT VERIFIED
 
-- Whether `clean_curriculum_db.py` exists under another name or is absent.
-- Which committed database files are authoritative and whether they include all 12 program/version/plan profiles.
-- Whether the committed app currently exposes the version-aware frontend shown in the separate working folder.
+- `clean_curriculum_db.py` was not found anywhere in the repository; whether an instructor expected a separate script remains unknown.
+- No committed database files exist; the JSON reports cannot by themselves prove a fresh-clone run.
+- The committed app does not include the version-aware FastAPI/frontend implementation shown in the separate working folder.
 - Independent PDF-derived ground truth for at least 30 rows per program-version has not been created.
 - Real-browser L1–L4 evaluation, cold/warm latency, citation accuracy, and hold-out performance are not yet measured.
 - No database backup has been created yet because Phase B has not started.
