@@ -23,8 +23,9 @@
 - Done: hardened the course-description locator so prerequisite references cannot be mistaken for course headers. A header now requires an 8-digit code followed by a credit pattern before `PREREQUISITE`, with no intervening course code. The corrected mapping locates 104/180 samples; 76 are not located.
 - Done: rendered/reused 43 unique corrected description pages at 180 DPI; checkpoint is `docs/results/a1_description_render_checkpoint.json`.
 - Done: extracted auditable prerequisite evidence for all 180 samples: 85 explicit `NONE`, 18 explicit prerequisite-code cases, and 77 not applicable/unlocated (including one combined-code row). Representative visual checks on IT-2565 page 326, DSBA-2560 page 183, and BIT-2560 page 174 agree with the extracted evidence. Every item still requires its own visual approval before it becomes final ground truth.
+- Done: added the field-level A1 comparator and tests. It scores only `visually_verified` or `corrected_after_visual_review` rows, derives lecture/lab/self-study hours from the credit pattern, reports per-field/per-program-version metrics, wrong/missing/duplicate rows, and garbled Thai, and emits null accuracy when `n=0`. Current honest result is 0 approved and 180 unapproved rows; tests pass 15/15.
 - Important: substantial version-support work exists in the separate working folder `C:/Users/thana/OneDrive/เอกสาร/ocr_final`; it has not yet been copied into this repository and must not be treated as the Phase A baseline.
-- **NEXT ACTION:** add a field-level A1 comparator that excludes every `candidate_only` row; populate visual-review status and PDF-derived ground-truth fields incrementally, beginning with the 18 prerequisite-code cases and representative early/middle/late plan rows; then calculate metrics only over approved rows.
+- **NEXT ACTION:** populate visual-review status and PDF-derived ground-truth fields incrementally, beginning with the 18 prerequisite-code cases and representative early/middle/late plan rows; run `compare_a1_field_accuracy.py` after each reviewed batch and calculate metrics only over approved rows.
 
 ## 3. DONE LOG
 
@@ -37,6 +38,7 @@
 - 2026-10-01 — Rendered and visually inspected 36 early/middle/late plan pages. Found fragmented BIT-2565 page 35 rows and split DSBA-2560 cooperative alternatives; determined prerequisite/category audit needs course-description/structure pages.
 - 2026-10-01 — Added description-page locator and mapped 128/180 review samples by exact course code plus `PREREQUISITE` heading; 52 rows need explicit unmatched classification.
 - 2026-10-01 — Corrected description-page detection to distinguish true course headers from prerequisite references; final mapping is 104/180. Rendered/reused 43 description pages and extracted prerequisite evidence: 85 explicit-none, 18 code-valued, 77 not-applicable/unlocated. Raw results: `docs/results/a1_description_locator.json`, `docs/results/a1_description_render_checkpoint.json`, and `docs/results/a1_prerequisite_ground_truth.json`.
+- 2026-10-01 — Added safe field comparator `ocr_final/scripts/compare_a1_field_accuracy.py` with three audit-specific tests. Initial `docs/results/a1_field_metrics.json` correctly reports 0 approved / 180 unapproved and null metrics instead of self-scoring OCR candidates; full test suite passes 15/15.
 
 ## 4. FINDINGS AND PROBLEMS
 
@@ -78,6 +80,7 @@ $env:PYTHONUTF8 = "1"
 .\ocr_final\venv\Scripts\python.exe .\ocr_final\scripts\locate_a1_description_pages.py
 .\ocr_final\venv\Scripts\python.exe .\ocr_final\scripts\render_a1_description_pages.py
 .\ocr_final\venv\Scripts\python.exe .\ocr_final\scripts\extract_a1_prerequisites.py
+.\ocr_final\venv\Scripts\python.exe .\ocr_final\scripts\compare_a1_field_accuracy.py
 ```
 
 - Expected generated database paths: `ocr_final/work/lab8b_<profile>/curriculum.db`; none are committed at the baseline.

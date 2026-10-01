@@ -1,0 +1,145 @@
+{
+  "method": "normalized exact match over visually approved rows only; hour fields are parsed from the credit pattern; null ground-truth fields are excluded",
+  "approved_statuses": [
+    "corrected_after_visual_review",
+    "visually_verified"
+  ],
+  "candidate_rows": 180,
+  "approved_rows": 0,
+  "unapproved_rows": 180,
+  "overall": {
+    "fields": {
+      "code": {
+        "correct": 0,
+        "n": 0,
+        "accuracy": null
+      },
+      "name_th": {
+        "correct": 0,
+        "n": 0,
+        "accuracy": null
+      },
+      "name_en": {
+        "correct": 0,
+        "n": 0,
+        "accuracy": null
+      },
+      "credits": {
+        "correct": 0,
+        "n": 0,
+        "accuracy": null
+      },
+      "prerequisite": {
+        "correct": 0,
+        "n": 0,
+        "accuracy": null
+      },
+      "category": {
+        "correct": 0,
+        "n": 0,
+        "accuracy": null
+      },
+      "type": {
+        "correct": 0,
+        "n": 0,
+        "accuracy": null
+      },
+      "year": {
+        "correct": 0,
+        "n": 0,
+        "accuracy": null
+      },
+      "semester": {
+        "correct": 0,
+        "n": 0,
+        "accuracy": null
+      },
+      "plan": {
+        "correct": 0,
+        "n": 0,
+        "accuracy": null
+      },
+      "page_number": {
+        "correct": 0,
+        "n": 0,
+        "accuracy": null
+      },
+      "lecture_hours": {
+        "correct": 0,
+        "n": 0,
+        "accuracy": null
+      },
+      "lab_hours": {
+        "correct": 0,
+        "n": 0,
+        "accuracy": null
+      },
+      "self_study_hours": {
+        "correct": 0,
+        "n": 0,
+        "accuracy": null
+      }
+    }
+  },
+  "per_program_version": {},
+  "row_quality": {
+    "wrong_rows": [],
+    "wrong_row_count": 0,
+    "candidate_missing_value_rows": [],
+    "candidate_missing_value_row_count": 0,
+    "duplicate_groups": [
+      {
+        "identity": [
+          "BIT",
+          2565,
+          "coop",
+          "96642033",
+          4,
+          1
+        ],
+        "count": 3
+      },
+      {
+        "identity": [
+          "BIT",
+          2565,
+          "no-coop",
+          "06036xxx",
+          4,
+          2
+        ],
+        "count": 2
+      },
+      {
+        "identity": [
+          "IT",
+          2560,
+          "coop",
+          "90xxxxxx",
+          4,
+          2
+        ],
+        "count": 2
+      },
+      {
+        "identity": [
+          "IT",
+          2565,
+          "coop",
+          "90642033",
+          4,
+          2
+        ],
+        "count": 2
+      }
+    ],
+    "duplicate_group_count": 4,
+    "garbled_thai_rows": 0,
+    "garbled_thai_n": 0,
+    "garbled_thai_rate": null
+  },
+  "limitations": [
+    "This stratified candidate sample cannot measure full-database spurious or missing-row recall.",
+    "A metric remains null until at least one visually approved ground-truth value exists."
+  ]
+}
