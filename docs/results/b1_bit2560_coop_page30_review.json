@@ -1,0 +1,20 @@
+{
+  "status": "visually_verified",
+  "reviewed_at": "2026-10-02",
+  "source_file": "BIT-60.pdf",
+  "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+  "input_sha256": "4e2330db8ebc0127052a48586d7eaecbd3287060856b024c7d6277be15974670",
+  "pdf_page": 30,
+  "printed_page": 25,
+  "year": 4,
+  "semester": 2,
+  "credits": 12,
+  "row_count": 4,
+  "review_scope": "Entire year 4 semester 2 table. Category, ctype and prerequisites are not stated by this table and are not inferred. This correction is curated source data, not a new OCR measurement.",
+  "rows": [
+    {"code": "06036086", "name_th": "หลักปรัชญาแห่งวิทยาศาสตร์", "name_en": "PHILOSOPHY OF SCIENCE", "credits": "3(3-0-6)"},
+    {"code": "06036088", "name_th": "การคิดอย่างสร้างสรรค์", "name_en": "CREATIVE THINKING", "credits": "3(3-0-6)"},
+    {"code": "xxxxxxxx", "name_th": "วิชาเลือกเสรี 1", "name_en": "FREE ELECTIVE COURSE 1", "credits": "3(3-0-6)"},
+    {"code": "xxxxxxxx", "name_th": "วิชาเลือกเสรี 2", "name_en": "FREE ELECTIVE COURSE 2", "credits": "3(3-0-6)"}
+  ]
+}

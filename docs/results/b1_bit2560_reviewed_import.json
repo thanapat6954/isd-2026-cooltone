@@ -1,0 +1,24 @@
+{
+  "import": {
+    "chunk_id": "00126a",
+    "wall_time_seconds": 0.7598191,
+    "exit_code": 0,
+    "original_token_count": 68,
+    "output": "  แปล Lab 7B JSON -> Lab 8B JSON โดยไม่เรียก LLM\r\n  เขียน work\\lab8b_bit_2560_coop\\reviewed_curriculum.json\r\n  รายงาน work\\lab8b_bit_2560_coop\\reviewed_curriculum.conversion.json\r\n    course=38  plan=42  prerequisite=0\r\n"
+  },
+  "load": {
+    "chunk_id": "09788e",
+    "wall_time_seconds": 0.5490308,
+    "exit_code": 0,
+    "original_token_count": 56,
+    "output": "  โหลดเข้า work\\lab8b_bit_2560_coop\\curriculum.db แล้ว\r\n    program            1 แถว\r\n    course            38 แถว\r\n    plan_item         42 แถว\r\n    prerequisite       0 แถว\r\n"
+  },
+  "verify": {
+    "chunk_id": "bc1cba",
+    "wall_time_seconds": 0.397714,
+    "exit_code": 0,
+    "original_token_count": 516,
+    "output": "\r\n  ผลการตรวจความสอดคล้องของข้อมูล\r\n  ==========================================================================\r\n  [ผ่าน  ] CHK1  หน่วยกิตรวมของแผน = หน่วยกิตที่หลักสูตรประกาศ\r\n           แผนรวม 126 · ดิบ 132 · ประกาศไว้ 126 · alt_group: 06036046, 06036047 ดิบ 12 -> นับ 6 (หัก 6)\r\n  [ผ่าน  ] CHK2  ทุกรหัสวิชาในแผน มีคำอธิบายรายวิชา\r\n           ครบทุกรหัส\r\n  [ผ่าน  ] CHK3  รหัสวิชาเป็นตัวเลข 8 หลักทุกรายการ (ยกเว้นรหัสสล็อตวิชาเลือกที่มี -)\r\n           ถูกต้องทุกรายการ\r\n  [ผ่าน  ] CHK4  หน่วยกิตในแผน ตรงกับคำอธิบายรายวิชา\r\n           ตรงกันทุกรายการ\r\n  [ผ่าน  ] CHK5  วิชาบังคับก่อน อยู่ภาคเรียนก่อนวิชาที่อ้างถึง\r\n           ลำดับถูกต้องทุกคู่\r\n  [ผ่าน  ] CHK6  ไม่มีวิชาซ้ำในภาคเรียนเดียวกัน\r\n           ไม่มีรายการซ้ำ\r\n  [ผ่าน  ] CHK7  หน่วยกิตต่อภาคเรียนอยู่ระหว่าง 9–22\r\n           ผ่านทุกภาค (ยกเว้นภาคบล็อก 1 ภาค, ภาคฤดูร้อน และภาคที่มีเฉพาะสล็อตเลือก)\r\n  ==========================================================================\r\n  ผ่าน 7 จาก 7 ข้อ\r\n\r\n  บันทึกผลที่ work/lab8b_bit_2560_coop/reviewed_verify.json\r\n"
+  },
+  "note": "Curated source-table correction, not an OCR accuracy measurement. Original pred_vlm.json unchanged."
+}

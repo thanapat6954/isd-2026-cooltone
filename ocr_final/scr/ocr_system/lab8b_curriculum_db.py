@@ -34,6 +34,7 @@ import argparse
 import json
 import os
 import re
+import shutil
 import sqlite3
 import sys
 import tempfile
@@ -173,8 +174,18 @@ def build_models():
         year: int = Field(ge=0, le=8)     # 0 = ยืดหยุ่นภาคเรียน ไม่ใช่ปีจริง
         semester: int = Field(ge=0, le=3)  # 3 = ภาคฤดูร้อน, 0 = ยืดหยุ่นภาคเรียน
         code: str
+        name_th: str | None = None
+        name_en: str | None = None
         credits: int = Field(ge=0, le=12)
         alt_group: str | None = None
+        alternative_index: int | None = Field(default=None, ge=1)
+        is_placeholder: bool = False
+        raw_code: str | None = None
+        code_pattern: str | None = None
+        elective_type: str | None = None
+        credits_raw: str | None = None
+        credit_options: list[dict[str, Any]] = Field(default_factory=list)
+        printed_page_number: int | None = Field(default=None, ge=1)
         # เก็บเป็นคอลัมน์จริง ไม่ยุบรวมเป็น note — ไม่งั้นถามแยกหมวดไม่ได้เลย
         category: str | None = None   # หมวดวิชาศึกษาทั่วไป/เฉพาะ/เลือกเสรี (จาก Lab 7B)
         ctype: str | None = None      # บังคับ/เลือก (จาก Lab 7B "type")
@@ -218,8 +229,19 @@ def build_models():
         degree: str | None = None
         total_credits: int = Field(ge=30, le=300)
         years: int = Field(ge=1, le=8)
+        curriculum_version: int | None = Field(default=None, ge=2500, le=3000)
+        is_latest: bool = False
+        plan: str = "both"
         source_file: str | None = None
         page_number: int | None = Field(default=None, ge=1)
+
+        @field_validator("plan")
+        @classmethod
+        def _plan_ok(cls, v: str) -> str:
+            normalized = v.strip().replace("_", "-").casefold()
+            if normalized not in {"coop", "no-coop", "both"}:
+                raise ValueError("plan must be coop, no-coop, or both")
+            return normalized
 
     class Curriculum(BaseModel):
         """เอกสารทั้งเล่มหนึ่งฉบับ"""
@@ -246,6 +268,9 @@ CREATE TABLE IF NOT EXISTS program (
     degree        TEXT,
     total_credits INTEGER NOT NULL CHECK (total_credits BETWEEN 30 AND 300),
     years         INTEGER NOT NULL CHECK (years BETWEEN 1 AND 8),
+    curriculum_version INTEGER,
+    is_latest     INTEGER NOT NULL DEFAULT 0 CHECK (is_latest IN (0, 1)),
+    plan          TEXT NOT NULL DEFAULT 'both' CHECK (plan IN ('coop','no-coop','both')),
     source_file   TEXT,
     page_number   INTEGER
 );
@@ -269,13 +294,33 @@ CREATE TABLE IF NOT EXISTS plan_item (
     year       INTEGER NOT NULL CHECK (year BETWEEN 0 AND 8),
     semester   INTEGER NOT NULL CHECK (semester BETWEEN 0 AND 3),
     code       TEXT NOT NULL,
+    name_th    TEXT,
+    name_en    TEXT,
     credits    INTEGER NOT NULL CHECK (credits BETWEEN 0 AND 12),
     alt_group  TEXT,
+    alternative_index INTEGER CHECK (alternative_index IS NULL OR alternative_index >= 1),
+    is_placeholder INTEGER NOT NULL DEFAULT 0 CHECK (is_placeholder IN (0, 1)),
+    raw_code   TEXT,
+    code_pattern TEXT,
+    elective_type TEXT,
+    credits_raw TEXT,
     category   TEXT,   -- หมวดวิชาศึกษาทั่วไป / หมวดวิชาเฉพาะ / หมวดวิชาเลือกเสรี
     ctype      TEXT,   -- บังคับ / เลือก
     note       TEXT,
     source_file TEXT,
-    page_number INTEGER
+    page_number INTEGER,
+    printed_page_number INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS plan_item_credit_option (
+    plan_item_id INTEGER NOT NULL REFERENCES plan_item(id) ON DELETE CASCADE,
+    alternative_index INTEGER NOT NULL CHECK (alternative_index >= 1),
+    credits INTEGER NOT NULL CHECK (credits BETWEEN 0 AND 12),
+    lecture_h INTEGER,
+    lab_h INTEGER,
+    self_h INTEGER,
+    raw_pattern TEXT NOT NULL,
+    PRIMARY KEY (plan_item_id, alternative_index)
 );
 
 CREATE TABLE IF NOT EXISTS prerequisite (
@@ -289,15 +334,26 @@ CREATE TABLE IF NOT EXISTS prerequisite (
 
 CREATE INDEX IF NOT EXISTS ix_plan_sem ON plan_item(year, semester);
 CREATE INDEX IF NOT EXISTS ix_plan_code ON plan_item(code);
+CREATE INDEX IF NOT EXISTS ix_program_version_plan
+ON program(curriculum_version, is_latest, plan);
+CREATE INDEX IF NOT EXISTS ix_plan_program_code_term
+ON plan_item(program_id, code, year, semester);
 
 -- VIEW ทำให้การถามคำถามง่ายขึ้นมาก
 -- แทนที่ LLM จะต้อง JOIN เองทุกครั้ง เราเตรียมตารางแบนไว้ให้
 -- นี่คือเหตุผลที่ VIEW มีอยู่ในโลก: ซ่อนความซับซ้อนของการ normalize
 CREATE VIEW IF NOT EXISTS v_plan AS
-SELECT p.id, p.year, p.semester, p.code, c.name_th, c.name_en,
-       p.credits, p.alt_group, p.category, p.ctype, p.note,
+SELECT p.id, p.year, p.semester,
+       CASE WHEN p.is_placeholder = 1 THEN COALESCE(p.raw_code, p.code) ELSE p.code END AS code,
+       p.code AS internal_code,
+       COALESCE(p.name_th, c.name_th) AS name_th,
+       COALESCE(p.name_en, c.name_en) AS name_en,
+       p.credits, p.credits_raw, p.alt_group, p.alternative_index,
+       p.is_placeholder, p.raw_code, p.code_pattern, p.elective_type,
+       p.category, p.ctype, p.note,
        COALESCE(p.source_file, c.source_file) AS source_file,
-       COALESCE(p.page_number, c.page_number) AS page_number
+       COALESCE(p.page_number, c.page_number) AS page_number,
+       p.printed_page_number
 FROM plan_item p
 LEFT JOIN course c ON c.code = p.code;
 
@@ -320,13 +376,15 @@ LEFT JOIN course c ON c.code = p.code;
 CREATE VIEW IF NOT EXISTS v_semester_credits AS
 SELECT year, semester, SUM(credits) AS credits, COUNT(*) AS n_courses,
        GROUP_CONCAT(DISTINCT source_file) AS source_files,
-       GROUP_CONCAT(DISTINCT page_number) AS source_pages
+       GROUP_CONCAT(DISTINCT page_number) AS source_pages,
+       GROUP_CONCAT(DISTINCT printed_page_number) AS source_printed_pages
 FROM (
     SELECT year, semester,
            COALESCE(alt_group, 'x' || id) AS grp,
            MIN(credits) AS credits,
            MIN(source_file) AS source_file,
-           MIN(page_number) AS page_number
+           MIN(page_number) AS page_number,
+           MIN(printed_page_number) AS printed_page_number
     FROM plan_item
     WHERE year >= 1
     GROUP BY year, semester, COALESCE(alt_group, 'x' || id)
@@ -339,7 +397,8 @@ GROUP BY year, semester;
 CREATE VIEW IF NOT EXISTS v_year_credits AS
 SELECT year, SUM(credits) AS credits, SUM(n_courses) AS n_courses,
        GROUP_CONCAT(source_files) AS source_files,
-       GROUP_CONCAT(source_pages) AS source_pages
+       GROUP_CONCAT(source_pages) AS source_pages,
+       GROUP_CONCAT(source_printed_pages) AS source_printed_pages
 FROM v_semester_credits
 GROUP BY year;
 
@@ -349,13 +408,15 @@ GROUP BY year;
 CREATE VIEW IF NOT EXISTS v_category_credits AS
 SELECT category, SUM(credits) AS credits, COUNT(*) AS n_courses,
        GROUP_CONCAT(DISTINCT source_file) AS source_files,
-       GROUP_CONCAT(DISTINCT page_number) AS source_pages
+       GROUP_CONCAT(DISTINCT page_number) AS source_pages,
+       GROUP_CONCAT(DISTINCT printed_page_number) AS source_printed_pages
 FROM (
     SELECT category,
            COALESCE(alt_group, 'x' || id) AS grp,
            MIN(credits) AS credits,
            MIN(source_file) AS source_file,
-           MIN(page_number) AS page_number
+           MIN(page_number) AS page_number,
+           MIN(printed_page_number) AS printed_page_number
     FROM plan_item
     WHERE category IS NOT NULL
     GROUP BY category, COALESCE(alt_group, 'x' || id)
@@ -367,10 +428,12 @@ GROUP BY category;
 CREATE VIEW IF NOT EXISTS v_total_credits AS
 SELECT SUM(credits) AS credits,
        GROUP_CONCAT(DISTINCT source_file) AS source_files,
-       GROUP_CONCAT(DISTINCT page_number) AS source_pages
+       GROUP_CONCAT(DISTINCT page_number) AS source_pages,
+       GROUP_CONCAT(DISTINCT printed_page_number) AS source_printed_pages
 FROM (
     SELECT COALESCE(alt_group, 'x' || id) AS grp, MIN(credits) AS credits,
-           MIN(source_file) AS source_file, MIN(page_number) AS page_number
+           MIN(source_file) AS source_file, MIN(page_number) AS page_number,
+           MIN(printed_page_number) AS printed_page_number
     FROM plan_item
     GROUP BY COALESCE(alt_group, 'x' || id)
 );
@@ -584,9 +647,109 @@ def _lab7b_codes(value: Any) -> list[str]:
 
 
 def _lab7b_wildcards(value: Any) -> list[str]:
-    """ดึง wildcard เช่น 0602xxx / 90644xxx จาก Lab 7B"""
+    """ดึง wildcard เช่น XXXXXXXX / 0602xxx / 90644xxx จาก Lab 7B"""
     raw = str(value or "")
-    return re.findall(r"(?<![0-9A-Za-z])\d{3,}\s*[xX]+(?![0-9A-Za-z])", raw)
+    return re.findall(
+        r"(?<![0-9A-Za-z])(?=[0-9xX]{4,}(?![0-9A-Za-z]))[0-9xX]*[xX][0-9xX]*",
+        raw,
+    )
+
+
+def _credit_options(value: Any) -> list[dict[str, Any]]:
+    """Preserve every printed credit/hour alternative in source order."""
+    text = str(value or "").strip()
+    options: list[dict[str, Any]] = []
+    for index, match in enumerate(
+        re.finditer(r"(\d+)\s*\(\s*(\d+)\s*-\s*(\d+)\s*-\s*(\d+)\s*\)", text),
+        start=1,
+    ):
+        credit, lecture, lab, self_h = map(int, match.groups())
+        options.append({
+            "alternative_index": index,
+            "credits": credit,
+            "lecture_h": lecture,
+            "lab_h": lab,
+            "self_h": self_h,
+            "raw_pattern": match.group(0),
+        })
+    return options
+
+
+def _elective_type(name_th: Any, name_en: Any, category: Any) -> str | None:
+    """Classify a printed elective label without inventing a display name."""
+    patterns = (
+        (r"มนุษยศาสตร์|humanit", "humanities_elective"),
+        (r"สังคมศาสตร์|social\s+science", "social_science_elective"),
+        (r"ภาษา|language", "language_elective"),
+        (r"วิทยาศาสตร์.*คณิต|scientific.*math", "science_math_elective"),
+        (r"วิชาเลือกเสรี|free\s+elective", "free_elective"),
+        (r"วิชาเลือก|elective", "major_elective"),
+    )
+    for label in (
+        " ".join(str(value or "") for value in (name_th, name_en)).casefold(),
+        str(category or "").casefold(),
+    ):
+        match = next((kind for pattern, kind in patterns if re.search(pattern, label, re.I)), None)
+        if match:
+            return match
+    return None
+
+
+def _recover_placeholder_codes_from_markdown(data: dict, markdown: str) -> int:
+    """Restore wildcard codes that the structuring model moved out of the code cell.
+
+    Typhoon's Markdown table retains the printed cell even when the second-stage
+    JSON model emits the elective name as ``code``.  Match only by the printed
+    row name and only when the first cell is a generic x/X placeholder.
+    """
+    rows: list[tuple[str, str]] = []
+    for table in re.findall(r"<table[^>]*>(.*?)</table>", markdown, flags=re.I | re.S):
+        shared_codes: list[str] = []
+        for row_html in re.findall(r"<tr[^>]*>(.*?)</tr>", table, flags=re.I | re.S):
+            cells = re.findall(r"<td\b([^>]*)>(.*?)</td>", row_html, flags=re.I | re.S)
+            if len(cells) < 2:
+                shared_codes = []
+                continue
+            if shared_codes:
+                raw_code = shared_codes.pop(0)
+                label_html = cells[0][1]
+            else:
+                raw_code = re.sub(r"<[^>]+>", " ", cells[0][1]).strip()
+                label_html = cells[1][1]
+                span = re.search(r'rowspan\s*=\s*[\"\']?(\d+)', cells[0][0], re.I)
+                if span:
+                    # Distribute only an explicit one-code-per-row list. A merged
+                    # A-or-B cell is not such a list and must not be guessed.
+                    fragments = re.split(r"<br\s*/?>", cells[0][1], flags=re.I)
+                    codes = [re.sub(r"<[^>]+>", " ", part).strip() for part in fragments]
+                    if len(codes) == int(span[1]) and all(
+                        re.fullmatch(r"[0-9xX]{4,}", code) for code in codes
+                    ):
+                        raw_code = codes[0]
+                        shared_codes = codes[1:]
+            wildcards = _lab7b_wildcards(raw_code)
+            if not wildcards:
+                continue
+            label = re.sub(r"<br\s*/?>", " ", label_html, flags=re.I)
+            label = re.sub(r"<[^>]+>", " ", label)
+            rows.append((wildcards[0], re.sub(r"\s+", " ", label).strip().casefold()))
+
+    recovered = 0
+    for course in data.get("courses") or []:
+        current = str(course.get("code") or "")
+        if _lab7b_codes(current) or _lab7b_wildcards(current):
+            continue
+        names = [
+            re.sub(r"\s+", " ", str(course.get(key) or "")).strip().casefold()
+            for key in ("name_th", "name_en")
+        ]
+        names = [name for name in names if name]
+        for wildcard, label in rows:
+            if any(name in label for name in names):
+                course["code"] = wildcard
+                recovered += 1
+                break
+    return recovered
 
 
 def _is_elective_wildcard(value: Any) -> bool:
@@ -724,7 +887,11 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
                   total_credits: int | None = None,
                   years: int | None = None,
                   target_plan: str = "coop",
-                  supplemental_courses: list[dict] | None = None) -> tuple[dict, dict]:
+                  supplemental_courses: list[dict] | None = None,
+                  curriculum_version: int | None = None,
+                  is_latest: bool = False,
+                  plan_variant: str | None = None,
+                  printed_page_offset: int | None = None) -> tuple[dict, dict]:
     """
     แปล schema ผลลัพธ์ Lab 7B เป็น Lab 8B ด้วยกฎคงที่ โดยไม่เรียก LLM
 
@@ -734,7 +901,7 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
     # --- เพิ่มบรรทัดนี้ที่ต้นฟังก์ชัน ---
     if "courses_master" in data:
         data = denormalize_gt(data, target_plan=target_plan)
-    
+
     elif "ocr_data" in data and "courses" not in data:
         extracted_courses = []
         for item in data.get("ocr_data", []):
@@ -755,12 +922,13 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
     converted_wildcards = 0
     skipped_flexible = 0
     wildcard_fallback_counts: dict[tuple[str, int, int], int] = defaultdict(int)
+    synthetic_source_labels: dict[str, str] = {}
+    alternative_group_counts: dict[str, int] = defaultdict(int)
+    source_courses = data.get("courses") or []
 
-    for index, src in enumerate(data.get("courses") or []):
+    for index, src in enumerate(source_courses):
         raw_code = str(src.get("code") or "").strip()
         source_names = " ".join(str(src.get(k) or "") for k in ("name_th", "name_en"))
-        if re.search(r"วิชาเลือกเสรี|FREE\s+ELECTIVE", source_names, re.I):
-            raw_code = str(src.get("name_th") or "FREE ELECTIVE").strip()
         real_codes = _lab7b_codes(raw_code)
         wildcard_codes = _lab7b_wildcards(raw_code)
 
@@ -798,6 +966,7 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
             converted_wildcards += len(plan_codes)
         elif raw_code:
             plan_codes = [_slot_code_from_name(index + 1, raw_code)]
+            synthetic_source_labels[plan_codes[0]] = raw_code
             course_codes = []
             converted_wildcards += 1
             warnings.append(
@@ -809,14 +978,37 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
             warnings.append(f"courses[{index}] ไม่มีรหัส/ชื่อสล็อต: ข้ามรายการ")
             continue
 
+        credits_value = src.get("credits")
+        # OCR sometimes puts the shared credit cell only on the first row of a
+        # visually merged A-or-B choice.  Recover it only from the immediately
+        # preceding row when page, term and cooperative label all agree.
+        if not str(credits_value or "").strip() and index > 0:
+            previous = source_courses[index - 1]
+            same_location = (
+                previous.get("page_number") == src.get("page_number")
+                and previous.get("year") == src.get("year")
+                and previous.get("semester") == src.get("semester")
+            )
+            previous_names = " ".join(
+                str(previous.get(key) or "") for key in ("name_th", "name_en")
+            )
+            if (
+                same_location
+                and re.search(r"สหกิจ|COOPERATIVE", source_names, re.I)
+                and re.search(r"สหกิจ|COOPERATIVE", previous_names, re.I)
+                and str(previous.get("credits") or "").strip()
+            ):
+                credits_value = previous.get("credits")
+                warnings.append(
+                    f"{raw_code}: ใช้ช่องหน่วยกิตร่วมจากแถวตัวเลือกก่อนหน้าบนหน้าเดียวกัน"
+                )
         try:
-            credit, lecture, lab, self_h = _credit_parts(src.get("credits"))
+            credit, lecture, lab, self_h = _credit_parts(credits_value)
         except ValueError as exc:
             warnings.append(f"{raw_code}: {exc}; ข้ามรายการ")
             continue
 
-        if "หรือ" in str(src.get("credits") or ""):
-            warnings.append(f"{raw_code}: หน่วยกิตมีหลายแบบ; ใช้แบบแรก")
+        credit_options = _credit_options(credits_value)
 
         # เฉพาะรหัสวิชาจริงเท่านั้นที่เข้า course table
         for code in course_codes:
@@ -852,6 +1044,18 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
         category = str(src.get("category")).strip() if src.get("category") else None
         ctype = str(src.get("type")).strip() if src.get("type") else None
         note = str(src.get("note")).strip() if src.get("note") else None
+        is_placeholder = not bool(real_codes)
+        code_pattern = wildcard_codes[0].upper() if wildcard_codes else None
+        elective_type = _elective_type(src.get("name_th"), src.get("name_en"), category)
+        pdf_page_number = src.get("page_number")
+        printed_page_number = src.get("printed_page_number")
+        if (
+            printed_page_number is None
+            and printed_page_offset is not None
+            and isinstance(pdf_page_number, int)
+            and pdf_page_number > printed_page_offset
+        ):
+            printed_page_number = pdf_page_number - printed_page_offset
         catalog_only = False
         if (
             target_plan == "no_coop"
@@ -909,12 +1113,30 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
             for code in plan_codes:
                 key = (year, semester, code, alt_group)
                 if key not in seen_plan:
+                    alternative_index = None
+                    if alt_group:
+                        alternative_group_counts[alt_group] += 1
+                        alternative_index = alternative_group_counts[alt_group]
                     plan.append({"year": year, "semester": semester,
-                                 "code": code, "credits": credit,
-                                 "alt_group": alt_group, "category": category,
+                                 "code": code,
+                                 "name_th": (str(src.get("name_th")).strip()
+                                             if src.get("name_th") else None),
+                                 "name_en": (str(src.get("name_en")).replace("\n", " ").strip()
+                                             if src.get("name_en") else None),
+                                 "credits": credit,
+                                 "credits_raw": str(credits_value).strip() or None,
+                                 "credit_options": credit_options,
+                                 "alt_group": alt_group,
+                                 "alternative_index": alternative_index,
+                                 "is_placeholder": is_placeholder,
+                                 "raw_code": (raw_code if is_placeholder and wildcard_codes else None),
+                                 "code_pattern": code_pattern,
+                                 "elective_type": elective_type,
+                                 "category": category,
                                  "ctype": ctype, "note": note,
                                  "source_file": src.get("source_file"),
-                                 "page_number": src.get("page_number")})
+                                 "page_number": pdf_page_number,
+                                 "printed_page_number": printed_page_number})
                     seen_plan.add(key)
 
         pre_codes = _lab7b_codes(src.get("prerequisite"))
@@ -937,7 +1159,7 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
     # all alternatives while counting two slots in Y2/S2 and three in Y3/S1.
     pid_hint = str(program_id or data.get("program") or "").upper()
     if pid_hint.startswith("IT-"):
-        it_specialization_slots = {
+        it_specialization_slots_2565 = {
             (2, 2): {
                 "06016414": 1, "06016419": 1, "06016424": 1,
                 "06016415": 2, "06016420": 2, "06016425": 2,
@@ -948,9 +1170,47 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
                 "06016418": 3, "06016423": 3,
             },
         }
+        it_specialization_slots_2560 = {
+            (2, 2): {
+                "06016321": 1, "06016331": 1, "06016341": 1,
+                "06016322": 2, "06016332": 2, "06016342": 2,
+            },
+            (3, 1): {
+                "06016323": 1, "06016333": 1, "06016343": 1,
+                "06016324": 2, "06016334": 2, "06016344": 2,
+                "06016325": 3, "06016335": 3, "06016345": 3, "06016346": 3,
+            },
+            (3, 2): {
+                "06016326": 1, "06016336": 1, "06016346": 1,
+                "06016327": 2, "06016337": 2, "06016347": 2,
+                "06016328": 3, "06016338": 3, "06016348": 3,
+            },
+            (4, 1): {"06016329": 1, "06016339": 1, "06016349": 1},
+            (4, 2): {"06016330": 1, "06016340": 1, "06016350": 1},
+        }
+        it_specialization_slots = (
+            it_specialization_slots_2560
+            if curriculum_version == 2560 else it_specialization_slots_2565
+        )
+        # IT B.E. 2560 prints the third specialization bundle in adjacent
+        # columns.  OCR occasionally captures the English course name in the
+        # code cell for its first two rows.  Those rows are still alternatives
+        # for slots 1 and 2, not extra general-education courses.
+        it_2560_name_slots = {
+            "WEB PROGRAMMING": 1,
+            "COMPUTER GRAPHICS AND ANIMATION": 2,
+        }
         for item in plan:
             term = (item["year"], item["semester"])
             slot = it_specialization_slots.get(term, {}).get(item["code"])
+            if slot is None and curriculum_version == 2560 and term == (2, 2):
+                course_info = course_by_code.get(item["code"], {})
+                name_en = str(
+                    course_info.get("name_en")
+                    or synthetic_source_labels.get(item["code"])
+                    or ""
+                ).strip().upper()
+                slot = it_2560_name_slots.get(name_en)
             if slot:
                 item["alt_group"] = f"it-specialization-y{term[0]}s{term[1]}-slot-{slot}"
 
@@ -988,9 +1248,8 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
                     old[key] = value
 
     # Use the total printed at the bottom of each term table as an independent
-    # completeness check.  If OCR missed a row, preserve the missing credits as
-    # an explicit elective slot rather than pretending the extracted list is
-    # complete.  Over-counts are never hidden and continue to fail CHK1/CHK7.
+    # completeness check. Missing credits are evidence of lost rows; a credit
+    # deficit alone cannot establish that the missing rows are elective slots.
     for declared_term in data.get("term_totals") or []:
         try:
             term = (int(declared_term["year"]), int(declared_term["semester"]))
@@ -1012,25 +1271,20 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
                     f"แต่ยอดพิมพ์ในตารางคือ {expected}; ไม่ปรับยอดเกินอัตโนมัติ"
                 )
             continue
-        if missing % 3:
-            warnings.append(
-                f"ปี {term[0]}/{term[1]} ขาด {missing} หน่วยกิตซึ่งไม่ลงตัวด้วยสล็อต 3 หน่วยกิต"
-            )
-            continue
-        for slot_no in range(1, missing // 3 + 1):
-            code = f"ELEC-RECOVERED-Y{term[0]}S{term[1]}-{slot_no}"
-            plan.append({
-                "year": term[0], "semester": term[1], "code": code, "credits": 3,
-                "alt_group": None, "category": None, "ctype": "เลือก",
-                "note": "สล็อตกู้คืนจากยอดรวมที่พิมพ์ในตาราง; OCR ไม่พบรายละเอียดแถว",
-                "source_file": declared_term.get("source_file"),
-                "page_number": declared_term.get("page_number"),
-            })
-            seen_plan.add((term[0], term[1], code, None))
         warnings.append(
             f"ปี {term[0]}/{term[1]} OCR ขาด {missing} หน่วยกิต "
-            f"— เพิ่มสล็อตจากยอดรวม {expected} ที่พิมพ์ในตาราง"
+            f"— ต้องตรวจหน้า {declared_term.get('page_number')} จากเล่มหลักสูตร"
         )
+
+    # Re-number alternatives after all curriculum-specific grouping rules.
+    group_indexes: dict[str, int] = defaultdict(int)
+    for item in plan:
+        group = item.get("alt_group")
+        if group:
+            group_indexes[group] += 1
+            item["alternative_index"] = group_indexes[group]
+        else:
+            item["alternative_index"] = None
 
     max_year = max((p["year"] for p in plan), default=4)
     effective_years = years or max_year
@@ -1057,6 +1311,9 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
             "degree": None,
             "total_credits": total_credits,
             "years": effective_years,
+            "curriculum_version": curriculum_version,
+            "is_latest": is_latest,
+            "plan": plan_variant or ("no-coop" if target_plan == "no_coop" else "coop"),
             "source_file": program_source,
             "page_number": max(source_pages) if source_pages else None,
         },
@@ -1080,9 +1337,114 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
     return result, report
 
 
+def validate_conversion_fidelity(result: dict, source_data: dict) -> list[dict[str, Any]]:
+    """Return ingest blockers with the offending term/page instead of hiding loss."""
+    errors: list[dict[str, Any]] = []
+    plan = result.get("plan") or []
+
+    for item in plan:
+        location = {
+            "year": item.get("year"),
+            "semester": item.get("semester"),
+            "pdf_page": item.get("page_number"),
+            "printed_page": item.get("printed_page_number"),
+            "code": item.get("raw_code") or item.get("code"),
+        }
+        if not item.get("code"):
+            errors.append({**location, "kind": "missing_code", "detail": "row has no code"})
+        if not (str(item.get("name_th") or "").strip() or str(item.get("name_en") or "").strip()):
+            errors.append({**location, "kind": "missing_name", "detail": "row has no Thai or English name"})
+        if item.get("page_number") is None:
+            errors.append({**location, "kind": "missing_pdf_page", "detail": "row has no PDF page"})
+        if item.get("is_placeholder") and not item.get("raw_code"):
+            errors.append({
+                **location,
+                "kind": "placeholder_source_code_missing",
+                "detail": "placeholder exists but its printed x/X code was not recovered",
+            })
+        expected_credit_options = len(_credit_options(item.get("credits_raw")))
+        if expected_credit_options != len(item.get("credit_options") or []):
+            errors.append({
+                **location,
+                "kind": "credit_alternative_loss",
+                "detail": f"expected {expected_credit_options} stored credit alternatives",
+            })
+
+    group_indexes: dict[str, list[int]] = defaultdict(list)
+    for item in plan:
+        if item.get("alt_group"):
+            group_indexes[str(item["alt_group"])].append(int(item.get("alternative_index") or 0))
+    for group, indexes in group_indexes.items():
+        if sorted(indexes) != list(range(1, len(indexes) + 1)):
+            errors.append({
+                "kind": "alternative_index_gap",
+                "alt_group": group,
+                "detail": f"indexes are {sorted(indexes)}",
+            })
+
+    for declared in source_data.get("term_totals") or []:
+        try:
+            year = int(declared["year"])
+            semester = int(declared["semester"])
+            expected = int(declared["credits"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        grouped: dict[str, int] = {}
+        matching = [
+            item for item in plan
+            if item.get("year") == year and item.get("semester") == semester
+        ]
+        for index, item in enumerate(matching):
+            key = str(item.get("alt_group") or f"row-{index}")
+            grouped[key] = min(grouped.get(key, item["credits"]), item["credits"])
+        actual = sum(grouped.values())
+        if actual != expected:
+            errors.append({
+                "kind": "term_credit_total_mismatch",
+                "year": year,
+                "semester": semester,
+                "pdf_page": declared.get("page_number"),
+                "expected": expected,
+                "actual": actual,
+            })
+        if declared.get("row_count") is not None and len(matching) != int(declared["row_count"]):
+            errors.append({
+                "kind": "term_row_count_mismatch",
+                "year": year,
+                "semester": semester,
+                "pdf_page": declared.get("page_number"),
+                "expected": int(declared["row_count"]),
+                "actual": len(matching),
+            })
+
+    grouped_total: dict[tuple[int, int, str], int] = {}
+    for index, item in enumerate(plan):
+        key = (
+            int(item["year"]),
+            int(item["semester"]),
+            str(item.get("alt_group") or f"row-{index}"),
+        )
+        grouped_total[key] = min(grouped_total.get(key, item["credits"]), item["credits"])
+    actual_total = sum(grouped_total.values())
+    expected_total = int(result["program"]["total_credits"])
+    if actual_total != expected_total:
+        errors.append({
+            "kind": "program_credit_total_mismatch",
+            "expected": expected_total,
+            "actual": actual_total,
+        })
+    return errors
+
+
 def cmd_import_lab7b(args) -> None:
     src = Path(args.input)
     data = json.loads(src.read_text(encoding="utf-8"))
+    recovered_placeholder_codes = 0
+    intermediate = src.with_name("intermediate_vlm.md")
+    if intermediate.is_file():
+        recovered_placeholder_codes = _recover_placeholder_codes_from_markdown(
+            data, intermediate.read_text(encoding="utf-8")
+        )
     supplemental_courses = None
     if args.general_education:
         catalog_path = Path(args.general_education)
@@ -1100,7 +1462,13 @@ def cmd_import_lab7b(args) -> None:
         years=args.years,
         target_plan=args.target_plan,
         supplemental_courses=supplemental_courses,
+        curriculum_version=args.curriculum_version,
+        is_latest=args.is_latest,
+        plan_variant=args.plan,
+        printed_page_offset=args.printed_page_offset,
     )
+    report["placeholder_codes_recovered_from_markdown"] = recovered_placeholder_codes
+    report["fidelity_errors"] = validate_conversion_fidelity(converted, data)
     out = Path(args.output)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(converted, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -1115,6 +1483,15 @@ def cmd_import_lab7b(args) -> None:
         print(f"    เพิ่มรายวิชาจากคลังเสริม {report['supplemental_courses_added']} รายการ")
     if report["warnings"]:
         print(f"    ต้องตรวจ {len(report['warnings'])} รายการ — ดูได้ใน {meta_path}")
+    if report["fidelity_errors"]:
+        pages = sorted({
+            str(item.get("pdf_page"))
+            for item in report["fidelity_errors"] if item.get("pdf_page") is not None
+        })
+        raise ValueError(
+            f"table fidelity failed ({len(report['fidelity_errors'])} issues; "
+            f"PDF pages: {', '.join(pages) or 'unknown'}); see {meta_path}"
+        )
 
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -1141,48 +1518,82 @@ def open_db(path: str | Path, readonly: bool = False) -> sqlite3.Connection:
 def cmd_load(args) -> None:
     data = json.loads(Path(args.input).read_text(encoding="utf-8"))
     db = Path(args.database)
-    if db.exists() and args.replace:
-        db.unlink()
     db.parent.mkdir(parents=True, exist_ok=True)
-
+    destination = db
+    if args.replace:
+        descriptor, staging = tempfile.mkstemp(prefix=db.stem + "-staging-", suffix=".db", dir=db.parent)
+        os.close(descriptor)
+        db = Path(staging)
     conn = open_db(db)
-    conn.executescript(DDL)
+    try:
+        conn.executescript(DDL)
 
-    prog = data["program"]
-    conn.execute(
-        "INSERT OR REPLACE INTO program (program_id, name_th, name_en, degree,"
-        " total_credits, years, source_file, page_number) VALUES (?,?,?,?,?,?,?,?)",
-        (prog["program_id"], prog["name_th"], prog.get("name_en"),
-         prog.get("degree"), prog["total_credits"], prog["years"],
-         prog.get("source_file"), prog.get("page_number")))
-
-    for c in data.get("courses", []):
-        conn.execute("INSERT OR REPLACE INTO course VALUES (?,?,?,?,?,?,?,?,?,?)",
-                     (c["code"], c["name_th"], c.get("name_en"), c["credits"],
-                      c.get("lecture_h"), c.get("lab_h"), c.get("self_h"),
-                      c.get("description_th"), c.get("source_file"),
-                      c.get("page_number")))
-
-    conn.execute("DELETE FROM plan_item WHERE program_id = ?", (prog["program_id"],))
-    for p in data.get("plan", []):
+        prog = data["program"]
         conn.execute(
-            "INSERT INTO plan_item (program_id, year, semester, code, credits,"
-            " alt_group, category, ctype, note, source_file, page_number)"
+            "INSERT OR REPLACE INTO program (program_id, name_th, name_en, degree,"
+            " total_credits, years, curriculum_version, is_latest, plan, source_file, page_number)"
             " VALUES (?,?,?,?,?,?,?,?,?,?,?)",
-            (prog["program_id"], p["year"], p["semester"], p["code"],
-             p["credits"], p.get("alt_group"), p.get("category"),
-             p.get("ctype"), p.get("note"), p.get("source_file"),
-             p.get("page_number")))
+            (prog["program_id"], prog["name_th"], prog.get("name_en"),
+             prog.get("degree"), prog["total_credits"], prog["years"],
+             prog.get("curriculum_version"), int(bool(prog.get("is_latest"))),
+             prog.get("plan", "both"),
+             prog.get("source_file"), prog.get("page_number")))
 
-    for r in data.get("prerequisites", []):
-        conn.execute("INSERT OR REPLACE INTO prerequisite VALUES (?,?,?,?,?)",
-                     (r["code"], r["requires"], r.get("kind", "pre"),
-                      r.get("source_file"), r.get("page_number")))
+        for c in data.get("courses", []):
+            conn.execute("INSERT OR REPLACE INTO course VALUES (?,?,?,?,?,?,?,?,?,?)",
+                         (c["code"], c["name_th"], c.get("name_en"), c["credits"],
+                          c.get("lecture_h"), c.get("lab_h"), c.get("self_h"),
+                          c.get("description_th"), c.get("source_file"),
+                          c.get("page_number")))
 
-    conn.commit()
-    n = {t: conn.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0]
-         for t in ("program", "course", "plan_item", "prerequisite")}
-    conn.close()
+        conn.execute("DELETE FROM plan_item WHERE program_id = ?", (prog["program_id"],))
+        for p in data.get("plan", []):
+            cursor = conn.execute(
+                "INSERT INTO plan_item (program_id, year, semester, code, name_th, name_en, credits,"
+                " alt_group, alternative_index, is_placeholder, raw_code, code_pattern,"
+                " elective_type, credits_raw, category, ctype, note, source_file, page_number,"
+                " printed_page_number) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                (prog["program_id"], p["year"], p["semester"], p["code"],
+                 p.get("name_th"), p.get("name_en"), p["credits"],
+                 p.get("alt_group"), p.get("alternative_index"),
+                 int(bool(p.get("is_placeholder"))), p.get("raw_code"),
+                 p.get("code_pattern"), p.get("elective_type"), p.get("credits_raw"),
+                 p.get("category"), p.get("ctype"), p.get("note"),
+                 p.get("source_file"), p.get("page_number"), p.get("printed_page_number")))
+            for option in p.get("credit_options") or []:
+                conn.execute(
+                    "INSERT INTO plan_item_credit_option (plan_item_id, alternative_index,"
+                    " credits, lecture_h, lab_h, self_h, raw_pattern) VALUES (?,?,?,?,?,?,?)",
+                    (cursor.lastrowid, option["alternative_index"], option["credits"],
+                     option.get("lecture_h"), option.get("lab_h"), option.get("self_h"),
+                     option["raw_pattern"]),
+                )
+
+        for r in data.get("prerequisites", []):
+            conn.execute("INSERT OR REPLACE INTO prerequisite VALUES (?,?,?,?,?)",
+                         (r["code"], r["requires"], r.get("kind", "pre"),
+                          r.get("source_file"), r.get("page_number")))
+
+        conn.commit()
+        n = {t: conn.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0]
+             for t in ("program", "course", "plan_item", "prerequisite")}
+        integrity = conn.execute("PRAGMA integrity_check").fetchone()[0]
+        if integrity != "ok":
+            raise ValueError(f"staged database failed integrity check: {integrity}; retained at {db}")
+    finally:
+        conn.close()
+    if args.replace:
+        if destination.exists():
+            backup = destination.with_name(destination.stem + f".before-load-{time.time_ns()}.bak")
+            source = open_db(destination, readonly=True)
+            saved = sqlite3.connect(backup)
+            try:
+                source.backup(saved)
+            finally:
+                saved.close()
+                source.close()
+        os.replace(db, destination)
+        db = destination
     print(f"  โหลดเข้า {db} แล้ว")
     for t, c in n.items():
         print(f"    {t:<14} {c:>5} แถว")
@@ -1367,13 +1778,26 @@ def verify_db(conn: sqlite3.Connection) -> list[dict]:
     """).fetchall()
     elective_slot_terms = {(r["year"], r["semester"]) for r in elective_slot_rows}
 
+    # Some curricula intentionally finish with a six-credit final semester
+    # (for example IT B.E. 2560 no-coop, year 4/semester 2).  Accept that
+    # published shape only when the complete plan total already agrees with
+    # the declared total.  This keeps a random under-filled middle semester
+    # visible while avoiding a false warning for the verified terminal term.
+    semester_rows = _sem_credits(conn)
+    final_term = max(
+        ((r["year"], r["semester"]) for r in semester_rows),
+        default=None,
+    )
+
     out_of_range = []
-    for r in _sem_credits(conn):
+    for r in semester_rows:
         key = (r["year"], r["semester"])
         if key in block:
             continue                       # ภาคบล็อก ไม่ใช้เกณฑ์ปกติ
         if r["semester"] == 3:
             continue                       # ภาคฤดูร้อน หน่วยกิตน้อยเป็นปกติ
+        if key == final_term and r["credits"] == 6 and total == declared:
+            continue                       # ภาคสุดท้าย 6 หน่วยกิตตามแผนที่ประกาศ
 
         if key in elective_slot_terms and r["credits"] < MIN_CREDITS_PER_SEM:
             # ยกเว้นเฉพาะกรณีที่ทุกรายการในภาคนั้นเป็นสล็อตเลือกจริง
@@ -2363,6 +2787,14 @@ def main() -> None:
                    help="จำนวนปีของหลักสูตร; ไม่ระบุจะใช้ปีสูงสุดในแผน")
     p.add_argument("--target-plan", choices=["coop", "no_coop"], default="coop",
                    help="เลือกแผนจาก GT แบบ normalized")
+    p.add_argument("--curriculum-version", type=int, default=None,
+                   help="ปี พ.ศ. ของหลักสูตร เช่น 2560 หรือ 2565")
+    p.add_argument("--is-latest", action="store_true",
+                   help="ระบุว่าหลักสูตรฉบับนี้เป็นฉบับล่าสุด")
+    p.add_argument("--plan", choices=["coop", "no-coop", "both"], default=None,
+                   help="แผนที่ฐานข้อมูลนี้แทน")
+    p.add_argument("--printed-page-offset", type=int, default=None,
+                   help="ผลต่าง PDF page - printed book page ที่ตรวจจากเล่มแล้ว")
     p.add_argument("--general-education", default=None,
                    help="JSON คลังวิชาศึกษาทั่วไป; เพิ่มเฉพาะ course table ไม่เพิ่มในแผน")
 

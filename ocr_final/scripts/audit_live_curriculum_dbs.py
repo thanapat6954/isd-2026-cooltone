@@ -55,6 +55,11 @@ def inspect_database(path: Path, app_root: Path) -> dict[str, Any]:
         programs = _rows(connection, "SELECT * FROM program ORDER BY program_id") if "program" in tables else []
 
         term_source = "v_plan" if "v_plan" in tables else "plan_item"
+        # New views expose printed wildcard codes, not synthetic storage IDs.
+        placeholder_predicate = (
+            "is_placeholder = 1" if "is_placeholder" in view_columns
+            else "code LIKE 'ELEC-%'"
+        )
         term_rows = _rows(
             connection,
             f"""
@@ -71,8 +76,8 @@ def inspect_database(path: Path, app_root: Path) -> dict[str, Any]:
                              GROUP BY p2.alt_group
                          )
                        ), 0) AS counted_credit_sum,
-                   SUM(CASE WHEN code LIKE 'ELEC-%' THEN 1 ELSE 0 END) AS synthetic_rows,
-                   SUM(CASE WHEN code LIKE 'ELEC-%' AND (name_th IS NULL OR TRIM(name_th) = '')
+                   SUM(CASE WHEN {placeholder_predicate} THEN 1 ELSE 0 END) AS synthetic_rows,
+                   SUM(CASE WHEN {placeholder_predicate} AND (name_th IS NULL OR TRIM(name_th) = '')
                             THEN 1 ELSE 0 END) AS synthetic_rows_missing_thai_name,
                    GROUP_CONCAT(DISTINCT page_number) AS pdf_pages
             FROM {term_source} p
@@ -86,7 +91,7 @@ def inspect_database(path: Path, app_root: Path) -> dict[str, Any]:
             SELECT year, semester, code, name_th, name_en, credits, alt_group,
                    category, ctype, note, source_file, page_number
             FROM {term_source}
-            WHERE code LIKE 'ELEC-%'
+            WHERE {placeholder_predicate}
             ORDER BY year, semester, code
             """,
         )

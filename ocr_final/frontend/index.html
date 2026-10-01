@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ถามคำถามเกี่ยวกับหลักสูตรและตรวจสอบคำตอบจากหน้าที่อ้างอิง">
+  <title>ผู้ช่วยค้นข้อมูลหลักสูตร</title>
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+  <!-- Page header -->
+  <header class="site-header">
+    <div class="page-shell header-content">
+      <div class="brand-mark" aria-hidden="true">CB</div>
+      <div>
+        <p class="eyebrow">การพัฒนาระบบอัจฉริยะ</p>
+        <h1>ผู้ช่วยค้นข้อมูลหลักสูตร</h1>
+        <p class="subtitle">ถามคำถามและตรวจสอบคำตอบจากแหล่งอ้างอิงในเล่มหลักสูตร</p>
+        <span id="mode-badge" class="mode-badge"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main application -->
+  <main class="page-shell main-layout">
+    <section class="card question-card" aria-labelledby="question-heading">
+      <div class="section-heading">
+        <div>
+          <p class="step-label">ขั้นตอนที่ 1</p>
+          <h2 id="question-heading">เลือกหลักสูตรและตั้งคำถาม</h2>
+        </div>
+        <span class="required-note">กรุณากรอกข้อมูลให้ครบ</span>
+      </div>
+
+      <!-- Question form -->
+      <form id="question-form" novalidate>
+        <div class="selector-row">
+          <label class="field-group" for="curriculum-select">
+            <span>หลักสูตร</span>
+            <select id="curriculum-select" name="curriculum"></select>
+          </label>
+          <label class="field-group" for="version-select">
+            <span>ฉบับหลักสูตร</span>
+            <select id="version-select" name="version"></select>
+          </label>
+        </div>
+
+        <label class="field-group question-field" for="question-input">
+          <span>คำถาม</span>
+          <textarea
+            id="question-input"
+            name="question"
+            rows="3"
+            maxlength="500"
+            placeholder="ตัวอย่าง: หลักสูตรนี้ต้องเรียนทั้งหมดกี่หน่วยกิต"
+            aria-describedby="question-help character-count"
+          ></textarea>
+        </label>
+        <div class="input-footer">
+          <span id="question-help">กด Enter เพื่อถาม หรือ Shift+Enter เพื่อขึ้นบรรทัดใหม่</span>
+          <span id="character-count">0 / 500</span>
+        </div>
+        <button id="ask-button" class="primary-button" type="submit">
+          <span>ถามข้อมูลหลักสูตร</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+
+      <!-- Example questions -->
+      <div class="examples-block">
+        <h3>ลองใช้คำถามตัวอย่าง</h3>
+        <div id="example-list" class="chip-list"></div>
+      </div>
+    </section>
+
+    <section class="card result-card" aria-labelledby="result-heading">
+      <div class="section-heading">
+        <div>
+          <p class="step-label">ขั้นตอนที่ 2</p>
+          <h2 id="result-heading">คำตอบและแหล่งอ้างอิง</h2>
+        </div>
+      </div>
+
+      <!-- Idle state -->
+      <div id="idle-state" class="state-panel idle-state">
+        <div class="state-icon" aria-hidden="true">?</div>
+        <h3>ถามเรื่องอะไรได้บ้าง</h3>
+        <p>ถามเกี่ยวกับหน่วยกิต วิชาบังคับ วิชาบังคับก่อน หรือความแตกต่างระหว่างฉบับหลักสูตรได้</p>
+        <p class="state-note">คำตอบที่น่าเชื่อถือควรมีหน้าและหัวข้อจากเล่มหลักสูตรเป็นแหล่งอ้างอิง</p>
+      </div>
+
+      <!-- Loading state -->
+      <div id="loading-state" class="state-panel hidden" role="status" aria-live="polite">
+        <div class="spinner" aria-hidden="true"></div>
+        <h3>กำลังค้นข้อมูลในเล่มหลักสูตร...</h3>
+        <p>กำลังค้นหาหน้าที่เกี่ยวข้องและจัดเตรียมคำตอบจากข้อมูลอ้างอิง</p>
+      </div>
+
+      <!-- Success state -->
+      <div id="success-state" class="state-panel success-state hidden" aria-live="polite">
+        <div id="confidence-warning" class="warning-banner hidden" role="alert">
+          ระบบยังไม่มั่นใจ กรุณาปรับคำถามหรือตรวจสอบหน้าที่อ้างอิง
+        </div>
+        <h3>คำตอบ</h3>
+        <p id="answer-text" class="answer-text"></p>
+
+        <div class="source-heading">
+          <h3>แหล่งอ้างอิง</h3>
+          <span id="source-count" class="count-badge"></span>
+        </div>
+        <div id="source-warning" class="warning-banner hidden" role="alert">
+          ไม่พบแหล่งอ้างอิงในเล่มหลักสูตร คำตอบนี้อาจไม่น่าเชื่อถือ
+        </div>
+        <ol id="source-list" class="source-list"></ol>
+
+        <dl class="metadata-grid">
+          <div><dt>โมเดล</dt><dd id="model-value">—</dd></div>
+          <div><dt>เวลาประมวลผลของเซิร์ฟเวอร์</dt><dd id="server-latency-value">—</dd></div>
+          <div><dt>เวลารับส่งทั้งหมด</dt><dd id="round-trip-value">—</dd></div>
+          <div id="slow-badge" class="slow-badge hidden"><dt>สถานะ</dt><dd>ช้า · มากกว่า 5 วินาที</dd></div>
+        </dl>
+      </div>
+
+      <!-- Error state -->
+      <div id="error-state" class="state-panel error-state hidden" role="alert">
+        <div class="state-icon" aria-hidden="true">!</div>
+        <h3>ไม่สามารถตอบคำถามนี้ได้</h3>
+        <p id="error-message"></p>
+        <p id="error-action" class="state-note"></p>
+      </div>
+    </section>
+
+    <!-- In-memory question history -->
+    <aside class="card history-card" aria-labelledby="history-heading">
+      <div class="section-heading compact-heading">
+        <div>
+          <p class="step-label">การใช้งานครั้งนี้</p>
+          <h2 id="history-heading">คำถามล่าสุด</h2>
+        </div>
+        <span class="history-limit">ล่าสุด 5 ข้อ</span>
+      </div>
+      <p id="history-empty" class="empty-history">คำถามที่ส่งจะแสดงในส่วนนี้</p>
+      <ol id="history-list" class="history-list"></ol>
+    </aside>
+  </main>
+
+  <!-- JavaScript is a module, so its constants do not become window globals. -->
+  <script type="module" src="app.js?v=5"></script>
+</body>
+</html>

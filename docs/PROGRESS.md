@@ -32,9 +32,21 @@
 - Done: captured the two UI screenshots and added a read-only live-database inspector. It found 13 deployed databases, 93 synthetic placeholder rows, and missing Thai and English names on all 93. Every database lacks the six required fidelity columns (`is_placeholder`, `raw_code`, `code_pattern`, `elective_type`, `alternative_index`, `printed_page_number`). DSBA-2560 no-coop year 4/2 contains exactly the leaked `ELEC-SLOT-043/044` rows; coop contains only `06026130`, proving `06026131` was dropped from storage rather than merely hidden by the UI.
 - Important: substantial version-support work exists in the separate working folder `C:/Users/thana/OneDrive/เอกสาร/ocr_final`; it has not yet been copied into this repository and must not be treated as the Phase A baseline.
 - In progress: Phase A placeholder/table-fidelity baseline is committed at `cb99fd1`.
-- **NEXT ACTION:** create and hash-verify recoverable backups of all 13 live databases under the live application's `work/backups/` directory. Then add lossless placeholder/alternative/page metadata to the active schema and ingest, rebuild only affected profiles, and add API/UI regression tests before changing frontend presentation.
+- Reconciled 2026-10-02: the separate live application already has lossless slot/credit-option/page metadata and real UI formatting changes, but those changes were not ported into this feature checkout. All 13 pre-migration backups exist under `C:/Users/thana/OneDrive/เอกสาร/ocr_final/work/backups/2026-10-01-before-placeholder-migration`; their SQLite integrity checks pass. Seven profiles migrated; six are blocked by missing printed placeholder codes/table extraction loss. Passing seven structural checks is not proof of PDF table fidelity.
+- In progress: removed the converter's credit-deficit filler rows (invented electives are not source evidence). Replacement loads now stage a new SQLite file, integrity-check it, and preserve the existing DB before replacement. These safeguards need regression tests and a repository checkpoint.
+- Latest test run: 28/30 live tests pass; two tests expect the old `AI` display identifier but the rebuilt DB has `AI-coop`. Investigate metadata rather than hiding the mismatch.
+- Verified now: 33/33 live tests pass after the Windows connection-cleanup fix and AI metadata assertions; the additional rowspan regression also passes (9/9 focused tests). The inspector now recognizes `is_placeholder` because the new view exposes printed wildcard codes.
+- BIT-2560 coop rerun correctly blocked: original structured OCR has no year-4/2 rows (114 vs printed 126 program credits). Visually verified all four year-4/2 rows against PDF page 30 / printed page 25; recorded `docs/results/b1_bit2560_coop_page30_review.json`. A hash-guarded tool creates a separate `reviewed_ingest.json`, leaving the original OCR and frozen evaluation candidates unchanged. Conversion of that curated copy passes fidelity checks (38 courses, 42 stored plan alternatives/rows). This is not evidence of improved OCR accuracy.
+- Ported live version-aware API, frontend, schema and orchestrator to this feature checkout; installed API dependencies. Repository tests against deployed DBs and schema selftests pass in `docs/results/b1_verified_2026-10-02.json` (before the new reviewed-term tool tests).
+- Completed this session: loaded the reviewed BIT-2560 coop copy with staged replacement and an additional recoverable `.before-load-*.bak`; verification passes 7/7, counted program credits 126. Eight of 13 deployed DBs now have fidelity columns; five remain unmigrated. Repository suite passes **44/44**, schema selftests **30/30**, backup integrity **13/13**. Raw evidence: `docs/results/b1_after_reviewed_import_2026-10-02.json` and `docs/results/b1_bit2560_reviewed_import.json`.
+- **NEXT ACTION:** inspect the remaining blocked IT-2560 coop PDF pages 36/40, IT-2565 no-coop pages 36/37, IT-2565 coop pages 43/44, BIT-2565 no-coop pages 29/30, and BIT-2565 coop pages 34/35. Use conversion reports plus actual renders to locate lost/misaligned rows; re-extract or apply separately provenance-reviewed corrections without touching frozen OCR/held-out evaluation inputs. Also split the BIT-2560 coop alternative labels from PDF page 30; storage currently retains both codes but their labels still need independent review. Do not rerun A0 or completed DSBA-2560 review.
 
 ## 3. DONE LOG
+
+- 2026-10-02 — Reconciled feature branch/log with pending live changes. Confirmed branch `audit/curriculum-challenge`, latest commit `b529188`, and 13 intact pre-migration backups. Live tests: 28/30; two stale AI display-name assertions need investigation. BIT-2560 PDF page 30 visually contains four year-4/2 rows; raw OCR HTML packs their four codes into one rowspan cell, which current recovery does not understand.
+- 2026-10-02 — Removed invented credit-deficit filler slots; made replacement SQLite loading staged, backed up, integrity-checked and connection-safe on exceptions. Added lossless roundtrip/failure tests and explicit rowspan-code recovery. Ported reviewed live API/frontend/version-aware importer into feature checkout, without PDFs, DBs, secrets or frozen-evaluation changes.
+- 2026-10-02 — Visually reviewed BIT-2560 coop year 4/2, PDF page 30 / printed page 25. A hash-guarded correction preserves all four actual rows and original OCR. Safe load yields 38 courses / 42 plan rows (including two alternatives); all 7 structural checks pass, counted credits 126. Evidence: `docs/results/b1_bit2560_coop_page30_review.json`, `docs/results/b1_bit2560_reviewed_import.json`.
+- 2026-10-02 — Verified repository implementation against deployed databases: 44/44 unit/integration tests and 30/30 schema selftests. Read-only after-state: 8/13 DBs migrated; 5 still blocked; all 13 pre-migration backups pass integrity. New measured results are not an OCR field-accuracy rerun.
 
 - 2026-10-01 — Created `audit/curriculum-challenge` from clean `week9` commit `0b4a33a`; added this initial `docs/PROGRESS.md` handoff file.
 - 2026-10-01 — Completed A0 architecture inventory at `docs/results/architecture_inventory.json`: committed baseline has five 2565/current profiles, but no BIT/2560 profiles, API, frontend, PDFs, or SQLite DBs; `clean_curriculum_db.py` is absent.
@@ -79,6 +91,8 @@
 - Model placeholders as typed curriculum slots with their printed wildcard code and names; synthetic database identifiers are internal implementation details and must never be answer text.
 - Model alternatives as grouped choices rather than duplicate independent courses or merged text; credit totals count the group once.
 - Capture product defects through read-only SQLite inspection before migrations. This separates storage loss from answer-formatting bugs and provides exact before/after counts.
+- Never repair credit deficits by creating unnamed electives: preserved printed totals are blockers, not a license to invent rows. Manually verified table repairs go into separate hash-guarded ingest copies; original OCR stays the evaluation input.
+- Windows SQLite connections must close in `finally`, including failed staged loads. A transaction context manager alone does not close the handle.
 
 ## 6. HOW TO RERUN
 
@@ -106,8 +120,33 @@ $env:PYTHONUTF8 = "1"
 ```
 
 - Expected generated database paths: `ocr_final/work/lab8b_<profile>/curriculum.db`; none are committed at the baseline.
-- Backup path(s): not created yet; required before Phase B.
+- Backup path: live `work/backups/2026-10-01-before-placeholder-migration` (13 databases, integrity checked); backups are not committed.
 - The committed baseline has no runnable web command. OCR/ingest exists as above; evaluation, UI automation, and latency commands require A1/A3 audit tooling.
+
+Current feature implementation verification (not the historical baseline):
+
+```powershell
+$env:PYTHONUTF8 = '1'
+.\ocr_final\venv\Scripts\python.exe -m pip install -r .\ocr_final\requirements.txt
+.\ocr_final\venv\Scripts\python.exe .\ocr_final\scripts\capture_b1_checkpoint.py --app-root 'C:\Users\thana\OneDrive\เอกสาร\ocr_final' --output .\docs\results\b1_resume_checkpoint.json
+# Start the feature API against generated live DBs without copying DBs into Git:
+$env:CURRICULUM_DATABASE_ROOT = 'C:\Users\thana\OneDrive\เอกสาร\ocr_final'
+Set-Location .\ocr_final
+.\venv\Scripts\python.exe -m uvicorn lab10_fastapi.curriculum_app.main:app --host 127.0.0.1 --port 8001
+# Separate terminal from ocr_final: serve frontend (if 5500 is free)
+.\venv\Scripts\python.exe -m http.server 5500 --directory frontend
+```
+
+The existing live frontend uses API port 8000. Port 8001 above is an isolated verification instance; do not stop a user's running server. For normal use start the feature API on 8000 when that port is free.
+
+Recreate the reviewed BIT ingest without changing OCR (from repository root):
+
+```powershell
+$liveApp = 'C:\Users\thana\OneDrive\เอกสาร\ocr_final'
+.\ocr_final\venv\Scripts\python.exe .\ocr_final\scripts\apply_reviewed_plan_term.py --input "$liveApp\work\lab8b_bit_2560_coop\lab7b\pred_vlm.json" --review .\docs\results\b1_bit2560_coop_page30_review.json --pdf "$liveApp\data\input\BIT-60.pdf" --output "$liveApp\work\lab8b_bit_2560_coop\lab7b\reviewed_ingest.json"
+```
+
+Exact subsequent import/load/verify arguments and raw output are saved in `docs/results/b1_bit2560_reviewed_import.json`. The default orchestrator still reads original OCR and intentionally rejects its missing semester; do not mistake that for loss of the reviewed repair. Source hash checks require review again if the PDF or OCR changes.
 
 ## 7. OPEN QUESTIONS / THINGS NOT VERIFIED
 
@@ -119,4 +158,5 @@ $env:PYTHONUTF8 = "1"
 - The 180-row review file is not yet valid ground truth; no OCR accuracy claim may use it until all rows have a visual-review status and populated ground-truth fields.
 - Real-browser L1–L4 evaluation, cold/warm latency, citation accuracy, and hold-out performance are not yet measured.
 - Full semester-by-semester visual table-fidelity review, printed-page mapping, and ingest-time total/row-count checks are not yet implemented.
-- No database backup has been created yet because Phase B has not started.
+- Five live profiles still use pre-migration schemas because source-fidelity checks blocked replacement. Full per-semester visual review and all Phase A field/UI/latency measurements remain incomplete.
+- The BIT-2560 coop manual table correction is curated ingest data, not a model improvement; its prerequisite/category/type fields remain unknown. No new OCR accuracy or held-out answer score was claimed.
