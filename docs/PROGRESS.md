@@ -14,17 +14,19 @@
 
 ## 2. CURRENT STATUS
 
-- Phase: **A0 — baseline execution and evidence capture**.
+- Phase: **A1 — independent PDF ground-truth tooling and dataset construction**.
 - Done: located the real repository; confirmed it was clean on `week9` at `0b4a33a`; created feature branch `audit/curriculum-challenge`; inventoried the committed architecture in `docs/results/architecture_inventory.json`.
-- In progress: creating the documented Python 3.11 `venv` and installing committed requirements. The first command attempts failed because a fresh clone has no local environment; this is recorded in `docs/results/baseline_environment.json` and is not yet counted as a product defect.
+- Done: installed the documented Python 3.11 environment; captured post-setup execution results in `docs/results/baseline_execution.json`; wrote preliminary baseline report `docs/AUDIT_PHASE_A.md`.
+- In progress: constructing a reproducible PDF-derived row sample and field-comparison tooling without modifying product code.
 - Important: substantial version-support work exists in the separate working folder `C:/Users/thana/OneDrive/เอกสาร/ocr_final`; it has not yet been copied into this repository and must not be treated as the Phase A baseline.
-- **NEXT ACTION:** run `py -3.11 -m venv venv`, install `ocr_final/requirements.txt`, then rerun tests, Lab 7 readiness, `run_lab8b.py --program all`, and web startup; save the post-setup results under `docs/results/`.
+- **NEXT ACTION:** add the A1 audit script and manifest for the six authoritative PDFs, copy/link the source PDFs into the ignored `ocr_final/data/input/` location, render representative pages, and create the first manually reviewable 30-row sample per program-version.
 
 ## 3. DONE LOG
 
 - 2026-10-01 — Created `audit/curriculum-challenge` from clean `week9` commit `0b4a33a`; added this initial `docs/PROGRESS.md` handoff file.
 - 2026-10-01 — Completed A0 architecture inventory at `docs/results/architecture_inventory.json`: committed baseline has five 2565/current profiles, but no BIT/2560 profiles, API, frontend, PDFs, or SQLite DBs; `clean_curriculum_db.py` is absent.
 - 2026-10-01 — Captured fresh-clone environment checkpoint in `docs/results/baseline_environment.json`: repository-local `venv` did not exist; Python 3.11 is available and the documented setup can proceed.
+- 2026-10-01 — Installed committed requirements in Python 3.11; Lab7 environment passed with `PYTHONUTF8=1`; tests passed 12/12; full pipeline failed on missing PDF; web start failed because API/frontend and Uvicorn are absent. Raw results: `docs/results/baseline_execution.json`; report: `docs/AUDIT_PHASE_A.md`.
 
 ## 4. FINDINGS AND PROBLEMS
 
@@ -33,6 +35,7 @@
 3. **Rubric 2–3 / reproducibility — open, critical.** PDFs and `curriculum.db` files are not committed, so the documented `--program all` command cannot reproduce current reports from a fresh clone. Evidence: inventory JSON. Fix commit: n/a.
 4. **Rubric 1 / DB design — open.** Lab8B has normalized tables and useful credit views, but `prerequisite` lacks declared foreign keys, only two plan indexes exist, version/plan metadata is missing, and the default legacy FTS5 tokenizer is unsuitable evidence for Thai word retrieval. Evidence: committed DDL. Fix commit: n/a.
 5. **Potential source/repo divergence / all rubric items — open.** A separate working folder contains newer implementation and results; the Git baseline must be measured before selected changes are ported. Fix commit: n/a.
+6. **Reliability / Rubric 5 — open.** Lab7 readiness crashes under Windows cp874 unless `PYTHONUTF8=1` is set; the documented setting is an effective workaround. Evidence: `docs/results/baseline_execution.json`. Fix commit: n/a.
 
 ## 5. DECISIONS AND REASONS
 
@@ -54,13 +57,15 @@ git status --short
 Current known application commands (must be verified during A0 before relying on them):
 
 ```powershell
-.\venv\Scripts\python.exe -m uvicorn lab10_fastapi.curriculum_app.main:app --host 127.0.0.1 --port 8000
 .\venv\Scripts\python.exe -m unittest discover -s tests -v
+$env:PYTHONUTF8 = "1"
+.\venv\Scripts\python.exe .\scr\ocr_system\lab7b_curriculum.py --check
+.\venv\Scripts\python.exe .\run_lab8b.py --program all
 ```
 
 - Expected generated database paths: `ocr_final/work/lab8b_<profile>/curriculum.db`; none are committed at the baseline.
 - Backup path(s): not created yet; required before Phase B.
-- OCR/ingest, evaluation, UI automation, and latency commands: pending A0 discovery and audit-tool implementation.
+- The committed baseline has no runnable web command. OCR/ingest exists as above; evaluation, UI automation, and latency commands require A1/A3 audit tooling.
 
 ## 7. OPEN QUESTIONS / THINGS NOT VERIFIED
 

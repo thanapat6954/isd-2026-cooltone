@@ -1,0 +1,40 @@
+{
+  "captured_at": "2026-10-01",
+  "branch": "audit/curriculum-challenge",
+  "environment": {
+    "python": "3.11",
+    "requirements_install": "success",
+    "ollama": "0.34.4",
+    "ollama_service": "ready",
+    "models": ["scb10x/typhoon-ocr1.5-3b", "qwen3:4b"]
+  },
+  "runs": {
+    "unit_tests": {
+      "command": ".\\venv\\Scripts\\python.exe -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "passed": 12,
+      "failed": 0,
+      "scope": "make_eval_summary report-generation tests only"
+    },
+    "lab7_readiness_without_utf8": {
+      "command": ".\\venv\\Scripts\\python.exe .\\scr\\ocr_system\\lab7b_curriculum.py --check",
+      "exit_code": 1,
+      "error": "UnicodeEncodeError from Windows cp874 while printing the check mark"
+    },
+    "lab7_readiness_with_documented_utf8": {
+      "command": "$env:PYTHONUTF8='1'; .\\venv\\Scripts\\python.exe .\\scr\\ocr_system\\lab7b_curriculum.py --check",
+      "exit_code": 0,
+      "result": "Ollama, both models, fitz, PIL, requests, pdfplumber and pythainlp ready"
+    },
+    "full_pipeline": {
+      "command": ".\\venv\\Scripts\\python.exe .\\run_lab8b.py --program all",
+      "exit_code": 1,
+      "error": "missing ocr_final/data/input/DSBA.pdf"
+    },
+    "web_application": {
+      "command": ".\\venv\\Scripts\\python.exe -m uvicorn lab10_fastapi.curriculum_app.main:app --host 127.0.0.1 --port 8010",
+      "exit_code": 1,
+      "error": "uvicorn is not in requirements.txt; lab10_fastapi and frontend are also absent from the repository"
+    }
+  }
+}
