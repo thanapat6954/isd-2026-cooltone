@@ -1,0 +1,1667 @@
+{
+  "method": "exact course section and English PREREQUISITE heading from PDF text",
+  "requires_visual_confirmation": true,
+  "status_counts": {
+    "explicit_none": 85,
+    "not_applicable_or_unlocated": 77,
+    "parsed_codes": 18
+  },
+  "items": [
+    {
+      "sample_id": "BIT-2560-coop-01",
+      "code": "06036001",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 171,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | วิวัฒนาการของเทคโนโลยีสารสนเทศ องค์ประกอบของระบบคอมพิวเตอร์ ระบบประมวลผลข้อมูล | ฮาร์ดแวร์และซอฟต์แวร์ ภาพรวมการทํางานของระบบปฏิบัติการ ข้อมูลและการแทนค่าข้อมูล การจัดการ | ข้อมูล แนวคิดพื้นฐานสําหรับการสร้างโปรแกรม เทคโนโลยีฐานข้อมูล การสื่อสารข้อมูล ระบบเครือข่าย | คอมพิวเตอร์และอินเทอร์เน็ต ประเด็นทางด้านจริยธรรมและสังคมกับเทคโนโลยีสารสนเทศ | Evolution of information technology; components of computer systems; data | processing systems; hardware and software; overview"
+    },
+    {
+      "sample_id": "BIT-2560-coop-02",
+      "code": "06036021",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 178,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | กลยุทธ์และหลักการแก้ปัญหา การคิดแบบขั้นตอนวิธี ผังงาน แนวคิด และหลักการสร้างโปรแกรม | คอมพิวเตอร์เบื้องต้น | Problem solving strategies and concepts; algorithmic thinking; flowchart; concepts | and introduction to computer programming."
+    },
+    {
+      "sample_id": "BIT-2560-coop-03",
+      "code": "06036027",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 180,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | วิวัฒนาการของคอมพิวเตอร์ องค์ประกอบของคอมพิวเตอร์ หน่วยประมวลผลกลาง หน่วยความจํา | อินพุตและเอาต์พุต ระบบปฏิบัติการ กระบวนการ การประสานเวลาของกระบวนการ การจัดกําหนดการของ | กระบวนการ การจัดการหน่วยความจํา หน่วยความจําเสมือน การจัดการแฟ้มและอินพุตและเอาต์พุต | Computer evolution; computer components, CPU, memory, I/O; operating system;"
+    },
+    {
+      "sample_id": "BIT-2560-coop-04",
+      "code": "06036081",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 188,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | ฝึกทักษะการใช้ภาษาอังกฤษเพื่อการฟัง การพูด การอ่าน และการเขียนในบริบทที่เกี่ยวข้องกับชีวิตประจําวัน | ฝึกการใช้พจนานุกรม ศึกษาศัพท์สํานวน และภาษาจากบทอ่านที่คัดเลือกจากสิ่งพิมพ์ต่าง ๆ เช่น วารสาร หนังสือพิมพ์"
+    },
+    {
+      "sample_id": "BIT-2560-coop-05",
+      "code": "06036083",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 189,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | ศึกษาวิธีการอ่านอย่างมีประสิทธิภาพ การอ่านจับใจความ การอ่านหนังสือพิมพ์ การอ่าน เพื่อแปลใจความ การ | พัฒนาทักษะการเขียน โดยเน้นการเขียนที่ถูกรูปแบบทางภาษาและไวยากรณ์ ฝึกการเขียนที่จะนําไปใช้ประโยชน์ทั้ง | ทางด้านการศึกษาและอาชีพ เช่น การเขียนจดหมาย การกรอกใบสมัคร การเขียนรายงาน เป็นต้น | A study of effective reading techniques in English relevant to reading for the main idea, newspaper | reading, reading for translation, writing skills development in English focusing on a"
+    },
+    {
+      "sample_id": "BIT-2560-coop-06",
+      "code": "06036007",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 173,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE   :   NONE | ธรรมชาติและวงจรชีวิตของโครงการ  การศึกษาความเป็นไปได้ของโครงการ เทคนิคการเลือก | โครงการ การจัดทีมงาน การจัดการขอบเขตของโครงการโครงกาiการประมาณการโครงการ การจัดการ | ตารางเวลา การจัดการคุณภาพ  การจัดการการเปลี่ยนแปลง การควบคุมโครงการ และประเมินผลโครงการ | Nature and life cycle of information technology (IT) projects; project feasibility; | project selection techniques; project management body of knowledge; team management; | project scope management; project estimation;"
+    },
+    {
+      "sample_id": "BIT-2560-coop-07",
+      "code": "06036009",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 173,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : | NONE | หลักการเศรษฐศาสตร์เบื้องต้น แนวคิดและทฤษฎีเกี่ยวกับกระบวนนวัตกรรมและการเปลี่ยนแปลง | เทคโนโลยี ตลาดเทคโนโลยีสารสนเทศ การประเมินการลงทุนทางด้านเทคโนโลยีสารสนเทศ ผลกระทบของ | การพัฒนาและการเปลี่ยนแปลงเทคโนโลยีต่อการพัฒนาเศรษฐกิจและอุตสาหกรรม การจ้างงาน การ | เจริญเติบโตของธุรกิจ ผลิตภาพ การถ่ายทอดเทคโนโลยี การวิจัยและพัฒนา การปรับตัวเข้าสู่สังคมสารสนเทศ | Fundamental economic principles; economic theories and concepts relating to | innovation process and technical change; "
+    },
+    {
+      "sample_id": "BIT-2560-coop-08",
+      "code": "06036010",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 174,
+      "status": "parsed_codes",
+      "prerequisite_codes": [
+        "06036006"
+      ],
+      "evidence": "PREREQUISITE  :   06036006 MANAGEMENT INFORMATION SYSTEMS | กระบวนการธุรกิจหลักในองค์กร กระบวนการทางบัญชี กระบวนการได้มาซึ่งทรัพยากร | กระบวนการจัดการสินค้าและคลังสินค้า กระบวนการการผลิต และกระบวนการการขายสินค้าหรือบริการ | การบูรณาการกระบวนการธุรกิจด้วยระบบวางแผนทรัพยากรองค์กร  แนวคิดการวางแผนทรัพยากรองค์กร | เรียนรู้ทักษะเชิงปฏิบัติในการนํากระบวนการธุรกิจมาใช้งานบนแอพพลิเคชันมาตรฐานของระบบวางแผน | ทรัพยากรองค์กร | Key business processes in organization; accounting process, procurement process,"
+    },
+    {
+      "sample_id": "BIT-2560-coop-09",
+      "code": "06036014",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 175,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | ความมั่นคงของระบบสารสนเทศ ภัยคุกคาม ช่องโหว่ การประเมินและวิเคราะห์ความเสี่ยง นโยบาย | รักษาความปลอดภัยของระบบสารสนเทศ การจัดการความปลอดภัยของระบบสารสนเทศ การเข้ารหัสและ | ถอดรหัสเพื่อความปลอดภัยของข้อมูล การพิสูจน์ตัวตน การควบคุมการเข้าถึงข้อมูล อาชญากรรม | คอมพิวเตอร์ การป้องกันและการสืบสวน การรักษาความปลอดภัยของเครือข่ายคอมพิวเตอร์ ทรัพย์สินทาง | ปัญญา ความเป็นเจ้าของสารสนเทศ กฎหมายเกี่ยวกับลิขสิทธิ สิทธิบัตรและเครื่องหมายการค้า ความลับ | ทางการค้า วัฒนธรรมองค์กร ความ"
+    },
+    {
+      "sample_id": "BIT-2560-coop-10",
+      "code": "06036025",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 180,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | การออกแบบและพัฒนาโปรแกรมเชิงอ็อบเจกต์ หลักการห่อหุ้ม คลาสและอ็อบเจกต์ เมธอดและการ | ส่งสาร การสืบทอดคุณลักษณะ ภาวะพหุสัณฐาน การพัฒนาส่วนต่อประสานกราฟิกกับผู้ใช้และการจัดการกับ | เหตุการณ์ โครงสร้างข้อมูลแบบแถวลําดับและคอลเลคชัน การจัดการกับสิ่งผิดปรกติ คลาสที่เกี่ยวข้องกับ | อินพุตและเอาต์พุต เธรด | Object-oriented program design and development; encapsulation; classes and | objects; methods and message passing; inheritance and polymorphism; graphical user | interface de"
+    },
+    {
+      "sample_id": "BIT-2560-coop-11",
+      "code": "06036046 หรือ 06036047",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 188,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "BIT-2560-coop-12",
+      "code": "06036002",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 171,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | ลิมิตและความต่อเนื่อง  อนุพันธ์ของฟังก์ชัน  อนุพันธ์อันดับสูง  การประยุกต์ของอนุพันธ์ ปัญหา | ค่าสูงสุดและต่ําสุดของฟังก์ชัน  การอินทิเกรตและเทคนิคของการอินทเกรต  การประยุกต์ของการอินทิเกรต | ฟังก์ชันสองตัวแปร  อนุพันธ์ย่อยพีชคณิตเชิงเส้น เมทริกซ์และดีเทอร์มิแนนท์  ระบบสมการเชิงเส้น  และการ | หาผลเฉลยของระบบสมการเชิงเส้น เวกเตอร์สเปซ การแปลงเชิงเส้น การแปลงเมทริกซ์ เมทริกซ์เชิงตั้งฉาก | Limit and continuity; derivative of functions; higher derivatives; applications of | d"
+    },
+    {
+      "sample_id": "BIT-2560-coop-13",
+      "code": "06036004",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 172,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | ภาคทฤษฎีและภาคปฏิบัติสําหรับการบริหารจัดการองค์กร ความเป็นผู้นํา การพัฒนากลยุทธ์ทาง | ธุรกิจ พฤติกรรมองค์กร โครงสร้างองค์กร การจัดการทรัพยากรมนุษย์ การเปลี่ยนแปลงในองค์กร องค์กร | สมัยใหม่ในยุคดิจิตัล | Theory and practice of organizational management; Leadership; business strategy | development; organizational behavior; organizational structure; human resource | management; organizational change; organization in digital age."
+    },
+    {
+      "sample_id": "BIT-2560-coop-14",
+      "code": "06036022",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 179,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | การวิเคราะห์และกระบวนการแก้ปัญหา ผังงาน แนะนําภาษาการสร้างโปรแกรม แนวคิดของ | โปรแกรมภาษาซี การแก้ปัญหาด้วยภาษาซี ข้อมูลและชนิดของข้อมูลในภาษาซี ฟังก์ชันเบื้องต้น และข้อความ | สั่งกําหนดค่า โครงสร้างการวนซ้ําและเงื่อนไข การสร้างโปรแกรมเชิงโมดูล โครงสร้างโดยทั่วไปของฟังก์ชัน | ภาษาซี การทํางานกับฟังก์ชัน แถวลําดับและตัวชี้ ชนิดข้อมูลที่ผู้ใช้กําหนดเอง แฟ้มอินพุตและเอาต์พุต | Problem analysis and solving process; flowchart; introduction to programming | languages; concepts"
+    },
+    {
+      "sample_id": "BIT-2560-coop-15",
+      "code": "06036082",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 189,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | ฝึกทักษะการใช้ภาษาอังกฤษในการอ่าน เขียน ฟัง และพูดเพื่อการศึกษา เช่น การใช้หนังสืออ้างอิง การอ่าน | กราฟ ตาราง ฯลฯ การเขียนบทสรุป ฟัง พูด โต้ตอบแสดงความคิดเห็นเกี่ยวกับเรื่องที่อ่านหรือ ฟังได้รวมทั้งทบทวน | โครงสร้าง ไวยากรณ์และการใช้ภาษาโอกาสต่างๆ เพิ่มเติม | A practice in four language skills for academic purposes, for example, using references, reading non- | verbal texts, including summary writing, listening and discussion, grammar revision and further practice in | s"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-01",
+      "code": "06036001",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 171,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | วิวัฒนาการของเทคโนโลยีสารสนเทศ องค์ประกอบของระบบคอมพิวเตอร์ ระบบประมวลผลข้อมูล | ฮาร์ดแวร์และซอฟต์แวร์ ภาพรวมการทํางานของระบบปฏิบัติการ ข้อมูลและการแทนค่าข้อมูล การจัดการ | ข้อมูล แนวคิดพื้นฐานสําหรับการสร้างโปรแกรม เทคโนโลยีฐานข้อมูล การสื่อสารข้อมูล ระบบเครือข่าย | คอมพิวเตอร์และอินเทอร์เน็ต ประเด็นทางด้านจริยธรรมและสังคมกับเทคโนโลยีสารสนเทศ | Evolution of information technology; components of computer systems; data | processing systems; hardware and software; overview"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-02",
+      "code": "06036021",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 178,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | กลยุทธ์และหลักการแก้ปัญหา การคิดแบบขั้นตอนวิธี ผังงาน แนวคิด และหลักการสร้างโปรแกรม | คอมพิวเตอร์เบื้องต้น | Problem solving strategies and concepts; algorithmic thinking; flowchart; concepts | and introduction to computer programming."
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-03",
+      "code": "06036027",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 180,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | วิวัฒนาการของคอมพิวเตอร์ องค์ประกอบของคอมพิวเตอร์ หน่วยประมวลผลกลาง หน่วยความจํา | อินพุตและเอาต์พุต ระบบปฏิบัติการ กระบวนการ การประสานเวลาของกระบวนการ การจัดกําหนดการของ | กระบวนการ การจัดการหน่วยความจํา หน่วยความจําเสมือน การจัดการแฟ้มและอินพุตและเอาต์พุต | Computer evolution; computer components, CPU, memory, I/O; operating system;"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-04",
+      "code": "06036081",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 188,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | ฝึกทักษะการใช้ภาษาอังกฤษเพื่อการฟัง การพูด การอ่าน และการเขียนในบริบทที่เกี่ยวข้องกับชีวิตประจําวัน | ฝึกการใช้พจนานุกรม ศึกษาศัพท์สํานวน และภาษาจากบทอ่านที่คัดเลือกจากสิ่งพิมพ์ต่าง ๆ เช่น วารสาร หนังสือพิมพ์"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-05",
+      "code": "06036083",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 189,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | ศึกษาวิธีการอ่านอย่างมีประสิทธิภาพ การอ่านจับใจความ การอ่านหนังสือพิมพ์ การอ่าน เพื่อแปลใจความ การ | พัฒนาทักษะการเขียน โดยเน้นการเขียนที่ถูกรูปแบบทางภาษาและไวยากรณ์ ฝึกการเขียนที่จะนําไปใช้ประโยชน์ทั้ง | ทางด้านการศึกษาและอาชีพ เช่น การเขียนจดหมาย การกรอกใบสมัคร การเขียนรายงาน เป็นต้น | A study of effective reading techniques in English relevant to reading for the main idea, newspaper | reading, reading for translation, writing skills development in English focusing on a"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-06",
+      "code": "06036007",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 173,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE   :   NONE | ธรรมชาติและวงจรชีวิตของโครงการ  การศึกษาความเป็นไปได้ของโครงการ เทคนิคการเลือก | โครงการ การจัดทีมงาน การจัดการขอบเขตของโครงการโครงกาiการประมาณการโครงการ การจัดการ | ตารางเวลา การจัดการคุณภาพ  การจัดการการเปลี่ยนแปลง การควบคุมโครงการ และประเมินผลโครงการ | Nature and life cycle of information technology (IT) projects; project feasibility; | project selection techniques; project management body of knowledge; team management; | project scope management; project estimation;"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-07",
+      "code": "06036009",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 173,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : | NONE | หลักการเศรษฐศาสตร์เบื้องต้น แนวคิดและทฤษฎีเกี่ยวกับกระบวนนวัตกรรมและการเปลี่ยนแปลง | เทคโนโลยี ตลาดเทคโนโลยีสารสนเทศ การประเมินการลงทุนทางด้านเทคโนโลยีสารสนเทศ ผลกระทบของ | การพัฒนาและการเปลี่ยนแปลงเทคโนโลยีต่อการพัฒนาเศรษฐกิจและอุตสาหกรรม การจ้างงาน การ | เจริญเติบโตของธุรกิจ ผลิตภาพ การถ่ายทอดเทคโนโลยี การวิจัยและพัฒนา การปรับตัวเข้าสู่สังคมสารสนเทศ | Fundamental economic principles; economic theories and concepts relating to | innovation process and technical change; "
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-08",
+      "code": "06036010",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 174,
+      "status": "parsed_codes",
+      "prerequisite_codes": [
+        "06036006"
+      ],
+      "evidence": "PREREQUISITE  :   06036006 MANAGEMENT INFORMATION SYSTEMS | กระบวนการธุรกิจหลักในองค์กร กระบวนการทางบัญชี กระบวนการได้มาซึ่งทรัพยากร | กระบวนการจัดการสินค้าและคลังสินค้า กระบวนการการผลิต และกระบวนการการขายสินค้าหรือบริการ | การบูรณาการกระบวนการธุรกิจด้วยระบบวางแผนทรัพยากรองค์กร  แนวคิดการวางแผนทรัพยากรองค์กร | เรียนรู้ทักษะเชิงปฏิบัติในการนํากระบวนการธุรกิจมาใช้งานบนแอพพลิเคชันมาตรฐานของระบบวางแผน | ทรัพยากรองค์กร | Key business processes in organization; accounting process, procurement process,"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-09",
+      "code": "06036014",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 175,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | ความมั่นคงของระบบสารสนเทศ ภัยคุกคาม ช่องโหว่ การประเมินและวิเคราะห์ความเสี่ยง นโยบาย | รักษาความปลอดภัยของระบบสารสนเทศ การจัดการความปลอดภัยของระบบสารสนเทศ การเข้ารหัสและ | ถอดรหัสเพื่อความปลอดภัยของข้อมูล การพิสูจน์ตัวตน การควบคุมการเข้าถึงข้อมูล อาชญากรรม | คอมพิวเตอร์ การป้องกันและการสืบสวน การรักษาความปลอดภัยของเครือข่ายคอมพิวเตอร์ ทรัพย์สินทาง | ปัญญา ความเป็นเจ้าของสารสนเทศ กฎหมายเกี่ยวกับลิขสิทธิ สิทธิบัตรและเครื่องหมายการค้า ความลับ | ทางการค้า วัฒนธรรมองค์กร ความ"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-10",
+      "code": "06036025",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 180,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | การออกแบบและพัฒนาโปรแกรมเชิงอ็อบเจกต์ หลักการห่อหุ้ม คลาสและอ็อบเจกต์ เมธอดและการ | ส่งสาร การสืบทอดคุณลักษณะ ภาวะพหุสัณฐาน การพัฒนาส่วนต่อประสานกราฟิกกับผู้ใช้และการจัดการกับ | เหตุการณ์ โครงสร้างข้อมูลแบบแถวลําดับและคอลเลคชัน การจัดการกับสิ่งผิดปรกติ คลาสที่เกี่ยวข้องกับ | อินพุตและเอาต์พุต เธรด | Object-oriented program design and development; encapsulation; classes and | objects; methods and message passing; inheritance and polymorphism; graphical user | interface de"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-11",
+      "code": "06036019",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 178,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | ศึกษาค้นคว้าหรือวิจัยในหัวข้อปัจจุบันที่น่าสนใจทางเทคโนโลยีสารสนเทศ ในรูปแบบโครงการ ที่ | สามารถประยุกต์ใช้ทฤษฎีที่เกี่ยวข้องทางการศึกษาด้านเทคโนโลยีสารสนเทศ ภายใต้การดูแลและแนะนําของ | อาจารย์ที่ปรึกษา เพื่อที่จะสามารถนําเสนอหัวข้อ และผลการทดลองเบื้องต้นที่ได้จากการแก้ปัญหาเชิง | ปฏิบัติการ หรือจากการวิเคราะห์เชิงวิชาการ | Study or research of interesting current topics in information technology undertaking | a work project based by applying the theoretical aspects of t"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-12",
+      "code": "06036086",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 190,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | ความหมายของคําว่า “วิทยาศาสตร์”; อะไรคือความจริงทางวิทยาศาสตร์; ธรรมชาติของวิทยาศาสตร์; | กระบวนการทางวิทยาศาสตร์; ทฤษฎีและกฎทางวิทยาศาสตร์ – การค้นพบและการสร้าง; ธรรมชาติของความรู้ทาง"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-13",
+      "code": "วิชาเลือกเสรี 1",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-14",
+      "code": "06036020",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 178,
+      "status": "parsed_codes",
+      "prerequisite_codes": [
+        "06036019"
+      ],
+      "evidence": "PREREQUISITE  : | 06036019 PROJECT 1 | ศึกษาค้นคว้าหรือวิจัย ในหัวข้อปัจจุบันที่น่าสนใจทางเทคโนโลยีสารสนเทศ ในรูปแบบโครงการที่ | สามารถประยุกต์ใช้ทฤษฎีที่เกี่ยวข้องทางการศึกษาด้านเทคโนโลยีสารสนเทศ ภายใต้การดูแลและแนะนําของ | อาจารย์ที่ปรึกษา เพื่อที่จะสามารถนําเสนอผลการทดลองที่สมบูรณ์ในหัวข้อที่ได้เสนอและศึกษาต่อ | เนื่องมาจากวิชาโครงงาน 1 | Study or research of interesting current topics in information technology undertaking | a work project based by applying the theoretical aspects of the info"
+    },
+    {
+      "sample_id": "BIT-2560-no-coop-15",
+      "code": "06036088",
+      "source_pdf": "BIT-60.pdf",
+      "description_page": 191,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | เข้าใจว่า “ความคิดสร้างสรรค์” คืออะไร; การคิดแก้ไขปัญหาอย่างสร้างสรรค์ ในสถานการณ์ที่กํากวมและ | ซับซ้อน ซึ่งไม่สามารถแก้ไขได้โดยตรงโดยการใช้ตรรกะทั่วไป; การส่งเสริมความคิดสร้างสรรค์ในระดับบุคคล; การ | เสริมสร้างทักษะในการคิดอย่างสร้างสรรค์ให้ผู้อื่น; สภาพแวดล้อมที่ช่วยส่งเสริมความคิดสร้างสรรค์; การจัดการความคิด | สร้างสรรค์ของทีมงานพัฒนานวัตกรรม; กระบวนการคิดอย่างสร้างสรรค์ และทฤษฎีต่างๆ ที่เกี่ยวข้อง | This course explores approaches to “How might we proceed when confro"
+    },
+    {
+      "sample_id": "BIT-2565-coop-01",
+      "code": "06036100",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": 238,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | แนะนําเทคโนโลยีสารสนเทศ องคประกอบของระบบคอมพิวเตอร โปรแกรมและแอปพลิเคชัน | ภาพรวมการทํางานของระบบปฏิบัติการ การแทนและจัดการขอมูล ฐานขอมูล การพัฒนาระบบ เครื่องมือใน | การพัฒนาแอปพลิเคชัน การสื่อสารดิจิทัล ความปลอดภัย จริยธรรม และความเปนสวนตัวทางดิจิทัล | Introduction to information technology, Components of computer system, Programs | and applications, Overview of operating systems, Data representation and management, | Database, System development, Application deve"
+    },
+    {
+      "sample_id": "BIT-2565-coop-02",
+      "code": "06036101",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": 238,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | ฟงกชันเชิงเสนและไมเชิงเสน ซึ่งรวมถึงฟงกชันตนทุน ฟงกชันรายรับ ฟงกชันอุปสงคและอถปทาน | การแกระบบสมการเชิงเสน คณิตศาสตรที่เกี่ยวของกับการเงิน เชน ดอกเบี้ยเชิงเดี่ยวดอกเบี้ยทบตน มูลคา | ของเงินตามเวลา อนุพันธเละอนุพันธยอยของฟงกชัน และบทประยุกตทางธุรกิจ กําหนดการเชิงเสน และ | พีชคณิตเมทริกซ ซึ่งประกอบดวย การดําเนินการเกี่ยวกับเลขคณิต การคูณ ตัวผกผัน และการหาผลเฉลยของ | ระบบสมการโดยใช ตัวผกผัน การดําเนินการตามแถว และกฎคารเมอร โดยหัวขอทั้งหมดอาจถ"
+    },
+    {
+      "sample_id": "BIT-2565-coop-03",
+      "code": "06036118",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": 246,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | กลยุทธและหลักการแกปญหา การคิดเชิงคํานวณ การคิดแบบขั้นตอนวิธี ผังงาน แนวคิดและ | หลักการสรางโปรแกรมคอมพิวเตอรเบื้องตน | Problem solving strategies and concepts, computational thinking, algorithmic | thinking, flowchart, concepts and introduction to computer programming."
+    },
+    {
+      "sample_id": "BIT-2565-coop-04",
+      "code": "96641001",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "BIT-2565-coop-05",
+      "code": "96641003",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "BIT-2565-coop-06",
+      "code": "06036108",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": 242,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : | NONE | หลักการเศรษฐศาสตรเบื้องตน แนวคิดและทฤษฎีเกี่ยวกับกระบวนนวัตกรรมและการ | เปลี่ยนแปลงเทคโนโลยี ตลาดเทคโนโลยีสารสนเทศ การประเมินการลงทุนทางดานเทคโนโลยีสารสนเทศ | ผลกระทบของการพัฒนาและการเปลี่ยนแปลงเทคโนโลยีตอการพัฒนาเศรษฐกิจและอุตสาหกรรม การจาง | งาน การเจริญเติบโตของธุรกิจ ผลิตภาพ การถายทอดเทคโนโลยี การวิจัยและพัฒนา การปรับตัวเขาสู | สังคมสารสนเทศ | Fundamental economic principles, economic theories and concepts relating to | innovation process and technical change"
+    },
+    {
+      "sample_id": "BIT-2565-coop-07",
+      "code": "06036111",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": 243,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | ความรูพื้นฐานในเทคโนโลยีปจจุบันที่กําลังถูกใชในภาคธุรกิจ, ความรูเบื้องตนเกี่ยวกับการ | ประมวลผลบนระบบคลาวด ขอมูลขนาดใหญ ปญญาประดิษฐ การคนคืนขอมูลสารสนเทศ เว็บ และ | สื่อสั่งคม ซึ่งนําไปสู การทําการเปลี่ยนแปลงทางดิจิทัล วิธีปฏิบัติที่นิยมในปจจุบัน แนวโนมในอนาคต | และผลกระทบตอธุรกิจ | Foundational knowledge in recent technologies used in business, Introduction | to Cloud Computing, Big Data, Artificial Intelligence, Information Retrieval, | Recommendation S"
+    },
+    {
+      "sample_id": "BIT-2565-coop-08",
+      "code": "06036112",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": 243,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | แนะนําฐานขอมูลและระบบจัดการฐานขอมูล แบบจําลองสําหรับฐานขอมูลและ | สถาปตยกรรมฐานขอมูล แบบจําลองฐานขอมูลเชิงสัมพันธ ความซ้ําซอนของขอมูลและปญหาที่เกิด | จากความซ้ําซอนของฐานขอมูลการทําฐานขอมูลใหอยูในรูปแบบที่พรอมใชงานในระดับตางๆ ตั้งแต | 1NF-5NF แบบจําลองความสัมพันธระหวางเอนทิตี และการแปลงรูปเปนฐานขอมูลเชิงสัมพันธ | กรณีศึกษาการออกแบบฐานขอมูล การเขียนโปรแกรมดวยภาษาฐานขอมูล เอสคิวแอลขั้นตนจนถึงขั้น | สูง"
+    },
+    {
+      "sample_id": "BIT-2565-coop-09",
+      "code": "06036113",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": 244,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | หลักการออกแบบโดยมีผูใชเปนศูนยกลาง กระบวนการออกแบบสวนตอประสานกับผูใชและ | ประสบการณสําหรับผูใช การวิเคราะหผูใชและการวิเคราะหงาน ความตองการดานการใชประโยชนได | ปจจัยที่เกี่ยวกับมนุษยและหลักการทางจิตวิทยาสําหรับการออกแบบสวนตอประสานกับผูใช แบบจําลอง | การปฏิสัมพันธ รูปแบบของการปฏิสัมพันธ หลักการและขอแนะนําในการออกแบบ เทคนิคการประเมินผล | ขอแนะนําพื้นฐานในการออกแบบสําหรับเว็บและแอพลิเคชันบนอุปกรณแบบพกพาได เครื่องมือในการ | สรางตนแบบ เทคโนโลยีอ"
+    },
+    {
+      "sample_id": "BIT-2565-coop-10",
+      "code": "06036124",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": 248,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | แนวคิดเกี่ยวกับเครือขายคอมพิวเตอรและความมั่นคงปลอดภัยไซเบอรพื้นฐาน, การเชื่อมโยง | เครือขายและอินเทอรเน็ต, หลักการสื่อสาร, สถาปตยกรรมเครือขายและแอพลิเคชัน, แอพลิเคชันและ | บริการบนเครือขาย, ภัยและการโจมตีทางไซเบอร, ชองโหวและความเสี่ยง, พื้นฐานมัลแวร, เครื่องมือ | รักษาความปลอดภัย, การเขารหัสลับ, การพิสูจนตัวตน, การลงลายเซ็นดิจิทัล, การควบคุมการเขาถึง, | ความปลอดภัยขอมูลสวนบุคคล, กฎหมายและจริยธรรมที่เกี่ยวกับไซเบอร | Basic computer networks and cybersecu"
+    },
+    {
+      "sample_id": "BIT-2565-coop-11",
+      "code": "06036115",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": 245,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | แนวคิดเกี่ยวกับความมั่นคงปลอดภัยของระบบสารสนเทศ, ชองโหว ภัย และความเสี่ยง, มัลแวร, | ความมั่นคงปลอดภัยของขอมูล ซอฟตแวร และเครือขายเบื้องตน, การดําเนินมาตรการรักษาความมั่นคง | ปลอดภัย, การเขารหัสลับ, การจัดการการระบุตัวตน, การพิสูจนตัวตนและการกําหนดสิทธิ์, การควบคุม | การเขาถึง, ไฟรวอล, ระบบจัดการความมั่นคงปลอดภัยขอมูลสารสนเทศ | Basic information system security, vulnerabilties, threats, and risk, malware, | introduction to information security, software sec"
+    },
+    {
+      "sample_id": "BIT-2565-coop-12",
+      "code": "96642033",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "BIT-2565-coop-13",
+      "code": "96642033",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "BIT-2565-coop-14",
+      "code": "96642033",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "BIT-2565-coop-15",
+      "code": "วิชาเลือกเสรี 2",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-01",
+      "code": "06036100",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": 238,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | แนะนําเทคโนโลยีสารสนเทศ องคประกอบของระบบคอมพิวเตอร โปรแกรมและแอปพลิเคชัน | ภาพรวมการทํางานของระบบปฏิบัติการ การแทนและจัดการขอมูล ฐานขอมูล การพัฒนาระบบ เครื่องมือใน | การพัฒนาแอปพลิเคชัน การสื่อสารดิจิทัล ความปลอดภัย จริยธรรม และความเปนสวนตัวทางดิจิทัล | Introduction to information technology, Components of computer system, Programs | and applications, Overview of operating systems, Data representation and management, | Database, System development, Application deve"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-02",
+      "code": "06036101",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": 238,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | ฟงกชันเชิงเสนและไมเชิงเสน ซึ่งรวมถึงฟงกชันตนทุน ฟงกชันรายรับ ฟงกชันอุปสงคและอถปทาน | การแกระบบสมการเชิงเสน คณิตศาสตรที่เกี่ยวของกับการเงิน เชน ดอกเบี้ยเชิงเดี่ยวดอกเบี้ยทบตน มูลคา | ของเงินตามเวลา อนุพันธเละอนุพันธยอยของฟงกชัน และบทประยุกตทางธุรกิจ กําหนดการเชิงเสน และ | พีชคณิตเมทริกซ ซึ่งประกอบดวย การดําเนินการเกี่ยวกับเลขคณิต การคูณ ตัวผกผัน และการหาผลเฉลยของ | ระบบสมการโดยใช ตัวผกผัน การดําเนินการตามแถว และกฎคารเมอร โดยหัวขอทั้งหมดอาจถ"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-03",
+      "code": "06036118",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": 246,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | กลยุทธและหลักการแกปญหา การคิดเชิงคํานวณ การคิดแบบขั้นตอนวิธี ผังงาน แนวคิดและ | หลักการสรางโปรแกรมคอมพิวเตอรเบื้องตน | Problem solving strategies and concepts, computational thinking, algorithmic | thinking, flowchart, concepts and introduction to computer programming."
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-04",
+      "code": "96641001",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-05",
+      "code": "96641003",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-06",
+      "code": "06036108",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": 242,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : | NONE | หลักการเศรษฐศาสตรเบื้องตน แนวคิดและทฤษฎีเกี่ยวกับกระบวนนวัตกรรมและการ | เปลี่ยนแปลงเทคโนโลยี ตลาดเทคโนโลยีสารสนเทศ การประเมินการลงทุนทางดานเทคโนโลยีสารสนเทศ | ผลกระทบของการพัฒนาและการเปลี่ยนแปลงเทคโนโลยีตอการพัฒนาเศรษฐกิจและอุตสาหกรรม การจาง | งาน การเจริญเติบโตของธุรกิจ ผลิตภาพ การถายทอดเทคโนโลยี การวิจัยและพัฒนา การปรับตัวเขาสู | สังคมสารสนเทศ | Fundamental economic principles, economic theories and concepts relating to | innovation process and technical change"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-07",
+      "code": "06036111",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": 243,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | ความรูพื้นฐานในเทคโนโลยีปจจุบันที่กําลังถูกใชในภาคธุรกิจ, ความรูเบื้องตนเกี่ยวกับการ | ประมวลผลบนระบบคลาวด ขอมูลขนาดใหญ ปญญาประดิษฐ การคนคืนขอมูลสารสนเทศ เว็บ และ | สื่อสั่งคม ซึ่งนําไปสู การทําการเปลี่ยนแปลงทางดิจิทัล วิธีปฏิบัติที่นิยมในปจจุบัน แนวโนมในอนาคต | และผลกระทบตอธุรกิจ | Foundational knowledge in recent technologies used in business, Introduction | to Cloud Computing, Big Data, Artificial Intelligence, Information Retrieval, | Recommendation S"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-08",
+      "code": "06036112",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": 243,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | แนะนําฐานขอมูลและระบบจัดการฐานขอมูล แบบจําลองสําหรับฐานขอมูลและ | สถาปตยกรรมฐานขอมูล แบบจําลองฐานขอมูลเชิงสัมพันธ ความซ้ําซอนของขอมูลและปญหาที่เกิด | จากความซ้ําซอนของฐานขอมูลการทําฐานขอมูลใหอยูในรูปแบบที่พรอมใชงานในระดับตางๆ ตั้งแต | 1NF-5NF แบบจําลองความสัมพันธระหวางเอนทิตี และการแปลงรูปเปนฐานขอมูลเชิงสัมพันธ | กรณีศึกษาการออกแบบฐานขอมูล การเขียนโปรแกรมดวยภาษาฐานขอมูล เอสคิวแอลขั้นตนจนถึงขั้น | สูง"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-09",
+      "code": "06036113",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": 244,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | หลักการออกแบบโดยมีผูใชเปนศูนยกลาง กระบวนการออกแบบสวนตอประสานกับผูใชและ | ประสบการณสําหรับผูใช การวิเคราะหผูใชและการวิเคราะหงาน ความตองการดานการใชประโยชนได | ปจจัยที่เกี่ยวกับมนุษยและหลักการทางจิตวิทยาสําหรับการออกแบบสวนตอประสานกับผูใช แบบจําลอง | การปฏิสัมพันธ รูปแบบของการปฏิสัมพันธ หลักการและขอแนะนําในการออกแบบ เทคนิคการประเมินผล | ขอแนะนําพื้นฐานในการออกแบบสําหรับเว็บและแอพลิเคชันบนอุปกรณแบบพกพาได เครื่องมือในการ | สรางตนแบบ เทคโนโลยีอ"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-10",
+      "code": "06036124",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": 248,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | แนวคิดเกี่ยวกับเครือขายคอมพิวเตอรและความมั่นคงปลอดภัยไซเบอรพื้นฐาน, การเชื่อมโยง | เครือขายและอินเทอรเน็ต, หลักการสื่อสาร, สถาปตยกรรมเครือขายและแอพลิเคชัน, แอพลิเคชันและ | บริการบนเครือขาย, ภัยและการโจมตีทางไซเบอร, ชองโหวและความเสี่ยง, พื้นฐานมัลแวร, เครื่องมือ | รักษาความปลอดภัย, การเขารหัสลับ, การพิสูจนตัวตน, การลงลายเซ็นดิจิทัล, การควบคุมการเขาถึง, | ความปลอดภัยขอมูลสวนบุคคล, กฎหมายและจริยธรรมที่เกี่ยวกับไซเบอร | Basic computer networks and cybersecu"
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-11",
+      "code": "06036xxx",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-12",
+      "code": "06036xxx",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-13",
+      "code": "วิชาเลือกเสรี 1",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-14",
+      "code": "วิชาเลือกเสรี 2",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "BIT-2565-no-coop-15",
+      "code": "96644007",
+      "source_pdf": "BIT-65.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2560-coop-01",
+      "code": "06026100",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 176,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | None | วิวัฒนาการของเทคโนโลยีสารสนเทศ องค์ประกอบของระบบคอมพิวเตอร์ ระบบประมวลผลข้อมูล | ฮาร์ดแวร์และซอฟต์แวร์ ภาพรวมการทํางานของระบบปฏิบัติการ ข้อมูลและการแทนค่าข้อมูล การจัดการข้อมูล | แนวคิดพื้นฐานสําหรับการสร้างโปรแกรม เทคโนโลยีฐานข้อมูล การสื่อสารข้อมูล ระบบเครือข่ายคอมพิวเตอร์และ | อินเทอร์เน็ต ประเด็นทางด้านจริยธรรมและสังคมกับเทคโนโลยีสารสนเทศ | Evolution of information technology; components of computer systems; data | processing systems; hardware and software; overview o"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-02",
+      "code": "06026104",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 178,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | หลักการของการแก้ปัญหาการคํานวณโดยใช้โปรแกรมคอมพิวเตอร์ พื้นฐานของแนวคิดการเขียน | โปรแกรม นิพจน์ การควบคุมขั้นตอนในการทํางาน และ การวนซ้ํา ฟังก์ชั่น ชนิดของข้อมูล มาตรฐานในการเขียน | โปรแกรมเบื้องต้น การคิดเป็นขั้นตอน การวิเคราะห์ความซับซ้อนขั้นพื้นฐาน คลังโปรแกรม ตัวอย่างของการประยุกต์ใช้ | วิทยาการข้อมูล การเขียนโปรแกรมที่ดี ซึ่งรวมถึง เอนแคปซูเลชัน เจนเนอรัลไลเซชัน การออกแบบส่วนต่อประสาน การ | จัดการรหัสต้นทาง การพัฒนาแบบใช้การทดสอบเป็นตัวขับเคลื่อน การทําการทดสอบแบบหน"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-03",
+      "code": "90101007",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2560-coop-04",
+      "code": "90201001",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2560-coop-05",
+      "code": "90401013",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2560-coop-06",
+      "code": "06026112",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 182,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | เครื่องมือและวิธีการสําหรับการพัฒนาระบบสารสนเทศทางธุรกิจ แนวคิดการวิเคราะห์และออกแบบ | ระบบสารสนเทศทางธุรกิจในปัจจุบัน แบบจําลองการวิเคราะห์ระบบ แบบจําลองการออกแบบระบบ ความสําคัญของ | กระบวนการควบคุมในขั้นตอนการวางแผน วิเคราะห์ จัดสร้าง และทดสอบระบบสารสนเทศทางธุรกิจเพื่อแก้ปัญหาการ | จัดการด้านธุรกิจ กรณีศึกษา | Tools and methodologies for business information systems development; | current concepts of business information system analysis and design; system analysis model"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-07",
+      "code": "06026113",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 182,
+      "status": "parsed_codes",
+      "prerequisite_codes": [
+        "06026104"
+      ],
+      "evidence": "PREREQUISITE : | 06026104 COMPUTER  PROGRAMMING | แนะนําการเขียนโปรแกรมทางสถิติ เช่น ภาษาอาร์ การวิเคราะห์ทางคณิตศาสตร์ ประเภท | ข้อมูล ข้อมูลตัวแปรเดี่ยว ข้อมูลตัวแปรคู่ ข้อมูลหลายตัวแปร สถิติเชิงพรรณา ตัวแปรอาร์เรย์ เมตริกซ์ ข้อมูล | รายการและเฟรมข้อมูล โครงสร้างการควบคุม การวนลูป  การพล๊อตกราฟและกราฟฟิค การจัดการข้อมูล | การสร้างฟังก์ชันและแพคเกจ | Overview of statistical programming, e.g., R programming;  numerical arithmetic; | data type; univariate data; bivariate data; multivariate data; "
+    },
+    {
+      "sample_id": "DSBA-2560-coop-08",
+      "code": "06026114",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 183,
+      "status": "parsed_codes",
+      "prerequisite_codes": [
+        "06026108"
+      ],
+      "evidence": "PREREQUISITE : | 06026108  MANAGEMENT INFORMATION SYSTEMS | กระบวนการธุรกิจหลักในองค์กร กระบวนการทางบัญชี กระบวนการได้มาซึ่งทรัพยากร  กระบวนการ | จัดการสินค้าและคลังสินค้า กระบวนการการผลิต และกระบวนการการขายสินค้าหรือบริการ การบูรณาการกระบวนการ | ธุรกิจด้วยระบบวางแผนทรัพยากรองค์กร  แนวคิดการวางแผนทรัพยากรองค์กร เรียนรู้ทักษะเชิงปฏิบัติในการนํา | กระบวนการธุรกิจมาใช้งานบนแอปพลิเคชันมาตรฐานของระบบวางแผนทรัพยากรองค์กร | Key business processes in organization; accounting process, procurement | proce"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-09",
+      "code": "06026115",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 183,
+      "status": "parsed_codes",
+      "prerequisite_codes": [
+        "06026108"
+      ],
+      "evidence": "PREREQUISITE : | 06026108  MANAGEMENT INFORMATION SYSTEMS | แนวคิดพื้นฐานของอัจฉริยะทางธุรกิจ องค์ประกอบของอัจฉริยะทางธุรกิจ โครงสร้างพื้นฐานของ | อัจฉริยะทางธุรกิจ คลังข้อมูล เหมืองข้อมูล การบริหารสมรรถนะของธุรกิจ บาลานซ์สกอร์การ์ด เครื่องมือต่างๆ ในการ | สร้างอัจฉริยะทางธุรกิจในองค์กร การประยุกต์ใช้อัจฉริยะทางธุรกิจบนระบบสารสนเทศต่าง ๆ ในองค์กร แอปพลิเคชัน | ต่างๆ ของอัจฉริยะทางธุรกิจที่ใช้ในปัจจุบัน | Basic principles of business intelligence (BI); components of BI; BI infrastructure, | data "
+    },
+    {
+      "sample_id": "DSBA-2560-coop-10",
+      "code": "06026116",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 184,
+      "status": "parsed_codes",
+      "prerequisite_codes": [
+        "06026103"
+      ],
+      "evidence": "PREREQUISITE : | 06026103  PROBABILITY AND STATISTICS | แนะนําการวิเคราะห์ข้อมูลเชิงธุรกิจและการตัดสินใจ การรวบรวมข้อมูล การสํารวจข้อมูล และการสรุป | ข้อมูล การประมาณค่าแนวโน้มและความเบี่ยงเบนของข้อมูล การอนุมานเชิงสถิติ การวิเคราะห์เชิงถดถอย การพยากรณ์ | และอนุกรมเวลา การหาค่าที่เหมาะสมที่สุด การสร้างแบบจําลองสถานการณ์ การวิเคราะห์ข้อมูลชั้นสูง โปรแกรมทาง | สถิติ | Introduction to business data analytics and decision making; gathering data, | exploring data, and summarizing data; estimation of "
+    },
+    {
+      "sample_id": "DSBA-2560-coop-11",
+      "code": "06026130",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 190,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | วิชาสหกิจศึกษา เป็นโปรแกรมความร่วมมือทางด้านวิชาการระหว่างสถานศึกษากับหน่วยงานต่างๆ ที่ | ยินยอมให้นักศึกษาได้นําความรู้ที่ได้เรียนในห้องเรียน ไปประยุกต์ใช้ในการปฎิบัติงานจริงที่หน่วยงานนั้นๆ โดยโครงการ | ของนักศึกษาที่ทําระหว่างปฎิบัติงานจะต้องเป็นไปตามที่ได้กําหนดไว้ร่วมกัน ระหว่างคณะฯ และหน่วยงานที่ไป | ปฏิบัติงาน โดยเมื่อปฏิบัติงานครบแล้วนักศึกษาจําเป็นที่จะต้องนําเสนอผลงานของโครงการต่อคณะกรรมการสอบ | Cooperative education is a collaborated education program between |"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-12",
+      "code": "06026131",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 190,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | วิชาสหกิจศึกษา เป็นโปรแกรมความร่วมมือทางด้านวิชาการระหว่างสถานศึกษากับหน่วยงานต่างๆ ใน | ต่างประเทศที่ยินยอมให้นักศึกษาได้นําความรู้ที่ได้เรียนในห้องเรียน ไปประยุกต์ใช้ในการปฎิบัติงานจริงที่หน่วยงาน | นั้นๆ โดยโครงการของนักศึกษาที่ทําระหว่างปฎิบัติงานจะต้องเป็นไปตามที่ได้กําหนดไว้ร่วมกัน ระหว่างคณะฯ และ | หน่วยงานที่ไปปฏิบัติงาน โดยเมื่อปฏิบัติงานครบแล้วนักศึกษาจําเป็นที่จะต้องนําเสนอผลงานของโครงการต่อ | คณะกรรมการสอบ | Cooperative education is a collaborated education pr"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-13",
+      "code": "06026101",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 176,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | ลิมิตและความต่อเนื่อง  อนุพันธ์ของฟังก์ชัน  อนุพันธ์อันดับสูง  การประยุกต์ของอนุพันธ์ ปัญหา | ค่าสูงสุดและต่ําสุดของฟังก์ชัน  การอินทิเกรตและเทคนิคของการอินทเกรต  การประยุกต์ของการอินทิเกรต  ฟังก์ชัน | สองตัวแปร  อนุพันธ์ย่อยพีชคณิตเชิงเส้น เมทริกซ์และดีเทอร์มิแนนท์  ระบบสมการเชิงเส้น  และการหาผลเฉลยของ | ระบบสมการเชิงเส้น เวกเตอร์สเปซ การแปลงเชิงเส้น การแปลงเมทริกซ์ เมทริกซ์เชิงตั้งฉาก | Limit and continuity; derivative of functions; higher derivatives; applications of |"
+    },
+    {
+      "sample_id": "DSBA-2560-coop-14",
+      "code": "06026105",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 178,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | หลักการพื้นฐานเครือข่ายคอมพิวเตอร์และการสื่อสารข้อมูล สถาปัตยกรรมเครือข่าย การแบ่งระดับชั้น | การทํางานเครือข่ายแบบโอเอสไอและทีซีพีไอพี โพรโทคอลระดับแอปพลิเคชัน สถาปัตยกรรมแอปพลิเคชัน โพรโทคอล | ระดับทรานสปอร์ต รูปแบบการส่งข้อมูลให้น่าเชื่อถือ การควบคุมความคับคั่ง โพรโทคอลระดับเครือข่าย เครือข่ายเซอร์ | กิตสวิทชิงและแพ็คเก็ตสวิทชิง โพรโทคอลอินเตอร์เน็ต รูปแบบการหาเส้นทาง โพรโทคอลระดับดาต้าลิงก์ การควบคุม | การเข้าถึงสื่อ ระบบหมายเลขที่อยู่บนเครือข่าย เทคโนโลยีอีเทอร์เน็ต "
+    },
+    {
+      "sample_id": "DSBA-2560-coop-15",
+      "code": "06026106",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 179,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | แนะนําฐานข้อมูลและระบบจัดการฐานข้อมูล ระบบแฟ้มข้อมูล ระบบฐานข้อมูลและสภาพแวดล้อม | ระบบจัดการฐานข้อมูล ชนิดของฐานข้อมูล แบบจําลองข้อมูล แบบจําลองฐานข้อมูลเชิงสัมพันธ์ ตาราง คีย์ กฎบูรณ- | ภาพ พจนานุกรมข้อมูล แบบจําลองความสัมพันธ์ระหว่าง เอนทิตี นอร์มัลไลซ์เซชัน เอสคิว แนะนําการจัดการทรานแซค | ชันและการบริหารฐานข้อมูล ปฏิบัติการด้านการจําลองข้อมูลและภาษาฐานข้อมูล แนะนําข้อมูลสนันสนุนการตัดสินใจ | สําหรับระดับบริหารและระบบคลังข้อมูล แนะนําระบบฐานข้อมูลแบบไม่ใช่เชิงสัมพันธ์ "
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-01",
+      "code": "06026100",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 176,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | None | วิวัฒนาการของเทคโนโลยีสารสนเทศ องค์ประกอบของระบบคอมพิวเตอร์ ระบบประมวลผลข้อมูล | ฮาร์ดแวร์และซอฟต์แวร์ ภาพรวมการทํางานของระบบปฏิบัติการ ข้อมูลและการแทนค่าข้อมูล การจัดการข้อมูล | แนวคิดพื้นฐานสําหรับการสร้างโปรแกรม เทคโนโลยีฐานข้อมูล การสื่อสารข้อมูล ระบบเครือข่ายคอมพิวเตอร์และ | อินเทอร์เน็ต ประเด็นทางด้านจริยธรรมและสังคมกับเทคโนโลยีสารสนเทศ | Evolution of information technology; components of computer systems; data | processing systems; hardware and software; overview o"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-02",
+      "code": "06026104",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 178,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | หลักการของการแก้ปัญหาการคํานวณโดยใช้โปรแกรมคอมพิวเตอร์ พื้นฐานของแนวคิดการเขียน | โปรแกรม นิพจน์ การควบคุมขั้นตอนในการทํางาน และ การวนซ้ํา ฟังก์ชั่น ชนิดของข้อมูล มาตรฐานในการเขียน | โปรแกรมเบื้องต้น การคิดเป็นขั้นตอน การวิเคราะห์ความซับซ้อนขั้นพื้นฐาน คลังโปรแกรม ตัวอย่างของการประยุกต์ใช้ | วิทยาการข้อมูล การเขียนโปรแกรมที่ดี ซึ่งรวมถึง เอนแคปซูเลชัน เจนเนอรัลไลเซชัน การออกแบบส่วนต่อประสาน การ | จัดการรหัสต้นทาง การพัฒนาแบบใช้การทดสอบเป็นตัวขับเคลื่อน การทําการทดสอบแบบหน"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-03",
+      "code": "90101007",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-04",
+      "code": "90201001",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-05",
+      "code": "90401013",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-06",
+      "code": "06026112",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 182,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE : | NONE | เครื่องมือและวิธีการสําหรับการพัฒนาระบบสารสนเทศทางธุรกิจ แนวคิดการวิเคราะห์และออกแบบ | ระบบสารสนเทศทางธุรกิจในปัจจุบัน แบบจําลองการวิเคราะห์ระบบ แบบจําลองการออกแบบระบบ ความสําคัญของ | กระบวนการควบคุมในขั้นตอนการวางแผน วิเคราะห์ จัดสร้าง และทดสอบระบบสารสนเทศทางธุรกิจเพื่อแก้ปัญหาการ | จัดการด้านธุรกิจ กรณีศึกษา | Tools and methodologies for business information systems development; | current concepts of business information system analysis and design; system analysis model"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-07",
+      "code": "06026113",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 182,
+      "status": "parsed_codes",
+      "prerequisite_codes": [
+        "06026104"
+      ],
+      "evidence": "PREREQUISITE : | 06026104 COMPUTER  PROGRAMMING | แนะนําการเขียนโปรแกรมทางสถิติ เช่น ภาษาอาร์ การวิเคราะห์ทางคณิตศาสตร์ ประเภท | ข้อมูล ข้อมูลตัวแปรเดี่ยว ข้อมูลตัวแปรคู่ ข้อมูลหลายตัวแปร สถิติเชิงพรรณา ตัวแปรอาร์เรย์ เมตริกซ์ ข้อมูล | รายการและเฟรมข้อมูล โครงสร้างการควบคุม การวนลูป  การพล๊อตกราฟและกราฟฟิค การจัดการข้อมูล | การสร้างฟังก์ชันและแพคเกจ | Overview of statistical programming, e.g., R programming;  numerical arithmetic; | data type; univariate data; bivariate data; multivariate data; "
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-08",
+      "code": "06026114",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 183,
+      "status": "parsed_codes",
+      "prerequisite_codes": [
+        "06026108"
+      ],
+      "evidence": "PREREQUISITE : | 06026108  MANAGEMENT INFORMATION SYSTEMS | กระบวนการธุรกิจหลักในองค์กร กระบวนการทางบัญชี กระบวนการได้มาซึ่งทรัพยากร  กระบวนการ | จัดการสินค้าและคลังสินค้า กระบวนการการผลิต และกระบวนการการขายสินค้าหรือบริการ การบูรณาการกระบวนการ | ธุรกิจด้วยระบบวางแผนทรัพยากรองค์กร  แนวคิดการวางแผนทรัพยากรองค์กร เรียนรู้ทักษะเชิงปฏิบัติในการนํา | กระบวนการธุรกิจมาใช้งานบนแอปพลิเคชันมาตรฐานของระบบวางแผนทรัพยากรองค์กร | Key business processes in organization; accounting process, procurement | proce"
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-09",
+      "code": "06026115",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 183,
+      "status": "parsed_codes",
+      "prerequisite_codes": [
+        "06026108"
+      ],
+      "evidence": "PREREQUISITE : | 06026108  MANAGEMENT INFORMATION SYSTEMS | แนวคิดพื้นฐานของอัจฉริยะทางธุรกิจ องค์ประกอบของอัจฉริยะทางธุรกิจ โครงสร้างพื้นฐานของ | อัจฉริยะทางธุรกิจ คลังข้อมูล เหมืองข้อมูล การบริหารสมรรถนะของธุรกิจ บาลานซ์สกอร์การ์ด เครื่องมือต่างๆ ในการ | สร้างอัจฉริยะทางธุรกิจในองค์กร การประยุกต์ใช้อัจฉริยะทางธุรกิจบนระบบสารสนเทศต่าง ๆ ในองค์กร แอปพลิเคชัน | ต่างๆ ของอัจฉริยะทางธุรกิจที่ใช้ในปัจจุบัน | Basic principles of business intelligence (BI); components of BI; BI infrastructure, | data "
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-10",
+      "code": "06026116",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 184,
+      "status": "parsed_codes",
+      "prerequisite_codes": [
+        "06026103"
+      ],
+      "evidence": "PREREQUISITE : | 06026103  PROBABILITY AND STATISTICS | แนะนําการวิเคราะห์ข้อมูลเชิงธุรกิจและการตัดสินใจ การรวบรวมข้อมูล การสํารวจข้อมูล และการสรุป | ข้อมูล การประมาณค่าแนวโน้มและความเบี่ยงเบนของข้อมูล การอนุมานเชิงสถิติ การวิเคราะห์เชิงถดถอย การพยากรณ์ | และอนุกรมเวลา การหาค่าที่เหมาะสมที่สุด การสร้างแบบจําลองสถานการณ์ การวิเคราะห์ข้อมูลชั้นสูง โปรแกรมทาง | สถิติ | Introduction to business data analytics and decision making; gathering data, | exploring data, and summarizing data; estimation of "
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-11",
+      "code": "06026128",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": 189,
+      "status": "parsed_codes",
+      "prerequisite_codes": [
+        "06026127"
+      ],
+      "evidence": "PREREQUISITE : | 06026127  PROJECT IN DATA SCIENCE AND BUSINESS | ANALYTICS 1 | ศึกษาค้นคว้าหรือวิจัยในหัวข้อปัจจุบันที่น่าสนใจทางวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ ใน | รูปแบบโครงการ ที่สามารถประยุกต์ใช้ทฤษฎีที่เกี่ยวข้องทางการศึกษาด้านเทคโนโลยีสารสนเทศ ภายใต้การดูแลและ | แนะนําของอาจารย์ที่ปรึกษา สามารถนําเสนอผลการทดลองที่สมบูรณ์ในหัวข้อที่ได้เสนอและศึกษาต่อเนื่องมาจากวิชา | โครงงานวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ 1 | Study or research of interesting current topics in data science "
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-12",
+      "code": "060261xx",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-13",
+      "code": "วิชาเลือกเสรี 1",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-14",
+      "code": "วิชาเลือกเสรี 2",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2560-no-coop-15",
+      "code": "90xxxxxx",
+      "source_pdf": "DSBA-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-coop-01",
+      "code": "06026200",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-coop-02",
+      "code": "06026202",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-coop-03",
+      "code": "06066101",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-coop-04",
+      "code": "06066303",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-coop-05",
+      "code": "90641001",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-coop-06",
+      "code": "06026204",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-coop-07",
+      "code": "06026207",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-coop-08",
+      "code": "06026208",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-coop-09",
+      "code": "06026209",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-coop-10",
+      "code": "06026210",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-coop-11",
+      "code": "06026215",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-coop-12",
+      "code": "9064xxxx",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-coop-13",
+      "code": "วิชาเลือกเสรี 1",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-coop-14",
+      "code": "วิชาเลือกเสรี 2",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-coop-15",
+      "code": "06026259",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-01",
+      "code": "06026200",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-02",
+      "code": "06026202",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-03",
+      "code": "06066101",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-04",
+      "code": "06066303",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-05",
+      "code": "90641001",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-06",
+      "code": "06026204",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-07",
+      "code": "06026207",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-08",
+      "code": "06026208",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-09",
+      "code": "06026209",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-10",
+      "code": "06026210",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-11",
+      "code": "06026215",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-12",
+      "code": "06026xxx",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-13",
+      "code": "9064xxxx",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-14",
+      "code": "วิชาเลือกเสรี 1",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "DSBA-2565-no-coop-15",
+      "code": "วิชาเลือกเสรี 2",
+      "source_pdf": "DSBA.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2560-coop-01",
+      "code": "06016301",
+      "source_pdf": "IT-60.pdf",
+      "description_page": 223,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : NONE | วิวัฒนาการของเทคโนโลยีสารสนเทศ องคประกอบของระบบคอมพิวเตอร ระบบประมวลผลขอมูล | ฮารดแวรและซอฟตแวร ภาพรวมการทํางานของระบบปฏิบัติการ ขอมูลและการแทนคาขอมูล การจัดการ | ขอมูล แนวคิดพื้นฐานสําหรับการสรางโปรแกรม เทคโนโลยีฐานขอมูล การสื่อสารขอมูล ระบบเครือขาย | คอมพิวเตอรและอินเทอรเน็ต ประเด็นทางดานจริยธรรมและสังคมกับเทคโนโลยีสารสนเทศ | Evolution of information technology; components of computer systems; data | processing systems; hardware and software; overview o"
+    },
+    {
+      "sample_id": "IT-2560-coop-02",
+      "code": "06016314",
+      "source_pdf": "IT-60.pdf",
+      "description_page": 229,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : NONE | กลยุทธและหลักการแกปญหา การคิดแบบขั้นตอนวิธี ผังงาน แนวคิดและเกริ่นนําการเขียน โปรแกรม | คอมพิวเตอร | Problem solving strategies and concepts; algorithmic thinking; flowchart; concepts | and introduction to computer programming."
+    },
+    {
+      "sample_id": "IT-2560-coop-03",
+      "code": "06016319",
+      "source_pdf": "IT-60.pdf",
+      "description_page": 231,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : NONE | ระบบจํานวน ระบบฐานสอง พีชคณิตบูลีน เทคนิคการออกแบบเชิงดิจิทัล ลอจิกเกตและการลด | จํานวน วงจรเชิงผสมเบื้องตน หนวยคํานวณและตรรกะ วิวัฒนาการของคอมพิวเตอร องคประกอบของระบบ | คอมพิวเตอรและการเชื่อมตอระหวางกัน วิธีการคํานวณทางคณิตศาสตรของเครื่องคอมพิวเตอร"
+    },
+    {
+      "sample_id": "IT-2560-coop-04",
+      "code": "90101007",
+      "source_pdf": "IT-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2560-coop-05",
+      "code": "90201001",
+      "source_pdf": "IT-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2560-coop-06",
+      "code": "06016309",
+      "source_pdf": "IT-60.pdf",
+      "description_page": 227,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : NONE | ความมั่นคงของระบบสารสนเทศ ภัยคุกคาม ชองโหว การประเมินและวิเคราะหความเสี่ยง นโยบาย | รักษาความปลอดภัยของระบบสารสนเทศ การจัดการความปลอดภัยของระบบสารสนเทศ การเขารหัสและ | ถอดรหัสเพื่อความปลอดภัยของขอมูล การพิสูจนตัวตน การควบคุมการเขาถึงขอมูล การรักษาความปลอดภัย | ของเครือขายคอมพิวเตอร กฎหมายและปญหาจริยธรรมที่เกี่ยวของกับเทคโนโลยีสารสนเทศ ความเปนสวนตัว | และความลับ อาชญากรรมคอมพิวเตอร | Information system security; threats, vulnerabilities, risk assessment and a"
+    },
+    {
+      "sample_id": "IT-2560-coop-07",
+      "code": "06016310",
+      "source_pdf": "IT-60.pdf",
+      "description_page": 227,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : NONE | หลักการออกแบบโดยอาศัยผูใชเปนศูนยกลาง ปจจัยที่เกี่ยวกับมนุษยและหลักการทางจิตวิทยา | สําหรับการออกแบบสวนตอประสานกับผูใช เทคโนโลยีในการตอประสานระหวางมนุษยและเครื่อง | แบบจําลองการปฏิสัมพันธ รูปแบบของการปฏิสัมพันธ ขอบเขตของการออกแบบการเชื่อมตอกับผูใชและการ | ออกแบบประสบการณในการใชงาน กระบวนการในการออกแบบการเชื่อมตอกับผูใช เครื่องมือในการ | ออกแบบ หลักการและขอควรปฏิบัติในการออกแบบ เทคนิคการประเมิน การออกแบบการเชื่อมตอกับผูใชบน | ระบบปฏิบัติการสมัยใหม"
+    },
+    {
+      "sample_id": "IT-2560-coop-08",
+      "code": "90304004",
+      "source_pdf": "IT-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2560-coop-09",
+      "code": "06016323",
+      "source_pdf": "IT-60.pdf",
+      "description_page": 233,
+      "status": "parsed_codes",
+      "prerequisite_codes": [
+        "06016317"
+      ],
+      "evidence": "PREREQUISITE  : 06016317  OBJECT-ORIENTED PROGRAMMING | การแนะนําเทคโนโลยีและการเขียนโปรแกรมที่เกี่ยวของกับอุปกรณเคลื่อนที่ ไดแก มือถือแบบสมารท | โฟน แพด และแทบเลต การพัฒนาและทดสอบโปรแกรมประยุกตสําหรับอุปกรณ เคลื่อนที่โดยการทํางานจริง | บนเครื่องจําลอง | Introduction to technology and the programming of applications for mobile | computing including devices i.e. smart phones, pads, and tablets; developing mobile | applications and using device emulators for coding and testing."
+    },
+    {
+      "sample_id": "IT-2560-coop-10",
+      "code": "06016324",
+      "source_pdf": "IT-60.pdf",
+      "description_page": 233,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : NONE | เทคนิคการจัดการความตองการ การวิเคราะหปญหา การเขาถึงและเก็บเกี่ยวความตองการจาก ผูที่มี | สวนไดสวนเสีย การจัดทําเอกสารโดยใชยูสเคสโมเดล การจัดลําดับชั้นของเอกสาร การกําหนดระดับของ | ความตองการ การนิยามระบบ การจัดการขอบเขตและความคาดหวัง การกลั่นกรองความชัดเจนของระบบ | คุณลักษณะของความตองการ การติดตามยอนรอยความตองการ การบริหารจัดการการเปลี่ยนแปลงความ | ตองการ การนําความตองการมาขับเคลื่อนการออกแบบ การทดสอบ การจัดทําเอกสารสําหรับผูใชงาน"
+    },
+    {
+      "sample_id": "IT-2560-coop-11",
+      "code": "90401011",
+      "source_pdf": "IT-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2560-coop-12",
+      "code": "060163xx",
+      "source_pdf": "IT-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2560-coop-13",
+      "code": "90xxxxxx",
+      "source_pdf": "IT-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2560-coop-14",
+      "code": "90xxxxxx",
+      "source_pdf": "IT-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2560-coop-15",
+      "code": "วิชาเลือกเสรี 1",
+      "source_pdf": "IT-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2560-no-coop-01",
+      "code": "06016301",
+      "source_pdf": "IT-60.pdf",
+      "description_page": 223,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : NONE | วิวัฒนาการของเทคโนโลยีสารสนเทศ องคประกอบของระบบคอมพิวเตอร ระบบประมวลผลขอมูล | ฮารดแวรและซอฟตแวร ภาพรวมการทํางานของระบบปฏิบัติการ ขอมูลและการแทนคาขอมูล การจัดการ | ขอมูล แนวคิดพื้นฐานสําหรับการสรางโปรแกรม เทคโนโลยีฐานขอมูล การสื่อสารขอมูล ระบบเครือขาย | คอมพิวเตอรและอินเทอรเน็ต ประเด็นทางดานจริยธรรมและสังคมกับเทคโนโลยีสารสนเทศ | Evolution of information technology; components of computer systems; data | processing systems; hardware and software; overview o"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-02",
+      "code": "06016314",
+      "source_pdf": "IT-60.pdf",
+      "description_page": 229,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : NONE | กลยุทธและหลักการแกปญหา การคิดแบบขั้นตอนวิธี ผังงาน แนวคิดและเกริ่นนําการเขียน โปรแกรม | คอมพิวเตอร | Problem solving strategies and concepts; algorithmic thinking; flowchart; concepts | and introduction to computer programming."
+    },
+    {
+      "sample_id": "IT-2560-no-coop-03",
+      "code": "06016319",
+      "source_pdf": "IT-60.pdf",
+      "description_page": 231,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : NONE | ระบบจํานวน ระบบฐานสอง พีชคณิตบูลีน เทคนิคการออกแบบเชิงดิจิทัล ลอจิกเกตและการลด | จํานวน วงจรเชิงผสมเบื้องตน หนวยคํานวณและตรรกะ วิวัฒนาการของคอมพิวเตอร องคประกอบของระบบ | คอมพิวเตอรและการเชื่อมตอระหวางกัน วิธีการคํานวณทางคณิตศาสตรของเครื่องคอมพิวเตอร"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-04",
+      "code": "90101007",
+      "source_pdf": "IT-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2560-no-coop-05",
+      "code": "90201001",
+      "source_pdf": "IT-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2560-no-coop-06",
+      "code": "06016309",
+      "source_pdf": "IT-60.pdf",
+      "description_page": 227,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : NONE | ความมั่นคงของระบบสารสนเทศ ภัยคุกคาม ชองโหว การประเมินและวิเคราะหความเสี่ยง นโยบาย | รักษาความปลอดภัยของระบบสารสนเทศ การจัดการความปลอดภัยของระบบสารสนเทศ การเขารหัสและ | ถอดรหัสเพื่อความปลอดภัยของขอมูล การพิสูจนตัวตน การควบคุมการเขาถึงขอมูล การรักษาความปลอดภัย | ของเครือขายคอมพิวเตอร กฎหมายและปญหาจริยธรรมที่เกี่ยวของกับเทคโนโลยีสารสนเทศ ความเปนสวนตัว | และความลับ อาชญากรรมคอมพิวเตอร | Information system security; threats, vulnerabilities, risk assessment and a"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-07",
+      "code": "06016310",
+      "source_pdf": "IT-60.pdf",
+      "description_page": 227,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : NONE | หลักการออกแบบโดยอาศัยผูใชเปนศูนยกลาง ปจจัยที่เกี่ยวกับมนุษยและหลักการทางจิตวิทยา | สําหรับการออกแบบสวนตอประสานกับผูใช เทคโนโลยีในการตอประสานระหวางมนุษยและเครื่อง | แบบจําลองการปฏิสัมพันธ รูปแบบของการปฏิสัมพันธ ขอบเขตของการออกแบบการเชื่อมตอกับผูใชและการ | ออกแบบประสบการณในการใชงาน กระบวนการในการออกแบบการเชื่อมตอกับผูใช เครื่องมือในการ | ออกแบบ หลักการและขอควรปฏิบัติในการออกแบบ เทคนิคการประเมิน การออกแบบการเชื่อมตอกับผูใชบน | ระบบปฏิบัติการสมัยใหม"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-08",
+      "code": "90304004",
+      "source_pdf": "IT-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2560-no-coop-09",
+      "code": "06016323",
+      "source_pdf": "IT-60.pdf",
+      "description_page": 233,
+      "status": "parsed_codes",
+      "prerequisite_codes": [
+        "06016317"
+      ],
+      "evidence": "PREREQUISITE  : 06016317  OBJECT-ORIENTED PROGRAMMING | การแนะนําเทคโนโลยีและการเขียนโปรแกรมที่เกี่ยวของกับอุปกรณเคลื่อนที่ ไดแก มือถือแบบสมารท | โฟน แพด และแทบเลต การพัฒนาและทดสอบโปรแกรมประยุกตสําหรับอุปกรณ เคลื่อนที่โดยการทํางานจริง | บนเครื่องจําลอง | Introduction to technology and the programming of applications for mobile | computing including devices i.e. smart phones, pads, and tablets; developing mobile | applications and using device emulators for coding and testing."
+    },
+    {
+      "sample_id": "IT-2560-no-coop-10",
+      "code": "06016324",
+      "source_pdf": "IT-60.pdf",
+      "description_page": 233,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : NONE | เทคนิคการจัดการความตองการ การวิเคราะหปญหา การเขาถึงและเก็บเกี่ยวความตองการจาก ผูที่มี | สวนไดสวนเสีย การจัดทําเอกสารโดยใชยูสเคสโมเดล การจัดลําดับชั้นของเอกสาร การกําหนดระดับของ | ความตองการ การนิยามระบบ การจัดการขอบเขตและความคาดหวัง การกลั่นกรองความชัดเจนของระบบ | คุณลักษณะของความตองการ การติดตามยอนรอยความตองการ การบริหารจัดการการเปลี่ยนแปลงความ | ตองการ การนําความตองการมาขับเคลื่อนการออกแบบ การทดสอบ การจัดทําเอกสารสําหรับผูใชงาน"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-11",
+      "code": "90401011",
+      "source_pdf": "IT-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2560-no-coop-12",
+      "code": "06016330",
+      "source_pdf": "IT-60.pdf",
+      "description_page": 236,
+      "status": "parsed_codes",
+      "prerequisite_codes": [
+        "06016329"
+      ],
+      "evidence": "PREREQUISITE  : 06016329  PROJECT IN SOFTWARE ENGINEERING 1 | ศึกษาคนควาหรือวิจัย ในหัวขอปจจุบันที่นาสนใจทางวิศวกรรมซอฟตแวร ในรูปแบบโครงการที่ | สามารถประยุกตใชทฤษฎีที่เกี่ยวของทางการศึกษาดานเทคโนโลยีสารสนเทศ ภายใตการดูแลและแนะนําของ | อาจารยที่ปรึกษา เพื่อที่จะสามารถนําเสนอผลการทดลองที่สมบูรณในหัวขอที่ไดเสนอและศึกษาตอ | เนื่องมาจากวิชาโครงงาน 1 | Study or research of interesting current topics in software engineering undertaking a | work project based by applying the theoretica"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-13",
+      "code": "06016340",
+      "source_pdf": "IT-60.pdf",
+      "description_page": 242,
+      "status": "parsed_codes",
+      "prerequisite_codes": [
+        "06016339"
+      ],
+      "evidence": "PREREQUISITE  : 06016339 PROJECT IN NETWORK AND SYSTEM | TECHNOLOGY 1 | ศึกษาคนควาหรือวิจัย ในหัวขอปจจุบันที่นาสนใจทางเทคโนโลยีเครือขายและระบบ ในรูปแบบ | โครงการที่สามารถประยุกตใชทฤษฎีที่เกี่ยวของทางการศึกษาดานเทคโนโลยีสารสนเทศ ภายใตการดูแลและ | แนะนําของอาจารยที่ปรึกษา เพื่อที่จะสามารถนําเสนอผลการทดลองที่สมบูรณในหัวขอที่ไดเสนอและศึกษา | ตอเนื่องมาจากวิชาโครงงาน 1 | Study or research of interesting current topics in network and system technology | undertaking a work project based"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-14",
+      "code": "06016350",
+      "source_pdf": "IT-60.pdf",
+      "description_page": 247,
+      "status": "parsed_codes",
+      "prerequisite_codes": [
+        "06016349"
+      ],
+      "evidence": "PREREQUISITE  : 06016349 PROJECT IN MULTIMEDIA AND GAME | DEVELOPMENT  1 | ศึกษาคนควาหรือวิจัย ในหัวขอปจจุบันที่นาสนใจทางดานการพัฒนาสื่อประสมและเกม ในรูปแบบ | โครงการที่สามารถประยุกตใชทฤษฎีที่เกี่ยวของทางการศึกษาดานเทคโนโลยีสารสนเทศ ภายใตการดูแลและ | แนะนําของอาจารยที่ปรึกษา เพื่อที่จะสามารถนําเสนอผลการทดลองที่สมบูรณในหัวขอที่ไดเสนอและศึกษา | ตอเนื่องมาจากวิชาโครงงาน 1 | Study or research of interesting current topics in multimedia and game development | undertaking a work projec"
+    },
+    {
+      "sample_id": "IT-2560-no-coop-15",
+      "code": "90401013",
+      "source_pdf": "IT-60.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2565-coop-01",
+      "code": "06016401",
+      "source_pdf": "IT.pdf",
+      "description_page": 324,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | ลิมิตและความตอเนื่องอนุพันธของฟงกชันอนุพันธอันดับสูงการประยุกตของอนุพันธปญหา | คาสูงสุดและต่ําสุดของฟงกชัน การอินทิเกรตและเทคนิคของการอินทเกรต การประยุกตของการ | อินทิเกรตฟงกชันสองตัวแปร อนุพันธยอยพีชคณิตเชิงเสน เมทริกซและดีเทอรมิแนนท ระบบสมการเชิง | เสนและการหาผลเฉลยของระบบสมการเชิงเสน เวกเตอรสเปซ การแปลงเชิงเสน การแปลงเมทริกซ | เมทริกซเชิงตั้งฉาก | Limit and continuity, derivative of functions, higher derivatives, applications of | derivative,"
+    },
+    {
+      "sample_id": "IT-2565-coop-02",
+      "code": "06016402",
+      "source_pdf": "IT.pdf",
+      "description_page": 324,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | วิวัฒนาการของเทคโนโลยีสารสนเทศ องคประกอบของระบบคอมพิวเตอร ระบบประมวลผล | ขอมูล ฮารดแวรและซอฟตแวรภาพรวมการทํางานของระบบปฏิบัติการ ขอมูลและการแทนคาขอมูล | การจัดการขอมูล แนวคิดพื้นฐานสําหรับการสรางโปรแกรมเทคโนโลยีฐานขอมูล การสื่อสารขอมูล | ระบบเครือขายคอมพิวเตอรและอินเทอรเน็ต ประเด็นทางดานจริยธรรมและสังคมกับเทคโนโลยี | สารสนเทศ | Evolution of information technology, components of computer systems, data | processing systems, hardware and software, overview"
+    },
+    {
+      "sample_id": "IT-2565-coop-03",
+      "code": "06016411",
+      "source_pdf": "IT.pdf",
+      "description_page": 328,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : | NONE | ระบบจํานวนระบบฐานสองพีชคณิตบูลีนเทคนิคการออกแบบเชิงดิจิทัล ลอจิกเกตและการลด | จํานวน วงจรเชิงผสมเบื้องตนหนวยคํานวณและตรรก วิวัฒนาการของคอมพิวเตอร องคประกอบของ | ระบบคอมพิวเตอรและการเชื่อมตอระหวางกัน วิธีการคํานวณทางคณิตศาสตรของเครื่องคอมพิวเตอร | Number systems, binary system, Boolean algebras, digital design techniques, logic | gate and minimization, basic combinational circuits, arithmetic logic units, computer | evolution, computer function and interconnectio"
+    },
+    {
+      "sample_id": "IT-2565-coop-04",
+      "code": "06066303",
+      "source_pdf": "IT.pdf",
+      "description_page": 359,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE"
+    },
+    {
+      "sample_id": "IT-2565-coop-05",
+      "code": "90641001",
+      "source_pdf": "IT.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2565-coop-06",
+      "code": "06016405",
+      "source_pdf": "IT.pdf",
+      "description_page": 325,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | ภัยและการโจมตีทางไซเบอร มุมมองและผลกระทบที่มีตอผูใช ชองโหวและความเสี่ยงพื้นฐาน | มัลแวรความมั่นคงปลอดภัยของขอมูลซอฟทแวรและเครือขาย การกําหนดนโยบายและกลไกบังคับ | บริการ กลไกสนับสนุนและเครื่องมือปองกันที่เกี่ยวกับการรักษาความมั่นคงปลอดภัยเครื่องมือและ | เทคโนโลยีความมั่นคงปลอดภัยภาพรวมการเขาและถอดรหัสลับการยืนยันตัวตนการลงลายเซ็นดิจิตัล | การควบคุมการเขาถึงความปลอดภัยขอมูลสวนบุคคลกฎหมายและจริยธรรมที่เกี่ยวกับไซเบอร | Cyber threats and cyber attacks, persp"
+    },
+    {
+      "sample_id": "IT-2565-coop-07",
+      "code": "06016410",
+      "source_pdf": "IT.pdf",
+      "description_page": 327,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : | NONE | ความรูเบื้องตนเกี่ยวกับวิศวกรรมซอฟตแวรกรอบงานของกระบวนการวิศวกรรมซอฟตแวรหลัก | ปฎิบัติทางวิศวกรรมซอฟตแวร กระบวนการพัฒนาซอฟตแวรแบบอไจล การประชุมของอไจล การ"
+    },
+    {
+      "sample_id": "IT-2565-coop-08",
+      "code": "06016412",
+      "source_pdf": "IT.pdf",
+      "description_page": 328,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : | NONE | องคประกอบของคอมพิวเตอร หนวยประมวลผลกลาง หนวยความจํา อินพุตและเอาตพุต การ | ทํางานรวมกันขององคประกอบตาง ๆ ภาพรวมการทํางานของระบบปฏิบัติการ กระบวนการ โพรเซส | และเธรด การสลับการทํางาน การจัดการหนวยความจํา หนวยความจําเสมือน การใชงาน | ระบบปฏิบัติการยูนิค วีเอมแวรหรือเวอรชวลบอกวรวมถึงการใชงานแพลตฟอรมดอกเกอร | Computer components, CPU, memory, I/O, components co-operation, overview | of operating system, process and thread, processing switch, memory managem"
+    },
+    {
+      "sample_id": "IT-2565-coop-09",
+      "code": "06066302",
+      "source_pdf": "IT.pdf",
+      "description_page": 359,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : NONE | แนวคิดพื้นฐานและหลักการทํางานของระบบเว็บ เครื่องมือสําหรับการออกแบบและพัฒนาเว็บ | การเขียนโปรแกรมเว็บฝงไคลแอนท HTML CSS JavaScript กระบวนการออกแบบสวนตอประสานกับ | ผูใช การจัดการกับ Events การจัดการโครงสรางเอกสารและ DOM การเขียนโปรแกรมเว็บฝง | เซิรฟเวอร PHP การจัดการและการใชงานฐานขอมูล การใชงานเฟรมเวิรค | Concepts of Web system and Web development, Web development and design | tools, Client-side scripting, HTML, CSS, JavaScript, User Interface Design process"
+    },
+    {
+      "sample_id": "IT-2565-coop-10",
+      "code": "06016414",
+      "source_pdf": "IT.pdf",
+      "description_page": 329,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : | NONE | แนะนําระบบฐานขอมูลแบบไมใชเชิงสัมพันธความแตกตางจากระบบฐานขอมูลเชิงสัมพันธ | ขอดีและขอเสียของฐานขอมูลแบบไมใชเชิงสัมพันธชนิดและโครงสรางฐานขอมูลแบบไมใชเชิงสัมพันธ | แบบคอลัมน แบบคียแวลยู แบบเอกสาร และแบบกราฟ ตัวอยางการออกแบบฐานขอมูลแบบไมใชเชิง | สัมพันธ การใชภาษาเจสันกับฐานขอมูลแบบไมใชเชิงสัมพันธ แนะนําภาษาเจสัน ไวยากรณของเจสัน | ชนิดขอมูลของเจสัน | Introduction to NoSQL database system, differences between NoSQL database | system and relation"
+    },
+    {
+      "sample_id": "IT-2565-coop-11",
+      "code": "06016407",
+      "source_pdf": "IT.pdf",
+      "description_page": 326,
+      "status": "parsed_codes",
+      "prerequisite_codes": [
+        "06016406"
+      ],
+      "evidence": "PREREQUISITE  : | 06016406  PROJECT 1 | ศึกษาคนควาหรือวิจัยในหัวขอปจจุบันที่นาสนใจทางเทคโนโลยีสารสนเทศในรูปแบบโครงการที่ | สามารถประยุกตใชทฤษฎีที่เกี่ยวของทางการศึกษาดานเทคโนโลยีสารสนเทศภายใตการดูแลและแนะนํา | ของอาจารยที่ปรึกษา เพื่อที่จะสามารถนําเสนอผลการทดลองที่สมบูรณในหัวขอที่ไดเสนอและศึกษาตอ | เนื่องมาจากวิชาโครงงาน 1 | Study or research of interesting current topics in information technology | undertaking a work project based by applying the theoretical aspects of the inform"
+    },
+    {
+      "sample_id": "IT-2565-coop-12",
+      "code": "06066100",
+      "source_pdf": "IT.pdf",
+      "description_page": 357,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | ธรรมชาติและวงจรชีวิตของโครงการ การศึกษาความเปนไปไดของโครงการ เทคนิคการเลือก | โครงการ องคความรูสําหรับการบริหารโครงการ กลุมกระบวนการบริหารโครงการ การจัดการ | ขอบเขตของโครงการ การจัดการตารางเวลา การจัดการคาใชจายโครงการ การจัดการคุณภาพ การ | จัดทีมงานและทรัพยากร การจัดการงานสื่อสาร การจัดการความเสี่ยง การควบคุมโครงการ และ | ประเมินผลโครงการ | Nature and life cycle of information technology (IT) projects, project | feasibility, project selection techniques, project "
+    },
+    {
+      "sample_id": "IT-2565-coop-13",
+      "code": "90642033",
+      "source_pdf": "IT.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2565-coop-14",
+      "code": "90642033",
+      "source_pdf": "IT.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2565-coop-15",
+      "code": "9064xxxx",
+      "source_pdf": "IT.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2565-no-coop-01",
+      "code": "06016401",
+      "source_pdf": "IT.pdf",
+      "description_page": 324,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | ลิมิตและความตอเนื่องอนุพันธของฟงกชันอนุพันธอันดับสูงการประยุกตของอนุพันธปญหา | คาสูงสุดและต่ําสุดของฟงกชัน การอินทิเกรตและเทคนิคของการอินทเกรต การประยุกตของการ | อินทิเกรตฟงกชันสองตัวแปร อนุพันธยอยพีชคณิตเชิงเสน เมทริกซและดีเทอรมิแนนท ระบบสมการเชิง | เสนและการหาผลเฉลยของระบบสมการเชิงเสน เวกเตอรสเปซ การแปลงเชิงเสน การแปลงเมทริกซ | เมทริกซเชิงตั้งฉาก | Limit and continuity, derivative of functions, higher derivatives, applications of | derivative,"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-02",
+      "code": "06016402",
+      "source_pdf": "IT.pdf",
+      "description_page": 324,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | วิวัฒนาการของเทคโนโลยีสารสนเทศ องคประกอบของระบบคอมพิวเตอร ระบบประมวลผล | ขอมูล ฮารดแวรและซอฟตแวรภาพรวมการทํางานของระบบปฏิบัติการ ขอมูลและการแทนคาขอมูล | การจัดการขอมูล แนวคิดพื้นฐานสําหรับการสรางโปรแกรมเทคโนโลยีฐานขอมูล การสื่อสารขอมูล | ระบบเครือขายคอมพิวเตอรและอินเทอรเน็ต ประเด็นทางดานจริยธรรมและสังคมกับเทคโนโลยี | สารสนเทศ | Evolution of information technology, components of computer systems, data | processing systems, hardware and software, overview"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-03",
+      "code": "06016411",
+      "source_pdf": "IT.pdf",
+      "description_page": 328,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : | NONE | ระบบจํานวนระบบฐานสองพีชคณิตบูลีนเทคนิคการออกแบบเชิงดิจิทัล ลอจิกเกตและการลด | จํานวน วงจรเชิงผสมเบื้องตนหนวยคํานวณและตรรก วิวัฒนาการของคอมพิวเตอร องคประกอบของ | ระบบคอมพิวเตอรและการเชื่อมตอระหวางกัน วิธีการคํานวณทางคณิตศาสตรของเครื่องคอมพิวเตอร | Number systems, binary system, Boolean algebras, digital design techniques, logic | gate and minimization, basic combinational circuits, arithmetic logic units, computer | evolution, computer function and interconnectio"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-04",
+      "code": "06066303",
+      "source_pdf": "IT.pdf",
+      "description_page": 359,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-05",
+      "code": "90641001",
+      "source_pdf": "IT.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2565-no-coop-06",
+      "code": "06016405",
+      "source_pdf": "IT.pdf",
+      "description_page": 325,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  :   NONE | ภัยและการโจมตีทางไซเบอร มุมมองและผลกระทบที่มีตอผูใช ชองโหวและความเสี่ยงพื้นฐาน | มัลแวรความมั่นคงปลอดภัยของขอมูลซอฟทแวรและเครือขาย การกําหนดนโยบายและกลไกบังคับ | บริการ กลไกสนับสนุนและเครื่องมือปองกันที่เกี่ยวกับการรักษาความมั่นคงปลอดภัยเครื่องมือและ | เทคโนโลยีความมั่นคงปลอดภัยภาพรวมการเขาและถอดรหัสลับการยืนยันตัวตนการลงลายเซ็นดิจิตัล | การควบคุมการเขาถึงความปลอดภัยขอมูลสวนบุคคลกฎหมายและจริยธรรมที่เกี่ยวกับไซเบอร | Cyber threats and cyber attacks, persp"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-07",
+      "code": "06016410",
+      "source_pdf": "IT.pdf",
+      "description_page": 327,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : | NONE | ความรูเบื้องตนเกี่ยวกับวิศวกรรมซอฟตแวรกรอบงานของกระบวนการวิศวกรรมซอฟตแวรหลัก | ปฎิบัติทางวิศวกรรมซอฟตแวร กระบวนการพัฒนาซอฟตแวรแบบอไจล การประชุมของอไจล การ"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-08",
+      "code": "06016412",
+      "source_pdf": "IT.pdf",
+      "description_page": 328,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : | NONE | องคประกอบของคอมพิวเตอร หนวยประมวลผลกลาง หนวยความจํา อินพุตและเอาตพุต การ | ทํางานรวมกันขององคประกอบตาง ๆ ภาพรวมการทํางานของระบบปฏิบัติการ กระบวนการ โพรเซส | และเธรด การสลับการทํางาน การจัดการหนวยความจํา หนวยความจําเสมือน การใชงาน | ระบบปฏิบัติการยูนิค วีเอมแวรหรือเวอรชวลบอกวรวมถึงการใชงานแพลตฟอรมดอกเกอร | Computer components, CPU, memory, I/O, components co-operation, overview | of operating system, process and thread, processing switch, memory managem"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-09",
+      "code": "06066302",
+      "source_pdf": "IT.pdf",
+      "description_page": 359,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : NONE | แนวคิดพื้นฐานและหลักการทํางานของระบบเว็บ เครื่องมือสําหรับการออกแบบและพัฒนาเว็บ | การเขียนโปรแกรมเว็บฝงไคลแอนท HTML CSS JavaScript กระบวนการออกแบบสวนตอประสานกับ | ผูใช การจัดการกับ Events การจัดการโครงสรางเอกสารและ DOM การเขียนโปรแกรมเว็บฝง | เซิรฟเวอร PHP การจัดการและการใชงานฐานขอมูล การใชงานเฟรมเวิรค | Concepts of Web system and Web development, Web development and design | tools, Client-side scripting, HTML, CSS, JavaScript, User Interface Design process"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-10",
+      "code": "06016414",
+      "source_pdf": "IT.pdf",
+      "description_page": 329,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : | NONE | แนะนําระบบฐานขอมูลแบบไมใชเชิงสัมพันธความแตกตางจากระบบฐานขอมูลเชิงสัมพันธ | ขอดีและขอเสียของฐานขอมูลแบบไมใชเชิงสัมพันธชนิดและโครงสรางฐานขอมูลแบบไมใชเชิงสัมพันธ | แบบคอลัมน แบบคียแวลยู แบบเอกสาร และแบบกราฟ ตัวอยางการออกแบบฐานขอมูลแบบไมใชเชิง | สัมพันธ การใชภาษาเจสันกับฐานขอมูลแบบไมใชเชิงสัมพันธ แนะนําภาษาเจสัน ไวยากรณของเจสัน | ชนิดขอมูลของเจสัน | Introduction to NoSQL database system, differences between NoSQL database | system and relation"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-11",
+      "code": "06016406",
+      "source_pdf": "IT.pdf",
+      "description_page": 326,
+      "status": "explicit_none",
+      "prerequisite_codes": [],
+      "evidence": "PREREQUISITE  : | NONE | ศึกษาคนควาหรือวิจัยในหัวขอปจจุบันที่นาสนใจทางเทคโนโลยีสารสนเทศในรูปแบบโครงการ | ที่สามารถประยุกตใชทฤษฎีที่เกี่ยวของทางการศึกษาดานเทคโนโลยีสารสนเทศภายใตการดูแลและ | แนะนําของอาจารยที่ปรึกษา เพื่อที่จะสามารถนําเสนอหัวขอและผลการทดลองเบื้องตนที่ไดจากการ | แกปญหาเชิงปฏิบัติการหรือจากการวิเคราะหเชิงวิชาการ | Study or research of interesting current topics in information technology | undertaking a work project based by applying the theoretical aspects of the in"
+    },
+    {
+      "sample_id": "IT-2565-no-coop-12",
+      "code": "060164xx",
+      "source_pdf": "IT.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2565-no-coop-13",
+      "code": "90643021",
+      "source_pdf": "IT.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2565-no-coop-14",
+      "code": "9064xxxx",
+      "source_pdf": "IT.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    },
+    {
+      "sample_id": "IT-2565-no-coop-15",
+      "code": "วิชาเลือกเสรี 1",
+      "source_pdf": "IT.pdf",
+      "description_page": null,
+      "status": "not_applicable_or_unlocated",
+      "prerequisite_codes": [],
+      "evidence": null
+    }
+  ]
+}

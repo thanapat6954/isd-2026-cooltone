@@ -1,0 +1,264 @@
+{
+  "dpi": 180,
+  "completed": [
+    {
+      "source_pdf": "BIT-60.pdf",
+      "page_number": 171,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-60-description-171.png",
+      "sha256": "5c54b38e0e3debfcbc53a6fa1e9d89ab612d8074623694a2a61033c7c6eec2bc"
+    },
+    {
+      "source_pdf": "BIT-60.pdf",
+      "page_number": 172,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-60-description-172.png",
+      "sha256": "2a8232de9e7878197365afdb318b873b21d1f1e33f6efc1a77aa18379df98d99"
+    },
+    {
+      "source_pdf": "BIT-60.pdf",
+      "page_number": 173,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-60-description-173.png",
+      "sha256": "6ae9c38ccbc54cc3cf7a54b076adf495c11c076461c284cc71ffee0cb3237cf1"
+    },
+    {
+      "source_pdf": "BIT-60.pdf",
+      "page_number": 174,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-60-description-174.png",
+      "sha256": "24c063379073de57086557aa71cb1ebdcf4d60e28800b7273357213049f54369"
+    },
+    {
+      "source_pdf": "BIT-60.pdf",
+      "page_number": 175,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-60-description-175.png",
+      "sha256": "78cc47706e4a23a8025c91ae08dc57fcd2edcfacc0442fa20abc49fa8c208c09"
+    },
+    {
+      "source_pdf": "BIT-60.pdf",
+      "page_number": 178,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-60-description-178.png",
+      "sha256": "66b3e51ecb8d6362bee93837a950fe13ad1b649af5d30bb9f6739fa1201ff5ea"
+    },
+    {
+      "source_pdf": "BIT-60.pdf",
+      "page_number": 179,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-60-description-179.png",
+      "sha256": "37ad741bc77ffa2a450b5d4947dcea1e404b21ae337287df4ca26ea124d4ce08"
+    },
+    {
+      "source_pdf": "BIT-60.pdf",
+      "page_number": 180,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-60-description-180.png",
+      "sha256": "7070d354fef8203af6bd35cc0ef073dfd77497065283a686ad9498002cda1fc1"
+    },
+    {
+      "source_pdf": "BIT-60.pdf",
+      "page_number": 188,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-60-description-188.png",
+      "sha256": "b27cc3bbd2df27a6955aece1078824d0d97f168e76a9d1fb4918dd7a34f592b7"
+    },
+    {
+      "source_pdf": "BIT-60.pdf",
+      "page_number": 189,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-60-description-189.png",
+      "sha256": "be97c039c2be1a4a4416d539aba1912b5382fb783f28c2b7469f846cb689b457"
+    },
+    {
+      "source_pdf": "BIT-60.pdf",
+      "page_number": 190,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-60-description-190.png",
+      "sha256": "d1c103cdaa451dee4015ec37e1d95c47dd0e432792ee103fd5b27e2bb9ca9101"
+    },
+    {
+      "source_pdf": "BIT-60.pdf",
+      "page_number": 191,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-60-description-191.png",
+      "sha256": "af175971ef19845d73948cf53f60915dd8bdd73bc8a6993cf8242e5ae21941a2"
+    },
+    {
+      "source_pdf": "BIT-65.pdf",
+      "page_number": 238,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-65-description-238.png",
+      "sha256": "2c8063712d7d984ffe58d7700d0eb477bcb0ff9f631ae85500f0d0991aee7651"
+    },
+    {
+      "source_pdf": "BIT-65.pdf",
+      "page_number": 242,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-65-description-242.png",
+      "sha256": "dc11a6efd286dc7f7a02a6774444ec322268da10a6ca7b14d0f65d505d6037dc"
+    },
+    {
+      "source_pdf": "BIT-65.pdf",
+      "page_number": 243,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-65-description-243.png",
+      "sha256": "41f5d7ee6c11897ce44e115ca18c2118401838cf900cc4d4825f7441990f7282"
+    },
+    {
+      "source_pdf": "BIT-65.pdf",
+      "page_number": 244,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-65-description-244.png",
+      "sha256": "5275e27579adb15beefac1ba50bd1eab93f4769ff0edc5aa010bc85860ddfa87"
+    },
+    {
+      "source_pdf": "BIT-65.pdf",
+      "page_number": 245,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-65-description-245.png",
+      "sha256": "896ef1f69a1bc7ce89fe2bc8530f036107b783d781d2630b8ce18ea5dce28b11"
+    },
+    {
+      "source_pdf": "BIT-65.pdf",
+      "page_number": 246,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-65-description-246.png",
+      "sha256": "7019735263ea36996e2ff84edddd28132bf3259de9e997be985e111ab8ffeeed"
+    },
+    {
+      "source_pdf": "BIT-65.pdf",
+      "page_number": 248,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/BIT-65-description-248.png",
+      "sha256": "1165d63ffb90113d36562ff1c895ca7be09f98a4b004c39736fee61c689f372f"
+    },
+    {
+      "source_pdf": "DSBA-60.pdf",
+      "page_number": 176,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/DSBA-60-description-176.png",
+      "sha256": "55efff5d4f40e84166faf88553d2cdc0145965477c0b99721155d64cb0f5432e"
+    },
+    {
+      "source_pdf": "DSBA-60.pdf",
+      "page_number": 178,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/DSBA-60-description-178.png",
+      "sha256": "7a80adedf6e9b54f84c89a1840316b82017709c3446f5a777aed1499b3bdab5c"
+    },
+    {
+      "source_pdf": "DSBA-60.pdf",
+      "page_number": 179,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/DSBA-60-description-179.png",
+      "sha256": "e32130235b8756892b0d09d24bd116c9a9d1a1cc0072b8dc081182fa8230d6bc"
+    },
+    {
+      "source_pdf": "DSBA-60.pdf",
+      "page_number": 182,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/DSBA-60-description-182.png",
+      "sha256": "9789404ecee5939bd75715cca9892abca2b0a8d06794c810d812746815f9e9c3"
+    },
+    {
+      "source_pdf": "DSBA-60.pdf",
+      "page_number": 183,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/DSBA-60-description-183.png",
+      "sha256": "0af2fd5a1272a23b6a63500afd96431c050e5364ce5d03308f153894f8f6581b"
+    },
+    {
+      "source_pdf": "DSBA-60.pdf",
+      "page_number": 184,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/DSBA-60-description-184.png",
+      "sha256": "11f7567ba6484511c9d38ad7b79a853d4484c815a4867bde96b2c764b6975510"
+    },
+    {
+      "source_pdf": "DSBA-60.pdf",
+      "page_number": 189,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/DSBA-60-description-189.png",
+      "sha256": "06a35db281ec2d1285015a9064ec00f1516740edaf5e6ba8dc39d92a895d62b6"
+    },
+    {
+      "source_pdf": "DSBA-60.pdf",
+      "page_number": 190,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/DSBA-60-description-190.png",
+      "sha256": "f29506ec5a77db27f064b71c568b901f06ba67dab549eeb939d5de8bebf238d5"
+    },
+    {
+      "source_pdf": "IT-60.pdf",
+      "page_number": 223,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/IT-60-description-223.png",
+      "sha256": "2990e89c44f541518f853b869f7d5390534c2f2f8de99f7e9fd5e072f63da115"
+    },
+    {
+      "source_pdf": "IT-60.pdf",
+      "page_number": 227,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/IT-60-description-227.png",
+      "sha256": "26d832ea7f46ea8d60bb4ebb28ea27e9d693a3d5e3b8db67f2cc04e7f02ed52c"
+    },
+    {
+      "source_pdf": "IT-60.pdf",
+      "page_number": 229,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/IT-60-description-229.png",
+      "sha256": "bd9a281f16c181367c6b3b301caa84dddbe49691bc22d54dec85fb0325f6ff5c"
+    },
+    {
+      "source_pdf": "IT-60.pdf",
+      "page_number": 231,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/IT-60-description-231.png",
+      "sha256": "d15c7d1e1d6a35fec6a8c82762f4782b7d31cafd873a8622898f16e6ffb733a3"
+    },
+    {
+      "source_pdf": "IT-60.pdf",
+      "page_number": 233,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/IT-60-description-233.png",
+      "sha256": "c4945917dc7204585b77b15fbea6f945a6ef77eec5f4454a8eae2bd3f36c000e"
+    },
+    {
+      "source_pdf": "IT-60.pdf",
+      "page_number": 236,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/IT-60-description-236.png",
+      "sha256": "cc7073b4b452466a6995216225facea6f7493108bde8c3a8556f38034110ba98"
+    },
+    {
+      "source_pdf": "IT-60.pdf",
+      "page_number": 242,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/IT-60-description-242.png",
+      "sha256": "c5c5eae9fa757ccdc1410b30e1cfe6b9d8b99671a623021e3270b806e42390d2"
+    },
+    {
+      "source_pdf": "IT-60.pdf",
+      "page_number": 247,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/IT-60-description-247.png",
+      "sha256": "1364515e0325813261af254fbb68235f056f5aa7087bb7eb9eab901b6ac2dd34"
+    },
+    {
+      "source_pdf": "IT.pdf",
+      "page_number": 324,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/IT-description-324.png",
+      "sha256": "2d29010ef0c8553323e4750964c91d8bd7fe618eb86043ada0630b05211a3f81"
+    },
+    {
+      "source_pdf": "IT.pdf",
+      "page_number": 325,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/IT-description-325.png",
+      "sha256": "e6031ac5bf9dee48828a61fa5086a501d164ead347c50eb1b8fc649b01c8e2a0"
+    },
+    {
+      "source_pdf": "IT.pdf",
+      "page_number": 326,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/IT-description-326.png",
+      "sha256": "30915f6f95eb7e2c259b7723dcfb3ff4acd484e23bfcc6c0f33017c4c198135f"
+    },
+    {
+      "source_pdf": "IT.pdf",
+      "page_number": 327,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/IT-description-327.png",
+      "sha256": "8ad9ccbe8bb5dcf0c103b75c029391a05cbe486991b16b083c9b33105dcdcc04"
+    },
+    {
+      "source_pdf": "IT.pdf",
+      "page_number": 328,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/IT-description-328.png",
+      "sha256": "deabfb67556cdf2d799f90b5563614478e8b055c008a9084239d4e4be19f5606"
+    },
+    {
+      "source_pdf": "IT.pdf",
+      "page_number": 329,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/IT-description-329.png",
+      "sha256": "f84941a110cbb01f5878c10e66fe749f65ec9c0883f52ca7dd77fd4424394a8b"
+    },
+    {
+      "source_pdf": "IT.pdf",
+      "page_number": 357,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/IT-description-357.png",
+      "sha256": "631cf18bdecef8a4c332662818928a3c9bb7c9b3e9c24034ba97eb693428dbc6"
+    },
+    {
+      "source_pdf": "IT.pdf",
+      "page_number": 359,
+      "image": "ocr_final/tmp/pdfs/a1_descriptions/IT-description-359.png",
+      "sha256": "c61891b83844577ecfcfade33fe5585015364c139b56caad6c92097e24758ec9"
+    }
+  ],
+  "remaining": 0
+}

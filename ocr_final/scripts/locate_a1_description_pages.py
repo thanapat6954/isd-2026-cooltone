@@ -1,8 +1,9 @@
 """Locate course-description pages for A1 plan-row samples.
 
-This uses only exact eight-digit code matches and the literal English heading
-``PREREQUISITE`` in PDF text.  It does not infer prerequisite values and does
-not mark candidates as verified.
+This identifies course headers rather than arbitrary code mentions.  A valid
+header must begin with an eight-digit code and be followed by a credit pattern
+before the literal English ``PREREQUISITE`` heading.  It does not infer
+prerequisite values and does not mark candidates as verified.
 """
 
 from __future__ import annotations
@@ -21,6 +22,28 @@ REVIEW_SET = PROJECT / "docs" / "results" / "a1_ground_truth_review.json"
 OUTPUT = PROJECT / "docs" / "results" / "a1_description_locator.json"
 
 
+HEADER_RE = re.compile(r"(?m)^\s*(\d{8})\b")
+CREDIT_RE = re.compile(r"\d+\s*\(\s*\d+\s*-\s*\d+\s*-\s*\d+\s*\)")
+
+
+def course_header_codes(page_text: str) -> set[str]:
+    """Return codes that occur as course-description headers on this page."""
+    codes: set[str] = set()
+    for match in HEADER_RE.finditer(page_text):
+        nearby = page_text[match.start():match.start() + 650]
+        credit = CREDIT_RE.search(nearby)
+        prerequisite = re.search(r"PREREQUISITE\s*: ?", nearby, re.I)
+        next_code = HEADER_RE.search(nearby, len(match.group(0)))
+        if (
+            credit
+            and prerequisite
+            and credit.start() < prerequisite.start()
+            and (next_code is None or next_code.start() > credit.start())
+        ):
+            codes.add(match.group(1))
+    return codes
+
+
 def main() -> None:
     payload = json.loads(REVIEW_SET.read_text(encoding="utf-8"))
     by_pdf: dict[str, list[dict]] = defaultdict(list)
@@ -35,6 +58,7 @@ def main() -> None:
                 source_pdf, pymupdf.open(OCR_ROOT / "data" / "input" / source_pdf)
             )
             page_text = [page.get_text("text") for page in document]
+            page_headers = [course_header_codes(text) for text in page_text]
             for sample in samples:
                 raw_code = str(sample["candidate"].get("code") or "")
                 codes = re.findall(r"(?<!\d)\d{8}(?!\d)", raw_code)
@@ -43,7 +67,7 @@ def main() -> None:
                     matches.extend(
                         index + 1
                         for index, text in enumerate(page_text)
-                        if code in text and "PREREQUISITE" in text.upper()
+                        if code in page_headers[index]
                     )
                 matches = sorted(set(matches))
                 plan_page = sample["candidate"].get("page_number")
@@ -65,7 +89,10 @@ def main() -> None:
             document.close()
 
     output = {
-        "method": "exact 8-digit code + PREREQUISITE heading; no value inference",
+        "method": (
+            "exact 8-digit course header with credit pattern before "
+            "PREREQUISITE heading; no value inference"
+        ),
         "located": sum(item["status"] == "located" for item in located),
         "not_located": sum(item["status"] != "located" for item in located),
         "items": located,

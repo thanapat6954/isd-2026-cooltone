@@ -79,3 +79,11 @@ Visible candidate defects already found include:
 - **Rubric 2/3 — merged/multi-column rows:** specialization and wildcard rows in IT-2560 and BIT require visual grouping; raw row-by-row OCR output cannot be assumed to represent one course per candidate.
 
 These are preliminary findings, not final accuracy percentages. The 180-row JSON remains marked `candidate_only` until the expanded visual review is complete.
+
+### Course-description and prerequisite evidence
+
+The description-page locator was hardened after an exact-code search was found to match course codes cited inside another course's prerequisite. A valid course header now requires an eight-digit code, a credit pattern before the `PREREQUISITE` heading, and no intervening course-code line. This corrected method locates 104 of the 180 sampled rows; it does not claim the other 76 have no description, only that the deterministic header test did not locate one.
+
+The resumable renderer produced or reused 43 corrected description pages. The evidence extractor classifies the 180 samples as 85 explicit `NONE`, 18 explicit prerequisite-code cases, and 77 not-applicable/unlocated (the extra case above the 76 unlocated rows is a combined-code candidate). Representative rendered-page checks for IT-2565 page 326, DSBA-2560 page 183, and BIT-2560 page 174 agree with the extracted prerequisite values.
+
+Raw evidence is stored in `docs/results/a1_description_locator.json`, `docs/results/a1_description_render_checkpoint.json`, and `docs/results/a1_prerequisite_ground_truth.json`. The prerequisite result deliberately records `requires_visual_confirmation: true`; no row becomes independent ground truth until its rendered source is approved.

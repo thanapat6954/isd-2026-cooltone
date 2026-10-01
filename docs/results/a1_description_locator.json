@@ -1,7 +1,7 @@
 {
-  "method": "exact 8-digit code + PREREQUISITE heading; no value inference",
-  "located": 128,
-  "not_located": 52,
+  "method": "exact 8-digit course header with credit pattern before PREREQUISITE heading; no value inference",
+  "located": 104,
+  "not_located": 76,
   "items": [
     {
       "sample_id": "BIT-2560-coop-01",
@@ -411,8 +411,7 @@
       "plan_page": 33,
       "description_page": 243,
       "all_description_page_matches": [
-        243,
-        249
+        243
       ],
       "status": "located"
     },
@@ -565,8 +564,7 @@
       "plan_page": 28,
       "description_page": 243,
       "all_description_page_matches": [
-        243,
-        249
+        243
       ],
       "status": "located"
     },
@@ -655,9 +653,7 @@
       "plan_page": 30,
       "description_page": 178,
       "all_description_page_matches": [
-        178,
-        179,
-        182
+        178
       ],
       "status": "located"
     },
@@ -684,13 +680,9 @@
       "source_pdf": "DSBA-60.pdf",
       "code": "90401013",
       "plan_page": 30,
-      "description_page": 180,
-      "all_description_page_matches": [
-        180,
-        191,
-        198
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2560-coop-06",
@@ -699,8 +691,7 @@
       "plan_page": 32,
       "description_page": 182,
       "all_description_page_matches": [
-        182,
-        196
+        182
       ],
       "status": "located"
     },
@@ -733,8 +724,7 @@
       "plan_page": 32,
       "description_page": 183,
       "all_description_page_matches": [
-        183,
-        186
+        183
       ],
       "status": "located"
     },
@@ -745,8 +735,7 @@
       "plan_page": 32,
       "description_page": 184,
       "all_description_page_matches": [
-        184,
-        188
+        184
       ],
       "status": "located"
     },
@@ -801,11 +790,7 @@
       "plan_page": 30,
       "description_page": 179,
       "all_description_page_matches": [
-        179,
-        181,
-        185,
-        197,
-        198
+        179
       ],
       "status": "located"
     },
@@ -827,9 +812,7 @@
       "plan_page": 25,
       "description_page": 178,
       "all_description_page_matches": [
-        178,
-        179,
-        182
+        178
       ],
       "status": "located"
     },
@@ -856,13 +839,9 @@
       "source_pdf": "DSBA-60.pdf",
       "code": "90401013",
       "plan_page": 25,
-      "description_page": 180,
-      "all_description_page_matches": [
-        180,
-        191,
-        198
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2560-no-coop-06",
@@ -871,8 +850,7 @@
       "plan_page": 27,
       "description_page": 182,
       "all_description_page_matches": [
-        182,
-        196
+        182
       ],
       "status": "located"
     },
@@ -905,8 +883,7 @@
       "plan_page": 27,
       "description_page": 183,
       "all_description_page_matches": [
-        183,
-        186
+        183
       ],
       "status": "located"
     },
@@ -917,8 +894,7 @@
       "plan_page": 27,
       "description_page": 184,
       "all_description_page_matches": [
-        184,
-        188
+        184
       ],
       "status": "located"
     },
@@ -974,45 +950,36 @@
       "source_pdf": "DSBA.pdf",
       "code": "06026200",
       "plan_page": 30,
-      "description_page": 314,
-      "all_description_page_matches": [
-        314
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-coop-02",
       "source_pdf": "DSBA.pdf",
       "code": "06026202",
       "plan_page": 30,
-      "description_page": 315,
-      "all_description_page_matches": [
-        315
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-coop-03",
       "source_pdf": "DSBA.pdf",
       "code": "06066101",
       "plan_page": 30,
-      "description_page": 317,
-      "all_description_page_matches": [
-        317,
-        318
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-coop-04",
       "source_pdf": "DSBA.pdf",
       "code": "06066303",
       "plan_page": 30,
-      "description_page": 319,
-      "all_description_page_matches": [
-        319
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-coop-05",
@@ -1028,66 +995,54 @@
       "source_pdf": "DSBA.pdf",
       "code": "06026204",
       "plan_page": 33,
-      "description_page": 316,
-      "all_description_page_matches": [
-        316
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-coop-07",
       "source_pdf": "DSBA.pdf",
       "code": "06026207",
       "plan_page": 33,
-      "description_page": 321,
-      "all_description_page_matches": [
-        321
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-coop-08",
       "source_pdf": "DSBA.pdf",
       "code": "06026208",
       "plan_page": 33,
-      "description_page": 322,
-      "all_description_page_matches": [
-        322
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-coop-09",
       "source_pdf": "DSBA.pdf",
       "code": "06026209",
       "plan_page": 33,
-      "description_page": 322,
-      "all_description_page_matches": [
-        322
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-coop-10",
       "source_pdf": "DSBA.pdf",
       "code": "06026210",
       "plan_page": 33,
-      "description_page": 322,
-      "all_description_page_matches": [
-        322
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-coop-11",
       "source_pdf": "DSBA.pdf",
       "code": "06026215",
       "plan_page": 36,
-      "description_page": 325,
-      "all_description_page_matches": [
-        325
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-coop-12",
@@ -1121,56 +1076,45 @@
       "source_pdf": "DSBA.pdf",
       "code": "06026259",
       "plan_page": 36,
-      "description_page": 341,
-      "all_description_page_matches": [
-        341
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-no-coop-01",
       "source_pdf": "DSBA.pdf",
       "code": "06026200",
       "plan_page": 23,
-      "description_page": 314,
-      "all_description_page_matches": [
-        314
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-no-coop-02",
       "source_pdf": "DSBA.pdf",
       "code": "06026202",
       "plan_page": 23,
-      "description_page": 315,
-      "all_description_page_matches": [
-        315
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-no-coop-03",
       "source_pdf": "DSBA.pdf",
       "code": "06066101",
       "plan_page": 23,
-      "description_page": 317,
-      "all_description_page_matches": [
-        317,
-        318
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-no-coop-04",
       "source_pdf": "DSBA.pdf",
       "code": "06066303",
       "plan_page": 23,
-      "description_page": 319,
-      "all_description_page_matches": [
-        319
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-no-coop-05",
@@ -1186,66 +1130,54 @@
       "source_pdf": "DSBA.pdf",
       "code": "06026204",
       "plan_page": 26,
-      "description_page": 316,
-      "all_description_page_matches": [
-        316
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-no-coop-07",
       "source_pdf": "DSBA.pdf",
       "code": "06026207",
       "plan_page": 26,
-      "description_page": 321,
-      "all_description_page_matches": [
-        321
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-no-coop-08",
       "source_pdf": "DSBA.pdf",
       "code": "06026208",
       "plan_page": 26,
-      "description_page": 322,
-      "all_description_page_matches": [
-        322
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-no-coop-09",
       "source_pdf": "DSBA.pdf",
       "code": "06026209",
       "plan_page": 26,
-      "description_page": 322,
-      "all_description_page_matches": [
-        322
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-no-coop-10",
       "source_pdf": "DSBA.pdf",
       "code": "06026210",
       "plan_page": 26,
-      "description_page": 322,
-      "all_description_page_matches": [
-        322
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-no-coop-11",
       "source_pdf": "DSBA.pdf",
       "code": "06026215",
       "plan_page": 29,
-      "description_page": 325,
-      "all_description_page_matches": [
-        325
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "DSBA-2565-no-coop-12",
@@ -1290,8 +1222,7 @@
       "plan_page": 34,
       "description_page": 223,
       "all_description_page_matches": [
-        223,
-        253
+        223
       ],
       "status": "located"
     },
@@ -1302,8 +1233,7 @@
       "plan_page": 34,
       "description_page": 229,
       "all_description_page_matches": [
-        229,
-        230
+        229
       ],
       "status": "located"
     },
@@ -1314,9 +1244,7 @@
       "plan_page": 34,
       "description_page": 231,
       "all_description_page_matches": [
-        231,
-        252,
-        254
+        231
       ],
       "status": "located"
     },
@@ -1443,8 +1371,7 @@
       "plan_page": 27,
       "description_page": 223,
       "all_description_page_matches": [
-        223,
-        253
+        223
       ],
       "status": "located"
     },
@@ -1455,8 +1382,7 @@
       "plan_page": 27,
       "description_page": 229,
       "all_description_page_matches": [
-        229,
-        230
+        229
       ],
       "status": "located"
     },
@@ -1467,9 +1393,7 @@
       "plan_page": 27,
       "description_page": 231,
       "all_description_page_matches": [
-        231,
-        252,
-        254
+        231
       ],
       "status": "located"
     },
@@ -1591,13 +1515,9 @@
       "source_pdf": "IT-60.pdf",
       "code": "90401013",
       "plan_page": 27,
-      "description_page": 225,
-      "all_description_page_matches": [
-        225,
-        259,
-        261
-      ],
-      "status": "located"
+      "description_page": null,
+      "all_description_page_matches": [],
+      "status": "not_located"
     },
     {
       "sample_id": "IT-2565-coop-01",
@@ -1690,10 +1610,8 @@
       "source_pdf": "IT.pdf",
       "code": "06066302",
       "plan_page": 41,
-      "description_page": 336,
+      "description_page": 359,
       "all_description_page_matches": [
-        336,
-        342,
         359
       ],
       "status": "located"
@@ -1849,10 +1767,8 @@
       "source_pdf": "IT.pdf",
       "code": "06066302",
       "plan_page": 34,
-      "description_page": 336,
+      "description_page": 359,
       "all_description_page_matches": [
-        336,
-        342,
         359
       ],
       "status": "located"
