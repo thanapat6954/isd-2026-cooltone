@@ -44,6 +44,26 @@ class ApplyA1ReviewBatchTests(unittest.TestCase):
                 {"batch_id": "b", "items": [{"sample_id": "missing"}]},
             )
 
+    def test_marks_spurious_fragment_without_copying_candidate(self):
+        review = {"samples": [{
+            "sample_id": "x",
+            "candidate": {"code": "fragment"},
+            "ground_truth": {"code": None},
+            "review_status": "candidate_only",
+        }]}
+        batch = {
+            "batch_id": "b",
+            "copy_candidate_fields": ["code"],
+            "items": [{
+                "sample_id": "x",
+                "status": "spurious_after_visual_review",
+                "evidence": ["book p.1"],
+            }],
+        }
+        result = MODULE.apply_batch(review, batch)["samples"][0]
+        self.assertEqual(result["review_status"], "spurious_after_visual_review")
+        self.assertIsNone(result["ground_truth"]["code"])
+
 
 if __name__ == "__main__":
     unittest.main()

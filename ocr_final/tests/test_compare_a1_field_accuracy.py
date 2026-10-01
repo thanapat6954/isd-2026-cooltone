@@ -58,6 +58,17 @@ class CompareA1FieldAccuracyTests(unittest.TestCase):
         self.assertEqual(result["row_quality"]["wrong_row_count"], 1)
         self.assertEqual(result["row_quality"]["garbled_thai_rate"], 1.0)
 
+    def test_spurious_candidate_is_reported_but_not_scored(self):
+        sample = {
+            "sample_id": "fragment",
+            "candidate": {"code": "06000002"},
+            "ground_truth": {"code": None},
+            "review_status": "spurious_after_visual_review",
+        }
+        result = MODULE.compare([sample])
+        self.assertEqual(result["approved_rows"], 0)
+        self.assertEqual(result["row_quality"]["spurious_candidate_rows"], ["fragment"])
+
 
 if __name__ == "__main__":
     unittest.main()

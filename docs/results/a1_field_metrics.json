@@ -5,34 +5,34 @@
     "visually_verified"
   ],
   "candidate_rows": 180,
-  "approved_rows": 18,
-  "unapproved_rows": 162,
+  "approved_rows": 38,
+  "unapproved_rows": 142,
   "overall": {
     "fields": {
       "code": {
-        "correct": 18,
-        "n": 18,
-        "accuracy": 1.0
+        "correct": 37,
+        "n": 38,
+        "accuracy": 0.973684
       },
       "name_th": {
-        "correct": 13,
-        "n": 18,
-        "accuracy": 0.722222
+        "correct": 32,
+        "n": 38,
+        "accuracy": 0.842105
       },
       "name_en": {
-        "correct": 16,
-        "n": 18,
-        "accuracy": 0.888889
+        "correct": 36,
+        "n": 38,
+        "accuracy": 0.947368
       },
       "credits": {
-        "correct": 18,
-        "n": 18,
+        "correct": 38,
+        "n": 38,
         "accuracy": 1.0
       },
       "prerequisite": {
-        "correct": 0,
-        "n": 18,
-        "accuracy": 0.0
+        "correct": 10,
+        "n": 28,
+        "accuracy": 0.357143
       },
       "category": {
         "correct": 0,
@@ -45,38 +45,38 @@
         "accuracy": null
       },
       "year": {
-        "correct": 18,
-        "n": 18,
+        "correct": 38,
+        "n": 38,
         "accuracy": 1.0
       },
       "semester": {
-        "correct": 18,
-        "n": 18,
+        "correct": 38,
+        "n": 38,
         "accuracy": 1.0
       },
       "plan": {
-        "correct": 18,
-        "n": 18,
+        "correct": 38,
+        "n": 38,
         "accuracy": 1.0
       },
       "page_number": {
-        "correct": 18,
-        "n": 18,
+        "correct": 38,
+        "n": 38,
         "accuracy": 1.0
       },
       "lecture_hours": {
-        "correct": 18,
-        "n": 18,
+        "correct": 37,
+        "n": 37,
         "accuracy": 1.0
       },
       "lab_hours": {
-        "correct": 18,
-        "n": 18,
+        "correct": 37,
+        "n": 37,
         "accuracy": 1.0
       },
       "self_study_hours": {
-        "correct": 18,
-        "n": 18,
+        "correct": 37,
+        "n": 37,
         "accuracy": 1.0
       }
     }
@@ -158,32 +158,32 @@
       }
     },
     "DSBA-2560": {
-      "approved_rows": 9,
+      "approved_rows": 29,
       "fields": {
         "code": {
-          "correct": 9,
-          "n": 9,
-          "accuracy": 1.0
+          "correct": 28,
+          "n": 29,
+          "accuracy": 0.965517
         },
         "name_th": {
-          "correct": 9,
-          "n": 9,
-          "accuracy": 1.0
+          "correct": 28,
+          "n": 29,
+          "accuracy": 0.965517
         },
         "name_en": {
-          "correct": 9,
-          "n": 9,
+          "correct": 29,
+          "n": 29,
           "accuracy": 1.0
         },
         "credits": {
-          "correct": 9,
-          "n": 9,
+          "correct": 29,
+          "n": 29,
           "accuracy": 1.0
         },
         "prerequisite": {
-          "correct": 0,
-          "n": 9,
-          "accuracy": 0.0
+          "correct": 10,
+          "n": 19,
+          "accuracy": 0.526316
         },
         "category": {
           "correct": 0,
@@ -196,38 +196,38 @@
           "accuracy": null
         },
         "year": {
-          "correct": 9,
-          "n": 9,
+          "correct": 29,
+          "n": 29,
           "accuracy": 1.0
         },
         "semester": {
-          "correct": 9,
-          "n": 9,
+          "correct": 29,
+          "n": 29,
           "accuracy": 1.0
         },
         "plan": {
-          "correct": 9,
-          "n": 9,
+          "correct": 29,
+          "n": 29,
           "accuracy": 1.0
         },
         "page_number": {
-          "correct": 9,
-          "n": 9,
+          "correct": 29,
+          "n": 29,
           "accuracy": 1.0
         },
         "lecture_hours": {
-          "correct": 9,
-          "n": 9,
+          "correct": 28,
+          "n": 28,
           "accuracy": 1.0
         },
         "lab_hours": {
-          "correct": 9,
-          "n": 9,
+          "correct": 28,
+          "n": 28,
           "accuracy": 1.0
         },
         "self_study_hours": {
-          "correct": 9,
-          "n": 9,
+          "correct": 28,
+          "n": 28,
           "accuracy": 1.0
         }
       }
@@ -428,6 +428,13 @@
         ]
       },
       {
+        "sample_id": "DSBA-2560-coop-11",
+        "fields": [
+          "code",
+          "name_th"
+        ]
+      },
+      {
         "sample_id": "DSBA-2560-no-coop-07",
         "fields": [
           "prerequisite"
@@ -501,7 +508,11 @@
         ]
       }
     ],
-    "wrong_row_count": 18,
+    "wrong_row_count": 19,
+    "spurious_candidate_rows": [
+      "DSBA-2560-coop-12"
+    ],
+    "spurious_candidate_row_count": 1,
     "candidate_missing_value_rows": [
       "DSBA-2560-no-coop-11",
       "IT-2560-no-coop-12",
@@ -557,7 +568,7 @@
     ],
     "duplicate_group_count": 4,
     "garbled_thai_rows": 0,
-    "garbled_thai_n": 18,
+    "garbled_thai_n": 38,
     "garbled_thai_rate": 0.0
   },
   "limitations": [

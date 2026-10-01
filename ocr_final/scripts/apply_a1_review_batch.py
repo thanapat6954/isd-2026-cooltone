@@ -24,6 +24,16 @@ def apply_batch(review: dict, batch: dict) -> dict:
     verified_fields = batch.get("verified_fields") or []
     for item in batch.get("items") or []:
         sample = samples[item["sample_id"]]
+        requested_status = item.get("status", "corrected_after_visual_review")
+        if requested_status == "spurious_after_visual_review":
+            sample["review_status"] = requested_status
+            sample["review_evidence"] = item.get("evidence")
+            sample["review_notes"] = (
+                f"Batch {batch['batch_id']}; candidate is a fragment of another printed row."
+            )
+            continue
+        if requested_status not in {"visually_verified", "corrected_after_visual_review"}:
+            raise ValueError(f"unsupported review status: {requested_status}")
         candidate = sample.get("candidate") or {}
         ground_truth = sample.get("ground_truth") or {}
         for field in copy_fields:
@@ -35,7 +45,7 @@ def apply_batch(review: dict, batch: dict) -> dict:
                 raise ValueError(f"override field is not verified: {field}")
             ground_truth[field] = value
         sample["ground_truth"] = ground_truth
-        sample["review_status"] = "corrected_after_visual_review"
+        sample["review_status"] = requested_status
         sample["review_evidence"] = item.get("evidence")
         sample["review_notes"] = (
             f"Batch {batch['batch_id']}; verified fields: {', '.join(verified_fields)}. "

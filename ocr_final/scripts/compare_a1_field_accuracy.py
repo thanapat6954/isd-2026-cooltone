@@ -94,6 +94,11 @@ def finalize_field_stats(stats: dict[str, dict[str, int | float | None]]) -> Non
 
 def compare(samples: list[dict]) -> dict:
     approved = [sample for sample in samples if sample.get("review_status") in APPROVED_STATUSES]
+    spurious = [
+        sample.get("sample_id")
+        for sample in samples
+        if sample.get("review_status") == "spurious_after_visual_review"
+    ]
     grouped: dict[str, list[dict]] = defaultdict(list)
     for sample in approved:
         grouped[f"{sample.get('program')}-{sample.get('curriculum_version')}"] .append(sample)
@@ -167,6 +172,8 @@ def compare(samples: list[dict]) -> dict:
         "row_quality": {
             "wrong_rows": wrong_rows,
             "wrong_row_count": len(wrong_rows),
+            "spurious_candidate_rows": spurious,
+            "spurious_candidate_row_count": len(spurious),
             "candidate_missing_value_rows": candidate_missing_values,
             "candidate_missing_value_row_count": len(candidate_missing_values),
             "duplicate_groups": duplicate_groups,

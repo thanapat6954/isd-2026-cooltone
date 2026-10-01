@@ -107,3 +107,20 @@ The first approved batch contains 18 rows selected specifically because their de
 **Rubric 2/3 warning:** these percentages are not overall OCR accuracy. The batch is intentionally prerequisite-heavy and currently covers DSBA-2560 (9), IT-2560 (5), BIT-2560 (3), and IT-2565 (1), with no approved DSBA-2565 or BIT-2565 rows yet. It proves a severe prerequisite extraction gap: all 18 candidates either say `ไม่มี` or return null although the source names a prerequisite code.
 
 **Rubric 2/3 row-integrity finding:** IT-2560 code `06016323` is paired with the following row's Requirement Engineering name in both sampled plans; the correct PDF row is Mobile Device Programming. Three IT-2560 project rows also include the bold specialization heading inside `name_th`. These five corrections explain the Thai-name and English-name failures above. The repository test total is now 17 passing tests.
+
+### Completed DSBA-2560 sample
+
+All 30 DSBA-2560 candidate decisions are now resolved: 29 rows contain scoreable field ground truth and one candidate is a visually confirmed spurious fragment. Category/type remain excluded because the sampled plan rows do not print those labels directly.
+
+| DSBA-2560 field | Correct / n | Accuracy |
+|---|---:|---:|
+| Course code | 28/29 | 96.55% |
+| Thai name | 28/29 | 96.55% |
+| English name | 29/29 | 100% |
+| Credits | 29/29 | 100% |
+| Prerequisite | 10/19 | 52.63% |
+| Year / semester / plan / page | 29/29 each | 100% |
+| Lecture / lab / self-study hours | 28/28 each | 100% |
+| Category / type | 0 reviewed | n/a |
+
+**Rubric 2/3 row-integrity finding:** DSBA-2560 page 34 prints `06026130` or `06026131` as one six-credit cooperative choice. The OCR candidate set splits it into two rows, omits credits from the second fragment, and loses the combined code/Thai label. The audit records one corrected combined row and one spurious candidate rather than pretending both are independent courses. Raw decisions are in `docs/results/a1_review_batch_dsba2560_remaining.json`. The repository test total is now 19 passing tests.

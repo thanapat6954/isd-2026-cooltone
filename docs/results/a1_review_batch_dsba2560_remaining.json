@@ -1,0 +1,55 @@
+{
+  "batch_id": "a1-dsba2560-remaining-2026-10-01",
+  "method": "Manual visual comparison of remaining DSBA-2560 samples against rendered plan pages; prerequisite values are included only where description evidence exists",
+  "copy_candidate_fields": [
+    "code",
+    "name_th",
+    "name_en",
+    "credits",
+    "year",
+    "semester",
+    "page_number"
+  ],
+  "verified_fields": [
+    "code",
+    "name_th",
+    "name_en",
+    "credits",
+    "prerequisite",
+    "year",
+    "semester",
+    "plan",
+    "page_number"
+  ],
+  "items": [
+    {"sample_id": "DSBA-2560-coop-01", "prerequisite": "ไม่มี", "evidence": ["DSBA-60.pdf p.30 plan", "DSBA-60.pdf p.176 description"]},
+    {"sample_id": "DSBA-2560-coop-02", "prerequisite": "ไม่มี", "evidence": ["DSBA-60.pdf p.30 plan", "DSBA-60.pdf p.178 description"]},
+    {"sample_id": "DSBA-2560-coop-03", "prerequisite": null, "evidence": ["DSBA-60.pdf p.30 plan"]},
+    {"sample_id": "DSBA-2560-coop-04", "prerequisite": null, "evidence": ["DSBA-60.pdf p.30 plan"]},
+    {"sample_id": "DSBA-2560-coop-05", "prerequisite": null, "evidence": ["DSBA-60.pdf p.30 plan"]},
+    {"sample_id": "DSBA-2560-coop-06", "prerequisite": "ไม่มี", "evidence": ["DSBA-60.pdf p.32 plan", "DSBA-60.pdf p.182 description"]},
+    {
+      "sample_id": "DSBA-2560-coop-11",
+      "prerequisite": "ไม่มี",
+      "overrides": {
+        "code": "06026130 หรือ 06026131",
+        "name_th": "สหกิจศึกษาทางวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ หรือ สหกิจศึกษาต่างประเทศทางวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ"
+      },
+      "evidence": ["DSBA-60.pdf p.34 combined alternative row", "DSBA-60.pdf p.190 descriptions"]
+    },
+    {"sample_id": "DSBA-2560-coop-12", "status": "spurious_after_visual_review", "evidence": ["DSBA-60.pdf p.34 combined alternative row"]},
+    {"sample_id": "DSBA-2560-coop-13", "prerequisite": "ไม่มี", "evidence": ["DSBA-60.pdf p.30 plan", "DSBA-60.pdf p.176 description"]},
+    {"sample_id": "DSBA-2560-coop-14", "prerequisite": "ไม่มี", "evidence": ["DSBA-60.pdf p.30 plan", "DSBA-60.pdf p.178 description"]},
+    {"sample_id": "DSBA-2560-coop-15", "prerequisite": "ไม่มี", "evidence": ["DSBA-60.pdf p.30 plan", "DSBA-60.pdf p.179 description"]},
+    {"sample_id": "DSBA-2560-no-coop-01", "prerequisite": "ไม่มี", "evidence": ["DSBA-60.pdf p.25 plan", "DSBA-60.pdf p.176 description"]},
+    {"sample_id": "DSBA-2560-no-coop-02", "prerequisite": "ไม่มี", "evidence": ["DSBA-60.pdf p.25 plan", "DSBA-60.pdf p.178 description"]},
+    {"sample_id": "DSBA-2560-no-coop-03", "prerequisite": null, "evidence": ["DSBA-60.pdf p.25 plan"]},
+    {"sample_id": "DSBA-2560-no-coop-04", "prerequisite": null, "evidence": ["DSBA-60.pdf p.25 plan"]},
+    {"sample_id": "DSBA-2560-no-coop-05", "prerequisite": null, "evidence": ["DSBA-60.pdf p.25 plan"]},
+    {"sample_id": "DSBA-2560-no-coop-06", "prerequisite": "ไม่มี", "evidence": ["DSBA-60.pdf p.27 plan", "DSBA-60.pdf p.182 description"]},
+    {"sample_id": "DSBA-2560-no-coop-12", "prerequisite": null, "evidence": ["DSBA-60.pdf p.29 plan"]},
+    {"sample_id": "DSBA-2560-no-coop-13", "prerequisite": null, "evidence": ["DSBA-60.pdf p.29 plan"]},
+    {"sample_id": "DSBA-2560-no-coop-14", "prerequisite": null, "evidence": ["DSBA-60.pdf p.29 plan"]},
+    {"sample_id": "DSBA-2560-no-coop-15", "prerequisite": null, "evidence": ["DSBA-60.pdf p.29 plan"]}
+  ]
+}
