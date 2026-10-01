@@ -65,3 +65,17 @@ The Phase A baseline cannot receive a defensible total out of 100 because Rubric
 - Re-score every rubric item using those raw results.
 
 No product-code fix has been applied in Phase A. Only audit documentation and evidence files have been added.
+
+## A1 visual review checkpoint
+
+The first A1 batch rendered 36 plan-table pages at 180 DPI and visually inspected all six program-version documents. The render checkpoint is `docs/results/a1_render_checkpoint.json`; source page images are temporary local audit files and can be regenerated.
+
+This pass confirms that the plan pages are suitable for verifying code, Thai/English names, credits/hours, year, semester, plan, and page number. They are **not sufficient** to verify prerequisites, and category/type is not explicit on many rows. The A1 sample must therefore be expanded to course-description and curriculum-structure pages before field accuracy can be calculated honestly.
+
+Visible candidate defects already found include:
+
+- **Rubric 2/3 — BIT-2565 coop, PDF page 35:** one curriculum-table row is fragmented into several OCR candidates and code `96642033` is incorrectly repeated across unrelated fragments (`BIT-2565-coop-12` through `-14`).
+- **Rubric 2/3 — DSBA-2560 coop, PDF page 34:** the printed cooperative alternatives `06026130` / `06026131` form one six-credit choice, while the candidate split leaves the second item without credits.
+- **Rubric 2/3 — merged/multi-column rows:** specialization and wildcard rows in IT-2560 and BIT require visual grouping; raw row-by-row OCR output cannot be assumed to represent one course per candidate.
+
+These are preliminary findings, not final accuracy percentages. The 180-row JSON remains marked `candidate_only` until the expanded visual review is complete.
