@@ -1,0 +1,4152 @@
+{
+  "kind": "read_only_live_database_baseline",
+  "captured_at_utc": "2026-10-01T14:13:29.008047+00:00",
+  "application_root": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+  "database_count": 13,
+  "profiles": [
+    {
+      "profile": "ai",
+      "database": "work/lab8b_ai/curriculum.db",
+      "size_bytes": 118784,
+      "program_rows": [
+        {
+          "program_id": "AI",
+          "name_th": "เทคโนโลยีปัญญาประดิษฐ์",
+          "name_en": null,
+          "degree": null,
+          "total_credits": 120,
+          "years": 4,
+          "source_file": "AI.pdf",
+          "page_number": 26
+        }
+      ],
+      "plan_item_columns": [
+        "id",
+        "program_id",
+        "year",
+        "semester",
+        "code",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "v_plan_columns": [
+        "id",
+        "year",
+        "semester",
+        "code",
+        "name_th",
+        "name_en",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "required_columns_missing": [
+        "alternative_index",
+        "code_pattern",
+        "elective_type",
+        "is_placeholder",
+        "printed_page_number",
+        "raw_code"
+      ],
+      "terms": [
+        {
+          "year": 1,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 15,
+          "counted_credit_sum": 15,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "23"
+        },
+        {
+          "year": 1,
+          "semester": 2,
+          "stored_rows": 7,
+          "raw_credit_sum": 19,
+          "counted_credit_sum": 19,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "23"
+        },
+        {
+          "year": 2,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "24"
+        },
+        {
+          "year": 2,
+          "semester": 2,
+          "stored_rows": 7,
+          "raw_credit_sum": 19,
+          "counted_credit_sum": 19,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "24"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "stored_rows": 5,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "25"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "stored_rows": 4,
+          "raw_credit_sum": 13,
+          "counted_credit_sum": 13,
+          "synthetic_rows": 2,
+          "synthetic_rows_missing_thai_name": 2,
+          "pdf_pages": "25"
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "stored_rows": 4,
+          "raw_credit_sum": 12,
+          "counted_credit_sum": 12,
+          "synthetic_rows": 3,
+          "synthetic_rows_missing_thai_name": 3,
+          "pdf_pages": "26"
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "stored_rows": 2,
+          "raw_credit_sum": 12,
+          "counted_credit_sum": 6,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "26"
+        }
+      ],
+      "placeholder_summary": {
+        "rows": 7,
+        "missing_thai_name": 7,
+        "missing_english_name": 7
+      },
+      "placeholder_rows": [
+        {
+          "year": 1,
+          "semester": 2,
+          "code": "ELEC-9064XXXX-TERM-1-2-ROW-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "AI.pdf",
+          "page_number": 23
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "code": "ELEC-060464XX-TERM-3-1-ROW-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 6,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "AI.pdf",
+          "page_number": 25
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "code": "ELEC-060464XX-TERM-3-2-ROW-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 6,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "AI.pdf",
+          "page_number": 25
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "code": "ELEC-SLOT-035",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "AI.pdf",
+          "page_number": 25
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-9064XXXX-TERM-4-1-ROW-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "AI.pdf",
+          "page_number": 26
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-9064XXXX-TERM-4-1-ROW-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "AI.pdf",
+          "page_number": 26
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-SLOT-039",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "AI.pdf",
+          "page_number": 26
+        }
+      ],
+      "alternative_groups": [
+        {
+          "year": 4,
+          "semester": 2,
+          "alt_group": "coop-alternative-AI.pdf-26",
+          "rows_in_group": 2,
+          "codes": "06046443 | 06046444",
+          "counted_credits": 6,
+          "pdf_pages": "26"
+        }
+      ],
+      "year_4_semester_2": [
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "06046443",
+          "name_th": "สหกิจศึกษาทางเทคโนโลยีปัญญาประดิษฐ์",
+          "name_en": "COOPERATIVE EDUCATION IN ARTIFICIAL INTELLIGENCE TECHNOLOGY หรือ OVERSEA COOPERPERATIVE EDUCATION IN ARTIFICIAL INTELLIGENCE TECHNOLOGY",
+          "credits": 6,
+          "alt_group": "coop-alternative-AI.pdf-26",
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "AI.pdf",
+          "page_number": 26
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "06046444",
+          "name_th": "สหกิจศึกษาทางเทคโนโลยีปัญญาประดิษฐ์",
+          "name_en": "COOPERATIVE EDUCATION IN ARTIFICIAL INTELLIGENCE TECHNOLOGY หรือ OVERSEA COOPERPERATIVE EDUCATION IN ARTIFICIAL INTELLIGENCE TECHNOLOGY",
+          "credits": 6,
+          "alt_group": "coop-alternative-AI.pdf-26",
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "AI.pdf",
+          "page_number": 26
+        }
+      ]
+    },
+    {
+      "profile": "bit-2560-coop",
+      "database": "work/lab8b_bit_2560_coop/curriculum.db",
+      "size_bytes": 77824,
+      "program_rows": [
+        {
+          "program_id": "BIT-coop",
+          "name_th": "เทคโนโลยีสารสนเทศทางธุรกิจ (สหกิจศึกษา)",
+          "name_en": null,
+          "degree": null,
+          "total_credits": 126,
+          "years": 4,
+          "curriculum_version": 2560,
+          "is_latest": 0,
+          "plan": "coop",
+          "source_file": "BIT-60.pdf",
+          "page_number": 30
+        }
+      ],
+      "plan_item_columns": [
+        "id",
+        "program_id",
+        "year",
+        "semester",
+        "code",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "v_plan_columns": [
+        "id",
+        "year",
+        "semester",
+        "code",
+        "name_th",
+        "name_en",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "required_columns_missing": [
+        "alternative_index",
+        "code_pattern",
+        "elective_type",
+        "is_placeholder",
+        "printed_page_number",
+        "raw_code"
+      ],
+      "terms": [
+        {
+          "year": 1,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "27"
+        },
+        {
+          "year": 1,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "27"
+        },
+        {
+          "year": 2,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "28"
+        },
+        {
+          "year": 2,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "28"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "29"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "29"
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "stored_rows": 2,
+          "raw_credit_sum": 12,
+          "counted_credit_sum": 6,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "30"
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "stored_rows": 4,
+          "raw_credit_sum": 12,
+          "counted_credit_sum": 12,
+          "synthetic_rows": 4,
+          "synthetic_rows_missing_thai_name": 4,
+          "pdf_pages": "30"
+        }
+      ],
+      "placeholder_summary": {
+        "rows": 6,
+        "missing_thai_name": 6,
+        "missing_english_name": 6
+      },
+      "placeholder_rows": [
+        {
+          "year": 3,
+          "semester": 1,
+          "code": "ELEC-060360XX-SLOT-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-60.pdf",
+          "page_number": 29
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "code": "ELEC-060360XX-SLOT-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-60.pdf",
+          "page_number": 29
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-RECOVERED-Y4S2-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": null,
+          "ctype": "เลือก",
+          "note": "สล็อตกู้คืนจากยอดรวมที่พิมพ์ในตาราง; OCR ไม่พบรายละเอียดแถว",
+          "source_file": "BIT-60.pdf",
+          "page_number": 30
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-RECOVERED-Y4S2-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": null,
+          "ctype": "เลือก",
+          "note": "สล็อตกู้คืนจากยอดรวมที่พิมพ์ในตาราง; OCR ไม่พบรายละเอียดแถว",
+          "source_file": "BIT-60.pdf",
+          "page_number": 30
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-RECOVERED-Y4S2-3",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": null,
+          "ctype": "เลือก",
+          "note": "สล็อตกู้คืนจากยอดรวมที่พิมพ์ในตาราง; OCR ไม่พบรายละเอียดแถว",
+          "source_file": "BIT-60.pdf",
+          "page_number": 30
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-RECOVERED-Y4S2-4",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": null,
+          "ctype": "เลือก",
+          "note": "สล็อตกู้คืนจากยอดรวมที่พิมพ์ในตาราง; OCR ไม่พบรายละเอียดแถว",
+          "source_file": "BIT-60.pdf",
+          "page_number": 30
+        }
+      ],
+      "alternative_groups": [
+        {
+          "year": 4,
+          "semester": 1,
+          "alt_group": "coop-alternative-BIT-60.pdf-30",
+          "rows_in_group": 2,
+          "codes": "06036046 | 06036047",
+          "counted_credits": 6,
+          "pdf_pages": "30"
+        }
+      ],
+      "year_4_semester_2": [
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-RECOVERED-Y4S2-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": null,
+          "ctype": "เลือก",
+          "note": "สล็อตกู้คืนจากยอดรวมที่พิมพ์ในตาราง; OCR ไม่พบรายละเอียดแถว",
+          "source_file": "BIT-60.pdf",
+          "page_number": 30
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-RECOVERED-Y4S2-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": null,
+          "ctype": "เลือก",
+          "note": "สล็อตกู้คืนจากยอดรวมที่พิมพ์ในตาราง; OCR ไม่พบรายละเอียดแถว",
+          "source_file": "BIT-60.pdf",
+          "page_number": 30
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-RECOVERED-Y4S2-3",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": null,
+          "ctype": "เลือก",
+          "note": "สล็อตกู้คืนจากยอดรวมที่พิมพ์ในตาราง; OCR ไม่พบรายละเอียดแถว",
+          "source_file": "BIT-60.pdf",
+          "page_number": 30
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-RECOVERED-Y4S2-4",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": null,
+          "ctype": "เลือก",
+          "note": "สล็อตกู้คืนจากยอดรวมที่พิมพ์ในตาราง; OCR ไม่พบรายละเอียดแถว",
+          "source_file": "BIT-60.pdf",
+          "page_number": 30
+        }
+      ]
+    },
+    {
+      "profile": "bit-2560-no-coop",
+      "database": "work/lab8b_bit_2560_no_coop/curriculum.db",
+      "size_bytes": 77824,
+      "program_rows": [
+        {
+          "program_id": "BIT-no-coop",
+          "name_th": "เทคโนโลยีสารสนเทศทางธุรกิจ (ไม่เข้าร่วมสหกิจศึกษา)",
+          "name_en": null,
+          "degree": null,
+          "total_credits": 126,
+          "years": 4,
+          "curriculum_version": 2560,
+          "is_latest": 0,
+          "plan": "no-coop",
+          "source_file": "BIT-60.pdf",
+          "page_number": 26
+        }
+      ],
+      "plan_item_columns": [
+        "id",
+        "program_id",
+        "year",
+        "semester",
+        "code",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "v_plan_columns": [
+        "id",
+        "year",
+        "semester",
+        "code",
+        "name_th",
+        "name_en",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "required_columns_missing": [
+        "alternative_index",
+        "code_pattern",
+        "elective_type",
+        "is_placeholder",
+        "printed_page_number",
+        "raw_code"
+      ],
+      "terms": [
+        {
+          "year": 1,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "23"
+        },
+        {
+          "year": 1,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "23"
+        },
+        {
+          "year": 2,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "24"
+        },
+        {
+          "year": 2,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "24"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "25"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "25"
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "stored_rows": 3,
+          "raw_credit_sum": 9,
+          "counted_credit_sum": 9,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "26"
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "stored_rows": 3,
+          "raw_credit_sum": 9,
+          "counted_credit_sum": 9,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "26"
+        }
+      ],
+      "placeholder_summary": {
+        "rows": 4,
+        "missing_thai_name": 4,
+        "missing_english_name": 4
+      },
+      "placeholder_rows": [
+        {
+          "year": 3,
+          "semester": 1,
+          "code": "ELEC-060360XX-SLOT-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-60.pdf",
+          "page_number": 25
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "code": "ELEC-060360XX-SLOT-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-60.pdf",
+          "page_number": 25
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-SLOT-039",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-60.pdf",
+          "page_number": 26
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-042",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-60.pdf",
+          "page_number": 26
+        }
+      ],
+      "alternative_groups": [],
+      "year_4_semester_2": [
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "06036020",
+          "name_th": "โครงงาน 2",
+          "name_en": "PROJECT 2",
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "บังคับ",
+          "note": null,
+          "source_file": "BIT-60.pdf",
+          "page_number": 26
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "06036088",
+          "name_th": "การคิดอย่างสร้างสรรค์",
+          "name_en": "CREATIVE THINKING",
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "บังคับ",
+          "note": null,
+          "source_file": "BIT-60.pdf",
+          "page_number": 26
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-042",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-60.pdf",
+          "page_number": 26
+        }
+      ]
+    },
+    {
+      "profile": "bit-2565-coop",
+      "database": "work/lab8b_bit_2565_coop/curriculum.db",
+      "size_bytes": 126976,
+      "program_rows": [
+        {
+          "program_id": "BIT-coop",
+          "name_th": "เทคโนโลยีสารสนเทศทางธุรกิจ (สหกิจศึกษา)",
+          "name_en": null,
+          "degree": null,
+          "total_credits": 126,
+          "years": 4,
+          "curriculum_version": 2565,
+          "is_latest": 1,
+          "plan": "coop",
+          "source_file": "BIT-65.pdf",
+          "page_number": 35
+        }
+      ],
+      "plan_item_columns": [
+        "id",
+        "program_id",
+        "year",
+        "semester",
+        "code",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "v_plan_columns": [
+        "id",
+        "year",
+        "semester",
+        "code",
+        "name_th",
+        "name_en",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "required_columns_missing": [
+        "alternative_index",
+        "code_pattern",
+        "elective_type",
+        "is_placeholder",
+        "printed_page_number",
+        "raw_code"
+      ],
+      "terms": [
+        {
+          "year": 1,
+          "semester": 1,
+          "stored_rows": 7,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "31"
+        },
+        {
+          "year": 1,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "32"
+        },
+        {
+          "year": 2,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "32"
+        },
+        {
+          "year": 2,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "33"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "33"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "stored_rows": 5,
+          "raw_credit_sum": 15,
+          "counted_credit_sum": 15,
+          "synthetic_rows": 2,
+          "synthetic_rows_missing_thai_name": 2,
+          "pdf_pages": "34"
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "stored_rows": 5,
+          "raw_credit_sum": 15,
+          "counted_credit_sum": 15,
+          "synthetic_rows": 3,
+          "synthetic_rows_missing_thai_name": 3,
+          "pdf_pages": "35"
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "stored_rows": 2,
+          "raw_credit_sum": 12,
+          "counted_credit_sum": 6,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "35"
+        }
+      ],
+      "placeholder_summary": {
+        "rows": 7,
+        "missing_thai_name": 7,
+        "missing_english_name": 7
+      },
+      "placeholder_rows": [
+        {
+          "year": 2,
+          "semester": 2,
+          "code": "ELEC-9664XXXX-SLOT-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-65.pdf",
+          "page_number": 33
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "code": "ELEC-96644XXX-TERM-3-1-ROW-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-65.pdf",
+          "page_number": 33
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "code": "ELEC-RECOVERED-Y3S2-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": null,
+          "ctype": "เลือก",
+          "note": "สล็อตกู้คืนจากยอดรวมที่พิมพ์ในตาราง; OCR ไม่พบรายละเอียดแถว",
+          "source_file": "BIT-65.pdf",
+          "page_number": 34
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "code": "ELEC-SLOT-036",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-65.pdf",
+          "page_number": 34
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-06036XXX-SLOT-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-65.pdf",
+          "page_number": 35
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-RECOVERED-Y4S1-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": null,
+          "ctype": "เลือก",
+          "note": "สล็อตกู้คืนจากยอดรวมที่พิมพ์ในตาราง; OCR ไม่พบรายละเอียดแถว",
+          "source_file": "BIT-65.pdf",
+          "page_number": 35
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-SLOT-041",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-65.pdf",
+          "page_number": 35
+        }
+      ],
+      "alternative_groups": [
+        {
+          "year": 4,
+          "semester": 2,
+          "alt_group": "coop-alternative-BIT-65.pdf-35",
+          "rows_in_group": 2,
+          "codes": "06036147 | 06036148",
+          "counted_credits": 6,
+          "pdf_pages": "35"
+        }
+      ],
+      "year_4_semester_2": [
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "06036147",
+          "name_th": "สหกิจศึกษา",
+          "name_en": "COOPERATIVE EDUCATION",
+          "credits": 6,
+          "alt_group": "coop-alternative-BIT-65.pdf-35",
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-65.pdf",
+          "page_number": 35
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "06036148",
+          "name_th": "สหกิจศึกษาต่างประเทศ",
+          "name_en": "OVERSEA COOPERATIVE EDUCATION",
+          "credits": 6,
+          "alt_group": "coop-alternative-BIT-65.pdf-35",
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-65.pdf",
+          "page_number": 35
+        }
+      ]
+    },
+    {
+      "profile": "bit-2565-no-coop",
+      "database": "work/lab8b_bit_2565_no_coop/curriculum.db",
+      "size_bytes": 126976,
+      "program_rows": [
+        {
+          "program_id": "BIT-no-coop",
+          "name_th": "เทคโนโลยีสารสนเทศทางธุรกิจ (ไม่เข้าร่วมสหกิจศึกษา)",
+          "name_en": null,
+          "degree": null,
+          "total_credits": 126,
+          "years": 4,
+          "curriculum_version": 2565,
+          "is_latest": 1,
+          "plan": "no-coop",
+          "source_file": "BIT-65.pdf",
+          "page_number": 30
+        }
+      ],
+      "plan_item_columns": [
+        "id",
+        "program_id",
+        "year",
+        "semester",
+        "code",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "v_plan_columns": [
+        "id",
+        "year",
+        "semester",
+        "code",
+        "name_th",
+        "name_en",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "required_columns_missing": [
+        "alternative_index",
+        "code_pattern",
+        "elective_type",
+        "is_placeholder",
+        "printed_page_number",
+        "raw_code"
+      ],
+      "terms": [
+        {
+          "year": 1,
+          "semester": 1,
+          "stored_rows": 7,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "26"
+        },
+        {
+          "year": 1,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "27"
+        },
+        {
+          "year": 2,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "27"
+        },
+        {
+          "year": 2,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "28"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "28"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "stored_rows": 4,
+          "raw_credit_sum": 12,
+          "counted_credit_sum": 12,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "29"
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "stored_rows": 4,
+          "raw_credit_sum": 12,
+          "counted_credit_sum": 12,
+          "synthetic_rows": 2,
+          "synthetic_rows_missing_thai_name": 2,
+          "pdf_pages": "29"
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "stored_rows": 4,
+          "raw_credit_sum": 12,
+          "counted_credit_sum": 12,
+          "synthetic_rows": 4,
+          "synthetic_rows_missing_thai_name": 4,
+          "pdf_pages": "30"
+        }
+      ],
+      "placeholder_summary": {
+        "rows": 8,
+        "missing_thai_name": 8,
+        "missing_english_name": 8
+      },
+      "placeholder_rows": [
+        {
+          "year": 2,
+          "semester": 2,
+          "code": "ELEC-9664XXXX-SLOT-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-65.pdf",
+          "page_number": 28
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "code": "ELEC-9664XXXX-TERM-3-1-ROW-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-65.pdf",
+          "page_number": 28
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-9664XXXX-TERM-4-1-ROW-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-65.pdf",
+          "page_number": 29
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-SLOT-036",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "บังคับ",
+          "note": null,
+          "source_file": "BIT-65.pdf",
+          "page_number": 29
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-06036XXX-SLOT-4",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-65.pdf",
+          "page_number": 30
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-RECOVERED-Y4S2-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": null,
+          "ctype": "เลือก",
+          "note": "สล็อตกู้คืนจากยอดรวมที่พิมพ์ในตาราง; OCR ไม่พบรายละเอียดแถว",
+          "source_file": "BIT-65.pdf",
+          "page_number": 30
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-042",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-65.pdf",
+          "page_number": 30
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-043",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-65.pdf",
+          "page_number": 30
+        }
+      ],
+      "alternative_groups": [],
+      "year_4_semester_2": [
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-06036XXX-SLOT-4",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-65.pdf",
+          "page_number": 30
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-RECOVERED-Y4S2-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": null,
+          "ctype": "เลือก",
+          "note": "สล็อตกู้คืนจากยอดรวมที่พิมพ์ในตาราง; OCR ไม่พบรายละเอียดแถว",
+          "source_file": "BIT-65.pdf",
+          "page_number": 30
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-042",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-65.pdf",
+          "page_number": 30
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-043",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "BIT-65.pdf",
+          "page_number": 30
+        }
+      ]
+    },
+    {
+      "profile": "dsba-2560-coop",
+      "database": "work/lab8b_dsba_2560_coop/curriculum.db",
+      "size_bytes": 77824,
+      "program_rows": [
+        {
+          "program_id": "DSBA-coop",
+          "name_th": "วิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ (สหกิจศึกษา)",
+          "name_en": null,
+          "degree": null,
+          "total_credits": 126,
+          "years": 4,
+          "curriculum_version": 2560,
+          "is_latest": 0,
+          "plan": "coop",
+          "source_file": "DSBA-60.pdf",
+          "page_number": 34
+        }
+      ],
+      "plan_item_columns": [
+        "id",
+        "program_id",
+        "year",
+        "semester",
+        "code",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "v_plan_columns": [
+        "id",
+        "year",
+        "semester",
+        "code",
+        "name_th",
+        "name_en",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "required_columns_missing": [
+        "alternative_index",
+        "code_pattern",
+        "elective_type",
+        "is_placeholder",
+        "printed_page_number",
+        "raw_code"
+      ],
+      "terms": [
+        {
+          "year": 1,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "30"
+        },
+        {
+          "year": 1,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "30"
+        },
+        {
+          "year": 2,
+          "semester": 1,
+          "stored_rows": 7,
+          "raw_credit_sum": 19,
+          "counted_credit_sum": 19,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "31"
+        },
+        {
+          "year": 2,
+          "semester": 2,
+          "stored_rows": 7,
+          "raw_credit_sum": 19,
+          "counted_credit_sum": 19,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "32"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "32"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 16,
+          "counted_credit_sum": 16,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "33"
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "stored_rows": 4,
+          "raw_credit_sum": 12,
+          "counted_credit_sum": 12,
+          "synthetic_rows": 3,
+          "synthetic_rows_missing_thai_name": 3,
+          "pdf_pages": "33"
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "stored_rows": 1,
+          "raw_credit_sum": 6,
+          "counted_credit_sum": 6,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "34"
+        }
+      ],
+      "placeholder_summary": {
+        "rows": 5,
+        "missing_thai_name": 5,
+        "missing_english_name": 5
+      },
+      "placeholder_rows": [
+        {
+          "year": 1,
+          "semester": 1,
+          "code": "ELEC-90101XXX-SLOT-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA-60.pdf",
+          "page_number": 30
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "code": "ELEC-060261XX-SLOT-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA-60.pdf",
+          "page_number": 33
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-SLOT-040",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA-60.pdf",
+          "page_number": 33
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-SLOT-041",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA-60.pdf",
+          "page_number": 33
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-SLOT-042",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA-60.pdf",
+          "page_number": 33
+        }
+      ],
+      "alternative_groups": [
+        {
+          "year": 4,
+          "semester": 2,
+          "alt_group": "coop-alternative-DSBA-60.pdf-34",
+          "rows_in_group": 1,
+          "codes": "06026130",
+          "counted_credits": 6,
+          "pdf_pages": "34"
+        }
+      ],
+      "year_4_semester_2": [
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "06026130",
+          "name_th": "สหกิจศึกษาทางวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ",
+          "name_en": "COOPERATIVE EDUCATION IN DATA SCIENCE AND BUSINESS ANALYTICS",
+          "credits": 6,
+          "alt_group": "coop-alternative-DSBA-60.pdf-34",
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA-60.pdf",
+          "page_number": 34
+        }
+      ]
+    },
+    {
+      "profile": "dsba-2560-no-coop",
+      "database": "work/lab8b_dsba_2560_no_coop/curriculum.db",
+      "size_bytes": 77824,
+      "program_rows": [
+        {
+          "program_id": "DSBA-no-coop",
+          "name_th": "วิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ (ไม่เข้าร่วมสหกิจศึกษา)",
+          "name_en": null,
+          "degree": null,
+          "total_credits": 126,
+          "years": 4,
+          "curriculum_version": 2560,
+          "is_latest": 0,
+          "plan": "no-coop",
+          "source_file": "DSBA-60.pdf",
+          "page_number": 29
+        }
+      ],
+      "plan_item_columns": [
+        "id",
+        "program_id",
+        "year",
+        "semester",
+        "code",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "v_plan_columns": [
+        "id",
+        "year",
+        "semester",
+        "code",
+        "name_th",
+        "name_en",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "required_columns_missing": [
+        "alternative_index",
+        "code_pattern",
+        "elective_type",
+        "is_placeholder",
+        "printed_page_number",
+        "raw_code"
+      ],
+      "terms": [
+        {
+          "year": 1,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "25"
+        },
+        {
+          "year": 1,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "26"
+        },
+        {
+          "year": 2,
+          "semester": 1,
+          "stored_rows": 7,
+          "raw_credit_sum": 19,
+          "counted_credit_sum": 19,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "26"
+        },
+        {
+          "year": 2,
+          "semester": 2,
+          "stored_rows": 7,
+          "raw_credit_sum": 19,
+          "counted_credit_sum": 19,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "27"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "27"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 16,
+          "counted_credit_sum": 16,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "28"
+        },
+        {
+          "year": 3,
+          "semester": 3,
+          "stored_rows": 1,
+          "raw_credit_sum": 3,
+          "counted_credit_sum": 3,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "28"
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "stored_rows": 3,
+          "raw_credit_sum": 9,
+          "counted_credit_sum": 9,
+          "synthetic_rows": 2,
+          "synthetic_rows_missing_thai_name": 2,
+          "pdf_pages": "29"
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "stored_rows": 2,
+          "raw_credit_sum": 6,
+          "counted_credit_sum": 6,
+          "synthetic_rows": 2,
+          "synthetic_rows_missing_thai_name": 2,
+          "pdf_pages": "29"
+        }
+      ],
+      "placeholder_summary": {
+        "rows": 6,
+        "missing_thai_name": 6,
+        "missing_english_name": 6
+      },
+      "placeholder_rows": [
+        {
+          "year": 1,
+          "semester": 1,
+          "code": "ELEC-90101XXX-SLOT-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA-60.pdf",
+          "page_number": 25
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "code": "ELEC-060261XX-SLOT-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA-60.pdf",
+          "page_number": 28
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-060261XX-SLOT-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA-60.pdf",
+          "page_number": 29
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-SLOT-042",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA-60.pdf",
+          "page_number": 29
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-043",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA-60.pdf",
+          "page_number": 29
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-044",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA-60.pdf",
+          "page_number": 29
+        }
+      ],
+      "alternative_groups": [],
+      "year_4_semester_2": [
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-043",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA-60.pdf",
+          "page_number": 29
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-044",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA-60.pdf",
+          "page_number": 29
+        }
+      ]
+    },
+    {
+      "profile": "dsba-coop",
+      "database": "work/lab8b_dsba_coop/curriculum.db",
+      "size_bytes": 126976,
+      "program_rows": [
+        {
+          "program_id": "DSBA-coop",
+          "name_th": "วิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ (สหกิจศึกษา)",
+          "name_en": null,
+          "degree": null,
+          "total_credits": 132,
+          "years": 4,
+          "source_file": "DSBA.pdf",
+          "page_number": 36,
+          "curriculum_version": 2565,
+          "is_latest": 1,
+          "plan": "coop"
+        }
+      ],
+      "plan_item_columns": [
+        "id",
+        "program_id",
+        "year",
+        "semester",
+        "code",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "v_plan_columns": [
+        "id",
+        "year",
+        "semester",
+        "code",
+        "name_th",
+        "name_en",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "required_columns_missing": [
+        "alternative_index",
+        "code_pattern",
+        "elective_type",
+        "is_placeholder",
+        "printed_page_number",
+        "raw_code"
+      ],
+      "terms": [
+        {
+          "year": 1,
+          "semester": 1,
+          "stored_rows": 7,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "30"
+        },
+        {
+          "year": 1,
+          "semester": 2,
+          "stored_rows": 7,
+          "raw_credit_sum": 21,
+          "counted_credit_sum": 21,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "31"
+        },
+        {
+          "year": 2,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "32"
+        },
+        {
+          "year": 2,
+          "semester": 2,
+          "stored_rows": 7,
+          "raw_credit_sum": 21,
+          "counted_credit_sum": 21,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "33"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 3,
+          "synthetic_rows_missing_thai_name": 3,
+          "pdf_pages": "34"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 2,
+          "synthetic_rows_missing_thai_name": 2,
+          "pdf_pages": "35"
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "stored_rows": 4,
+          "raw_credit_sum": 12,
+          "counted_credit_sum": 12,
+          "synthetic_rows": 3,
+          "synthetic_rows_missing_thai_name": 3,
+          "pdf_pages": "36"
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "stored_rows": 2,
+          "raw_credit_sum": 12,
+          "counted_credit_sum": 6,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "36"
+        }
+      ],
+      "placeholder_summary": {
+        "rows": 9,
+        "missing_thai_name": 9,
+        "missing_english_name": 9
+      },
+      "placeholder_rows": [
+        {
+          "year": 2,
+          "semester": 1,
+          "code": "ELEC-90644XXX-TERM-2-1-ROW-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 32
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "code": "ELEC-06026XXX-DS-STAT-DE-ELECTIVE-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 34
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "code": "ELEC-06026XXX-DS-STAT-DE-ELECTIVE-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 34
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "code": "ELEC-9064XXXX-GE-ELECTIVE-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 34
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "code": "ELEC-06026XXX-DS-STAT-DE-ELECTIVE-3",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 35
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "code": "ELEC-06026XXX-DS-STAT-DE-ELECTIVE-4",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 35
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-9064XXXX-GE-ELECTIVE-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 36
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-SLOT-042",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 36
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-SLOT-043",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 36
+        }
+      ],
+      "alternative_groups": [
+        {
+          "year": 4,
+          "semester": 2,
+          "alt_group": "coop-alternative-DSBA.pdf-36",
+          "rows_in_group": 2,
+          "codes": "06026259 | 06026260",
+          "counted_credits": 6,
+          "pdf_pages": "36"
+        }
+      ],
+      "year_4_semester_2": [
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "06026259",
+          "name_th": "สหกิจศึกษาทางวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ",
+          "name_en": "COOPERATIVE EDUCATION IN DATA SCIENCE AND BUSINESS ANALYTICS",
+          "credits": 6,
+          "alt_group": "coop-alternative-DSBA.pdf-36",
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "บังคับ",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 36
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "06026260",
+          "name_th": "สหกิจศึกษาทางวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ",
+          "name_en": "COOPERATIVE EDUCATION IN DATA SCIENCE AND BUSINESS ANALYTICS",
+          "credits": 6,
+          "alt_group": "coop-alternative-DSBA.pdf-36",
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "บังคับ",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 36
+        }
+      ]
+    },
+    {
+      "profile": "dsba-no-coop",
+      "database": "work/lab8b_dsba_no_coop/curriculum.db",
+      "size_bytes": 126976,
+      "program_rows": [
+        {
+          "program_id": "DSBA-no-coop",
+          "name_th": "วิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ (ไม่เข้าร่วมสหกิจศึกษา)",
+          "name_en": null,
+          "degree": null,
+          "total_credits": 132,
+          "years": 4,
+          "source_file": "DSBA.pdf",
+          "page_number": 29,
+          "curriculum_version": 2565,
+          "is_latest": 1,
+          "plan": "no-coop"
+        }
+      ],
+      "plan_item_columns": [
+        "id",
+        "program_id",
+        "year",
+        "semester",
+        "code",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "v_plan_columns": [
+        "id",
+        "year",
+        "semester",
+        "code",
+        "name_th",
+        "name_en",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "required_columns_missing": [
+        "alternative_index",
+        "code_pattern",
+        "elective_type",
+        "is_placeholder",
+        "printed_page_number",
+        "raw_code"
+      ],
+      "terms": [
+        {
+          "year": 1,
+          "semester": 1,
+          "stored_rows": 7,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "23"
+        },
+        {
+          "year": 1,
+          "semester": 2,
+          "stored_rows": 7,
+          "raw_credit_sum": 21,
+          "counted_credit_sum": 21,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "24"
+        },
+        {
+          "year": 2,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "25"
+        },
+        {
+          "year": 2,
+          "semester": 2,
+          "stored_rows": 7,
+          "raw_credit_sum": 21,
+          "counted_credit_sum": 21,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "26"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 3,
+          "synthetic_rows_missing_thai_name": 3,
+          "pdf_pages": "27"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 2,
+          "synthetic_rows_missing_thai_name": 2,
+          "pdf_pages": "28"
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "stored_rows": 3,
+          "raw_credit_sum": 9,
+          "counted_credit_sum": 9,
+          "synthetic_rows": 2,
+          "synthetic_rows_missing_thai_name": 2,
+          "pdf_pages": "29"
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "stored_rows": 3,
+          "raw_credit_sum": 9,
+          "counted_credit_sum": 9,
+          "synthetic_rows": 3,
+          "synthetic_rows_missing_thai_name": 3,
+          "pdf_pages": "29"
+        }
+      ],
+      "placeholder_summary": {
+        "rows": 11,
+        "missing_thai_name": 11,
+        "missing_english_name": 11
+      },
+      "placeholder_rows": [
+        {
+          "year": 2,
+          "semester": 1,
+          "code": "ELEC-90644XXX-TERM-2-1-ROW-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 25
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "code": "ELEC-06026XXX-DS-STAT-DE-ELECTIVE-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 27
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "code": "ELEC-06026XXX-DS-STAT-DE-ELECTIVE-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 27
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "code": "ELEC-9064XXXX-GE-ELECTIVE-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 27
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "code": "ELEC-06026XXX-DS-STAT-DE-ELECTIVE-3",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 28
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "code": "ELEC-06026XXX-DS-STAT-DE-ELECTIVE-4",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 28
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-06026XXX-MAJOR-ELECTIVE-EXTRA-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 29
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-06026XXX-MAJOR-ELECTIVE-EXTRA-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 29
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-9064XXXX-GE-ELECTIVE-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 29
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-042",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 29
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-043",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 29
+        }
+      ],
+      "alternative_groups": [],
+      "year_4_semester_2": [
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-9064XXXX-GE-ELECTIVE-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 29
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-042",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 29
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-043",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "DSBA.pdf",
+          "page_number": 29
+        }
+      ]
+    },
+    {
+      "profile": "it-2560-coop",
+      "database": "work/lab8b_it_2560_coop/curriculum.db",
+      "size_bytes": 81920,
+      "program_rows": [
+        {
+          "program_id": "IT-coop",
+          "name_th": "เทคโนโลยีสารสนเทศ (สหกิจศึกษา)",
+          "name_en": null,
+          "degree": null,
+          "total_credits": 130,
+          "years": 4,
+          "curriculum_version": 2560,
+          "is_latest": 0,
+          "plan": "coop",
+          "source_file": "IT-60.pdf",
+          "page_number": 40
+        }
+      ],
+      "plan_item_columns": [
+        "id",
+        "program_id",
+        "year",
+        "semester",
+        "code",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "v_plan_columns": [
+        "id",
+        "year",
+        "semester",
+        "code",
+        "name_th",
+        "name_en",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "required_columns_missing": [
+        "alternative_index",
+        "code_pattern",
+        "elective_type",
+        "is_placeholder",
+        "printed_page_number",
+        "raw_code"
+      ],
+      "terms": [
+        {
+          "year": 1,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "34"
+        },
+        {
+          "year": 1,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "35"
+        },
+        {
+          "year": 2,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "35"
+        },
+        {
+          "year": 2,
+          "semester": 2,
+          "stored_rows": 10,
+          "raw_credit_sum": 30,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 2,
+          "synthetic_rows_missing_thai_name": 2,
+          "pdf_pages": "36"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "stored_rows": 12,
+          "raw_credit_sum": 36,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "37"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "stored_rows": 12,
+          "raw_credit_sum": 34,
+          "counted_credit_sum": 16,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "38"
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 36,
+          "counted_credit_sum": 6,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "39"
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 5,
+          "synthetic_rows_missing_thai_name": 5,
+          "pdf_pages": "40"
+        }
+      ],
+      "placeholder_summary": {
+        "rows": 8,
+        "missing_thai_name": 8,
+        "missing_english_name": 8
+      },
+      "placeholder_rows": [
+        {
+          "year": 2,
+          "semester": 2,
+          "code": "ELEC-SLOT-025",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": "it-specialization-y2s2-slot-1",
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "บังคับ",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 36
+        },
+        {
+          "year": 2,
+          "semester": 2,
+          "code": "ELEC-SLOT-028",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": "it-specialization-y2s2-slot-2",
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "บังคับ",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 36
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "code": "ELEC-060163XX-SLOT-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 38
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-060163XX-SLOT-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 40
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-056",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 40
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-057",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 40
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-058",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 40
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-059",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 40
+        }
+      ],
+      "alternative_groups": [
+        {
+          "year": 2,
+          "semester": 2,
+          "alt_group": "it-specialization-y2s2-slot-1",
+          "rows_in_group": 3,
+          "codes": "06016321 | ELEC-SLOT-025 | 06016341",
+          "counted_credits": 3,
+          "pdf_pages": "36"
+        },
+        {
+          "year": 2,
+          "semester": 2,
+          "alt_group": "it-specialization-y2s2-slot-2",
+          "rows_in_group": 3,
+          "codes": "06016322 | 06016342 | ELEC-SLOT-028",
+          "counted_credits": 3,
+          "pdf_pages": "36"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "alt_group": "it-specialization-y3s1-slot-1",
+          "rows_in_group": 3,
+          "codes": "06016323 | 06016333 | 06016343",
+          "counted_credits": 3,
+          "pdf_pages": "37"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "alt_group": "it-specialization-y3s1-slot-2",
+          "rows_in_group": 3,
+          "codes": "06016324 | 06016334 | 06016344",
+          "counted_credits": 3,
+          "pdf_pages": "37"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "alt_group": "it-specialization-y3s1-slot-3",
+          "rows_in_group": 3,
+          "codes": "06016325 | 06016335 | 06016345",
+          "counted_credits": 3,
+          "pdf_pages": "37"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "alt_group": "it-specialization-y3s2-slot-1",
+          "rows_in_group": 3,
+          "codes": "06016326 | 06016336 | 06016346",
+          "counted_credits": 3,
+          "pdf_pages": "38"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "alt_group": "it-specialization-y3s2-slot-2",
+          "rows_in_group": 3,
+          "codes": "06016327 | 06016337 | 06016347",
+          "counted_credits": 3,
+          "pdf_pages": "38"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "alt_group": "it-specialization-y3s2-slot-3",
+          "rows_in_group": 3,
+          "codes": "06016328 | 06016338 | 06016348",
+          "counted_credits": 3,
+          "pdf_pages": "38"
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "alt_group": "coop-alternative-IT-60.pdf-39",
+          "rows_in_group": 6,
+          "codes": "06016393 | 06016394 | 06016395 | 06016396 | 06016397 | 06016398",
+          "counted_credits": 6,
+          "pdf_pages": "39"
+        }
+      ],
+      "year_4_semester_2": [
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "90401011",
+          "name_th": "การประกอบการ",
+          "name_en": "ENTREPRENEURSHIP",
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "บังคับ",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 40
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-060163XX-SLOT-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 40
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-056",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 40
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-057",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 40
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-058",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 40
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-059",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 40
+        }
+      ]
+    },
+    {
+      "profile": "it-2560-no-coop",
+      "database": "work/lab8b_it_2560_no_coop/curriculum.db",
+      "size_bytes": 81920,
+      "program_rows": [
+        {
+          "program_id": "IT-no-coop",
+          "name_th": "เทคโนโลยีสารสนเทศ (ไม่เข้าร่วมสหกิจศึกษา)",
+          "name_en": null,
+          "degree": null,
+          "total_credits": 130,
+          "years": 4,
+          "curriculum_version": 2560,
+          "is_latest": 0,
+          "plan": "no-coop",
+          "source_file": "IT-60.pdf",
+          "page_number": 33
+        }
+      ],
+      "plan_item_columns": [
+        "id",
+        "program_id",
+        "year",
+        "semester",
+        "code",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "v_plan_columns": [
+        "id",
+        "year",
+        "semester",
+        "code",
+        "name_th",
+        "name_en",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "required_columns_missing": [
+        "alternative_index",
+        "code_pattern",
+        "elective_type",
+        "is_placeholder",
+        "printed_page_number",
+        "raw_code"
+      ],
+      "terms": [
+        {
+          "year": 1,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "27"
+        },
+        {
+          "year": 1,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "28"
+        },
+        {
+          "year": 2,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "28"
+        },
+        {
+          "year": 2,
+          "semester": 2,
+          "stored_rows": 8,
+          "raw_credit_sum": 24,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "29"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "stored_rows": 12,
+          "raw_credit_sum": 36,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "30"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "stored_rows": 12,
+          "raw_credit_sum": 34,
+          "counted_credit_sum": 16,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "31"
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "stored_rows": 7,
+          "raw_credit_sum": 21,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 5,
+          "synthetic_rows_missing_thai_name": 5,
+          "pdf_pages": "32"
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "stored_rows": 4,
+          "raw_credit_sum": 12,
+          "counted_credit_sum": 6,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "33"
+        }
+      ],
+      "placeholder_summary": {
+        "rows": 6,
+        "missing_thai_name": 6,
+        "missing_english_name": 6
+      },
+      "placeholder_rows": [
+        {
+          "year": 3,
+          "semester": 2,
+          "code": "ELEC-060163XX-SLOT-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 31
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-060163XX-SLOT-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 32
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-SLOT-055",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 32
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-SLOT-056",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 32
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-SLOT-057",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 32
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-SLOT-058",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 32
+        }
+      ],
+      "alternative_groups": [
+        {
+          "year": 2,
+          "semester": 2,
+          "alt_group": "it-specialization-y2s2-slot-1",
+          "rows_in_group": 2,
+          "codes": "06016321 | 06016341",
+          "counted_credits": 3,
+          "pdf_pages": "29"
+        },
+        {
+          "year": 2,
+          "semester": 2,
+          "alt_group": "it-specialization-y2s2-slot-2",
+          "rows_in_group": 2,
+          "codes": "06016322 | 06016342",
+          "counted_credits": 3,
+          "pdf_pages": "29"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "alt_group": "it-specialization-y3s1-slot-1",
+          "rows_in_group": 3,
+          "codes": "06016323 | 06016333 | 06016343",
+          "counted_credits": 3,
+          "pdf_pages": "30"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "alt_group": "it-specialization-y3s1-slot-2",
+          "rows_in_group": 3,
+          "codes": "06016324 | 06016334 | 06016344",
+          "counted_credits": 3,
+          "pdf_pages": "30"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "alt_group": "it-specialization-y3s1-slot-3",
+          "rows_in_group": 3,
+          "codes": "06016325 | 06016345 | 06016346",
+          "counted_credits": 3,
+          "pdf_pages": "30"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "alt_group": "it-specialization-y3s2-slot-1",
+          "rows_in_group": 3,
+          "codes": "06016326 | 06016336 | 06016346",
+          "counted_credits": 3,
+          "pdf_pages": "31"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "alt_group": "it-specialization-y3s2-slot-2",
+          "rows_in_group": 3,
+          "codes": "06016327 | 06016337 | 06016347",
+          "counted_credits": 3,
+          "pdf_pages": "31"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "alt_group": "it-specialization-y3s2-slot-3",
+          "rows_in_group": 3,
+          "codes": "06016328 | 06016338 | 06016348",
+          "counted_credits": 3,
+          "pdf_pages": "31"
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "alt_group": "it-specialization-y4s1-slot-1",
+          "rows_in_group": 2,
+          "codes": "06016329 | 06016339",
+          "counted_credits": 3,
+          "pdf_pages": "32"
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "alt_group": "it-specialization-y4s2-slot-1",
+          "rows_in_group": 3,
+          "codes": "06016330 | 06016340 | 06016350",
+          "counted_credits": 3,
+          "pdf_pages": "33"
+        }
+      ],
+      "year_4_semester_2": [
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "06016330",
+          "name_th": "แขนงวิชาวิศวกรรมซอฟต์แวร์ โครงงานทางด้านวิศวกรรมซอฟต์แวร์ 2",
+          "name_en": "PROJECT IN SOFTWARE ENGINEERING 2",
+          "credits": 3,
+          "alt_group": "it-specialization-y4s2-slot-1",
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "บังคับ",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 33
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "06016340",
+          "name_th": "แขนงวิชาเทคโนโลยีเครือข่ายและระบบ โครงงานทางด้านเทคโนโลยีเครือข่ายและระบบ 2",
+          "name_en": "PROJECT IN NETWORK AND SYSTEM TECHNOLOGY 2",
+          "credits": 3,
+          "alt_group": "it-specialization-y4s2-slot-1",
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "บังคับ",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 33
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "06016350",
+          "name_th": "แขนงวิชาการพัฒนาสื่อประสมและเกม โครงงานทางด้านการพัฒนาสื่อประสมและเกม 2",
+          "name_en": "PROJECT IN MULTIMEDIA AND GAME DEVELOPMENT 2",
+          "credits": 3,
+          "alt_group": "it-specialization-y4s2-slot-1",
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "บังคับ",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 33
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "90401011",
+          "name_th": "การประกอบการ",
+          "name_en": "ENTREPRENEURSHIP",
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "บังคับ",
+          "note": null,
+          "source_file": "IT-60.pdf",
+          "page_number": 33
+        }
+      ]
+    },
+    {
+      "profile": "it-coop",
+      "database": "work/lab8b_it_coop/curriculum.db",
+      "size_bytes": 131072,
+      "program_rows": [
+        {
+          "program_id": "IT-coop",
+          "name_th": "เทคโนโลยีสารสนเทศ (สหกิจศึกษา)",
+          "name_en": null,
+          "degree": null,
+          "total_credits": 129,
+          "years": 4,
+          "source_file": "IT.pdf",
+          "page_number": 44,
+          "curriculum_version": 2565,
+          "is_latest": 1,
+          "plan": "coop"
+        }
+      ],
+      "plan_item_columns": [
+        "id",
+        "program_id",
+        "year",
+        "semester",
+        "code",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "v_plan_columns": [
+        "id",
+        "year",
+        "semester",
+        "code",
+        "name_th",
+        "name_en",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "required_columns_missing": [
+        "alternative_index",
+        "code_pattern",
+        "elective_type",
+        "is_placeholder",
+        "printed_page_number",
+        "raw_code"
+      ],
+      "terms": [
+        {
+          "year": 1,
+          "semester": 1,
+          "stored_rows": 7,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "38"
+        },
+        {
+          "year": 1,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "39"
+        },
+        {
+          "year": 2,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "40"
+        },
+        {
+          "year": 2,
+          "semester": 2,
+          "stored_rows": 10,
+          "raw_credit_sum": 30,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "41"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "stored_rows": 11,
+          "raw_credit_sum": 33,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "42"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "stored_rows": 2,
+          "raw_credit_sum": 12,
+          "counted_credit_sum": 6,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "43"
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 4,
+          "synthetic_rows_missing_thai_name": 4,
+          "pdf_pages": "43"
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "stored_rows": 5,
+          "raw_credit_sum": 15,
+          "counted_credit_sum": 15,
+          "synthetic_rows": 2,
+          "synthetic_rows_missing_thai_name": 2,
+          "pdf_pages": "44"
+        }
+      ],
+      "placeholder_summary": {
+        "rows": 7,
+        "missing_thai_name": 7,
+        "missing_english_name": 7
+      },
+      "placeholder_rows": [
+        {
+          "year": 3,
+          "semester": 1,
+          "code": "ELEC-90644XXX-TERM-3-1-ROW-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 42
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-060164XX-SLOT-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 43
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-RECOVERED-Y4S1-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": null,
+          "ctype": "เลือก",
+          "note": "สล็อตกู้คืนจากยอดรวมที่พิมพ์ในตาราง; OCR ไม่พบรายละเอียดแถว",
+          "source_file": "IT.pdf",
+          "page_number": 43
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-RECOVERED-Y4S1-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": null,
+          "ctype": "เลือก",
+          "note": "สล็อตกู้คืนจากยอดรวมที่พิมพ์ในตาราง; OCR ไม่พบรายละเอียดแถว",
+          "source_file": "IT.pdf",
+          "page_number": 43
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-SLOT-045",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 43
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-9064XXXX-SLOT-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 44
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-RECOVERED-Y4S2-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": null,
+          "ctype": "เลือก",
+          "note": "สล็อตกู้คืนจากยอดรวมที่พิมพ์ในตาราง; OCR ไม่พบรายละเอียดแถว",
+          "source_file": "IT.pdf",
+          "page_number": 44
+        }
+      ],
+      "alternative_groups": [
+        {
+          "year": 2,
+          "semester": 2,
+          "alt_group": "it-specialization-y2s2-slot-1",
+          "rows_in_group": 3,
+          "codes": "06016414 | 06016419 | 06016424",
+          "counted_credits": 3,
+          "pdf_pages": "41"
+        },
+        {
+          "year": 2,
+          "semester": 2,
+          "alt_group": "it-specialization-y2s2-slot-2",
+          "rows_in_group": 3,
+          "codes": "06016415 | 06016420 | 06016425",
+          "counted_credits": 3,
+          "pdf_pages": "41"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "alt_group": "it-specialization-y3s1-slot-1",
+          "rows_in_group": 3,
+          "codes": "06016416 | 06016421 | 06016426",
+          "counted_credits": 3,
+          "pdf_pages": "42"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "alt_group": "it-specialization-y3s1-slot-2",
+          "rows_in_group": 3,
+          "codes": "06016417 | 06016422 | 06016427",
+          "counted_credits": 3,
+          "pdf_pages": "42"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "alt_group": "it-specialization-y3s1-slot-3",
+          "rows_in_group": 2,
+          "codes": "06016418 | 06016423",
+          "counted_credits": 3,
+          "pdf_pages": "42"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "alt_group": "coop-alternative-IT.pdf-43",
+          "rows_in_group": 2,
+          "codes": "06016481 | 06016482",
+          "counted_credits": 6,
+          "pdf_pages": "43"
+        }
+      ],
+      "year_4_semester_2": [
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "06016407",
+          "name_th": "โครงงาน 2",
+          "name_en": "PROJECT 2",
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "บังคับ",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 44
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "06066100",
+          "name_th": "การบริหารโครงการเทคโนโลยีสารสนเทศ",
+          "name_en": "INFORMATION TECHNOLOGY PROJECT MANAGEMENT",
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "บังคับ",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 44
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "90642033",
+          "name_th": "กลุ่มวิชาตามเกณฑ์ของคณะ (Faculty requirement)\nกฎหมายสำหรับคนรุ่นใหม่",
+          "name_en": "Faculty requirement LAW FOR NEW GENERATION",
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "บังคับ",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 44
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-9064XXXX-SLOT-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 44
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-RECOVERED-Y4S2-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": null,
+          "ctype": "เลือก",
+          "note": "สล็อตกู้คืนจากยอดรวมที่พิมพ์ในตาราง; OCR ไม่พบรายละเอียดแถว",
+          "source_file": "IT.pdf",
+          "page_number": 44
+        }
+      ]
+    },
+    {
+      "profile": "it-no-coop",
+      "database": "work/lab8b_it_no_coop/curriculum.db",
+      "size_bytes": 126976,
+      "program_rows": [
+        {
+          "program_id": "IT-no-coop",
+          "name_th": "เทคโนโลยีสารสนเทศ (ไม่เข้าร่วมสหกิจศึกษา)",
+          "name_en": null,
+          "degree": null,
+          "total_credits": 129,
+          "years": 4,
+          "source_file": "IT.pdf",
+          "page_number": 37,
+          "curriculum_version": 2565,
+          "is_latest": 1,
+          "plan": "no-coop"
+        }
+      ],
+      "plan_item_columns": [
+        "id",
+        "program_id",
+        "year",
+        "semester",
+        "code",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "v_plan_columns": [
+        "id",
+        "year",
+        "semester",
+        "code",
+        "name_th",
+        "name_en",
+        "credits",
+        "alt_group",
+        "category",
+        "ctype",
+        "note",
+        "source_file",
+        "page_number"
+      ],
+      "required_columns_missing": [
+        "alternative_index",
+        "code_pattern",
+        "elective_type",
+        "is_placeholder",
+        "printed_page_number",
+        "raw_code"
+      ],
+      "terms": [
+        {
+          "year": 1,
+          "semester": 1,
+          "stored_rows": 7,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "31"
+        },
+        {
+          "year": 1,
+          "semester": 2,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "32"
+        },
+        {
+          "year": 2,
+          "semester": 1,
+          "stored_rows": 6,
+          "raw_credit_sum": 18,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "33"
+        },
+        {
+          "year": 2,
+          "semester": 2,
+          "stored_rows": 10,
+          "raw_credit_sum": 30,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 0,
+          "synthetic_rows_missing_thai_name": 0,
+          "pdf_pages": "34"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "stored_rows": 11,
+          "raw_credit_sum": 33,
+          "counted_credit_sum": 18,
+          "synthetic_rows": 1,
+          "synthetic_rows_missing_thai_name": 1,
+          "pdf_pages": "35"
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "stored_rows": 5,
+          "raw_credit_sum": 15,
+          "counted_credit_sum": 15,
+          "synthetic_rows": 3,
+          "synthetic_rows_missing_thai_name": 3,
+          "pdf_pages": "36"
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "stored_rows": 5,
+          "raw_credit_sum": 15,
+          "counted_credit_sum": 15,
+          "synthetic_rows": 3,
+          "synthetic_rows_missing_thai_name": 3,
+          "pdf_pages": "37"
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "stored_rows": 3,
+          "raw_credit_sum": 9,
+          "counted_credit_sum": 9,
+          "synthetic_rows": 2,
+          "synthetic_rows_missing_thai_name": 2,
+          "pdf_pages": "37"
+        }
+      ],
+      "placeholder_summary": {
+        "rows": 9,
+        "missing_thai_name": 9,
+        "missing_english_name": 9
+      },
+      "placeholder_rows": [
+        {
+          "year": 3,
+          "semester": 1,
+          "code": "ELEC-90644XXX-TERM-3-1-ROW-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 35
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "code": "ELEC-060164XX-SLOT-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 36
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "code": "ELEC-060164XX-SLOT-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 36
+        },
+        {
+          "year": 3,
+          "semester": 2,
+          "code": "ELEC-RECOVERED-Y3S2-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": null,
+          "ctype": "เลือก",
+          "note": "สล็อตกู้คืนจากยอดรวมที่พิมพ์ในตาราง; OCR ไม่พบรายละเอียดแถว",
+          "source_file": "IT.pdf",
+          "page_number": 36
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-060164XX-SLOT-3",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 37
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-9064XXXX-SLOT-1",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 37
+        },
+        {
+          "year": 4,
+          "semester": 1,
+          "code": "ELEC-SLOT-050",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 37
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-9064XXXX-SLOT-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 37
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-053",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 37
+        }
+      ],
+      "alternative_groups": [
+        {
+          "year": 2,
+          "semester": 2,
+          "alt_group": "it-specialization-y2s2-slot-1",
+          "rows_in_group": 3,
+          "codes": "06016414 | 06016419 | 06016424",
+          "counted_credits": 3,
+          "pdf_pages": "34"
+        },
+        {
+          "year": 2,
+          "semester": 2,
+          "alt_group": "it-specialization-y2s2-slot-2",
+          "rows_in_group": 3,
+          "codes": "06016415 | 06016420 | 06016425",
+          "counted_credits": 3,
+          "pdf_pages": "34"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "alt_group": "it-specialization-y3s1-slot-1",
+          "rows_in_group": 3,
+          "codes": "06016416 | 06016421 | 06016426",
+          "counted_credits": 3,
+          "pdf_pages": "35"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "alt_group": "it-specialization-y3s1-slot-2",
+          "rows_in_group": 3,
+          "codes": "06016417 | 06016422 | 06016427",
+          "counted_credits": 3,
+          "pdf_pages": "35"
+        },
+        {
+          "year": 3,
+          "semester": 1,
+          "alt_group": "it-specialization-y3s1-slot-3",
+          "rows_in_group": 2,
+          "codes": "06016418 | 06016423",
+          "counted_credits": 3,
+          "pdf_pages": "35"
+        }
+      ],
+      "year_4_semester_2": [
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "06016407",
+          "name_th": "โครงงาน 2",
+          "name_en": "PROJECT 2",
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเฉพาะ",
+          "ctype": "บังคับ",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 37
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-9064XXXX-SLOT-2",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาศึกษาทั่วไป",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 37
+        },
+        {
+          "year": 4,
+          "semester": 2,
+          "code": "ELEC-SLOT-053",
+          "name_th": null,
+          "name_en": null,
+          "credits": 3,
+          "alt_group": null,
+          "category": "หมวดวิชาเลือกเสรี",
+          "ctype": "เลือก",
+          "note": null,
+          "source_file": "IT.pdf",
+          "page_number": 37
+        }
+      ]
+    }
+  ]
+}

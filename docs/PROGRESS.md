@@ -11,6 +11,9 @@
 - Preserve the existing `POST /api/ask` request and response field names and existing correct behavior.
 - Never hard-code answers to evaluation questions. Keep the hold-out set untouched during fixes and report it separately.
 - Every result claim must link to raw JSON/CSV/screenshots or an inspected PDF page. Unknown or unmeasured values remain `n/a`.
+- Placeholder codes containing `x`/`X` are elective slots, not real courses: preserve printed code/name/type, never expose synthetic IDs, and exclude slots from misleading old-vs-new course diffs and prerequisite chains.
+- Preserve printed alternatives (`A or B` and alternative credit patterns) explicitly, and store/display both PDF page number and printed book page number.
+- Table fidelity must be checked per semester against the rendered source: row count, row fields, semester total, program total, placeholder/alternative semantics, and page containment must fail loudly on mismatch.
 
 ## 2. CURRENT STATUS
 
@@ -26,8 +29,9 @@
 - Done: added the field-level A1 comparator and tests. It scores only `visually_verified` or `corrected_after_visual_review` rows, derives lecture/lab/self-study hours from the credit pattern, reports per-field/per-program-version metrics, wrong/missing/duplicate rows, and garbled Thai, and emits null accuracy when `n=0`. Current honest result is 0 approved and 180 unapproved rows; tests pass 15/15.
 - Done: visually reviewed the first 18 prerequisite-bearing samples against both plan and description renders. Preliminary, deliberately biased batch metrics: code/credits/year/semester/plan/page/hours 100% (18/18), Thai name 72.22% (13/18), English name 88.89% (16/18), prerequisite 0% (0/18). Found two IT-2560 row-name misalignments and three IT-2560 Thai-name header bleed-ins. Category/type remain unverified and `n=0`. Full tests pass 17/17.
 - Done: completed all 30 DSBA-2560 candidate decisions (29 approved field rows plus one spurious fragment). DSBA-2560 code and Thai-name accuracy are 96.55% (28/29); English name and credits are 100% (29/29); prerequisite is 52.63% (10/19 verified values). The cooperative alternatives on page 34 are one combined six-credit row, but OCR emitted two candidates. Tests pass 19/19.
+- Done: captured the two UI screenshots and added a read-only live-database inspector. It found 13 deployed databases, 93 synthetic placeholder rows, and missing Thai and English names on all 93. Every database lacks the six required fidelity columns (`is_placeholder`, `raw_code`, `code_pattern`, `elective_type`, `alternative_index`, `printed_page_number`). DSBA-2560 no-coop year 4/2 contains exactly the leaked `ELEC-SLOT-043/044` rows; coop contains only `06026130`, proving `06026131` was dropped from storage rather than merely hidden by the UI.
 - Important: substantial version-support work exists in the separate working folder `C:/Users/thana/OneDrive/เอกสาร/ocr_final`; it has not yet been copied into this repository and must not be treated as the Phase A baseline.
-- **NEXT ACTION:** complete DSBA-2565's 30 candidate decisions from its six rendered plan pages and linked description evidence, then repeat for IT-2565 and BIT-2565. DSBA-2560 is complete at 29 approved + 1 spurious; IT-2560 and BIT-2560 remain partial. Run the comparator after each batch.
+- **NEXT ACTION:** commit the completed placeholder/table-fidelity baseline, then enter Phase B: create and verify backups of all 13 live databases, add lossless placeholder/alternative/page metadata to the active schema and ingest, rebuild only affected profiles, and add API/UI regression tests before changing the frontend presentation.
 
 ## 3. DONE LOG
 
@@ -43,6 +47,8 @@
 - 2026-10-01 — Added safe field comparator `ocr_final/scripts/compare_a1_field_accuracy.py` with three audit-specific tests. Initial `docs/results/a1_field_metrics.json` correctly reports 0 approved / 180 unapproved and null metrics instead of self-scoring OCR candidates; full test suite passes 15/15.
 - 2026-10-01 — Completed visual review batch `a1-prerequisite-rows-2026-10-01` for 18 plan/description pairs. All 18 OCR candidates omitted or denied a real prerequisite; IT-2560 also has two name-row misalignments and three Thai heading bleed-ins. Raw batch and metrics are in `docs/results/a1_review_batch_prerequisite_rows.json` and `docs/results/a1_field_metrics.json`; 17 tests pass.
 - 2026-10-01 — Completed DSBA-2560 review: 29 scored rows and one visually confirmed spurious fragment. The combined cooperative alternative is represented as one ground-truth row; preliminary code/Thai name 96.55%, English/credits 100%, prerequisite 52.63% over 19 verified values. Batch: `docs/results/a1_review_batch_dsba2560_remaining.json`; tests 19/19.
+- 2026-10-01 — Added placeholder/elective-slot and table-fidelity requirements from real DSBA-2560 UI evidence to the active audit. Prioritized measuring leaked synthetic IDs, missing slot names, lost alternatives, semester totals, and PDF-vs-printed page citations before Phase B fixes.
+- 2026-10-01 — Captured UI screenshots and ran `audit_live_curriculum_dbs.py` read-only against all 13 deployed SQLite files. Baseline: 93/93 synthetic rows lack both Thai and English names; all profiles lack the six new fidelity columns; DSBA-2560 coop storage contains only `06026130` while no-coop exposes two unnamed synthetic rows. Raw evidence: `docs/results/placeholder_table_fidelity_baseline.json` and `docs/results/screenshots/`.
 
 ## 4. FINDINGS AND PROBLEMS
 
@@ -58,6 +64,9 @@
 10. **Rubric 2–3 / prerequisite accuracy — open, critical, visually verified on biased slice.** Every one of the first 18 prerequisite-bearing samples is wrong in the OCR candidate (0/18): candidates say `ไม่มี` or null while the PDF names a prerequisite code. This is not an overall rate because the batch intentionally selected prerequisite-bearing rows. Evidence: `docs/results/a1_review_batch_prerequisite_rows.json` and field metrics. Fix commit: n/a.
 11. **Rubric 2–3 / IT-2560 row alignment — open, high.** Code `06016323` is paired with the next row's Requirement Engineering name in both sampled plans; three project rows include the specialization heading inside the Thai course name. Evidence: IT-60 plan pages 30/33/37 and description pages 233/236/242/247. Fix commit: n/a.
 12. **Rubric 2–3 / DSBA-2560 alternative grouping — open, verified.** PDF page 34 prints `06026130` or `06026131` as one six-credit choice; OCR creates two candidates, leaves the second without credits, and fails to preserve the combined code/Thai label. In the 30-row sample this yields one wrong grouped row plus one spurious fragment. Evidence: `docs/results/a1_review_batch_dsba2560_remaining.json`. Fix commit: n/a.
+13. **Rubric 1–4 / placeholder slots and UI fidelity — open, critical.** The real UI exposes `ELEC-SLOT-043/044` with no names although DSBA-60 PDF page 29 / printed page 24 names Free Elective Course 2 and Elective Course in Humanity 2. This is a schema/ingest plus answer-formatting failure, not missing source data. Evidence: user UI screenshot and rendered plan page. Fix commit: n/a.
+14. **Rubric 4 / citation fidelity — open, high.** The real UI shows only PDF page 34 and a raw key/value snippet; the cited page is printed as page 29 inside the book. Both page numbers and a clean source summary are required. Evidence: user UI screenshot. Fix commit: n/a.
+15. **Rubric 1–4 / deployed placeholder coverage — open, critical, measured.** Across 13 live databases, all 93 synthetic `ELEC-*` rows have null Thai and English names. The deployed `plan_item` schema has none of the required placeholder, raw-code, alternative-index, or printed-page columns. Evidence: `docs/results/placeholder_table_fidelity_baseline.json`. Fix commit: n/a.
 
 ## 5. DECISIONS AND REASONS
 
@@ -66,6 +75,9 @@
 - Store raw machine-readable evidence under `docs/results/` and screenshots under `docs/results/screenshots/`; reports will reference those paths.
 - Do not invent a `clean_curriculum_db.py`; record its absence and use the actual active Lab7/Lab8 pipeline.
 - Treat PDF text extraction as an evidence locator, not ground truth by itself. Only a course-header-shaped match is accepted, and all extracted values retain `requires_visual_confirmation: true` until reviewed against rendered pages.
+- Model placeholders as typed curriculum slots with their printed wildcard code and names; synthetic database identifiers are internal implementation details and must never be answer text.
+- Model alternatives as grouped choices rather than duplicate independent courses or merged text; credit totals count the group once.
+- Capture product defects through read-only SQLite inspection before migrations. This separates storage loss from answer-formatting bugs and provides exact before/after counts.
 
 ## 6. HOW TO RERUN
 
@@ -89,6 +101,7 @@ $env:PYTHONUTF8 = "1"
 .\ocr_final\venv\Scripts\python.exe .\ocr_final\scripts\extract_a1_prerequisites.py
 .\ocr_final\venv\Scripts\python.exe .\ocr_final\scripts\apply_a1_review_batch.py .\docs\results\a1_review_batch_prerequisite_rows.json
 .\ocr_final\venv\Scripts\python.exe .\ocr_final\scripts\compare_a1_field_accuracy.py
+.\ocr_final\venv\Scripts\python.exe .\ocr_final\scripts\audit_live_curriculum_dbs.py --app-root 'C:\Users\thana\OneDrive\เอกสาร\ocr_final' --output .\docs\results\placeholder_table_fidelity_baseline.json
 ```
 
 - Expected generated database paths: `ocr_final/work/lab8b_<profile>/curriculum.db`; none are committed at the baseline.
@@ -104,4 +117,5 @@ $env:PYTHONUTF8 = "1"
 - PDF embedded Thai text is visibly/font-encoding corrupted; it cannot be used as a shortcut for Thai-name ground truth. Visual renders are required.
 - The 180-row review file is not yet valid ground truth; no OCR accuracy claim may use it until all rows have a visual-review status and populated ground-truth fields.
 - Real-browser L1–L4 evaluation, cold/warm latency, citation accuracy, and hold-out performance are not yet measured.
+- Full semester-by-semester visual table-fidelity review, printed-page mapping, and ingest-time total/row-count checks are not yet implemented.
 - No database backup has been created yet because Phase B has not started.

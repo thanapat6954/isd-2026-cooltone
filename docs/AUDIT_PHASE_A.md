@@ -66,6 +66,24 @@ The Phase A baseline cannot receive a defensible total out of 100 because Rubric
 
 No product-code fix has been applied in Phase A. Only audit documentation and evidence files have been added.
 
+## Placeholder and table-fidelity baseline
+
+Two real UI captures were checked against DSBA-60.pdf. For the no-coop year 4 semester 2 table, the deployed answer leaks `ELEC-SLOT-043/044` and omits both printed course-slot names. For the coop table, the deployed answer and database retain `06026130` but lose the printed `06026131` alternative. Citations expose raw key/value text and only the PDF page, not the printed book page.
+
+The read-only inspector `ocr_final/scripts/audit_live_curriculum_dbs.py` then examined every deployed SQLite database in the separate live application. Its machine-readable output is `docs/results/placeholder_table_fidelity_baseline.json`.
+
+| Baseline measure | Result |
+|---|---:|
+| Deployed databases inspected | 13 |
+| Synthetic `ELEC-*` plan rows | 93 |
+| Synthetic rows missing Thai name | 93/93 |
+| Synthetic rows missing English name | 93/93 |
+| Databases with explicit placeholder/printed-page/alternative-index columns | 0/13 |
+| DSBA-2560 no-coop year 4/2 | 2 unnamed synthetic rows, 6 counted credits |
+| DSBA-2560 coop year 4/2 | 1 stored alternative (`06026130`), 6 credits |
+
+This proves three independent defects: data is discarded during conversion, the schema cannot represent the required fidelity, and the answer layer exposes internal identifiers. It is not solely a prompt or frontend problem. Phase B must therefore migrate the schema and conversion first, rebuild affected databases, and only then format clean user-facing answers and citations.
+
 ## A1 visual review checkpoint
 
 The first A1 batch rendered 36 plan-table pages at 180 DPI and visually inspected all six program-version documents. The render checkpoint is `docs/results/a1_render_checkpoint.json`; source page images are temporary local audit files and can be regenerated.
