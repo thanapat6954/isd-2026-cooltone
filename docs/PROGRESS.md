@@ -18,9 +18,10 @@
 - Done: located the real repository; confirmed it was clean on `week9` at `0b4a33a`; created feature branch `audit/curriculum-challenge`; inventoried the committed architecture in `docs/results/architecture_inventory.json`.
 - Done: installed the documented Python 3.11 environment; captured post-setup execution results in `docs/results/baseline_execution.json`; wrote preliminary baseline report `docs/AUDIT_PHASE_A.md`.
 - Done: copied all six authoritative PDFs into the gitignored input folder and recorded SHA-256 hashes in `docs/results/pdf_manifest.json`; confirmed embedded Thai text is font-corrupted and unsuitable as ground truth.
-- In progress: constructing candidate samples plus rendered-page review tooling; candidate OCR rows will remain marked unverified until visual comparison is complete.
+- Done: froze all 12 prior OCR candidate outputs under `docs/results/a1_candidates/`; added `ocr_final/scripts/build_a1_review_set.py`; generated `docs/results/a1_ground_truth_review.json` with 180 candidate rows (30 per program-version, split 15 coop/15 no-coop). Every row is explicitly `candidate_only`, not ground truth.
+- In progress: rendering the unique early/middle/late source pages at 180 DPI with the resumable `render_a1_review_pages.py` checkpoint, then visually verifying/correcting rows.
 - Important: substantial version-support work exists in the separate working folder `C:/Users/thana/OneDrive/เอกสาร/ocr_final`; it has not yet been copied into this repository and must not be treated as the Phase A baseline.
-- **NEXT ACTION:** add the A1 audit script and manifest for the six authoritative PDFs, copy/link the source PDFs into the ignored `ocr_final/data/input/` location, render representative pages, and create the first manually reviewable 30-row sample per program-version.
+- **NEXT ACTION:** run `render_a1_review_pages.py`, inspect every rendered page used by the 180-row sample, populate `ground_truth`, `review_status`, and `review_evidence`, then run the field-level comparator (not yet implemented).
 
 ## 3. DONE LOG
 
@@ -29,6 +30,7 @@
 - 2026-10-01 — Captured fresh-clone environment checkpoint in `docs/results/baseline_environment.json`: repository-local `venv` did not exist; Python 3.11 is available and the documented setup can proceed.
 - 2026-10-01 — Installed committed requirements in Python 3.11; Lab7 environment passed with `PYTHONUTF8=1`; tests passed 12/12; full pipeline failed on missing PDF; web start failed because API/frontend and Uvicorn are absent. Raw results: `docs/results/baseline_execution.json`; report: `docs/AUDIT_PHASE_A.md`.
 - 2026-10-01 — Staged six local source PDFs (gitignored) and recorded authoritative program/version mapping plus SHA-256 hashes in `docs/results/pdf_manifest.json`; all files copied successfully.
+- 2026-10-01 — Added resumable A1 sampling/render tooling and generated 180 stratified candidate rows (30 for each of DSBA-2565, DSBA-2560, IT-2565, IT-2560, BIT-2565, BIT-2560). Candidates remain unverified pending page-image review.
 
 ## 4. FINDINGS AND PROBLEMS
 
@@ -76,5 +78,6 @@ $env:PYTHONUTF8 = "1"
 - The committed app does not include the version-aware FastAPI/frontend implementation shown in the separate working folder.
 - Independent PDF-derived ground truth for at least 30 rows per program-version has not been created.
 - PDF embedded Thai text is visibly/font-encoding corrupted; it cannot be used as a shortcut for Thai-name ground truth. Visual renders are required.
+- The 180-row review file is not yet valid ground truth; no OCR accuracy claim may use it until all rows have a visual-review status and populated ground-truth fields.
 - Real-browser L1–L4 evaluation, cold/warm latency, citation accuracy, and hold-out performance are not yet measured.
 - No database backup has been created yet because Phase B has not started.
