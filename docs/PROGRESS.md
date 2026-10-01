@@ -17,7 +17,7 @@
 
 ## 2. CURRENT STATUS
 
-- Phase: **A1 — independent PDF ground-truth tooling and dataset construction**.
+- Phase: **B1 — lossless schema/ingest repair for placeholders, alternatives, and page identity**.
 - Done: located the real repository; confirmed it was clean on `week9` at `0b4a33a`; created feature branch `audit/curriculum-challenge`; inventoried the committed architecture in `docs/results/architecture_inventory.json`.
 - Done: installed the documented Python 3.11 environment; captured post-setup execution results in `docs/results/baseline_execution.json`; wrote preliminary baseline report `docs/AUDIT_PHASE_A.md`.
 - Done: copied all six authoritative PDFs into the gitignored input folder and recorded SHA-256 hashes in `docs/results/pdf_manifest.json`; confirmed embedded Thai text is font-corrupted and unsuitable as ground truth.
@@ -31,7 +31,8 @@
 - Done: completed all 30 DSBA-2560 candidate decisions (29 approved field rows plus one spurious fragment). DSBA-2560 code and Thai-name accuracy are 96.55% (28/29); English name and credits are 100% (29/29); prerequisite is 52.63% (10/19 verified values). The cooperative alternatives on page 34 are one combined six-credit row, but OCR emitted two candidates. Tests pass 19/19.
 - Done: captured the two UI screenshots and added a read-only live-database inspector. It found 13 deployed databases, 93 synthetic placeholder rows, and missing Thai and English names on all 93. Every database lacks the six required fidelity columns (`is_placeholder`, `raw_code`, `code_pattern`, `elective_type`, `alternative_index`, `printed_page_number`). DSBA-2560 no-coop year 4/2 contains exactly the leaked `ELEC-SLOT-043/044` rows; coop contains only `06026130`, proving `06026131` was dropped from storage rather than merely hidden by the UI.
 - Important: substantial version-support work exists in the separate working folder `C:/Users/thana/OneDrive/เอกสาร/ocr_final`; it has not yet been copied into this repository and must not be treated as the Phase A baseline.
-- **NEXT ACTION:** commit the completed placeholder/table-fidelity baseline, then enter Phase B: create and verify backups of all 13 live databases, add lossless placeholder/alternative/page metadata to the active schema and ingest, rebuild only affected profiles, and add API/UI regression tests before changing the frontend presentation.
+- In progress: Phase A placeholder/table-fidelity baseline is committed at `cb99fd1`.
+- **NEXT ACTION:** create and hash-verify recoverable backups of all 13 live databases under the live application's `work/backups/` directory. Then add lossless placeholder/alternative/page metadata to the active schema and ingest, rebuild only affected profiles, and add API/UI regression tests before changing frontend presentation.
 
 ## 3. DONE LOG
 
