@@ -1,0 +1,28 @@
+import unittest
+from pathlib import Path
+
+from lab10_fastapi.curriculum_app.main import app, index
+
+
+class WebRoutingTests(unittest.TestCase):
+    def test_root_redirects_to_real_thai_frontend(self):
+        response = index()
+        self.assertEqual(response.status_code, 307)
+        self.assertEqual(response.headers['location'], '/frontend/')
+
+    def test_frontend_and_both_question_contracts_are_registered(self):
+        routes = {route.path: route for route in app.routes}
+        self.assertIn('/frontend', routes)
+        self.assertIn('POST', routes['/ask'].methods)
+        self.assertIn('POST', routes['/api/ask'].methods)
+        self.assertTrue((Path(routes['/frontend'].app.directory) / 'index.html').is_file())
+
+    def test_backend_frontend_uses_same_origin(self):
+        script = Path(__file__).resolve().parents[1] / 'frontend/app.js'
+        text = script.read_text(encoding='utf-8')
+        self.assertIn('window.location.origin', text)
+        self.assertIn('startsWith("/frontend/")', text)
+
+
+if __name__ == '__main__':
+    unittest.main()

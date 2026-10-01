@@ -39,6 +39,7 @@
 - BIT-2560 coop rerun correctly blocked: original structured OCR has no year-4/2 rows (114 vs printed 126 program credits). Visually verified all four year-4/2 rows against PDF page 30 / printed page 25; recorded `docs/results/b1_bit2560_coop_page30_review.json`. A hash-guarded tool creates a separate `reviewed_ingest.json`, leaving the original OCR and frozen evaluation candidates unchanged. Conversion of that curated copy passes fidelity checks (38 courses, 42 stored plan alternatives/rows). This is not evidence of improved OCR accuracy.
 - Ported live version-aware API, frontend, schema and orchestrator to this feature checkout; installed API dependencies. Repository tests against deployed DBs and schema selftests pass in `docs/results/b1_verified_2026-10-02.json` (before the new reviewed-term tool tests).
 - Completed this session: loaded the reviewed BIT-2560 coop copy with staged replacement and an additional recoverable `.before-load-*.bak`; verification passes 7/7, counted program credits 126. Eight of 13 deployed DBs now have fidelity columns; five remain unmigrated. Repository suite passes **44/44**, schema selftests **30/30**, backup integrity **13/13**. Raw evidence: `docs/results/b1_after_reviewed_import_2026-10-02.json` and `docs/results/b1_bit2560_reviewed_import.json`.
+- HTTP 501 incident fixed: port 8000 was owned by `python -m http.server 8000 --directory frontend`, which rejects POST. Reproduced 501 for `/ask` and 404 for `/api/health`. Stopped only that identified static-server process and started the real live Uvicorn backend. Root now redirects to `/frontend/`; backend serves the Thai frontend and frontend uses the same origin. `scripts/start_web.ps1` checks the OpenAPI routes before starting, refuses unrelated occupied ports, and preserves timestamped logs. Real BIT old-plan question returns HTTP 200 with database-backed sources. Evidence: `docs/results/http501_fixed_2026-10-02.json`; regression suite **47/47** and selftests **30/30**, in `docs/results/http501_regression_tests_2026-10-02.json`. This is an HTTP/API smoke test, not a fresh browser visual pass or full answer-accuracy measurement.
 - **NEXT ACTION:** inspect the remaining blocked IT-2560 coop PDF pages 36/40, IT-2565 no-coop pages 36/37, IT-2565 coop pages 43/44, BIT-2565 no-coop pages 29/30, and BIT-2565 coop pages 34/35. Use conversion reports plus actual renders to locate lost/misaligned rows; re-extract or apply separately provenance-reviewed corrections without touching frozen OCR/held-out evaluation inputs. Also split the BIT-2560 coop alternative labels from PDF page 30; storage currently retains both codes but their labels still need independent review. Do not rerun A0 or completed DSBA-2560 review.
 
 ## 3. DONE LOG
@@ -48,6 +49,7 @@
 - 2026-10-02 — Visually reviewed BIT-2560 coop year 4/2, PDF page 30 / printed page 25. A hash-guarded correction preserves all four actual rows and original OCR. Safe load yields 38 courses / 42 plan rows (including two alternatives); all 7 structural checks pass, counted credits 126. Evidence: `docs/results/b1_bit2560_coop_page30_review.json`, `docs/results/b1_bit2560_reviewed_import.json`.
 - 2026-10-02 — Verified repository implementation against deployed databases: 44/44 unit/integration tests and 30/30 schema selftests. Read-only after-state: 8/13 DBs migrated; 5 still blocked; all 13 pre-migration backups pass integrity. New measured results are not an OCR field-accuracy rerun.
 - 2026-10-02 — Saved B1 implementation/evidence checkpoint in commit `fb8b714` on `audit/curriculum-challenge`; no push and no main changes. All product changes are ported; the live generated reviewed BIT JSON/DB remain outside Git by design. Resume from CURRENT STATUS / NEXT ACTION. Full audit is incomplete.
+- 2026-10-02 — Fixed reported HTTP 501: the static server on 8000 was not an API. Added same-origin frontend hosting and guarded startup launcher, preserving both `/ask` and `/api/ask` contracts. Backend successfully answers a real BIT-2560 semester question with sources. No DB changes were needed for this incident.
 
 - 2026-10-01 — Created `audit/curriculum-challenge` from clean `week9` commit `0b4a33a`; added this initial `docs/PROGRESS.md` handoff file.
 - 2026-10-01 — Completed A0 architecture inventory at `docs/results/architecture_inventory.json`: committed baseline has five 2565/current profiles, but no BIT/2560 profiles, API, frontend, PDFs, or SQLite DBs; `clean_curriculum_db.py` is absent.
@@ -94,6 +96,7 @@
 - Capture product defects through read-only SQLite inspection before migrations. This separates storage loss from answer-formatting bugs and provides exact before/after counts.
 - Never repair credit deficits by creating unnamed electives: preserved printed totals are blockers, not a license to invent rows. Manually verified table repairs go into separate hash-guarded ingest copies; original OCR stays the evaluation input.
 - Windows SQLite connections must close in `finally`, including failed staged loads. A transaction context manager alone does not close the handle.
+- Serve the Thai frontend and API from one Uvicorn origin; a Python static server cannot accept question POST requests. Startup probes OpenAPI rather than the slower database/Ollama health scan, avoiding false startup timeouts.
 
 ## 6. HOW TO RERUN
 
@@ -126,6 +129,15 @@ $env:PYTHONUTF8 = "1"
 
 Current feature implementation verification (not the historical baseline):
 
+Preferred normal startup from the live application folder:
+
+```powershell
+Set-Location 'C:\Users\thana\OneDrive\เอกสาร\ocr_final'
+.\scripts\start_web.ps1
+# Open http://localhost:8000/ (redirects to /frontend/).
+# Do NOT run python -m http.server 8000: it cannot handle /ask POST requests.
+```
+
 ```powershell
 $env:PYTHONUTF8 = '1'
 .\ocr_final\venv\Scripts\python.exe -m pip install -r .\ocr_final\requirements.txt
@@ -153,7 +165,7 @@ Exact subsequent import/load/verify arguments and raw output are saved in `docs/
 
 - `clean_curriculum_db.py` was not found anywhere in the repository; whether an instructor expected a separate script remains unknown.
 - No committed database files exist; the JSON reports cannot by themselves prove a fresh-clone run.
-- The committed app does not include the version-aware FastAPI/frontend implementation shown in the separate working folder.
+- The feature checkout now includes the version-aware FastAPI/frontend implementation; a fresh-clone end-to-end OCR rebuild of every source/version remains unverified.
 - Independent PDF-derived ground truth for at least 30 rows per program-version has not been completed; the 180 candidates and prerequisite evidence remain unapproved until per-row visual review.
 - PDF embedded Thai text is visibly/font-encoding corrupted; it cannot be used as a shortcut for Thai-name ground truth. Visual renders are required.
 - The 180-row review file is not yet valid ground truth; no OCR accuracy claim may use it until all rows have a visual-review status and populated ground-truth fields.

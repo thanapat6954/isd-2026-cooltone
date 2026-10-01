@@ -1,5 +1,8 @@
 // Edit these constants when connecting to another backend or changing mock mode.
-const API_BASE = "http://localhost:8000";
+// The backend serves /frontend/ on the same origin; standalone previews use 8000.
+const API_BASE = window.location.pathname.startsWith("/frontend/")
+  ? window.location.origin
+  : "http://localhost:8000";
 const USE_MOCK = false;
 const REQUEST_TIMEOUT_MS = 30_000;
 const SLOW_THRESHOLD_MS = 5_000;

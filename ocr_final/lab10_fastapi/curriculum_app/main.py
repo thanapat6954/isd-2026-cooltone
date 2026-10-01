@@ -12,7 +12,7 @@ from typing import Any
 import requests
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import FileResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 from .config import PROJECT_ROOT, settings
@@ -50,6 +50,8 @@ app.add_middleware(
     allow_headers=["Content-Type"],
 )
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+FRONTEND_DIR = PROJECT_ROOT / "frontend"
+app.mount("/frontend", StaticFiles(directory=FRONTEND_DIR, html=True), name="frontend")
 registry = DatabaseRegistry(settings.database_root)
 model = QwenTextToSQL(settings, lab8b)
 if settings.debug:
@@ -185,8 +187,8 @@ def _frontend_sources(result: dict[str, Any]) -> list[dict[str, Any]]:
 
 
 @app.get("/", include_in_schema=False)
-def index() -> FileResponse:
-    return FileResponse(STATIC_DIR / "index.html")
+def index() -> RedirectResponse:
+    return RedirectResponse("/frontend/")
 
 
 @app.get("/api/health", response_model=HealthResponse)
