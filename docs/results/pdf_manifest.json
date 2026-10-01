@@ -1,0 +1,13 @@
+{
+  "captured_at": "2026-10-01",
+  "input_directory": "ocr_final/data/input (gitignored)",
+  "files": [
+    {"file": "DSBA.pdf", "program": "DSBA", "curriculum_version": 2565, "is_latest": true, "sha256": "01EAD4C636B04CE072064E5789332B89B678D12B9863F52A72D35A9D15B500A1"},
+    {"file": "DSBA-60.pdf", "program": "DSBA", "curriculum_version": 2560, "is_latest": false, "sha256": "6F812942774C6298A0AACC8A82B8BADA0D93429EE1DFAB1B96F1232600F2DE13"},
+    {"file": "IT.pdf", "program": "IT", "curriculum_version": 2565, "is_latest": true, "sha256": "ACA97DC8B57308B30355E74E384C042D27D005310C6B4A9B72ECF79514543AFA"},
+    {"file": "IT-60.pdf", "program": "IT", "curriculum_version": 2560, "is_latest": false, "sha256": "EDED877E329F1C1EDE974E9A708C337F18B9443C44C158B3478D0E74DCEC556D"},
+    {"file": "BIT-65.pdf", "program": "BIT", "curriculum_version": 2565, "is_latest": true, "sha256": "F7F8FBA36276F772C757762A1E48879AF8B54C3FE8AB3325E8F96996268891BC"},
+    {"file": "BIT-60.pdf", "program": "BIT", "curriculum_version": 2560, "is_latest": false, "sha256": "49FBE2843FDDFB175FD597023C06B633F1EE95D9F6C39CBC3BB51ACA7999B385"}
+  ],
+  "note": "PDFs are local source data and intentionally ignored by Git; hashes make the audit inputs reproducible. Embedded Thai text is font-corrupted, so visual page rendering is required for ground-truth review."
+}

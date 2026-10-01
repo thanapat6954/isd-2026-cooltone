@@ -17,7 +17,8 @@
 - Phase: **A1 — independent PDF ground-truth tooling and dataset construction**.
 - Done: located the real repository; confirmed it was clean on `week9` at `0b4a33a`; created feature branch `audit/curriculum-challenge`; inventoried the committed architecture in `docs/results/architecture_inventory.json`.
 - Done: installed the documented Python 3.11 environment; captured post-setup execution results in `docs/results/baseline_execution.json`; wrote preliminary baseline report `docs/AUDIT_PHASE_A.md`.
-- In progress: constructing a reproducible PDF-derived row sample and field-comparison tooling without modifying product code.
+- Done: copied all six authoritative PDFs into the gitignored input folder and recorded SHA-256 hashes in `docs/results/pdf_manifest.json`; confirmed embedded Thai text is font-corrupted and unsuitable as ground truth.
+- In progress: constructing candidate samples plus rendered-page review tooling; candidate OCR rows will remain marked unverified until visual comparison is complete.
 - Important: substantial version-support work exists in the separate working folder `C:/Users/thana/OneDrive/เอกสาร/ocr_final`; it has not yet been copied into this repository and must not be treated as the Phase A baseline.
 - **NEXT ACTION:** add the A1 audit script and manifest for the six authoritative PDFs, copy/link the source PDFs into the ignored `ocr_final/data/input/` location, render representative pages, and create the first manually reviewable 30-row sample per program-version.
 
@@ -27,6 +28,7 @@
 - 2026-10-01 — Completed A0 architecture inventory at `docs/results/architecture_inventory.json`: committed baseline has five 2565/current profiles, but no BIT/2560 profiles, API, frontend, PDFs, or SQLite DBs; `clean_curriculum_db.py` is absent.
 - 2026-10-01 — Captured fresh-clone environment checkpoint in `docs/results/baseline_environment.json`: repository-local `venv` did not exist; Python 3.11 is available and the documented setup can proceed.
 - 2026-10-01 — Installed committed requirements in Python 3.11; Lab7 environment passed with `PYTHONUTF8=1`; tests passed 12/12; full pipeline failed on missing PDF; web start failed because API/frontend and Uvicorn are absent. Raw results: `docs/results/baseline_execution.json`; report: `docs/AUDIT_PHASE_A.md`.
+- 2026-10-01 — Staged six local source PDFs (gitignored) and recorded authoritative program/version mapping plus SHA-256 hashes in `docs/results/pdf_manifest.json`; all files copied successfully.
 
 ## 4. FINDINGS AND PROBLEMS
 
@@ -73,5 +75,6 @@ $env:PYTHONUTF8 = "1"
 - No committed database files exist; the JSON reports cannot by themselves prove a fresh-clone run.
 - The committed app does not include the version-aware FastAPI/frontend implementation shown in the separate working folder.
 - Independent PDF-derived ground truth for at least 30 rows per program-version has not been created.
+- PDF embedded Thai text is visibly/font-encoding corrupted; it cannot be used as a shortcut for Thai-name ground truth. Visual renders are required.
 - Real-browser L1–L4 evaluation, cold/warm latency, citation accuracy, and hold-out performance are not yet measured.
 - No database backup has been created yet because Phase B has not started.
