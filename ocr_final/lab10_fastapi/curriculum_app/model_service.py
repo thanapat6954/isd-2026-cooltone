@@ -326,7 +326,24 @@ intent: {plan.intent}
                 answers.append("\n".join(sections))
             return "\n".join(answers)
 
-        if plan.intent in {"course_detail", "course_search", "prerequisite"}:
+        if plan.intent == "prerequisite":
+            answers = []
+            for row in rows:
+                curriculum = row.get("_source", {}).get("curriculum_name", "หลักสูตรที่เลือก")
+                code = row.get("code")
+                status = row.get("prerequisite_status", "unknown")
+                requirement = row.get("requires") or row.get("prerequisites")
+                if status == "explicit_none":
+                    fact = "เอกสารระบุว่าไม่มีวิชาบังคับก่อน"
+                elif requirement and status in {"required", "recorded_requirement"}:
+                    fact = f"วิชาบังคับก่อนที่ระบุคือ {requirement}"
+                else:
+                    fact = "มีรายวิชานี้ในฐานข้อมูล แต่ข้อมูลวิชาบังคับก่อนยังไม่ยืนยันจากคำอธิบายรายวิชาในเล่มหลักสูตร"
+                answers.append(f"{curriculum}: วิชา {code} — {fact}")
+            answers.append("ยังสรุปไม่ได้ว่าสามารถลงทะเบียนเมื่อยังไม่ผ่านวิชาบังคับก่อนได้หรือไม่ เพราะยังไม่มีหลักฐานข้อยกเว้นการลงทะเบียนที่ตรวจยืนยัน ต้องตรวจข้อบังคับหรือสอบถามฝ่ายทะเบียน")
+            return "\n".join(dict.fromkeys(answers))
+
+        if plan.intent in {"course_detail", "course_search"}:
             expected = {
                 str(value)
                 for row in rows
@@ -518,7 +535,12 @@ intent: {plan.intent}
         cached = self._answer_cache.get(cache_key)
         if cached is not None:
             self._answer_cache.move_to_end(cache_key)
-            return deepcopy(cached)
+            result = deepcopy(cached)
+            result['cache_hit'] = True
+            if result.get('debug'):
+                result['debug']['timing_ms'] = {'total': round((time.perf_counter() - started) * 1000, 2)}
+                result['debug']['cache_hit'] = True
+            return result
         plan = detect_intent(question)
         include_legacy = plan.intent in {"course_detail", "course_search", "prerequisite"}
         selected = registry.select(question, include_legacy=include_legacy)
@@ -566,7 +588,8 @@ intent: {plan.intent}
             model_answer = self.summarize(question, plan, rows, executions)
             answer = self._ground_answer(plan, rows, model_answer)
         else:
-            answer = "ไม่พบข้อมูลนี้ในฐานข้อมูลหลักสูตร"
+            searched = ", ".join(item.curriculum_name for item in selected)
+            answer = f"ยังยืนยันข้อมูลที่ถามไม่ได้จากฐานข้อมูลที่ค้น: {searched} ข้อมูลที่นำเข้าอาจไม่ครบ จึงยังสรุปไม่ได้ว่ารายวิชาหรือเงื่อนไขนี้ไม่มีในเล่มหลักสูตร"
         formatted = time.perf_counter()
         sql_map = {
             execution.database.curriculum_name: execution.sql for execution in executions
@@ -587,6 +610,7 @@ intent: {plan.intent}
             },
         }
         result = {
+            "cache_hit": False,
             "question": question,
             "intent": plan.intent,
             "selected_curricula": [item.curriculum_name for item in selected],

@@ -65,6 +65,8 @@ PROFILES = {
         "gt": ROOT / "data" / "ground_truth" / "AIT_academic_plan.json",
         "pages": "23-26",
         "program_id": "AI",
+        "curriculum_version": 2566,
+        "is_latest": True,
         "program_name": "เทคโนโลยีปัญญาประดิษฐ์",
         "target_plan": "coop",
         "total_credits": 120,
@@ -259,6 +261,17 @@ def run_profile(name: str, *, skip_lab7: bool, skip_eval: bool = False) -> None:
         import_command.extend(["--general-education", GENERAL_EDUCATION])
     run(*import_command)
     run(LAB8, "load", "-i", out / "curriculum.json", "-d", out / "curriculum.db", "--replace")
+    identity_reviews = ROOT / "data" / "ground_truth" / "document_identity_reviews.json"
+    if identity_reviews.is_file():
+        run(ROOT / "scripts" / "ingest_identity_reviews.py", "--app-root", ROOT,
+            "--reviews", identity_reviews, "--database", out / "curriculum.db", "--apply",
+            "--output", out / "identity_review_ingest.json")
+    # Reapply only hash-guarded book reviews after rebuilding; unknowns stay unknown.
+    review_file = ROOT / "data" / "ground_truth" / "prerequisite_source_reviews.json"
+    if review_file.is_file():
+        run(ROOT / "scripts" / "ingest_prerequisite_reviews.py", "--app-root", ROOT,
+            "--reviews", review_file, "--database", out / "curriculum.db", "--apply",
+            "--output", out / "prerequisite_review_ingest.json")
     run(LAB8, "verify", "-d", out / "curriculum.db", "-o", out / "verify.json")
 
     gold = profile.get("gold")

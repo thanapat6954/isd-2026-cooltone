@@ -79,7 +79,7 @@ def detect_intent(question: str) -> QueryPlan:
     if any(word in lowered for word in ("กี่ปี", "จำนวนปี", "how many years")):
         return QueryPlan("program_years", compare=compare, required_only=required_only)
     if (
-        any(word in lowered for word in ("ชื่อ", "name", "ปริญญา", "degree", "ข้อมูลหลักสูตร"))
+        not code and any(word in lowered for word in ("ชื่อ", "name", "ปริญญา", "degree", "ข้อมูลหลักสูตร"))
         and any(word in lowered for word in ("หลักสูตร", "สาขา", "program", "curriculum"))
     ):
         return QueryPlan("program_info", compare=compare, required_only=required_only)
@@ -238,13 +238,27 @@ def deterministic_sql(plan: QueryPlan, database: DatabaseInfo) -> str | None:
     if intent == "prerequisite" and plan.course_code:
         code = plan.course_code.replace("'", "''")
         if database.has("prerequisite", "code", "requires", "kind"):
+            if database.has("course", "code", "name_th", "source_file", "page_number"):
+                evidence = database.has("course_prerequisite_evidence", "code", "status", "source_file", "page_number", "printed_page_number")
+                edge_status = "CASE WHEN p.requires IS NOT NULL THEN 'recorded_requirement' ELSE 'unknown' END"
+                status = f"COALESCE(e.status, {edge_status})" if evidence else edge_status
+                source = "COALESCE(e.source_file, p.source_file, c.source_file)" if evidence else "COALESCE(p.source_file,c.source_file)"
+                page = "COALESCE(e.page_number, p.page_number, c.page_number)" if evidence else "COALESCE(p.page_number,c.page_number)"
+                book = "e.printed_page_number" if evidence else "NULL"
+                join = "LEFT JOIN course_prerequisite_evidence e ON e.code = c.code " if evidence else ""
+                return (
+                    f"SELECT c.code, c.name_th, p.requires, p.kind, COALESCE({status}, 'unknown') AS prerequisite_status, "
+                    f"{source} AS source_file, {page} AS page_number, {book} AS printed_page_number "
+                    "FROM course c LEFT JOIN prerequisite p ON p.code = c.code "
+                    f"{join}WHERE c.code = '{code}'"
+                )
             return (
                 "SELECT code, requires, kind, source_file, page_number FROM prerequisite "
                 f"WHERE code = '{code}'"
             )
         if database.has("courses", "course_code", "prerequisites"):
             return (
-                "SELECT course_code AS code, prerequisites, source_file, page_number "
+                "SELECT course_code AS code, prerequisites, 'unverified_legacy' AS prerequisite_status, source_file, page_number "
                 f"FROM courses WHERE course_code = '{code}'"
             )
         return None

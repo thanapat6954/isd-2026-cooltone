@@ -14,7 +14,7 @@ const CURRICULUM_OPTIONS = [
     value: "AIT",
     label: "AIT — เทคโนโลยีปัญญาประดิษฐ์",
     versions: [
-      { value: "latest", label: "ฉบับปัจจุบัน" },
+      { value: "latest", label: "ฉบับปัจจุบัน (พ.ศ. 2566)" },
     ],
   },
   {
@@ -46,12 +46,12 @@ const CURRICULUM_OPTIONS = [
   },
 ];
 
-// One editable example is provided for each difficulty level.
+// Examples use the source rubric's levels; unsupported L4 sources are not invented.
 const EXAMPLE_QUESTIONS = [
   { level: "L1", text: "วิชาการเขียนโปรแกรมมีกี่หน่วยกิต" },
   { level: "L2", text: "ปี 2 ภาคการศึกษาที่ 1 มีวิชาบังคับอะไรบ้าง" },
-  { level: "L3", text: "วิชา X มีวิชาบังคับก่อนอะไร และถ้ายังไม่ผ่านสามารถลงทะเบียนได้หรือไม่" },
-  { level: "L4", text: "วิชาใดมีในหลักสูตรเดิม แต่ไม่มีในหลักสูตรฉบับปรับปรุง" },
+  { level: "L2", text: "วิชา X มีวิชาบังคับก่อนอะไร และถ้ายังไม่ผ่านสามารถลงทะเบียนได้หรือไม่" },
+  { level: "L3", text: "วิชาใดมีในหลักสูตรเดิม แต่ไม่มีในหลักสูตรฉบับปรับปรุง" },
 ];
 
 // Query every DOM element once.

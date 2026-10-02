@@ -1,0 +1,26 @@
+{
+  "changes": [
+    {
+      "database": "work/lab8b_ai/curriculum.db",
+      "before": {
+        "program_id": "AI",
+        "name_th": "เทคโนโลยีปัญญาประดิษฐ์",
+        "name_en": null,
+        "degree": null,
+        "total_credits": 120,
+        "years": 4,
+        "curriculum_version": null,
+        "is_latest": 0,
+        "plan": "coop",
+        "source_file": "AI.pdf",
+        "page_number": 26
+      },
+      "after_version": 2566,
+      "source_file": "AI.pdf",
+      "pdf_page": 1,
+      "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+      "applied": true,
+      "backup": "work/backups/identity-review/20261002T130818227110/lab8b_ai.db"
+    }
+  ]
+}

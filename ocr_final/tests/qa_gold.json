@@ -1,0 +1,61 @@
+{
+  "purpose": "Development/source-backed regression set, not the protected held-out evaluation. Template paraphrases are not independent accuracy samples.",
+  "groups": [
+    {"program": "AI", "versions": [2566], "plans": ["coop"], "cases": [
+      {"question": "วิชา 06046400 มีกี่หน่วยกิต", "code": "06046400", "credits": 3, "source": "AI.pdf", "page": 23, "level": "L1"},
+      {"question": "วิชา 06046402 มีกี่หน่วยกิต", "code": "06046402", "credits": 3, "source": "AI.pdf", "page": 23, "level": "L1"},
+      {"question": "วิชา 06066301 มีกี่หน่วยกิต", "code": "06066301", "credits": 3, "source": "AI.pdf", "page": 23, "level": "L1"},
+      {"question": "ปี 1 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต", "credits": 15, "source": "AI.pdf", "page": 23, "level": "L2", "field": "credits"},
+      {"question": "วิชา 09999999 มีรายละเอียดอะไร", "uncertain": true, "level": "missing-evidence"}
+    ]},
+    {"program": "DSBA", "versions": [2565], "plans": ["coop", "no-coop"], "cases": [
+      {"question": "วิชา 06066302 มีวิชาบังคับก่อนอะไร", "code": "06066302", "status": "explicit_none", "source": "DSBA.pdf", "page": 319, "book_page": 318, "level": "L2"},
+      {"question": "วิชา 06066303 มีกี่หน่วยกิต", "code": "06066303", "credits": 3, "source": "DSBA.pdf", "level": "L1"},
+      {"question": "วิชา 06066301 มีวิชาบังคับก่อนอะไร", "code": "06066301", "status": "explicit_none", "source": "DSBA.pdf", "page": 319, "book_page": 318, "level": "L2"},
+      {"question": "วิชา 06066302 มีวิชาบังคับก่อนอะไร ถ้ายังไม่ผ่านลงทะเบียนได้หรือไม่", "code": "06066302", "status": "explicit_none", "registration_uncertain": true, "source": "DSBA.pdf", "page": 319, "book_page": 318, "level": "L2"},
+      {"question": "วิชา 09999999 มีรายละเอียดอะไร", "uncertain": true, "level": "missing-evidence"}
+    ]},
+    {"program": "IT", "versions": [2565], "plans": ["coop", "no-coop"], "cases": [
+      {"question": "วิชา 06066302 มีวิชาบังคับก่อนอะไร", "code": "06066302", "status": "explicit_none", "source": "IT.pdf", "page": 359, "book_page": 358, "level": "L2"},
+      {"question": "วิชา 06066303 มีกี่หน่วยกิต", "code": "06066303", "credits": 3, "source": "IT.pdf", "level": "L1"},
+      {"question": "วิชา 06066301 มีวิชาบังคับก่อนอะไร", "code": "06066301", "status": "explicit_none", "source": "IT.pdf", "page": 359, "book_page": 358, "level": "L2"},
+      {"question": "วิชา 06066302 มีวิชาบังคับก่อนอะไร ถ้ายังไม่ผ่านลงทะเบียนได้หรือไม่", "code": "06066302", "status": "explicit_none", "registration_uncertain": true, "source": "IT.pdf", "page": 359, "book_page": 358, "level": "L2"},
+      {"question": "วิชา 09999999 มีรายละเอียดอะไร", "uncertain": true, "level": "missing-evidence"}
+    ]},
+    {"program": "DSBA", "versions": [2560], "plans": ["coop", "no-coop"], "evidence": "docs/results/a1_ground_truth_review.json (visually approved rows only)", "cases": [
+      {"question": "วิชา 06026100 มีกี่หน่วยกิต", "code": "06026100", "credits": 3, "source": "DSBA-60.pdf", "level": "L1"},
+      {"question": "วิชา 06026104 มีกี่หน่วยกิต", "code": "06026104", "credits": 3, "source": "DSBA-60.pdf", "level": "L1"},
+      {"question": "วิชา 06026113 มีวิชาบังคับก่อนอะไร", "code": "06026113", "requires": "06026104", "source": "DSBA-60.pdf", "page": 182, "level": "L2"},
+      {"question": "วิชา 06026114 มีกี่หน่วยกิต", "code": "06026114", "credits": 3, "source": "DSBA-60.pdf", "level": "L1"},
+      {"question": "วิชา 09999999 มีรายละเอียดอะไร", "uncertain": true, "level": "missing-evidence"}
+    ]},
+    {"program": "IT", "versions": [2560], "plans": ["coop", "no-coop"], "evidence": "docs/results/a1_review_batch_prerequisite_rows.json", "cases": [
+      {"question": "วิชา 06016323 มีกี่หน่วยกิต", "code": "06016323", "credits": 3, "source": "IT-60.pdf", "level": "L1"},
+      {"question": "วิชา 06016323 ชื่อวิชาอะไร", "code": "06016323", "name_th": "การโปรแกรมอุปกรณ์เคลื่อนที่", "source": "IT-60.pdf", "level": "L1"},
+      {"question": "วิชา 06016323 มีวิชาบังคับก่อนอะไร", "code": "06016323", "requires": "06016317", "source": "IT-60.pdf", "page": 233, "level": "L2"},
+      {"question": "วิชา 06016323 มีวิชาบังคับก่อนอะไร ถ้ายังไม่ผ่านลงทะเบียนได้หรือไม่", "code": "06016323", "requires": "06016317", "registration_uncertain": true, "source": "IT-60.pdf", "page": 233, "level": "L2"},
+      {"question": "วิชา 09999999 มีรายละเอียดอะไร", "uncertain": true, "level": "missing-evidence"}
+    ]},
+    {"program": "BIT", "versions": [2565], "plans": ["coop", "no-coop"], "cases": [
+      {"question": "วิชา 06036102 มีกี่หน่วยกิต", "code": "06036102", "credits": 3, "source": "BIT-65.pdf", "level": "L1"},
+      {"question": "วิชา 06036119 มีกี่หน่วยกิต", "code": "06036119", "credits": 3, "source": "BIT-65.pdf", "level": "L1"},
+      {"question": "วิชา 06036120 มีกี่หน่วยกิต", "code": "06036120", "credits": 3, "source": "BIT-65.pdf", "level": "L1"},
+      {"question": "ปี 1 ภาคการศึกษาที่ 2 เรียนกี่หน่วยกิต", "credits": 18, "source": "BIT-65.pdf", "level": "L2", "field": "credits"},
+      {"question": "วิชา 09999999 มีรายละเอียดอะไร", "uncertain": true, "level": "missing-evidence"}
+    ]},
+    {"program": "BIT", "versions": [2560], "plans": ["coop", "no-coop"], "evidence": "docs/results/a1_review_batch_prerequisite_rows.json", "cases": [
+      {"question": "วิชา 06036010 มีกี่หน่วยกิต", "code": "06036010", "credits": 3, "source": "BIT-60.pdf", "level": "L1"},
+      {"question": "วิชา 06036010 มีวิชาบังคับก่อนอะไร", "code": "06036010", "requires": "06036006", "source": "BIT-60.pdf", "page": 174, "level": "L2"},
+      {"question": "วิชา 06036010 เรียนกี่หน่วยกิต", "code": "06036010", "credits": 3, "source": "BIT-60.pdf", "level": "L1"},
+      {"question": "วิชา 06036010 มีวิชาบังคับก่อนอะไร ถ้ายังไม่ผ่านลงทะเบียนได้หรือไม่", "code": "06036010", "requires": "06036006", "registration_uncertain": true, "source": "BIT-60.pdf", "page": 174, "level": "L2"},
+      {"question": "วิชา 09999999 มีรายละเอียดอะไร", "uncertain": true, "level": "missing-evidence"}
+    ]},
+    {"program": "legacy", "versions": [null], "plans": [null], "limitation": "Mixed page-fragment catalog: no authoritative version. These are evidence-safety cases, not legacy content accuracy.", "cases": [
+      {"question": "วิชา 06066301 มีวิชาบังคับก่อนอะไร", "status": "unverified_legacy", "code": "06066301", "level": "missing-evidence"},
+      {"question": "วิชา 06066302 มีวิชาบังคับก่อนอะไร", "status": "unverified_legacy", "code": "06066302", "level": "missing-evidence"},
+      {"question": "วิชา 06066303 มีวิชาบังคับก่อนอะไร", "status": "unverified_legacy", "code": "06066303", "level": "missing-evidence"},
+      {"question": "วิชา 06066302 มีวิชาบังคับก่อนอะไร ถ้ายังไม่ผ่านลงทะเบียนได้หรือไม่", "status": "unverified_legacy", "code": "06066302", "registration_uncertain": true, "level": "missing-evidence"},
+      {"question": "วิชา 09999999 มีรายละเอียดอะไร", "uncertain": true, "level": "missing-evidence"}
+    ]}
+  ]
+}

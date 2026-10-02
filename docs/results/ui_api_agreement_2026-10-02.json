@@ -1,0 +1,111 @@
+{
+  "cases": [
+    {
+      "curriculum": "AIT",
+      "question": "วิชา 06046400 มีกี่หน่วยกิต",
+      "status": 200,
+      "response": {
+        "answer": "AI-2566-coop: 06046400 แคลคูลัส 1 (CALCULUS 1), 3 หน่วยกิต, L-P-S 3-0-6 (ที่มา: AI.pdf หน้า 23)",
+        "sources": [
+          {
+            "page": 23,
+            "book_page": null,
+            "section": "AI.pdf · พ.ศ. 2566 · coop · แคลคูลัส 1",
+            "quote": "06046400 แคลคูลัส 1; 3 หน่วยกิต"
+          }
+        ],
+        "model": "SQL (database-backed)",
+        "latency_ms": 1002,
+        "confidence": null
+      },
+      "answer_matches_ui": true,
+      "source_matches_ui": true,
+      "passed": true
+    },
+    {
+      "curriculum": "IT",
+      "question": "วิชา 06066302 มีวิชาบังคับก่อนอะไร และถ้ายังไม่ผ่านสามารถลงทะเบียนได้หรือไม่",
+      "status": 200,
+      "response": {
+        "answer": "IT-2565-coop: วิชา 06066302 — เอกสารระบุว่าไม่มีวิชาบังคับก่อน\nIT-2565-no-coop: วิชา 06066302 — เอกสารระบุว่าไม่มีวิชาบังคับก่อน\nยังสรุปไม่ได้ว่าสามารถลงทะเบียนเมื่อยังไม่ผ่านวิชาบังคับก่อนได้หรือไม่ เพราะยังไม่มีหลักฐานข้อยกเว้นการลงทะเบียนที่ตรวจยืนยัน ต้องตรวจข้อบังคับหรือสอบถามฝ่ายทะเบียน",
+        "sources": [
+          {
+            "page": 359,
+            "book_page": 358,
+            "section": "IT.pdf · พ.ศ. 2565 · coop · การเขียนโปรแกรมเว็บพื้นฐาน",
+            "quote": "06066302 การเขียนโปรแกรมเว็บพื้นฐาน — เอกสารระบุว่าไม่มีวิชาบังคับก่อน"
+          },
+          {
+            "page": 359,
+            "book_page": 358,
+            "section": "IT.pdf · พ.ศ. 2565 · no-coop · การเขียนโปรแกรมเว็บพื้นฐาน",
+            "quote": "06066302 การเขียนโปรแกรมเว็บพื้นฐาน — เอกสารระบุว่าไม่มีวิชาบังคับก่อน"
+          }
+        ],
+        "model": "SQL (database-backed)",
+        "latency_ms": 548,
+        "confidence": null
+      },
+      "answer_matches_ui": true,
+      "source_matches_ui": true,
+      "passed": true
+    },
+    {
+      "curriculum": "BIT",
+      "question": "วิชา 06036119 มีกี่หน่วยกิต",
+      "status": 200,
+      "response": {
+        "answer": "BIT-2565-coop: 06036119 พื้นฐานการเขียนโปรแกรม (PROGRAMMING FUNDAMENTALS), 3 หน่วยกิต, L-P-S 2-2-5 (ที่มา: BIT-65.pdf หน้า 32)\nBIT-2565-no-coop: 06036119 พื้นฐานการเขียนโปรแกรม (PROGRAMMING FUNDAMENTALS), 3 หน่วยกิต, L-P-S 2-2-5 (ที่มา: BIT-65.pdf หน้า 27)",
+        "sources": [
+          {
+            "page": 32,
+            "book_page": null,
+            "section": "BIT-65.pdf · พ.ศ. 2565 · coop · พื้นฐานการเขียนโปรแกรม",
+            "quote": "06036119 พื้นฐานการเขียนโปรแกรม; 3 หน่วยกิต"
+          },
+          {
+            "page": 27,
+            "book_page": null,
+            "section": "BIT-65.pdf · พ.ศ. 2565 · no-coop · พื้นฐานการเขียนโปรแกรม",
+            "quote": "06036119 พื้นฐานการเขียนโปรแกรม; 3 หน่วยกิต"
+          }
+        ],
+        "model": "SQL (database-backed)",
+        "latency_ms": 481,
+        "confidence": null
+      },
+      "answer_matches_ui": true,
+      "source_matches_ui": true,
+      "passed": true
+    },
+    {
+      "curriculum": "DSBA",
+      "question": "วิชา 06066302 มีวิชาบังคับก่อนอะไร และถ้ายังไม่ผ่านสามารถลงทะเบียนได้หรือไม่",
+      "status": 200,
+      "response": {
+        "answer": "DSBA-2565-coop: วิชา 06066302 — เอกสารระบุว่าไม่มีวิชาบังคับก่อน\nDSBA-2565-no-coop: วิชา 06066302 — เอกสารระบุว่าไม่มีวิชาบังคับก่อน\nยังสรุปไม่ได้ว่าสามารถลงทะเบียนเมื่อยังไม่ผ่านวิชาบังคับก่อนได้หรือไม่ เพราะยังไม่มีหลักฐานข้อยกเว้นการลงทะเบียนที่ตรวจยืนยัน ต้องตรวจข้อบังคับหรือสอบถามฝ่ายทะเบียน",
+        "sources": [
+          {
+            "page": 319,
+            "book_page": 318,
+            "section": "DSBA.pdf · พ.ศ. 2565 · coop · การเขียนโปรแกรมเว็บพื้นฐาน",
+            "quote": "06066302 การเขียนโปรแกรมเว็บพื้นฐาน — เอกสารระบุว่าไม่มีวิชาบังคับก่อน"
+          },
+          {
+            "page": 319,
+            "book_page": 318,
+            "section": "DSBA.pdf · พ.ศ. 2565 · no-coop · การเขียนโปรแกรมเว็บพื้นฐาน",
+            "quote": "06066302 การเขียนโปรแกรมเว็บพื้นฐาน — เอกสารระบุว่าไม่มีวิชาบังคับก่อน"
+          }
+        ],
+        "model": "SQL (database-backed)",
+        "latency_ms": 477,
+        "confidence": null
+      },
+      "answer_matches_ui": true,
+      "source_matches_ui": true,
+      "passed": true
+    }
+  ],
+  "scope": "Four observed current-family UI cases, not every version or all challenge levels"
+}

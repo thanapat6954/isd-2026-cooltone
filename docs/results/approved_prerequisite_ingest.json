@@ -1,0 +1,300 @@
+{
+  "updates": [
+    {
+      "database": "work/lab8b_dsba_coop/curriculum.db",
+      "source_file": "DSBA.pdf",
+      "pdf_page": 319,
+      "printed_page": 318,
+      "codes": [
+        "06066301",
+        "06066302",
+        "06066303"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125819229242/lab8b_dsba_coop.db",
+      "backup_sha256": "2cac06bcafa465d6fe3f3f503024b92c823a6adbdcb83f13b089a2ca3bb62a48"
+    },
+    {
+      "database": "work/lab8b_dsba_no_coop/curriculum.db",
+      "source_file": "DSBA.pdf",
+      "pdf_page": 319,
+      "printed_page": 318,
+      "codes": [
+        "06066301",
+        "06066302",
+        "06066303"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125819241800/lab8b_dsba_no_coop.db",
+      "backup_sha256": "8c53c83aa6059062b46534b1fde45c5683c4119317756d803040a8ec63216b51"
+    },
+    {
+      "database": "work/lab8b_it_coop/curriculum.db",
+      "source_file": "IT.pdf",
+      "pdf_page": 359,
+      "printed_page": 358,
+      "codes": [
+        "06066301",
+        "06066302",
+        "06066303"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125819493825/lab8b_it_coop.db",
+      "backup_sha256": "607aea530ae68da5c328642beb5368ff857dc757cb9d185471bd1190cb95828c"
+    },
+    {
+      "database": "work/lab8b_it_no_coop/curriculum.db",
+      "source_file": "IT.pdf",
+      "pdf_page": 359,
+      "printed_page": 358,
+      "codes": [
+        "06066301",
+        "06066302",
+        "06066303"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125819510961/lab8b_it_no_coop.db",
+      "backup_sha256": "3181a5120bd6239a6c5d60cba999188004db1174049ca3015d51f67e548ad593"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 182,
+      "printed_page": null,
+      "codes": [
+        "06026113"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125819636818/lab8b_dsba_2560_coop.db",
+      "backup_sha256": "abc1ac7415f56c42e260c542fe1a0b88b01c5baa1d869a9f2b7f72fd3dd6f803"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_no_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 182,
+      "printed_page": null,
+      "codes": [
+        "06026113"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125819653399/lab8b_dsba_2560_no_coop.db",
+      "backup_sha256": "ac47658f5cf7838a536b8cdfef9c6e07163342f3bd355df8cffc136e31c04899"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 183,
+      "printed_page": null,
+      "codes": [
+        "06026114"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125819763078/lab8b_dsba_2560_coop.db",
+      "backup_sha256": "d9749984fe4e22244c122d718bcddc0e4f0d380bed755fd5eae8cb4d91e24c89"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_no_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 183,
+      "printed_page": null,
+      "codes": [
+        "06026114"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125819777765/lab8b_dsba_2560_no_coop.db",
+      "backup_sha256": "dd830f633782efe06b647c57afe0c7ab9761e3c55fe28abf67789a3aab49a969"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 183,
+      "printed_page": null,
+      "codes": [
+        "06026115"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125819881519/lab8b_dsba_2560_coop.db",
+      "backup_sha256": "3941098a18357d21e4495b0d1dcec581b4ab80cdf7d051969e53c0587571b6f5"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_no_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 183,
+      "printed_page": null,
+      "codes": [
+        "06026115"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125819900628/lab8b_dsba_2560_no_coop.db",
+      "backup_sha256": "09c2d9bf967d2568c1c1e3ea91653455c2a600548fc7ecd75b6cf7e6439f6d3c"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 184,
+      "printed_page": null,
+      "codes": [
+        "06026116"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125820004068/lab8b_dsba_2560_coop.db",
+      "backup_sha256": "3d15b9027edfce49ad75c82afccf1d4e75b995406336a2e712a3116eff729efd"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_no_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 184,
+      "printed_page": null,
+      "codes": [
+        "06026116"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125820018181/lab8b_dsba_2560_no_coop.db",
+      "backup_sha256": "9fec50ba6e8ab8fb79bf39e03d2a20386c132b0757cfc75575234b3b5a510751"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 189,
+      "printed_page": null,
+      "codes": [
+        "06026128"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125820122812/lab8b_dsba_2560_coop.db",
+      "backup_sha256": "258936fadd9edab780852a6f998f094fa19d89685a7f151ec574b134ef27f1e3"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_no_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 189,
+      "printed_page": null,
+      "codes": [
+        "06026128"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125820138922/lab8b_dsba_2560_no_coop.db",
+      "backup_sha256": "f94d415ef098e5b4f657ec1c479ec24ae583aeff1e441b93e836200c55090a4a"
+    },
+    {
+      "database": "work/lab8b_it_coop/curriculum.db",
+      "source_file": "IT.pdf",
+      "pdf_page": 326,
+      "printed_page": null,
+      "codes": [
+        "06016407"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125820351144/lab8b_it_coop.db",
+      "backup_sha256": "5d8b0fb4a1a0575786691e8a59e315412b03a5bd0433f308b427ae4af9ff27b3"
+    },
+    {
+      "database": "work/lab8b_it_no_coop/curriculum.db",
+      "source_file": "IT.pdf",
+      "pdf_page": 326,
+      "printed_page": null,
+      "codes": [
+        "06016407"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125820369283/lab8b_it_no_coop.db",
+      "backup_sha256": "cd1a6fcacc56baee0780e21119d8a75bc3969cd747b642800b9adfb1a1be65b7"
+    },
+    {
+      "database": "work/lab8b_it_2560_coop/curriculum.db",
+      "source_file": "IT-60.pdf",
+      "pdf_page": 233,
+      "printed_page": null,
+      "codes": [
+        "06016323"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125820575852/lab8b_it_2560_coop.db",
+      "backup_sha256": "0d04491a45613ab54f38984a31259799f7f3977e435da47c7d1de9d4f830672f"
+    },
+    {
+      "database": "work/lab8b_it_2560_no_coop/curriculum.db",
+      "source_file": "IT-60.pdf",
+      "pdf_page": 233,
+      "printed_page": null,
+      "codes": [
+        "06016323"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125820592537/lab8b_it_2560_no_coop.db",
+      "backup_sha256": "1ddbb49d2a24ce0f6fe891520b0cd9519c62e323322e03c3167a646561f03faa"
+    },
+    {
+      "database": "work/lab8b_it_2560_no_coop/curriculum.db",
+      "source_file": "IT-60.pdf",
+      "pdf_page": 236,
+      "printed_page": null,
+      "codes": [
+        "06016330"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125820736491/lab8b_it_2560_no_coop.db",
+      "backup_sha256": "b9f6ceb4260e82a4ad17e132b3bfbc0ecc7458c7f35e116b1b6c1f47d97c1042"
+    },
+    {
+      "database": "work/lab8b_it_2560_no_coop/curriculum.db",
+      "source_file": "IT-60.pdf",
+      "pdf_page": 242,
+      "printed_page": null,
+      "codes": [
+        "06016340"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125820886683/lab8b_it_2560_no_coop.db",
+      "backup_sha256": "7a269c71bbc7e07cdbd6a021bb01fba7af4a40bec5c0dd26c74921ec465c9550"
+    },
+    {
+      "database": "work/lab8b_it_2560_no_coop/curriculum.db",
+      "source_file": "IT-60.pdf",
+      "pdf_page": 247,
+      "printed_page": null,
+      "codes": [
+        "06016350"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125821033625/lab8b_it_2560_no_coop.db",
+      "backup_sha256": "9897ff18a142c482b89d4cd19c171386e15c84140930db219a6d4ad542484d74"
+    },
+    {
+      "database": "work/lab8b_bit_2560_coop/curriculum.db",
+      "source_file": "BIT-60.pdf",
+      "pdf_page": 174,
+      "printed_page": null,
+      "codes": [
+        "06036010"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125821157063/lab8b_bit_2560_coop.db",
+      "backup_sha256": "be144ae4ead1b5af4e62f91bf3c5d51b6215acdd20e1744bcc85c06be352ca23"
+    },
+    {
+      "database": "work/lab8b_bit_2560_no_coop/curriculum.db",
+      "source_file": "BIT-60.pdf",
+      "pdf_page": 174,
+      "printed_page": null,
+      "codes": [
+        "06036010"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125821204786/lab8b_bit_2560_no_coop.db",
+      "backup_sha256": "9e14b9f905c55cf26b0259fb0605a53515c6ab61d9c582b5b0309d08b66a9a23"
+    },
+    {
+      "database": "work/lab8b_bit_2560_no_coop/curriculum.db",
+      "source_file": "BIT-60.pdf",
+      "pdf_page": 178,
+      "printed_page": null,
+      "codes": [
+        "06036020"
+      ],
+      "applied": true,
+      "backup": "work/backups/prerequisite-review/20261002T125821304054/lab8b_bit_2560_no_coop.db",
+      "backup_sha256": "cca1c39f951b650b50626197ec5ed940010b6f1d548b41a3ce9fb3a45a2ab961"
+    }
+  ]
+}

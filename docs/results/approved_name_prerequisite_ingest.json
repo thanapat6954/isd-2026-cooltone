@@ -1,0 +1,354 @@
+{
+  "updates": [
+    {
+      "database": "work/lab8b_dsba_coop/curriculum.db",
+      "source_file": "DSBA.pdf",
+      "pdf_page": 319,
+      "printed_page": 318,
+      "codes": [
+        "06066301",
+        "06066302",
+        "06066303"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130230723832/lab8b_dsba_coop.db",
+      "backup_sha256": "15a28ff9d8d5cd48781daa5ba94979de5f3a57530672511cc67b359af78ed30b"
+    },
+    {
+      "database": "work/lab8b_dsba_no_coop/curriculum.db",
+      "source_file": "DSBA.pdf",
+      "pdf_page": 319,
+      "printed_page": 318,
+      "codes": [
+        "06066301",
+        "06066302",
+        "06066303"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130230738940/lab8b_dsba_no_coop.db",
+      "backup_sha256": "54d05d7700ea7f8c4590f0bb482eaafb358e6e9fcf4845a68af40b2e287db8c3"
+    },
+    {
+      "database": "work/lab8b_it_coop/curriculum.db",
+      "source_file": "IT.pdf",
+      "pdf_page": 359,
+      "printed_page": 358,
+      "codes": [
+        "06066301",
+        "06066302",
+        "06066303"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130230964996/lab8b_it_coop.db",
+      "backup_sha256": "d6a4b96e645711c7f1ff614c63a20791c92cb131e7ed256e08ebfe476439e8eb"
+    },
+    {
+      "database": "work/lab8b_it_no_coop/curriculum.db",
+      "source_file": "IT.pdf",
+      "pdf_page": 359,
+      "printed_page": 358,
+      "codes": [
+        "06066301",
+        "06066302",
+        "06066303"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130230995416/lab8b_it_no_coop.db",
+      "backup_sha256": "0cbde117a3f707219d8b02233ff7b540bab228ed3c6841099e4be44c9130358f"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 182,
+      "printed_page": null,
+      "codes": [
+        "06026113"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130231120944/lab8b_dsba_2560_coop.db",
+      "backup_sha256": "04131ee6eec2763753c004ca776a643c17cffe68aa094be8b165e1b245af0169"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_no_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 182,
+      "printed_page": null,
+      "codes": [
+        "06026113"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130231153725/lab8b_dsba_2560_no_coop.db",
+      "backup_sha256": "a094db497e89e7b0fd61ff259d9679d49e5bddd0ecfdf5ce5ecd6d8030c8b450"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 183,
+      "printed_page": null,
+      "codes": [
+        "06026114"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130231260557/lab8b_dsba_2560_coop.db",
+      "backup_sha256": "f302d699803599b89122c12017aa3e6c0172014a400cd6a04066ed3cc1365bd1"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_no_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 183,
+      "printed_page": null,
+      "codes": [
+        "06026114"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130231305807/lab8b_dsba_2560_no_coop.db",
+      "backup_sha256": "cb6c70715e12f965828eb0c3c88d348c0a43387e85d2ec901dce635c062a90a5"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 183,
+      "printed_page": null,
+      "codes": [
+        "06026115"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130231425760/lab8b_dsba_2560_coop.db",
+      "backup_sha256": "9aaf85a98a8aee33536f920a04d7fe195f0946360ef04c38a34a0c6f0a0c575b"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_no_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 183,
+      "printed_page": null,
+      "codes": [
+        "06026115"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130231437304/lab8b_dsba_2560_no_coop.db",
+      "backup_sha256": "9256440b454ae206bddd7caa136e330b4510ec0285e9618ce3ed363bdbca10be"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 184,
+      "printed_page": null,
+      "codes": [
+        "06026116"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130231552915/lab8b_dsba_2560_coop.db",
+      "backup_sha256": "cc78acd53eec7db00208ffe6239038562c216d2c16a845a6f52c440f6e062fcf"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_no_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 184,
+      "printed_page": null,
+      "codes": [
+        "06026116"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130231565008/lab8b_dsba_2560_no_coop.db",
+      "backup_sha256": "b97015a882242efa0426b7ba90e5986dc9ede45e433624352d6ddea0db4aa2cc"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 189,
+      "printed_page": null,
+      "codes": [
+        "06026128"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130231664781/lab8b_dsba_2560_coop.db",
+      "backup_sha256": "4b7b35797a8c658ad7c7855700c9673d3968b7dfbeafbbde831e20dee3af752c"
+    },
+    {
+      "database": "work/lab8b_dsba_2560_no_coop/curriculum.db",
+      "source_file": "DSBA-60.pdf",
+      "pdf_page": 189,
+      "printed_page": null,
+      "codes": [
+        "06026128"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130231677368/lab8b_dsba_2560_no_coop.db",
+      "backup_sha256": "4553aa748e0bbeae5131d9de66dd232699a82a883cb40c82613af2d41b1df620"
+    },
+    {
+      "database": "work/lab8b_it_coop/curriculum.db",
+      "source_file": "IT.pdf",
+      "pdf_page": 326,
+      "printed_page": null,
+      "codes": [
+        "06016407"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130231901743/lab8b_it_coop.db",
+      "backup_sha256": "14476231a15130e165efd2a8c8215b43f89db438416b4259f2be8ad67173b6e6"
+    },
+    {
+      "database": "work/lab8b_it_no_coop/curriculum.db",
+      "source_file": "IT.pdf",
+      "pdf_page": 326,
+      "printed_page": null,
+      "codes": [
+        "06016407"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130231917128/lab8b_it_no_coop.db",
+      "backup_sha256": "114b2f330c3c722b38124fb0ed5e79c5610d3c185f513492e5c3775eecd68a03"
+    },
+    {
+      "database": "work/lab8b_it_2560_coop/curriculum.db",
+      "source_file": "IT-60.pdf",
+      "pdf_page": 233,
+      "printed_page": null,
+      "codes": [
+        "06016323"
+      ],
+      "applied": true,
+      "name_changes": [
+        {
+          "code": "06016323",
+          "old": "วิศวกรรมความต้องการ",
+          "new": "การโปรแกรมอุปกรณ์เคลื่อนที่"
+        }
+      ],
+      "backup": "work/backups/prerequisite-review/20261002T130232108892/lab8b_it_2560_coop.db",
+      "backup_sha256": "d1c8d08ce6444b08523d13bd312393a1ba6f08ab01516251751ad8311a01559d"
+    },
+    {
+      "database": "work/lab8b_it_2560_no_coop/curriculum.db",
+      "source_file": "IT-60.pdf",
+      "pdf_page": 233,
+      "printed_page": null,
+      "codes": [
+        "06016323"
+      ],
+      "applied": true,
+      "name_changes": [
+        {
+          "code": "06016323",
+          "old": "วิศวกรรมความต้องการ",
+          "new": "การโปรแกรมอุปกรณ์เคลื่อนที่"
+        }
+      ],
+      "backup": "work/backups/prerequisite-review/20261002T130232165736/lab8b_it_2560_no_coop.db",
+      "backup_sha256": "a2d91ca895a6712315c34ea7a009b0daf589a38f364047a048827c8f66502d87"
+    },
+    {
+      "database": "work/lab8b_it_2560_no_coop/curriculum.db",
+      "source_file": "IT-60.pdf",
+      "pdf_page": 236,
+      "printed_page": null,
+      "codes": [
+        "06016330"
+      ],
+      "applied": true,
+      "name_changes": [
+        {
+          "code": "06016330",
+          "old": "แขนงวิชาวิศวกรรมซอฟต์แวร์ โครงงานทางด้านวิศวกรรมซอฟต์แวร์ 2",
+          "new": "โครงงานทางด้านวิศวกรรมซอฟต์แวร์ 2"
+        }
+      ],
+      "backup": "work/backups/prerequisite-review/20261002T130232308598/lab8b_it_2560_no_coop.db",
+      "backup_sha256": "557e4092ca826e063a15dea212816fd1d9cc0f9d7f652e402474b198f1c05e56"
+    },
+    {
+      "database": "work/lab8b_it_2560_no_coop/curriculum.db",
+      "source_file": "IT-60.pdf",
+      "pdf_page": 242,
+      "printed_page": null,
+      "codes": [
+        "06016340"
+      ],
+      "applied": true,
+      "name_changes": [
+        {
+          "code": "06016340",
+          "old": "แขนงวิชาเทคโนโลยีเครือข่ายและระบบ โครงงานทางด้านเทคโนโลยีเครือข่ายและระบบ 2",
+          "new": "โครงงานทางด้านเทคโนโลยีเครือข่ายและระบบ 2"
+        }
+      ],
+      "backup": "work/backups/prerequisite-review/20261002T130232452992/lab8b_it_2560_no_coop.db",
+      "backup_sha256": "63304b9bf0118e170b49124be3b900c21cd2d90fc05009f40e46b7758c78c257"
+    },
+    {
+      "database": "work/lab8b_it_2560_no_coop/curriculum.db",
+      "source_file": "IT-60.pdf",
+      "pdf_page": 247,
+      "printed_page": null,
+      "codes": [
+        "06016350"
+      ],
+      "applied": true,
+      "name_changes": [
+        {
+          "code": "06016350",
+          "old": "แขนงวิชาการพัฒนาสื่อประสมและเกม โครงงานทางด้านการพัฒนาสื่อประสมและเกม 2",
+          "new": "โครงงานทางด้านการพัฒนาสื่อประสมและเกม 2"
+        }
+      ],
+      "backup": "work/backups/prerequisite-review/20261002T130232607318/lab8b_it_2560_no_coop.db",
+      "backup_sha256": "c90cb75f5e69457b23053b728f96be61f1398b6d8c5e36965bdd2dd33d37d8aa"
+    },
+    {
+      "database": "work/lab8b_bit_2560_coop/curriculum.db",
+      "source_file": "BIT-60.pdf",
+      "pdf_page": 174,
+      "printed_page": null,
+      "codes": [
+        "06036010"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130232723503/lab8b_bit_2560_coop.db",
+      "backup_sha256": "4ff5b6506a385965d3c2e83c090c58bc6d5bd1518983dd8336b6e087f45cd2bb"
+    },
+    {
+      "database": "work/lab8b_bit_2560_no_coop/curriculum.db",
+      "source_file": "BIT-60.pdf",
+      "pdf_page": 174,
+      "printed_page": null,
+      "codes": [
+        "06036010"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130232739478/lab8b_bit_2560_no_coop.db",
+      "backup_sha256": "d2306668bf26a5aaf425e3710dd82c5d2caf06b5ae0577f4d2bbc9742ed34586"
+    },
+    {
+      "database": "work/lab8b_bit_2560_no_coop/curriculum.db",
+      "source_file": "BIT-60.pdf",
+      "pdf_page": 178,
+      "printed_page": null,
+      "codes": [
+        "06036020"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T130232838882/lab8b_bit_2560_no_coop.db",
+      "backup_sha256": "aaf224999e6b6c5f3a2931bd03bad3d8783093cd44894c2e7e30ba6472f59e91"
+    }
+  ]
+}

@@ -256,6 +256,8 @@ class DatabaseRegistry:
     def select(self, question: str, *, include_legacy: bool = False) -> list[DatabaseInfo]:
         text = question.casefold()
         compact = re.sub(r"[_‐‑‒–—-]+", " ", text)
+        if re.search(r"\blegacy\b|ฐานข้อมูลเดิม", compact):
+            return [item for item in self.active_catalogs if item.schema_family == "legacy-course-catalog"]
 
         programs: set[str] = set()
         is_bit = bool(
@@ -290,6 +292,7 @@ class DatabaseRegistry:
 
         no_coop = any(token in compact for token in (
             "no coop", "non coop", "without coop", "ไม่สหกิจ", "ไม่มีสหกิจ", "แผนปกติ",
+            "ไม่เข้าร่วมสหกิจ", "ไม่เข้ารับสหกิจ",
         ))
         coop = not no_coop and any(token in compact for token in (
             "coop", "cooperative", "สหกิจ",
@@ -301,18 +304,19 @@ class DatabaseRegistry:
                 item for item in candidates
                 if any((item.program_id or "").casefold().startswith(program) for program in programs)
             ]
-        if wants_2560 != wants_2565:
-            requested_version = 2560 if wants_2560 else 2565
-            versioned = [item for item in candidates if item.curriculum_version == requested_version]
-            if versioned:
-                candidates = versioned
+        explicit_versions = {int(value) for value in re.findall(r'(?<!\d)(25\d{2})(?!\d)',compact)}
+        if len(explicit_versions) == 1 or (not explicit_versions and wants_2560 != wants_2565):
+            requested_version = next(iter(explicit_versions)) if explicit_versions else (2560 if wants_2560 else 2565)
+            if not explicit_versions and wants_2565:
+                candidates = [item for item in candidates if (item.program or {}).get('is_latest')]
+            else:
+                candidates = [item for item in candidates if item.curriculum_version == requested_version]
         if no_coop:
-            candidates = [item for item in candidates if "no-coop" in (item.program_id or "").casefold()]
+            candidates = [item for item in candidates if item.plan == 'no-coop']
         elif coop:
             candidates = [
                 item for item in candidates
-                if "coop" in (item.program_id or "").casefold()
-                and "no-coop" not in (item.program_id or "").casefold()
+                if item.plan == 'coop'
             ]
 
         if include_legacy and not programs:
@@ -321,11 +325,6 @@ class DatabaseRegistry:
                 if item.schema_family == "legacy-course-catalog"
             ]
             candidates = [*candidates, *legacy]
-        elif not candidates and include_legacy:
-            candidates = [
-                item for item in self.active_catalogs
-                if item.schema_family == "legacy-course-catalog"
-            ]
         return sorted(candidates, key=lambda item: (item.program_id or item.curriculum_name).casefold())
 
 

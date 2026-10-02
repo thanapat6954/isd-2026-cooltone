@@ -1,0 +1,324 @@
+{
+  "method": "visually_verified_official_course_description",
+  "scope": "Current DSBA/IT three NONE facts per book plus already visually approved prerequisite-bearing A1 description rows only; not full coverage or registration permission.",
+  "documents": [
+    {
+      "source_file": "DSBA.pdf",
+      "program": "DSBA",
+      "curriculum_version": 2565,
+      "sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+      "page_number": 319,
+      "printed_page_number": 318,
+      "codes": [
+        "06066301",
+        "06066302",
+        "06066303"
+      ],
+      "status": "explicit_none",
+      "review_status": "visually_verified"
+    },
+    {
+      "source_file": "IT.pdf",
+      "program": "IT",
+      "curriculum_version": 2565,
+      "sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+      "page_number": 359,
+      "printed_page_number": 358,
+      "codes": [
+        "06066301",
+        "06066302",
+        "06066303"
+      ],
+      "status": "explicit_none",
+      "review_status": "visually_verified"
+    },
+    {
+      "source_file": "DSBA-60.pdf",
+      "program": "DSBA",
+      "curriculum_version": 2560,
+      "sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "page_number": 182,
+      "printed_page_number": null,
+      "codes": [
+        "06026113"
+      ],
+      "requires": [
+        "06026104"
+      ],
+      "status": "required",
+      "review_status": "visually_verified",
+      "review_evidence": [
+        "DSBA-60.pdf p.32 plan",
+        "DSBA-60.pdf p.182 description"
+      ],
+      "review_sample_id": "DSBA-2560-coop-07",
+      "name_th_by_code": {
+        "06026113": "การสร้างโปรแกรมทางสถิติ"
+      }
+    },
+    {
+      "source_file": "DSBA-60.pdf",
+      "program": "DSBA",
+      "curriculum_version": 2560,
+      "sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "page_number": 183,
+      "printed_page_number": null,
+      "codes": [
+        "06026114"
+      ],
+      "requires": [
+        "06026108"
+      ],
+      "status": "required",
+      "review_status": "visually_verified",
+      "review_evidence": [
+        "DSBA-60.pdf p.32 plan",
+        "DSBA-60.pdf p.183 description"
+      ],
+      "review_sample_id": "DSBA-2560-coop-08",
+      "name_th_by_code": {
+        "06026114": "กระบวนการธุรกิจและการวางแผนทรัพยากรองค์กร"
+      }
+    },
+    {
+      "source_file": "DSBA-60.pdf",
+      "program": "DSBA",
+      "curriculum_version": 2560,
+      "sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "page_number": 183,
+      "printed_page_number": null,
+      "codes": [
+        "06026115"
+      ],
+      "requires": [
+        "06026108"
+      ],
+      "status": "required",
+      "review_status": "visually_verified",
+      "review_evidence": [
+        "DSBA-60.pdf p.32 plan",
+        "DSBA-60.pdf p.183 description"
+      ],
+      "review_sample_id": "DSBA-2560-coop-09",
+      "name_th_by_code": {
+        "06026115": "อัจฉริยะทางธุรกิจเบื้องต้น"
+      }
+    },
+    {
+      "source_file": "DSBA-60.pdf",
+      "program": "DSBA",
+      "curriculum_version": 2560,
+      "sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "page_number": 184,
+      "printed_page_number": null,
+      "codes": [
+        "06026116"
+      ],
+      "requires": [
+        "06026103"
+      ],
+      "status": "required",
+      "review_status": "visually_verified",
+      "review_evidence": [
+        "DSBA-60.pdf p.32 plan",
+        "DSBA-60.pdf p.184 description"
+      ],
+      "review_sample_id": "DSBA-2560-coop-10",
+      "name_th_by_code": {
+        "06026116": "การวิเคราะห์ข้อมูลเชิงธุรกิจ"
+      }
+    },
+    {
+      "source_file": "DSBA-60.pdf",
+      "program": "DSBA",
+      "curriculum_version": 2560,
+      "sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "page_number": 189,
+      "printed_page_number": null,
+      "codes": [
+        "06026128"
+      ],
+      "requires": [
+        "06026127"
+      ],
+      "status": "required",
+      "review_status": "visually_verified",
+      "review_evidence": [
+        "DSBA-60.pdf p.29 plan",
+        "DSBA-60.pdf p.189 description"
+      ],
+      "review_sample_id": "DSBA-2560-no-coop-11",
+      "name_th_by_code": {
+        "06026128": "โครงงานวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ 2"
+      }
+    },
+    {
+      "source_file": "IT.pdf",
+      "program": "IT",
+      "curriculum_version": 2565,
+      "sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+      "page_number": 326,
+      "printed_page_number": null,
+      "codes": [
+        "06016407"
+      ],
+      "requires": [
+        "06016406"
+      ],
+      "status": "required",
+      "review_status": "visually_verified",
+      "review_evidence": [
+        "IT.pdf p.44 plan",
+        "IT.pdf p.326 description"
+      ],
+      "review_sample_id": "IT-2565-coop-11",
+      "name_th_by_code": {
+        "06016407": "โครงงาน 2"
+      }
+    },
+    {
+      "source_file": "IT-60.pdf",
+      "program": "IT",
+      "curriculum_version": 2560,
+      "sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "page_number": 233,
+      "printed_page_number": null,
+      "codes": [
+        "06016323"
+      ],
+      "requires": [
+        "06016317"
+      ],
+      "status": "required",
+      "review_status": "visually_verified",
+      "review_evidence": [
+        "IT-60.pdf p.37 plan",
+        "IT-60.pdf p.233 description"
+      ],
+      "review_sample_id": "IT-2560-coop-09",
+      "name_th_by_code": {
+        "06016323": "การโปรแกรมอุปกรณ์เคลื่อนที่"
+      }
+    },
+    {
+      "source_file": "IT-60.pdf",
+      "program": "IT",
+      "curriculum_version": 2560,
+      "sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "page_number": 236,
+      "printed_page_number": null,
+      "codes": [
+        "06016330"
+      ],
+      "requires": [
+        "06016329"
+      ],
+      "status": "required",
+      "review_status": "visually_verified",
+      "review_evidence": [
+        "IT-60.pdf p.33 plan",
+        "IT-60.pdf p.236 description"
+      ],
+      "review_sample_id": "IT-2560-no-coop-12",
+      "name_th_by_code": {
+        "06016330": "โครงงานทางด้านวิศวกรรมซอฟต์แวร์ 2"
+      }
+    },
+    {
+      "source_file": "IT-60.pdf",
+      "program": "IT",
+      "curriculum_version": 2560,
+      "sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "page_number": 242,
+      "printed_page_number": null,
+      "codes": [
+        "06016340"
+      ],
+      "requires": [
+        "06016339"
+      ],
+      "status": "required",
+      "review_status": "visually_verified",
+      "review_evidence": [
+        "IT-60.pdf p.33 plan",
+        "IT-60.pdf p.242 description"
+      ],
+      "review_sample_id": "IT-2560-no-coop-13",
+      "name_th_by_code": {
+        "06016340": "โครงงานทางด้านเทคโนโลยีเครือข่ายและระบบ 2"
+      }
+    },
+    {
+      "source_file": "IT-60.pdf",
+      "program": "IT",
+      "curriculum_version": 2560,
+      "sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "page_number": 247,
+      "printed_page_number": null,
+      "codes": [
+        "06016350"
+      ],
+      "requires": [
+        "06016349"
+      ],
+      "status": "required",
+      "review_status": "visually_verified",
+      "review_evidence": [
+        "IT-60.pdf p.33 plan",
+        "IT-60.pdf p.247 description"
+      ],
+      "review_sample_id": "IT-2560-no-coop-14",
+      "name_th_by_code": {
+        "06016350": "โครงงานทางด้านการพัฒนาสื่อประสมและเกม 2"
+      }
+    },
+    {
+      "source_file": "BIT-60.pdf",
+      "program": "BIT",
+      "curriculum_version": 2560,
+      "sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "page_number": 174,
+      "printed_page_number": null,
+      "codes": [
+        "06036010"
+      ],
+      "requires": [
+        "06036006"
+      ],
+      "status": "required",
+      "review_status": "visually_verified",
+      "review_evidence": [
+        "BIT-60.pdf p.29 plan",
+        "BIT-60.pdf p.174 description"
+      ],
+      "review_sample_id": "BIT-2560-coop-08",
+      "name_th_by_code": {
+        "06036010": "กระบวนการธุรกิจและการวางแผนทรัพยากรองค์กร"
+      }
+    },
+    {
+      "source_file": "BIT-60.pdf",
+      "program": "BIT",
+      "curriculum_version": 2560,
+      "sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "page_number": 178,
+      "printed_page_number": null,
+      "codes": [
+        "06036020"
+      ],
+      "requires": [
+        "06036019"
+      ],
+      "status": "required",
+      "review_status": "visually_verified",
+      "review_evidence": [
+        "BIT-60.pdf p.26 plan",
+        "BIT-60.pdf p.178 description"
+      ],
+      "review_sample_id": "BIT-2560-no-coop-14",
+      "name_th_by_code": {
+        "06036020": "โครงงาน 2"
+      }
+    }
+  ]
+}

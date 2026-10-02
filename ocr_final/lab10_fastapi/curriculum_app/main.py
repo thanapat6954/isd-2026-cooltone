@@ -73,6 +73,9 @@ def _frontend_question(request: FrontendAskRequest) -> str:
     }
     selected = request.curriculum.strip()
     curriculum = curriculum_aliases.get(selected.upper(), selected)
+    if curriculum == "AI" and request.version in {"latest", "revised"}:
+        # "Current" is resolved using DB metadata, not another program's year.
+        return f"หลักสูตร {curriculum} ฉบับปัจจุบัน: {request.question}"
     version_context = {
         "latest": "ฉบับล่าสุด 2565",
         "revised": "ฉบับปรับปรุง 2565",
@@ -143,6 +146,14 @@ def _source_section(row: dict[str, Any], intent: str) -> str:
 
 def _source_quote(row: dict[str, Any]) -> str | None:
     """Build a readable excerpt instead of exposing raw database key/value text."""
+    if "prerequisite_status" in row:
+        status = row["prerequisite_status"]
+        identity = f"{row.get('code')} {row.get('name_th') or ''}".strip()
+        if status == "explicit_none":
+            return f"{identity} — เอกสารระบุว่าไม่มีวิชาบังคับก่อน"
+        if row.get("requires") and status in {"required", "recorded_requirement"}:
+            return f"{identity} — วิชาบังคับก่อน: {row['requires']}"
+        return f"{identity} — หลักฐานยืนยันรายวิชาเท่านั้น ยังไม่ยืนยันข้อมูลวิชาบังคับก่อน"
     name = row.get("name_th") or row.get("name_en")
     code = row.get("code")
     credits = row.get("credits_raw") or row.get("credits")
@@ -281,7 +292,7 @@ def frontend_ask(request: FrontendAskRequest):
         return {
             "answer": answer,
             "sources": _frontend_sources(result),
-            "model": settings.ollama_model,
+            "model": settings.ollama_model if result.get('intent') == 'unknown' else 'SQL (database-backed)',
             "latency_ms": round((time.perf_counter() - started_at) * 1000),
             "confidence": None,
         }

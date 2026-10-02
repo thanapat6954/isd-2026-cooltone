@@ -1,0 +1,5 @@
+{
+  "reviews": [
+    {"program": "AI", "source_file": "AI.pdf", "pdf_page": 1, "curriculum_version": 2566, "is_latest": true, "sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f", "review_status": "visually_verified", "evidence": "Cover states หลักสูตรใหม่ พ.ศ. 2566. This mapping applies to AI only, not DSBA/IT/BIT."}
+  ]
+}
