@@ -285,10 +285,70 @@ function renderSources(sources) {
 }
 
 // Render a successful response and its timing metadata.
+function renderStudyPlan(payload) {
+  const container = document.querySelector('#study-plan-cards');
+  container.replaceChildren();
+  const cards = Array.isArray(payload?.cards) ? payload.cards : [];
+  container.classList.toggle('hidden', !cards.length);
+  elements.answerText.classList.toggle('hidden', Boolean(cards.length));
+  const add = (parent, tag, text, className) => {
+    const node = document.createElement(tag);
+    if (text != null) node.textContent = String(text);
+    if (className) node.className = className;
+    parent.append(node);
+    return node;
+  };
+  cards.forEach((card) => {
+    const article = add(container, 'article', null, 'study-plan-card');
+    add(article, 'h3', `${card.program} พ.ศ. ${card.version} — ปี ${card.year} ภาคการศึกษาที่ ${card.semester}`);
+    add(article, 'h4', card.plan_label, 'plan-label');
+    if (card.printed_total != null) add(article, 'p', `รวมตามตาราง ${card.printed_total} หน่วยกิต โดยเลือกกลุ่มและตัวเลือกตามข้อกำหนด ไม่รวมทุกทางเลือกเข้าด้วยกัน`, 'plan-note');
+    (card.notes || []).forEach((note) => add(article, 'p', note, 'plan-note'));
+    (card.sections || []).forEach((section) => {
+      const block = add(article, 'section', null, 'track-card');
+      add(block, 'h5', section.title);
+      const groupIds = section.rows.map((r) => r.alt_group).filter(Boolean);
+      const alternatives = [...new Set(groupIds.filter((id) => groupIds.filter((other) => other === id).length > 1))];
+      if (alternatives.length) add(block, 'p', 'รายวิชาที่เป็นชุดตัวเลือก “หรือ” ไม่ต้องเรียนทุกตัวเลือกในชุดเดียวกัน', 'plan-note');
+      const table = add(block, 'table', null, 'plan-table');
+      const head = add(add(table, 'thead'), 'tr');
+      ['รหัสวิชา', 'ชื่อวิชา', 'หน่วยกิต'].forEach((text) => add(head, 'th', text).scope = 'col');
+      const body = add(table, 'tbody');
+      (section.rows || []).forEach((row) => {
+        const tr = add(body, 'tr');
+        const placeholder = row.is_placeholder || /^ELEC-/i.test(row.code || '');
+        add(tr, 'td', row.raw_code || row.code_pattern || (placeholder ? 'ไม่กำหนดรหัส' : row.code), 'plan-code');
+        const name = add(tr, 'td');
+        add(name, 'span', row.name_th || row.name_en || 'เลือกจากรายวิชาในหมวดนี้ (ยังไม่ยืนยันชื่อหมวดจากข้อมูลที่นำเข้า)');
+        if (alternatives.includes(row.alt_group)) add(name, 'small', `ตัวเลือก “หรือ” ชุดที่ ${alternatives.indexOf(row.alt_group) + 1}`, 'plan-secondary');
+        if (row.name_en || row.credits_raw || row.category || row.note) {
+          const details = add(name, 'details');
+          add(details, 'summary', 'รายละเอียดเพิ่มเติม');
+          if (row.name_en) add(details, 'p', row.name_en);
+          if (row.credits_raw) add(details, 'p', `หน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): ${row.credits_raw}`);
+          if (row.category) add(details, 'p', `หมวดวิชา: ${row.category}`);
+          if (row.note) add(details, 'p', row.note);
+        }
+        const credits = add(tr, 'td', row.credits ?? 'ยังไม่ยืนยัน', 'plan-credits');
+        if (placeholder) add(credits, 'small', 'วิชาเลือก', 'plan-secondary');
+        if (row.page_number) {
+          const text = `PDF หน้า ${row.page_number}${row.printed_page_number ? ` / หน้า ${row.printed_page_number} ในเล่ม` : ' / หน้าในเล่มยังไม่ยืนยัน'}`;
+          if (/^(AI|DSBA|DSBA-60|IT|IT-60|BIT-65|BIT-60)\.pdf$/.test(row.source_file || '')) {
+            const link = add(name, 'a', text, 'plan-source');
+            link.href = `${API_BASE}/api/source/${encodeURIComponent(row.source_file)}#page=${Number(row.page_number)}`;
+            link.target = '_blank'; link.rel = 'noopener noreferrer';
+          } else add(name, 'small', text, 'plan-secondary');
+        }
+      });
+    });
+  });
+}
+
 function renderSuccess(data, roundTripMs) {
   const sources = Array.isArray(data.sources) ? data.sources : [];
   const hasLowConfidence = typeof data.confidence === "number" && data.confidence < 0.5;
   elements.answerText.textContent = data.answer || "เซิร์ฟเวอร์ไม่ได้ส่งข้อความคำตอบกลับมา";
+  renderStudyPlan(data.study_plan);
   elements.confidenceWarning.classList.toggle("hidden", !hasLowConfidence);
   elements.modelValue.textContent = data.model || "ไม่มีข้อมูล";
   elements.serverLatencyValue.textContent = Number.isFinite(data.latency_ms)

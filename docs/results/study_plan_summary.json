@@ -1,0 +1,457 @@
+{
+  "profiles": [
+    {
+      "profile": "AI-2566-coop",
+      "grouping_passed": 1,
+      "grouping_n": 1,
+      "reviewed_term_probes": 0,
+      "gold": {
+        "passed": 5,
+        "n": 5
+      },
+      "old": null
+    },
+    {
+      "profile": "BIT-2560-coop",
+      "grouping_passed": 1,
+      "grouping_n": 1,
+      "reviewed_term_probes": 0,
+      "gold": {
+        "passed": 5,
+        "n": 5
+      },
+      "old": {
+        "n": 10,
+        "passed": 10
+      }
+    },
+    {
+      "profile": "BIT-2560-no-coop",
+      "grouping_passed": 1,
+      "grouping_n": 1,
+      "reviewed_term_probes": 0,
+      "gold": {
+        "passed": 5,
+        "n": 5
+      },
+      "old": {
+        "n": 10,
+        "passed": 10
+      }
+    },
+    {
+      "profile": "BIT-2565-coop",
+      "grouping_passed": 1,
+      "grouping_n": 1,
+      "reviewed_term_probes": 0,
+      "gold": {
+        "passed": 5,
+        "n": 5
+      },
+      "old": null
+    },
+    {
+      "profile": "BIT-2565-no-coop",
+      "grouping_passed": 1,
+      "grouping_n": 1,
+      "reviewed_term_probes": 0,
+      "gold": {
+        "passed": 5,
+        "n": 5
+      },
+      "old": null
+    },
+    {
+      "profile": "DSBA-2560-coop",
+      "grouping_passed": 1,
+      "grouping_n": 1,
+      "reviewed_term_probes": 0,
+      "gold": {
+        "passed": 5,
+        "n": 5
+      },
+      "old": {
+        "n": 11,
+        "passed": 11
+      }
+    },
+    {
+      "profile": "DSBA-2560-no-coop",
+      "grouping_passed": 1,
+      "grouping_n": 1,
+      "reviewed_term_probes": 0,
+      "gold": {
+        "passed": 5,
+        "n": 5
+      },
+      "old": {
+        "n": 10,
+        "passed": 10
+      }
+    },
+    {
+      "profile": "DSBA-2565-coop",
+      "grouping_passed": 5,
+      "grouping_n": 5,
+      "reviewed_term_probes": 4,
+      "gold": {
+        "passed": 5,
+        "n": 5
+      },
+      "old": null
+    },
+    {
+      "profile": "DSBA-2565-no-coop",
+      "grouping_passed": 5,
+      "grouping_n": 5,
+      "reviewed_term_probes": 4,
+      "gold": {
+        "passed": 5,
+        "n": 5
+      },
+      "old": null
+    },
+    {
+      "profile": "IT-2560-coop",
+      "grouping_passed": 9,
+      "grouping_n": 9,
+      "reviewed_term_probes": 8,
+      "gold": {
+        "passed": 5,
+        "n": 5
+      },
+      "old": {
+        "n": 12,
+        "passed": 12
+      }
+    },
+    {
+      "profile": "IT-2560-no-coop",
+      "grouping_passed": 9,
+      "grouping_n": 9,
+      "reviewed_term_probes": 8,
+      "gold": {
+        "passed": 5,
+        "n": 5
+      },
+      "old": {
+        "n": 12,
+        "passed": 12
+      }
+    },
+    {
+      "profile": "IT-2565-coop",
+      "grouping_passed": 5,
+      "grouping_n": 5,
+      "reviewed_term_probes": 4,
+      "gold": {
+        "passed": 5,
+        "n": 5
+      },
+      "old": null
+    },
+    {
+      "profile": "IT-2565-no-coop",
+      "grouping_passed": 5,
+      "grouping_n": 5,
+      "reviewed_term_probes": 4,
+      "gold": {
+        "passed": 5,
+        "n": 5
+      },
+      "old": null
+    }
+  ],
+  "dependency_changes": [],
+  "database_baseline": [
+    {
+      "profile": "AI-2566-coop",
+      "unchanged": true
+    },
+    {
+      "profile": "BIT-2560-coop",
+      "unchanged": true
+    },
+    {
+      "profile": "BIT-2560-no-coop",
+      "unchanged": true
+    },
+    {
+      "profile": "BIT-2565-coop",
+      "unchanged": true
+    },
+    {
+      "profile": "BIT-2565-no-coop",
+      "unchanged": true
+    },
+    {
+      "profile": "DSBA-2560-coop",
+      "unchanged": true
+    },
+    {
+      "profile": "DSBA-2560-no-coop",
+      "unchanged": true
+    },
+    {
+      "profile": "DSBA-2565-coop",
+      "unchanged": true
+    },
+    {
+      "profile": "DSBA-2565-no-coop",
+      "unchanged": true
+    },
+    {
+      "profile": "IT-2560-coop",
+      "unchanged": true
+    },
+    {
+      "profile": "IT-2560-no-coop",
+      "unchanged": true
+    },
+    {
+      "profile": "IT-2565-coop",
+      "unchanged": true
+    },
+    {
+      "profile": "IT-2565-no-coop",
+      "unchanged": true
+    }
+  ],
+  "api_passed": 45,
+  "api_n": 45,
+  "old_passed": 65,
+  "old_n": 65,
+  "gold_passed": 70,
+  "gold_n": 70,
+  "gold_dataset_unchanged": true,
+  "gold_export": {
+    "runner_exit": 1,
+    "reason": "OneDrive WinError5 replacing final result; recovered complete question checkpoint without rerunning",
+    "recovery_identical": true
+  },
+  "unit_n": 95,
+  "schema_passed": 30,
+  "schema_failed": 0,
+  "test_exit_codes": [
+    0,
+    0
+  ],
+  "deployed_files": {
+    "frontend/app.js": true,
+    "frontend/index.html": true,
+    "frontend/style.css": true,
+    "data/ground_truth/study_plan_relationships.json": true,
+    "lab10_fastapi/curriculum_app/study_plan.py": true,
+    "lab10_fastapi/curriculum_app/main.py": true,
+    "lab10_fastapi/curriculum_app/model_service.py": true,
+    "lab10_fastapi/curriculum_app/query_planner.py": true,
+    "lab10_fastapi/curriculum_app/schemas.py": true
+  },
+  "source_links": [
+    {
+      "source": "DSBA.pdf",
+      "status": 206,
+      "pdf_signature": true
+    },
+    {
+      "source": "IT.pdf",
+      "status": 206,
+      "pdf_signature": true
+    },
+    {
+      "source": "IT-60.pdf",
+      "status": 206,
+      "pdf_signature": true
+    },
+    {
+      "source": "disallowed",
+      "status": 404,
+      "expected": 404
+    }
+  ],
+  "ui": {
+    "observations": [
+      {
+        "case": "IT current Y2S2 desktop",
+        "cards": [
+          {
+            "scroll": 472,
+            "width": 473.2375183105469
+          },
+          {
+            "scroll": 472,
+            "width": 473.2375183105469
+          }
+        ],
+        "headings": [
+          "IT พ.ศ. 2565 — ปี 2 ภาคการศึกษาที่ 2",
+          "แผนสหกิจศึกษา",
+          "รายวิชาร่วมทุกกลุ่ม",
+          "กลุ่มวิชาด้านการพัฒนาซอฟต์แวร์",
+          "กลุ่มวิชาด้านโครงสร้างพื้นฐานเทคโนโลยีสารสนเทศ",
+          "กลุ่มวิชาด้านสื่อประสมสำหรับการพัฒนาสื่อเชิงโต้ตอบ เว็บ และเกม",
+          "IT พ.ศ. 2565 — ปี 2 ภาคการศึกษาที่ 2",
+          "แผนไม่สหกิจศึกษา",
+          "รายวิชาร่วมทุกกลุ่ม",
+          "กลุ่มวิชาด้านการพัฒนาซอฟต์แวร์",
+          "กลุ่มวิชาด้านโครงสร้างพื้นฐานเทคโนโลยีสารสนเทศ",
+          "กลุ่มวิชาด้านสื่อประสมสำหรับการพัฒนาสื่อเชิงโต้ตอบ เว็บ และเกม"
+        ],
+        "links": [
+          "http://localhost:8000/api/source/IT.pdf#page=41",
+          "http://localhost:8000/api/source/IT.pdf#page=41",
+          "http://localhost:8000/api/source/IT.pdf#page=41",
+          "http://localhost:8000/api/source/IT.pdf#page=41",
+          "http://localhost:8000/api/source/IT.pdf#page=41",
+          "http://localhost:8000/api/source/IT.pdf#page=41",
+          "http://localhost:8000/api/source/IT.pdf#page=41",
+          "http://localhost:8000/api/source/IT.pdf#page=41",
+          "http://localhost:8000/api/source/IT.pdf#page=41",
+          "http://localhost:8000/api/source/IT.pdf#page=41",
+          "http://localhost:8000/api/source/IT.pdf#page=34",
+          "http://localhost:8000/api/source/IT.pdf#page=34",
+          "http://localhost:8000/api/source/IT.pdf#page=34",
+          "http://localhost:8000/api/source/IT.pdf#page=34",
+          "http://localhost:8000/api/source/IT.pdf#page=34",
+          "http://localhost:8000/api/source/IT.pdf#page=34",
+          "http://localhost:8000/api/source/IT.pdf#page=34",
+          "http://localhost:8000/api/source/IT.pdf#page=34",
+          "http://localhost:8000/api/source/IT.pdf#page=34",
+          "http://localhost:8000/api/source/IT.pdf#page=34"
+        ],
+        "rows": [
+          "06016405พื้นฐานความมั่นคงปลอดภัยไซเบอร์รายละเอียดเพิ่มเติมCYBERSECURITY FUNDAMENTALSหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(3-0-6)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3",
+          "06016410วิศวกรรมซอฟต์แวร์รายละเอียดเพิ่มเติมSOFTWARE ENGINEERINGหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(3-0-6)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3",
+          "06016412โครงสร้างระบบคอมพิวเตอร์และระบบปฏิบัติการรายละเอียดเพิ่มเติมCOMPUTER ORGANIZATION AND OPERATING SYSTEMหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3",
+          "06066302การเขียนโปรแกรมเว็บพื้นฐานรายละเอียดเพิ่มเติมFUNDAMENTAL WEB PROGRAMMINGหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3",
+          "06016414ระบบฐานข้อมูลแบบโนเอสคิวแอลรายละเอียดเพิ่มเติมNOSQL DATABASE SYSTEMSหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3",
+          "06016415การเขียนโปรแกรมเชิงฟังก์ชันรายละเอียดเพิ่มเติมFUNCTIONAL PROGRAMMINGหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3",
+          "06016419โครงสร้างพื้นฐานเครือข่ายการสื่อสารรายละเอียดเพิ่มเติมCOMMUNICATION NETWORK INFRASTRUCTUREหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3",
+          "06016420ระบบโครงสร้างพื้นฐานและการบริการรายละเอียดเพิ่มเติมINFRASTRUCTURE SYSTEMS AND SERVICESหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3",
+          "06016424การออกแบบส่วนต่อประสานกับมนุษย์รายละเอียดเพิ่มเติมHUMAN INTERFACE DESIGNหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(3-0-6)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3",
+          "06016425พื้นฐานการออกแบบทัศนศิลป์สำหรับสื่อปฏิสัมพันธ์รายละเอียดเพิ่มเติมVISUAL DESIGN FUNDAMENTALS FOR INTERACTIVE MEDIAหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3",
+          "06016405พื้นฐานความมั่นคงปลอดภัยไซเบอร์รายละเอียดเพิ่มเติมCYBERSECURITY FUNDAMENTALSหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(3-0-6)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3",
+          "06016410วิศวกรรมซอฟต์แวร์รายละเอียดเพิ่มเติมSOFTWARE ENGINEERINGหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(3-0-6)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3",
+          "06016412โครงสร้างระบบคอมพิวเตอร์และระบบปฏิบัติการรายละเอียดเพิ่มเติมCOMPUTER ORGANIZATION AND OPERATING SYSTEMหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3",
+          "06066302การเขียนโปรแกรมเว็บพื้นฐานรายละเอียดเพิ่มเติมFUNDAMENTAL WEB PROGRAMMINGหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3",
+          "06016414ระบบฐานข้อมูลแบบโนเอสคิวแอลรายละเอียดเพิ่มเติมNOSQL DATABASE SYSTEMSหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3",
+          "06016415การเขียนโปรแกรมเชิงฟังก์ชันรายละเอียดเพิ่มเติมFUNCTIONAL PROGRAMMINGหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3",
+          "06016419โครงสร้างพื้นฐานเครือข่ายการสื่อสารรายละเอียดเพิ่มเติมCOMMUNICATION NETWORK INFRASTRUCTUREหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3",
+          "06016420ระบบโครงสร้างพื้นฐานและการบริการรายละเอียดเพิ่มเติมINFRASTRUCTURE SYSTEMS AND SERVICESหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3",
+          "06016424การออกแบบส่วนต่อประสานกับมนุษย์รายละเอียดเพิ่มเติมHUMAN INTERFACE DESIGNหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(3-0-6)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3",
+          "06016425พื้นฐานการออกแบบทัศนศิลป์สำหรับสื่อปฏิสัมพันธ์รายละเอียดเพิ่มเติมVISUAL DESIGN FUNDAMENTALS FOR INTERACTIVE MEDIAหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3"
+        ],
+        "scroll": 1265,
+        "width": 1280
+      },
+      {
+        "case": "IT old Y2S2 no-coop software mobile, escaping",
+        "codes": [
+          "06016304",
+          "06016306",
+          "06016308",
+          "90201026",
+          "06016321",
+          "06016322"
+        ],
+        "headings": [
+          "IT พ.ศ. 2560 — ปี 2 ภาคการศึกษาที่ 2",
+          "แผนไม่สหกิจศึกษา",
+          "รายวิชาร่วมทุกกลุ่ม",
+          "แขนงวิชาวิศวกรรมซอฟต์แวร์"
+        ],
+        "history": "ปี 2 ภาคการศึกษาที่ 2 มีรายวิชาอะไรบ้าง แผนไม่สหกิจศึกษา แขนงวิชาวิศวกรรมซอฟต์แวร์ <img src=x onerror=alert(1)>IT · ฉบับเก่า (พ.ศ. 2560)",
+        "injectedImages": 0,
+        "links": [
+          "http://localhost:8000/api/source/IT-60.pdf#page=29",
+          "http://localhost:8000/api/source/IT-60.pdf#page=29",
+          "http://localhost:8000/api/source/IT-60.pdf#page=29",
+          "http://localhost:8000/api/source/IT-60.pdf#page=29",
+          "http://localhost:8000/api/source/IT-60.pdf#page=29",
+          "http://localhost:8000/api/source/IT-60.pdf#page=29"
+        ],
+        "scroll": 375,
+        "tables": [
+          {
+            "scroll": 260,
+            "width": 260.3999938964844
+          },
+          {
+            "scroll": 260,
+            "width": 260.3999938964844
+          }
+        ],
+        "width": 390
+      }
+    ],
+    "screenshots": [
+      "study_plan_dsba_mobile.jpg",
+      "study_plan_it_desktop.jpg",
+      "study_plan_it_mobile.jpg"
+    ],
+    "method": "Real live browser, desktop1280 and mobile390; read-only DOM measurements and form submissions"
+  },
+  "narrow_ui": {
+    "grid": "680px",
+    "headings": [
+      "DSBA พ.ศ. 2565 — ปี 3 ภาคการศึกษาที่ 1",
+      "แผนสหกิจศึกษา",
+      "รายวิชาร่วมทุกกลุ่ม",
+      "กลุ่มวิทยาการข้อมูล",
+      "กลุ่มการวิเคราะห์เชิงสถิติ",
+      "กลุ่มวิศวกรรมข้อมูล",
+      "วิชาศึกษาทั่วไป",
+      "DSBA พ.ศ. 2565 — ปี 3 ภาคการศึกษาที่ 1",
+      "แผนไม่สหกิจศึกษา",
+      "รายวิชาร่วมทุกกลุ่ม",
+      "กลุ่มวิทยาการข้อมูล",
+      "กลุ่มการวิเคราะห์เชิงสถิติ",
+      "กลุ่มวิศวกรรมข้อมูล",
+      "วิชาศึกษาทั่วไป"
+    ],
+    "scroll": 753,
+    "tables": [
+      {
+        "scroll": 577,
+        "width": 577.2000122070312
+      },
+      {
+        "scroll": 577,
+        "width": 577.2000122070312
+      },
+      {
+        "scroll": 577,
+        "width": 577.2000122070312
+      },
+      {
+        "scroll": 577,
+        "width": 577.2000122070312
+      },
+      {
+        "scroll": 577,
+        "width": 577.2000122070312
+      },
+      {
+        "scroll": 577,
+        "width": 577.2000122070312
+      },
+      {
+        "scroll": 577,
+        "width": 577.2000122070312
+      },
+      {
+        "scroll": 577,
+        "width": 577.2000122070312
+      },
+      {
+        "scroll": 577,
+        "width": 577.2000122070312
+      },
+      {
+        "scroll": 577,
+        "width": 577.2000122070312
+      }
+    ],
+    "width": 768
+  }
+}

@@ -23,6 +23,7 @@ class SourceCitation(BaseModel):
 
 class FrontendAskResponse(BaseModel):
     answer: str
+    study_plan: dict[str, Any] | None = None
     sources: list[SourceCitation]
     model: str
     latency_ms: int

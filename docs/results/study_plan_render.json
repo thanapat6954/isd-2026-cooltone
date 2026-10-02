@@ -1,0 +1,34 @@
+{
+  "databases": [],
+  "responses": [],
+  "renders": [
+    {
+      "source_file": "DSBA.pdf",
+      "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+      "pdf_page": 34,
+      "image": "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\tmp\\pdfs\\study_plans\\DSBA-034.png",
+      "image_sha256": "39e8ea5c5493408b8ffb38deebb6c81fa9578264cc80b709a15dce2307fd95ea"
+    },
+    {
+      "source_file": "DSBA.pdf",
+      "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+      "pdf_page": 35,
+      "image": "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\tmp\\pdfs\\study_plans\\DSBA-035.png",
+      "image_sha256": "3b68e77c6354f32133ff8ed915262bf15089441dd0289ecf435216e970d0b641"
+    },
+    {
+      "source_file": "IT.pdf",
+      "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+      "pdf_page": 27,
+      "image": "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\tmp\\pdfs\\study_plans\\IT-027.png",
+      "image_sha256": "8fdb3dfdcb4bdab52998e177583c45278c61303d6ecf15953c5471a80e777604"
+    },
+    {
+      "source_file": "IT.pdf",
+      "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+      "pdf_page": 30,
+      "image": "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\tmp\\pdfs\\study_plans\\IT-030.png",
+      "image_sha256": "daefd87b1c437200b854d31eb203e310edd09e6d9750aa019b16895f22af03ca"
+    }
+  ]
+}

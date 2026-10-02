@@ -27,6 +27,7 @@ from ocr_system import lab8b_curriculum_db as lab8b  # noqa: E402
 
 from .database import CurriculumDatabase, DatabaseRegistry  # noqa: E402
 from .model_service import QwenTextToSQL  # noqa: E402
+from .study_plan import PLAN_LABELS
 from .schemas import (  # noqa: E402
     AskRequest,
     AskResponse,
@@ -121,7 +122,7 @@ def _source_section(row: dict[str, Any], intent: str) -> str:
     context = [
         str(row.get("source_file")) if row.get("source_file") else None,
         f"พ.ศ. {source.get('curriculum_version')}" if source.get("curriculum_version") else None,
-        str(source.get("plan")) if source.get("plan") else None,
+        PLAN_LABELS.get(source.get('plan'), source.get('plan')) if source.get("plan") else None,
     ]
     for key in ("name_th", "name_en", "category", "note", "program_id"):
         if row.get(key):
@@ -157,12 +158,14 @@ def _source_quote(row: dict[str, Any]) -> str | None:
     name = row.get("name_th") or row.get("name_en")
     code = row.get("code")
     credits = row.get("credits_raw") or row.get("credits")
+    if not name and str(code or '').startswith('ELEC-'):
+        return f"รายการวิชาเลือก — {credits} หน่วยกิต; ข้อมูลที่นำเข้ายังไม่ยืนยันชื่อหมวด"
     if name:
         identity = str(name)
         if code and not row.get("is_placeholder"):
             identity = f"{code} {identity}"
         if row.get("is_placeholder"):
-            identity += " — สล็อตวิชาเลือก (รหัสยังไม่กำหนด)"
+            identity += " — รายการวิชาเลือก (รหัสยังไม่กำหนด)"
         return f"{identity}; {credits} หน่วยกิต"[:220] if credits is not None else identity[:220]
     if row.get("total_credits") is not None:
         return f"หลักสูตรกำหนดหน่วยกิตรวม {row['total_credits']} หน่วยกิต"
@@ -279,6 +282,15 @@ def ask(request: AskRequest) -> dict:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
 
 
+@app.get('/api/source/{source_file}')
+def source_pdf(source_file: str):
+    allowed = {'AI.pdf', 'DSBA.pdf', 'DSBA-60.pdf', 'IT.pdf', 'IT-60.pdf', 'BIT-65.pdf', 'BIT-60.pdf'}
+    path = PROJECT_ROOT / 'data/input' / source_file
+    if source_file not in allowed or not path.is_file():
+        raise HTTPException(status_code=404, detail='ไม่พบเอกสารต้นฉบับที่อนุญาต')
+    return FileResponse(path, media_type='application/pdf')
+
+
 @app.post("/ask", response_model=FrontendAskResponse)
 def frontend_ask(request: FrontendAskRequest):
     """Adapter used by the standalone Week 11 front end."""
@@ -291,6 +303,7 @@ def frontend_ask(request: FrontendAskRequest):
         answer = result["answer"]
         return {
             "answer": answer,
+            "study_plan": result.get('study_plan'),
             "sources": _frontend_sources(result),
             "model": settings.ollama_model if result.get('intent') == 'unknown' else 'SQL (database-backed)',
             "latency_ms": round((time.perf_counter() - started_at) * 1000),

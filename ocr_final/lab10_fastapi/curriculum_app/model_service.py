@@ -23,6 +23,7 @@ from .database import (
     execute_readonly,
 )
 from .query_planner import QueryPlan, detect_intent, deterministic_sql, normalize_course_name
+from .study_plan import build_study_plan, review_fingerprint, study_plan_text
 
 
 LOGGER = logging.getLogger("curriculum_app")
@@ -557,7 +558,7 @@ intent: {plan.intent}
             (str(item.path), item.path.stat().st_mtime_ns)
             for item in registry.databases if item.path.is_file()
         )
-        cache_key: tuple[object, ...] = (question.strip().casefold(), fingerprint)
+        cache_key: tuple[object, ...] = (question.strip().casefold(), fingerprint, review_fingerprint(registry.root))
         cached = self._answer_cache.get(cache_key)
         if cached is not None:
             self._answer_cache.move_to_end(cache_key)
@@ -608,7 +609,11 @@ intent: {plan.intent}
             )
             raise ValueError(f"ไม่สามารถค้นฐานข้อมูลได้: {errors}")
 
-        if rows and plan.intent == "version_course_diff":
+        study_plan = None
+        if rows and plan.intent == 'course_list':
+            study_plan, rows = build_study_plan(rows, question, registry.root, required_only=plan.required_only)
+            answer = study_plan_text(study_plan)
+        elif rows and plan.intent == "version_course_diff":
             answer, rows = self._version_diff(rows)
         elif rows and plan.intent != "unknown":
             # Structured intents are rendered from database rows directly.
@@ -641,6 +646,7 @@ intent: {plan.intent}
             },
         }
         result = {
+            "study_plan": study_plan,
             "cache_hit": False,
             "question": question,
             "intent": plan.intent,

@@ -469,6 +469,29 @@ button:disabled {
 }
 
 /* State utility classes */
+.study-plan-cards { display: grid; gap: 20px; min-width: 0; }
+.study-plan-card { min-width: 0; border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+.study-plan-card h3 { font-size: 1.05rem; line-height: 1.6; }
+.plan-label { color: var(--brand); margin: 10px 0; }
+.track-card { margin-top: 20px; min-width: 0; }
+.track-card h5 { font-size: 1rem; margin: 0 0 8px; line-height: 1.6; }
+.plan-table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: .9rem; }
+.plan-table th, .plan-table td { text-align: left; vertical-align: top; padding: 9px 4px; border-bottom: 1px solid #dbe5df; overflow-wrap: anywhere; }
+.plan-table th:first-child { width: 82px; }
+.plan-table th:last-child { width: 78px; }
+.plan-table .plan-credits { text-align: center; }
+.plan-secondary, .plan-source { display: block; font-size: .78rem; margin-top: 6px; line-height: 1.6; }
+.plan-note { font-size: .85rem; line-height: 1.7; color: var(--muted); }
+.plan-table details { font-size: .8rem; margin-top: 6px; }
+.plan-table summary { cursor: pointer; }
+.plan-table details p { margin: 5px 0; }
+@media (max-width: 480px) {
+  .study-plan-card { padding: 6px; }
+  .plan-table { font-size: .84rem; }
+  .plan-table th:first-child { width: 68px; }
+  .plan-table th:last-child { width: 62px; }
+}
+
 .hidden {
   display: none !important;
 }
@@ -477,8 +500,8 @@ button:disabled {
   opacity: 0.86;
 }
 
-/* One responsive breakpoint for phones */
-@media (max-width: 760px) {
+/* Stack the app panels before course-name columns become too narrow. */
+@media (max-width: 1040px) {
   .page-shell {
     width: calc(100% - 24px);
     max-width: 680px;

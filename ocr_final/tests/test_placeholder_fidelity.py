@@ -190,7 +190,7 @@ class PlaceholderFidelityTests(unittest.TestCase):
         self.assertEqual(sources[0]["page"], 29)
         self.assertEqual(sources[0]["book_page"], 24)
         self.assertNotIn("name_th:", sources[0]["quote"])
-        self.assertIn("สล็อตวิชาเลือก", sources[0]["quote"])
+        self.assertIn("รายการวิชาเลือก", sources[0]["quote"])
 
     def test_course_list_never_exposes_internal_slot_id(self):
         plan = QueryPlan("course_list", 4, 2)

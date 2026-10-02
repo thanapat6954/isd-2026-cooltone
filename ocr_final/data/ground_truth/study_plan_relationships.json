@@ -1,0 +1,546 @@
+{
+  "schema_version": 1,
+  "review_method": "Rendered official PDF page images; embedded Thai text is locator-only",
+  "sources": {
+    "DSBA.pdf": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+    "IT.pdf": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+    "IT-60.pdf": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d"
+  },
+  "track_sets": {
+    "dsba65": [
+      {
+        "id": "data-science",
+        "label": "กลุ่มวิทยาการข้อมูล",
+        "aliases": [
+          "วิทยาการข้อมูล"
+        ],
+        "elective_name": "วิชาเลือกกลุ่มวิทยาการข้อมูล"
+      },
+      {
+        "id": "statistics",
+        "label": "กลุ่มการวิเคราะห์เชิงสถิติ",
+        "aliases": [
+          "การวิเคราะห์เชิงสถิติ"
+        ],
+        "elective_name": "วิชาเลือกกลุ่มการวิเคราะห์เชิงสถิติ"
+      },
+      {
+        "id": "data-engineering",
+        "label": "กลุ่มวิศวกรรมข้อมูล",
+        "aliases": [
+          "วิศวกรรมข้อมูล"
+        ],
+        "elective_name": "วิชาเลือกกลุ่มวิศวกรรมข้อมูล"
+      }
+    ],
+    "it65": [
+      {
+        "id": "software",
+        "label": "กลุ่มวิชาด้านการพัฒนาซอฟต์แวร์",
+        "aliases": [
+          "การพัฒนาซอฟต์แวร์"
+        ]
+      },
+      {
+        "id": "infrastructure",
+        "label": "กลุ่มวิชาด้านโครงสร้างพื้นฐานเทคโนโลยีสารสนเทศ",
+        "aliases": [
+          "โครงสร้างพื้นฐานเทคโนโลยีสารสนเทศ",
+          "โครงสร้างพื้นฐานทางเทคโนโลยีสารสนเทศ"
+        ]
+      },
+      {
+        "id": "media",
+        "label": "กลุ่มวิชาด้านสื่อประสมสำหรับการพัฒนาสื่อเชิงโต้ตอบ เว็บ และเกม",
+        "aliases": [
+          "สื่อประสม",
+          "เว็บและเกม"
+        ]
+      }
+    ],
+    "it60": [
+      {
+        "id": "software",
+        "label": "แขนงวิชาวิศวกรรมซอฟต์แวร์",
+        "aliases": [
+          "วิศวกรรมซอฟต์แวร์"
+        ]
+      },
+      {
+        "id": "network",
+        "label": "แขนงวิชาเทคโนโลยีเครือข่ายและระบบ",
+        "aliases": [
+          "เทคโนโลยีเครือข่ายและระบบ"
+        ]
+      },
+      {
+        "id": "media",
+        "label": "แขนงวิชาการพัฒนาสื่อประสมและเกม",
+        "aliases": [
+          "การพัฒนาสื่อประสมและเกม",
+          "สื่อประสมและเกม"
+        ]
+      }
+    ]
+  },
+  "terms": [
+    {
+      "source_file": "DSBA.pdf",
+      "version": 2565,
+      "year": 3,
+      "semester": 1,
+      "pages": {
+        "coop": [
+          [
+            34,
+            33
+          ]
+        ],
+        "no-coop": [
+          [
+            27,
+            26
+          ]
+        ]
+      },
+      "track_set": "dsba65",
+      "shared_codes": [
+        "06026211",
+        "06026212",
+        "90644042"
+      ],
+      "elective_pattern": "06026xxx",
+      "elective_ordinals": [
+        1,
+        2
+      ],
+      "elective_credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+      "general_patterns": [
+        "9064xxxx"
+      ],
+      "general_name": "วิชาเลือกหมวดวิชาศึกษาทั่วไป",
+      "general_credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+      "printed_total": 18,
+      "note": "แต่ละรายการวิชาเลือกมีตัวเลือกสามกลุ่ม ไม่ใช่ให้เรียนทุกกลุ่มพร้อมกัน หน้าตารางนี้ยังไม่ยืนยันว่าต้องเลือกกลุ่มเดียวตลอดหลักสูตร"
+    },
+    {
+      "source_file": "DSBA.pdf",
+      "version": 2565,
+      "year": 3,
+      "semester": 2,
+      "pages": {
+        "coop": [
+          [
+            35,
+            34
+          ]
+        ],
+        "no-coop": [
+          [
+            28,
+            27
+          ]
+        ]
+      },
+      "track_set": "dsba65",
+      "shared_codes": [
+        "06026213",
+        "06026214",
+        "06066100",
+        "90643021"
+      ],
+      "elective_pattern": "06026xxx",
+      "elective_ordinals": [
+        3,
+        4
+      ],
+      "elective_credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+      "printed_total": 18,
+      "note": "แสดงกลุ่มตัวเลือกตามตาราง ไม่บวกข้อกำหนดของทุกกลุ่มเข้าด้วยกัน"
+    },
+    {
+      "source_file": "IT.pdf",
+      "version": 2565,
+      "year": 2,
+      "semester": 2,
+      "pages": {
+        "coop": [
+          [
+            41,
+            36
+          ]
+        ],
+        "no-coop": [
+          [
+            34,
+            29
+          ]
+        ]
+      },
+      "track_set": "it65",
+      "shared_codes": [
+        "06016405",
+        "06016410",
+        "06016412",
+        "06066302"
+      ],
+      "track_codes": {
+        "software": [
+          "06016414",
+          "06016415"
+        ],
+        "infrastructure": [
+          "06016419",
+          "06016420"
+        ],
+        "media": [
+          "06016424",
+          "06016425"
+        ]
+      },
+      "printed_total": 18,
+      "note": "รายวิชาใต้หัวข้อแต่ละกลุ่มเป็นแผนทางเลือก อย่ารวมรายวิชาจากทุกกลุ่มเป็นข้อกำหนดเดียว",
+      "row_facts": {
+        "06016405": {
+          "name_th": "พื้นฐานความมั่นคงปลอดภัยไซเบอร์",
+          "credits_raw": "3(3-0-6)",
+          "name_en": "CYBERSECURITY FUNDAMENTALS"
+        },
+        "06016410": {
+          "name_th": "วิศวกรรมซอฟต์แวร์",
+          "credits_raw": "3(3-0-6)",
+          "name_en": "SOFTWARE ENGINEERING"
+        },
+        "06016412": {
+          "name_th": "โครงสร้างระบบคอมพิวเตอร์และระบบปฏิบัติการ",
+          "credits_raw": "3(2-2-5)",
+          "name_en": "COMPUTER ORGANIZATION AND OPERATING SYSTEM"
+        },
+        "06066302": {
+          "name_th": "การเขียนโปรแกรมเว็บพื้นฐาน",
+          "credits_raw": "3(2-2-5)",
+          "name_en": "FUNDAMENTAL WEB PROGRAMMING"
+        },
+        "06016414": {
+          "name_th": "ระบบฐานข้อมูลแบบโนเอสคิวแอล",
+          "credits_raw": "3(2-2-5)",
+          "name_en": "NOSQL DATABASE SYSTEMS"
+        },
+        "06016415": {
+          "name_th": "การเขียนโปรแกรมเชิงฟังก์ชัน",
+          "credits_raw": "3(2-2-5)",
+          "name_en": "FUNCTIONAL PROGRAMMING"
+        },
+        "06016419": {
+          "name_th": "โครงสร้างพื้นฐานเครือข่ายการสื่อสาร",
+          "credits_raw": "3(2-2-5)",
+          "name_en": "COMMUNICATION NETWORK INFRASTRUCTURE"
+        },
+        "06016420": {
+          "name_th": "ระบบโครงสร้างพื้นฐานและการบริการ",
+          "credits_raw": "3(2-2-5)",
+          "name_en": "INFRASTRUCTURE SYSTEMS AND SERVICES"
+        },
+        "06016424": {
+          "name_th": "การออกแบบส่วนต่อประสานกับมนุษย์",
+          "credits_raw": "3(3-0-6)",
+          "name_en": "HUMAN INTERFACE DESIGN"
+        },
+        "06016425": {
+          "name_th": "พื้นฐานการออกแบบทัศนศิลป์สำหรับสื่อปฏิสัมพันธ์",
+          "credits_raw": "3(2-2-5)",
+          "name_en": "VISUAL DESIGN FUNDAMENTALS FOR INTERACTIVE MEDIA"
+        }
+      }
+    },
+    {
+      "source_file": "IT.pdf",
+      "version": 2565,
+      "year": 3,
+      "semester": 1,
+      "pages": {
+        "coop": [
+          [
+            42,
+            37
+          ]
+        ],
+        "no-coop": [
+          [
+            35,
+            30
+          ]
+        ]
+      },
+      "track_set": "it65",
+      "shared_codes": [
+        "06016404",
+        "06066102"
+      ],
+      "track_codes": {
+        "software": [
+          "06016416",
+          "06016417",
+          "06016418"
+        ],
+        "infrastructure": [
+          "06016421",
+          "06016422",
+          "06016423"
+        ],
+        "media": [
+          "06016426",
+          "06016427",
+          "06016418"
+        ]
+      },
+      "general_patterns": [
+        "90644xxx"
+      ],
+      "general_name": "วิชาเลือกหมวดภาษาและการสื่อสาร",
+      "general_credits_raw": "3(3-0-6)",
+      "printed_total": 18,
+      "row_facts": {
+        "06016404": {
+          "credits_raw": "3(2-2-5)"
+        },
+        "06016417": {
+          "name_th": "เครื่องมือและสภาพแวดล้อมสำหรับการพัฒนาซอฟต์แวร์",
+          "credits_raw": "3(2-2-5)",
+          "name_en": "SOFTWARE DEVELOPMENT TOOLS AND ENVIRONMENTS"
+        },
+        "06016422": {
+          "name_th": "อินเทอร์เน็ตของสรรพสิ่ง",
+          "name_en": "INTERNET OF THINGS",
+          "credits_raw": "3(2-2-5)"
+        },
+        "06016423": {
+          "name_th": "การอัตโนมัติและโครงสร้างพื้นฐานที่สามารถโปรแกรมได้",
+          "name_en": "INFRASTRUCTURE PROGRAMMABILITY AND AUTOMATION",
+          "credits_raw": "3(2-2-5)"
+        },
+        "06016426": {
+          "name_th": "คอมพิวเตอร์กราฟิกส์และแอนิเมชัน",
+          "name_en": "COMPUTER GRAPHICS AND ANIMATION",
+          "credits_raw": "3(2-2-5)"
+        },
+        "06016427": {
+          "name_th": "การออกแบบและพัฒนาเกมเบื้องต้น",
+          "name_en": "INTRODUCTION TO GAME DESIGN AND DEVELOPMENT",
+          "credits_raw": "3(2-2-5)"
+        },
+        "06016421": {
+          "name_th": "ความมั่นคงปลอดภัยโครงสร้างพื้นฐานทางเทคโนโลยีสารสนเทศ",
+          "name_en": "INFORMATION TECHNOLOGY INFRASTRUCTURE SECURITY",
+          "credits_raw": "3(3-0-6)"
+        },
+        "06016416": {
+          "name_th": "วิศวกรรมความต้องการ",
+          "credits_raw": "3(3-0-6)",
+          "name_en": "REQUIREMENT ENGINEERING"
+        },
+        "06016418": {
+          "name_th": "การพัฒนาเว็บฝั่งเซิร์ฟเวอร์",
+          "credits_raw": "3(2-2-5)",
+          "name_en": "SERVER-SIDE WEB DEVELOPMENT"
+        },
+        "06066102": {
+          "credits_raw": "3(3-0-6)"
+        }
+      },
+      "note": "06016418 ปรากฏทั้งกลุ่มซอฟต์แวร์และกลุ่มสื่อประสม ไม่ได้อยู่ร่วมทุกกลุ่ม ตาราง DB ยังมีข้อมูลบาง field ไม่ครบ จึงใช้ข้อเท็จจริงที่ตรวจจากหน้านี้แยกจาก OCR เดิม"
+    },
+    {
+      "source_file": "IT-60.pdf",
+      "version": 2560,
+      "year": 2,
+      "semester": 2,
+      "pages": {
+        "coop": [
+          [
+            36,
+            31
+          ]
+        ],
+        "no-coop": [
+          [
+            29,
+            24
+          ]
+        ]
+      },
+      "track_set": "it60",
+      "shared_codes": [
+        "06016304",
+        "06016306",
+        "06016308",
+        "90201026"
+      ],
+      "track_codes": {
+        "software": [
+          "06016321",
+          "06016322"
+        ],
+        "network": [
+          "06016331",
+          "06016332"
+        ],
+        "media": [
+          "06016341",
+          "06016342"
+        ]
+      },
+      "printed_total": 18,
+      "note": "เลือกแผนตามแขนง ไม่บวกวิชาของทั้งสามแขนงพร้อมกัน"
+    },
+    {
+      "source_file": "IT-60.pdf",
+      "version": 2560,
+      "year": 3,
+      "semester": 1,
+      "pages": {
+        "coop": [
+          [
+            37,
+            32
+          ]
+        ],
+        "no-coop": [
+          [
+            30,
+            25
+          ]
+        ]
+      },
+      "track_set": "it60",
+      "shared_codes": [
+        "06016309",
+        "06016310",
+        "90304004"
+      ],
+      "track_codes": {
+        "software": [
+          "06016323",
+          "06016324",
+          "06016325"
+        ],
+        "network": [
+          "06016333",
+          "06016334",
+          "06016335"
+        ],
+        "media": [
+          "06016343",
+          "06016344",
+          "06016345"
+        ]
+      },
+      "printed_total": 18,
+      "note": "เลือกแผนตามแขนง ไม่บวกวิชาของทั้งสามแขนงพร้อมกัน"
+    },
+    {
+      "source_file": "IT-60.pdf",
+      "version": 2560,
+      "year": 3,
+      "semester": 2,
+      "pages": {
+        "coop": [
+          [
+            38,
+            33
+          ]
+        ],
+        "no-coop": [
+          [
+            31,
+            26
+          ]
+        ]
+      },
+      "track_set": "it60",
+      "shared_codes": [
+        "06016307",
+        "06016318"
+      ],
+      "track_codes": {
+        "software": [
+          "06016326",
+          "06016327",
+          "06016328"
+        ],
+        "network": [
+          "06016336",
+          "06016337",
+          "06016338"
+        ],
+        "media": [
+          "06016346",
+          "06016347",
+          "06016348"
+        ]
+      },
+      "printed_total": 16,
+      "note": "รายการวิชาเลือกทางเทคโนโลยีสารสนเทศ 1 เป็นข้อกำหนดร่วมที่ไม่กำหนดรหัสรายวิชาจริง"
+    },
+    {
+      "source_file": "IT-60.pdf",
+      "version": 2560,
+      "year": 4,
+      "semester": 1,
+      "pages": {
+        "coop": [
+          [
+            39,
+            34
+          ]
+        ],
+        "no-coop": [
+          [
+            32,
+            27
+          ]
+        ]
+      },
+      "track_set": "it60",
+      "shared_codes": [],
+      "track_codes_by_plan": {
+        "coop": {
+          "software": [
+            "06016393",
+            "06016394"
+          ],
+          "network": [
+            "06016395",
+            "06016396"
+          ],
+          "media": [
+            "06016397",
+            "06016398"
+          ]
+        },
+        "no-coop": {
+          "software": [
+            "06016329"
+          ],
+          "network": [
+            "06016339"
+          ],
+          "media": [
+            "06016349"
+          ]
+        }
+      },
+      "printed_total_by_plan": {
+        "coop": 6,
+        "no-coop": 18
+      },
+      "note": "ในแผนสหกิจศึกษา เลือกสหกิจในประเทศหรือสหกิจต่างประเทศของแขนงเดียวกัน ไม่บวกทุกตัวเลือก"
+    }
+  ],
+  "evidence_files": [
+    "docs/results/study_plan_render.json",
+    "docs/results/study_plan_render_more.json",
+    "docs/results/study_plan_render_final.json",
+    "docs/results/a1_render_checkpoint.json"
+  ]
+}

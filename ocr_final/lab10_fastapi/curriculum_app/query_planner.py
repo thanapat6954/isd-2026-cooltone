@@ -209,7 +209,7 @@ def deterministic_sql(plan: QueryPlan, database: DatabaseInfo) -> str | None:
             ]
             for column in (
                 "printed_page_number", "credits_raw", "alt_group", "alternative_index",
-                "is_placeholder", "elective_type", "raw_code", "code_pattern",
+                "is_placeholder", "elective_type", "raw_code", "code_pattern", "category", "ctype", "note",
             ):
                 if database.has("v_plan", column):
                     fields.append(column)
