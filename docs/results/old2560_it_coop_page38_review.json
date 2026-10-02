@@ -1,0 +1,97 @@
+{
+  "status": "visually_verified",
+  "source_file": "IT-60.pdf",
+  "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+  "input_sha256": "f6d7198b8cc064311dd08393cabf0ed0e85b475c74653eec0393d940a672cb7f",
+  "pdf_page": 38,
+  "printed_page": 33,
+  "year": 3,
+  "semester": 2,
+  "credits": 16,
+  "row_count": 12,
+  "rows": [
+    {
+      "code": "06016307",
+      "name_th": "การบริหารโครงการเทคโนโลยีสารสนเทศ",
+      "name_en": "INFORMATION TECHNOLOGY PROJECT MANAGEMENT",
+      "credits": "3(3-0-6)"
+    },
+    {
+      "code": "06016318",
+      "name_th": "สัมมนาทางด้านทักษะการสื่อสารในวิชาชีพ",
+      "name_en": "SEMINAR ON PROFESSIONAL COMMUNICATION SKILLS",
+      "credits": "1(1-0-2)"
+    },
+    {
+      "code": "060163xx",
+      "name_th": "วิชาเลือกทางเทคโนโลยีสารสนเทศ 1",
+      "name_en": "ELECTIVE COURSE IN INFORMATION TECHNOLOGY 1",
+      "credits": "3(3-0-6) หรือ 3(2-2-5)"
+    },
+    {
+      "code": "06016326",
+      "name_th": "การทวนสอบและตรวจสอบซอฟต์แวร์",
+      "name_en": "SOFTWARE VERIFICATION AND VALIDATION",
+      "credits": "3(3-0-6)",
+      "alt_group": "it-specialization-y3s2-slot-1"
+    },
+    {
+      "code": "06016327",
+      "name_th": "การพัฒนาคลาวด์แอปพลิเคชันระดับองค์กร",
+      "name_en": "CLOUD-BASED ENTERPRISE APPLICATION DEVELOPMENT",
+      "credits": "3(2-2-5)",
+      "alt_group": "it-specialization-y3s2-slot-2"
+    },
+    {
+      "code": "06016328",
+      "name_th": "เครื่องมือและสภาพแวดล้อมสำหรับการพัฒนาซอฟต์แวร์",
+      "name_en": "SOFTWARE DEVELOPMENT TOOLS AND ENVIRONMENTS",
+      "credits": "3(2-2-5)",
+      "alt_group": "it-specialization-y3s2-slot-3"
+    },
+    {
+      "code": "06016336",
+      "name_th": "การจัดการเครือข่ายและโครงสร้างพื้นฐานเทคโนโลยีสารสนเทศ",
+      "name_en": "NETWORK AND INFORMATION TECHNOLOGY INFRASTRUCTURE MANAGEMENT",
+      "credits": "3(2-2-5)",
+      "alt_group": "it-specialization-y3s2-slot-1"
+    },
+    {
+      "code": "06016337",
+      "name_th": "ประสิทธิภาพเครือข่าย",
+      "name_en": "NETWORK PERFORMANCE",
+      "credits": "3(3-0-6)",
+      "alt_group": "it-specialization-y3s2-slot-2"
+    },
+    {
+      "code": "06016338",
+      "name_th": "การออกแบบเครือข่ายเบื้องต้น",
+      "name_en": "INTRODUCTION TO NETWORK DESIGN",
+      "credits": "3(3-0-6)",
+      "alt_group": "it-specialization-y3s2-slot-3"
+    },
+    {
+      "code": "06016346",
+      "name_th": "การออกแบบและพัฒนาเว็บ",
+      "name_en": "WEB DESIGN AND DEVELOPMENT",
+      "credits": "3(2-2-5)",
+      "alt_group": "it-specialization-y3s2-slot-1"
+    },
+    {
+      "code": "06016347",
+      "name_th": "พื้นฐานการเล่าเรื่องและถ่ายภาพยนตร์ดิจิทัล",
+      "name_en": "FUNDAMENTALS OF DIGITAL STORYTELLING AND CINEMATOGRAPHY",
+      "credits": "3(2-2-5)",
+      "alt_group": "it-specialization-y3s2-slot-2"
+    },
+    {
+      "code": "06016348",
+      "name_th": "การพัฒนาเกมขั้นสูง",
+      "name_en": "ADVANCED GAME DEVELOPMENT",
+      "credits": "3(2-2-5)",
+      "alt_group": "it-specialization-y3s2-slot-3"
+    }
+  ],
+  "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-038.png",
+  "review_scope": "All twelve displayed options. Common courses plus one three-course specialization bundle; Y3S2 also includes an elective slot. Printed names and credit/hour patterns independently inspected. No prerequisites inferred."
+}

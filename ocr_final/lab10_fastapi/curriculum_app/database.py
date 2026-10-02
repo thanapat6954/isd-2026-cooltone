@@ -119,10 +119,14 @@ class DatabaseInfo:
 
 
 def open_readonly(path: Path) -> sqlite3.Connection:
+    # Import at connection creation to avoid the DatabaseInfo/planner cycle.
+    from .query_planner import normalize_course_name
     """Open one SQLite file in read-only/query-only mode."""
     uri = path.resolve().as_uri() + "?mode=ro"
     connection = sqlite3.connect(uri, uri=True, timeout=5)
     connection.row_factory = sqlite3.Row
+    connection.create_function('normalize_course_name', 1,
+                               lambda value: normalize_course_name(str(value or '')), deterministic=True)
     connection.execute("PRAGMA query_only = ON")
     return connection
 
@@ -282,6 +286,11 @@ class DatabaseRegistry:
             programs.add("ai")
         if is_bit:
             programs.add("bit")
+        # Explicit curriculum selectors outrank incidental words inside a
+        # course name (e.g. DSBA's Information Technology Fundamentals).
+        explicit = set(re.findall(r'(?<![a-z])(dsba|bit|it|ait|ai)(?![a-z])', compact))
+        if explicit:
+            programs = {'ai' if name == 'ait' else name for name in explicit}
 
         wants_2560 = any(token in compact for token in (
             "2560", "ฉบับเก่า", "หลักสูตรเดิม", "old curriculum", "old version",

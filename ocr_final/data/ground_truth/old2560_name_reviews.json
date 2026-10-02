@@ -1,0 +1,30 @@
+{
+ "purpose":"Canonical labels read from official rendered tables, not OCR accuracy ground truth or held-out answers.",
+ "documents":[
+  {"program":"IT","version":2560,"source_file":"IT-60.pdf","source_sha256":"eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+   "pdf_page":37,"printed_page":32,"status":"visually_verified","rows":[
+    {"code":"06016324","name_th":"วิศวกรรมความต้องการ","name_en":"REQUIREMENT ENGINEERING"},
+    {"code":"06016325","name_th":"การโปรแกรมเชิงบริการ","name_en":"SERVICE-ORIENTED PROGRAMMING"}
+   ]},
+  {"program":"IT","version":2560,"source_file":"IT-60.pdf","source_sha256":"eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+   "pdf_page":38,"printed_page":33,"status":"visually_verified","rows":[
+    {"code":"06016326","name_th":"การทวนสอบและตรวจสอบซอฟต์แวร์","name_en":"SOFTWARE VERIFICATION AND VALIDATION"},
+    {"code":"06016327","name_th":"การพัฒนาคลาวด์แอปพลิเคชันระดับองค์กร","name_en":"CLOUD-BASED ENTERPRISE APPLICATION DEVELOPMENT"},
+    {"code":"06016328","name_th":"เครื่องมือและสภาพแวดล้อมสำหรับการพัฒนาซอฟต์แวร์","name_en":"SOFTWARE DEVELOPMENT TOOLS AND ENVIRONMENTS"}
+   ]},
+  {"program":"IT","version":2560,"source_file":"IT-60.pdf","source_sha256":"eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+   "pdf_page":39,"printed_page":34,"status":"visually_verified","rows":[
+    {"code":"06016393","name_th":"สหกิจศึกษาทางด้านวิศวกรรมซอฟต์แวร์","name_en":"COOPERATIVE EDUCATION IN SOFTWARE ENGINEERING"},
+    {"code":"06016394","name_th":"สหกิจศึกษาต่างประเทศทางด้านวิศวกรรมซอฟต์แวร์","name_en":"OVERSEA COOPERATIVE EDUCATION IN SOFTWARE ENGINEERING"},
+    {"code":"06016395","name_th":"สหกิจศึกษาทางด้านการเทคโนโลยีเครือข่ายและระบบ","name_en":"COOPERATIVE EDUCATION IN NETWORK AND SYSTEM TECHNOLOGY"},
+    {"code":"06016396","name_th":"สหกิจศึกษาต่างประเทศทางด้านการเทคโนโลยีเครือข่ายและระบบ","name_en":"OVERSEA COOPERATIVE EDUCATION IN NETWORK AND SYSTEM TECHNOLOGY"},
+    {"code":"06016397","name_th":"สหกิจศึกษาทางด้านการพัฒนาสื่อประสมและเกม","name_en":"COOPERATIVE EDUCATION IN MULTIMEDIA AND GAME DEVELOPMENT"},
+    {"code":"06016398","name_th":"สหกิจศึกษาต่างประเทศทางด้านการพัฒนาสื่อประสมและเกม","name_en":"OVERSEA Cooperative Education in Multimedia and Game Development"}
+   ]},
+  {"program":"IT","version":2560,"source_file":"IT-60.pdf","source_sha256":"eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+   "pdf_page":32,"printed_page":27,"status":"visually_verified","rows":[
+    {"code":"06016329","name_th":"โครงงานทางด้านวิศวกรรมซอฟต์แวร์ 1","name_en":"PROJECT IN SOFTWARE ENGINEERING 1"},
+    {"code":"06016339","name_th":"โครงงานทางด้านเทคโนโลยีเครือข่ายและระบบ 1","name_en":"PROJECT IN NETWORK AND SYSTEM TECHNOLOGY 1"}
+   ]}
+ ]
+}

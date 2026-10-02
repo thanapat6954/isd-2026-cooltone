@@ -1,0 +1,21 @@
+{
+  "status": "visually_verified", "reviewed_at": "2026-10-02",
+  "source_file": "IT-60.pdf", "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+  "input_sha256": "f6d7198b8cc064311dd08393cabf0ed0e85b475c74653eec0393d940a672cb7f",
+  "pdf_page": 36, "printed_page": 31, "year": 2, "semester": 2,
+  "credits": 18, "row_count": 10, "counted_slots": 6,
+  "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-036.png",
+  "review_scope": "All ten named options in the table; four common courses and one two-course specialization bundle. Prerequisites/category/type are not stated. Original OCR loses both network courses and displaces four labels. Bundle grouping follows the three printed specialization headings, not three simultaneously mandatory bundles.",
+  "rows": [
+    {"code":"06016304","name_th":"ความน่าจะเป็นและสถิติ","name_en":"PROBABILITY","credits":"3(3-0-6)"},
+    {"code":"06016306","name_th":"การวิเคราะห์และออกแบบระบบสารสนเทศ","name_en":"INFORMATION SYSTEMS ANALYSIS AND DESIGN","credits":"3(3-0-6)"},
+    {"code":"06016308","name_th":"แนวคิดระบบฐานข้อมูล","name_en":"DATABASE SYSTEM CONCEPTS","credits":"3(2-2-5)"},
+    {"code":"90201026","name_th":"ภาษาอังกฤษเพื่อการสื่อสาร","name_en":"ENGLISH FOR COMMUNICATION","credits":"3(3-0-6)"},
+    {"code":"06016321","name_th":"วิศวกรรมซอฟต์แวร์","name_en":"SOFTWARE ENGINEERING","credits":"3(3-0-6)","alt_group":"it-specialization-y2s2-slot-1"},
+    {"code":"06016322","name_th":"การสร้างโปรแกรมเว็บ","name_en":"WEB PROGRAMMING","credits":"3(2-2-5)","alt_group":"it-specialization-y2s2-slot-2"},
+    {"code":"06016331","name_th":"เครือข่ายคอมพิวเตอร์ภาคปฏิบัติ","name_en":"PRACTICAL COMPUTER NETWORKING","credits":"3(2-2-5)","alt_group":"it-specialization-y2s2-slot-1"},
+    {"code":"06016332","name_th":"การเชื่อมต่อเครือข่ายสื่อสาร","name_en":"INTERCONNECTED COMMUNICATION NETWORKS","credits":"3(3-0-6)","alt_group":"it-specialization-y2s2-slot-2"},
+    {"code":"06016341","name_th":"การโปรแกรมสื่อประสม","name_en":"MULTIMEDIA PROGRAMMING","credits":"3(2-2-5)","alt_group":"it-specialization-y2s2-slot-1"},
+    {"code":"06016342","name_th":"คอมพิวเตอร์กราฟิกส์และแอนิเมชัน","name_en":"COMPUTER GRAPHICS AND ANIMATION","credits":"3(2-2-5)","alt_group":"it-specialization-y2s2-slot-2"}
+  ]
+}

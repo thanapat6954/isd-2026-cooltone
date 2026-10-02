@@ -946,7 +946,10 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
                 numbers = re.findall(r"(?<!\d)(\d{1,2})(?!\d)", label)
                 number = numbers[-1] if numbers else None
                 if number:
-                    disambiguator = f"SLOT-{number}"
+                    # Different elective families often share BOTH wildcard and
+                    # trailing ordinal (e.g. humanities 2 and science/math 2).
+                    # Source-row identity prevents silent credit loss in that case.
+                    disambiguator = f"SLOT-{number}-SOURCE-ROW-{index + 1}"
                 else:
                     try:
                         src_year = int(src.get("year"))

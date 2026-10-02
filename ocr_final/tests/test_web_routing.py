@@ -23,6 +23,16 @@ class WebRoutingTests(unittest.TestCase):
         self.assertIn('window.location.origin', text)
         self.assertIn('startsWith("/frontend/")', text)
 
+    def test_launcher_uses_bounded_elapsed_time_and_keeps_api_port_guard(self):
+        text=(Path(__file__).resolve().parents[1]/'scripts/start_web.ps1').read_text(encoding='utf-8')
+        self.assertIn('$StartupTimeoutSeconds = 60',text)
+        self.assertIn('[DateTime]::UtcNow -lt $startupDeadline',text)
+        self.assertIn('Port $Port is occupied by another server',text)
+        self.assertIn('Start-Process',text)
+        self.assertIn('-WindowStyle Hidden',text)
+        self.assertIn('$probeUrl = "http://127.0.0.1:$Port"',text)
+        self.assertIn('$lastReadinessError = $_.Exception.Message',text)
+
 
 if __name__ == '__main__':
     unittest.main()

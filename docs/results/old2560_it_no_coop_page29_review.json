@@ -1,0 +1,82 @@
+{
+  "status": "visually_verified",
+  "source_file": "IT-60.pdf",
+  "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+  "input_sha256": "9de215ce351c2a1d305f4b5aa33b6572c86f18f882815dbb9284c145352ef52b",
+  "pdf_page": 29,
+  "printed_page": 24,
+  "year": 2,
+  "semester": 2,
+  "credits": 18,
+  "row_count": 10,
+  "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-029.png",
+  "review_scope": "Entire displayed term table, including all specialization options. No prerequisite/category/type inferred. Separate from frozen OCR.",
+  "rows": [
+    {
+      "code": "06016304",
+      "name_th": "ความน่าจะเป็นและสถิติ",
+      "name_en": "PROBABILITY AND STATISTICS",
+      "credits": "3(3-0-6)"
+    },
+    {
+      "code": "06016306",
+      "name_th": "การวิเคราะห์และออกแบบระบบสารสนเทศ",
+      "name_en": "INFORMATION SYSTEMS ANALYSIS AND DESIGN",
+      "credits": "3(3-0-6)"
+    },
+    {
+      "code": "06016308",
+      "name_th": "แนวคิดระบบฐานข้อมูล",
+      "name_en": "DATABASE SYSTEM CONCEPTS",
+      "credits": "3(2-2-5)"
+    },
+    {
+      "code": "90201026",
+      "name_th": "ภาษาอังกฤษเพื่อการสื่อสาร",
+      "name_en": "ENGLISH FOR COMMUNICATION",
+      "credits": "3(3-0-6)"
+    },
+    {
+      "code": "06016321",
+      "name_th": "วิศวกรรมซอฟต์แวร์",
+      "name_en": "SOFTWARE ENGINEERING",
+      "credits": "3(3-0-6)",
+      "alt_group": "it-specialization-y2s2-slot-1"
+    },
+    {
+      "code": "06016322",
+      "name_th": "การสร้างโปรแกรมเว็บ",
+      "name_en": "WEB PROGRAMMING",
+      "credits": "3(2-2-5)",
+      "alt_group": "it-specialization-y2s2-slot-2"
+    },
+    {
+      "code": "06016331",
+      "name_th": "เครือข่ายคอมพิวเตอร์ภาคปฏิบัติ",
+      "name_en": "PRACTICAL COMPUTER NETWORKING",
+      "credits": "3(2-2-5)",
+      "alt_group": "it-specialization-y2s2-slot-1"
+    },
+    {
+      "code": "06016332",
+      "name_th": "การเชื่อมต่อเครือข่ายสื่อสาร",
+      "name_en": "INTERCONNECTED COMMUNICATION NETWORKS",
+      "credits": "3(3-0-6)",
+      "alt_group": "it-specialization-y2s2-slot-2"
+    },
+    {
+      "code": "06016341",
+      "name_th": "การโปรแกรมสื่อประสม",
+      "name_en": "MULTIMEDIA PROGRAMMING",
+      "credits": "3(2-2-5)",
+      "alt_group": "it-specialization-y2s2-slot-1"
+    },
+    {
+      "code": "06016342",
+      "name_th": "คอมพิวเตอร์กราฟิกส์และแอนิเมชัน",
+      "name_en": "COMPUTER GRAPHICS AND ANIMATION",
+      "credits": "3(2-2-5)",
+      "alt_group": "it-specialization-y2s2-slot-2"
+    }
+  ]
+}

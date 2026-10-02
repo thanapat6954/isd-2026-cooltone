@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\Users\\thana\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.EXE",
+    "-NoProfile",
+    "-File",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\scripts\\start_web.ps1"
+  ],
+  "started_utc": "2026-10-02T15:02:04.092453+00:00",
+  "status": "failed",
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Exception: C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\scripts\\start_web.ps1:46\nLine |\n  46 |  throw \"Backend not ready. Check $stderrPath\"\n     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n     | Backend not ready. Check C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\web\\backend-25691002-220205-399.stderr.log\n",
+  "error": "PermissionError(13, 'The process cannot access the file because it is being used by another process')",
+  "finished_utc": "2026-10-02T15:03:06.023021+00:00"
+}

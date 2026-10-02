@@ -1,0 +1,290 @@
+[
+  {
+    "database": "work/lab8b_it_2560_coop/curriculum.db",
+    "changes": [
+      {
+        "code": "06016324",
+        "before": {
+          "name_th": "การโปรแกรมอุปกรณ์เคลื่อนที่",
+          "name_en": "MOBILE DEVICE PROGRAMMING"
+        },
+        "after": {
+          "code": "06016324",
+          "name_th": "วิศวกรรมความต้องการ",
+          "name_en": "REQUIREMENT ENGINEERING"
+        },
+        "source_file": "IT-60.pdf",
+        "pdf_page": 37,
+        "printed_page": 32
+      },
+      {
+        "code": "06016325",
+        "before": {
+          "name_th": "แขนงวิชาวิศวกรรมซอฟต์แวร์",
+          "name_en": "SOFTWARE ENGINEERING"
+        },
+        "after": {
+          "code": "06016325",
+          "name_th": "การโปรแกรมเชิงบริการ",
+          "name_en": "SERVICE-ORIENTED PROGRAMMING"
+        },
+        "source_file": "IT-60.pdf",
+        "pdf_page": 37,
+        "printed_page": 32
+      },
+      {
+        "code": "06016326",
+        "before": {
+          "name_th": "แขนงวิชาวิศวกรรมซอฟต์แวร์\nCLOUD-BASED ENTERPRISE APPLICATION DEVELOPMENT\nเครื่องมือและสภาพแวดล้อมสำหรับการพัฒนาซอฟต์แวร์",
+          "name_en": "CLOUD-BASED ENTERPRISE APPLICATION DEVELOPMENT SOFTWARE DEVELOPMENT TOOLS AND ENVIRONMENTS"
+        },
+        "after": {
+          "code": "06016326",
+          "name_th": "การทวนสอบและตรวจสอบซอฟต์แวร์",
+          "name_en": "SOFTWARE VERIFICATION AND VALIDATION"
+        },
+        "source_file": "IT-60.pdf",
+        "pdf_page": 38,
+        "printed_page": 33
+      },
+      {
+        "code": "06016327",
+        "before": {
+          "name_th": "แขนงวิชาวิศวกรรมซอฟต์แวร์\nCLOUD-BASED ENTERPRISE APPLICATION DEVELOPMENT\nเครื่องมือและสภาพแวดล้อมสำหรับการพัฒนาซอฟต์แวร์",
+          "name_en": "CLOUD-BASED ENTERPRISE APPLICATION DEVELOPMENT SOFTWARE DEVELOPMENT TOOLS AND ENVIRONMENTS"
+        },
+        "after": {
+          "code": "06016327",
+          "name_th": "การพัฒนาแอปพลิเคชันบนคลาวด์ระดับองค์กร",
+          "name_en": "CLOUD-BASED ENTERPRISE APPLICATION DEVELOPMENT"
+        },
+        "source_file": "IT-60.pdf",
+        "pdf_page": 38,
+        "printed_page": 33
+      },
+      {
+        "code": "06016328",
+        "before": {
+          "name_th": "แขนงวิชาวิศวกรรมซอฟต์แวร์\nCLOUD-BASED ENTERPRISE APPLICATION DEVELOPMENT\nเครื่องมือและสภาพแวดล้อมสำหรับการพัฒนาซอฟต์แวร์",
+          "name_en": "CLOUD-BASED ENTERPRISE APPLICATION DEVELOPMENT SOFTWARE DEVELOPMENT TOOLS AND ENVIRONMENTS"
+        },
+        "after": {
+          "code": "06016328",
+          "name_th": "เครื่องมือและสภาพแวดล้อมสำหรับการพัฒนาซอฟต์แวร์",
+          "name_en": "SOFTWARE DEVELOPMENT TOOLS AND ENVIRONMENTS"
+        },
+        "source_file": "IT-60.pdf",
+        "pdf_page": 38,
+        "printed_page": 33
+      },
+      {
+        "code": "06016393",
+        "before": {
+          "name_th": "แขนงวิชาวิศวกรรมซอฟต์แวร์\nสหกิจศึกษาทางด้านวิศวกรรมซอฟต์แวร์",
+          "name_en": "สหกิจศึกษาต่างประเทศทางด้านวิศวกรรมซอฟต์แวร์ OVERSEA COOPERERATIVE EDUCATION IN SOFTWARE ENGINEERING"
+        },
+        "after": {
+          "code": "06016393",
+          "name_th": "สหกิจศึกษาทางด้านวิศวกรรมซอฟต์แวร์",
+          "name_en": "COOPERATIVE EDUCATION IN SOFTWARE ENGINEERING"
+        },
+        "source_file": "IT-60.pdf",
+        "pdf_page": 39,
+        "printed_page": 34
+      },
+      {
+        "code": "06016394",
+        "before": {
+          "name_th": "แขนงวิชาวิศวกรรมซอฟต์แวร์\nสหกิจศึกษาทางด้านวิศวกรรมซอฟต์แวร์",
+          "name_en": "สหกิจศึกษาต่างประเทศทางด้านวิศวกรรมซอฟต์แวร์ OVERSEA COOPERERATIVE EDUCATION IN SOFTWARE ENGINEERING"
+        },
+        "after": {
+          "code": "06016394",
+          "name_th": "สหกิจศึกษาต่างประเทศทางด้านวิศวกรรมซอฟต์แวร์",
+          "name_en": "OVERSEA COOPERATIVE EDUCATION IN SOFTWARE ENGINEERING"
+        },
+        "source_file": "IT-60.pdf",
+        "pdf_page": 39,
+        "printed_page": 34
+      },
+      {
+        "code": "06016395",
+        "before": {
+          "name_th": "แขนงวิชาเทคโนโลยีเครือข่ายและระบบ\nสหกิจศึกษาทางด้านการเทคโนโลยีเครือข่ายและระบบ",
+          "name_en": "สหกิจศึกษาต่างประเทศทางด้านเทคโนโลยีเครือข่ายและระบบ OVERSEA COOPERATIVE EDUCATION IN NETWORK AND SYSTEM TECHNOLOGY"
+        },
+        "after": {
+          "code": "06016395",
+          "name_th": "สหกิจศึกษาทางด้านการเทคโนโลยีเครือข่ายและระบบ",
+          "name_en": "COOPERATIVE EDUCATION IN NETWORK AND SYSTEM TECHNOLOGY"
+        },
+        "source_file": "IT-60.pdf",
+        "pdf_page": 39,
+        "printed_page": 34
+      },
+      {
+        "code": "06016396",
+        "before": {
+          "name_th": "แขนงวิชาเทคโนโลยีเครือข่ายและระบบ\nสหกิจศึกษาทางด้านการเทคโนโลยีเครือข่ายและระบบ",
+          "name_en": "สหกิจศึกษาต่างประเทศทางด้านเทคโนโลยีเครือข่ายและระบบ OVERSEA COOPERATIVE EDUCATION IN NETWORK AND SYSTEM TECHNOLOGY"
+        },
+        "after": {
+          "code": "06016396",
+          "name_th": "สหกิจศึกษาต่างประเทศทางด้านการเทคโนโลยีเครือข่ายและระบบ",
+          "name_en": "OVERSEA COOPERATIVE EDUCATION IN NETWORK AND SYSTEM TECHNOLOGY"
+        },
+        "source_file": "IT-60.pdf",
+        "pdf_page": 39,
+        "printed_page": 34
+      },
+      {
+        "code": "06016397",
+        "before": {
+          "name_th": "แขนงวิชาการพัฒนาสื่อประสมและเกม\nสหกิจศึกษาทางด้านการพัฒนาสื่อประสมและเกม",
+          "name_en": "สหกิจศึกษาต่างประเทศทางด้านการพัฒนาสื่อประสมและเกม OVERSEA Cooperative Education in Multimedia and Game Development"
+        },
+        "after": {
+          "code": "06016397",
+          "name_th": "สหกิจศึกษาทางด้านการพัฒนาสื่อประสมและเกม",
+          "name_en": "COOPERATIVE EDUCATION IN MULTIMEDIA AND GAME DEVELOPMENT"
+        },
+        "source_file": "IT-60.pdf",
+        "pdf_page": 39,
+        "printed_page": 34
+      },
+      {
+        "code": "06016398",
+        "before": {
+          "name_th": "แขนงวิชาการพัฒนาสื่อประสมและเกม\nสหกิจศึกษาทางด้านการพัฒนาสื่อประสมและเกม",
+          "name_en": "สหกิจศึกษาต่างประเทศทางด้านการพัฒนาสื่อประสมและเกม OVERSEA Cooperative Education in Multimedia and Game Development"
+        },
+        "after": {
+          "code": "06016398",
+          "name_th": "สหกิจศึกษาต่างประเทศทางด้านการพัฒนาสื่อประสมและเกม",
+          "name_en": "OVERSEA Cooperative Education in Multimedia and Game Development"
+        },
+        "source_file": "IT-60.pdf",
+        "pdf_page": 39,
+        "printed_page": 34
+      }
+    ],
+    "applied": true,
+    "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\name-review\\20261002T135644285619\\lab8b_it_2560_coop.db",
+    "backup_integrity": "ok",
+    "backup_sha256": "5bce567ddd012201dc7a297509444a9c21a919b497394edbe9ffc7a2fca4815c"
+  },
+  {
+    "database": "work/lab8b_it_2560_no_coop/curriculum.db",
+    "changes": [
+      {
+        "code": "06016324",
+        "before": {
+          "name_th": "การโปรแกรมเชิงบริการ",
+          "name_en": "SERVICE-ORIENTED PROGRAMMING"
+        },
+        "after": {
+          "code": "06016324",
+          "name_th": "วิศวกรรมความต้องการ",
+          "name_en": "REQUIREMENT ENGINEERING"
+        },
+        "source_file": "IT-60.pdf",
+        "pdf_page": 37,
+        "printed_page": 32
+      },
+      {
+        "code": "06016325",
+        "before": {
+          "name_th": "แขนงวิชาวิศวกรรมซอฟต์แวร์",
+          "name_en": "SOFTWARE ENGINEERING"
+        },
+        "after": {
+          "code": "06016325",
+          "name_th": "การโปรแกรมเชิงบริการ",
+          "name_en": "SERVICE-ORIENTED PROGRAMMING"
+        },
+        "source_file": "IT-60.pdf",
+        "pdf_page": 37,
+        "printed_page": 32
+      },
+      {
+        "code": "06016326",
+        "before": {
+          "name_th": "แขนงวิชาวิศวกรรมซอฟต์แวร์",
+          "name_en": "CLOUD-BASED ENTERPRISE APPLICATION DEVELOPMENT SOFTWARE DEVELOPMENT TOOLS AND ENVIRONMENTS"
+        },
+        "after": {
+          "code": "06016326",
+          "name_th": "การทวนสอบและตรวจสอบซอฟต์แวร์",
+          "name_en": "SOFTWARE VERIFICATION AND VALIDATION"
+        },
+        "source_file": "IT-60.pdf",
+        "pdf_page": 38,
+        "printed_page": 33
+      },
+      {
+        "code": "06016327",
+        "before": {
+          "name_th": "แขนงวิชาวิศวกรรมซอฟต์แวร์",
+          "name_en": "CLOUD-BASED ENTERPRISE APPLICATION DEVELOPMENT SOFTWARE DEVELOPMENT TOOLS AND ENVIRONMENTS"
+        },
+        "after": {
+          "code": "06016327",
+          "name_th": "การพัฒนาแอปพลิเคชันบนคลาวด์ระดับองค์กร",
+          "name_en": "CLOUD-BASED ENTERPRISE APPLICATION DEVELOPMENT"
+        },
+        "source_file": "IT-60.pdf",
+        "pdf_page": 38,
+        "printed_page": 33
+      },
+      {
+        "code": "06016328",
+        "before": {
+          "name_th": "แขนงวิชาวิศวกรรมซอฟต์แวร์",
+          "name_en": "CLOUD-BASED ENTERPRISE APPLICATION DEVELOPMENT SOFTWARE DEVELOPMENT TOOLS AND ENVIRONMENTS"
+        },
+        "after": {
+          "code": "06016328",
+          "name_th": "เครื่องมือและสภาพแวดล้อมสำหรับการพัฒนาซอฟต์แวร์",
+          "name_en": "SOFTWARE DEVELOPMENT TOOLS AND ENVIRONMENTS"
+        },
+        "source_file": "IT-60.pdf",
+        "pdf_page": 38,
+        "printed_page": 33
+      },
+      {
+        "code": "06016329",
+        "before": {
+          "name_th": "แขนงวิชาวิศวกรรมซอฟต์แวร์\nโครงงานทางด้านวิศวกรรมซอฟต์แวร์ 1",
+          "name_en": "PROJECT IN SOFTWARE ENGINEERING 1"
+        },
+        "after": {
+          "code": "06016329",
+          "name_th": "โครงงานทางด้านวิศวกรรมซอฟต์แวร์ 1",
+          "name_en": "PROJECT IN SOFTWARE ENGINEERING 1"
+        },
+        "source_file": "IT-60.pdf",
+        "pdf_page": 32,
+        "printed_page": 27
+      },
+      {
+        "code": "06016339",
+        "before": {
+          "name_th": "แขนงวิชาเทคโนโลยีเครือข่ายและระบบ\nโครงงานทางด้านเทคโนโลยีเครือข่ายและระบบ 1",
+          "name_en": "PROJECT IN NETWORK AND SYSTEM TECHNOLOGY 1"
+        },
+        "after": {
+          "code": "06016339",
+          "name_th": "โครงงานทางด้านเทคโนโลยีเครือข่ายและระบบ 1",
+          "name_en": "PROJECT IN NETWORK AND SYSTEM TECHNOLOGY 1"
+        },
+        "source_file": "IT-60.pdf",
+        "pdf_page": 32,
+        "printed_page": 27
+      }
+    ],
+    "applied": true,
+    "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\name-review\\20261002T135645075809\\lab8b_it_2560_no_coop.db",
+    "backup_integrity": "ok",
+    "backup_sha256": "c94312462f19776328353532e7a7cb17fc59b06b1332754e761b3a4a7b5190e2"
+  }
+]

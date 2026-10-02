@@ -1,0 +1,56 @@
+{
+  "updates": [
+    {
+      "database": "work/lab8b_it_2560_no_coop/curriculum.db",
+      "source_file": "IT-60.pdf",
+      "pdf_page": 233,
+      "printed_page": 228,
+      "codes": [
+        "06016323"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T140118469725/lab8b_it_2560_no_coop.db",
+      "backup_sha256": "376a9a41c86924b60f09232dd844bbafd6827b0b0324a26926f69cf8d7b5791f"
+    },
+    {
+      "database": "work/lab8b_it_2560_no_coop/curriculum.db",
+      "source_file": "IT-60.pdf",
+      "pdf_page": 236,
+      "printed_page": null,
+      "codes": [
+        "06016330"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T140118621165/lab8b_it_2560_no_coop.db",
+      "backup_sha256": "111194836484a8fe0aeefcf57013901a6704d82317eedf6da62e601c74ecfd54"
+    },
+    {
+      "database": "work/lab8b_it_2560_no_coop/curriculum.db",
+      "source_file": "IT-60.pdf",
+      "pdf_page": 242,
+      "printed_page": null,
+      "codes": [
+        "06016340"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T140118779319/lab8b_it_2560_no_coop.db",
+      "backup_sha256": "12f9ecf924db389ce1019edb258cd04192913a0536831c5341d594e70521a46c"
+    },
+    {
+      "database": "work/lab8b_it_2560_no_coop/curriculum.db",
+      "source_file": "IT-60.pdf",
+      "pdf_page": 247,
+      "printed_page": null,
+      "codes": [
+        "06016350"
+      ],
+      "applied": true,
+      "name_changes": [],
+      "backup": "work/backups/prerequisite-review/20261002T140118929240/lab8b_it_2560_no_coop.db",
+      "backup_sha256": "62515e123ced6e259240d76d80b3653881c2a4af25583fb5d0e96eeab9e4b30f"
+    }
+  ]
+}

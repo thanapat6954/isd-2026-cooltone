@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\thana\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.EXE",
+    "-NoProfile",
+    "-File",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\scripts\\start_web.ps1"
+  ],
+  "started_utc": "2026-10-02T15:04:15.104638+00:00",
+  "status": "complete",
+  "exit_code": 0,
+  "stdout": "Backend ready: http://localhost:8000/frontend/\nLogs: C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\web\\backend-25691002-220416-786.stderr.log\n",
+  "stderr": "",
+  "openapi_status": 200,
+  "post_ask_registered": true,
+  "frontend_status": 200,
+  "finished_utc": "2026-10-02T15:04:19.522845+00:00"
+}

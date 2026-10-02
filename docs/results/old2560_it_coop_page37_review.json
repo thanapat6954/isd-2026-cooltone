@@ -1,0 +1,97 @@
+{
+  "status": "visually_verified",
+  "source_file": "IT-60.pdf",
+  "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+  "input_sha256": "f6d7198b8cc064311dd08393cabf0ed0e85b475c74653eec0393d940a672cb7f",
+  "pdf_page": 37,
+  "printed_page": 32,
+  "year": 3,
+  "semester": 1,
+  "credits": 18,
+  "row_count": 12,
+  "rows": [
+    {
+      "code": "06016309",
+      "name_th": "ความมั่นคงของระบบสารสนเทศและกฎหมายไอที",
+      "name_en": "INFORMATION SYSTEM SECURITY AND IT LAWS",
+      "credits": "3(3-0-6)"
+    },
+    {
+      "code": "06016310",
+      "name_th": "การออกแบบส่วนต่อประสานกับมนุษย์",
+      "name_en": "HUMAN INTERFACE DESIGN",
+      "credits": "3(3-0-6)"
+    },
+    {
+      "code": "90304004",
+      "name_th": "การเขียนรายงาน",
+      "name_en": "REPORT WRITING",
+      "credits": "3(3-0-6)"
+    },
+    {
+      "code": "06016323",
+      "name_th": "การโปรแกรมอุปกรณ์เคลื่อนที่",
+      "name_en": "MOBILE DEVICE PROGRAMMING",
+      "credits": "3(2-2-5)",
+      "alt_group": "it-specialization-y3s1-slot-1"
+    },
+    {
+      "code": "06016324",
+      "name_th": "วิศวกรรมความต้องการ",
+      "name_en": "REQUIREMENT ENGINEERING",
+      "credits": "3(3-0-6)",
+      "alt_group": "it-specialization-y3s1-slot-2"
+    },
+    {
+      "code": "06016325",
+      "name_th": "การโปรแกรมเชิงบริการ",
+      "name_en": "SERVICE-ORIENTED PROGRAMMING",
+      "credits": "3(2-2-5)",
+      "alt_group": "it-specialization-y3s1-slot-3"
+    },
+    {
+      "code": "06016333",
+      "name_th": "เทคโนโลยีการให้บริการอินเตอร์เน็ต",
+      "name_en": "INTERNET SERVICE TECHNOLOGY",
+      "credits": "3(2-2-5)",
+      "alt_group": "it-specialization-y3s1-slot-1"
+    },
+    {
+      "code": "06016334",
+      "name_th": "เทคโนโลยีเครือข่ายไร้สาย",
+      "name_en": "WIRELESS NETWORK TECHNOLOGY",
+      "credits": "3(3-0-6)",
+      "alt_group": "it-specialization-y3s1-slot-2"
+    },
+    {
+      "code": "06016335",
+      "name_th": "เทคโนโลยีกลุ่มเมฆเบื้องต้น",
+      "name_en": "INTRODUCTION TO CLOUD COMPUTING",
+      "credits": "3(2-2-5)",
+      "alt_group": "it-specialization-y3s1-slot-3"
+    },
+    {
+      "code": "06016343",
+      "name_th": "การออกแบบและพัฒนาเกม",
+      "name_en": "GAME DESIGN AND DEVELOPMENT",
+      "credits": "3(3-0-6)",
+      "alt_group": "it-specialization-y3s1-slot-1"
+    },
+    {
+      "code": "06016344",
+      "name_th": "หลักการออกแบบกราฟิกส์",
+      "name_en": "GRAPHICS DESIGN PRINCIPLES",
+      "credits": "3(2-2-5)",
+      "alt_group": "it-specialization-y3s1-slot-2"
+    },
+    {
+      "code": "06016345",
+      "name_th": "คอมพิวเตอร์แอนิเมชันสามมิติ",
+      "name_en": "3D COMPUTER ANIMATION",
+      "credits": "3(2-2-5)",
+      "alt_group": "it-specialization-y3s1-slot-3"
+    }
+  ],
+  "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-037.png",
+  "review_scope": "All twelve displayed options. Common courses plus one three-course specialization bundle; Y3S2 also includes an elective slot. Printed names and credit/hour patterns independently inspected. No prerequisites inferred."
+}

@@ -1,0 +1,106 @@
+{
+  "profile": "it-2560-coop",
+  "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\old2560-review\\20261002T143953164900\\lab8b_it_2560_coop.db",
+  "backup_integrity": "ok",
+  "backup_sha256": "63ddd89ad921da5fca216ae57f9f6e89dc4b1e99c956a2bbf89b4f86921abf07",
+  "input": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_coop\\lab7b\\reviewed_ingest_v4.json",
+  "input_sha256": "23a3229a56d836a9743dd6df9cb57bbf562936a251ce179e927223fe4d5af710",
+  "frozen_input_sha256": "f6d7198b8cc064311dd08393cabf0ed0e85b475c74653eec0393d940a672cb7f",
+  "runs": [
+    {
+      "command": [
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\venv\\Scripts\\python.exe",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\scr\\ocr_system\\lab8b_curriculum_db.py",
+        "import-lab7b",
+        "-i",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_coop\\lab7b\\reviewed_ingest_v4.json",
+        "-o",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_coop\\reviewed_curriculum_v2.json",
+        "--program-id",
+        "IT-coop",
+        "--program-name",
+        "เทคโนโลยีสารสนเทศ (สหกิจศึกษา)",
+        "--total-credits",
+        "130",
+        "--years",
+        "4",
+        "--curriculum-version",
+        "2560",
+        "--target-plan",
+        "coop",
+        "--plan",
+        "coop",
+        "--printed-page-offset",
+        "5"
+      ],
+      "exit_code": 0,
+      "stdout": "  แปล Lab 7B JSON -> Lab 8B JSON โดยไม่เรียก LLM\n  เขียน C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_coop\\reviewed_curriculum_v2.json\n  รายงาน C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_coop\\reviewed_curriculum_v2.conversion.json\n    course=58  plan=64  prerequisite=0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\venv\\Scripts\\python.exe",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\scr\\ocr_system\\lab8b_curriculum_db.py",
+        "load",
+        "-i",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_coop\\reviewed_curriculum_v2.json",
+        "-d",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_coop\\curriculum.db",
+        "--replace"
+      ],
+      "exit_code": 0,
+      "stdout": "  โหลดเข้า C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_coop\\curriculum.db แล้ว\n    program            1 แถว\n    course            58 แถว\n    plan_item         64 แถว\n    prerequisite       0 แถว\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\venv\\Scripts\\python.exe",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\scripts\\ingest_prerequisite_reviews.py",
+        "--app-root",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+        "--database",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_coop\\curriculum.db",
+        "--reviews",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\data\\ground_truth\\prerequisite_source_reviews.json",
+        "--output",
+        "docs\\results\\old2560_it_coop_plan_names_rebuild_prerequisites.json",
+        "--apply"
+      ],
+      "exit_code": 0,
+      "stdout": "1 matched databases; applied=True; results=docs\\results\\old2560_it_coop_plan_names_rebuild_prerequisites.json\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\venv\\Scripts\\python.exe",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\scripts\\ingest_name_reviews.py",
+        "--app-root",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+        "--database",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_coop\\curriculum.db",
+        "--apply",
+        "--output",
+        "docs\\results\\old2560_it_coop_plan_names_rebuild_names.json"
+      ],
+      "exit_code": 0,
+      "stdout": "Databases 1 name changes 6 applied True\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\venv\\Scripts\\python.exe",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\scr\\ocr_system\\lab8b_curriculum_db.py",
+        "verify",
+        "-d",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_coop\\curriculum.db",
+        "-o",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_coop\\reviewed_verify_v2.json"
+      ],
+      "exit_code": 0,
+      "stdout": "\n  ผลการตรวจความสอดคล้องของข้อมูล\n  ==========================================================================\n  [ผ่าน  ] CHK1  หน่วยกิตรวมของแผน = หน่วยกิตที่หลักสูตรประกาศ\n           แผนรวม 130 · ดิบ 208 · ประกาศไว้ 130 · alt_group: 06016393, 06016394, 06016395, 06016396, 06016397, 06016398 ดิบ 36 -> นับ 6 (หัก 30) | 06016321, 06016331, 06016341 ดิบ 9 -> นับ 3 (หัก 6) | 06016322, 06016332, 06016342 ดิบ 9 -> นับ 3 (หัก 6) | 06016323, 06016333, 06016343 ดิบ 9 -> นับ 3 (หัก 6) | 06016324, 06016334, 06016344 ดิบ 9 -> นับ 3 (หัก 6)\n  [ผ่าน  ] CHK2  ทุกรหัสวิชาในแผน มีคำอธิบายรายวิชา\n           ครบทุกรหัส\n  [ผ่าน  ] CHK3  รหัสวิชาเป็นตัวเลข 8 หลักทุกรายการ (ยกเว้นรหัสสล็อตวิชาเลือกที่มี -)\n           ถูกต้องทุกรายการ\n  [ผ่าน  ] CHK4  หน่วยกิตในแผน ตรงกับคำอธิบายรายวิชา\n           ตรงกันทุกรายการ\n  [ผ่าน  ] CHK5  วิชาบังคับก่อน อยู่ภาคเรียนก่อนวิชาที่อ้างถึง\n           ลำดับถูกต้องทุกคู่\n  [ผ่าน  ] CHK6  ไม่มีวิชาซ้ำในภาคเรียนเดียวกัน\n           ไม่มีรายการซ้ำ\n  [ผ่าน  ] CHK7  หน่วยกิตต่อภาคเรียนอยู่ระหว่าง 9–22\n           ผ่านทุกภาค (ยกเว้นภาคบล็อก 1 ภาค, ภาคฤดูร้อน และภาคที่มีเฉพาะสล็อตเลือก)\n  ==========================================================================\n  ผ่าน 7 จาก 7 ข้อ\n\n  บันทึกผลที่ C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_coop\\reviewed_verify_v2.json\n",
+      "stderr": ""
+    }
+  ],
+  "next_command": null,
+  "frozen_input_unchanged": true
+}

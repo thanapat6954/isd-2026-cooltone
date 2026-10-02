@@ -41,6 +41,18 @@ class ReviewedTermTests(unittest.TestCase):
         self.assertEqual(first['courses'], second['courses'])
         self.assertEqual(first['term_totals'], second['term_totals'])
 
+    def test_explicit_alternatives_count_once_and_keep_individual_labels(self):
+        self.review['rows'] = [
+            {'code':'06036046','name_th':'สหกิจศึกษา','credits':'6(0-35-0)','alt_group':'choice'},
+            {'code':'06036047','name_th':'สหกิจศึกษาต่างประเทศ','credits':'6(0-35-0)','alt_group':'choice'}]
+        self.review.update(row_count=2, credits=6, printed_page=25)
+        result = MODULE.apply_review(self.source, self.review)
+        self.assertEqual(result['courses'][-1]['name_th'], 'สหกิจศึกษาต่างประเทศ')
+        self.assertEqual(result['courses'][-1]['printed_page_number'],25)
+        self.review['rows'][1]['credits'] = '3(3-0-6)'
+        with self.assertRaises(ValueError):
+            MODULE.apply_review(self.source,self.review)
+
 
 if __name__ == '__main__':
     unittest.main()

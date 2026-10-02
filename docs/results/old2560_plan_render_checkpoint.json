@@ -1,0 +1,292 @@
+{
+  "pages": [
+    {
+      "source": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "pdf_page": 25,
+      "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-025.png",
+      "reused": true,
+      "image_sha256": "dc98cfe3d356d08bb5018bedc687e2c9d162893c111f65276ae4ec530a1f17f6",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "pdf_page": 26,
+      "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-026.png",
+      "reused": false,
+      "image_sha256": "5aa94c3fed0a11217976ef745f5f599b1879e81cfa9b2992607d2b78868686b4",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "pdf_page": 27,
+      "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-027.png",
+      "reused": true,
+      "image_sha256": "6683e1c2f495e5e048cbd6fbfaac65e3c2e1e1e7844e505782dce62b35f27e0b",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "pdf_page": 28,
+      "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-028.png",
+      "reused": false,
+      "image_sha256": "a5f93bcb546cf9a30da2caf9111f1e3a4dc02666b17188e53edfc31cc2553ba1",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "pdf_page": 29,
+      "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-029.png",
+      "reused": true,
+      "image_sha256": "c561a2040bc1d397f0bde4495120c2f72dd1cf7e222c60bd39e61e711817868a",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "pdf_page": 30,
+      "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-030.png",
+      "reused": true,
+      "image_sha256": "040caa2bfaf25f2a46210706d906c5520b8c24cc16e9275a46c334e2d1de5646",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "pdf_page": 31,
+      "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-031.png",
+      "reused": false,
+      "image_sha256": "5c9caa09cbfc70f209819cb8fc3394d901db003ab8d3b94673ffb765833773fe",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "pdf_page": 32,
+      "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-032.png",
+      "reused": true,
+      "image_sha256": "4a6a7c47b422fffe33f7be2c56e8b1703d8f68cabfd8a87ba6fafdb9510a20d2",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "pdf_page": 33,
+      "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-033.png",
+      "reused": true,
+      "image_sha256": "869a497f8572941621cee3f2b3a5c42b5eb3c8fc65549d20f125c8a42a5a39a7",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "pdf_page": 34,
+      "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-034.png",
+      "reused": true,
+      "image_sha256": "180c33212bbf4c37d1e845550e598a1301cacd88d7458be396a563d42534c2ea",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "IT-60.pdf",
+      "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "pdf_page": 27,
+      "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-027.png",
+      "reused": true,
+      "image_sha256": "a8c6884f804601758139d54ee5805272044996396c835222e210c4d36876b4e5",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "IT-60.pdf",
+      "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "pdf_page": 28,
+      "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-028.png",
+      "reused": false,
+      "image_sha256": "0fe199798daa969575ddbc6e452cd98e6e88d98b8542d867963a354b18464566",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "IT-60.pdf",
+      "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "pdf_page": 29,
+      "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-029.png",
+      "reused": true,
+      "image_sha256": "310ccdf89d3e9d08c6a05e717d2e7063f6a6f0db338376424e1e863369de1845",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "IT-60.pdf",
+      "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "pdf_page": 30,
+      "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-030.png",
+      "reused": true,
+      "image_sha256": "6a90f86c733c0d40aec9b6820c0b742d92b9901a8e4093a1069432f4275099d7",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "IT-60.pdf",
+      "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "pdf_page": 31,
+      "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-031.png",
+      "reused": true,
+      "image_sha256": "093941b51625650959b9895bd8ae29c4cc99f1ce84a08994063cf99ab5da3688",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "IT-60.pdf",
+      "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "pdf_page": 32,
+      "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-032.png",
+      "reused": true,
+      "image_sha256": "d467ee22026722bcaed52b27bb5d75014553fde7823b3b7d72af515193b2c216",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "IT-60.pdf",
+      "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "pdf_page": 33,
+      "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-033.png",
+      "reused": true,
+      "image_sha256": "fc0bf385f1d9775adb7de14fcc0c4fb31c5d769576af3bc8164d54337587662c",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "IT-60.pdf",
+      "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "pdf_page": 34,
+      "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-034.png",
+      "reused": true,
+      "image_sha256": "93418fbe204645ede1e83493972d8e9194786269657c221fb29cdde5836eb58e",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "IT-60.pdf",
+      "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "pdf_page": 35,
+      "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-035.png",
+      "reused": false,
+      "image_sha256": "5cd90969430ad25394d140b22c4c8de34ea8759a986491b1e71bf811e2f01ac6",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "IT-60.pdf",
+      "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "pdf_page": 36,
+      "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-036.png",
+      "reused": true,
+      "image_sha256": "d64fd490b5f2b3e8dc51fd60e0bcb1a7a6c94c41758b7ecfa25d28730e612923",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "IT-60.pdf",
+      "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "pdf_page": 37,
+      "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-037.png",
+      "reused": true,
+      "image_sha256": "40dc8f60bcaaae46c14d7d6c885d574775c693047b4a97358dd627ebd8d25f79",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "IT-60.pdf",
+      "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "pdf_page": 38,
+      "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-038.png",
+      "reused": true,
+      "image_sha256": "d2e01f5b0ee808a1ca5aad735d45c6417b8479db02b1d6b113a7be986c9072f2",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "IT-60.pdf",
+      "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "pdf_page": 39,
+      "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-039.png",
+      "reused": true,
+      "image_sha256": "bdad1b47a44dd0ed63b613b6d98df97a9170bbd25c08837205095486314ebd0f",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "IT-60.pdf",
+      "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "pdf_page": 40,
+      "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-040.png",
+      "reused": true,
+      "image_sha256": "b612b37ab25228d444c1884441fa927a8ef7490e3d952db4579c63cee6e947e2",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "BIT-60.pdf",
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "pdf_page": 23,
+      "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-023.png",
+      "reused": true,
+      "image_sha256": "0a57e6adaec55b4f15755b988ff1566e1c3bd4695947d0847267f312da4ff48a",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "BIT-60.pdf",
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "pdf_page": 24,
+      "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-024.png",
+      "reused": false,
+      "image_sha256": "462d45b78a62af936fc4b1edf0c27a6e6e42da92893e6a7a896506a8c77077b4",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "BIT-60.pdf",
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "pdf_page": 25,
+      "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-025.png",
+      "reused": true,
+      "image_sha256": "390ea7e88dee8c8d72767b8b7c4e021f7f13a74f82edc2309cfd2e335e3ea1f7",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "BIT-60.pdf",
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "pdf_page": 26,
+      "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-026.png",
+      "reused": true,
+      "image_sha256": "5c3995849b1444307c25dcf05aa821b09778cea4397b083838d0140270e69607",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "BIT-60.pdf",
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "pdf_page": 27,
+      "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-027.png",
+      "reused": true,
+      "image_sha256": "6ceb2715d8ec8e83746db19589f829938e390e01ee09fe1f3e357da8c7e94b1c",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "BIT-60.pdf",
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "pdf_page": 28,
+      "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-028.png",
+      "reused": false,
+      "image_sha256": "0861969efee8892aad87f84e1dbf58b4cb860c8d77be809c871a5e8178187774",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "BIT-60.pdf",
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "pdf_page": 29,
+      "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-029.png",
+      "reused": true,
+      "image_sha256": "d9ffeda4ab3a604cc323db88c394b8b16ed261960b6b9cd2d51b3b83db535508",
+      "review_status": "rendered_not_automatically_verified"
+    },
+    {
+      "source": "BIT-60.pdf",
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "pdf_page": 30,
+      "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-030.png",
+      "reused": true,
+      "image_sha256": "56e99d6e0818650905b8cf6dc50a9c79fae92ab078c05b801e4e8ae6fd5863f5",
+      "review_status": "rendered_not_automatically_verified"
+    }
+  ]
+}

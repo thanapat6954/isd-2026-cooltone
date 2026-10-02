@@ -272,6 +272,11 @@ def run_profile(name: str, *, skip_lab7: bool, skip_eval: bool = False) -> None:
         run(ROOT / "scripts" / "ingest_prerequisite_reviews.py", "--app-root", ROOT,
             "--reviews", review_file, "--database", out / "curriculum.db", "--apply",
             "--output", out / "prerequisite_review_ingest.json")
+    name_reviews = ROOT / 'data/ground_truth/old2560_name_reviews.json'
+    if name_reviews.exists():
+        run(ROOT / 'scripts/ingest_name_reviews.py', '--app-root', ROOT,
+            '--database', out / 'curriculum.db', '--reviews', name_reviews, '--apply',
+            '--output', out / 'name_review_ingest.json')
     run(LAB8, "verify", "-d", out / "curriculum.db", "-o", out / "verify.json")
 
     gold = profile.get("gold")

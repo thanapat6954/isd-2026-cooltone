@@ -22,7 +22,7 @@ from .database import (
     attach_source_metadata,
     execute_readonly,
 )
-from .query_planner import QueryPlan, detect_intent, deterministic_sql
+from .query_planner import QueryPlan, detect_intent, deterministic_sql, normalize_course_name
 
 
 LOGGER = logging.getLogger("curriculum_app")
@@ -344,6 +344,11 @@ intent: {plan.intent}
             return "\n".join(dict.fromkeys(answers))
 
         if plan.intent in {"course_detail", "course_search"}:
+            if plan.intent == 'course_search' and len({row.get('code') for row in rows}) > 1:
+                candidates = '\n'.join(dict.fromkeys(
+                    f"{row.get('_source', {}).get('curriculum_name', 'หลักสูตร')}: {row.get('code')} {row.get('name_th') or row.get('name_en')}"
+                    for row in rows))
+                return f"พบหลายรายวิชาที่ตรงกับชื่อที่ค้น โปรดระบุรหัสวิชาที่ต้องการก่อนตอบรายละเอียด:\n{candidates}"
             expected = {
                 str(value)
                 for row in rows
@@ -451,7 +456,8 @@ intent: {plan.intent}
         return "; ".join(parts)
 
     def _execute_one(
-        self, question: str, plan: QueryPlan, database: DatabaseInfo
+        self, question: str, plan: QueryPlan, database: DatabaseInfo,
+        *, resolved_course_code: str | None = None,
     ) -> QueryExecution:
         sql = deterministic_sql(plan, database)
         repairs: list[dict[str, str]] = []
@@ -460,8 +466,16 @@ intent: {plan.intent}
 
         for attempt in range(self.config.sql_repair_attempts + 1):
             try:
-                self._validate_plan_filters(question, plan, database, sql)
+                self._validate_plan_filters(question, plan, database, sql,resolved_course_code=resolved_course_code)
                 validation, raw_rows = execute_readonly(database, sql, self.config.max_rows)
+                if plan.intent == 'course_search':
+                    literal_term = re.sub(r'\s+', '', plan.search_term or '').casefold()
+                    literal = [row for row in raw_rows if any(literal_term in re.sub(r'\s+', '',str(row.get(key) or '')).casefold() for key in ('name_th','name_en'))]
+                    raw_rows = literal or raw_rows
+                    exact = [row for row in raw_rows if any(
+                        normalize_course_name(str(row.get(key) or '')) == normalize_course_name(plan.search_term or '')
+                        for key in ('name_th', 'name_en'))]
+                    raw_rows = exact or raw_rows
                 return QueryExecution(
                     database=database,
                     sql=validation.sql,
@@ -487,11 +501,15 @@ intent: {plan.intent}
 
     @staticmethod
     def _validate_plan_filters(
-        question: str, plan: QueryPlan, database: DatabaseInfo, sql: str
+        question: str, plan: QueryPlan, database: DatabaseInfo, sql: str,
+        resolved_course_code: str | None = None,
     ) -> None:
         """Reject filters that contradict or exceed the detected user constraints."""
         where = re.search(r"\bwhere\b(.*?)(?:\bgroup\b|\border\b|\blimit\b|$)", sql, re.I | re.S)
         where_text = where.group(1) if where else ""
+        # ESCAPE is syntax, not an invented user filter. Only permit our fixed
+        # escape character; keep the ordinary literal guard intact.
+        where_text = re.sub(r"\bESCAPE\s+'\\'", '', where_text, flags=re.I)
         if plan.year is None and re.search(r"\byear\s*(?:=|<|>|\bin\b|\bbetween\b)", where_text, re.I):
             raise SqlValidationError("SQL added a year filter that the user did not request")
         if plan.semester is None and re.search(
@@ -503,11 +521,19 @@ intent: {plan.intent}
                 "The selected database contains one program row; filtering program is redundant"
             )
         allowed_constants = {"pre", "corequisite"}
+        # Only the internal, database-backed name resolver can authorize this
+        # code. Do not exempt arbitrary plan/model-added course literals.
+        if resolved_course_code == plan.course_code and re.fullmatch(r'\d{8}',resolved_course_code or ''):
+            allowed_constants.add(resolved_course_code.casefold())
         if plan.required_only:
             # This is a deterministic synonym expansion from the explicit
             # Thai/English "required course" intent, not a model-added filter.
             allowed_constants.add("required")
         for literal in re.findall(r"'((?:''|[^'])*)'", where_text):
+            if plan.intent == 'course_search' and plan.search_term:
+                pattern = '%' + normalize_course_name(plan.search_term).replace('%', '\\%').replace('_', '\\_') + '%'
+                if literal.replace("''", "'") == pattern:
+                    continue
             value = literal.replace("''", "'").strip("% ")
             if not value or value.casefold() in allowed_constants:
                 continue
@@ -555,6 +581,11 @@ intent: {plan.intent}
             [item.relative_path for item in selected],
         )
         executions = [self._execute_one(question, plan, database) for database in selected]
+        if plan.intent == 'course_search' and any(word in question.casefold() for word in ('วิชาบังคับก่อน', 'prerequisite', 'ต้องเรียนอะไรมาก่อน')):
+            codes = {row.get('code') for execution in executions for row in execution.rows}
+            if len(codes) == 1:
+                plan = QueryPlan('prerequisite', course_code=next(iter(codes)))
+                executions = [self._execute_one(question, plan, database, resolved_course_code=plan.course_code) for database in selected]
         rows = [row for execution in executions for row in execution.rows]
         retrieved = time.perf_counter()
         LOGGER.info(

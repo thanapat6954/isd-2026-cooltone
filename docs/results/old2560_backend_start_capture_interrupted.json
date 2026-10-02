@@ -1,0 +1,10 @@
+{
+  "command": [
+    "C:\\Users\\thana\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.EXE",
+    "-NoProfile",
+    "-File",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\scripts\\start_web.ps1"
+  ],
+  "started_utc": "2026-10-02T14:55:03.181374+00:00",
+  "status": "in_progress"
+}

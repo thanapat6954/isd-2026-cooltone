@@ -1,4 +1,4 @@
-param([int]$Port = 8000)
+param([int]$Port = 8000, [ValidateRange(5,120)][int]$StartupTimeoutSeconds = 60)
 $ErrorActionPreference = 'Stop'
 $appRoot = Split-Path $PSScriptRoot -Parent
 $pythonPath = Join-Path $appRoot 'venv/Scripts/python.exe'
@@ -6,10 +6,11 @@ if (-not (Test-Path -LiteralPath $pythonPath)) {
     throw 'Create the project venv and install requirements.txt first.'
 }
 $url = "http://localhost:$Port"
+$probeUrl = "http://127.0.0.1:$Port"
 $listener = Get-NetTCPConnection -LocalPort $Port -State Listen -ErrorAction SilentlyContinue
 if ($listener) {
     try {
-        $schema = Invoke-RestMethod "$url/openapi.json" -TimeoutSec 5
+        $schema = Invoke-RestMethod "$probeUrl/openapi.json" -TimeoutSec 5
         if ($schema.paths.PSObject.Properties.Name -contains '/ask') {
             Write-Output "Backend already running: $url/frontend/"
             exit 0
@@ -28,16 +29,23 @@ $backendProcess = Start-Process -FilePath $pythonPath -ArgumentList @(
     '--host', '127.0.0.1', '--port', "$Port"
 ) -WorkingDirectory $appRoot -WindowStyle Hidden -PassThru `
   -RedirectStandardOutput $stdoutPath -RedirectStandardError $stderrPath
-for ($attempt = 0; $attempt -lt 30; $attempt++) {
+# A cold Python process can take longer than thirty fast connection-refused
+# attempts. Use elapsed time, while preserving the API and occupied-port guard.
+$startupDeadline = [DateTime]::UtcNow.AddSeconds($StartupTimeoutSeconds)
+$lastReadinessError = 'No response received'
+while ([DateTime]::UtcNow -lt $startupDeadline) {
     if ($backendProcess.HasExited) { throw "Backend exited. Check $stderrPath" }
     try {
-        $schema = Invoke-RestMethod "$url/openapi.json" -TimeoutSec 2
+        $schema = Invoke-RestMethod "$probeUrl/openapi.json" -TimeoutSec 2
         if (-not ($schema.paths.PSObject.Properties.Name -contains '/ask')) {
             throw 'Unexpected application on the selected port'
         }
         Write-Output "Backend ready: $url/frontend/"
         Write-Output "Logs: $stderrPath"
         exit 0
-    } catch { Start-Sleep -Milliseconds 300 }
+    } catch {
+        $lastReadinessError = $_.Exception.Message
+        Start-Sleep -Milliseconds 300
+    }
 }
-throw "Backend not ready. Check $stderrPath"
+throw "Backend not ready: $lastReadinessError. Check $stderrPath"

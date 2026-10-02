@@ -113,6 +113,14 @@ class PlaceholderFidelityTests(unittest.TestCase):
         self.assertEqual(len(row["credit_options"]), 2)
         self.assertEqual(row["credit_options"][1]["raw_pattern"], "3(2-2-5)")
 
+    def test_same_ordinal_different_elective_families_do_not_merge(self):
+        source={'courses':[{'code':'90xxxxxx','name_th':name,'credits':'3(3-0-6)',
+                            'year':4,'semester':2,'source_file':'test.pdf','page_number':40}
+                           for name in ('วิชาเลือกทางมนุษยศาสตร์ 2','วิชาเลือกทางวิทยาศาสตร์กับคณิตศาสตร์ 2')]}
+        result,report=LAB8.convert_lab7b(source,program_id='TEST',total_credits=30,years=4)
+        self.assertEqual(len(result['plan']),2)
+        self.assertEqual(len({row['code'] for row in result['plan']}),2)
+
     def test_markdown_restores_all_x_placeholder_code(self):
         source = {"courses": [{
             "code": "วิชาเลือกเสรี 2",

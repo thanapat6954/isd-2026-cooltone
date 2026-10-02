@@ -86,8 +86,8 @@ def main():
                             if review.get('name_th_by_code', {}).get(code):
                                 staged.execute('UPDATE course SET name_th=? WHERE code=?',
                                     (review['name_th_by_code'][code],code))
-                                if 'label_name_th' in {r[1] for r in staged.execute('PRAGMA table_info(plan_item)')}:
-                                    staged.execute('UPDATE plan_item SET label_name_th=? WHERE code=?',
+                                if 'name_th' in {r[1] for r in staged.execute('PRAGMA table_info(plan_item)')}:
+                                    staged.execute('UPDATE plan_item SET name_th=? WHERE code=?',
                                         (review['name_th_by_code'][code],code))
                             staged.execute('INSERT OR REPLACE INTO course_prerequisite_evidence VALUES (?,?,?,?,?,?,?)',
                                            (code, review['status'], review['source_file'], review['page_number'],

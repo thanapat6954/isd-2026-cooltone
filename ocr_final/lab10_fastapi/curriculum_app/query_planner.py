@@ -36,6 +36,26 @@ def _extract_number(text: str, labels: tuple[str, ...]) -> int | None:
     return int(match.group(1)) if match else None
 
 
+def normalize_course_name(value: str) -> str:
+    """Normalize formatting and common Thai nominal variants, not arbitrary fuzzy matches."""
+    value = re.sub(r'\s+', '', value).casefold()
+    for phrase in ('การเขียนโปรแกรม', 'การสร้างโปรแกรม', 'การโปรแกรม'):
+        value = value.replace(phrase, 'โปรแกรม')
+    return value
+
+
+def _name_sql(column: str) -> str:
+    return f"normalize_course_name({column})"
+
+
+def _course_fields(database: DatabaseInfo) -> str:
+    fields = 'code, name_th, name_en, credits, lecture_h, lab_h, self_h, source_file, page_number'
+    if database.has('plan_item', 'code', 'printed_page_number', 'source_file', 'page_number'):
+        fields += (', (SELECT MIN(p.printed_page_number) FROM plan_item p WHERE p.code = course.code '
+                   'AND p.source_file = course.source_file AND p.page_number = course.page_number) AS printed_page_number')
+    return fields
+
+
 def detect_intent(question: str) -> QueryPlan:
     text = question.strip()
     lowered = text.casefold()
@@ -62,6 +82,10 @@ def detect_intent(question: str) -> QueryPlan:
     if any(word in lowered for word in version_diff_words):
         return QueryPlan("version_course_diff", compare=True)
 
+    if not code and 'วิชา' in text:
+        name_match = re.search(r'วิชา\s*(.+?)\s*(?:มีวิชาบังคับก่อน|ต้องเรียนอะไรมาก่อน|มีรหัสอะไร|รหัสอะไร|มีรหัส|มีกี่หน่วยกิต|กี่หน่วยกิต|มีรายละเอียด|รายละเอียด)', text)
+        if name_match and name_match.group(1).strip():
+            return QueryPlan('course_search', search_term=name_match.group(1).strip(), compare=compare)
     if any(word in lowered for word in prerequisite_words):
         return QueryPlan("prerequisite", year, semester, code, compare=compare, required_only=required_only)
     if year is not None and semester is not None and any(word in lowered for word in credit_words):
@@ -205,8 +229,7 @@ def deterministic_sql(plan: QueryPlan, database: DatabaseInfo) -> str | None:
         code = plan.course_code.replace("'", "''")
         if database.has("course", "code", "name_th", "credits"):
             return (
-                "SELECT code, name_th, name_en, credits, lecture_h, lab_h, self_h, "
-                f"source_file, page_number FROM course WHERE code = '{code}'"
+                f"SELECT {_course_fields(database)} FROM course WHERE code = '{code}'"
             )
         if database.has("courses", "course_code", "course_name_th", "credits"):
             return (
@@ -217,21 +240,24 @@ def deterministic_sql(plan: QueryPlan, database: DatabaseInfo) -> str | None:
         return None
 
     if intent == "course_search" and plan.search_term:
-        term = plan.search_term.replace("'", "''")
+        term = normalize_course_name(plan.search_term).replace("'", "''").replace('%', '\\%').replace('_', '\\_')
+        exact = normalize_course_name(plan.search_term).replace("'", "''")
+        literal = plan.search_term.replace("'", "''").replace('%', '\\%').replace('_', '\\_')
         if database.has("course", "code", "name_th", "name_en", "credits"):
             return (
-                "SELECT code, name_th, name_en, credits, lecture_h, lab_h, self_h, "
-                "source_file, page_number FROM course "
-                f"WHERE name_th LIKE '%{term}%' OR name_en LIKE '%{term}%' "
-                "ORDER BY code"
+                f"SELECT {_course_fields(database)} FROM course "
+                f"WHERE {_name_sql('name_th')} LIKE '%{term}%' ESCAPE '\\' OR {_name_sql('name_en')} LIKE '%{term}%' ESCAPE '\\' "
+                f"ORDER BY CASE WHEN name_th LIKE '%{literal}%' ESCAPE '\\' OR name_en LIKE '%{literal}%' ESCAPE '\\' THEN 0 ELSE 1 END, "
+                f"CASE WHEN {_name_sql('name_th')} = '{exact}' OR {_name_sql('name_en')} = '{exact}' THEN 0 ELSE 1 END, code"
             )
         if database.has("courses", "course_code", "course_name_th", "course_name_en", "credits"):
             return (
                 "SELECT course_code AS code, course_name_th AS name_th, "
                 "course_name_en AS name_en, credits, prerequisites, source_file, page_number "
                 "FROM courses "
-                f"WHERE course_name_th LIKE '%{term}%' OR course_name_en LIKE '%{term}%' "
-                "ORDER BY course_code"
+                f"WHERE {_name_sql('course_name_th')} LIKE '%{term}%' ESCAPE '\\' OR {_name_sql('course_name_en')} LIKE '%{term}%' ESCAPE '\\' "
+                f"ORDER BY CASE WHEN course_name_th LIKE '%{literal}%' ESCAPE '\\' OR course_name_en LIKE '%{literal}%' ESCAPE '\\' THEN 0 ELSE 1 END, "
+                f"CASE WHEN {_name_sql('course_name_th')} = '{exact}' OR {_name_sql('course_name_en')} = '{exact}' THEN 0 ELSE 1 END, course_code"
             )
         return None
 

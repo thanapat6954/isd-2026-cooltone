@@ -62950,17 +62950,7 @@
           "check": "prerequisite_coverage",
           "status": "NEEDS_REVIEW",
           "severity": "HIGH",
-          "message": "ยืนยันข้อมูลวิชาบังคับก่อนจากเล่มแล้ว 1/56 รายวิชา; การไม่มี edge ไม่ได้แปลว่าไม่มีวิชาบังคับก่อน",
-          "code": null,
-          "source_file": null,
-          "pdf_page": null
-        },
-        {
-          "id": "2808810d0b6e50671cac",
-          "check": "fidelity_schema",
-          "status": "FAIL",
-          "severity": "HIGH",
-          "message": "ยังไม่มีคอลัมน์: alternative_index, is_placeholder, printed_page_number, raw_code",
+          "message": "ยืนยันข้อมูลวิชาบังคับก่อนจากเล่มแล้ว 1/58 รายวิชา; การไม่มี edge ไม่ได้แปลว่าไม่มีวิชาบังคับก่อน",
           "code": null,
           "source_file": null,
           "pdf_page": null
@@ -62982,14 +62972,14 @@
         "actual": 130,
         "declared": 130
       },
-      "course_rows_checked": 56,
+      "course_rows_checked": 58,
       "retrieval": {
-        "tested": 56,
+        "tested": 58,
         "misses": 0,
         "scope": "Actual application SQL validation/execution path; not LLM/API/UI scoring"
       },
       "sources": {
-        "IT-60.pdf": 56
+        "IT-60.pdf": 58
       }
     },
     {
@@ -63021,20 +63011,10 @@
           "check": "prerequisite_coverage",
           "status": "NEEDS_REVIEW",
           "severity": "HIGH",
-          "message": "ยืนยันข้อมูลวิชาบังคับก่อนจากเล่มแล้ว 4/54 รายวิชา; การไม่มี edge ไม่ได้แปลว่าไม่มีวิชาบังคับก่อน",
+          "message": "ยืนยันข้อมูลวิชาบังคับก่อนจากเล่มแล้ว 4/58 รายวิชา; การไม่มี edge ไม่ได้แปลว่าไม่มีวิชาบังคับก่อน",
           "code": null,
           "source_file": null,
           "pdf_page": null
-        },
-        {
-          "id": "282efaf5ea9b439c9337",
-          "check": "code_on_cited_page",
-          "status": "NEEDS_REVIEW",
-          "severity": "HIGH",
-          "message": "ไม่พบรหัสใน embedded text ของหน้าอ้างอิง ต้องตรวจภาพหน้านี้; ยังไม่ใช่หลักฐานว่าไม่มีรายวิชา",
-          "code": "06016346",
-          "source_file": "IT-60.pdf",
-          "pdf_page": 30
         },
         {
           "id": "5dead34a149a3c468478",
@@ -63053,14 +63033,14 @@
         "actual": 130,
         "declared": 130
       },
-      "course_rows_checked": 54,
+      "course_rows_checked": 58,
       "retrieval": {
-        "tested": 54,
+        "tested": 58,
         "misses": 0,
         "scope": "Actual application SQL validation/execution path; not LLM/API/UI scoring"
       },
       "sources": {
-        "IT-60.pdf": 54
+        "IT-60.pdf": 58
       }
     },
     {

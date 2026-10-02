@@ -1,0 +1,276 @@
+{
+  "status": "targeted repairs verified; complete independent book audit remains OPEN",
+  "profiles": [
+    {
+      "profile": "dsba-2560-coop",
+      "HIGH": 2,
+      "MED": 0,
+      "counts": {
+        "program": 1,
+        "course": 39,
+        "plan_item": 44,
+        "prerequisite": 5
+      },
+      "structure_pass": true,
+      "semester_comparison_pass": true,
+      "pages_reviewed": [
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "printed_pages_reviewed": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "semesters_passed": 8,
+      "semesters_n": 8,
+      "credits": 126,
+      "printed_credits": 126,
+      "qa": {
+        "n": 11,
+        "passed": 11
+      },
+      "frozen_inputs_unchanged": true,
+      "remaining": "full names/category/type/prerequisite and book-wide absence evidence unmeasured"
+    },
+    {
+      "profile": "dsba-2560-no-coop",
+      "HIGH": 2,
+      "MED": 0,
+      "counts": {
+        "program": 1,
+        "course": 38,
+        "plan_item": 44,
+        "prerequisite": 5
+      },
+      "structure_pass": true,
+      "semester_comparison_pass": true,
+      "pages_reviewed": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "printed_pages_reviewed": [
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "semesters_passed": 9,
+      "semesters_n": 9,
+      "credits": 126,
+      "printed_credits": 126,
+      "qa": {
+        "n": 10,
+        "passed": 10
+      },
+      "frozen_inputs_unchanged": true,
+      "remaining": "full names/category/type/prerequisite and book-wide absence evidence unmeasured"
+    },
+    {
+      "profile": "it-2560-coop",
+      "HIGH": 2,
+      "MED": 0,
+      "counts": {
+        "program": 1,
+        "course": 58,
+        "plan_item": 64,
+        "prerequisite": 1
+      },
+      "structure_pass": true,
+      "semester_comparison_pass": true,
+      "pages_reviewed": [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "printed_pages_reviewed": [
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "semesters_passed": 8,
+      "semesters_n": 8,
+      "credits": 130,
+      "printed_credits": 130,
+      "qa": {
+        "n": 12,
+        "passed": 12
+      },
+      "frozen_inputs_unchanged": true,
+      "remaining": "full names/category/type/prerequisite and book-wide absence evidence unmeasured"
+    },
+    {
+      "profile": "it-2560-no-coop",
+      "HIGH": 2,
+      "MED": 0,
+      "counts": {
+        "program": 1,
+        "course": 58,
+        "plan_item": 64,
+        "prerequisite": 4
+      },
+      "structure_pass": true,
+      "semester_comparison_pass": true,
+      "pages_reviewed": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "printed_pages_reviewed": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "semesters_passed": 8,
+      "semesters_n": 8,
+      "credits": 130,
+      "printed_credits": 130,
+      "qa": {
+        "n": 12,
+        "passed": 12
+      },
+      "frozen_inputs_unchanged": true,
+      "remaining": "full names/category/type/prerequisite and book-wide absence evidence unmeasured"
+    },
+    {
+      "profile": "bit-2560-coop",
+      "HIGH": 2,
+      "MED": 0,
+      "counts": {
+        "program": 1,
+        "course": 38,
+        "plan_item": 42,
+        "prerequisite": 1
+      },
+      "structure_pass": true,
+      "semester_comparison_pass": true,
+      "pages_reviewed": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "printed_pages_reviewed": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "semesters_passed": 8,
+      "semesters_n": 8,
+      "credits": 126,
+      "printed_credits": 126,
+      "qa": {
+        "n": 10,
+        "passed": 10
+      },
+      "frozen_inputs_unchanged": true,
+      "remaining": "full names/category/type/prerequisite and book-wide absence evidence unmeasured"
+    },
+    {
+      "profile": "bit-2560-no-coop",
+      "HIGH": 2,
+      "MED": 0,
+      "counts": {
+        "program": 1,
+        "course": 38,
+        "plan_item": 42,
+        "prerequisite": 2
+      },
+      "structure_pass": true,
+      "semester_comparison_pass": true,
+      "pages_reviewed": [
+        23,
+        24,
+        25,
+        26
+      ],
+      "printed_pages_reviewed": [
+        18,
+        19,
+        20,
+        21
+      ],
+      "semesters_passed": 8,
+      "semesters_n": 8,
+      "credits": 126,
+      "printed_credits": 126,
+      "qa": {
+        "n": 10,
+        "passed": 10
+      },
+      "frozen_inputs_unchanged": true,
+      "remaining": "full names/category/type/prerequisite and book-wide absence evidence unmeasured"
+    }
+  ],
+  "development_qa": {
+    "passed": 65,
+    "n": 65
+  },
+  "existing_gold": {
+    "passed": 70,
+    "n": 70
+  },
+  "version_pairs": {
+    "passed": 6,
+    "n": 6
+  },
+  "unmeasured": [
+    "full independent name/category/type accuracy",
+    "all course-description prerequisites",
+    "genuine book-wide course absence",
+    "final held-out accuracy/seed stability",
+    "cold LLM difficult-question latency",
+    "coherent specialization-bundle recommendation"
+  ],
+  "cause_groups": {
+    "code_bug": [
+      "Thai nominal matching and missing ambiguity clarification",
+      "guard rejected database-resolved name-only prerequisite codes",
+      "incidental course name overrode program selector",
+      "wildcard+ordinal collision across elective families",
+      "review ingest updated catalog but wrong plan-name columns"
+    ],
+    "data_ingest_bug": [
+      "IT coop fidelity migration was source-blocked",
+      "missing/distorted plan options restored from separately reviewed full terms",
+      "BIT prerequisite printed folio cannot use a fixed appendix offset"
+    ],
+    "OCR_loss": [
+      "missing IT network/project options and displaced names",
+      "specialization headings used as row names",
+      "IT lecture/lab-hour patterns wrong despite correct integer credits",
+      "DSBA shortened wildcard and BIT alternative label loss"
+    ],
+    "source_ambiguity": [
+      "IT specialization groups are mutually exclusive bundles; options are displayed, not a cross-branch registration recommendation",
+      "absence cannot be asserted from incomplete description coverage",
+      "BIT coop06036018 Thai space is printed; not changed"
+    ]
+  }
+}
