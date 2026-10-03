@@ -1,0 +1,158 @@
+{
+  "backup_folder": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512",
+  "files": {
+    "lab10_fastapi\\__init__.py": "4c06a3c03ef81405457f4b13cdff1faeeb8db0c72ac65f2ba103dcee7e379eb5",
+    "lab10_fastapi\\curriculum_app\\__init__.py": "a0f302c05be45c406b249d5c361b3b577d8820c24b0f904ca94cbccbd8684dd7",
+    "lab10_fastapi\\curriculum_app\\config.py": "161f0a7eabe1e97471bf53780299bf91798aee718625c7b9cdf8737d7a7b6125",
+    "lab10_fastapi\\curriculum_app\\database.py": "942cecb7f7e2b6ba0689c1efc3cc77b6fb5d46718c5375703883f66e3e2ac740",
+    "lab10_fastapi\\curriculum_app\\main.py": "d22e14977b6204980e151607668edbd9f5a9ee0f6412b9eaa47a9c8b56e6c512",
+    "lab10_fastapi\\curriculum_app\\model_service.py": "40c3753398b5ed09b753a9cab48c4105d0e21908cc8bec567903c677949ba0f0",
+    "lab10_fastapi\\curriculum_app\\query_planner.py": "7cd271de0f5c5b8773dfa1cbd671ac980c1e8e1a92ef9fe0b182c39f78ef54d2",
+    "lab10_fastapi\\curriculum_app\\schemas.py": "5686d776006fe9b547c08d27b454d718e297903cf6cdea56581c411a3a4a1d59",
+    "lab10_fastapi\\curriculum_app\\study_plan.py": "380afd4eb7e9d3f79f5b58929271d79a7d37fccddc9b57dbd035278dfbf62545",
+    "frontend\\app.js": "505a7d7d4fadb03184fe5560148509179e65ab37611a56246bc38389276c8b0e",
+    "frontend\\index.html": "a1084529fdeba43f9c1743472f205bb15f95c81af84d3111d665e5e4dda32235",
+    "frontend\\README.md": "f9f66e533c743451f9ffa1fc889d23b43ba3613a21a759089b7b1b507707e782",
+    "frontend\\style.css": "f81c2785ec910ff776a1a66bd1834c7b9950ffb54db1fa6f90be93dc77537cad",
+    "frontend\\wireframe.md": "ceea9bb58a82fe35da2bb525e4233ccc6cde1e803bb7c5b6d47043d458932315",
+    "data\\ground_truth\\study_plan_relationships.json": "b56c308bd440d59d14ec552fa08466d3210b259d43b65dfd3864d4d7640b6257"
+  },
+  "databases": [
+    {
+      "profile": "legacy-course-catalog",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\curriculum.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\legacy-course-catalog.db",
+      "integrity": "ok",
+      "live_sha256": "cdcad2ea9fc37edf0b85202bdc8498826b487ca90527a0add2cd30b27734fd1f",
+      "backup_sha256": "a17b04b67336e5470985c91a1994922e843b6bdbebd63fd0c02a407c2a5d1add"
+    },
+    {
+      "profile": "AI-2566-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_ai\\curriculum.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\AI-2566-coop.db",
+      "integrity": "ok",
+      "live_sha256": "6fb7f8bebd5f20a9a08c656bedae882c547dd03024319c698eb469bc93d939dd",
+      "backup_sha256": "51a755a2a57b943a08eed6f79ed668ca117af407d60060ca910a597d72db5994"
+    },
+    {
+      "profile": "BIT-2560-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_bit_2560_coop\\curriculum.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\BIT-2560-coop.db",
+      "integrity": "ok",
+      "live_sha256": "08a1769fc3fafedaf82d792c997e13a94f7d986ee115ac6963a47543445db79a",
+      "backup_sha256": "8f7e072b67a6013431af280ecd33e4f1b27b52240d5b1b50b60423abbcb58c79"
+    },
+    {
+      "profile": "BIT-2560-no-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_bit_2560_no_coop\\curriculum.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\BIT-2560-no-coop.db",
+      "integrity": "ok",
+      "live_sha256": "c8ce72fa4099567e8ba9707d98a2ed4e5cedbffa7942dfdf7ab29c8af1c16996",
+      "backup_sha256": "7cfc9a181a190b05f775c3e8a18e890b7b8b036a145e58f3350b61ee5607dcf1"
+    },
+    {
+      "profile": "BIT-2565-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_bit_2565_coop\\curriculum.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\BIT-2565-coop.db",
+      "integrity": "ok",
+      "live_sha256": "b5a030b0542e3b47ae3ee095f94e44f2147affb0a8c006a5fa7198c11e1a8196",
+      "backup_sha256": "c002926cc288f513ec99915e0b7ffcff5cb6e773033fe2f3c1d8aa771d981dea"
+    },
+    {
+      "profile": "BIT-2565-no-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_bit_2565_no_coop\\curriculum.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\BIT-2565-no-coop.db",
+      "integrity": "ok",
+      "live_sha256": "f6c307e692579ee07b21752a2a11f3d05b9b8d0dc0514b1a88a1eb5cc9a67410",
+      "backup_sha256": "ad22cbac801d5febdd2f25410a17bac3162cba0606dcf713659f99a78be4b4d1"
+    },
+    {
+      "profile": "DSBA-2560-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_dsba_2560_coop\\curriculum.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\DSBA-2560-coop.db",
+      "integrity": "ok",
+      "live_sha256": "fdf35bd916eedba39e797edb8ffd819e2ab7b7033f032e130fcd6519fccbec47",
+      "backup_sha256": "d3700cb1e715eb9abd6cba234256419af90ad84499a229842c067ce97eb96fb0"
+    },
+    {
+      "profile": "DSBA-2560-no-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_dsba_2560_no_coop\\curriculum.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\DSBA-2560-no-coop.db",
+      "integrity": "ok",
+      "live_sha256": "3ffa1190d81dc7f030e408d28e581b325ab4d08a23399173faa35368e3a859ca",
+      "backup_sha256": "00f9cba59820436bd66b1ea5ab7b51ac8c47fd69df9581ed67b61c0424271f2e"
+    },
+    {
+      "profile": "DSBA-2565-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_dsba_coop\\curriculum.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\DSBA-2565-coop.db",
+      "integrity": "ok",
+      "live_sha256": "6936d78b0e3a1c4e95cbb6ebabad91c5de075d9a453095636bc8738dde7ee3ad",
+      "backup_sha256": "ad80c64a789284dd175828038cf60f2e16c4d717adc7d7e3dca1902394370931"
+    },
+    {
+      "profile": "DSBA-2565-no-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_dsba_no_coop\\curriculum.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\DSBA-2565-no-coop.db",
+      "integrity": "ok",
+      "live_sha256": "470ed74009ffb7ad183d1d2a133fa21b991cce54564bc5d3ad66c8c37f3b6f3d",
+      "backup_sha256": "6a22b061941c58532a4a739154a58bb99b088b57df53c0f795dbc1e2c595049f"
+    },
+    {
+      "profile": "IT-2560-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_coop\\curriculum.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\IT-2560-coop.db",
+      "integrity": "ok",
+      "live_sha256": "76ff0328c005e801f6412256bf688bf8bcaa0860730f8f30e8474d6fee42a79c",
+      "backup_sha256": "618e063ce543224cfdf7841ca4678cf9c62ecc47a3f91e99aef400e63ec89b5b"
+    },
+    {
+      "profile": "IT-2560-no-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_no_coop\\curriculum.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\IT-2560-no-coop.db",
+      "integrity": "ok",
+      "live_sha256": "8ae5226d0af705bb22f5e3f993497ac2a16ede69f45b42c2205745b1524d87b5",
+      "backup_sha256": "a9b8f434ae753a70e5572a1b90f09da35a341edf83e0b14358764c8643e7ef06"
+    },
+    {
+      "profile": "IT-2565-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_coop\\curriculum.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\IT-2565-coop.db",
+      "integrity": "ok",
+      "live_sha256": "e97a909e03540e35bf0e135eaf83c9f9dbf5e4e8a7c6b04c67ff7aae59ed69c4",
+      "backup_sha256": "ecc024286a37fbf08f1a0c3295da756ce83f605b29f697cac4fce20cf3cb830c"
+    },
+    {
+      "profile": "IT-2565-no-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_no_coop\\curriculum.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\IT-2565-no-coop.db",
+      "integrity": "ok",
+      "live_sha256": "2dd1c33d0e8c2aa7ed42f982fc639e88242247f3e13c2d39cc8486e0f99d821e",
+      "backup_sha256": "542bf6c4f608da157a15f7c9dc40e16873b9fbd97d461cdaede66e15c2de609a"
+    }
+  ],
+  "protected": {
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_ai\\lab7b\\pred_vlm.json": "3e6b06999e9d46339190f0106ab0ce655df4c1d14171796fbd281371729f4ddc",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_bit_2560_coop\\lab7b\\pred_vlm.json": "4e2330db8ebc0127052a48586d7eaecbd3287060856b024c7d6277be15974670",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_bit_2560_no_coop\\lab7b\\pred_vlm.json": "0088109053b14b1bdd5903b19a440f6a9520a12488e86e2f8e3cddf2b87f8c54",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_bit_2565_coop\\lab7b\\pred_vlm.json": "69b5bc95252a83ba3a40bf7aa8b795645b8204dc144a1bb19e622f1dd5ad6257",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_bit_2565_no_coop\\lab7b\\pred_vlm.json": "cb16b498855a598c6632d6617ff9ad5e7062d8705929807ab49e056e8a424679",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_dsba_2560_coop\\lab7b\\pred_vlm.json": "1c837f146117c8dd8b67b8cff6549d93c149b7947b26c927c2c309c8ab184643",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_dsba_2560_no_coop\\lab7b\\pred_vlm.json": "b47f58c032becd13fae101a64fe3f822aa1093116c3f088d58914864dc1ff9ba",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_dsba_coop\\lab7b\\pred_vlm.json": "deab5c8ffef8dfdc27daa4e6b2027bb27b40ced90f442be49c1b4d1f168223c5",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_dsba_no_coop\\lab7b\\pred_vlm.json": "381e64aa0f26de7cc473cf30beb6ae2d7c8e5e992877746d328cf51f2184903e",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_coop\\lab7b\\pred_vlm.json": "f6d7198b8cc064311dd08393cabf0ed0e85b475c74653eec0393d940a672cb7f",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_no_coop\\lab7b\\pred_vlm.json": "9de215ce351c2a1d305f4b5aa33b6572c86f18f882815dbb9284c145352ef52b",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_coop\\lab7b\\pred_vlm.json": "a2014e0c579bd9016cfade9c4a4be3578158b2ca7ac4e746d96fc120432c6ac9",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_no_coop\\lab7b\\pred_vlm.json": "1c821128af91948a7df0d7877e2f31ad4a608c179d944fcffae0efd772d47207",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\data\\input\\AI.pdf": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\data\\input\\BIT-60.pdf": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\data\\input\\BIT-65.pdf": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\data\\input\\DSBA-60.pdf": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\data\\input\\DSBA.pdf": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\data\\input\\IT-60.pdf": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\data\\input\\IT.pdf": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\tests\\qa_gold.json": "c6e58708a19989c9a9fc871c867fe6cb68c604d832aa42a011fa442317a1dc18",
+    "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\robustness_eval.py": "d62c118b7d60f46b2337b3883d089508079f9ef4530e445250cb77eb5e13b9d7"
+  }
+}

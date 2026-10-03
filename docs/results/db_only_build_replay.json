@@ -1,0 +1,645 @@
+{
+  "scope": "Isolated replay of reviewed ingest on current DBs; not a full OCR/PDF rebuild",
+  "checks": [
+    {
+      "profile": "AI-2566-coop",
+      "before": {
+        "sha256_content": "0cefa92a53f35614a2db7f595848f2f84b025c12c47d603330412e3036b8d05f",
+        "row_counts": {
+          "course": 299,
+          "plan_item": 41,
+          "plan_item_credit_option": 36,
+          "prerequisite": 0,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 0,
+          "study_member": 0,
+          "study_page": 0,
+          "study_term": 0,
+          "study_track": 0
+        },
+        "integrity": "ok"
+      },
+      "after": {
+        "sha256_content": "0cefa92a53f35614a2db7f595848f2f84b025c12c47d603330412e3036b8d05f",
+        "row_counts": {
+          "course": 299,
+          "plan_item": 41,
+          "plan_item_credit_option": 36,
+          "prerequisite": 0,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 0,
+          "study_member": 0,
+          "study_page": 0,
+          "study_term": 0,
+          "study_track": 0
+        },
+        "integrity": "ok"
+      },
+      "first_changes": 0,
+      "second_changes": 0,
+      "passed": true,
+      "rollback": {
+        "integrity": "ok",
+        "recovery_path": "C:\\Users\\thana\\AppData\\Local\\Temp\\db-only-build-oopr__9g\\AI-2566-coop.pre-rollback.db",
+        "recovery_sha256": "8148b69cfacb61ad483b6e5c03fcfdf87a6a7b8db013a1ca60429eba84b7f25f",
+        "restored_sha256": "307d7d9f335d731efd1895b6ac78b1f5128436982dd5661c55adec42ef243c0e",
+        "baseline_content_matches": true,
+        "recovery_content_matches": true
+      }
+    },
+    {
+      "profile": "BIT-2560-coop",
+      "before": {
+        "sha256_content": "5ba4c8aa78cd71d6ae32c7c1b7e5a10b8e73311d3d15bf2981adecd7b3da703c",
+        "row_counts": {
+          "course": 38,
+          "course_prerequisite_evidence": 1,
+          "plan_item": 42,
+          "plan_item_credit_option": 44,
+          "prerequisite": 1,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 0,
+          "study_member": 0,
+          "study_page": 0,
+          "study_term": 0,
+          "study_track": 0
+        },
+        "integrity": "ok"
+      },
+      "after": {
+        "sha256_content": "5ba4c8aa78cd71d6ae32c7c1b7e5a10b8e73311d3d15bf2981adecd7b3da703c",
+        "row_counts": {
+          "course": 38,
+          "course_prerequisite_evidence": 1,
+          "plan_item": 42,
+          "plan_item_credit_option": 44,
+          "prerequisite": 1,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 0,
+          "study_member": 0,
+          "study_page": 0,
+          "study_term": 0,
+          "study_track": 0
+        },
+        "integrity": "ok"
+      },
+      "first_changes": 0,
+      "second_changes": 0,
+      "passed": true,
+      "rollback": {
+        "integrity": "ok",
+        "recovery_path": "C:\\Users\\thana\\AppData\\Local\\Temp\\db-only-build-oopr__9g\\BIT-2560-coop.pre-rollback.db",
+        "recovery_sha256": "b2de09f1299315539765617e361f046b3a20a2f995a1dff3fb11d09f38a4dd46",
+        "restored_sha256": "73f0a919e453088a951efc33c4d41ea6a124db7c21363832d266d7d1b5a59277",
+        "baseline_content_matches": true,
+        "recovery_content_matches": true
+      }
+    },
+    {
+      "profile": "BIT-2560-no-coop",
+      "before": {
+        "sha256_content": "c82dc86484ac9893c2487601204d8e742663895202aaa0a9cc4194f1477cba4b",
+        "row_counts": {
+          "course": 38,
+          "course_prerequisite_evidence": 2,
+          "plan_item": 42,
+          "plan_item_credit_option": 44,
+          "prerequisite": 2,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 0,
+          "study_member": 0,
+          "study_page": 0,
+          "study_term": 0,
+          "study_track": 0
+        },
+        "integrity": "ok"
+      },
+      "after": {
+        "sha256_content": "c82dc86484ac9893c2487601204d8e742663895202aaa0a9cc4194f1477cba4b",
+        "row_counts": {
+          "course": 38,
+          "course_prerequisite_evidence": 2,
+          "plan_item": 42,
+          "plan_item_credit_option": 44,
+          "prerequisite": 2,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 0,
+          "study_member": 0,
+          "study_page": 0,
+          "study_term": 0,
+          "study_track": 0
+        },
+        "integrity": "ok"
+      },
+      "first_changes": 0,
+      "second_changes": 0,
+      "passed": true,
+      "rollback": {
+        "integrity": "ok",
+        "recovery_path": "C:\\Users\\thana\\AppData\\Local\\Temp\\db-only-build-oopr__9g\\BIT-2560-no-coop.pre-rollback.db",
+        "recovery_sha256": "3e2b4c9daba816dae5c4590148f015749f17650bc6632b91b25cf1f41a7e2f0e",
+        "restored_sha256": "db7dd5983ad247921146d163d386763359d71ff68be234940c549a24d74e4059",
+        "baseline_content_matches": true,
+        "recovery_content_matches": true
+      }
+    },
+    {
+      "profile": "BIT-2565-coop",
+      "before": {
+        "sha256_content": "b81d595da3300147871f5a17769f763124850f598daaea083f9a604dd22f5e40",
+        "row_counts": {
+          "course": 302,
+          "plan_item": 43,
+          "prerequisite": 0,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 0,
+          "study_member": 0,
+          "study_page": 0,
+          "study_term": 0,
+          "study_track": 0
+        },
+        "integrity": "ok"
+      },
+      "after": {
+        "sha256_content": "b81d595da3300147871f5a17769f763124850f598daaea083f9a604dd22f5e40",
+        "row_counts": {
+          "course": 302,
+          "plan_item": 43,
+          "prerequisite": 0,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 0,
+          "study_member": 0,
+          "study_page": 0,
+          "study_term": 0,
+          "study_track": 0
+        },
+        "integrity": "ok"
+      },
+      "first_changes": 0,
+      "second_changes": 0,
+      "passed": true,
+      "rollback": {
+        "integrity": "ok",
+        "recovery_path": "C:\\Users\\thana\\AppData\\Local\\Temp\\db-only-build-oopr__9g\\BIT-2565-coop.pre-rollback.db",
+        "recovery_sha256": "75ab42ecd6f1470e4b01cc80d98cb1045fc2b586881248558da9db1d46146da0",
+        "restored_sha256": "8bb8632d76394f52feefc0838f38c61fd1e6f4096d942b9bc6f5fdb27a9e731e",
+        "baseline_content_matches": true,
+        "recovery_content_matches": true
+      }
+    },
+    {
+      "profile": "BIT-2565-no-coop",
+      "before": {
+        "sha256_content": "43c7405aca9359bb82c75e87545bea1e0cb9942e48c0c488f5a3b5dda1703f45",
+        "row_counts": {
+          "course": 301,
+          "plan_item": 43,
+          "prerequisite": 0,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 0,
+          "study_member": 0,
+          "study_page": 0,
+          "study_term": 0,
+          "study_track": 0
+        },
+        "integrity": "ok"
+      },
+      "after": {
+        "sha256_content": "43c7405aca9359bb82c75e87545bea1e0cb9942e48c0c488f5a3b5dda1703f45",
+        "row_counts": {
+          "course": 301,
+          "plan_item": 43,
+          "prerequisite": 0,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 0,
+          "study_member": 0,
+          "study_page": 0,
+          "study_term": 0,
+          "study_track": 0
+        },
+        "integrity": "ok"
+      },
+      "first_changes": 0,
+      "second_changes": 0,
+      "passed": true,
+      "rollback": {
+        "integrity": "ok",
+        "recovery_path": "C:\\Users\\thana\\AppData\\Local\\Temp\\db-only-build-oopr__9g\\BIT-2565-no-coop.pre-rollback.db",
+        "recovery_sha256": "dc2dd154430e43da28e94949e2318380ea6e49c5ec492d1beebd2689b3c2f80b",
+        "restored_sha256": "3183e8cd98b2e185c1ae09eb2a5aeb6b120b9b4833f2d4cab330f27e7bec89b8",
+        "baseline_content_matches": true,
+        "recovery_content_matches": true
+      }
+    },
+    {
+      "profile": "DSBA-2560-coop",
+      "before": {
+        "sha256_content": "19c34ed8a293f98360f272ec650444af5b1121870c578a191474b65aa4b41d86",
+        "row_counts": {
+          "course": 39,
+          "course_prerequisite_evidence": 5,
+          "plan_item": 44,
+          "plan_item_credit_option": 45,
+          "prerequisite": 5,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 0,
+          "study_member": 0,
+          "study_page": 0,
+          "study_term": 0,
+          "study_track": 0
+        },
+        "integrity": "ok"
+      },
+      "after": {
+        "sha256_content": "19c34ed8a293f98360f272ec650444af5b1121870c578a191474b65aa4b41d86",
+        "row_counts": {
+          "course": 39,
+          "course_prerequisite_evidence": 5,
+          "plan_item": 44,
+          "plan_item_credit_option": 45,
+          "prerequisite": 5,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 0,
+          "study_member": 0,
+          "study_page": 0,
+          "study_term": 0,
+          "study_track": 0
+        },
+        "integrity": "ok"
+      },
+      "first_changes": 0,
+      "second_changes": 0,
+      "passed": true,
+      "rollback": {
+        "integrity": "ok",
+        "recovery_path": "C:\\Users\\thana\\AppData\\Local\\Temp\\db-only-build-oopr__9g\\DSBA-2560-coop.pre-rollback.db",
+        "recovery_sha256": "77dde4ff1a20da7c86f04993ed42a6ea6f8df063ad317a1dd8d252b5a452331a",
+        "restored_sha256": "72395712c40ceba0671783fe281d70fce738a2e0d1740c85661c5af0cca8eed5",
+        "baseline_content_matches": true,
+        "recovery_content_matches": true
+      }
+    },
+    {
+      "profile": "DSBA-2560-no-coop",
+      "before": {
+        "sha256_content": "a661421adc6e56b703ff63fb60b87ae9e51ece85c5b8159369e5fdc52d198427",
+        "row_counts": {
+          "course": 38,
+          "course_prerequisite_evidence": 5,
+          "plan_item": 44,
+          "plan_item_credit_option": 46,
+          "prerequisite": 5,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 0,
+          "study_member": 0,
+          "study_page": 0,
+          "study_term": 0,
+          "study_track": 0
+        },
+        "integrity": "ok"
+      },
+      "after": {
+        "sha256_content": "a661421adc6e56b703ff63fb60b87ae9e51ece85c5b8159369e5fdc52d198427",
+        "row_counts": {
+          "course": 38,
+          "course_prerequisite_evidence": 5,
+          "plan_item": 44,
+          "plan_item_credit_option": 46,
+          "prerequisite": 5,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 0,
+          "study_member": 0,
+          "study_page": 0,
+          "study_term": 0,
+          "study_track": 0
+        },
+        "integrity": "ok"
+      },
+      "first_changes": 0,
+      "second_changes": 0,
+      "passed": true,
+      "rollback": {
+        "integrity": "ok",
+        "recovery_path": "C:\\Users\\thana\\AppData\\Local\\Temp\\db-only-build-oopr__9g\\DSBA-2560-no-coop.pre-rollback.db",
+        "recovery_sha256": "341b712e13ac501ff443ad4bd8218a8b2caa6702054852c167c5821403c4bbb6",
+        "restored_sha256": "b8643a441420070255483672bb8802203aa40fe16ff49a76dc620cdc32226533",
+        "baseline_content_matches": true,
+        "recovery_content_matches": true
+      }
+    },
+    {
+      "profile": "DSBA-2565-coop",
+      "before": {
+        "sha256_content": "7bac4c2c306a9b2737ad33169df016fde39800be39622b5d31fe17d6ec320d2e",
+        "row_counts": {
+          "course": 294,
+          "course_prerequisite_evidence": 3,
+          "plan_item": 45,
+          "plan_item_credit_option": 54,
+          "prerequisite": 5,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 12,
+          "study_member": 12,
+          "study_page": 2,
+          "study_term": 2,
+          "study_track": 6
+        },
+        "integrity": "ok"
+      },
+      "after": {
+        "sha256_content": "7bac4c2c306a9b2737ad33169df016fde39800be39622b5d31fe17d6ec320d2e",
+        "row_counts": {
+          "course": 294,
+          "course_prerequisite_evidence": 3,
+          "plan_item": 45,
+          "plan_item_credit_option": 54,
+          "prerequisite": 5,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 12,
+          "study_member": 12,
+          "study_page": 2,
+          "study_term": 2,
+          "study_track": 6
+        },
+        "integrity": "ok"
+      },
+      "first_changes": 0,
+      "second_changes": 0,
+      "passed": true,
+      "rollback": {
+        "integrity": "ok",
+        "recovery_path": "C:\\Users\\thana\\AppData\\Local\\Temp\\db-only-build-oopr__9g\\DSBA-2565-coop.pre-rollback.db",
+        "recovery_sha256": "884fdd703aea145c7cef073665b1822f16604c92b357e304829064cdc321d890",
+        "restored_sha256": "25a9c2ab0626760cab1138ab9c9d8e88fc4dae284540ae478e553a2746e33c72",
+        "baseline_content_matches": true,
+        "recovery_content_matches": true
+      }
+    },
+    {
+      "profile": "DSBA-2565-no-coop",
+      "before": {
+        "sha256_content": "167f022a1dda765232701cf8d1d1a5eb47e997a8ee7206248f4e6c390c33363f",
+        "row_counts": {
+          "course": 292,
+          "course_prerequisite_evidence": 3,
+          "plan_item": 45,
+          "plan_item_credit_option": 56,
+          "prerequisite": 5,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 12,
+          "study_member": 12,
+          "study_page": 2,
+          "study_term": 2,
+          "study_track": 6
+        },
+        "integrity": "ok"
+      },
+      "after": {
+        "sha256_content": "167f022a1dda765232701cf8d1d1a5eb47e997a8ee7206248f4e6c390c33363f",
+        "row_counts": {
+          "course": 292,
+          "course_prerequisite_evidence": 3,
+          "plan_item": 45,
+          "plan_item_credit_option": 56,
+          "prerequisite": 5,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 12,
+          "study_member": 12,
+          "study_page": 2,
+          "study_term": 2,
+          "study_track": 6
+        },
+        "integrity": "ok"
+      },
+      "first_changes": 0,
+      "second_changes": 0,
+      "passed": true,
+      "rollback": {
+        "integrity": "ok",
+        "recovery_path": "C:\\Users\\thana\\AppData\\Local\\Temp\\db-only-build-oopr__9g\\DSBA-2565-no-coop.pre-rollback.db",
+        "recovery_sha256": "733d7a536d6deb0b3179044b273d47c8dbd3fe90df8ca7e72ab52de60b0261ca",
+        "restored_sha256": "f3870afb26f485ccae04ed7b4d7ecbec7a175a325827c20378a0e7fba33d0a30",
+        "baseline_content_matches": true,
+        "recovery_content_matches": true
+      }
+    },
+    {
+      "profile": "IT-2560-coop",
+      "before": {
+        "sha256_content": "26643ac76c62ee0838497cd8d15e82e4681927408e8d425c49c97a3ff2e78b52",
+        "row_counts": {
+          "course": 58,
+          "course_prerequisite_evidence": 1,
+          "plan_item": 64,
+          "plan_item_credit_option": 66,
+          "prerequisite": 1,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 40,
+          "study_member": 30,
+          "study_page": 4,
+          "study_term": 4,
+          "study_track": 12
+        },
+        "integrity": "ok"
+      },
+      "after": {
+        "sha256_content": "26643ac76c62ee0838497cd8d15e82e4681927408e8d425c49c97a3ff2e78b52",
+        "row_counts": {
+          "course": 58,
+          "course_prerequisite_evidence": 1,
+          "plan_item": 64,
+          "plan_item_credit_option": 66,
+          "prerequisite": 1,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 40,
+          "study_member": 30,
+          "study_page": 4,
+          "study_term": 4,
+          "study_track": 12
+        },
+        "integrity": "ok"
+      },
+      "first_changes": 0,
+      "second_changes": 0,
+      "passed": true,
+      "rollback": {
+        "integrity": "ok",
+        "recovery_path": "C:\\Users\\thana\\AppData\\Local\\Temp\\db-only-build-oopr__9g\\IT-2560-coop.pre-rollback.db",
+        "recovery_sha256": "cf540c1706903ded74613494ff165304a59ca1b731821e1b47e1c9063954d424",
+        "restored_sha256": "32e3be0c471724490d2662bd1bdcf158e821465dd67f19dbbc625c597314c6eb",
+        "baseline_content_matches": true,
+        "recovery_content_matches": true
+      }
+    },
+    {
+      "profile": "IT-2560-no-coop",
+      "before": {
+        "sha256_content": "6415af4545f397b289422b014fb142f229748cb5934c1db69a76d2fcce233715",
+        "row_counts": {
+          "course": 58,
+          "course_prerequisite_evidence": 4,
+          "plan_item": 64,
+          "plan_item_credit_option": 66,
+          "prerequisite": 4,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 42,
+          "study_member": 27,
+          "study_page": 4,
+          "study_term": 4,
+          "study_track": 12
+        },
+        "integrity": "ok"
+      },
+      "after": {
+        "sha256_content": "6415af4545f397b289422b014fb142f229748cb5934c1db69a76d2fcce233715",
+        "row_counts": {
+          "course": 58,
+          "course_prerequisite_evidence": 4,
+          "plan_item": 64,
+          "plan_item_credit_option": 66,
+          "prerequisite": 4,
+          "program": 1,
+          "study_correction": 0,
+          "study_item": 42,
+          "study_member": 27,
+          "study_page": 4,
+          "study_term": 4,
+          "study_track": 12
+        },
+        "integrity": "ok"
+      },
+      "first_changes": 0,
+      "second_changes": 0,
+      "passed": true,
+      "rollback": {
+        "integrity": "ok",
+        "recovery_path": "C:\\Users\\thana\\AppData\\Local\\Temp\\db-only-build-oopr__9g\\IT-2560-no-coop.pre-rollback.db",
+        "recovery_sha256": "15c69016bddc5da74e66a1c175b7b812d0d30557beed2e3d0185f64254b662f7",
+        "restored_sha256": "fa209e16b1102277fd002f5ce8ac2605c3f02dc2155f67de81bce0f6e52bad1e",
+        "baseline_content_matches": true,
+        "recovery_content_matches": true
+      }
+    },
+    {
+      "profile": "IT-2565-coop",
+      "before": {
+        "sha256_content": "a60b8fa5c7f85e70c09850f18141d48ceeecf2c049dab17c76d005cfa8a052eb",
+        "row_counts": {
+          "course": 305,
+          "course_prerequisite_evidence": 4,
+          "plan_item": 53,
+          "prerequisite": 1,
+          "program": 1,
+          "study_correction": 49,
+          "study_item": 21,
+          "study_member": 15,
+          "study_page": 2,
+          "study_term": 2,
+          "study_track": 6
+        },
+        "integrity": "ok"
+      },
+      "after": {
+        "sha256_content": "a60b8fa5c7f85e70c09850f18141d48ceeecf2c049dab17c76d005cfa8a052eb",
+        "row_counts": {
+          "course": 305,
+          "course_prerequisite_evidence": 4,
+          "plan_item": 53,
+          "prerequisite": 1,
+          "program": 1,
+          "study_correction": 49,
+          "study_item": 21,
+          "study_member": 15,
+          "study_page": 2,
+          "study_term": 2,
+          "study_track": 6
+        },
+        "integrity": "ok"
+      },
+      "first_changes": 0,
+      "second_changes": 0,
+      "passed": true,
+      "rollback": {
+        "integrity": "ok",
+        "recovery_path": "C:\\Users\\thana\\AppData\\Local\\Temp\\db-only-build-oopr__9g\\IT-2565-coop.pre-rollback.db",
+        "recovery_sha256": "8f4b20d3a4d74150ed970194620e038059e3c9736b6288948b155ea17dfa8680",
+        "restored_sha256": "d41b1854a96ce27b61ecd7f68ff0baf598da94fd0800ee43244b9472052b753c",
+        "baseline_content_matches": true,
+        "recovery_content_matches": true
+      }
+    },
+    {
+      "profile": "IT-2565-no-coop",
+      "before": {
+        "sha256_content": "e500386a2e41026c124f9da5b3264ce03d35750b73260bfb0ef2e7d53312996e",
+        "row_counts": {
+          "course": 303,
+          "course_prerequisite_evidence": 4,
+          "plan_item": 53,
+          "prerequisite": 1,
+          "program": 1,
+          "study_correction": 59,
+          "study_item": 21,
+          "study_member": 15,
+          "study_page": 2,
+          "study_term": 2,
+          "study_track": 6
+        },
+        "integrity": "ok"
+      },
+      "after": {
+        "sha256_content": "e500386a2e41026c124f9da5b3264ce03d35750b73260bfb0ef2e7d53312996e",
+        "row_counts": {
+          "course": 303,
+          "course_prerequisite_evidence": 4,
+          "plan_item": 53,
+          "prerequisite": 1,
+          "program": 1,
+          "study_correction": 59,
+          "study_item": 21,
+          "study_member": 15,
+          "study_page": 2,
+          "study_term": 2,
+          "study_track": 6
+        },
+        "integrity": "ok"
+      },
+      "first_changes": 0,
+      "second_changes": 0,
+      "passed": true,
+      "rollback": {
+        "integrity": "ok",
+        "recovery_path": "C:\\Users\\thana\\AppData\\Local\\Temp\\db-only-build-oopr__9g\\IT-2565-no-coop.pre-rollback.db",
+        "recovery_sha256": "4f14486e629cbd1f8d657c84120876d4d3079efa7a310307e7123aadb1beb1d2",
+        "restored_sha256": "9ac6418085012a8195fd9c4698ccfd27e6be87dd5e9dc823fa619dd61387cb0c",
+        "baseline_content_matches": true,
+        "recovery_content_matches": true
+      }
+    }
+  ],
+  "summary": {
+    "passed": 13,
+    "n": 13
+  }
+}

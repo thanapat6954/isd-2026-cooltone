@@ -1,0 +1,394 @@
+{
+  "profiles": [
+    {
+      "profile": "legacy-course-catalog",
+      "high": 6215,
+      "med": 0,
+      "gold_passed": 5,
+      "gold_n": 5,
+      "pdf_cited": 0,
+      "both_pages_cited": 0,
+      "citation_n": 0,
+      "gold_median_ms": null,
+      "gold_p95_ms": null,
+      "frozen_passed": 0,
+      "frozen_n": 0,
+      "unknown_grounded": 1,
+      "unknown_n": 1,
+      "unknown_ms": 5863.59,
+      "ui_observed": false
+    },
+    {
+      "profile": "AI-2566-coop",
+      "high": 3,
+      "med": 0,
+      "gold_passed": 5,
+      "gold_n": 5,
+      "pdf_cited": 4,
+      "both_pages_cited": 0,
+      "citation_n": 4,
+      "gold_median_ms": 585.65,
+      "gold_p95_ms": 609.58,
+      "frozen_passed": 12,
+      "frozen_n": 12,
+      "unknown_grounded": 1,
+      "unknown_n": 1,
+      "unknown_ms": 2714.42,
+      "ui_observed": true
+    },
+    {
+      "profile": "BIT-2560-coop",
+      "high": 2,
+      "med": 0,
+      "gold_passed": 5,
+      "gold_n": 5,
+      "pdf_cited": 4,
+      "both_pages_cited": 4,
+      "citation_n": 4,
+      "gold_median_ms": 579.25,
+      "gold_p95_ms": 588.82,
+      "frozen_passed": 0,
+      "frozen_n": 0,
+      "unknown_grounded": 1,
+      "unknown_n": 1,
+      "unknown_ms": 3519.99,
+      "ui_observed": true
+    },
+    {
+      "profile": "BIT-2560-no-coop",
+      "high": 2,
+      "med": 0,
+      "gold_passed": 5,
+      "gold_n": 5,
+      "pdf_cited": 4,
+      "both_pages_cited": 4,
+      "citation_n": 4,
+      "gold_median_ms": 568.5,
+      "gold_p95_ms": 589.88,
+      "frozen_passed": 0,
+      "frozen_n": 0,
+      "unknown_grounded": 1,
+      "unknown_n": 1,
+      "unknown_ms": 2819.68,
+      "ui_observed": true
+    },
+    {
+      "profile": "BIT-2565-coop",
+      "high": 4,
+      "med": 0,
+      "gold_passed": 5,
+      "gold_n": 5,
+      "pdf_cited": 4,
+      "both_pages_cited": 0,
+      "citation_n": 4,
+      "gold_median_ms": 580.72,
+      "gold_p95_ms": 587.71,
+      "frozen_passed": 0,
+      "frozen_n": 0,
+      "unknown_grounded": 1,
+      "unknown_n": 1,
+      "unknown_ms": 3348.43,
+      "ui_observed": true
+    },
+    {
+      "profile": "BIT-2565-no-coop",
+      "high": 4,
+      "med": 0,
+      "gold_passed": 5,
+      "gold_n": 5,
+      "pdf_cited": 4,
+      "both_pages_cited": 0,
+      "citation_n": 4,
+      "gold_median_ms": 596.19,
+      "gold_p95_ms": 611.11,
+      "frozen_passed": 0,
+      "frozen_n": 0,
+      "unknown_grounded": 1,
+      "unknown_n": 1,
+      "unknown_ms": 3476.5,
+      "ui_observed": true
+    },
+    {
+      "profile": "DSBA-2560-coop",
+      "high": 2,
+      "med": 0,
+      "gold_passed": 5,
+      "gold_n": 5,
+      "pdf_cited": 4,
+      "both_pages_cited": 4,
+      "citation_n": 4,
+      "gold_median_ms": 1163.03,
+      "gold_p95_ms": 1292.14,
+      "frozen_passed": 0,
+      "frozen_n": 0,
+      "unknown_grounded": 1,
+      "unknown_n": 1,
+      "unknown_ms": 4781.38,
+      "ui_observed": true
+    },
+    {
+      "profile": "DSBA-2560-no-coop",
+      "high": 2,
+      "med": 0,
+      "gold_passed": 5,
+      "gold_n": 5,
+      "pdf_cited": 4,
+      "both_pages_cited": 4,
+      "citation_n": 4,
+      "gold_median_ms": 1208.67,
+      "gold_p95_ms": 1233.17,
+      "frozen_passed": 0,
+      "frozen_n": 0,
+      "unknown_grounded": 1,
+      "unknown_n": 1,
+      "unknown_ms": 4034.33,
+      "ui_observed": true
+    },
+    {
+      "profile": "DSBA-2565-coop",
+      "high": 3,
+      "med": 0,
+      "gold_passed": 5,
+      "gold_n": 5,
+      "pdf_cited": 4,
+      "both_pages_cited": 4,
+      "citation_n": 4,
+      "gold_median_ms": 565.35,
+      "gold_p95_ms": 583.99,
+      "frozen_passed": 11,
+      "frozen_n": 12,
+      "unknown_grounded": 1,
+      "unknown_n": 1,
+      "unknown_ms": 4054.94,
+      "ui_observed": true
+    },
+    {
+      "profile": "DSBA-2565-no-coop",
+      "high": 3,
+      "med": 0,
+      "gold_passed": 5,
+      "gold_n": 5,
+      "pdf_cited": 4,
+      "both_pages_cited": 4,
+      "citation_n": 4,
+      "gold_median_ms": 578.82,
+      "gold_p95_ms": 589.38,
+      "frozen_passed": 10,
+      "frozen_n": 12,
+      "unknown_grounded": 1,
+      "unknown_n": 1,
+      "unknown_ms": 3315.97,
+      "ui_observed": true
+    },
+    {
+      "profile": "IT-2560-coop",
+      "high": 2,
+      "med": 0,
+      "gold_passed": 5,
+      "gold_n": 5,
+      "pdf_cited": 4,
+      "both_pages_cited": 4,
+      "citation_n": 4,
+      "gold_median_ms": 961.09,
+      "gold_p95_ms": 1077.89,
+      "frozen_passed": 0,
+      "frozen_n": 0,
+      "unknown_grounded": 1,
+      "unknown_n": 1,
+      "unknown_ms": 2831.09,
+      "ui_observed": true
+    },
+    {
+      "profile": "IT-2560-no-coop",
+      "high": 2,
+      "med": 0,
+      "gold_passed": 5,
+      "gold_n": 5,
+      "pdf_cited": 4,
+      "both_pages_cited": 4,
+      "citation_n": 4,
+      "gold_median_ms": 607.0,
+      "gold_p95_ms": 850.55,
+      "frozen_passed": 0,
+      "frozen_n": 0,
+      "unknown_grounded": 1,
+      "unknown_n": 1,
+      "unknown_ms": 2774.12,
+      "ui_observed": true
+    },
+    {
+      "profile": "IT-2565-coop",
+      "high": 5,
+      "med": 0,
+      "gold_passed": 5,
+      "gold_n": 5,
+      "pdf_cited": 4,
+      "both_pages_cited": 3,
+      "citation_n": 4,
+      "gold_median_ms": 1173.97,
+      "gold_p95_ms": 1231.44,
+      "frozen_passed": 12,
+      "frozen_n": 12,
+      "unknown_grounded": 1,
+      "unknown_n": 1,
+      "unknown_ms": 2500.09,
+      "ui_observed": true
+    },
+    {
+      "profile": "IT-2565-no-coop",
+      "high": 4,
+      "med": 0,
+      "gold_passed": 5,
+      "gold_n": 5,
+      "pdf_cited": 4,
+      "both_pages_cited": 3,
+      "citation_n": 4,
+      "gold_median_ms": 1002.26,
+      "gold_p95_ms": 1045.16,
+      "frozen_passed": 12,
+      "frozen_n": 12,
+      "unknown_grounded": 1,
+      "unknown_n": 1,
+      "unknown_ms": 2483.31,
+      "ui_observed": true
+    }
+  ],
+  "source_evidence": {
+    "classification": {
+      "presentation": 4,
+      "factual": 57
+    },
+    "fields": {
+      "requirement_id": 4,
+      "credits_raw": 22,
+      "printed_page_number": 22,
+      "name_th": 9,
+      "name_en": 4
+    },
+    "source_review_pages": 16
+  },
+  "gold": {
+    "AI-2566-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "DSBA-2565-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "DSBA-2565-no-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "IT-2565-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "IT-2565-no-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "DSBA-2560-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "DSBA-2560-no-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "IT-2560-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "IT-2560-no-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "BIT-2565-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "BIT-2565-no-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "BIT-2560-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "BIT-2560-no-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "legacy": {
+      "passed": 5,
+      "n": 5
+    }
+  },
+  "gold_latency": {
+    "0": {
+      "n": 52,
+      "median_ms": 596.19,
+      "p95_ms": 1231.44,
+      "under_5s": 52,
+      "L3_L4_unmeasured": true
+    }
+  },
+  "frozen": {
+    "passed": 171,
+    "n": 180,
+    "missing_frozen_profiles": [
+      "legacy-course-catalog",
+      "BIT-2560-coop",
+      "BIT-2560-no-coop",
+      "BIT-2565-coop",
+      "BIT-2565-no-coop",
+      "DSBA-2560-coop",
+      "DSBA-2560-no-coop",
+      "IT-2560-coop",
+      "IT-2560-no-coop"
+    ],
+    "supported_unknown_answers": 0,
+    "uncertainty_answers": 0
+  },
+  "unknown": {
+    "passed": 14,
+    "n": 14,
+    "missing_frozen_profiles": [
+      "legacy-course-catalog",
+      "BIT-2560-coop",
+      "BIT-2560-no-coop",
+      "BIT-2565-coop",
+      "BIT-2565-no-coop",
+      "DSBA-2560-coop",
+      "DSBA-2560-no-coop",
+      "IT-2560-coop",
+      "IT-2560-no-coop"
+    ],
+    "supported_unknown_answers": 14,
+    "uncertainty_answers": 0
+  },
+  "protected_unchanged": true,
+  "ui_profiles": 13,
+  "unit_tests": 108,
+  "schema_tests": 30,
+  "isolation": {
+    "passed": 21,
+    "n": 21
+  },
+  "build_replay": {
+    "passed": 13,
+    "n": 13
+  },
+  "unknown_latency": {
+    "n": 14,
+    "median_ms": 3332.2,
+    "p95_ms": 5863.59,
+    "under_5s": 13
+  },
+  "audit": {
+    "datasets": 16,
+    "fail": 1376,
+    "incomplete": 4881
+  }
+}

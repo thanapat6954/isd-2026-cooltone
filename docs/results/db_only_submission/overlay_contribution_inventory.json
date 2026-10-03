@@ -1,0 +1,1893 @@
+[
+  {
+    "profile": "DSBA-2565-coop",
+    "code": "06026xxx",
+    "field": "requirement_id",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "06026xxx-1",
+    "type": "presentation",
+    "source_file": "DSBA.pdf",
+    "pdf_page": 34,
+    "reviewed_pdf_and_book_pages": [
+      [
+        27,
+        26
+      ],
+      [
+        28,
+        27
+      ],
+      [
+        34,
+        33
+      ],
+      [
+        35,
+        34
+      ]
+    ],
+    "resolution": "SQLite relation/renderer identifier",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "DSBA-2565-coop",
+    "code": "06026xxx",
+    "field": "requirement_id",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "06026xxx-2",
+    "type": "presentation",
+    "source_file": "DSBA.pdf",
+    "pdf_page": 34,
+    "reviewed_pdf_and_book_pages": [
+      [
+        27,
+        26
+      ],
+      [
+        28,
+        27
+      ],
+      [
+        34,
+        33
+      ],
+      [
+        35,
+        34
+      ]
+    ],
+    "resolution": "SQLite relation/renderer identifier",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "DSBA-2565-no-coop",
+    "code": "06026xxx",
+    "field": "requirement_id",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "06026xxx-1",
+    "type": "presentation",
+    "source_file": "DSBA.pdf",
+    "pdf_page": 27,
+    "reviewed_pdf_and_book_pages": [
+      [
+        27,
+        26
+      ],
+      [
+        28,
+        27
+      ],
+      [
+        34,
+        33
+      ],
+      [
+        35,
+        34
+      ]
+    ],
+    "resolution": "SQLite relation/renderer identifier",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "DSBA-2565-no-coop",
+    "code": "06026xxx",
+    "field": "requirement_id",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "06026xxx-2",
+    "type": "presentation",
+    "source_file": "DSBA.pdf",
+    "pdf_page": 27,
+    "reviewed_pdf_and_book_pages": [
+      [
+        27,
+        26
+      ],
+      [
+        28,
+        27
+      ],
+      [
+        34,
+        33
+      ],
+      [
+        35,
+        34
+      ]
+    ],
+    "resolution": "SQLite relation/renderer identifier",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016404",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(2-2-5)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016404",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 37,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016416",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(3-0-6)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016416",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 37,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016417",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(2-2-5)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016417",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 37,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016418",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(2-2-5)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016418",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 37,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016421",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(3-0-6)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016421",
+    "field": "name_th",
+    "present_in_sql_result": true,
+    "sql_value": "กลุ่มวิชาด้านโครงสร้างพื้นฐานเทคโนโลยีสารสนเทศ",
+    "returned_value": "ความมั่นคงปลอดภัยโครงสร้างพื้นฐานทางเทคโนโลยีสารสนเทศ",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016421",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 37,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016422",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(2-2-5)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016422",
+    "field": "name_th",
+    "present_in_sql_result": true,
+    "sql_value": "ความมั่นคงปลอดภัยโครงสร้างพื้นฐานทางเทคโนโลยีสารสนเทศ",
+    "returned_value": "อินเทอร์เน็ตของสรรพสิ่ง",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016422",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 37,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016423",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(2-2-5)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016423",
+    "field": "name_th",
+    "present_in_sql_result": true,
+    "sql_value": "การออโตเมชันและโครงสร้างพื้นฐานที่สามารถโปรแกรมได้",
+    "returned_value": "การอัตโนมัติและโครงสร้างพื้นฐานที่สามารถโปรแกรมได้",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016423",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 37,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016426",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(2-2-5)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016426",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 37,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016427",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(2-2-5)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06016427",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 37,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06066102",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(3-0-6)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "06066102",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 37,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "ELEC-90644XXX-TERM-3-1-ROW-1",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(3-0-6)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "ELEC-90644XXX-TERM-3-1-ROW-1",
+    "field": "name_th",
+    "present_in_sql_result": true,
+    "sql_value": null,
+    "returned_value": "วิชาเลือกหมวดภาษาและการสื่อสาร",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-coop",
+    "code": "ELEC-90644XXX-TERM-3-1-ROW-1",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 37,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 42,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016404",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(2-2-5)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016404",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 30,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016416",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(3-0-6)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016416",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 30,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016417",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(2-2-5)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016417",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 30,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016418",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(2-2-5)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016418",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 30,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016421",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(3-0-6)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016421",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 30,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016422",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(2-2-5)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016422",
+    "field": "name_en",
+    "present_in_sql_result": true,
+    "sql_value": "COMPUTER GRAPHICS AND ANIMATION",
+    "returned_value": "INTERNET OF THINGS",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016422",
+    "field": "name_th",
+    "present_in_sql_result": true,
+    "sql_value": "คอมพิวเตอร์กราฟิกส์และแอนิเมชัน",
+    "returned_value": "อินเทอร์เน็ตของสรรพสิ่ง",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016422",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 30,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016423",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(2-2-5)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016423",
+    "field": "name_en",
+    "present_in_sql_result": true,
+    "sql_value": "INTRODUCTION TO GAME DESIGN AND DEVELOPMENT",
+    "returned_value": "INFRASTRUCTURE PROGRAMMABILITY AND AUTOMATION",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016423",
+    "field": "name_th",
+    "present_in_sql_result": true,
+    "sql_value": "การออกแบบและพัฒนาเกมเบื้องต้น",
+    "returned_value": "การอัตโนมัติและโครงสร้างพื้นฐานที่สามารถโปรแกรมได้",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016423",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 30,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016426",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(2-2-5)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016426",
+    "field": "name_en",
+    "present_in_sql_result": true,
+    "sql_value": "SERVER-SIDE WEB DEVELOPMENT",
+    "returned_value": "COMPUTER GRAPHICS AND ANIMATION",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016426",
+    "field": "name_th",
+    "present_in_sql_result": true,
+    "sql_value": "การออกแบบและพัฒนาเว็บฝั่งเซิร์ฟเวอร์",
+    "returned_value": "คอมพิวเตอร์กราฟิกส์และแอนิเมชัน",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016426",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 30,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016427",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(2-2-5)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016427",
+    "field": "name_en",
+    "present_in_sql_result": true,
+    "sql_value": "SERVER-SIDE WEB DEVELOPMENT",
+    "returned_value": "INTRODUCTION TO GAME DESIGN AND DEVELOPMENT",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016427",
+    "field": "name_th",
+    "present_in_sql_result": true,
+    "sql_value": "การพัฒนาเว็บฝั่งเซิร์ฟเวอร์",
+    "returned_value": "การออกแบบและพัฒนาเกมเบื้องต้น",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06016427",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 30,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06066102",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(3-0-6)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "06066102",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 30,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "ELEC-90644XXX-TERM-3-1-ROW-1",
+    "field": "credits_raw",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": "3(3-0-6)",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "ELEC-90644XXX-TERM-3-1-ROW-1",
+    "field": "name_th",
+    "present_in_sql_result": true,
+    "sql_value": null,
+    "returned_value": "วิชาเลือกหมวดภาษาและการสื่อสาร",
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  },
+  {
+    "profile": "IT-2565-no-coop",
+    "code": "ELEC-90644XXX-TERM-3-1-ROW-1",
+    "field": "printed_page_number",
+    "present_in_sql_result": false,
+    "sql_value": null,
+    "returned_value": 30,
+    "type": "factual",
+    "source_file": "IT.pdf",
+    "pdf_page": 35,
+    "reviewed_pdf_and_book_pages": [
+      [
+        34,
+        29
+      ],
+      [
+        35,
+        30
+      ],
+      [
+        41,
+        36
+      ],
+      [
+        42,
+        37
+      ]
+    ],
+    "resolution": "Book-reviewed stored fact or stored-column query correction",
+    "approval": "ocr_final/data/ground_truth/study_plan_db_review.json"
+  }
+]

@@ -277,6 +277,13 @@ def run_profile(name: str, *, skip_lab7: bool, skip_eval: bool = False) -> None:
         run(ROOT / 'scripts/ingest_name_reviews.py', '--app-root', ROOT,
             '--database', out / 'curriculum.db', '--reviews', name_reviews, '--apply',
             '--output', out / 'name_review_ingest.json')
+    # Source-reviewed relationships are ingested, never added while answering.
+    if (ROOT / 'data/ground_truth/study_plan_db_review.json').is_file():
+        run(ROOT / 'scripts/prepare_db_only.py', '--app-root', ROOT,
+            '--output', out / 'study_db_backups.json')
+        run(ROOT / 'scripts/migrate_study_evidence.py', '--app-root', ROOT,
+            '--backups', out / 'study_db_backups.json', '--database', out / 'curriculum.db',
+            '--apply', '--output', out / 'study_db_ingest.json')
     run(LAB8, "verify", "-d", out / "curriculum.db", "-o", out / "verify.json")
 
     gold = profile.get("gold")

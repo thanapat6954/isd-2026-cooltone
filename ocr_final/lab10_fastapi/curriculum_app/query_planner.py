@@ -60,7 +60,7 @@ def detect_intent(question: str) -> QueryPlan:
     text = question.strip()
     lowered = text.casefold()
     year = _extract_number(text, ("ปี", "ชั้นปี", "year"))
-    semester = _extract_number(text, ("เทอม", "ภาคการศึกษา", "semester"))
+    semester = _extract_number(text, ("เทอม", "ภาคการศึกษา", "ภาคเรียน", "semester"))
     code_match = re.search(r"(?<!\d)(\d{8})(?!\d)", text)
     code = code_match.group(1) if code_match else None
     compare = any(word in lowered for word in ("เปรียบเทียบ", "ต่างกัน", "compare", "versus", " vs "))
@@ -69,7 +69,7 @@ def detect_intent(question: str) -> QueryPlan:
     credit_words = ("หน่วยกิต", "credit")
     total_words = ("รวมทั้งหมด", "ทั้งหมดกี่หน่วยกิต", "หน่วยกิตรวม", "total credit")
     course_count_words = ("กี่วิชา", "จำนวนวิชา", "how many course", "number of course")
-    list_words = ("วิชาอะไร", "วิชาใด", "รายวิชา", "course list", "which course", "what course")
+    list_words = ("วิชาอะไร", "วิชาใด", "รายวิชา", "แสดงรหัส", "รหัสทั้งหมด", "course list", "which course", "what course")
     prerequisite_words = (
         "วิชาบังคับก่อน", "ต้องเรียนวิชาอะไรมาก่อน", "ต้องเรียนอะไรมาก่อน",
         "prerequisite", "เรียนก่อน", "ลงเรียน",
@@ -193,6 +193,7 @@ def deterministic_sql(plan: QueryPlan, database: DatabaseInfo) -> str | None:
             where = _conditions(plan, include_required=True)
             return (
                 "SELECT COUNT(DISTINCT COALESCE(alt_group, 'row-' || id)) AS course_count, "
+                "COUNT(DISTINCT COALESCE(alt_group, 'row-' || id)) AS n_courses, "
                 "GROUP_CONCAT(DISTINCT source_file) AS source_files, "
                 "GROUP_CONCAT(DISTINCT page_number) AS source_pages "
                 f"FROM plan_item{where}"
@@ -202,19 +203,20 @@ def deterministic_sql(plan: QueryPlan, database: DatabaseInfo) -> str | None:
         return None
 
     if intent == "course_list":
-        if database.has("v_plan", "year", "semester", "code", "name_th", "credits"):
+        view = 'v_study_plan' if database.has('v_study_plan', 'id', 'year', 'semester', 'code') else 'v_plan'
+        if database.has(view, "year", "semester", "code", "name_th", "credits"):
             fields = [
                 "year", "semester", "code", "name_th", "name_en", "credits",
                 "source_file", "page_number",
             ]
             for column in (
-                "printed_page_number", "credits_raw", "alt_group", "alternative_index",
+                "id", "printed_page_number", "credits_raw", "alt_group", "alternative_index",
                 "is_placeholder", "elective_type", "raw_code", "code_pattern", "category", "ctype", "note",
             ):
-                if database.has("v_plan", column):
+                if database.has(view, column):
                     fields.append(column)
             return (
-                f"SELECT {', '.join(fields)} FROM v_plan"
+                f"SELECT {', '.join(fields)} FROM {view}"
                 f"{_conditions(plan, include_required=True)} ORDER BY year, semester, code"
             )
         if database.has("courses", "course_code", "course_name_th", "credits"):

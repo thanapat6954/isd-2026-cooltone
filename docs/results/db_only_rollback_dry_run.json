@@ -1,0 +1,8 @@
+{
+  "profile": "IT-2565-coop",
+  "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\IT-2565-coop.db",
+  "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_coop\\curriculum.db",
+  "backup_verified": true,
+  "mode": "dry_run",
+  "note": "Stop the verified backend before --apply; restore matching code snapshots before restart."
+}

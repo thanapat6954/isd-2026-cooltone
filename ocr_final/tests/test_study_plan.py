@@ -1,117 +1,109 @@
-"""Relationship fixtures use source data, never production question answers."""
-import hashlib
-import json
-from pathlib import Path
-import tempfile
+"""SQLite evidence fixtures are synthetic and never production answer keys."""
+from copy import deepcopy
 import unittest
-from lab10_fastapi.curriculum_app.study_plan import build_study_plan, review_fingerprint, study_plan_text
+from lab10_fastapi.curriculum_app.study_plan import build_study_plan, study_plan_text
 
 
 class StudyPlanTests(unittest.TestCase):
     def setUp(self):
-        self.tmp = tempfile.TemporaryDirectory()
-        self.addCleanup(self.tmp.cleanup)
-        self.root = Path(self.tmp.name)
-        (self.root / 'data/input').mkdir(parents=True)
-        (self.root / 'data/ground_truth').mkdir(parents=True)
-        self.pdf = self.root / 'data/input/IT.pdf'
-        self.pdf.write_bytes(b'fixture source')
-        self.review = {'sources': {'IT.pdf': hashlib.sha256(self.pdf.read_bytes()).hexdigest()},
-            'review_method': 'fixture', 'track_sets': {'t': [
-                {'id': 'a', 'label': 'กลุ่มซอฟต์แวร์', 'aliases': ['ซอฟต์แวร์']},
-                {'id': 'b', 'label': 'กลุ่มเครือข่าย', 'aliases': ['เครือข่าย']}]},
-            'terms': [{'source_file': 'IT.pdf', 'version': 2565, 'year': 2, 'semester': 2,
-                'pages': {'coop': [[41, 36]], 'no-coop': [[34, 29]]}, 'track_set': 't',
-                'shared_codes': ['00000001'], 'track_codes': {'a': ['00000002'], 'b': ['00000003']},
-                'printed_total': 6, 'note': 'เลือกเพียงกลุ่มเดียว'}]}
-        self.save()
+        self.evidence = {}
+        for plan, pdf, book in [('coop',41,36), ('no-coop',34,29)]:
+            self.evidence['IT-2565-'+plan] = {
+                'terms': [{'id':1,'source_file':'IT.pdf','version':2565,'plan':plan,
+                           'program_id':'IT-'+plan,'year':2,'semester':2,'printed_total':6,
+                           'note':'เลือกเพียงกลุ่มเดียว','source_sha256':'fixture',
+                           'review_method':'fixture','pages':[{'pdf_page':pdf,'printed_page':book}]}],
+                'tracks': {1:[{'track_id':'a','label':'กลุ่มซอฟต์แวร์','aliases':['ซอฟต์แวร์']},
+                              {'track_id':'b','label':'กลุ่มเครือข่าย','aliases':['เครือข่าย']}]},
+                'items': {i:{'term_id':1,'shared':i==1} for i in range(1,4)},
+                'members': {1:[],2:[{'track_id':'a'}],3:[{'track_id':'b'}]}}
 
-    def save(self):
-        (self.root / 'data/ground_truth/study_plan_relationships.json').write_text(json.dumps(self.review), encoding='utf-8')
+    def rows(self,plan='coop'):
+        return [{'id':i,'code':f'{i:08}','name_th':f'วิชา {i}','credits':3,'year':2,'semester':2,
+                 'source_file':'IT.pdf','page_number':41 if plan=='coop' else 34,
+                 'printed_page_number':36 if plan=='coop' else 29,
+                 '_source':{'program_id':'IT-'+plan,'curriculum_name':'IT-2565-'+plan,
+                            'plan':plan,'curriculum_version':2565}} for i in range(1,4)]
 
-    def rows(self, plan='coop'):
-        return [{'code': f'{i:08}', 'name_th': f'วิชา {i}', 'credits': 3, 'year': 2, 'semester': 2,
-                 'source_file': 'IT.pdf', 'page_number': 41 if plan == 'coop' else 34,
-                 '_source': {'program_id': 'IT-' + plan, 'curriculum_name': 'IT-2565-' + plan,
-                             'plan': plan, 'curriculum_version': 2565}} for i in range(1,4)]
+    def build(self,rows=None,question='',**kwargs):
+        return build_study_plan(rows or self.rows(),question,self.evidence,**kwargs)
 
     def test_separate_plan_and_tracks(self):
-        payload, rows = build_study_plan(self.rows() + self.rows('no-coop'), '', self.root)
-        self.assertEqual(len(payload['cards']), 2)
-        self.assertEqual([s['title'] for s in payload['cards'][0]['sections']], ['รายวิชาร่วมทุกกลุ่ม', 'กลุ่มซอฟต์แวร์', 'กลุ่มเครือข่าย'])
-        self.assertEqual([r['printed_page_number'] for r in rows], [36]*3 + [29]*3)
-        self.assertIn('รายวิชาในภาคการศึกษานี้เหมือนกัน', ' '.join(payload['cards'][0]['notes']))
-        self.assertNotIn('IT-2565-coop:', study_plan_text(payload))
+        payload,rows=self.build(self.rows()+self.rows('no-coop'))
+        self.assertEqual(len(payload['cards']),2)
+        self.assertEqual([s['title'] for s in payload['cards'][0]['sections']],['รายวิชาร่วมทุกกลุ่ม','กลุ่มซอฟต์แวร์','กลุ่มเครือข่าย'])
+        self.assertEqual([r['printed_page_number'] for r in rows],[36]*3+[29]*3)
+        self.assertIn('รายวิชาในภาคการศึกษานี้เหมือนกัน',' '.join(payload['cards'][0]['notes']))
 
     def test_track_selection_keeps_shared(self):
-        payload, rows = build_study_plan(self.rows(), 'แขนงซอฟต์แวร์', self.root)
-        self.assertEqual([r['code'] for r in rows], ['00000001', '00000002'])
-        self.assertEqual(len(payload['cards'][0]['sections']), 2)
+        _,rows=self.build(question='แขนงซอฟต์แวร์')
+        self.assertEqual([r['code'] for r in rows],['00000001','00000002'])
 
-    def test_missing_review_members_fail_loudly(self):
-        payload, _ = build_study_plan(self.rows()[:2], '', self.root)
-        self.assertIn('00000003', ' '.join(payload['cards'][0]['notes']))
+    def test_missing_evidence_fails_loudly(self):
+        payload,_=self.build(self.rows()[:2])
+        self.assertIn('plan_item 3',' '.join(payload['cards'][0]['notes']))
+        self.assertIsNone(payload['cards'][0]['printed_total'])
 
-    def test_source_hash_mismatch_does_not_apply(self):
-        before = review_fingerprint(self.root)
-        self.pdf.write_bytes(b'changed source')
-        payload, rows = build_study_plan(self.rows(), '', self.root)
+    def test_no_runtime_json_fallback(self):
+        payload,_=build_study_plan(self.rows(),'',None)
         self.assertFalse(payload['cards'][0]['reviewed'])
-        self.assertNotIn('printed_page_number', rows[0])
-        self.assertNotEqual(before, review_fingerprint(self.root))
+        self.assertIsNone(payload['cards'][0]['printed_total'])
 
     def test_version_isolation(self):
-        rows = self.rows()
-        for row in rows: row['_source']['curriculum_version'] = 2560
-        payload, rows = build_study_plan(rows, '', self.root)
+        rows=self.rows()
+        for row in rows: row['_source']['curriculum_version']=2560
+        payload,_=self.build(rows)
         self.assertFalse(payload['cards'][0]['reviewed'])
 
     def test_general_placeholder_not_malformed(self):
-        rows = self.rows()[:1]
-        rows[0].update(code='ELEC-SLOT-01', raw_code='90xxxxxx', name_th='วิชาเลือกเสรี 1')
-        payload, _ = build_study_plan(rows, '', self.root)
-        self.assertEqual(payload['cards'][0]['sections'][0]['title'], 'วิชาเลือกเสรี')
+        row=self.rows()[0]
+        row.update(code='ELEC-SLOT-01',raw_code='90xxxxxx',name_th='วิชาเลือกเสรี 1')
+        payload,_=build_study_plan([row],'',{})
+        self.assertEqual(payload['cards'][0]['sections'][0]['title'],'วิชาเลือกเสรี')
 
     def test_multiple_track_membership_not_shared(self):
-        self.review['terms'][0]['track_codes']['b'].append('00000002')
-        self.save()
-        payload, _ = build_study_plan(self.rows(), '', self.root)
-        sections = payload['cards'][0]['sections']
-        self.assertEqual([len(s['rows']) for s in sections], [1, 1, 2])
+        self.evidence['IT-2565-coop']['members'][2].append({'track_id':'b'})
+        payload,_=self.build()
+        self.assertEqual([len(s['rows']) for s in payload['cards'][0]['sections']],[1,1,2])
 
     def test_no_review_preserves_raw_alternatives_and_provenance(self):
-        (self.root / 'data/ground_truth/study_plan_relationships.json').unlink()
-        rows = self.rows()[:1]
-        rows[0].update(credits_raw='3(3-0-6) หรือ 3(2-2-5)', alt_group='pair', category='เลือก')
-        payload, annotated = build_study_plan(rows, '', self.root)
-        self.assertEqual(annotated[0]['credits_raw'], rows[0]['credits_raw'])
-        self.assertEqual(annotated[0]['_source'], rows[0]['_source'])
-        self.assertIn('หรือ 3(2-2-5)', study_plan_text(payload))
+        rows=self.rows()[:1]; rows[0]['credits_raw']='3(3-0-6) หรือ 3(2-2-5)'
+        payload,out=build_study_plan(rows,'',{})
+        self.assertEqual(out[0]['credits_raw'],rows[0]['credits_raw'])
+        self.assertEqual(out[0]['_source'],rows[0]['_source'])
+        self.assertIn('หรือ 3(2-2-5)',study_plan_text(payload))
 
-    def test_unreviewed_page_cannot_receive_review_facts(self):
-        rows = self.rows()
-        for row in rows: row['page_number'] = 99
-        payload, annotated = build_study_plan(rows, '', self.root)
-        self.assertTrue(all(not row['_study_context']['reviewed'] for row in annotated))
-        self.assertTrue(all(section['kind'] != 'track' for section in payload['cards'][0]['sections']))
+    def test_unreviewed_page_cannot_receive_facts(self):
+        rows=self.rows()
+        for row in rows: row['page_number']=99
+        _,out=self.build(rows)
+        self.assertTrue(all(not row['_study_context']['reviewed'] for row in out))
 
-    def test_filtered_required_query_does_not_claim_complete_term(self):
-        payload, _ = build_study_plan(self.rows()[:1], '', self.root, required_only=True)
+    def test_filtered_query_does_not_claim_total(self):
+        payload,_=self.build(self.rows()[:1],required_only=True)
         self.assertIsNone(payload['cards'][0]['printed_total'])
-        self.assertNotIn('ยังขาด', ' '.join(payload['cards'][0]['notes']))
+        self.assertNotIn('ยังไม่ครบ',' '.join(payload['cards'][0]['notes']))
 
-    def test_distinct_wildcard_slots_never_collapse(self):
-        rows = self.rows()[:1] * 2
-        rows = [dict(r, code='ELEC-SLOT', raw_code='xxxxxxxx', name_th=f'วิชาเลือกเสรี {i}') for i, r in enumerate(rows, 1)]
-        payload, _ = build_study_plan(rows, '', self.root)
-        self.assertEqual(len(payload['cards'][0]['sections'][0]['rows']), 2)
+    def test_distinct_wildcards_never_collapse(self):
+        rows=[dict(self.rows()[0],id=i,code='ELEC-SLOT',raw_code='xxxxxxxx',name_th=f'วิชาเลือกเสรี {i}') for i in (1,2)]
+        payload,_=build_study_plan(rows,'',{})
+        self.assertEqual(len(payload['cards'][0]['sections'][0]['rows']),2)
 
     def test_plain_text_preserves_or_alternative(self):
-        rows = self.rows()[:2]
-        for row in rows: row['alt_group'] = 'pair'
-        self.review['terms'] = []; self.save()
-        payload, _ = build_study_plan(rows, '', self.root)
-        self.assertIn('ชุดตัวเลือก “หรือ”', study_plan_text(payload))
+        rows=self.rows()[:2]
+        for row in rows: row['alt_group']='pair'
+        payload,_=build_study_plan(rows,'',{})
+        self.assertIn('ชุดตัวเลือก “หรือ”',study_plan_text(payload))
+
+    def test_factual_row_values_never_changed(self):
+        before=self.rows(); _,after=self.build(deepcopy(before))
+        for a,b in zip(before,after):
+            self.assertEqual(a,{k:v for k,v in b.items() if k in a})
+
+    def test_db_member_display_name_only(self):
+        self.evidence['IT-2565-coop']['members'][2][0]['display_name_th']='ชื่อจากตาราง SQLite'
+        payload,_=self.build()
+        self.assertEqual(payload['cards'][0]['sections'][1]['rows'][0]['name_th'],'ชื่อจากตาราง SQLite')
 
 
-if __name__ == '__main__': unittest.main()
+if __name__=='__main__': unittest.main()

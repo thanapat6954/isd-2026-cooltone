@@ -1,0 +1,926 @@
+{
+  "stage": "isolated",
+  "databases": [
+    {
+      "profile": "AI-2566-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_ai\\curriculum.db",
+      "stage": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\staged\\AI-2566-coop.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\AI-2566-coop.db",
+      "changes": [],
+      "term_count": 0,
+      "history_count": 0,
+      "integrity": "ok",
+      "stage_sha256": "10081726e7b91644d2c08baf82af4246a1dd08858dbb59b2d865a84b5fbd3444"
+    },
+    {
+      "profile": "BIT-2560-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_bit_2560_coop\\curriculum.db",
+      "stage": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\staged\\BIT-2560-coop.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\BIT-2560-coop.db",
+      "changes": [],
+      "term_count": 0,
+      "history_count": 0,
+      "integrity": "ok",
+      "stage_sha256": "8fc8b3ae7f38edb61f48f361a1d9492b6fef26b661eca0f9b1c119be846a9a5c"
+    },
+    {
+      "profile": "BIT-2560-no-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_bit_2560_no_coop\\curriculum.db",
+      "stage": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\staged\\BIT-2560-no-coop.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\BIT-2560-no-coop.db",
+      "changes": [],
+      "term_count": 0,
+      "history_count": 0,
+      "integrity": "ok",
+      "stage_sha256": "338f7d90963672717a0a7b78cc3b3d17dc4d5343aba9ccb598b71b04ed69701e"
+    },
+    {
+      "profile": "BIT-2565-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_bit_2565_coop\\curriculum.db",
+      "stage": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\staged\\BIT-2565-coop.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\BIT-2565-coop.db",
+      "changes": [],
+      "term_count": 0,
+      "history_count": 0,
+      "integrity": "ok",
+      "stage_sha256": "e8d9799c4225892a622d9d7c59ae4a670ac741b99e3b52b4b0688d60f306d36b"
+    },
+    {
+      "profile": "BIT-2565-no-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_bit_2565_no_coop\\curriculum.db",
+      "stage": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\staged\\BIT-2565-no-coop.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\BIT-2565-no-coop.db",
+      "changes": [],
+      "term_count": 0,
+      "history_count": 0,
+      "integrity": "ok",
+      "stage_sha256": "ff7e3fb784b22f3b74123f4009ef86d8f07b870337c69832ceda22b4505364f6"
+    },
+    {
+      "profile": "DSBA-2560-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_dsba_2560_coop\\curriculum.db",
+      "stage": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\staged\\DSBA-2560-coop.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\DSBA-2560-coop.db",
+      "changes": [],
+      "term_count": 0,
+      "history_count": 0,
+      "integrity": "ok",
+      "stage_sha256": "687e9f7686a8b5317bb9ce7a3d04a8b7e88d50764d0da2d5cccb1bb3651d9e51"
+    },
+    {
+      "profile": "DSBA-2560-no-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_dsba_2560_no_coop\\curriculum.db",
+      "stage": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\staged\\DSBA-2560-no-coop.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\DSBA-2560-no-coop.db",
+      "changes": [],
+      "term_count": 0,
+      "history_count": 0,
+      "integrity": "ok",
+      "stage_sha256": "890bdcd2bf63e990d28cab5a725baab178e3826a5296f3e577a2ee040bfd2bb5"
+    },
+    {
+      "profile": "DSBA-2565-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_dsba_coop\\curriculum.db",
+      "stage": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\staged\\DSBA-2565-coop.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\DSBA-2565-coop.db",
+      "changes": [],
+      "term_count": 2,
+      "history_count": 0,
+      "integrity": "ok",
+      "stage_sha256": "d42c453d16e4fe64d041dda7308b0d57dfd97c9366061011dc7f6d1c15ae8280"
+    },
+    {
+      "profile": "DSBA-2565-no-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_dsba_no_coop\\curriculum.db",
+      "stage": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\staged\\DSBA-2565-no-coop.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\DSBA-2565-no-coop.db",
+      "changes": [],
+      "term_count": 2,
+      "history_count": 0,
+      "integrity": "ok",
+      "stage_sha256": "742e0f8424e0e3a997459d1486512247636e33b7b9c906e69099a10fb999e1d6"
+    },
+    {
+      "profile": "IT-2560-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_coop\\curriculum.db",
+      "stage": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\staged\\IT-2560-coop.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\IT-2560-coop.db",
+      "changes": [],
+      "term_count": 4,
+      "history_count": 0,
+      "integrity": "ok",
+      "stage_sha256": "917e73faf29ca1d9d6ccb78a1cc7fc62924619704fa28f76432e2c36b1dfe4b2"
+    },
+    {
+      "profile": "IT-2560-no-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_no_coop\\curriculum.db",
+      "stage": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\staged\\IT-2560-no-coop.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\IT-2560-no-coop.db",
+      "changes": [],
+      "term_count": 4,
+      "history_count": 0,
+      "integrity": "ok",
+      "stage_sha256": "662f5c113f16e234d43c0bfb810b120169dba8efc4502c44df7e9a1b33360d27"
+    },
+    {
+      "profile": "IT-2565-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_coop\\curriculum.db",
+      "stage": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\staged\\IT-2565-coop.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\IT-2565-coop.db",
+      "changes": [
+        {
+          "code": "06016405",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(3-0-6)",
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06016405",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 36,
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06016410",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(3-0-6)",
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06016410",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 36,
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06016412",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06016412",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 36,
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06066302",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06066302",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 36,
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06016414",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06016414",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 36,
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06016415",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06016415",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 36,
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06016419",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06016419",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 36,
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06016420",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06016420",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 36,
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06016424",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(3-0-6)",
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06016424",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 36,
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06016425",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06016425",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 36,
+          "pdf_page": 41,
+          "book_page": 36
+        },
+        {
+          "code": "06016404",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016404",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 37,
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06066102",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(3-0-6)",
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06066102",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 37,
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "ELEC-90644XXX-TERM-3-1-ROW-1",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 37,
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "ELEC-90644XXX-TERM-3-1-ROW-1",
+          "field": "name_th",
+          "old": null,
+          "new": "วิชาเลือกหมวดภาษาและการสื่อสาร",
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "ELEC-90644XXX-TERM-3-1-ROW-1",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(3-0-6)",
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016416",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(3-0-6)",
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016416",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 37,
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016417",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016417",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 37,
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016418",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016418",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 37,
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016421",
+          "field": "name_th",
+          "old": "กลุ่มวิชาด้านโครงสร้างพื้นฐานเทคโนโลยีสารสนเทศ",
+          "new": "ความมั่นคงปลอดภัยโครงสร้างพื้นฐานทางเทคโนโลยีสารสนเทศ",
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016421",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(3-0-6)",
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016421",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 37,
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016422",
+          "field": "name_th",
+          "old": "ความมั่นคงปลอดภัยโครงสร้างพื้นฐานทางเทคโนโลยีสารสนเทศ",
+          "new": "อินเทอร์เน็ตของสรรพสิ่ง",
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016422",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016422",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 37,
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016423",
+          "field": "name_th",
+          "old": "การออโตเมชันและโครงสร้างพื้นฐานที่สามารถโปรแกรมได้",
+          "new": "การอัตโนมัติและโครงสร้างพื้นฐานที่สามารถโปรแกรมได้",
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016423",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016423",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 37,
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016426",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016426",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 37,
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016427",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 42,
+          "book_page": 37
+        },
+        {
+          "code": "06016427",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 37,
+          "pdf_page": 42,
+          "book_page": 37
+        }
+      ],
+      "term_count": 2,
+      "history_count": 49,
+      "integrity": "ok",
+      "stage_sha256": "ec6cdfe9f0de6c1d92917db739dd690501134136ae40ad5eb0e5663ab079ea04"
+    },
+    {
+      "profile": "IT-2565-no-coop",
+      "live": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_no_coop\\curriculum.db",
+      "stage": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\staged\\IT-2565-no-coop.db",
+      "backup": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\backups\\db-only\\20261003T181512\\IT-2565-no-coop.db",
+      "changes": [
+        {
+          "code": "06016405",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(3-0-6)",
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06016405",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 29,
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06016410",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(3-0-6)",
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06016410",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 29,
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06016412",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06016412",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 29,
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06066302",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06066302",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 29,
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06016414",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06016414",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 29,
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06016415",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06016415",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 29,
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06016419",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06016419",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 29,
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06016420",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06016420",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 29,
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06016424",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(3-0-6)",
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06016424",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 29,
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06016425",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06016425",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 29,
+          "pdf_page": 34,
+          "book_page": 29
+        },
+        {
+          "code": "06016404",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016404",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 30,
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06066102",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(3-0-6)",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06066102",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 30,
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "ELEC-90644XXX-TERM-3-1-ROW-1",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 30,
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "ELEC-90644XXX-TERM-3-1-ROW-1",
+          "field": "name_th",
+          "old": null,
+          "new": "วิชาเลือกหมวดภาษาและการสื่อสาร",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "ELEC-90644XXX-TERM-3-1-ROW-1",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(3-0-6)",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016416",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(3-0-6)",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016416",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 30,
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016417",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016417",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 30,
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016418",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016418",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 30,
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016421",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(3-0-6)",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016421",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 30,
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016422",
+          "field": "name_th",
+          "old": "คอมพิวเตอร์กราฟิกส์และแอนิเมชัน",
+          "new": "อินเทอร์เน็ตของสรรพสิ่ง",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016422",
+          "field": "name_en",
+          "old": "COMPUTER GRAPHICS AND ANIMATION",
+          "new": "INTERNET OF THINGS",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016422",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016422",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 30,
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016423",
+          "field": "name_th",
+          "old": "การออกแบบและพัฒนาเกมเบื้องต้น",
+          "new": "การอัตโนมัติและโครงสร้างพื้นฐานที่สามารถโปรแกรมได้",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016423",
+          "field": "name_en",
+          "old": "INTRODUCTION TO GAME DESIGN AND DEVELOPMENT",
+          "new": "INFRASTRUCTURE PROGRAMMABILITY AND AUTOMATION",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016423",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016423",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 30,
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016426",
+          "field": "name_th",
+          "old": "การออกแบบและพัฒนาเว็บฝั่งเซิร์ฟเวอร์",
+          "new": "คอมพิวเตอร์กราฟิกส์และแอนิเมชัน",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016426",
+          "field": "name_en",
+          "old": "SERVER-SIDE WEB DEVELOPMENT",
+          "new": "COMPUTER GRAPHICS AND ANIMATION",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016426",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016426",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 30,
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016427",
+          "field": "name_th",
+          "old": "การพัฒนาเว็บฝั่งเซิร์ฟเวอร์",
+          "new": "การออกแบบและพัฒนาเกมเบื้องต้น",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016427",
+          "field": "name_en",
+          "old": "SERVER-SIDE WEB DEVELOPMENT",
+          "new": "INTRODUCTION TO GAME DESIGN AND DEVELOPMENT",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016427",
+          "field": "credits_raw",
+          "old": null,
+          "new": "3(2-2-5)",
+          "pdf_page": 35,
+          "book_page": 30
+        },
+        {
+          "code": "06016427",
+          "field": "printed_page_number",
+          "old": null,
+          "new": 30,
+          "pdf_page": 35,
+          "book_page": 30
+        }
+      ],
+      "term_count": 2,
+      "history_count": 59,
+      "integrity": "ok",
+      "stage_sha256": "5fa83c8b4cd0743aa77ffba9f1f697d0b9df5c6525fc6cbb4056a9eb8ac98584"
+    }
+  ]
+}

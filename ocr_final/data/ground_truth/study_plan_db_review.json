@@ -1,0 +1,21 @@
+{
+  "status": "visually_verified",
+  "reviewed_on": "2026-10-04",
+  "ingestion_sha256": "b56c308bd440d59d14ec552fa08466d3210b259d43b65dfd3864d4d7640b6257",
+  "reviewer_method": "Rendered official page images inspected; not inferred from PDF hashes or evaluation answers",
+  "approved_pages": {
+    "IT.pdf": [[34, 29], [35, 30], [41, 36], [42, 37]],
+    "DSBA.pdf": [[27, 26], [28, 27], [34, 33], [35, 34]],
+    "IT-60.pdf": [[29, 24], [30, 25], [31, 26], [32, 27], [36, 31], [37, 32], [38, 33], [39, 34]]
+  },
+  "scope": "All fields contributed by study_plan_relationships.json in these terms: row_facts, alternative hour patterns, GE names, printed folios/totals, shared/track membership and track labels. Not full-book field accuracy or prerequisite verification.",
+  "conflict_06016422": {
+    "source_file": "IT.pdf", "version": 2565,
+    "pdf_pages": [35, 42], "printed_pages": [30, 37],
+    "name_th": "อินเทอร์เน็ตของสรรพสิ่ง", "name_en": "INTERNET OF THINGS",
+    "credits_raw": "3(2-2-5)",
+    "decision": "The rendered tables identify 06016421 as infrastructure security and 06016422 as Internet of Things. Correct the database row-name misalignment, not the inspected overlay value."
+  },
+  "presentation_only": ["PLAN_LABELS", "track search aliases", "selection explanation notes", "synthetic requirement identifier", "_study_context", "_study_review"],
+  "unresolved": ["BIT-2565 group 1-4 definitions: absent from this input; no inferred membership", "full-book names and prerequisites outside approved review pages"]
+}

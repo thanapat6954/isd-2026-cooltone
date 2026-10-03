@@ -1,0 +1,3 @@
+-r requirements.txt
+# Required by the installed Starlette TestClient for isolated API verification.
+httpx2==2.13.1

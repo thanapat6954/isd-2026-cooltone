@@ -1,0 +1,129 @@
+{
+  "dependencies": {
+    "config.py": "161f0a7eabe1e97471bf53780299bf91798aee718625c7b9cdf8737d7a7b6125",
+    "database.py": "7012a9848a325c607986d51404203e2cd0e63fb37feab40fba26f4b439a6757b",
+    "main.py": "ddbbf0bbc16707200b3c7035fdf3ca9de5bf76a06abf21ad0b9a7455586d0cbf",
+    "model_service.py": "be7595acdde0222b3ebb24effce6b94926b2c27e21631e0407b9a3bfe16e2dac",
+    "query_planner.py": "c257e43801dd6362d381c54f9f88712c72ce94340d34636e6d296317d14e5150",
+    "schemas.py": "5686d776006fe9b547c08d27b454d718e297903cf6cdea56581c411a3a4a1d59",
+    "study_evidence.py": "7f8ae0c173d63466264c21ca18ddd5798c6088a7f42f34dafc69d740d8c2590c",
+    "study_plan.py": "e7cc3eb55b0675a86e29b181eb3339c2ef60edfaa8f267e16605b2b3619b30d7",
+    "__init__.py": "a0f302c05be45c406b249d5c361b3b577d8820c24b0f904ca94cbccbd8684dd7"
+  },
+  "jobs": [
+    {
+      "name": "unit",
+      "command": [
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\venv\\Scripts\\python.exe",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\scripts\\capture_b1_checkpoint.py",
+        "--app-root",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+        "--output",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\docs\\results\\db_only_release_verified\\unit.json"
+      ],
+      "completed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "provenance",
+      "command": [
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\venv\\Scripts\\python.exe",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\scripts\\audit_answer_provenance.py",
+        "--app-root",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+        "--output",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\docs\\results\\db_only_release_verified\\provenance.json"
+      ],
+      "completed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "gold",
+      "command": [
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\venv\\Scripts\\python.exe",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\scripts\\run_qa_gold.py",
+        "--app-root",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+        "--runs",
+        "1",
+        "--output",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\docs\\results\\db_only_release_verified\\gold.json"
+      ],
+      "completed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "old2560",
+      "command": [
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\venv\\Scripts\\python.exe",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\scripts\\run_old2560_qa.py",
+        "--app-root",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+        "--output",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\docs\\results\\db_only_release_verified\\old2560.json"
+      ],
+      "completed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "versions",
+      "command": [
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\venv\\Scripts\\python.exe",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\scripts\\run_version_isolation.py",
+        "--app-root",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+        "--output",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\docs\\results\\db_only_release_verified\\versions.json"
+      ],
+      "completed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "cards",
+      "command": [
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\venv\\Scripts\\python.exe",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\scripts\\verify_study_plans.py",
+        "--app-root",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+        "--output",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\docs\\results\\db_only_release_verified\\cards.json"
+      ],
+      "completed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "frozen",
+      "command": [
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\venv\\Scripts\\python.exe",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\scripts\\verify_db_only_live.py",
+        "--app-root",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+        "--mode",
+        "frozen",
+        "--runs",
+        "3",
+        "--output",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\docs\\results\\db_only_release_verified\\frozen.json"
+      ],
+      "completed": true,
+      "exit_code": 1
+    },
+    {
+      "name": "unknown",
+      "command": [
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\venv\\Scripts\\python.exe",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\ocr_final\\scripts\\verify_db_only_live.py",
+        "--app-root",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+        "--mode",
+        "unknown",
+        "--output",
+        "C:\\Users\\thana\\OneDrive\\เอกสาร\\isd-2026-cooltone\\docs\\results\\db_only_release_verified\\unknown.json"
+      ],
+      "completed": true,
+      "exit_code": 0
+    }
+  ],
+  "note": "Sequential jobs; expected failures remain recorded, never changed to pass.",
+  "runtime_unchanged": true
+}

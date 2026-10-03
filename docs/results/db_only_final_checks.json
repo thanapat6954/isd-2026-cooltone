@@ -1,0 +1,53 @@
+{
+  "changed_product_files": [
+    {
+      "path": "lab10_fastapi/curriculum_app/database.py",
+      "equal": true
+    },
+    {
+      "path": "lab10_fastapi/curriculum_app/main.py",
+      "equal": true
+    },
+    {
+      "path": "lab10_fastapi/curriculum_app/model_service.py",
+      "equal": true
+    },
+    {
+      "path": "lab10_fastapi/curriculum_app/query_planner.py",
+      "equal": true
+    },
+    {
+      "path": "lab10_fastapi/curriculum_app/study_plan.py",
+      "equal": true
+    },
+    {
+      "path": "lab10_fastapi/curriculum_app/study_evidence.py",
+      "equal": true
+    },
+    {
+      "path": "scripts/prepare_db_only.py",
+      "equal": true
+    },
+    {
+      "path": "scripts/migrate_study_evidence.py",
+      "equal": true
+    },
+    {
+      "path": "run_lab8b.py",
+      "equal": true
+    },
+    {
+      "path": "data/ground_truth/study_plan_db_review.json",
+      "equal": true
+    }
+  ],
+  "protected_n": 22,
+  "changed_protected": 0,
+  "branch": "audit/curriculum-challenge",
+  "unchanged_root_paths": [],
+  "backend_pid": 54480,
+  "report_regenerated_identically": true,
+  "summary_regenerated_identically": true,
+  "evidence_for_idempotence": "Prior command captured hashes before and after a second successful summarize_db_only run",
+  "configuration_backup_limit": "Runtime/config code was snapshotted before repairs; .env was not separately backed up and was not edited"
+}

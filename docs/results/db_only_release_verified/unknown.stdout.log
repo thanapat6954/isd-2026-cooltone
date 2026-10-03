@@ -1,0 +1,15 @@
+legacy-course-catalog/unknown-summary/1 200 True
+AI-2566-coop/unknown-summary/1 200 True
+BIT-2560-coop/unknown-summary/1 200 True
+BIT-2560-no-coop/unknown-summary/1 200 True
+BIT-2565-coop/unknown-summary/1 200 True
+BIT-2565-no-coop/unknown-summary/1 200 True
+DSBA-2560-coop/unknown-summary/1 200 True
+DSBA-2560-no-coop/unknown-summary/1 200 True
+DSBA-2565-coop/unknown-summary/1 200 True
+DSBA-2565-no-coop/unknown-summary/1 200 True
+IT-2560-coop/unknown-summary/1 200 True
+IT-2560-no-coop/unknown-summary/1 200 True
+IT-2565-coop/unknown-summary/1 200 True
+IT-2565-no-coop/unknown-summary/1 200 True
+{"passed": 14, "n": 14, "missing_frozen_profiles": ["legacy-course-catalog", "BIT-2560-coop", "BIT-2560-no-coop", "BIT-2565-coop", "BIT-2565-no-coop", "DSBA-2560-coop", "DSBA-2560-no-coop", "IT-2560-coop", "IT-2560-no-coop"], "supported_unknown_answers": 14, "uncertainty_answers": 0}

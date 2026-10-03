@@ -21,9 +21,11 @@ from .database import (
     SqlValidationError,
     attach_source_metadata,
     execute_readonly,
+    open_readonly,
 )
 from .query_planner import QueryPlan, detect_intent, deterministic_sql, normalize_course_name
-from .study_plan import build_study_plan, review_fingerprint, study_plan_text
+from .study_plan import build_study_plan, study_plan_text
+from .study_evidence import read_study_evidence
 
 
 LOGGER = logging.getLogger("curriculum_app")
@@ -40,6 +42,85 @@ ANSWER_SCHEMA = {
     "required": ["answer"],
     "additionalProperties": False,
 }
+
+CLAIM_SCHEMA = {
+    'type': 'object', 'properties': {'claims': {'type': 'array', 'items': {
+        'type': 'object', 'properties': {'row_index': {'type': 'integer'},
+        'fields': {'type': 'array', 'items': {'type': 'string'}}},
+        'required': ['row_index', 'fields'], 'additionalProperties': False}}},
+    'required': ['claims'], 'additionalProperties': False,
+}
+FACT_LABELS = {'code': 'รหัสวิชา', 'name_th': 'ชื่อภาษาไทย', 'name_en': 'ชื่อภาษาอังกฤษ',
+    'credits': 'หน่วยกิต', 'years': 'ระยะเวลาศึกษา (ปี)', 'total_credits': 'หน่วยกิตรวม',
+    'year': 'ชั้นปี', 'semester': 'ภาคการศึกษา', 'requires': 'วิชาบังคับก่อน',
+    'prerequisites': 'ข้อมูลวิชาบังคับก่อนที่บันทึก', 'description_th': 'คำอธิบายรายวิชา',
+    'lecture_h': 'ชั่วโมงบรรยาย', 'lab_h': 'ชั่วโมงปฏิบัติ', 'self_h': 'ชั่วโมงศึกษาด้วยตนเอง',
+    'credits_raw': 'รูปแบบหน่วยกิต', 'prerequisite_status': 'สถานะหลักฐานวิชาบังคับก่อน'}
+
+
+def render_claims(rows, claims):
+    """Model selects evidence references only; never values or unrestricted prose."""
+    if not isinstance(claims, list) or not claims or len(claims) > 80: return None
+    lines = []
+    for claim in claims:
+        if not isinstance(claim, dict) or set(claim) != {'row_index', 'fields'}: return None
+        index, fields = claim['row_index'], claim['fields']
+        if type(index) is not int or not 0 <= index < min(len(rows),80): return None
+        if not isinstance(fields,list) or not fields or any(not isinstance(f,str) or f not in FACT_LABELS or f not in rows[index] or rows[index][f] is None for f in fields): return None
+        source = rows[index].get('_source', {}).get('curriculum_name')
+        if not source: return None
+        values = [f"{FACT_LABELS[f]}: {rows[index][f]}" for f in dict.fromkeys(fields)]
+        lines.append(source + ' — ' + '; '.join(values))
+    return '\n'.join(dict.fromkeys(lines))
+
+
+def validate_unknown_projection(sql):
+    """Accept stored fields only and prevent aliases from relabeling their meaning."""
+    projection = re.match(r'\s*SELECT\s+(.*?)\s+FROM\b', sql, re.I | re.S)
+    if not projection or re.search(r'\b(?:UNION|study_correction)\b', sql, re.I):
+        raise SqlValidationError('Unknown intent requires a single stored-column SELECT')
+    compatible = {'course_code': 'code', 'course_name_th': 'name_th', 'course_name_en': 'name_en'}
+    for field in projection[1].split(','):
+        token = field.strip()
+        if re.fullmatch(r'(?:[A-Za-z_]\w*\.)?\*', token):
+            continue
+        match = re.fullmatch(r'(?:[A-Za-z_]\w*\.)?([A-Za-z_]\w*)(?:\s+(?:AS\s+)?([A-Za-z_]\w*))?', token, re.I)
+        if not match:
+            raise SqlValidationError('Unknown intent only permits stored-column projections, not invented literals/calculations')
+        source, alias = match.groups()
+        if alias and alias.casefold() not in {source.casefold(), compatible.get(source.casefold())}:
+            raise SqlValidationError('Unknown intent cannot relabel a stored fact with an unrelated alias')
+
+
+def normalize_redundant_program_filter(database, sql):
+    """Remove only a proven tautology on the selected single-program database."""
+    match = re.fullmatch(
+        r"(\s*SELECT\s+.+?\s+FROM\s+program(?:\s+(?:AS\s+)?(?!WHERE\b)[A-Za-z_]\w*)?)"
+        r"\s+WHERE\s+(.+?)"
+        r"\s*((?:ORDER\s+BY|LIMIT)\b.*?)?\s*;?", sql, re.I | re.S)
+    if not match or not database.has('program', 'program_id'):
+        return sql
+    identity = r'(?:[A-Za-z_]\w*\.)?(?:program_id|plan|curriculum_version|is_latest)'
+    atom = identity + r"\s*(?:(?:=|LIKE)\s*(?:'(?:''|[^'])*'|-?\d+)|IS\s+(?:NOT\s+)?NULL)"
+    residue = re.sub(atom, '', match[2], flags=re.I)
+    if re.sub(r'\b(?:AND|OR|NOT)\b|[\s()]', '', residue, flags=re.I):
+        return sql
+    connection = open_readonly(database.path)
+    try:
+        ids = [row[0] for row in connection.execute('SELECT program_id FROM program LIMIT 2')]
+    finally:
+        connection.close()
+    if len(ids) != 1:
+        return sql
+    for value in re.findall(r"\bprogram_id\s*=\s*'((?:''|[^'])*)'", match[2], re.I):
+        if value.replace("''", "'") != ids[0]:
+            return sql
+    normalized = match[1] + (' ' + match[3] if match[3] else '')
+    # The actual safe SELECTs must return the same nonempty stored values.
+    # False predicates, invalid columns and unproven identity filters stay rejected.
+    _, filtered = execute_readonly(database, sql, 2)
+    _, unfiltered = execute_readonly(database, normalized, 2)
+    return normalized if filtered and filtered == unfiltered else sql
 
 
 def _clean_model_text(text: str) -> str:
@@ -82,6 +163,10 @@ def _parse_json_object(raw: str, schema: dict[str, Any]) -> dict[str, str]:
     result: dict[str, str] = {}
     for key in schema.get("required", []):
         field = value.get(key)
+        expected = schema.get('properties', {}).get(key, {}).get('type', 'string')
+        if expected == 'array' and isinstance(field, list):
+            result[key] = field
+            continue
         if not isinstance(field, str) or not field.strip():
             raise ValueError(f"Model response requires a non-empty string field: {key}")
         result[key] = field.strip()
@@ -197,6 +282,14 @@ SQL ก่อนหน้านี้ใช้ไม่ได้: {previous_sql}
 ข้อผิดพลาดจาก SQLite/validator: {error}
 แก้ SQL โดยใช้เฉพาะ schema จริงด้านล่าง
 """
+        if database.has('program', 'name_th', 'total_credits', 'years'):
+            stored_hint = 'ข้อมูลหลักสูตรบันทึกใน program: SELECT name_th, name_en, total_credits, years, source_file, page_number FROM program ไม่ใส่ WHERE'
+        elif database.has('courses', 'course_code', 'course_name_th', 'credits'):
+            stored_hint = ('ฐานนี้ไม่มี program หรือข้อมูลปี/ยอดรวมหลักสูตร เป็น catalog ที่ยังไม่ระบุฉบับแน่ชัด '
+                           'เลือกหลักฐานจริงได้ด้วย SELECT course_code AS code, course_name_th AS name_th, course_name_en AS name_en, credits, source_file, page_number FROM courses LIMIT 5 '
+                           'ห้ามใช้ credits AS total_credits เพราะหน่วยกิตรายวิชาไม่ใช่ยอดรวมหลักสูตร')
+        else:
+            stored_hint = 'เลือกเฉพาะ column จริงตาม schema ไม่เปลี่ยนความหมายด้วย alias'
         prompt = f"""แปลงคำถามเป็น SQLite SQL สำหรับฐานข้อมูลเดียวนี้
 
 ฐานข้อมูล: {database.curriculum_name}
@@ -212,6 +305,9 @@ schema จริง (ห้ามใช้ table หรือ column นอก�
 - ถ้าถามยอดรวมหลักสูตร ให้ใช้ program.total_credits เมื่อมี column นี้
 - ถามจำนวนให้ใช้ COUNT และถามผลรวมให้ใช้ค่ารวมที่เหมาะสม
 - อย่ารวมข้อมูลข้ามหลักสูตร ฐานข้อมูลนี้จะถูกรวมผลภายหลังโดยโปรแกรม
+- ฐานข้อมูลถูกเลือกหลักสูตรและฉบับแล้ว ห้ามใส่ WHERE program_id และห้ามกรองตาราง program
+- เมื่อ intent เป็น unknown ให้ SELECT เฉพาะ column ที่บันทึกจริง ห้าม COUNT, SUM, literal, CASE หรือคำนวณใน SELECT
+- คำแนะนำจาก schema ของฐานนี้: {stored_hint}
 
 คำถาม: {question}
 """
@@ -233,20 +329,31 @@ schema จริง (ห้ามใช้ table หรือ column นอก�
             }
             for item in executions
         ]
-        prompt = f"""ตอบคำถามเป็นภาษาไทยจากผลฐานข้อมูลเท่านั้น
+        prompt = f"""เลือกเฉพาะหลักฐานฐานข้อมูลที่ตอบคำถามได้
 คำถาม: {question}
 intent: {plan.intent}
 แหล่งข้อมูล: {json.dumps(sources, ensure_ascii=False)}
 ผลฐานข้อมูล: {json.dumps(rows[:80], ensure_ascii=False)}
 
 กติกา:
-- ตอบ JSON ที่มี key ชื่อ answer
-- ห้ามเพิ่มข้อมูลที่ไม่มีในผลฐานข้อมูล
+- ตอบ JSON key claims เป็นรายการ {{"row_index": เลขแถวเริ่มที่ 0, "fields": [ชื่อ field]}}
+- ห้ามส่งค่าหรือข้อความคำตอบเอง ระบบจะแสดงค่าจากแถวที่อ้างเท่านั้น
+- field ที่อนุญาต: {', '.join(FACT_LABELS)}
+- ถ้าหลักฐานไม่พอให้ claims เป็น [] ห้ามเดาหรืออนุมานสิทธิ์ลงทะเบียน
 - ถ้ามีหลายหลักสูตร ให้รายงานแยกตาม curriculum_name ห้ามบวกยอดข้ามหลักสูตร
 - ถ้าเป็นคำถามเปรียบเทียบ ให้เปรียบเทียบเฉพาะค่าที่แสดง
 - ถ้าไม่มีแถวข้อมูล ให้ตอบว่าไม่พบข้อมูลนี้ในฐานข้อมูลหลักสูตร
 """
-        return self._chat(prompt, ANSWER_SCHEMA)["answer"].strip()
+        try:
+            claims = self._chat(prompt, CLAIM_SCHEMA).get('claims')
+        except (ValueError, json.JSONDecodeError):
+            return self._insufficient(rows)
+        return render_claims(rows, claims) or self._insufficient(rows)
+
+    @staticmethod
+    def _insufficient(rows):
+        identities = sorted({str(r.get('_source', {}).get('curriculum_name', 'หลักสูตรที่เลือก')) for r in rows})
+        return 'หลักฐานจาก SQLite ยังไม่พอที่จะยืนยันคำตอบนี้ใน ' + ', '.join(identities) + ' จึงไม่เพิ่มข้อมูลหรือสรุปเงื่อนไขที่ไม่ได้บันทึก'
 
     @staticmethod
     def _ground_answer(
@@ -263,6 +370,10 @@ intent: {plan.intent}
         field_and_unit = value_fields.get(plan.intent)
         if not rows:
             return model_answer
+        if plan.intent == 'unknown':
+            # Free text cannot be made safe by checking one number or marker.
+            # Only the structured reference renderer in summarize may answer.
+            return QwenTextToSQL._insufficient(rows)
         if plan.intent == "course_list":
             grouped: dict[str, list[dict[str, Any]]] = {}
             for row in rows:
@@ -467,6 +578,9 @@ intent: {plan.intent}
 
         for attempt in range(self.config.sql_repair_attempts + 1):
             try:
+                if plan.intent == 'unknown':
+                    validate_unknown_projection(sql)
+                    sql = normalize_redundant_program_filter(database, sql)
                 self._validate_plan_filters(question, plan, database, sql,resolved_course_code=resolved_course_code)
                 validation, raw_rows = execute_readonly(database, sql, self.config.max_rows)
                 if plan.intent == 'course_search':
@@ -555,10 +669,11 @@ intent: {plan.intent}
         started = time.perf_counter()
         registry.refresh()
         fingerprint = tuple(
-            (str(item.path), item.path.stat().st_mtime_ns)
+            (str(item.path), item.path.stat().st_mtime_ns, item.path.stat().st_size,
+             (item.path.with_name(item.path.name+'-wal').stat().st_mtime_ns if item.path.with_name(item.path.name+'-wal').exists() else None))
             for item in registry.databases if item.path.is_file()
         )
-        cache_key: tuple[object, ...] = (question.strip().casefold(), fingerprint, review_fingerprint(registry.root))
+        cache_key: tuple[object, ...] = (question.strip().casefold(), fingerprint)
         cached = self._answer_cache.get(cache_key)
         if cached is not None:
             self._answer_cache.move_to_end(cache_key)
@@ -611,7 +726,8 @@ intent: {plan.intent}
 
         study_plan = None
         if rows and plan.intent == 'course_list':
-            study_plan, rows = build_study_plan(rows, question, registry.root, required_only=plan.required_only)
+            evidence = {item.database.curriculum_name: read_study_evidence(item.database) for item in executions}
+            study_plan, rows = build_study_plan(rows, question, evidence, required_only=plan.required_only)
             answer = study_plan_text(study_plan)
         elif rows and plan.intent == "version_course_diff":
             answer, rows = self._version_diff(rows)
@@ -621,8 +737,7 @@ intent: {plan.intent}
             # numbers deterministic and removes avoidable generation latency.
             answer = self._ground_answer(plan, rows, "")
         elif rows:
-            model_answer = self.summarize(question, plan, rows, executions)
-            answer = self._ground_answer(plan, rows, model_answer)
+            answer = self.summarize(question, plan, rows, executions)
         else:
             searched = ", ".join(item.curriculum_name for item in selected)
             answer = f"ยังยืนยันข้อมูลที่ถามไม่ได้จากฐานข้อมูลที่ค้น: {searched} ข้อมูลที่นำเข้าอาจไม่ครบ จึงยังสรุปไม่ได้ว่ารายวิชาหรือเงื่อนไขนี้ไม่มีในเล่มหลักสูตร"

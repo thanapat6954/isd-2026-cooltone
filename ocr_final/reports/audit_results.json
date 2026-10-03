@@ -62530,7 +62530,7 @@
           "check": "fidelity_schema",
           "status": "FAIL",
           "severity": "HIGH",
-          "message": "ยังไม่มีคอลัมน์: alternative_index, is_placeholder, printed_page_number, raw_code",
+          "message": "ยังไม่มีคอลัมน์: alternative_index, is_placeholder, raw_code",
           "code": null,
           "source_file": null,
           "pdf_page": null
@@ -62612,7 +62612,7 @@
           "check": "fidelity_schema",
           "status": "FAIL",
           "severity": "HIGH",
-          "message": "ยังไม่มีคอลัมน์: alternative_index, is_placeholder, printed_page_number, raw_code",
+          "message": "ยังไม่มีคอลัมน์: alternative_index, is_placeholder, raw_code",
           "code": null,
           "source_file": null,
           "pdf_page": null
@@ -63082,7 +63082,7 @@
           "check": "fidelity_schema",
           "status": "FAIL",
           "severity": "HIGH",
-          "message": "ยังไม่มีคอลัมน์: alternative_index, is_placeholder, printed_page_number, raw_code",
+          "message": "ยังไม่มีคอลัมน์: alternative_index, is_placeholder, raw_code",
           "code": null,
           "source_file": null,
           "pdf_page": null
@@ -63174,7 +63174,7 @@
           "check": "fidelity_schema",
           "status": "FAIL",
           "severity": "HIGH",
-          "message": "ยังไม่มีคอลัมน์: alternative_index, is_placeholder, printed_page_number, raw_code",
+          "message": "ยังไม่มีคอลัมน์: alternative_index, is_placeholder, raw_code",
           "code": null,
           "source_file": null,
           "pdf_page": null

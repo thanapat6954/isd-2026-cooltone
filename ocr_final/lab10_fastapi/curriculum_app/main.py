@@ -305,7 +305,7 @@ def frontend_ask(request: FrontendAskRequest):
             "answer": answer,
             "study_plan": result.get('study_plan'),
             "sources": _frontend_sources(result),
-            "model": settings.ollama_model if result.get('intent') == 'unknown' else 'SQL (database-backed)',
+            "model": (settings.ollama_model + ' (evidence references → SQLite values)' if result.get('intent') == 'unknown' else 'SQLite (deterministic renderer)'),
             "latency_ms": round((time.perf_counter() - started_at) * 1000),
             "confidence": None,
         }

@@ -1,0 +1,1 @@
+45/45 cases passed; failed: []; links: [{'source': 'DSBA.pdf', 'status': 206, 'pdf_signature': True}, {'source': 'IT.pdf', 'status': 206, 'pdf_signature': True}, {'source': 'IT-60.pdf', 'status': 206, 'pdf_signature': True}, {'source': 'disallowed', 'status': 404, 'expected': 404}]

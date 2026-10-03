@@ -124,11 +124,15 @@ def open_readonly(path: Path) -> sqlite3.Connection:
     """Open one SQLite file in read-only/query-only mode."""
     uri = path.resolve().as_uri() + "?mode=ro"
     connection = sqlite3.connect(uri, uri=True, timeout=5)
-    connection.row_factory = sqlite3.Row
-    connection.create_function('normalize_course_name', 1,
-                               lambda value: normalize_course_name(str(value or '')), deterministic=True)
-    connection.execute("PRAGMA query_only = ON")
-    return connection
+    try:
+        connection.row_factory = sqlite3.Row
+        connection.create_function('normalize_course_name', 1,
+                                   lambda value: normalize_course_name(str(value or '')), deterministic=True)
+        connection.execute("PRAGMA query_only = ON")
+        return connection
+    except Exception:
+        connection.close()
+        raise
 
 
 def _quote_identifier(value: str) -> str:
@@ -138,6 +142,7 @@ def _quote_identifier(value: str) -> str:
 def inspect_database(path: Path, root: Path) -> DatabaseInfo:
     relative = path.resolve().relative_to(root.resolve()).as_posix()
     archived = any(part.casefold().startswith("_archive") for part in path.parts)
+    connection = None
     try:
         connection = open_readonly(path)
         rows = connection.execute(
@@ -188,6 +193,8 @@ def inspect_database(path: Path, root: Path) -> DatabaseInfo:
             archived=archived,
         )
     except (OSError, sqlite3.Error, ValueError) as exc:
+        if connection is not None:
+            connection.close()
         return DatabaseInfo(
             path=path.resolve(),
             relative_path=relative,
