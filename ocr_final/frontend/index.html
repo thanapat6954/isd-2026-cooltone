@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="ถามคำถามเกี่ยวกับหลักสูตรและตรวจสอบคำตอบจากหน้าที่อ้างอิง">
   <title>ผู้ช่วยค้นข้อมูลหลักสูตร</title>
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="preload" href="fonts/NotoSansThai-variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
+  <a class="skip-link" href="#question-input">ข้ามไปตั้งคำถาม</a>
   <!-- Page header -->
   <header class="site-header">
     <div class="page-shell header-content">
       <div class="brand-mark" aria-hidden="true">CB</div>
       <div>
-        <p class="eyebrow">การพัฒนาระบบอัจฉริยะ</p>
         <h1>ผู้ช่วยค้นข้อมูลหลักสูตร</h1>
         <p class="subtitle">ถามคำถามและตรวจสอบคำตอบจากแหล่งอ้างอิงในเล่มหลักสูตร</p>
         <span id="mode-badge" class="mode-badge"></span>
@@ -38,6 +39,7 @@
           <label class="field-group" for="curriculum-select">
             <span>หลักสูตร</span>
             <select id="curriculum-select" name="curriculum"></select>
+            <span id="selection-context" class="selection-context"></span>
           </label>
           <label class="field-group" for="version-select">
             <span>ฉบับหลักสูตร</span>
@@ -53,17 +55,19 @@
             rows="3"
             maxlength="500"
             placeholder="ตัวอย่าง: หลักสูตรนี้ต้องเรียนทั้งหมดกี่หน่วยกิต"
-            aria-describedby="question-help character-count"
+            aria-describedby="question-help character-count question-error"
           ></textarea>
         </label>
         <div class="input-footer">
           <span id="question-help">กด Enter เพื่อถาม หรือ Shift+Enter เพื่อขึ้นบรรทัดใหม่</span>
           <span id="character-count">0 / 500</span>
         </div>
+        <p id="question-error" class="field-error hidden"></p>
         <button id="ask-button" class="primary-button" type="submit">
           <span>ถามข้อมูลหลักสูตร</span>
-          <span aria-hidden="true">→</span>
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
         </button>
+        <a class="result-jump" href="#result-heading">ไปที่คำตอบและแหล่งอ้างอิง</a>
       </form>
 
       <!-- Example questions -->
@@ -77,13 +81,12 @@
       <div class="section-heading">
         <div>
           <p class="step-label">ขั้นตอนที่ 2</p>
-          <h2 id="result-heading">คำตอบและแหล่งอ้างอิง</h2>
+          <h2 id="result-heading" tabindex="-1">คำตอบและแหล่งอ้างอิง</h2>
         </div>
       </div>
 
       <!-- Idle state -->
       <div id="idle-state" class="state-panel idle-state">
-        <div class="state-icon" aria-hidden="true">?</div>
         <h3>ถามเรื่องอะไรได้บ้าง</h3>
         <p>ถามเกี่ยวกับหน่วยกิต วิชาบังคับ วิชาบังคับก่อน หรือความแตกต่างระหว่างฉบับหลักสูตรได้</p>
         <p class="state-note">คำตอบที่น่าเชื่อถือควรมีหน้าและหัวข้อจากเล่มหลักสูตรเป็นแหล่งอ้างอิง</p>
@@ -98,6 +101,7 @@
 
       <!-- Success state -->
       <div id="success-state" class="state-panel success-state hidden" aria-live="polite">
+        <p id="answer-context" class="answer-context"></p>
         <div id="confidence-warning" class="warning-banner hidden" role="alert">
           ระบบยังไม่มั่นใจ กรุณาปรับคำถามหรือตรวจสอบหน้าที่อ้างอิง
         </div>
@@ -124,10 +128,10 @@
 
       <!-- Error state -->
       <div id="error-state" class="state-panel error-state hidden" role="alert">
-        <div class="state-icon" aria-hidden="true">!</div>
         <h3>ไม่สามารถตอบคำถามนี้ได้</h3>
         <p id="error-message"></p>
         <p id="error-action" class="state-note"></p>
+        <button id="retry-button" class="secondary-button" type="button">ลองส่งคำถามอีกครั้ง</button>
       </div>
     </section>
 
@@ -135,7 +139,6 @@
     <aside class="card history-card" aria-labelledby="history-heading">
       <div class="section-heading compact-heading">
         <div>
-          <p class="step-label">การใช้งานครั้งนี้</p>
           <h2 id="history-heading">คำถามล่าสุด</h2>
         </div>
         <span class="history-limit">ล่าสุด 5 ข้อ</span>
@@ -146,6 +149,6 @@
   </main>
 
   <!-- JavaScript is a module, so its constants do not become window globals. -->
-  <script type="module" src="app.js?v=8"></script>
+  <script type="module" src="app.js?v=9"></script>
 </body>
 </html>

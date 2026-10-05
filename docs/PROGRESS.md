@@ -1,6 +1,6 @@
 # Curriculum OCR — authoritative checkpoint
 
-Updated 2026-10-04 (Asia/Bangkok). This is the ONE authoritative memory file:
+Updated 2026-10-06 (Asia/Bangkok). This is the ONE authoritative memory file:
 `C:/Users/thana/OneDrive/เอกสาร/isd-2026-cooltone/docs/PROGRESS.md`.
 The separate live application's older PROGRESS.md is a historical mirror, not authority. Do not create STATE.md.
 
@@ -25,8 +25,12 @@ The separate live application's older PROGRESS.md is a historical mirror, not au
 
 ## 2. CURRENT STATUS
 
+- **ผล UI ล่าสุด 2026-10-06:** refinement เสร็จเฉพาะ frontend เดิม ใช้ Impeccable layout/typeset/adapt/harden/polish คง Thai/green/vanilla/API/facts; พื้นที่คำตอบ ~849px เดิม576, mobile course names ~318px เดิม130; self-hosted Noto Thai/OFL, accessible stacked tables, PDF/book labels และ allowlisted links, context/retry/IME/duplicate guard บันทึก decisions ใน ocr_final/DESIGN.md; live-repo 9/9 hashes ตรงกัน; frontend backup live work/backups/ui-refinement/20261006/; ไม่แก้ DB/backend/held-out
+- **ผลตรวจ UI:** unit108/schema30/frontend6 ผ่าน; gold70/70 ทั้ง14profiles; 28 raw UI observations และ13 automated checks ผ่าน (10 selector combinations, actual idle/loading/success/insufficient/validation/network error/retry/timeout, keyboard/history/context); viewport320/390/768/1280 ไม่ล้นแนวนอนในจุดตรวจ; L3 long answer3156chars/79sources; IT20/20 rendered rows ตรง API; PDF endpoint7/7 ตอบ200/206/%PDF แต่ in-app PDF viewer blank จึง visible page=n/a; design scan exit0[]; contrast6.26–16.29:1; final console errors0
+- **Preservation:** backend Python/gold และ18 registered DB files hashes ตรง previous verified gold และหลังทดสอบ (18 files ไม่ใช่18curricula); gold14profilesรวม13normalized+legacy; UIยังไม่มีlegacyselectorตามเดิม Audit read-only exit1/16datasets/1376FAIL/4881incomplete/missing[]; อ่าน Summary/HIGH และเก็บ bounded summary ใน release_checks.json ไม่ redo verified book review
+- **UI handoff:** raw/screenshots/report อยู่ docs/results/ui_refinement_20261006/; UI_REFINEMENT.md ระบุผลและข้อจำกัด Backend restart/retry ready PID26340; live log work/web/backend-25691006-032256-323.stderr.log; เปิด http://127.0.0.1:8000/frontend/; คืน viewport override แล้ว Cold open-ended model request timeout30s ยังไม่ยืนยันคำตอบ; physical phones/screen reader/true200%zoom/OS reduced-motion=n/a ไม่มี push/main; historical untracked db_only_* คงไว้
 - **ผลล่าสุด 2026-10-04:** DB-only batch แก้ไขและ deploy แล้ว; audit หนังสือทั้งโครงการยังไม่ครบ ไม่อ้าง full-book accuracy หรือ zero hallucination
-- Branch `audit/curriculum-challenge`, entry commit `a2d8b69`; checkpointนี้พร้อมlocalfeaturecommitใหม่ ให้ดู git log เพื่อระบุhash ไม่มีpush/mainchange
+- Branch `audit/curriculum-challenge`, UI entry commit `bb8a1b7`; checkpointนี้พร้อมlocalfeaturecommitใหม่ ให้ดู git log เพื่อระบุhash ไม่มีpush/mainchange
 - Repo `C:/Users/thana/OneDrive/เอกสาร/isd-2026-cooltone`; liveแยกที่ `C:/Users/thana/OneDrive/เอกสาร/ocr_final` Changed production files/reviewapprovalตรงกัน10/10 (`db_only_final_checks.json`)
 - Backup14activeDB/integrity/hashก่อนแก้ที่ live `work/backups/db-only/20261003T181512/`; staged/deployed13normalizedDB legacyไม่แก้ Code/configurationPythonสำรองแล้ว .envไม่สำรองแยก/ไม่แก้
 - Runtime factual JSON overlay/PDFถูกแทนด้วยSQLite study_term/page/track/item/member/correction + v_study_plan JSONreviewเป็นingestion-only Unknown LLMส่งrow/fieldreferencesแล้วrendererแสดงstoredvalues ไม่รับfreeprose/literal/unsupportedcalculations
@@ -41,10 +45,12 @@ The separate live application's older PROGRESS.md is a historical mirror, not au
 - Submission `docs/results/db_only_submission/DB_ONLY_REPORT.md` Thai per-profile/rootcauses/migration/rollback/limits; evaluation_summary.json,Q/A/citationsCSV+JSON335cases,inventory61fields Report/summaryregeneratedtwiceidentical Credentials scanไม่พบtoken PublicQ/Aexportsไม่มีlocalpaths RawdebugJSONไม่อนุมัติpublicpush
 - Protected22fileshashunchanged RootREADME/rootocr_system/Lab07reportunchanged BackendPID54480, live log `work/web/backend-25691004-022205-357.stderr.log` ไม่มีactiveeval/OCRjobหรือhalf-appliedDBrepair
 - Intermediatefailedruns/screenshotsเก็บlocaluntrackeddb_only_*ไว้ ไม่ลบและไม่ใช้แทนfinalverifiedผล
-- **NEXT ACTION:** ตรวจprogrammetadata/aggregatecitationprovenance เช่นIT-2560-no-coopPDF33ยังไม่ยืนยันรองรับ130credits+4years จากนั้นinvestigate3frozenDSBAinternal-IDregressionsโดยไม่แก้protectedเฉลย/ไม่แต่งdata ต่อbroaderfull-book/prerequisitecoverageและ4currentfidelitymigrationsด้วยbackups/source-reviewedingest ไม่redoverifiedbatchหรือเริ่มL4โดยไม่มีsource
+- **NEXT ACTION:** UI refinement ไม่มี implementation ค้าง หากงานถัดไปเป็น UI ให้ตรวจ PDF page viewer ด้วย browser ที่รองรับ PDF จริง หากกลับ curriculum-audit ให้ตรวจ program metadata/aggregate citation provenance เช่น IT-2560-no-coop PDF33 ยังไม่ยืนยันรองรับ130credits+4years แล้ว investigate3frozenDSBAinternal-IDregressions โดยไม่แก้ protected เฉลย/ไม่แต่ง data ต่อ broader full-book/prerequisite coverage และ4current fidelity migrations ด้วย backups/source-reviewed ingest ไม่ redo verified batch หรือเริ่ม L4 โดยไม่มี source Cold model timeout เป็นข้อค้นพบใหม่ ยังไม่ได้แก้ backend เพราะงานนี้ frontend-only
 - **Handoff:** code/results/checkpointพร้อมlocalfeaturecommit ไม่มีpush/mainchange ชุดนี้เสร็จเฉพาะDB-onlyscope ไม่ใช่auditทั้งโครงการเสร็จ
 
 ## 3. DONE LOG
+
+- 2026-10-06 — UI live+repo: frontend3files + presentation.mjs/Noto Thai/OFL, DESIGN.md, Node6tests/release verifier; unit108/schema30/gold70 ผ่าน; 10selector combinations/28realUIobservations/13checks; IT20rows match/PDF7routes valid; responsive320–1280 และ long L3 answer3156chars Backend/gold/18DB hashes unchanged รายงาน/raw/screenshots ui_refinement_20261006; PDF viewer blank และ cold model timeout ยังเปิด Feature commit พร้อม checkpoint ไม่มีpush/main
 
 - 2026-10-04 — DB-only FINAL: backup14/integrity, source16pages/61fieldsreviewed, deploy13, runtimeSQLite-only/unknownstructuredreferences Unit108+schema30,isolated21,replayrollback13,gold70,old65,version6,cards45,provenance14,unknown14ผ่าน Frozen57/60unique(171/180)ยัง3DSBAsetfail/exit1 Audit1376FAIL+4881incompleteยังเปิด UI13profilesจริง+loading/missing/error/recovery Protected22unchanged/live-repo10filesตรง Report/CSV335casesในdb_only_submission; rawdb_only_release_verified Localfeaturecommitพร้อมcheckpoint ไม่มีpush/main
 - 2026-10-04 — ตรวจ DB-only แบบ read-only: API14/14 HTTP200, SQL replay61ค่า-fieldเปลี่ยน/เพิ่มใน4profile, unmatched rows0, frontend200พร้อมป้ายSQL(database-backed), synthetic unknown guardไม่ปฏิเสธข้อความที่ไม่มีใน DB; runnerexit1ตามเงื่อนไข audit, py_compileexit0, DB14+production dependenciesคงเดิม audit_allexit1:16datasets/1376FAIL/4881incomplete/missing[] รายงาน audit_answer_provenance.md และ raw db_only_provenance_verified_20261004.json; ไม่แก้ production/DB ไม่อ้าง live hallucination ไม่รัน goldเดิมซ้ำ; ไม่commit/push
@@ -118,6 +124,14 @@ The separate live application's older PROGRESS.md is a historical mirror, not au
 
 ## 6. HOW TO RERUN
 
+UI refinement: จาก live app ใช้ `scripts/start_web.ps1` แล้วเปิด http://127.0.0.1:8000/frontend/ ใช้ real backend ไม่ mock; frontend backup live `work/backups/ui-refinement/20261006/` จาก repo app ใช้ bundled Node หรือ Node ที่ติดตั้ง: `node --test tests/test_frontend_presentation.mjs` คำสั่ง release verifier (จาก live app; node path ของเครื่องนี้):
+
+```powershell
+.\venv\Scripts\python.exe scripts/verify_ui_refinement.py --app-root . --evidence 'C:/Users/thana/OneDrive/เอกสาร/isd-2026-cooltone/docs/results/ui_refinement_20261006' --previous-gold 'C:/Users/thana/OneDrive/เอกสาร/isd-2026-cooltone/docs/results/db_only_release_verified/gold.json' --node 'C:/Users/thana/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe'
+```
+
+UI raw results มาจาก browser ใน ui_checks.json/mobile_accessibility.txt; verifier ไม่สร้าง fake UI observations ผล gold --runs1 และ unit/schema อยู่ ui_refinement_20261006 ใช้ commands เดิมด้านล่างแต่ตั้ง output ใหม่หาก dependencies เปลี่ยน Audit output ครั้งนี้ ui_refinement_20261006/audit_reports; counts เดิมยัง exit1 ไม่มี visual polish/detector job ค้าง Detector รันครั้งเดียวผล[]เก็บ design_scan.json
+
 DB-only final batch: จาก repository root ใช้ Python environment ของ repo และ --app-root ชี้ live app:
 
     $liveApp='C:/Users/thana/OneDrive/เอกสาร/ocr_final'
@@ -185,6 +199,8 @@ Set-Location $liveApp
 - Latency benchmark: scripts/run_qa_gold.py produces first/repeat/cache timings; true cold LLM/difficult-question benchmark still to implement/run after source correctness.
 
 ## 7. OPEN QUESTIONS / UNVERIFIED
+
+- UI2026-10-06: in-app PDF viewer blank แม้7source endpoints ส่ง PDF จริง; visible page=n/a Physical phones/screen reader/true200%zoom/OS reduced-motion ไม่ได้ทดสอบ Cold open-ended LLM request หลัง restart timeout30s (UI error/retry ผ่าน) ยังไม่วัด cold model หรือแก้ backend ไม่ถือว่า UI ผ่านทำให้ broader audit/source-blocked L4 ผ่าน
 
 - DB-onlytestedไม่เท่ากับbooktruth Unknownsemanticaccuracy/metadataaggregatecitationprovenanceยังn/a เช่นIT2560nocPDF33ยังไม่ยืนยันtotal/years Goldcitationlocatorcoverageไม่ใช่semanticcitationaccuracy
 - Frozen DSBAcoopH07/DSBAnocH07/H08ขาดoldinternalplaceholderIDs expected/hashไม่แก้ ไม่claimallgreen อีก9profilesไม่มีfrozenn/a expected-abstain2/profileยังweak evidence

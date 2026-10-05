@@ -1,0 +1,528 @@
+{
+  "purpose": "UI release regression, not new curriculum accuracy or source-fidelity proof",
+  "presentation_tests": {
+    "command": [
+      "C:\\Users\\thana\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "--test",
+      "tests/test_frontend_presentation.mjs"
+    ],
+    "exit_code": 0,
+    "stdout": "✔ citations use only recorded allowlisted source identities and integer PDF pages (0.7466ms)\n✔ source identity is not inferred from program names or free text (0.7772ms)\n✔ PDF and printed book pages remain separate even when equal or unknown (0.1176ms)\n✔ Enter does not submit during Thai composition, Shift+Enter, or an active request (0.1122ms)\n✔ real endpoint, original payload, escaped rendering and option identities are retained (0.6334ms)\n✔ control labels, error recovery, accessible tables and reduced motion are present (0.6819ms)\nℹ tests 6\nℹ suites 0\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 77.7293\n",
+    "stderr": ""
+  },
+  "deployment": [
+    {
+      "path": "frontend/index.html",
+      "bytes": 8248,
+      "sha256": "0c524d8a0f2c86704e85634d65de4d5c4bba95229592239d159f0d4d4d9f81ed",
+      "live_matches": true
+    },
+    {
+      "path": "frontend/style.css",
+      "bytes": 12309,
+      "sha256": "2385a61fe3407af8b17f89443591b85d92616dbe06e2148de3350966a3ce48de",
+      "live_matches": true
+    },
+    {
+      "path": "frontend/app.js",
+      "bytes": 22513,
+      "sha256": "33170b0873172c9ae775ea8af8b6988ab0a4f397b0fcc04cd78db884d4205c55",
+      "live_matches": true
+    },
+    {
+      "path": "frontend/presentation.mjs",
+      "bytes": 1039,
+      "sha256": "549849bf327500107be2d1c6eb0392b6020bb22cef21f9c28eae7209f7dff10a",
+      "live_matches": true
+    },
+    {
+      "path": "frontend/fonts/NotoSansThai-variable.ttf",
+      "bytes": 218652,
+      "sha256": "5a1c559bb539583c8a1fd99d1c5b9491e5e14478c9cd2bd0970d5c3096cc9ef8",
+      "live_matches": true
+    },
+    {
+      "path": "frontend/fonts/OFL.txt",
+      "bytes": 4380,
+      "sha256": "2e98fd23a52d253db8612cd5942c8f2ff4111b21d2367050fdca91d8ccc374a0",
+      "live_matches": true
+    },
+    {
+      "path": "tests/test_frontend_presentation.mjs",
+      "bytes": 3380,
+      "sha256": "50aea78ce8fdb8fdde64d16a0e381d08240681ea38db5c4656236070c6d5f46b",
+      "live_matches": true
+    },
+    {
+      "path": "scripts/verify_ui_refinement.py",
+      "bytes": 10345,
+      "sha256": "3c3572f2928dd09b23b847b919afaec8485d6e8c3621455659300596ce7c5b96",
+      "live_matches": true
+    },
+    {
+      "path": "DESIGN.md",
+      "bytes": 5402,
+      "sha256": "806c58b2a6c79b3506116e96a2b39eb6d5534d31f4a58a9a318d134d5d3e2996",
+      "live_matches": true
+    }
+  ],
+  "preserved_dependencies": {
+    "backend_code_unchanged_from_previous_verified_gold": true,
+    "databases_unchanged_from_previous_verified_gold": true,
+    "gold_unchanged": true,
+    "database_n": 18,
+    "current_database_hashes_still_match": true,
+    "current_backend_hashes_still_match": true
+  },
+  "gold_summary": {
+    "AI-2566-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "DSBA-2565-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "DSBA-2565-no-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "IT-2565-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "IT-2565-no-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "DSBA-2560-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "DSBA-2560-no-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "IT-2560-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "IT-2560-no-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "BIT-2565-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "BIT-2565-no-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "BIT-2560-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "BIT-2560-no-coop": {
+      "passed": 5,
+      "n": 5
+    },
+    "legacy": {
+      "passed": 5,
+      "n": 5
+    }
+  },
+  "pdf_routes": [
+    {
+      "file": "AI.pdf",
+      "url": "http://127.0.0.1:8000/api/source/AI.pdf#page=26",
+      "status": 206,
+      "content_type": "application/pdf",
+      "pdf_signature": true
+    },
+    {
+      "file": "BIT-60.pdf",
+      "url": "http://127.0.0.1:8000/api/source/BIT-60.pdf#page=30",
+      "status": 206,
+      "content_type": "application/pdf",
+      "pdf_signature": true
+    },
+    {
+      "file": "BIT-65.pdf",
+      "url": "http://127.0.0.1:8000/api/source/BIT-65.pdf#page=35",
+      "status": 206,
+      "content_type": "application/pdf",
+      "pdf_signature": true
+    },
+    {
+      "file": "DSBA-60.pdf",
+      "url": "http://127.0.0.1:8000/api/source/DSBA-60.pdf#page=34",
+      "status": 206,
+      "content_type": "application/pdf",
+      "pdf_signature": true
+    },
+    {
+      "file": "DSBA.pdf",
+      "url": "http://127.0.0.1:8000/api/source/DSBA.pdf#page=36",
+      "status": 206,
+      "content_type": "application/pdf",
+      "pdf_signature": true
+    },
+    {
+      "file": "IT-60.pdf",
+      "url": "http://127.0.0.1:8000/api/source/IT-60.pdf#page=40",
+      "status": 206,
+      "content_type": "application/pdf",
+      "pdf_signature": true
+    },
+    {
+      "file": "IT.pdf",
+      "url": "http://127.0.0.1:8000/api/source/IT.pdf#page=44",
+      "status": 206,
+      "content_type": "application/pdf",
+      "pdf_signature": true
+    }
+  ],
+  "plan_rendering": {
+    "api_status": 200,
+    "api_rows": 20,
+    "ui_rows": 20,
+    "matches": [
+      {
+        "code": "06016405",
+        "name": "พื้นฐานความมั่นคงปลอดภัยไซเบอร์",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06016405พื้นฐานความมั่นคงปลอดภัยไซเบอร์รายละเอียดเพิ่มเติมCYBERSECURITY FUNDAMENTALSหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(3-0-6)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3"
+      },
+      {
+        "code": "06016410",
+        "name": "วิศวกรรมซอฟต์แวร์",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06016410วิศวกรรมซอฟต์แวร์รายละเอียดเพิ่มเติมSOFTWARE ENGINEERINGหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(3-0-6)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3"
+      },
+      {
+        "code": "06016412",
+        "name": "โครงสร้างระบบคอมพิวเตอร์และระบบปฏิบัติการ",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06016412โครงสร้างระบบคอมพิวเตอร์และระบบปฏิบัติการรายละเอียดเพิ่มเติมCOMPUTER ORGANIZATION AND OPERATING SYSTEMหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3"
+      },
+      {
+        "code": "06066302",
+        "name": "การเขียนโปรแกรมเว็บพื้นฐาน",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06066302การเขียนโปรแกรมเว็บพื้นฐานรายละเอียดเพิ่มเติมFUNDAMENTAL WEB PROGRAMMINGหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3"
+      },
+      {
+        "code": "06016414",
+        "name": "ระบบฐานข้อมูลแบบโนเอสคิวแอล",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06016414ระบบฐานข้อมูลแบบโนเอสคิวแอลรายละเอียดเพิ่มเติมNOSQL DATABASE SYSTEMSหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3"
+      },
+      {
+        "code": "06016415",
+        "name": "การเขียนโปรแกรมเชิงฟังก์ชัน",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06016415การเขียนโปรแกรมเชิงฟังก์ชันรายละเอียดเพิ่มเติมFUNCTIONAL PROGRAMMINGหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3"
+      },
+      {
+        "code": "06016419",
+        "name": "โครงสร้างพื้นฐานเครือข่ายการสื่อสาร",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06016419โครงสร้างพื้นฐานเครือข่ายการสื่อสารรายละเอียดเพิ่มเติมCOMMUNICATION NETWORK INFRASTRUCTUREหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3"
+      },
+      {
+        "code": "06016420",
+        "name": "ระบบโครงสร้างพื้นฐานและการบริการ",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06016420ระบบโครงสร้างพื้นฐานและการบริการรายละเอียดเพิ่มเติมINFRASTRUCTURE SYSTEMS AND SERVICESหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3"
+      },
+      {
+        "code": "06016424",
+        "name": "การออกแบบส่วนต่อประสานกับมนุษย์",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06016424การออกแบบส่วนต่อประสานกับมนุษย์รายละเอียดเพิ่มเติมHUMAN INTERFACE DESIGNหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(3-0-6)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3"
+      },
+      {
+        "code": "06016425",
+        "name": "พื้นฐานการออกแบบทัศนศิลป์สำหรับสื่อปฏิสัมพันธ์",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06016425พื้นฐานการออกแบบทัศนศิลป์สำหรับสื่อปฏิสัมพันธ์รายละเอียดเพิ่มเติมVISUAL DESIGN FUNDAMENTALS FOR INTERACTIVE MEDIAหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 41 / หน้า 36 ในเล่ม3"
+      },
+      {
+        "code": "06016405",
+        "name": "พื้นฐานความมั่นคงปลอดภัยไซเบอร์",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06016405พื้นฐานความมั่นคงปลอดภัยไซเบอร์รายละเอียดเพิ่มเติมCYBERSECURITY FUNDAMENTALSหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(3-0-6)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3"
+      },
+      {
+        "code": "06016410",
+        "name": "วิศวกรรมซอฟต์แวร์",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06016410วิศวกรรมซอฟต์แวร์รายละเอียดเพิ่มเติมSOFTWARE ENGINEERINGหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(3-0-6)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3"
+      },
+      {
+        "code": "06016412",
+        "name": "โครงสร้างระบบคอมพิวเตอร์และระบบปฏิบัติการ",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06016412โครงสร้างระบบคอมพิวเตอร์และระบบปฏิบัติการรายละเอียดเพิ่มเติมCOMPUTER ORGANIZATION AND OPERATING SYSTEMหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3"
+      },
+      {
+        "code": "06066302",
+        "name": "การเขียนโปรแกรมเว็บพื้นฐาน",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06066302การเขียนโปรแกรมเว็บพื้นฐานรายละเอียดเพิ่มเติมFUNDAMENTAL WEB PROGRAMMINGหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3"
+      },
+      {
+        "code": "06016414",
+        "name": "ระบบฐานข้อมูลแบบโนเอสคิวแอล",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06016414ระบบฐานข้อมูลแบบโนเอสคิวแอลรายละเอียดเพิ่มเติมNOSQL DATABASE SYSTEMSหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3"
+      },
+      {
+        "code": "06016415",
+        "name": "การเขียนโปรแกรมเชิงฟังก์ชัน",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06016415การเขียนโปรแกรมเชิงฟังก์ชันรายละเอียดเพิ่มเติมFUNCTIONAL PROGRAMMINGหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3"
+      },
+      {
+        "code": "06016419",
+        "name": "โครงสร้างพื้นฐานเครือข่ายการสื่อสาร",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06016419โครงสร้างพื้นฐานเครือข่ายการสื่อสารรายละเอียดเพิ่มเติมCOMMUNICATION NETWORK INFRASTRUCTUREหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3"
+      },
+      {
+        "code": "06016420",
+        "name": "ระบบโครงสร้างพื้นฐานและการบริการ",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06016420ระบบโครงสร้างพื้นฐานและการบริการรายละเอียดเพิ่มเติมINFRASTRUCTURE SYSTEMS AND SERVICESหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3"
+      },
+      {
+        "code": "06016424",
+        "name": "การออกแบบส่วนต่อประสานกับมนุษย์",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06016424การออกแบบส่วนต่อประสานกับมนุษย์รายละเอียดเพิ่มเติมHUMAN INTERFACE DESIGNหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(3-0-6)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3"
+      },
+      {
+        "code": "06016425",
+        "name": "พื้นฐานการออกแบบทัศนศิลป์สำหรับสื่อปฏิสัมพันธ์",
+        "code_present": true,
+        "name_present": true,
+        "credits_present": true,
+        "recorded_text": "06016425พื้นฐานการออกแบบทัศนศิลป์สำหรับสื่อปฏิสัมพันธ์รายละเอียดเพิ่มเติมVISUAL DESIGN FUNDAMENTALS FOR INTERACTIVE MEDIAหน่วยกิต (บรรยาย-ปฏิบัติ-ศึกษาด้วยตนเอง): 3(2-2-5)หมวดวิชา: หมวดวิชาเฉพาะPDF หน้า 34 / หน้า 29 ในเล่ม3"
+      }
+    ],
+    "all_match": true
+  },
+  "rendered_contrast": {
+    "body": 16.29,
+    "muted": 6.26,
+    "link": 10.54,
+    "primary_button": 7.41
+  },
+  "ui_observation_checks": {
+    "all_available_selector_combinations": true,
+    "loading_locks_controls": true,
+    "insufficient_evidence_shows_warning": true,
+    "validation_focuses_input": true,
+    "network_error_retains_question": true,
+    "retry_recovers": true,
+    "timeout_retains_question": true,
+    "Shift_Enter_preserves_newline": true,
+    "details_keyboard": true,
+    "answer_identity_does_not_follow_selector": true,
+    "long_answer_history_cap": true,
+    "no_narrow_overflow": true,
+    "citation_touch_targets": true
+  },
+  "audit_report_summaries": [
+    {
+      "report": "audit_AI-2566-coop-c60dc05e.md",
+      "summary": "ฐานข้อมูล: `work/lab8b_ai/curriculum.db`; ตรวจรายวิชา 299 แถว\nผลนี้แยก PASS / FAIL / SKIPPED / NEEDS_REVIEW; ยังไม่ใช่ผลยืนยันหนังสือทั้งเล่ม",
+      "high": {
+        "FAIL": 0,
+        "NEEDS_REVIEW": 2,
+        "SKIPPED": 1
+      }
+    },
+    {
+      "report": "audit_BIT-2560-coop-31479bf8.md",
+      "summary": "ฐานข้อมูล: `work/lab8b_bit_2560_coop/curriculum.db`; ตรวจรายวิชา 38 แถว\nผลนี้แยก PASS / FAIL / SKIPPED / NEEDS_REVIEW; ยังไม่ใช่ผลยืนยันหนังสือทั้งเล่ม",
+      "high": {
+        "FAIL": 0,
+        "NEEDS_REVIEW": 2,
+        "SKIPPED": 0
+      }
+    },
+    {
+      "report": "audit_BIT-2560-no-coop-b0ae707e.md",
+      "summary": "ฐานข้อมูล: `work/lab8b_bit_2560_no_coop/curriculum.db`; ตรวจรายวิชา 38 แถว\nผลนี้แยก PASS / FAIL / SKIPPED / NEEDS_REVIEW; ยังไม่ใช่ผลยืนยันหนังสือทั้งเล่ม",
+      "high": {
+        "FAIL": 0,
+        "NEEDS_REVIEW": 2,
+        "SKIPPED": 0
+      }
+    },
+    {
+      "report": "audit_BIT-2565-coop-088b37ca.md",
+      "summary": "ฐานข้อมูล: `work/lab8b_bit_2565_coop/curriculum.db`; ตรวจรายวิชา 302 แถว\nผลนี้แยก PASS / FAIL / SKIPPED / NEEDS_REVIEW; ยังไม่ใช่ผลยืนยันหนังสือทั้งเล่ม",
+      "high": {
+        "FAIL": 1,
+        "NEEDS_REVIEW": 2,
+        "SKIPPED": 1
+      }
+    },
+    {
+      "report": "audit_BIT-2565-no-coop-260cb559.md",
+      "summary": "ฐานข้อมูล: `work/lab8b_bit_2565_no_coop/curriculum.db`; ตรวจรายวิชา 301 แถว\nผลนี้แยก PASS / FAIL / SKIPPED / NEEDS_REVIEW; ยังไม่ใช่ผลยืนยันหนังสือทั้งเล่ม",
+      "high": {
+        "FAIL": 1,
+        "NEEDS_REVIEW": 2,
+        "SKIPPED": 1
+      }
+    },
+    {
+      "report": "audit_DSBA-2560-coop-74705843.md",
+      "summary": "ฐานข้อมูล: `work/lab8b_dsba_2560_coop/curriculum.db`; ตรวจรายวิชา 39 แถว\nผลนี้แยก PASS / FAIL / SKIPPED / NEEDS_REVIEW; ยังไม่ใช่ผลยืนยันหนังสือทั้งเล่ม",
+      "high": {
+        "FAIL": 0,
+        "NEEDS_REVIEW": 2,
+        "SKIPPED": 0
+      }
+    },
+    {
+      "report": "audit_DSBA-2560-coop-c753fc11.md",
+      "summary": "ฐานข้อมูล: `work/_repair_validation/dsba_2560_coop.db`; ตรวจรายวิชา 39 แถว\nผลนี้แยก PASS / FAIL / SKIPPED / NEEDS_REVIEW; ยังไม่ใช่ผลยืนยันหนังสือทั้งเล่ม",
+      "high": {
+        "FAIL": 0,
+        "NEEDS_REVIEW": 2,
+        "SKIPPED": 0
+      }
+    },
+    {
+      "report": "audit_DSBA-2560-no-coop-3a975ac1.md",
+      "summary": "ฐานข้อมูล: `work/_repair_validation/dsba_2560_no_coop.db`; ตรวจรายวิชา 38 แถว\nผลนี้แยก PASS / FAIL / SKIPPED / NEEDS_REVIEW; ยังไม่ใช่ผลยืนยันหนังสือทั้งเล่ม",
+      "high": {
+        "FAIL": 0,
+        "NEEDS_REVIEW": 2,
+        "SKIPPED": 0
+      }
+    },
+    {
+      "report": "audit_DSBA-2560-no-coop-d134a7bc.md",
+      "summary": "ฐานข้อมูล: `work/lab8b_dsba_2560_no_coop/curriculum.db`; ตรวจรายวิชา 38 แถว\nผลนี้แยก PASS / FAIL / SKIPPED / NEEDS_REVIEW; ยังไม่ใช่ผลยืนยันหนังสือทั้งเล่ม",
+      "high": {
+        "FAIL": 0,
+        "NEEDS_REVIEW": 2,
+        "SKIPPED": 0
+      }
+    },
+    {
+      "report": "audit_DSBA-2565-coop-9834b6d4.md",
+      "summary": "ฐานข้อมูล: `work/lab8b_dsba_coop/curriculum.db`; ตรวจรายวิชา 294 แถว\nผลนี้แยก PASS / FAIL / SKIPPED / NEEDS_REVIEW; ยังไม่ใช่ผลยืนยันหนังสือทั้งเล่ม",
+      "high": {
+        "FAIL": 0,
+        "NEEDS_REVIEW": 2,
+        "SKIPPED": 1
+      }
+    },
+    {
+      "report": "audit_DSBA-2565-no-coop-f45e11dd.md",
+      "summary": "ฐานข้อมูล: `work/lab8b_dsba_no_coop/curriculum.db`; ตรวจรายวิชา 292 แถว\nผลนี้แยก PASS / FAIL / SKIPPED / NEEDS_REVIEW; ยังไม่ใช่ผลยืนยันหนังสือทั้งเล่ม",
+      "high": {
+        "FAIL": 0,
+        "NEEDS_REVIEW": 2,
+        "SKIPPED": 1
+      }
+    },
+    {
+      "report": "audit_IT-2560-coop-4c7e74ac.md",
+      "summary": "ฐานข้อมูล: `work/lab8b_it_2560_coop/curriculum.db`; ตรวจรายวิชา 58 แถว\nผลนี้แยก PASS / FAIL / SKIPPED / NEEDS_REVIEW; ยังไม่ใช่ผลยืนยันหนังสือทั้งเล่ม",
+      "high": {
+        "FAIL": 0,
+        "NEEDS_REVIEW": 2,
+        "SKIPPED": 0
+      }
+    },
+    {
+      "report": "audit_IT-2560-no-coop-7f1f8dd6.md",
+      "summary": "ฐานข้อมูล: `work/lab8b_it_2560_no_coop/curriculum.db`; ตรวจรายวิชา 58 แถว\nผลนี้แยก PASS / FAIL / SKIPPED / NEEDS_REVIEW; ยังไม่ใช่ผลยืนยันหนังสือทั้งเล่ม",
+      "high": {
+        "FAIL": 0,
+        "NEEDS_REVIEW": 2,
+        "SKIPPED": 0
+      }
+    },
+    {
+      "report": "audit_IT-2565-coop-7b1f22b2.md",
+      "summary": "ฐานข้อมูล: `work/lab8b_it_coop/curriculum.db`; ตรวจรายวิชา 305 แถว\nผลนี้แยก PASS / FAIL / SKIPPED / NEEDS_REVIEW; ยังไม่ใช่ผลยืนยันหนังสือทั้งเล่ม",
+      "high": {
+        "FAIL": 1,
+        "NEEDS_REVIEW": 3,
+        "SKIPPED": 1
+      }
+    },
+    {
+      "report": "audit_IT-2565-no-coop-1d3b46a8.md",
+      "summary": "ฐานข้อมูล: `work/lab8b_it_no_coop/curriculum.db`; ตรวจรายวิชา 303 แถว\nผลนี้แยก PASS / FAIL / SKIPPED / NEEDS_REVIEW; ยังไม่ใช่ผลยืนยันหนังสือทั้งเล่ม",
+      "high": {
+        "FAIL": 1,
+        "NEEDS_REVIEW": 2,
+        "SKIPPED": 1
+      }
+    },
+    {
+      "report": "audit_legacy-course-catalog-9bde1ac4.md",
+      "summary": "ฐานข้อมูล: `curriculum.db`; ตรวจรายวิชา 6147 แถว\nผลนี้แยก PASS / FAIL / SKIPPED / NEEDS_REVIEW; ยังไม่ใช่ผลยืนยันหนังสือทั้งเล่ม",
+      "high": {
+        "FAIL": 1372,
+        "NEEDS_REVIEW": 4843,
+        "SKIPPED": 0
+      }
+    }
+  ],
+  "unverified": [
+    "In-app PDF viewer rendered blank; routes and exact URLs checked, not visible PDF page rendering.",
+    "Physical phones, screen readers, true browser 200% zoom and OS reduced-motion setting were not exercised.",
+    "Cold open-ended model request timed out at 30 seconds; UI handling verified, model response not verified.",
+    "Full book/source fidelity, legacy selector and source-blocked L4 remain previous audit limitations."
+  ],
+  "passed": true
+}

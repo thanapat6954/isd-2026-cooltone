@@ -1,3 +1,5 @@
+import { citationHref, sourceFilename, pageLabel, shouldSubmitOnEnter } from './presentation.mjs';
+
 // Edit these constants when connecting to another backend or changing mock mode.
 // The backend serves /frontend/ on the same origin; standalone previews use 8000.
 const API_BASE = window.location.pathname.startsWith("/frontend/")
@@ -82,6 +84,11 @@ const elements = {
   errorAction: document.querySelector("#error-action"),
   historyList: document.querySelector("#history-list"),
   historyEmpty: document.querySelector("#history-empty"),
+  selectionContext: document.querySelector("#selection-context"),
+  answerContext: document.querySelector("#answer-context"),
+  questionError: document.querySelector("#question-error"),
+  retryButton: document.querySelector("#retry-button"),
+  resultCard: document.querySelector(".result-card"),
 };
 
 // This array is intentionally in memory only.
@@ -110,6 +117,7 @@ function populateVersionOptions() {
     option.textContent = version.label;
     elements.version.append(option);
   });
+  elements.selectionContext.textContent = selected.label;
 }
 
 // Return the Thai label while keeping the API value unchanged.
@@ -142,6 +150,7 @@ function populateExamples() {
 
 // Display exactly one of the four application states.
 function showState(stateName) {
+  elements.resultCard.dataset.state = stateName;
   const stateMap = {
     idle: elements.idleState,
     loading: elements.loadingState,
@@ -155,10 +164,13 @@ function showState(stateName) {
 
 // Lock controls while a request is running.
 function setLoading(isLoading) {
+  elements.resultCard.setAttribute('aria-busy', String(isLoading));
   elements.curriculum.disabled = isLoading;
   elements.version.disabled = isLoading;
   elements.question.disabled = isLoading;
   elements.askButton.disabled = isLoading;
+  elements.retryButton.disabled = isLoading;
+  elements.exampleList.querySelectorAll('button').forEach((button) => { button.disabled = isLoading; });
   elements.questionCard.classList.toggle("loading", isLoading);
 }
 
@@ -269,16 +281,23 @@ function renderSources(sources) {
     const title = document.createElement("p");
     item.className = "source-item";
     title.className = "source-title";
-    const pageLabel = source.book_page && source.book_page !== source.page
-      ? `PDF หน้า ${source.page} (หน้า ${source.book_page} ในเล่ม)`
-      : `PDF หน้า ${source.page}`;
-    title.textContent = `${pageLabel} · ${source.section}`;
+    title.textContent = `${pageLabel(source.page, source.book_page)} · ${source.section || 'ยังไม่ยืนยันหัวข้อ'}`;
     item.append(title);
     if (source.quote) {
       const quote = document.createElement("p");
       quote.className = "source-quote";
       quote.textContent = `“${source.quote}”`;
       item.append(quote);
+    }
+    const href = citationHref(API_BASE, sourceFilename(source.section), source.page);
+    if (href) {
+      const link = document.createElement('a');
+      link.className = 'source-link';
+      link.textContent = 'เปิดหน้าที่อ้างอิงใน PDF (แท็บใหม่)';
+      link.href = href;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      item.append(link);
     }
     elements.sourceList.append(item);
   });
@@ -311,14 +330,20 @@ function renderStudyPlan(payload) {
       const alternatives = [...new Set(groupIds.filter((id) => groupIds.filter((other) => other === id).length > 1))];
       if (alternatives.length) add(block, 'p', 'รายวิชาที่เป็นชุดตัวเลือก “หรือ” ไม่ต้องเรียนทุกตัวเลือกในชุดเดียวกัน', 'plan-note');
       const table = add(block, 'table', null, 'plan-table');
+      table.setAttribute('role', 'table');
+      add(table, 'caption', `${card.program} พ.ศ. ${card.version} — ${card.plan_label} — ${section.title}`, 'sr-only');
       const head = add(add(table, 'thead'), 'tr');
       ['รหัสวิชา', 'ชื่อวิชา', 'หน่วยกิต'].forEach((text) => add(head, 'th', text).scope = 'col');
       const body = add(table, 'tbody');
+      body.setAttribute('role', 'rowgroup');
       (section.rows || []).forEach((row) => {
         const tr = add(body, 'tr');
+        tr.setAttribute('role', 'row');
         const placeholder = row.is_placeholder || /^ELEC-/i.test(row.code || '');
-        add(tr, 'td', row.raw_code || row.code_pattern || (placeholder ? 'ไม่กำหนดรหัส' : row.code), 'plan-code');
-        const name = add(tr, 'td');
+        const code = add(tr, 'td', row.raw_code || row.code_pattern || (placeholder ? 'ไม่กำหนดรหัส' : row.code), 'plan-code');
+        code.setAttribute('role', 'cell');
+        const name = add(tr, 'td', null, 'plan-name');
+        name.setAttribute('role', 'cell');
         add(name, 'span', row.name_th || row.name_en || 'เลือกจากรายวิชาในหมวดนี้ (ยังไม่ยืนยันชื่อหมวดจากข้อมูลที่นำเข้า)');
         if (alternatives.includes(row.alt_group)) add(name, 'small', `ตัวเลือก “หรือ” ชุดที่ ${alternatives.indexOf(row.alt_group) + 1}`, 'plan-secondary');
         if (row.name_en || row.credits_raw || row.category || row.note) {
@@ -330,12 +355,16 @@ function renderStudyPlan(payload) {
           if (row.note) add(details, 'p', row.note);
         }
         const credits = add(tr, 'td', row.credits ?? 'ยังไม่ยืนยัน', 'plan-credits');
+        credits.setAttribute('role', 'cell');
+        credits.dataset.label = 'หน่วยกิต';
         if (placeholder) add(credits, 'small', 'วิชาเลือก', 'plan-secondary');
         if (row.page_number) {
-          const text = `PDF หน้า ${row.page_number}${row.printed_page_number ? ` / หน้า ${row.printed_page_number} ในเล่ม` : ' / หน้าในเล่มยังไม่ยืนยัน'}`;
-          if (/^(AI|DSBA|DSBA-60|IT|IT-60|BIT-65|BIT-60)\.pdf$/.test(row.source_file || '')) {
+          const text = pageLabel(row.page_number, row.printed_page_number);
+          const href = citationHref(API_BASE, row.source_file, row.page_number);
+          if (href) {
             const link = add(name, 'a', text, 'plan-source');
-            link.href = `${API_BASE}/api/source/${encodeURIComponent(row.source_file)}#page=${Number(row.page_number)}`;
+            link.href = href;
+            link.setAttribute('aria-label', `${text} · ${row.source_file} (เปิดแท็บใหม่)`);
             link.target = '_blank'; link.rel = 'noopener noreferrer';
           } else add(name, 'small', text, 'plan-secondary');
         }
@@ -344,7 +373,8 @@ function renderStudyPlan(payload) {
   });
 }
 
-function renderSuccess(data, roundTripMs) {
+function renderSuccess(data, roundTripMs, payload) {
+  elements.answerContext.textContent = `${payload.curriculum} · ${getVersionLabel(payload.curriculum, payload.version)} · ${payload.question}`;
   const sources = Array.isArray(data.sources) ? data.sources : [];
   const hasLowConfidence = typeof data.confidence === "number" && data.confidence < 0.5;
   elements.answerText.textContent = data.answer || "เซิร์ฟเวอร์ไม่ได้ส่งข้อความคำตอบกลับมา";
@@ -370,12 +400,20 @@ function renderError(error, category = "request") {
   };
   elements.errorMessage.textContent = error.message;
   elements.errorAction.textContent = messages[category];
+  elements.retryButton.classList.toggle('hidden', category === 'validation');
+  if (category === 'validation') {
+    elements.questionError.textContent = error.message;
+    elements.questionError.classList.remove('hidden');
+    elements.question.setAttribute('aria-invalid', 'true');
+    elements.question.focus();
+  }
   showState("error");
 }
 
 // Submit one validated question and move through Loading to Success or Error.
 async function handleSubmit(event) {
   event.preventDefault();
+  if (elements.askButton.disabled) return;
   const question = elements.question.value.trim();
   const validationError = validateQuestion(question);
   if (validationError) {
@@ -388,6 +426,8 @@ async function handleSubmit(event) {
     curriculum: elements.curriculum.value,
     version: elements.version.value,
   };
+  elements.questionError.classList.add('hidden');
+  elements.question.removeAttribute('aria-invalid');
   addHistory(
     question,
     payload.curriculum,
@@ -399,7 +439,7 @@ async function handleSubmit(event) {
 
   try {
     const data = USE_MOCK ? await requestMock(payload) : await requestApi(payload);
-    renderSuccess(data, performance.now() - startedAt);
+    renderSuccess(data, performance.now() - startedAt, payload);
   } catch (error) {
     if (error.name === "AbortError") {
       renderError(new Error("หมดเวลารอคำตอบจากเซิร์ฟเวอร์"), "timeout");
@@ -415,7 +455,7 @@ async function handleSubmit(event) {
 
 // Enter submits; Shift+Enter still creates a new line.
 function handleQuestionKeydown(event) {
-  if (event.key === "Enter" && !event.shiftKey) {
+  if (shouldSubmitOnEnter(event, elements.askButton.disabled)) {
     event.preventDefault();
     elements.form.requestSubmit();
   }
@@ -435,6 +475,7 @@ function initializeApp() {
   elements.question.addEventListener("input", updateCharacterCount);
   elements.question.addEventListener("keydown", handleQuestionKeydown);
   elements.form.addEventListener("submit", handleSubmit);
+  elements.retryButton.addEventListener('click', () => elements.form.requestSubmit());
 }
 
 initializeApp();
