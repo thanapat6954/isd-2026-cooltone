@@ -1,0 +1,6 @@
+Final owned-service cleanup observed 2026-10-07:
+Stopped the verified backend on port 8001. Ollama and databases are unchanged.
+Stopped owned isolated model 12704 (validated start ticks 639269110226890989).
+Stopped owned README preview (validated command line preview_readme.mjs).
+User services preserved: port8000 PID28104, port11434 PID19364.
+Temporary tabs9/10/11 closed; existing user tabs preserved.

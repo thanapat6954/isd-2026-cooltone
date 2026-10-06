@@ -1,0 +1,17 @@
+test_backend_frontend_uses_same_origin (tests.test_web_routing.WebRoutingTests.test_backend_frontend_uses_same_origin) ... ok
+test_frontend_and_both_question_contracts_are_registered (tests.test_web_routing.WebRoutingTests.test_frontend_and_both_question_contracts_are_registered) ... ok
+test_launcher_uses_bounded_elapsed_time_and_keeps_api_port_guard (tests.test_web_routing.WebRoutingTests.test_launcher_uses_bounded_elapsed_time_and_keeps_api_port_guard) ... ok
+test_root_redirects_to_real_thai_frontend (tests.test_web_routing.WebRoutingTests.test_root_redirects_to_real_thai_frontend) ... ok
+test_all_live_programs_year_sql_preserves_database_page_pairs (tests.test_week11_handoff.ReadinessAndCitationTests.test_all_live_programs_year_sql_preserves_database_page_pairs) ... ok
+test_bad_evidence_does_not_make_clickable_invalid_pages (tests.test_week11_handoff.ReadinessAndCitationTests.test_bad_evidence_does_not_make_clickable_invalid_pages) ... ok
+test_invalid_tags_response_is_not_ready (tests.test_week11_handoff.ReadinessAndCitationTests.test_invalid_tags_response_is_not_ready) ... ok
+test_null_models_is_not_ready (tests.test_week11_handoff.ReadinessAndCitationTests.test_null_models_is_not_ready) ... ok
+test_pairing_is_preserved_across_nonmonotonic_appendix_folios (tests.test_week11_handoff.ReadinessAndCitationTests.test_pairing_is_preserved_across_nonmonotonic_appendix_folios) ... ok
+test_running_ollama_without_configured_model_is_not_ready (tests.test_week11_handoff.ReadinessAndCitationTests.test_running_ollama_without_configured_model_is_not_ready) ... ok
+test_unpaired_lists_do_not_fabricate_printed_pages (tests.test_week11_handoff.ReadinessAndCitationTests.test_unpaired_lists_do_not_fabricate_printed_pages) ... ok
+test_year_quote_is_not_a_semester_quote (tests.test_week11_handoff.ReadinessAndCitationTests.test_year_quote_is_not_a_semester_quote) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.127s
+
+OK

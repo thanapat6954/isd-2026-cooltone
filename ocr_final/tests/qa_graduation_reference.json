@@ -1,0 +1,13 @@
+{
+  "purpose": "Source-image-reviewed development regressions; not held-out and not full graduation-condition accuracy",
+  "reviewed_on": "2026-10-06",
+  "source_cases": [
+    {"program": "AI", "version": 2566, "source_file": "AI.pdf", "page": 68, "book_page": 64, "regulation_year": 2565, "requires_plo": true},
+    {"program": "DSBA", "version": 2560, "source_file": "DSBA-60.pdf", "page": 60, "book_page": 55, "regulation_year": 2559},
+    {"program": "IT", "version": 2560, "source_file": "IT-60.pdf", "page": 69, "book_page": 64, "regulation_year": 2559},
+    {"program": "BIT", "version": 2560, "source_file": "BIT-60.pdf", "page": 53, "book_page": 48, "regulation_year": 2559},
+    {"program": "DSBA", "version": 2565, "source_file": "DSBA.pdf", "page": 78, "book_page": 77, "regulation_year": 2564},
+    {"program": "IT", "version": 2565, "source_file": "IT.pdf", "page": 89, "book_page": 88, "regulation_year": 2564},
+    {"program": "BIT", "version": 2565, "source_file": "BIT-65.pdf", "page": 77, "book_page": 72, "regulation_year": 2564}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "brokenAnchors": [],
+  "images": [
+    {
+      "loaded": true,
+      "src": "docs/assets/curriculum-banner.svg"
+    },
+    {
+      "loaded": true,
+      "src": "docs/assets/technology-badges.svg"
+    },
+    {
+      "loaded": true,
+      "src": "docs/results/week11/handoff_ui_full.png"
+    }
+  ]
+}

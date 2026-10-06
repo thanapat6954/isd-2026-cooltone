@@ -1,0 +1,17 @@
+{
+  "purpose": "Production citation review only; no evaluation questions or new course facts",
+  "review_method": "Rendered official page visually inspected on 2026-10-07",
+  "reviews": [
+    {
+      "program": "IT", "version": 2560, "plans": ["coop", "no-coop"],
+      "source_file": "IT-60.pdf",
+      "sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "pdf_page": 6, "book_page": 1,
+      "section": "หมวดที่ 1 ข้อมูลทั่วไป ข้อ 1, 4 และ 5.1",
+      "name_th_base": "เทคโนโลยีสารสนเทศ", "total_credits": 130, "years": 4,
+      "review_status": "visually_verified",
+      "image_sha256": "59f666df23ae9c7090b6b8c077fa8328a98d44f81e78f4a52d408cde1cd3159f",
+      "scope": "citation_only_existing_facts"
+    }
+  ]
+}

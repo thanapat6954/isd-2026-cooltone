@@ -124,7 +124,7 @@ def _source_section(row: dict[str, Any], intent: str) -> str:
         f"พ.ศ. {source.get('curriculum_version')}" if source.get("curriculum_version") else None,
         PLAN_LABELS.get(source.get('plan'), source.get('plan')) if source.get("plan") else None,
     ]
-    for key in ("name_th", "name_en", "category", "note", "program_id"):
+    for key in ("section", "name_th", "name_en", "category", "note", "program_id"):
         if row.get(key):
             context.append(str(row[key]))
             return " · ".join(value for value in context if value)
@@ -147,6 +147,8 @@ def _source_section(row: dict[str, Any], intent: str) -> str:
 
 def _source_quote(row: dict[str, Any]) -> str | None:
     """Build a readable excerpt instead of exposing raw database key/value text."""
+    if row.get('rule_text'):
+        return row['rule_text']
     if "prerequisite_status" in row:
         status = row["prerequisite_status"]
         identity = f"{row.get('code')} {row.get('name_th') or ''}".strip()
@@ -172,7 +174,8 @@ def _source_quote(row: dict[str, Any]) -> str | None:
     if row.get("years") is not None:
         return f"หลักสูตรกำหนดระยะเวลาศึกษา {row['years']} ปี"
     if row.get("credits") is not None and row.get("year") is not None:
-        return f"ปี {row['year']} ภาคการศึกษาที่ {row.get('semester')} รวม {row['credits']} หน่วยกิต"
+        term = f" ภาคการศึกษาที่ {row['semester']}" if row.get('semester') is not None else ' ทั้งปี'
+        return f"ปี {row['year']}{term} รวม {row['credits']} หน่วยกิต"
     return None
 
 
@@ -181,12 +184,29 @@ def _frontend_sources(result: dict[str, Any]) -> list[dict[str, Any]]:
     sources: list[dict[str, Any]] = []
     seen: set[tuple[int, int | None, str]] = set()
     for row in result.get("rows") or []:
-        section = _source_section(row, str(result.get("intent") or ""))
         quote = _source_quote(row)
-        pdf_pages = _source_pages(row)
-        book_pages = _source_book_pages(row)
-        for index, page in enumerate(pdf_pages):
-            book_page = book_pages[index] if index < len(book_pages) else None
+        evidence = row.get('page_evidence')
+        if isinstance(evidence, str):
+            try:
+                evidence = json.loads(evidence)
+            except (ValueError, TypeError):
+                evidence = None
+        if not isinstance(evidence, list):
+            pdf_pages = _source_pages(row)
+            book_pages = _source_book_pages(row)
+            # A single pair is unambiguous. Never guess pairings between
+            # independently aggregated lists, even if their lengths match.
+            evidence = [{'page': page, 'book_page': book_pages[0] if len(pdf_pages) == len(book_pages) == 1 else None}
+                        for page in pdf_pages]
+        for citation in evidence:
+            if not isinstance(citation, dict) or type(citation.get('page')) is not int or citation['page'] < 1:
+                continue
+            page = citation['page']
+            book_page = citation.get('book_page')
+            if type(book_page) is not int or book_page < 1:
+                book_page = None
+            citation_row = {**row, **({'source_file': citation['source_file']} if citation.get('source_file') else {})}
+            section = _source_section(citation_row, str(result.get('intent') or ''))
             key = (page, book_page, section)
             if key in seen:
                 continue

@@ -1,0 +1,149 @@
+{
+  "scope": "current uncommitted code, isolated DB snapshots, reused verified venv/model files, separate cold service processes",
+  "workspace": "<TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final",
+  "steps": [
+    {
+      "step": "runtime_install",
+      "command": [
+        "<TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "install",
+        "-r",
+        "requirements-web-tested.txt"
+      ],
+      "exit_code": 0,
+      "stdout": "Requirement already satisfied: fastapi==0.142.2 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from -r requirements-web-tested.txt (line 3)) (0.142.2)\nRequirement already satisfied: uvicorn==0.54.0 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from uvicorn[standard]==0.54.0->-r requirements-web-tested.txt (line 4)) (0.54.0)\nRequirement already satisfied: python-dotenv==1.2.4 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from -r requirements-web-tested.txt (line 5)) (1.2.4)\nRequirement already satisfied: requests==2.34.2 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from -r requirements-web-tested.txt (line 6)) (2.34.2)\nRequirement already satisfied: pydantic==2.13.5 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from -r requirements-web-tested.txt (line 7)) (2.13.5)\nRequirement already satisfied: starlette>=0.46.0 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from fastapi==0.142.2->-r requirements-web-tested.txt (line 3)) (1.7.0)\nRequirement already satisfied: typing-extensions>=4.8.0 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from fastapi==0.142.2->-r requirements-web-tested.txt (line 3)) (4.16.0)\nRequirement already satisfied: typing-inspection>=0.4.2 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from fastapi==0.142.2->-r requirements-web-tested.txt (line 3)) (0.4.4)\nRequirement already satisfied: annotated-doc>=0.0.2 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from fastapi==0.142.2->-r requirements-web-tested.txt (line 3)) (0.0.5)\nRequirement already satisfied: opentelemetry-api>=1.44.0 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from fastapi==0.142.2->-r requirements-web-tested.txt (line 3)) (1.45.0)\nRequirement already satisfied: click>=7.0 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from uvicorn==0.54.0->uvicorn[standard]==0.54.0->-r requirements-web-tested.txt (line 4)) (8.5.0)\nRequirement already satisfied: h11>=0.8 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from uvicorn==0.54.0->uvicorn[standard]==0.54.0->-r requirements-web-tested.txt (line 4)) (0.16.0)\nRequirement already satisfied: charset_normalizer<4,>=2 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from requests==2.34.2->-r requirements-web-tested.txt (line 6)) (3.5.2)\nRequirement already satisfied: idna<4,>=2.5 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from requests==2.34.2->-r requirements-web-tested.txt (line 6)) (3.20)\nRequirement already satisfied: urllib3<3,>=1.26 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from requests==2.34.2->-r requirements-web-tested.txt (line 6)) (2.8.0)\nRequirement already satisfied: certifi>=2023.5.7 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from requests==2.34.2->-r requirements-web-tested.txt (line 6)) (2026.7.22)\nRequirement already satisfied: annotated-types>=0.6.0 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from pydantic==2.13.5->-r requirements-web-tested.txt (line 7)) (0.8.0)\nRequirement already satisfied: pydantic-core==2.46.5 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from pydantic==2.13.5->-r requirements-web-tested.txt (line 7)) (2.46.5)\nRequirement already satisfied: httptools>=0.8.0 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from uvicorn[standard]==0.54.0->-r requirements-web-tested.txt (line 4)) (0.8.0)\nRequirement already satisfied: pyyaml>=5.1 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from uvicorn[standard]==0.54.0->-r requirements-web-tested.txt (line 4)) (6.0.3)\nRequirement already satisfied: watchfiles>=0.20 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from uvicorn[standard]==0.54.0->-r requirements-web-tested.txt (line 4)) (1.3.0)\nRequirement already satisfied: websockets>=13.0 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from uvicorn[standard]==0.54.0->-r requirements-web-tested.txt (line 4)) (17.2)\nRequirement already satisfied: anyio<5,>=4.0.0 in c:\\users\\thana\\appdata\\local\\temp\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\lib\\site-packages (from starlette>=0.46.0->fastapi==0.142.2->-r requirements-web-tested.txt (line 3)) (4.15.1)\n",
+      "stderr": "\n[notice] A new release of pip is available: 24.0 -> 26.2.1\n[notice] To update, run: <TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\Scripts\\python.exe -m pip install --upgrade pip\n"
+    },
+    {
+      "step": "restore",
+      "command": [
+        "<TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\Scripts\\python.exe",
+        "scripts/runtime_bundle.py",
+        "restore",
+        "--bundle",
+        "<LIVE_APP>\\work\\handoff\\runtime-data-week11-metadata-20261007",
+        "--app-root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"restored\": 14,\n  \"source_pdfs_required_separately\": [\n    {\n      \"path\": \"data/input/AI.pdf\",\n      \"sha256\": \"268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f\"\n    },\n    {\n      \"path\": \"data/input/BIT-60.pdf\",\n      \"sha256\": \"49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385\"\n    },\n    {\n      \"path\": \"data/input/BIT-65.pdf\",\n      \"sha256\": \"f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc\"\n    },\n    {\n      \"path\": \"data/input/DSBA-60.pdf\",\n      \"sha256\": \"6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13\"\n    },\n    {\n      \"path\": \"data/input/DSBA.pdf\",\n      \"sha256\": \"01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1\"\n    },\n    {\n      \"path\": \"data/input/IT-60.pdf\",\n      \"sha256\": \"eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d\"\n    },\n    {\n      \"path\": \"data/input/IT.pdf\",\n      \"sha256\": \"aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa\"\n    }\n  ],\n  \"scope\": \"runtime snapshot; partial book review, NOT independent ground truth\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "step": "first_preflight",
+      "command": [
+        "<TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\Scripts\\python.exe",
+        "scripts/check_setup.py",
+        "--output",
+        "<REPOSITORY>\\docs\\results\\readme_verification\\final\\first_preflight.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"python\": \"3.11.9\",\n  \"platform\": \"win32\",\n  \"missing_runtime_packages\": [],\n  \"queryable_profiles\": [\n    \"legacy-course-catalog\",\n    \"AI-2566-coop\",\n    \"BIT-2560-coop\",\n    \"BIT-2560-no-coop\",\n    \"BIT-2565-coop\",\n    \"BIT-2565-no-coop\",\n    \"DSBA-2560-coop\",\n    \"DSBA-2560-no-coop\",\n    \"DSBA-2565-coop\",\n    \"DSBA-2565-no-coop\",\n    \"IT-2560-coop\",\n    \"IT-2560-no-coop\",\n    \"IT-2565-coop\",\n    \"IT-2565-no-coop\"\n  ],\n  \"changed_source_pdfs\": [],\n  \"model\": \"qwen3:4b\",\n  \"model_installed_and_service_ready\": true,\n  \"missing_profile_databases\": [],\n  \"missing_source_pdfs\": [],\n  \"invalid_databases\": [],\n  \"ready\": true\n}\n",
+      "stderr": ""
+    },
+    {
+      "step": "first_start",
+      "command": [
+        "pwsh",
+        "-NoProfile",
+        "-File",
+        "<TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\scripts\\start_web.ps1",
+        "-Port",
+        "8001"
+      ],
+      "exit_code": 0,
+      "stdout": "Backend ready: http://127.0.0.1:8001/frontend/\nLogs: <TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\work\\web\\backend-25691007-021658-245.stderr.log\n",
+      "stderr": ""
+    },
+    {
+      "step": "first_real_answer",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "answer": "IT-2560-no-coop: 4 ปี (ที่มา: IT-60.pdf หน้า 6)",
+        "study_plan": null,
+        "sources": [
+          {
+            "page": 6,
+            "book_page": 1,
+            "section": "IT-60.pdf · พ.ศ. 2560 · แผนไม่สหกิจศึกษา · IT-no-coop",
+            "quote": "หลักสูตรกำหนดระยะเวลาศึกษา 4 ปี"
+          }
+        ],
+        "model": "SQLite (deterministic renderer)",
+        "latency_ms": 88,
+        "confidence": null
+      }
+    },
+    {
+      "step": "stop_backend",
+      "command": [
+        "pwsh",
+        "-NoProfile",
+        "-File",
+        "<TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\scripts\\stop_web.ps1",
+        "-Port",
+        "8001"
+      ],
+      "exit_code": 0,
+      "stdout": "Stopped the verified backend on port 8001. Ollama and databases are unchanged.\n",
+      "stderr": ""
+    },
+    {
+      "step": "restart_preflight",
+      "command": [
+        "<TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\venv\\Scripts\\python.exe",
+        "scripts/check_setup.py",
+        "--output",
+        "<REPOSITORY>\\docs\\results\\readme_verification\\final\\restart_preflight.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"python\": \"3.11.9\",\n  \"platform\": \"win32\",\n  \"missing_runtime_packages\": [],\n  \"queryable_profiles\": [\n    \"legacy-course-catalog\",\n    \"AI-2566-coop\",\n    \"BIT-2560-coop\",\n    \"BIT-2560-no-coop\",\n    \"BIT-2565-coop\",\n    \"BIT-2565-no-coop\",\n    \"DSBA-2560-coop\",\n    \"DSBA-2560-no-coop\",\n    \"DSBA-2565-coop\",\n    \"DSBA-2565-no-coop\",\n    \"IT-2560-coop\",\n    \"IT-2560-no-coop\",\n    \"IT-2565-coop\",\n    \"IT-2565-no-coop\"\n  ],\n  \"changed_source_pdfs\": [],\n  \"model\": \"qwen3:4b\",\n  \"model_installed_and_service_ready\": true,\n  \"missing_profile_databases\": [],\n  \"missing_source_pdfs\": [],\n  \"invalid_databases\": [],\n  \"ready\": true\n}\n",
+      "stderr": ""
+    },
+    {
+      "step": "restart_start",
+      "command": [
+        "pwsh",
+        "-NoProfile",
+        "-File",
+        "<TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\scripts\\start_web.ps1",
+        "-Port",
+        "8001"
+      ],
+      "exit_code": 0,
+      "stdout": "Backend ready: http://127.0.0.1:8001/frontend/\nLogs: <TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\work\\web\\backend-25691007-021709-881.stderr.log\n",
+      "stderr": ""
+    },
+    {
+      "step": "restart_real_answer",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "answer": "IT-2560-no-coop: 4 ปี (ที่มา: IT-60.pdf หน้า 6)",
+        "study_plan": null,
+        "sources": [
+          {
+            "page": 6,
+            "book_page": 1,
+            "section": "IT-60.pdf · พ.ศ. 2560 · แผนไม่สหกิจศึกษา · IT-no-coop",
+            "quote": "หลักสูตรกำหนดระยะเวลาศึกษา 4 ปี"
+          }
+        ],
+        "model": "SQLite (deterministic renderer)",
+        "latency_ms": 93,
+        "confidence": null
+      }
+    }
+  ],
+  "limitations": [
+    "Initial downloads/full OCR install not rerun",
+    "Not cold model generation benchmark"
+  ],
+  "model_pid": 12704,
+  "model_started_ticks": "639269110226890989",
+  "owned_model_stopped": true,
+  "ready_for_browser": true
+}

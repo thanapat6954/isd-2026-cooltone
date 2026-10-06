@@ -153,6 +153,9 @@ def inspect_database(path: Path, root: Path) -> DatabaseInfo:
         objects: dict[str, ObjectInfo] = {}
         for row in rows:
             name = str(row["name"])
+            # Audit history is retained on disk, never offered as answer evidence.
+            if name == 'program_metadata_review':
+                continue
             quoted = _quote_identifier(name)
             columns = tuple(
                 ColumnInfo(str(column["name"]), str(column["type"] or ""), bool(column["pk"]))
@@ -218,7 +221,7 @@ class DatabaseRegistry:
         self.refresh()
 
     def refresh(self) -> list[DatabaseInfo]:
-        ignored = {".git", ".venv", "venv", "__pycache__", "node_modules"}
+        ignored = {".git", ".venv", "venv", "__pycache__", "node_modules", "backups", "handoff", "verification"}
         paths = [
             path for path in self.root.rglob("curriculum.db")
             if not any(part.casefold() in ignored for part in path.relative_to(self.root).parts)

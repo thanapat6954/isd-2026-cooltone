@@ -1,0 +1,295 @@
+{
+  "purpose": "API counterfactuals on isolated DB snapshots; no production markers",
+  "cases": [
+    {
+      "name": "baseline-retrieved-reference",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "question": "IT-2560-coop เกณฑ์การสำเร็จการศึกษามีอะไรบ้าง",
+        "intent": "graduation_reference",
+        "selected_curricula": [
+          "IT-2560-coop"
+        ],
+        "sql": "SELECT r.rule_text, r.regulation_year, r.source_file, r.page_number, r.printed_page_number, r.section, r.review_scope FROM program_requirement r JOIN program p ON r.program_id=p.program_id AND r.curriculum_version=p.curriculum_version AND r.plan=p.plan WHERE r.topic='graduation_reference' LIMIT 100",
+        "queries": [
+          {
+            "database_path": "<TEMP>\\curriculum-provenance-5t4pq32o\\IT-2560-coop\\curriculum.db",
+            "database_name": "IT-2560-coop",
+            "curriculum_name": "IT-2560-coop",
+            "program_id": "IT-coop",
+            "curriculum_version": 2560,
+            "is_latest": false,
+            "plan": "coop",
+            "source_folder": "IT-2560-coop",
+            "schema_family": "lab8b",
+            "archived": false,
+            "duplicate_of": null,
+            "queryable": true,
+            "inspection_error": null,
+            "sql": "SELECT r.rule_text, r.regulation_year, r.source_file, r.page_number, r.printed_page_number, r.section, r.review_scope FROM program_requirement r JOIN program p ON r.program_id=p.program_id AND r.curriculum_version=p.curriculum_version AND r.plan=p.plan WHERE r.topic='graduation_reference' LIMIT 100",
+            "validation": "passed",
+            "referenced_columns": [
+              "program.curriculum_version",
+              "program.plan",
+              "program.program_id",
+              "program_requirement.curriculum_version",
+              "program_requirement.page_number",
+              "program_requirement.plan",
+              "program_requirement.printed_page_number",
+              "program_requirement.program_id",
+              "program_requirement.regulation_year",
+              "program_requirement.review_scope",
+              "program_requirement.rule_text",
+              "program_requirement.section",
+              "program_requirement.source_file",
+              "program_requirement.topic"
+            ],
+            "row_count": 1,
+            "repair_attempts": [],
+            "error": null,
+            "schema_used": "TABLE course(code TEXT PRIMARY KEY, name_th TEXT, name_en TEXT, credits INTEGER, lecture_h INTEGER, lab_h INTEGER, self_h INTEGER, description_th TEXT, source_file TEXT, page_number INTEGER)\nTABLE course_prerequisite_evidence(code TEXT PRIMARY KEY, status TEXT, source_file TEXT, page_number INTEGER, printed_page_number INTEGER, source_sha256 TEXT, review_method TEXT)\nTABLE plan_item(id INTEGER PRIMARY KEY, program_id TEXT, year INTEGER, semester INTEGER, code TEXT, name_th TEXT, name_en TEXT, credits INTEGER, alt_group TEXT, alternative_index INTEGER, is_placeholder INTEGER, raw_code TEXT, code_pattern TEXT, elective_type TEXT, credits_raw TEXT, category TEXT, ctype TEXT, note TEXT, source_file TEXT, page_number INTEGER, printed_page_number INTEGER)\n  FOREIGN KEY program_id -> program.program_id\nTABLE plan_item_credit_option(plan_item_id INTEGER PRIMARY KEY, alternative_index INTEGER PRIMARY KEY, credits INTEGER, lecture_h INTEGER, lab_h INTEGER, self_h INTEGER, raw_pattern TEXT)\n  FOREIGN KEY plan_item_id -> plan_item.id\nTABLE prerequisite(code TEXT PRIMARY KEY, requires TEXT PRIMARY KEY, kind TEXT PRIMARY KEY, source_file TEXT, page_number INTEGER)\nTABLE program(program_id TEXT PRIMARY KEY, name_th TEXT, name_en TEXT, degree TEXT, total_credits INTEGER, years INTEGER, curriculum_version INTEGER, is_latest INTEGER, plan TEXT, source_file TEXT, page_number INTEGER)\nTABLE program_requirement(program_id TEXT PRIMARY KEY, curriculum_version INTEGER PRIMARY KEY, plan TEXT PRIMARY KEY, topic TEXT PRIMARY KEY, rule_text TEXT, regulation_year INTEGER, source_file TEXT, source_sha256 TEXT, page_number INTEGER, printed_page_number INTEGER, section TEXT, review_scope TEXT, review_method TEXT, review_input_sha256 TEXT)\nTABLE study_correction(id INTEGER PRIMARY KEY, term_id INTEGER, plan_item_id INTEGER, target TEXT, field TEXT, old_value TEXT, new_value TEXT, pdf_page INTEGER, printed_page INTEGER, ingestion_sha256 TEXT, reviewed_on TEXT)\n  FOREIGN KEY plan_item_id -> plan_item.id\n  FOREIGN KEY term_id -> study_term.id\nTABLE study_item(plan_item_id INTEGER PRIMARY KEY, term_id INTEGER, shared INTEGER, requirement_id TEXT, section_label TEXT)\n  FOREIGN KEY term_id -> study_term.id\n  FOREIGN KEY plan_item_id -> plan_item.id\nTABLE study_member(plan_item_id INTEGER PRIMARY KEY, track_id TEXT PRIMARY KEY, display_name_th TEXT, display_name_en TEXT)\n  FOREIGN KEY plan_item_id -> study_item.plan_item_id\nTABLE study_page(term_id INTEGER PRIMARY KEY, pdf_page INTEGER PRIMARY KEY, printed_page INTEGER)\n  FOREIGN KEY term_id -> study_term.id\nTABLE study_term(id INTEGER PRIMARY KEY, program_id TEXT, version INTEGER, plan TEXT, year INTEGER, semester INTEGER, source_file TEXT, source_sha256 TEXT, printed_total INTEGER, note TEXT, review_method TEXT)\nTABLE study_track(term_id INTEGER PRIMARY KEY, track_id TEXT PRIMARY KEY, label TEXT, aliases TEXT)\n  FOREIGN KEY term_id -> study_term.id\nVIEW v_category_credits(category TEXT, credits ANY, n_courses ANY, source_files ANY, source_pages ANY, source_printed_pages ANY)\nVIEW v_plan(id INTEGER, year INTEGER, semester INTEGER, code ANY, internal_code TEXT, name_th ANY, name_en ANY, credits INTEGER, credits_raw TEXT, alt_group TEXT, alternative_index INTEGER, is_placeholder INTEGER, raw_code TEXT, code_pattern TEXT, elective_type TEXT, category TEXT, ctype TEXT, note TEXT, source_file ANY, page_number ANY, printed_page_number INTEGER)\nVIEW v_semester_credits(year INTEGER, semester INTEGER, credits ANY, n_courses ANY, source_files ANY, source_pages ANY, source_printed_pages ANY)\nVIEW v_study_plan(id INTEGER, year INTEGER, semester INTEGER, code ANY, internal_code TEXT, name_th ANY, name_en ANY, credits INTEGER, alt_group TEXT, alternative_index INTEGER, is_placeholder INTEGER, raw_code TEXT, code_pattern TEXT, elective_type TEXT, category TEXT, ctype TEXT, note TEXT, source_file ANY, page_number ANY, credits_raw TEXT, printed_page_number INTEGER)\nVIEW v_total_credits(credits ANY, source_files ANY, source_pages ANY, source_printed_pages ANY)\nVIEW v_year_credits(year INTEGER, credits ANY, n_courses ANY, source_files ANY, source_pages ANY, source_printed_pages ANY)"
+          }
+        ],
+        "rows": [
+          {
+            "rule_text": "เกณฑ์การสำเร็จการศึกษาเป็นไปตามข้อบังคับสถาบันว่าด้วยการศึกษาระดับปริญญาตรี พ.ศ. 2559 (ภาคผนวก ก)",
+            "regulation_year": 2559,
+            "source_file": "IT-60.pdf",
+            "page_number": 69,
+            "printed_page_number": 64,
+            "section": "หมวดที่ 5 ข้อ 3 เกณฑ์การสำเร็จการศึกษาตามหลักสูตร",
+            "review_scope": "reference_only",
+            "_source": {
+              "database_path": "<TEMP>\\curriculum-provenance-5t4pq32o\\IT-2560-coop\\curriculum.db",
+              "database_name": "IT-2560-coop",
+              "curriculum_name": "IT-2560-coop",
+              "program_id": "IT-coop",
+              "curriculum_version": 2560,
+              "plan": "coop",
+              "source_folder": "IT-2560-coop"
+            }
+          }
+        ],
+        "answer": "IT-2560-coop: เกณฑ์การสำเร็จการศึกษาเป็นไปตามข้อบังคับสถาบันว่าด้วยการศึกษาระดับปริญญาตรี พ.ศ. 2559 (ภาคผนวก ก)\nหลักฐานที่ตรวจส่วนนี้เป็นการอ้างถึงข้อบังคับ ยังไม่ได้ตรวจรายละเอียดภาคผนวกทั้งหมด จึงยังยืนยันไม่ได้ว่าแผนของผู้เรียนผ่านเงื่อนไขจบครบแล้ว",
+        "debug": null
+      }
+    },
+    {
+      "name": "changed-sqlite-fact-invalidates-cache",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "question": "IT-2560-coop เกณฑ์การสำเร็จการศึกษามีอะไรบ้าง",
+        "intent": "graduation_reference",
+        "selected_curricula": [
+          "IT-2560-coop"
+        ],
+        "sql": "SELECT r.rule_text, r.regulation_year, r.source_file, r.page_number, r.printed_page_number, r.section, r.review_scope FROM program_requirement r JOIN program p ON r.program_id=p.program_id AND r.curriculum_version=p.curriculum_version AND r.plan=p.plan WHERE r.topic='graduation_reference' LIMIT 100",
+        "queries": [
+          {
+            "database_path": "<TEMP>\\curriculum-provenance-5t4pq32o\\IT-2560-coop\\curriculum.db",
+            "database_name": "IT-2560-coop",
+            "curriculum_name": "IT-2560-coop",
+            "program_id": "IT-coop",
+            "curriculum_version": 2560,
+            "is_latest": false,
+            "plan": "coop",
+            "source_folder": "IT-2560-coop",
+            "schema_family": "lab8b",
+            "archived": false,
+            "duplicate_of": null,
+            "queryable": true,
+            "inspection_error": null,
+            "sql": "SELECT r.rule_text, r.regulation_year, r.source_file, r.page_number, r.printed_page_number, r.section, r.review_scope FROM program_requirement r JOIN program p ON r.program_id=p.program_id AND r.curriculum_version=p.curriculum_version AND r.plan=p.plan WHERE r.topic='graduation_reference' LIMIT 100",
+            "validation": "passed",
+            "referenced_columns": [
+              "program.curriculum_version",
+              "program.plan",
+              "program.program_id",
+              "program_requirement.curriculum_version",
+              "program_requirement.page_number",
+              "program_requirement.plan",
+              "program_requirement.printed_page_number",
+              "program_requirement.program_id",
+              "program_requirement.regulation_year",
+              "program_requirement.review_scope",
+              "program_requirement.rule_text",
+              "program_requirement.section",
+              "program_requirement.source_file",
+              "program_requirement.topic"
+            ],
+            "row_count": 1,
+            "repair_attempts": [],
+            "error": null,
+            "schema_used": "TABLE course(code TEXT PRIMARY KEY, name_th TEXT, name_en TEXT, credits INTEGER, lecture_h INTEGER, lab_h INTEGER, self_h INTEGER, description_th TEXT, source_file TEXT, page_number INTEGER)\nTABLE course_prerequisite_evidence(code TEXT PRIMARY KEY, status TEXT, source_file TEXT, page_number INTEGER, printed_page_number INTEGER, source_sha256 TEXT, review_method TEXT)\nTABLE plan_item(id INTEGER PRIMARY KEY, program_id TEXT, year INTEGER, semester INTEGER, code TEXT, name_th TEXT, name_en TEXT, credits INTEGER, alt_group TEXT, alternative_index INTEGER, is_placeholder INTEGER, raw_code TEXT, code_pattern TEXT, elective_type TEXT, credits_raw TEXT, category TEXT, ctype TEXT, note TEXT, source_file TEXT, page_number INTEGER, printed_page_number INTEGER)\n  FOREIGN KEY program_id -> program.program_id\nTABLE plan_item_credit_option(plan_item_id INTEGER PRIMARY KEY, alternative_index INTEGER PRIMARY KEY, credits INTEGER, lecture_h INTEGER, lab_h INTEGER, self_h INTEGER, raw_pattern TEXT)\n  FOREIGN KEY plan_item_id -> plan_item.id\nTABLE prerequisite(code TEXT PRIMARY KEY, requires TEXT PRIMARY KEY, kind TEXT PRIMARY KEY, source_file TEXT, page_number INTEGER)\nTABLE program(program_id TEXT PRIMARY KEY, name_th TEXT, name_en TEXT, degree TEXT, total_credits INTEGER, years INTEGER, curriculum_version INTEGER, is_latest INTEGER, plan TEXT, source_file TEXT, page_number INTEGER)\nTABLE program_requirement(program_id TEXT PRIMARY KEY, curriculum_version INTEGER PRIMARY KEY, plan TEXT PRIMARY KEY, topic TEXT PRIMARY KEY, rule_text TEXT, regulation_year INTEGER, source_file TEXT, source_sha256 TEXT, page_number INTEGER, printed_page_number INTEGER, section TEXT, review_scope TEXT, review_method TEXT, review_input_sha256 TEXT)\nTABLE study_correction(id INTEGER PRIMARY KEY, term_id INTEGER, plan_item_id INTEGER, target TEXT, field TEXT, old_value TEXT, new_value TEXT, pdf_page INTEGER, printed_page INTEGER, ingestion_sha256 TEXT, reviewed_on TEXT)\n  FOREIGN KEY plan_item_id -> plan_item.id\n  FOREIGN KEY term_id -> study_term.id\nTABLE study_item(plan_item_id INTEGER PRIMARY KEY, term_id INTEGER, shared INTEGER, requirement_id TEXT, section_label TEXT)\n  FOREIGN KEY term_id -> study_term.id\n  FOREIGN KEY plan_item_id -> plan_item.id\nTABLE study_member(plan_item_id INTEGER PRIMARY KEY, track_id TEXT PRIMARY KEY, display_name_th TEXT, display_name_en TEXT)\n  FOREIGN KEY plan_item_id -> study_item.plan_item_id\nTABLE study_page(term_id INTEGER PRIMARY KEY, pdf_page INTEGER PRIMARY KEY, printed_page INTEGER)\n  FOREIGN KEY term_id -> study_term.id\nTABLE study_term(id INTEGER PRIMARY KEY, program_id TEXT, version INTEGER, plan TEXT, year INTEGER, semester INTEGER, source_file TEXT, source_sha256 TEXT, printed_total INTEGER, note TEXT, review_method TEXT)\nTABLE study_track(term_id INTEGER PRIMARY KEY, track_id TEXT PRIMARY KEY, label TEXT, aliases TEXT)\n  FOREIGN KEY term_id -> study_term.id\nVIEW v_category_credits(category TEXT, credits ANY, n_courses ANY, source_files ANY, source_pages ANY, source_printed_pages ANY)\nVIEW v_plan(id INTEGER, year INTEGER, semester INTEGER, code ANY, internal_code TEXT, name_th ANY, name_en ANY, credits INTEGER, credits_raw TEXT, alt_group TEXT, alternative_index INTEGER, is_placeholder INTEGER, raw_code TEXT, code_pattern TEXT, elective_type TEXT, category TEXT, ctype TEXT, note TEXT, source_file ANY, page_number ANY, printed_page_number INTEGER)\nVIEW v_semester_credits(year INTEGER, semester INTEGER, credits ANY, n_courses ANY, source_files ANY, source_pages ANY, source_printed_pages ANY)\nVIEW v_study_plan(id INTEGER, year INTEGER, semester INTEGER, code ANY, internal_code TEXT, name_th ANY, name_en ANY, credits INTEGER, alt_group TEXT, alternative_index INTEGER, is_placeholder INTEGER, raw_code TEXT, code_pattern TEXT, elective_type TEXT, category TEXT, ctype TEXT, note TEXT, source_file ANY, page_number ANY, credits_raw TEXT, printed_page_number INTEGER)\nVIEW v_total_credits(credits ANY, source_files ANY, source_pages ANY, source_printed_pages ANY)\nVIEW v_year_credits(year INTEGER, credits ANY, n_courses ANY, source_files ANY, source_pages ANY, source_printed_pages ANY)"
+          }
+        ],
+        "rows": [
+          {
+            "rule_text": "ISOLATED_DB_FACT_CHANGED",
+            "regulation_year": 2559,
+            "source_file": "IT-60.pdf",
+            "page_number": 69,
+            "printed_page_number": 64,
+            "section": "หมวดที่ 5 ข้อ 3 เกณฑ์การสำเร็จการศึกษาตามหลักสูตร",
+            "review_scope": "reference_only",
+            "_source": {
+              "database_path": "<TEMP>\\curriculum-provenance-5t4pq32o\\IT-2560-coop\\curriculum.db",
+              "database_name": "IT-2560-coop",
+              "curriculum_name": "IT-2560-coop",
+              "program_id": "IT-coop",
+              "curriculum_version": 2560,
+              "plan": "coop",
+              "source_folder": "IT-2560-coop"
+            }
+          }
+        ],
+        "answer": "IT-2560-coop: ISOLATED_DB_FACT_CHANGED\nหลักฐานที่ตรวจส่วนนี้เป็นการอ้างถึงข้อบังคับ ยังไม่ได้ตรวจรายละเอียดภาคผนวกทั้งหมด จึงยังยืนยันไม่ได้ว่าแผนของผู้เรียนผ่านเงื่อนไขจบครบแล้ว",
+        "debug": null
+      }
+    },
+    {
+      "name": "other-version-isolated",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "question": "IT-2565-coop เกณฑ์การสำเร็จการศึกษามีอะไรบ้าง",
+        "intent": "graduation_reference",
+        "selected_curricula": [
+          "IT-2565-coop"
+        ],
+        "sql": "SELECT r.rule_text, r.regulation_year, r.source_file, r.page_number, r.printed_page_number, r.section, r.review_scope FROM program_requirement r JOIN program p ON r.program_id=p.program_id AND r.curriculum_version=p.curriculum_version AND r.plan=p.plan WHERE r.topic='graduation_reference' LIMIT 100",
+        "queries": [
+          {
+            "database_path": "<TEMP>\\curriculum-provenance-5t4pq32o\\IT-2565-coop\\curriculum.db",
+            "database_name": "IT-2565-coop",
+            "curriculum_name": "IT-2565-coop",
+            "program_id": "IT-coop",
+            "curriculum_version": 2565,
+            "is_latest": true,
+            "plan": "coop",
+            "source_folder": "IT-2565-coop",
+            "schema_family": "lab8b",
+            "archived": false,
+            "duplicate_of": null,
+            "queryable": true,
+            "inspection_error": null,
+            "sql": "SELECT r.rule_text, r.regulation_year, r.source_file, r.page_number, r.printed_page_number, r.section, r.review_scope FROM program_requirement r JOIN program p ON r.program_id=p.program_id AND r.curriculum_version=p.curriculum_version AND r.plan=p.plan WHERE r.topic='graduation_reference' LIMIT 100",
+            "validation": "passed",
+            "referenced_columns": [
+              "program.curriculum_version",
+              "program.plan",
+              "program.program_id",
+              "program_requirement.curriculum_version",
+              "program_requirement.page_number",
+              "program_requirement.plan",
+              "program_requirement.printed_page_number",
+              "program_requirement.program_id",
+              "program_requirement.regulation_year",
+              "program_requirement.review_scope",
+              "program_requirement.rule_text",
+              "program_requirement.section",
+              "program_requirement.source_file",
+              "program_requirement.topic"
+            ],
+            "row_count": 1,
+            "repair_attempts": [],
+            "error": null,
+            "schema_used": "TABLE course(code TEXT PRIMARY KEY, name_th TEXT, name_en TEXT, credits INTEGER, lecture_h INTEGER, lab_h INTEGER, self_h INTEGER, description_th TEXT, source_file TEXT, page_number INTEGER)\nTABLE course_prerequisite_evidence(code TEXT PRIMARY KEY, status TEXT, source_file TEXT, page_number INTEGER, printed_page_number INTEGER, source_sha256 TEXT, review_method TEXT)\nTABLE plan_item(id INTEGER PRIMARY KEY, program_id TEXT, year INTEGER, semester INTEGER, code TEXT, credits INTEGER, alt_group TEXT, category TEXT, ctype TEXT, note TEXT, source_file TEXT, page_number INTEGER, name_th TEXT, name_en TEXT, credits_raw TEXT, printed_page_number INTEGER)\n  FOREIGN KEY program_id -> program.program_id\nTABLE prerequisite(code TEXT PRIMARY KEY, requires TEXT PRIMARY KEY, kind TEXT PRIMARY KEY, source_file TEXT, page_number INTEGER)\nTABLE program(program_id TEXT PRIMARY KEY, name_th TEXT, name_en TEXT, degree TEXT, total_credits INTEGER, years INTEGER, source_file TEXT, page_number INTEGER, curriculum_version INTEGER, is_latest INTEGER, plan TEXT)\nTABLE program_requirement(program_id TEXT PRIMARY KEY, curriculum_version INTEGER PRIMARY KEY, plan TEXT PRIMARY KEY, topic TEXT PRIMARY KEY, rule_text TEXT, regulation_year INTEGER, source_file TEXT, source_sha256 TEXT, page_number INTEGER, printed_page_number INTEGER, section TEXT, review_scope TEXT, review_method TEXT, review_input_sha256 TEXT)\nTABLE study_correction(id INTEGER PRIMARY KEY, term_id INTEGER, plan_item_id INTEGER, target TEXT, field TEXT, old_value TEXT, new_value TEXT, pdf_page INTEGER, printed_page INTEGER, ingestion_sha256 TEXT, reviewed_on TEXT)\n  FOREIGN KEY plan_item_id -> plan_item.id\n  FOREIGN KEY term_id -> study_term.id\nTABLE study_item(plan_item_id INTEGER PRIMARY KEY, term_id INTEGER, shared INTEGER, requirement_id TEXT, section_label TEXT)\n  FOREIGN KEY term_id -> study_term.id\n  FOREIGN KEY plan_item_id -> plan_item.id\nTABLE study_member(plan_item_id INTEGER PRIMARY KEY, track_id TEXT PRIMARY KEY, display_name_th TEXT, display_name_en TEXT)\n  FOREIGN KEY plan_item_id -> study_item.plan_item_id\nTABLE study_page(term_id INTEGER PRIMARY KEY, pdf_page INTEGER PRIMARY KEY, printed_page INTEGER)\n  FOREIGN KEY term_id -> study_term.id\nTABLE study_term(id INTEGER PRIMARY KEY, program_id TEXT, version INTEGER, plan TEXT, year INTEGER, semester INTEGER, source_file TEXT, source_sha256 TEXT, printed_total INTEGER, note TEXT, review_method TEXT)\nTABLE study_track(term_id INTEGER PRIMARY KEY, track_id TEXT PRIMARY KEY, label TEXT, aliases TEXT)\n  FOREIGN KEY term_id -> study_term.id\nVIEW v_category_credits(category TEXT, credits ANY, n_courses ANY, source_files ANY, source_pages ANY)\nVIEW v_plan(id INTEGER, year INTEGER, semester INTEGER, code TEXT, name_th TEXT, name_en TEXT, credits INTEGER, alt_group TEXT, category TEXT, ctype TEXT, note TEXT, source_file ANY, page_number ANY)\nVIEW v_semester_credits(year INTEGER, semester INTEGER, credits ANY, n_courses ANY, source_files ANY, source_pages ANY)\nVIEW v_study_plan(id INTEGER, year INTEGER, semester INTEGER, code TEXT, name_th ANY, name_en ANY, credits INTEGER, alt_group TEXT, category TEXT, ctype TEXT, note TEXT, source_file ANY, page_number ANY, credits_raw TEXT, printed_page_number INTEGER)\nVIEW v_total_credits(credits ANY, source_files ANY, source_pages ANY)\nVIEW v_year_credits(year INTEGER, credits ANY, n_courses ANY, source_files ANY, source_pages ANY)"
+          }
+        ],
+        "rows": [
+          {
+            "rule_text": "เกณฑ์การสำเร็จการศึกษาเป็นไปตามข้อบังคับสถาบันว่าด้วยการศึกษาระดับปริญญาตรี พ.ศ. 2564 (ภาคผนวก ก)",
+            "regulation_year": 2564,
+            "source_file": "IT.pdf",
+            "page_number": 89,
+            "printed_page_number": 88,
+            "section": "หมวดที่ 5 ข้อ 3 เกณฑ์การสำเร็จการศึกษาตามหลักสูตร",
+            "review_scope": "reference_only",
+            "_source": {
+              "database_path": "<TEMP>\\curriculum-provenance-5t4pq32o\\IT-2565-coop\\curriculum.db",
+              "database_name": "IT-2565-coop",
+              "curriculum_name": "IT-2565-coop",
+              "program_id": "IT-coop",
+              "curriculum_version": 2565,
+              "plan": "coop",
+              "source_folder": "IT-2565-coop"
+            }
+          }
+        ],
+        "answer": "IT-2565-coop: เกณฑ์การสำเร็จการศึกษาเป็นไปตามข้อบังคับสถาบันว่าด้วยการศึกษาระดับปริญญาตรี พ.ศ. 2564 (ภาคผนวก ก)\nหลักฐานที่ตรวจส่วนนี้เป็นการอ้างถึงข้อบังคับ ยังไม่ได้ตรวจรายละเอียดภาคผนวกทั้งหมด จึงยังยืนยันไม่ได้ว่าแผนของผู้เรียนผ่านเงื่อนไขจบครบแล้ว",
+        "debug": null
+      }
+    },
+    {
+      "name": "removed-evidence-no-runtime-overlay",
+      "passed": true,
+      "status": 200,
+      "response": {
+        "question": "IT-2560-coop เกณฑ์การสำเร็จการศึกษามีอะไรบ้าง",
+        "intent": "graduation_reference",
+        "selected_curricula": [
+          "IT-2560-coop"
+        ],
+        "sql": "SELECT r.rule_text, r.regulation_year, r.source_file, r.page_number, r.printed_page_number, r.section, r.review_scope FROM program_requirement r JOIN program p ON r.program_id=p.program_id AND r.curriculum_version=p.curriculum_version AND r.plan=p.plan WHERE r.topic='graduation_reference' LIMIT 100",
+        "queries": [
+          {
+            "database_path": "<TEMP>\\curriculum-provenance-5t4pq32o\\IT-2560-coop\\curriculum.db",
+            "database_name": "IT-2560-coop",
+            "curriculum_name": "IT-2560-coop",
+            "program_id": "IT-coop",
+            "curriculum_version": 2560,
+            "is_latest": false,
+            "plan": "coop",
+            "source_folder": "IT-2560-coop",
+            "schema_family": "lab8b",
+            "archived": false,
+            "duplicate_of": null,
+            "queryable": true,
+            "inspection_error": null,
+            "sql": "SELECT r.rule_text, r.regulation_year, r.source_file, r.page_number, r.printed_page_number, r.section, r.review_scope FROM program_requirement r JOIN program p ON r.program_id=p.program_id AND r.curriculum_version=p.curriculum_version AND r.plan=p.plan WHERE r.topic='graduation_reference' LIMIT 100",
+            "validation": "passed",
+            "referenced_columns": [
+              "program.curriculum_version",
+              "program.plan",
+              "program.program_id",
+              "program_requirement.curriculum_version",
+              "program_requirement.page_number",
+              "program_requirement.plan",
+              "program_requirement.printed_page_number",
+              "program_requirement.program_id",
+              "program_requirement.regulation_year",
+              "program_requirement.review_scope",
+              "program_requirement.rule_text",
+              "program_requirement.section",
+              "program_requirement.source_file",
+              "program_requirement.topic"
+            ],
+            "row_count": 0,
+            "repair_attempts": [],
+            "error": null,
+            "schema_used": "TABLE course(code TEXT PRIMARY KEY, name_th TEXT, name_en TEXT, credits INTEGER, lecture_h INTEGER, lab_h INTEGER, self_h INTEGER, description_th TEXT, source_file TEXT, page_number INTEGER)\nTABLE course_prerequisite_evidence(code TEXT PRIMARY KEY, status TEXT, source_file TEXT, page_number INTEGER, printed_page_number INTEGER, source_sha256 TEXT, review_method TEXT)\nTABLE plan_item(id INTEGER PRIMARY KEY, program_id TEXT, year INTEGER, semester INTEGER, code TEXT, name_th TEXT, name_en TEXT, credits INTEGER, alt_group TEXT, alternative_index INTEGER, is_placeholder INTEGER, raw_code TEXT, code_pattern TEXT, elective_type TEXT, credits_raw TEXT, category TEXT, ctype TEXT, note TEXT, source_file TEXT, page_number INTEGER, printed_page_number INTEGER)\n  FOREIGN KEY program_id -> program.program_id\nTABLE plan_item_credit_option(plan_item_id INTEGER PRIMARY KEY, alternative_index INTEGER PRIMARY KEY, credits INTEGER, lecture_h INTEGER, lab_h INTEGER, self_h INTEGER, raw_pattern TEXT)\n  FOREIGN KEY plan_item_id -> plan_item.id\nTABLE prerequisite(code TEXT PRIMARY KEY, requires TEXT PRIMARY KEY, kind TEXT PRIMARY KEY, source_file TEXT, page_number INTEGER)\nTABLE program(program_id TEXT PRIMARY KEY, name_th TEXT, name_en TEXT, degree TEXT, total_credits INTEGER, years INTEGER, curriculum_version INTEGER, is_latest INTEGER, plan TEXT, source_file TEXT, page_number INTEGER)\nTABLE program_requirement(program_id TEXT PRIMARY KEY, curriculum_version INTEGER PRIMARY KEY, plan TEXT PRIMARY KEY, topic TEXT PRIMARY KEY, rule_text TEXT, regulation_year INTEGER, source_file TEXT, source_sha256 TEXT, page_number INTEGER, printed_page_number INTEGER, section TEXT, review_scope TEXT, review_method TEXT, review_input_sha256 TEXT)\nTABLE study_correction(id INTEGER PRIMARY KEY, term_id INTEGER, plan_item_id INTEGER, target TEXT, field TEXT, old_value TEXT, new_value TEXT, pdf_page INTEGER, printed_page INTEGER, ingestion_sha256 TEXT, reviewed_on TEXT)\n  FOREIGN KEY plan_item_id -> plan_item.id\n  FOREIGN KEY term_id -> study_term.id\nTABLE study_item(plan_item_id INTEGER PRIMARY KEY, term_id INTEGER, shared INTEGER, requirement_id TEXT, section_label TEXT)\n  FOREIGN KEY term_id -> study_term.id\n  FOREIGN KEY plan_item_id -> plan_item.id\nTABLE study_member(plan_item_id INTEGER PRIMARY KEY, track_id TEXT PRIMARY KEY, display_name_th TEXT, display_name_en TEXT)\n  FOREIGN KEY plan_item_id -> study_item.plan_item_id\nTABLE study_page(term_id INTEGER PRIMARY KEY, pdf_page INTEGER PRIMARY KEY, printed_page INTEGER)\n  FOREIGN KEY term_id -> study_term.id\nTABLE study_term(id INTEGER PRIMARY KEY, program_id TEXT, version INTEGER, plan TEXT, year INTEGER, semester INTEGER, source_file TEXT, source_sha256 TEXT, printed_total INTEGER, note TEXT, review_method TEXT)\nTABLE study_track(term_id INTEGER PRIMARY KEY, track_id TEXT PRIMARY KEY, label TEXT, aliases TEXT)\n  FOREIGN KEY term_id -> study_term.id\nVIEW v_category_credits(category TEXT, credits ANY, n_courses ANY, source_files ANY, source_pages ANY, source_printed_pages ANY)\nVIEW v_plan(id INTEGER, year INTEGER, semester INTEGER, code ANY, internal_code TEXT, name_th ANY, name_en ANY, credits INTEGER, credits_raw TEXT, alt_group TEXT, alternative_index INTEGER, is_placeholder INTEGER, raw_code TEXT, code_pattern TEXT, elective_type TEXT, category TEXT, ctype TEXT, note TEXT, source_file ANY, page_number ANY, printed_page_number INTEGER)\nVIEW v_semester_credits(year INTEGER, semester INTEGER, credits ANY, n_courses ANY, source_files ANY, source_pages ANY, source_printed_pages ANY)\nVIEW v_study_plan(id INTEGER, year INTEGER, semester INTEGER, code ANY, internal_code TEXT, name_th ANY, name_en ANY, credits INTEGER, alt_group TEXT, alternative_index INTEGER, is_placeholder INTEGER, raw_code TEXT, code_pattern TEXT, elective_type TEXT, category TEXT, ctype TEXT, note TEXT, source_file ANY, page_number ANY, credits_raw TEXT, printed_page_number INTEGER)\nVIEW v_total_credits(credits ANY, source_files ANY, source_pages ANY, source_printed_pages ANY)\nVIEW v_year_credits(year INTEGER, credits ANY, n_courses ANY, source_files ANY, source_pages ANY, source_printed_pages ANY)"
+          }
+        ],
+        "rows": [],
+        "answer": "ยังยืนยันข้อมูลที่ถามไม่ได้จากฐานข้อมูลที่ค้น: IT-2560-coop ข้อมูลที่นำเข้าอาจไม่ครบ จึงยังสรุปไม่ได้ว่ารายวิชาหรือเงื่อนไขนี้ไม่มีในเล่มหลักสูตร",
+        "debug": null
+      }
+    },
+    {
+      "name": "database-failure-no-fabricated-answer",
+      "passed": true,
+      "status": 422,
+      "response": {
+        "detail": "ไม่พบฐานข้อมูลหลักสูตรที่ตรงกับคำถาม"
+      }
+    }
+  ],
+  "production_hashes_unchanged": true,
+  "summary": {
+    "passed": 5,
+    "n": 5
+  }
+}

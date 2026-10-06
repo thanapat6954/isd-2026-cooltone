@@ -88,6 +88,10 @@ def detect_intent(question: str) -> QueryPlan:
             return QueryPlan('course_search', search_term=name_match.group(1).strip(), compare=compare)
     if any(word in lowered for word in prerequisite_words):
         return QueryPlan("prerequisite", year, semester, code, compare=compare, required_only=required_only)
+    if any(word in lowered for word in ('เกณฑ์การสำเร็จการศึกษา', 'เงื่อนไขจบ', 'เกณฑ์จบ', 'graduation requirements')):
+        return QueryPlan('graduation_reference', compare=compare)
+    if re.search(r'จบ\s*(?:ใน)?\s*\d+(?:[.,]\d+)?\s*ปี', text):
+        return QueryPlan('study_feasibility', compare=compare)
     if year is not None and semester is not None and any(word in lowered for word in credit_words):
         return QueryPlan("semester_credits", year, semester, compare=compare, required_only=required_only)
     if year is not None and any(word in lowered for word in credit_words):
@@ -135,9 +139,34 @@ def _conditions(plan: QueryPlan, *, include_required: bool = False) -> str:
     return (" WHERE " + " AND ".join(parts)) if parts else ""
 
 
+def _page_evidence(database: DatabaseInfo, where: str) -> str:
+    """Keep PDF/printed folios together; separate GROUP_CONCATs lose pairing."""
+    if not database.has('plan_item', 'source_file', 'page_number'):
+        return ''
+    book = 'printed_page_number' if database.has('plan_item', 'printed_page_number') else 'NULL'
+    return (
+        ", (SELECT JSON_GROUP_ARRAY(JSON_OBJECT('source_file', source_file, "
+        "'page', page_number, 'book_page', book_page)) FROM "
+        f"(SELECT DISTINCT source_file, page_number, {book} AS book_page "
+        f"FROM plan_item{where})) AS page_evidence"
+    )
+
+
 def deterministic_sql(plan: QueryPlan, database: DatabaseInfo) -> str | None:
     """Return SQL only when the intent can be answered reliably from the real schema."""
     intent = plan.intent
+    if intent in {'graduation_reference', 'study_feasibility'}:
+        if database.has('program_requirement', 'rule_text', 'regulation_year', 'source_file', 'page_number', 'printed_page_number'):
+            return ('SELECT r.rule_text, r.regulation_year, r.source_file, r.page_number, '
+                    'r.printed_page_number, r.section, r.review_scope FROM program_requirement r '
+                    'JOIN program p ON r.program_id=p.program_id AND r.curriculum_version=p.curriculum_version AND r.plan=p.plan '
+                    "WHERE r.topic='graduation_reference'")
+        # No source-reviewed rules: empty evidence, not a model-generated grant.
+        if database.has('course', 'code'):
+            return 'SELECT code FROM course LIMIT 0'
+        if database.has('courses', 'course_code'):
+            return 'SELECT course_code AS code FROM courses LIMIT 0'
+        return None
     if intent == "version_course_diff":
         if database.has("v_plan", "code", "name_th", "credits"):
             where = " WHERE is_placeholder = 0" if database.has("v_plan", "is_placeholder") else ""
@@ -148,17 +177,19 @@ def deterministic_sql(plan: QueryPlan, database: DatabaseInfo) -> str | None:
         return None
     if intent == "program_total_credits":
         if database.has("program", "program_id", "total_credits"):
-            return "SELECT program_id, total_credits, source_file, page_number FROM program"
+            book = ", printed_page_number" if database.has("program", "printed_page_number") else ""
+            return f"SELECT program_id, total_credits, source_file, page_number{book} FROM program"
         if database.has("v_total_credits", "credits"):
             return "SELECT credits AS total_credits FROM v_total_credits"
         return None
 
     if intent == "program_years" and database.has("program", "program_id", "years"):
-        return "SELECT program_id, years, source_file, page_number FROM program"
+        book = ", printed_page_number" if database.has("program", "printed_page_number") else ""
+        return f"SELECT program_id, years, source_file, page_number{book} FROM program"
 
     if intent == "program_info" and database.has("program", "program_id", "name_th"):
         fields = ["program_id", "name_th"]
-        for column in ("name_en", "degree", "total_credits", "years", "source_file", "page_number"):
+        for column in ("name_en", "degree", "total_credits", "years", "source_file", "page_number", "printed_page_number"):
             if database.has("program", column):
                 fields.append(column)
         return f"SELECT {', '.join(fields)} FROM program"
@@ -172,6 +203,7 @@ def deterministic_sql(plan: QueryPlan, database: DatabaseInfo) -> str | None:
                 fields += ", source_files, source_pages"
             if database.has("v_semester_credits", "source_printed_pages"):
                 fields += ", source_printed_pages"
+            fields += _page_evidence(database, ' WHERE year = v_semester_credits.year AND semester = v_semester_credits.semester')
             return f"SELECT {fields} FROM v_semester_credits{_conditions(plan)}"
         return None
 
@@ -180,6 +212,10 @@ def deterministic_sql(plan: QueryPlan, database: DatabaseInfo) -> str | None:
             fields = "year, credits"
             if database.has("v_year_credits", "n_courses"):
                 fields += ", n_courses"
+            for column in ('source_files', 'source_pages', 'source_printed_pages'):
+                if database.has('v_year_credits', column):
+                    fields += ', ' + column
+            fields += _page_evidence(database, ' WHERE year = v_year_credits.year')
             return f"SELECT {fields} FROM v_year_credits{_conditions(plan)}"
         if database.has("plan_item", "year", "credits"):
             return (
@@ -196,6 +232,8 @@ def deterministic_sql(plan: QueryPlan, database: DatabaseInfo) -> str | None:
                 "COUNT(DISTINCT COALESCE(alt_group, 'row-' || id)) AS n_courses, "
                 "GROUP_CONCAT(DISTINCT source_file) AS source_files, "
                 "GROUP_CONCAT(DISTINCT page_number) AS source_pages "
+                + _page_evidence(database, where) + ' '
+                +
                 f"FROM plan_item{where}"
             )
         if database.has("courses", "id"):

@@ -1,0 +1,7 @@
+# Direct runtime versions observed in the isolated Windows/Python 3.11.9 verification.
+# OCR and test dependencies are deliberately separate; full transitive freeze is in the report.
+fastapi==0.142.2
+uvicorn[standard]==0.54.0
+python-dotenv==1.2.4
+requests==2.34.2
+pydantic==2.13.5

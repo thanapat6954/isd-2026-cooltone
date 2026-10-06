@@ -1,0 +1,14 @@
+✔ citations use only recorded allowlisted source identities and integer PDF pages (1.0351ms)
+✔ source identity is not inferred from program names or free text (0.9991ms)
+✔ PDF and printed book pages remain separate even when equal or unknown (0.1098ms)
+✔ Enter does not submit during Thai composition, Shift+Enter, or an active request (0.1209ms)
+✔ real endpoint, original payload, escaped rendering and option identities are retained (0.6984ms)
+✔ control labels, error recovery, accessible tables and reduced motion are present (0.6477ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 87.5817

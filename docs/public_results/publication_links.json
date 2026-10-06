@@ -1,0 +1,513 @@
+{
+  "scope": "Transport/readiness/link checks, not visual PDF-page or answer correctness",
+  "pdf_routes": [
+    {
+      "file": "AI.pdf",
+      "status": 206,
+      "content_type": "application/pdf",
+      "content_range": "bytes 0-7/236667633",
+      "pdf_signature": true,
+      "passed": true
+    },
+    {
+      "file": "DSBA.pdf",
+      "status": 206,
+      "content_type": "application/pdf",
+      "content_range": "bytes 0-7/54264534",
+      "pdf_signature": true,
+      "passed": true
+    },
+    {
+      "file": "DSBA-60.pdf",
+      "status": 206,
+      "content_type": "application/pdf",
+      "content_range": "bytes 0-7/142583017",
+      "pdf_signature": true,
+      "passed": true
+    },
+    {
+      "file": "IT.pdf",
+      "status": 206,
+      "content_type": "application/pdf",
+      "content_range": "bytes 0-7/257458903",
+      "pdf_signature": true,
+      "passed": true
+    },
+    {
+      "file": "IT-60.pdf",
+      "status": 206,
+      "content_type": "application/pdf",
+      "content_range": "bytes 0-7/203535073",
+      "pdf_signature": true,
+      "passed": true
+    },
+    {
+      "file": "BIT-65.pdf",
+      "status": 206,
+      "content_type": "application/pdf",
+      "content_range": "bytes 0-7/198031060",
+      "pdf_signature": true,
+      "passed": true
+    },
+    {
+      "file": "BIT-60.pdf",
+      "status": 206,
+      "content_type": "application/pdf",
+      "content_range": "bytes 0-7/131488606",
+      "pdf_signature": true,
+      "passed": true
+    }
+  ],
+  "links": [
+    {
+      "document": "README.md",
+      "link": "docs/public_results/week11/isolated_runtime_versions.txt",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/public_results/week11_continuation/REPORT.md",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/public_results/week11/inventory_final.json",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/PROGRESS.md",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/public_results/week11/WEEK11_REPORT.md",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/public_results/week11/handoff_ui_full.png",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "ocr_final/frontend/README.md",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/public_results/week11_continuation/checks_release/checks.json",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/public_results/week11/REQUIREMENTS.md",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/public_results/week11/WEEK11_REPORT.md",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/public_results/week11_continuation/REPORT.md",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/public_results/week11/WEEK11_REPORT.md#เวลา",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/public_results/week11/checks_release/gold.json",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/public_results/readme_verification/REPORT.md",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/public_results/readme_followup/REPORT.md",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/public_results/week11/inventory_final.json",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "ocr_final/frontend/fonts/OFL.txt",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/public_results/week11/WEEK11_REPORT.md",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "ocr_final/Lab09_report.md",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/public_results/PUBLICATION.md",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/PROGRESS.md",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/assets/curriculum-banner.svg",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "README.md",
+      "link": "docs/assets/technology-badges.svg",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "ocr_final/frontend/README.md",
+      "link": "../../README.md",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "ocr_final/frontend/README.md",
+      "link": "../lab10_fastapi/curriculum_app/schemas.py",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "ocr_final/frontend/README.md",
+      "link": "../DESIGN.md",
+      "exists": true,
+      "inside_repository": true
+    },
+    {
+      "document": "ocr_final/frontend/README.md",
+      "link": "wireframe.md",
+      "exists": true,
+      "inside_repository": true
+    }
+  ],
+  "health": {
+    "status": 200,
+    "body": {
+      "status": "ok",
+      "database_count": 18,
+      "queryable_database_count": 14,
+      "databases": [
+        {
+          "database_path": "<LIVE_APP>\\curriculum.db",
+          "database_name": "curriculum",
+          "curriculum_name": "legacy-course-catalog",
+          "program_id": null,
+          "curriculum_version": null,
+          "is_latest": false,
+          "plan": null,
+          "source_folder": ".",
+          "schema_family": "legacy-course-catalog",
+          "archived": false,
+          "duplicate_of": null,
+          "queryable": true,
+          "inspection_error": null
+        },
+        {
+          "database_path": "<LIVE_APP>\\work\\_archive_candidates_2026-09-20\\candidate_ai\\curriculum.db",
+          "database_name": "candidate_ai",
+          "curriculum_name": "AI",
+          "program_id": "AI",
+          "curriculum_version": null,
+          "is_latest": false,
+          "plan": null,
+          "source_folder": "work/_archive_candidates_2026-09-20/candidate_ai",
+          "schema_family": "lab8b",
+          "archived": true,
+          "duplicate_of": null,
+          "queryable": false,
+          "inspection_error": null
+        },
+        {
+          "database_path": "<LIVE_APP>\\work\\_archive_candidates_2026-09-20\\candidate_it_coop\\curriculum.db",
+          "database_name": "candidate_it_coop",
+          "curriculum_name": "IT",
+          "program_id": "IT-coop",
+          "curriculum_version": null,
+          "is_latest": false,
+          "plan": null,
+          "source_folder": "work/_archive_candidates_2026-09-20/candidate_it_coop",
+          "schema_family": "lab8b",
+          "archived": true,
+          "duplicate_of": null,
+          "queryable": false,
+          "inspection_error": null
+        },
+        {
+          "database_path": "<LIVE_APP>\\work\\_archive_candidates_2026-09-20\\candidate_it_no_coop\\curriculum.db",
+          "database_name": "candidate_it_no_coop",
+          "curriculum_name": "IT",
+          "program_id": "IT-no-coop",
+          "curriculum_version": null,
+          "is_latest": false,
+          "plan": null,
+          "source_folder": "work/_archive_candidates_2026-09-20/candidate_it_no_coop",
+          "schema_family": "lab8b",
+          "archived": true,
+          "duplicate_of": null,
+          "queryable": false,
+          "inspection_error": null
+        },
+        {
+          "database_path": "<LIVE_APP>\\work\\_archive_candidates_2026-09-20\\lab8b_candidate\\curriculum.db",
+          "database_name": "lab8b_candidate",
+          "curriculum_name": "DSBA",
+          "program_id": "DSBA-coop",
+          "curriculum_version": null,
+          "is_latest": false,
+          "plan": null,
+          "source_folder": "work/_archive_candidates_2026-09-20/lab8b_candidate",
+          "schema_family": "lab8b",
+          "archived": true,
+          "duplicate_of": null,
+          "queryable": false,
+          "inspection_error": null
+        },
+        {
+          "database_path": "<LIVE_APP>\\work\\lab8b_ai\\curriculum.db",
+          "database_name": "lab8b_ai",
+          "curriculum_name": "AI-2566-coop",
+          "program_id": "AI",
+          "curriculum_version": 2566,
+          "is_latest": true,
+          "plan": "coop",
+          "source_folder": "work/lab8b_ai",
+          "schema_family": "lab8b",
+          "archived": false,
+          "duplicate_of": null,
+          "queryable": true,
+          "inspection_error": null
+        },
+        {
+          "database_path": "<LIVE_APP>\\work\\lab8b_bit_2560_coop\\curriculum.db",
+          "database_name": "lab8b_bit_2560_coop",
+          "curriculum_name": "BIT-2560-coop",
+          "program_id": "BIT-coop",
+          "curriculum_version": 2560,
+          "is_latest": false,
+          "plan": "coop",
+          "source_folder": "work/lab8b_bit_2560_coop",
+          "schema_family": "lab8b",
+          "archived": false,
+          "duplicate_of": null,
+          "queryable": true,
+          "inspection_error": null
+        },
+        {
+          "database_path": "<LIVE_APP>\\work\\lab8b_bit_2560_no_coop\\curriculum.db",
+          "database_name": "lab8b_bit_2560_no_coop",
+          "curriculum_name": "BIT-2560-no-coop",
+          "program_id": "BIT-no-coop",
+          "curriculum_version": 2560,
+          "is_latest": false,
+          "plan": "no-coop",
+          "source_folder": "work/lab8b_bit_2560_no_coop",
+          "schema_family": "lab8b",
+          "archived": false,
+          "duplicate_of": null,
+          "queryable": true,
+          "inspection_error": null
+        },
+        {
+          "database_path": "<LIVE_APP>\\work\\lab8b_bit_2565_coop\\curriculum.db",
+          "database_name": "lab8b_bit_2565_coop",
+          "curriculum_name": "BIT-2565-coop",
+          "program_id": "BIT-coop",
+          "curriculum_version": 2565,
+          "is_latest": true,
+          "plan": "coop",
+          "source_folder": "work/lab8b_bit_2565_coop",
+          "schema_family": "lab8b",
+          "archived": false,
+          "duplicate_of": null,
+          "queryable": true,
+          "inspection_error": null
+        },
+        {
+          "database_path": "<LIVE_APP>\\work\\lab8b_bit_2565_no_coop\\curriculum.db",
+          "database_name": "lab8b_bit_2565_no_coop",
+          "curriculum_name": "BIT-2565-no-coop",
+          "program_id": "BIT-no-coop",
+          "curriculum_version": 2565,
+          "is_latest": true,
+          "plan": "no-coop",
+          "source_folder": "work/lab8b_bit_2565_no_coop",
+          "schema_family": "lab8b",
+          "archived": false,
+          "duplicate_of": null,
+          "queryable": true,
+          "inspection_error": null
+        },
+        {
+          "database_path": "<LIVE_APP>\\work\\lab8b_dsba_2560_coop\\curriculum.db",
+          "database_name": "lab8b_dsba_2560_coop",
+          "curriculum_name": "DSBA-2560-coop",
+          "program_id": "DSBA-coop",
+          "curriculum_version": 2560,
+          "is_latest": false,
+          "plan": "coop",
+          "source_folder": "work/lab8b_dsba_2560_coop",
+          "schema_family": "lab8b",
+          "archived": false,
+          "duplicate_of": null,
+          "queryable": true,
+          "inspection_error": null
+        },
+        {
+          "database_path": "<LIVE_APP>\\work\\lab8b_dsba_2560_no_coop\\curriculum.db",
+          "database_name": "lab8b_dsba_2560_no_coop",
+          "curriculum_name": "DSBA-2560-no-coop",
+          "program_id": "DSBA-no-coop",
+          "curriculum_version": 2560,
+          "is_latest": false,
+          "plan": "no-coop",
+          "source_folder": "work/lab8b_dsba_2560_no_coop",
+          "schema_family": "lab8b",
+          "archived": false,
+          "duplicate_of": null,
+          "queryable": true,
+          "inspection_error": null
+        },
+        {
+          "database_path": "<LIVE_APP>\\work\\lab8b_dsba_coop\\curriculum.db",
+          "database_name": "lab8b_dsba_coop",
+          "curriculum_name": "DSBA-2565-coop",
+          "program_id": "DSBA-coop",
+          "curriculum_version": 2565,
+          "is_latest": true,
+          "plan": "coop",
+          "source_folder": "work/lab8b_dsba_coop",
+          "schema_family": "lab8b",
+          "archived": false,
+          "duplicate_of": null,
+          "queryable": true,
+          "inspection_error": null
+        },
+        {
+          "database_path": "<LIVE_APP>\\work\\lab8b_dsba_no_coop\\curriculum.db",
+          "database_name": "lab8b_dsba_no_coop",
+          "curriculum_name": "DSBA-2565-no-coop",
+          "program_id": "DSBA-no-coop",
+          "curriculum_version": 2565,
+          "is_latest": true,
+          "plan": "no-coop",
+          "source_folder": "work/lab8b_dsba_no_coop",
+          "schema_family": "lab8b",
+          "archived": false,
+          "duplicate_of": null,
+          "queryable": true,
+          "inspection_error": null
+        },
+        {
+          "database_path": "<LIVE_APP>\\work\\lab8b_it_2560_coop\\curriculum.db",
+          "database_name": "lab8b_it_2560_coop",
+          "curriculum_name": "IT-2560-coop",
+          "program_id": "IT-coop",
+          "curriculum_version": 2560,
+          "is_latest": false,
+          "plan": "coop",
+          "source_folder": "work/lab8b_it_2560_coop",
+          "schema_family": "lab8b",
+          "archived": false,
+          "duplicate_of": null,
+          "queryable": true,
+          "inspection_error": null
+        },
+        {
+          "database_path": "<LIVE_APP>\\work\\lab8b_it_2560_no_coop\\curriculum.db",
+          "database_name": "lab8b_it_2560_no_coop",
+          "curriculum_name": "IT-2560-no-coop",
+          "program_id": "IT-no-coop",
+          "curriculum_version": 2560,
+          "is_latest": false,
+          "plan": "no-coop",
+          "source_folder": "work/lab8b_it_2560_no_coop",
+          "schema_family": "lab8b",
+          "archived": false,
+          "duplicate_of": null,
+          "queryable": true,
+          "inspection_error": null
+        },
+        {
+          "database_path": "<LIVE_APP>\\work\\lab8b_it_coop\\curriculum.db",
+          "database_name": "lab8b_it_coop",
+          "curriculum_name": "IT-2565-coop",
+          "program_id": "IT-coop",
+          "curriculum_version": 2565,
+          "is_latest": true,
+          "plan": "coop",
+          "source_folder": "work/lab8b_it_coop",
+          "schema_family": "lab8b",
+          "archived": false,
+          "duplicate_of": null,
+          "queryable": true,
+          "inspection_error": null
+        },
+        {
+          "database_path": "<LIVE_APP>\\work\\lab8b_it_no_coop\\curriculum.db",
+          "database_name": "lab8b_it_no_coop",
+          "curriculum_name": "IT-2565-no-coop",
+          "program_id": "IT-no-coop",
+          "curriculum_version": 2565,
+          "is_latest": true,
+          "plan": "no-coop",
+          "source_folder": "work/lab8b_it_no_coop",
+          "schema_family": "lab8b",
+          "archived": false,
+          "duplicate_of": null,
+          "queryable": true,
+          "inspection_error": null
+        }
+      ],
+      "model": "qwen3:4b",
+      "ollama_ready": true,
+      "lab8b_module": "<LIVE_APP>\\scr\\ocr_system\\lab8b_curriculum_db.py"
+    }
+  },
+  "frontend_status": 200,
+  "absolute_personal_paths": {
+    "README.md": false
+  },
+  "passed": true
+}

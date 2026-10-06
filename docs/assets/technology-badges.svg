@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 32" role="img" aria-label="Python, FastAPI, SQLite, Ollama และ HTML CSS JavaScript">
+  <g font-family="sans-serif" font-size="12" text-anchor="middle" fill="#fff">
+    <rect width="92" height="30" rx="5" fill="#276749"/><text x="46" y="20">Python</text>
+    <rect x="102" width="92" height="30" rx="5" fill="#276749"/><text x="148" y="20">FastAPI</text>
+    <rect x="204" width="92" height="30" rx="5" fill="#276749"/><text x="250" y="20">SQLite</text>
+    <rect x="306" width="92" height="30" rx="5" fill="#276749"/><text x="352" y="20">Ollama</text>
+    <rect x="408" width="218" height="30" rx="5" fill="#276749"/><text x="517" y="20">HTML · CSS · JavaScript</text>
+  </g>
+</svg>

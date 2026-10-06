@@ -1,0 +1,28 @@
+{
+  "python": "3.11.9",
+  "platform": "win32",
+  "missing_runtime_packages": [],
+  "queryable_profiles": [
+    "legacy-course-catalog",
+    "AI-2566-coop",
+    "BIT-2560-coop",
+    "BIT-2560-no-coop",
+    "BIT-2565-coop",
+    "BIT-2565-no-coop",
+    "DSBA-2560-coop",
+    "DSBA-2560-no-coop",
+    "DSBA-2565-coop",
+    "DSBA-2565-no-coop",
+    "IT-2560-coop",
+    "IT-2560-no-coop",
+    "IT-2565-coop",
+    "IT-2565-no-coop"
+  ],
+  "changed_source_pdfs": [],
+  "model": "qwen3:4b",
+  "model_installed_and_service_ready": true,
+  "missing_profile_databases": [],
+  "missing_source_pdfs": [],
+  "invalid_databases": [],
+  "ready": true
+}

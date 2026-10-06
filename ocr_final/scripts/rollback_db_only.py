@@ -61,7 +61,9 @@ def main():
     item = next(x for x in manifest['databases'] if x['profile'] == a.profile)
     source, live = Path(item['backup']).resolve(), Path(item['live']).resolve()
     allowed = {db.path for db in DatabaseRegistry(a.app_root).active_catalogs}
-    if live not in allowed or source.parent != Path(manifest['backup_folder']).resolve():
+    recorded_folders = {Path(row['backup']).resolve().parent for row in manifest['databases']}
+    backup_folder = Path(manifest['backup_folder']).resolve() if manifest.get('backup_folder') else next(iter(recorded_folders)) if len(recorded_folders) == 1 else None
+    if live not in allowed or source.parent != backup_folder or not source.is_relative_to((a.app_root/'work/backups').resolve()):
         raise ValueError('Rollback target outside the verified application/backup inventory')
     if sha(source) != item['backup_sha256'] or integrity(source) != 'ok':
         raise ValueError('Backup changed or corrupt')

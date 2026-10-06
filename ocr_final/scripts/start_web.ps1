@@ -3,20 +3,21 @@ $ErrorActionPreference = 'Stop'
 $appRoot = Split-Path $PSScriptRoot -Parent
 $pythonPath = Join-Path $appRoot 'venv/Scripts/python.exe'
 if (-not (Test-Path -LiteralPath $pythonPath)) {
-    throw 'Create the project venv and install requirements.txt first.'
+    throw 'From ocr_final, create venv with py -3.11 -m venv venv, then install requirements-web-tested.txt using venv/Scripts/python.exe -m pip.'
 }
-$url = "http://localhost:$Port"
+$url = "http://127.0.0.1:$Port"
 $probeUrl = "http://127.0.0.1:$Port"
+. (Join-Path $PSScriptRoot 'web_common.ps1')
 $listener = Get-NetTCPConnection -LocalPort $Port -State Listen -ErrorAction SilentlyContinue
 if ($listener) {
     try {
-        $schema = Invoke-RestMethod "$probeUrl/openapi.json" -TimeoutSec 5
-        if ($schema.paths.PSObject.Properties.Name -contains '/ask') {
-            Write-Output "Backend already running: $url/frontend/"
-            exit 0
-        }
-    } catch { }
-    throw "Port $Port is occupied by another server. Stop that server or choose -Port 8001. Do not use python -m http.server for the API."
+        Assert-CurriculumBackend -Url $probeUrl -AppRoot $appRoot
+        Save-CurriculumProcess -Port $Port -AppRoot $appRoot
+        Write-Output "Backend already running, database and configured model ready: $url/frontend/"
+        exit 0
+    } catch {
+        throw "Port $Port is occupied; readiness check failed: $($_.Exception.Message). No process was stopped."
+    }
 }
 $logFolder = Join-Path $appRoot 'work/web'
 New-Item -ItemType Directory -Path $logFolder -Force | Out-Null
@@ -36,10 +37,8 @@ $lastReadinessError = 'No response received'
 while ([DateTime]::UtcNow -lt $startupDeadline) {
     if ($backendProcess.HasExited) { throw "Backend exited. Check $stderrPath" }
     try {
-        $schema = Invoke-RestMethod "$probeUrl/openapi.json" -TimeoutSec 2
-        if (-not ($schema.paths.PSObject.Properties.Name -contains '/ask')) {
-            throw 'Unexpected application on the selected port'
-        }
+        Assert-CurriculumBackend -Url $probeUrl -AppRoot $appRoot
+        Save-CurriculumProcess -Port $Port -AppRoot $appRoot
         Write-Output "Backend ready: $url/frontend/"
         Write-Output "Logs: $stderrPath"
         exit 0

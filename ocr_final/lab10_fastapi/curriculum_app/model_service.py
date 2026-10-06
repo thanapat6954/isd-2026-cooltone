@@ -55,7 +55,8 @@ FACT_LABELS = {'code': 'รหัสวิชา', 'name_th': 'ชื่อภ�
     'year': 'ชั้นปี', 'semester': 'ภาคการศึกษา', 'requires': 'วิชาบังคับก่อน',
     'prerequisites': 'ข้อมูลวิชาบังคับก่อนที่บันทึก', 'description_th': 'คำอธิบายรายวิชา',
     'lecture_h': 'ชั่วโมงบรรยาย', 'lab_h': 'ชั่วโมงปฏิบัติ', 'self_h': 'ชั่วโมงศึกษาด้วยตนเอง',
-    'credits_raw': 'รูปแบบหน่วยกิต', 'prerequisite_status': 'สถานะหลักฐานวิชาบังคับก่อน'}
+    'credits_raw': 'รูปแบบหน่วยกิต', 'prerequisite_status': 'สถานะหลักฐานวิชาบังคับก่อน',
+    'rule_text': 'ข้อกำหนดที่ตรวจจากเล่ม', 'regulation_year': 'ปีของข้อบังคับที่อ้าง'}
 
 
 def render_claims(rows, claims):
@@ -205,8 +206,15 @@ class QwenTextToSQL:
 
     def available(self) -> bool:
         try:
-            return requests.get(f"{self.config.ollama_url}/api/tags", timeout=3).ok
-        except requests.RequestException:
+            response = requests.get(f"{self.config.ollama_url}/api/tags", timeout=3)
+            response.raise_for_status()
+            models = response.json().get('models', [])
+            if not isinstance(models, list):
+                return False
+            expected = self.config.ollama_model
+            expected = expected if ':' in expected else expected + ':latest'
+            return any(item.get('name', item.get('model')) == expected for item in models if isinstance(item, dict))
+        except (requests.RequestException, ValueError, AttributeError):
             return False
 
     @staticmethod
@@ -374,6 +382,15 @@ intent: {plan.intent}
             # Free text cannot be made safe by checking one number or marker.
             # Only the structured reference renderer in summarize may answer.
             return QwenTextToSQL._insufficient(rows)
+        if plan.intent in {'graduation_reference', 'study_feasibility'}:
+            evidence = [f"{row.get('_source', {}).get('curriculum_name', 'หลักสูตรที่เลือก')}: {row['rule_text']}"
+                        for row in rows if row.get('rule_text')]
+            if not evidence:
+                return QwenTextToSQL._insufficient(rows)
+            caveat = 'หลักฐานที่ตรวจส่วนนี้เป็นการอ้างถึงข้อบังคับ ยังไม่ได้ตรวจรายละเอียดภาคผนวกทั้งหมด จึงยังยืนยันไม่ได้ว่าแผนของผู้เรียนผ่านเงื่อนไขจบครบแล้ว'
+            if plan.intent == 'study_feasibility':
+                caveat += ' และยังรับรองไม่ได้ว่าจะจบตามระยะเวลาที่ถาม ต้องตรวจวิชาบังคับก่อนและการเปิดรายวิชาจริงด้วย'
+            return '\n'.join(evidence) + '\n' + caveat
         if plan.intent == "course_list":
             grouped: dict[str, list[dict[str, Any]]] = {}
             for row in rows:
@@ -636,6 +653,8 @@ intent: {plan.intent}
                 "The selected database contains one program row; filtering program is redundant"
             )
         allowed_constants = {"pre", "corequisite"}
+        if plan.intent in {'graduation_reference', 'study_feasibility'}:
+            allowed_constants.add('graduation_reference')
         # Only the internal, database-backed name resolver can authorize this
         # code. Do not exempt arbitrary plan/model-added course literals.
         if resolved_course_code == plan.course_code and re.fullmatch(r'\d{8}',resolved_course_code or ''):

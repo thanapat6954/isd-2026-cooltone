@@ -1,0 +1,464 @@
+{
+  "scope": "Current publication; byte sizes measured from local files before Git line-ending normalization",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 163
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1532
+    },
+    {
+      "path": "README.md",
+      "bytes": 57962
+    },
+    {
+      "path": "docs/PROGRESS.md",
+      "bytes": 85733
+    },
+    {
+      "path": "docs/assets/curriculum-banner.svg",
+      "bytes": 1630
+    },
+    {
+      "path": "docs/assets/technology-badges.svg",
+      "bytes": 748
+    },
+    {
+      "path": "docs/public_results/PUBLICATION.md",
+      "bytes": 2233
+    },
+    {
+      "path": "docs/public_results/db_only_submission/DB_ONLY_REPORT.md",
+      "bytes": 11189
+    },
+    {
+      "path": "docs/public_results/publication_frontend.log",
+      "bytes": 678
+    },
+    {
+      "path": "docs/public_results/publication_links.json",
+      "bytes": 16621
+    },
+    {
+      "path": "docs/public_results/publication_schema.log",
+      "bytes": 2718
+    },
+    {
+      "path": "docs/public_results/publication_unit_final.log",
+      "bytes": 20981
+    },
+    {
+      "path": "docs/public_results/publication_unit_tests.log",
+      "bytes": 23925
+    },
+    {
+      "path": "docs/public_results/readme_followup/REPORT.md",
+      "bytes": 4818
+    },
+    {
+      "path": "docs/public_results/readme_followup/focused_tests.log",
+      "bytes": 2570
+    },
+    {
+      "path": "docs/public_results/readme_followup/focused_tests_with_db.log",
+      "bytes": 2491
+    },
+    {
+      "path": "docs/public_results/readme_followup/launcher.json",
+      "bytes": 898
+    },
+    {
+      "path": "docs/public_results/readme_followup/links.json",
+      "bytes": 16360
+    },
+    {
+      "path": "docs/public_results/readme_followup/manual_shutdown.json",
+      "bytes": 527
+    },
+    {
+      "path": "docs/public_results/readme_followup/manual_ui.json",
+      "bytes": 7295
+    },
+    {
+      "path": "docs/public_results/readme_followup/manual_ui.png",
+      "bytes": 109312
+    },
+    {
+      "path": "docs/public_results/readme_followup/retry/launcher.json",
+      "bytes": 2510
+    },
+    {
+      "path": "docs/public_results/readme_verification/REPORT.md",
+      "bytes": 7360
+    },
+    {
+      "path": "docs/public_results/readme_verification/cleanup.txt",
+      "bytes": 411
+    },
+    {
+      "path": "docs/public_results/readme_verification/final/first_preflight.json",
+      "bytes": 664
+    },
+    {
+      "path": "docs/public_results/readme_verification/final/startup.json",
+      "bytes": 13809
+    },
+    {
+      "path": "docs/public_results/readme_verification/focused_tests.log",
+      "bytes": 2000
+    },
+    {
+      "path": "docs/public_results/readme_verification/handoff.json",
+      "bytes": 14739
+    },
+    {
+      "path": "docs/public_results/readme_verification/preview.json",
+      "bytes": 319
+    },
+    {
+      "path": "docs/public_results/readme_verification/readme_preview.png",
+      "bytes": 78080
+    },
+    {
+      "path": "docs/public_results/readme_verification/startup.json",
+      "bytes": 10242
+    },
+    {
+      "path": "docs/public_results/readme_verification/startup_ui.json",
+      "bytes": 7295
+    },
+    {
+      "path": "docs/public_results/readme_verification/startup_ui.png",
+      "bytes": 109328
+    },
+    {
+      "path": "docs/public_results/week11/REQUIREMENTS.md",
+      "bytes": 8831
+    },
+    {
+      "path": "docs/public_results/week11/WEEK11_REPORT.md",
+      "bytes": 14352
+    },
+    {
+      "path": "docs/public_results/week11/audit_release/audit_results.json",
+      "bytes": 3417853
+    },
+    {
+      "path": "docs/public_results/week11/checks_release/checks.json",
+      "bytes": 43956
+    },
+    {
+      "path": "docs/public_results/week11/checks_release/gold.json",
+      "bytes": 2030748
+    },
+    {
+      "path": "docs/public_results/week11/graduation_ui.json",
+      "bytes": 30930
+    },
+    {
+      "path": "docs/public_results/week11/handoff_ui_full.png",
+      "bytes": 156306
+    },
+    {
+      "path": "docs/public_results/week11/inventory.json",
+      "bytes": 24732
+    },
+    {
+      "path": "docs/public_results/week11/inventory_final.json",
+      "bytes": 18986
+    },
+    {
+      "path": "docs/public_results/week11/isolated_desktop.png",
+      "bytes": 46794
+    },
+    {
+      "path": "docs/public_results/week11/isolated_mobile.png",
+      "bytes": 123577
+    },
+    {
+      "path": "docs/public_results/week11/isolated_preflight_final.json",
+      "bytes": 664
+    },
+    {
+      "path": "docs/public_results/week11/isolated_runtime_versions.txt",
+      "bytes": 502
+    },
+    {
+      "path": "docs/public_results/week11/isolated_ui.json",
+      "bytes": 2371
+    },
+    {
+      "path": "docs/public_results/week11/requirement_isolation.json",
+      "bytes": 32120
+    },
+    {
+      "path": "docs/public_results/week11_continuation/BRANCH.md",
+      "bytes": 1547
+    },
+    {
+      "path": "docs/public_results/week11_continuation/REPORT.md",
+      "bytes": 11354
+    },
+    {
+      "path": "docs/public_results/week11_continuation/checks_live_stale/checks.json",
+      "bytes": 26842
+    },
+    {
+      "path": "docs/public_results/week11_continuation/checks_release/checks.json",
+      "bytes": 45324
+    },
+    {
+      "path": "docs/public_results/week11_continuation/inventory.json",
+      "bytes": 19688
+    },
+    {
+      "path": "docs/public_results/week11_continuation/inventory_after.json",
+      "bytes": 18986
+    },
+    {
+      "path": "docs/public_results/week11_continuation/metadata_ingest.json",
+      "bytes": 3475
+    },
+    {
+      "path": "docs/public_results/week11_continuation/metadata_qa_first.json",
+      "bytes": 214479
+    },
+    {
+      "path": "docs/public_results/week11_continuation/metadata_qa_release.json",
+      "bytes": 212981
+    },
+    {
+      "path": "docs/public_results/week11_continuation/metadata_ui.json",
+      "bytes": 39951
+    },
+    {
+      "path": "docs/public_results/week11_continuation/metadata_ui_release.json",
+      "bytes": 13599
+    },
+    {
+      "path": "docs/public_results/week11_continuation/metadata_ui_release.png",
+      "bytes": 31532
+    },
+    {
+      "path": "ocr_final/.gitignore",
+      "bytes": 432
+    },
+    {
+      "path": "ocr_final/data/source_reviews/graduation_references.json",
+      "bytes": 5339
+    },
+    {
+      "path": "ocr_final/data/source_reviews/program_metadata.json",
+      "bytes": 832
+    },
+    {
+      "path": "ocr_final/frontend/README.md",
+      "bytes": 2710
+    },
+    {
+      "path": "ocr_final/frontend/wireframe.md",
+      "bytes": 1814
+    },
+    {
+      "path": "ocr_final/lab10_fastapi/curriculum_app/.env.example",
+      "bytes": 292
+    },
+    {
+      "path": "ocr_final/lab10_fastapi/curriculum_app/database.py",
+      "bytes": 19720
+    },
+    {
+      "path": "ocr_final/lab10_fastapi/curriculum_app/main.py",
+      "bytes": 15237
+    },
+    {
+      "path": "ocr_final/lab10_fastapi/curriculum_app/model_service.py",
+      "bytes": 45394
+    },
+    {
+      "path": "ocr_final/lab10_fastapi/curriculum_app/query_planner.py",
+      "bytes": 19644
+    },
+    {
+      "path": "ocr_final/requirements-web-tested.txt",
+      "bytes": 281
+    },
+    {
+      "path": "ocr_final/run_lab8b.py",
+      "bytes": 15688
+    },
+    {
+      "path": "ocr_final/scripts/audit_all.py",
+      "bytes": 12854
+    },
+    {
+      "path": "ocr_final/scripts/check_setup.py",
+      "bytes": 2999
+    },
+    {
+      "path": "ocr_final/scripts/export_public_evidence.py",
+      "bytes": 3234
+    },
+    {
+      "path": "ocr_final/scripts/ingest_program_metadata.py",
+      "bytes": 7301
+    },
+    {
+      "path": "ocr_final/scripts/ingest_program_requirements.py",
+      "bytes": 6424
+    },
+    {
+      "path": "ocr_final/scripts/preview_readme.mjs",
+      "bytes": 2490
+    },
+    {
+      "path": "ocr_final/scripts/record_handoff_inventory.py",
+      "bytes": 4830
+    },
+    {
+      "path": "ocr_final/scripts/rollback_db_only.py",
+      "bytes": 3604
+    },
+    {
+      "path": "ocr_final/scripts/run_handoff_checks.py",
+      "bytes": 4126
+    },
+    {
+      "path": "ocr_final/scripts/run_requirement_qa.py",
+      "bytes": 4851
+    },
+    {
+      "path": "ocr_final/scripts/runtime_bundle.py",
+      "bytes": 4719
+    },
+    {
+      "path": "ocr_final/scripts/start_web.ps1",
+      "bytes": 2472
+    },
+    {
+      "path": "ocr_final/scripts/stop_web.ps1",
+      "bytes": 1189
+    },
+    {
+      "path": "ocr_final/scripts/summarize_handoff.py",
+      "bytes": 16663
+    },
+    {
+      "path": "ocr_final/scripts/upgrade_fidelity_schema.py",
+      "bytes": 5464
+    },
+    {
+      "path": "ocr_final/scripts/verify_handoff_runtime.py",
+      "bytes": 2967
+    },
+    {
+      "path": "ocr_final/scripts/verify_launcher_commands.py",
+      "bytes": 4296
+    },
+    {
+      "path": "ocr_final/scripts/verify_program_metadata.py",
+      "bytes": 3451
+    },
+    {
+      "path": "ocr_final/scripts/verify_readme_setup.py",
+      "bytes": 6251
+    },
+    {
+      "path": "ocr_final/scripts/verify_requirement_isolation.py",
+      "bytes": 4705
+    },
+    {
+      "path": "ocr_final/scripts/web_common.ps1",
+      "bytes": 1570
+    },
+    {
+      "path": "ocr_final/tests/qa_graduation_reference.json",
+      "bytes": 1056
+    },
+    {
+      "path": "ocr_final/tests/test_fidelity_upgrade.py",
+      "bytes": 891
+    },
+    {
+      "path": "ocr_final/tests/test_launcher_verification.py",
+      "bytes": 796
+    },
+    {
+      "path": "ocr_final/tests/test_prerequisite_evidence.py",
+      "bytes": 11888
+    },
+    {
+      "path": "ocr_final/tests/test_program_metadata.py",
+      "bytes": 5042
+    },
+    {
+      "path": "ocr_final/tests/test_program_requirements.py",
+      "bytes": 5735
+    },
+    {
+      "path": "ocr_final/tests/test_public_evidence.py",
+      "bytes": 1163
+    },
+    {
+      "path": "ocr_final/tests/test_runtime_bundle.py",
+      "bytes": 2280
+    },
+    {
+      "path": "ocr_final/tests/test_web_routing.py",
+      "bytes": 2007
+    },
+    {
+      "path": "ocr_final/tests/test_week11_handoff.py",
+      "bytes": 4123
+    },
+    {
+      "path": "docs/public_results/COMMIT_FILES.json",
+      "bytes": 11248
+    }
+  ],
+  "total_files": 104,
+  "top_10": [
+    {
+      "path": "docs/public_results/week11/audit_release/audit_results.json",
+      "bytes": 3417853
+    },
+    {
+      "path": "docs/public_results/week11/checks_release/gold.json",
+      "bytes": 2030748
+    },
+    {
+      "path": "docs/public_results/week11_continuation/metadata_qa_first.json",
+      "bytes": 214479
+    },
+    {
+      "path": "docs/public_results/week11_continuation/metadata_qa_release.json",
+      "bytes": 212981
+    },
+    {
+      "path": "docs/public_results/week11/handoff_ui_full.png",
+      "bytes": 156306
+    },
+    {
+      "path": "docs/public_results/week11/isolated_mobile.png",
+      "bytes": 123577
+    },
+    {
+      "path": "docs/public_results/readme_verification/startup_ui.png",
+      "bytes": 109328
+    },
+    {
+      "path": "docs/public_results/readme_followup/manual_ui.png",
+      "bytes": 109312
+    },
+    {
+      "path": "docs/PROGRESS.md",
+      "bytes": 85733
+    },
+    {
+      "path": "docs/public_results/readme_verification/readme_preview.png",
+      "bytes": 78080
+    }
+  ]
+}

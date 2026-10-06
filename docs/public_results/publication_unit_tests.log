@@ -1,0 +1,194 @@
+test_applies_verified_fields_and_override (test_apply_a1_review_batch.ApplyA1ReviewBatchTests.test_applies_verified_fields_and_override) ... ok
+test_marks_spurious_fragment_without_copying_candidate (test_apply_a1_review_batch.ApplyA1ReviewBatchTests.test_marks_spurious_fragment_without_copying_candidate) ... ok
+test_rejects_unknown_sample (test_apply_a1_review_batch.ApplyA1ReviewBatchTests.test_rejects_unknown_sample) ... ok
+test_explicit_alternatives_count_once_and_keep_individual_labels (test_apply_reviewed_plan_term.ReviewedTermTests.test_explicit_alternatives_count_once_and_keep_individual_labels) ... ok
+test_preserves_original_and_unknown_prerequisite (test_apply_reviewed_plan_term.ReviewedTermTests.test_preserves_original_and_unknown_prerequisite) ... ok
+test_refuses_unverified_or_wrong_total (test_apply_reviewed_plan_term.ReviewedTermTests.test_refuses_unverified_or_wrong_total) ... ok
+test_repeated_application_does_not_duplicate_rows (test_apply_reviewed_plan_term.ReviewedTermTests.test_repeated_application_does_not_duplicate_rows) ... ok
+test_approved_rows_score_direct_and_hour_fields (test_compare_a1_field_accuracy.CompareA1FieldAccuracyTests.test_approved_rows_score_direct_and_hour_fields) ... ok
+test_candidate_only_rows_are_never_scored (test_compare_a1_field_accuracy.CompareA1FieldAccuracyTests.test_candidate_only_rows_are_never_scored) ... ok
+test_spurious_candidate_is_reported_but_not_scored (test_compare_a1_field_accuracy.CompareA1FieldAccuracyTests.test_spurious_candidate_is_reported_but_not_scored) ... ok
+test_wrong_and_garbled_values_are_reported (test_compare_a1_field_accuracy.CompareA1FieldAccuracyTests.test_wrong_and_garbled_values_are_reported) ... ok
+test_common_nominal_variant_lists_candidates_not_an_answer (test_course_name_resolution.CourseNameTests.test_common_nominal_variant_lists_candidates_not_an_answer) ... ok
+test_exact_match_preferred_and_book_page_has_same_pdf_provenance (test_course_name_resolution.CourseNameTests.test_exact_match_preferred_and_book_page_has_same_pdf_provenance) ... ok
+test_incidental_course_name_does_not_select_another_program (test_course_name_resolution.CourseNameTests.test_incidental_course_name_does_not_select_another_program) ... ok
+test_name_prerequisite_detected_without_code (test_course_name_resolution.CourseNameTests.test_name_prerequisite_detected_without_code) ... ok
+test_nonexistent_course_not_replaced_with_close_candidate (test_course_name_resolution.CourseNameTests.test_nonexistent_course_not_replaced_with_close_candidate) ... ok
+test_review_ingest_updates_actual_plan_name_columns (test_course_name_resolution.CourseNameTests.test_review_ingest_updates_actual_plan_name_columns) ... ok
+test_unique_name_can_resolve_prerequisite_without_relaxing_filter_guard (test_course_name_resolution.CourseNameTests.test_unique_name_can_resolve_prerequisite_without_relaxing_filter_guard) ... ok
+test_wildcard_is_not_search_operator (test_course_name_resolution.CourseNameTests.test_wildcard_is_not_search_operator) ... ok
+test_actual_values_only (test_db_only_grounding.GroundingTests.test_actual_values_only) ... ok
+test_adversarial_claims (test_db_only_grounding.GroundingTests.test_adversarial_claims) ... ok
+test_claim_array_parser_preserved (test_db_only_grounding.GroundingTests.test_claim_array_parser_preserved) ... ok
+test_course_code_listing_is_deterministic (test_db_only_grounding.GroundingTests.test_course_code_listing_is_deterministic) ... ok
+test_empty_evidence (test_db_only_grounding.GroundingTests.test_empty_evidence) ... ok
+test_free_prose_never_passes_guard (test_db_only_grounding.GroundingTests.test_free_prose_never_passes_guard) ... ok
+test_missing_field (test_db_only_grounding.GroundingTests.test_missing_field) ... ok
+test_program_filter_normalization_requires_exact_single_row (test_db_only_grounding.GroundingTests.test_program_filter_normalization_requires_exact_single_row) ... ok
+test_sql_cannot_invent_or_relabel_facts (test_db_only_grounding.GroundingTests.test_sql_cannot_invent_or_relabel_facts) ... ok
+test_sql_preserves_stored_column_semantics (test_db_only_grounding.GroundingTests.test_sql_preserves_stored_column_semantics) ... ok
+test_thai_semester_synonyms (test_db_only_grounding.GroundingTests.test_thai_semester_synonyms) ... ok
+test_additive_and_idempotent_without_guessed_values (test_fidelity_upgrade.FidelityUpgradeTests.test_additive_and_idempotent_without_guessed_values) ... ok
+test_01_semester_credit_question_queries_all_relevant_curricula (test_lab10_multi_database.MultiDatabaseTests.test_01_semester_credit_question_queries_all_relevant_curricula) ... ok
+test_02_it_total_credits_selects_both_variants_without_fake_filters (test_lab10_multi_database.MultiDatabaseTests.test_02_it_total_credits_selects_both_variants_without_fake_filters) ... ok
+test_03_course_count_uses_count (test_lab10_multi_database.MultiDatabaseTests.test_03_course_count_uses_count) ... ok
+test_04_course_list_filters_only_explicit_year_and_semester (test_lab10_multi_database.MultiDatabaseTests.test_04_course_list_filters_only_explicit_year_and_semester) ... ok
+test_05_ai_question_selects_ai_database (test_lab10_multi_database.MultiDatabaseTests.test_05_ai_question_selects_ai_database) ... ok
+test_06_invalid_model_column_is_repaired (test_lab10_multi_database.MultiDatabaseTests.test_06_invalid_model_column_is_repaired) ... SQL rejected curriculum=AI-2566-coop attempt=1 sql='SELECT invented_column FROM program' error=no such column: invented_column
+ok
+test_07_ambiguous_total_keeps_sources_separate (test_lab10_multi_database.MultiDatabaseTests.test_07_ambiguous_total_keeps_sources_separate) ... ok
+test_08_mixed_schemas_generate_compatible_course_queries (test_lab10_multi_database.MultiDatabaseTests.test_08_mixed_schemas_generate_compatible_course_queries) ... ok
+test_09_version_diff_is_deterministic (test_lab10_multi_database.MultiDatabaseTests.test_09_version_diff_is_deterministic) ... ok
+test_10_version_metadata_is_exposed (test_lab10_multi_database.MultiDatabaseTests.test_10_version_metadata_is_exposed) ... ok
+test_11_bit_name_does_not_select_it (test_lab10_multi_database.MultiDatabaseTests.test_11_bit_name_does_not_select_it) ... ok
+test_12_required_course_ui_question_is_deterministic (test_lab10_multi_database.MultiDatabaseTests.test_12_required_course_ui_question_is_deterministic) ... ok
+test_validator_rejects_destructive_and_unknown_schema (test_lab10_multi_database.MultiDatabaseTests.test_validator_rejects_destructive_and_unknown_schema) ... ok
+test_empty_output_is_not_a_success_message (test_launcher_verification.LauncherVerificationTests.test_empty_output_is_not_a_success_message) ... ok
+test_error_margin_and_wrap_do_not_hide_preservation_message (test_launcher_verification.LauncherVerificationTests.test_error_margin_and_wrap_do_not_hide_preservation_message) ... ok
+test_plain_startup_output_is_preserved (test_launcher_verification.LauncherVerificationTests.test_plain_startup_output_is_preserved) ... ok
+test_dsba_no_coop_details_list_all_recorded_samples (test_make_eval_summary.EvalSummaryTests.test_dsba_no_coop_details_list_all_recorded_samples) ... ok
+test_dsba_no_coop_ocr_metrics_are_rendered (test_make_eval_summary.EvalSummaryTests.test_dsba_no_coop_ocr_metrics_are_rendered) ... ok
+test_generated_prose_uses_thai_wording (test_make_eval_summary.EvalSummaryTests.test_generated_prose_uses_thai_wording) ... ok
+test_ground_truth_review_candidates_are_cautious (test_make_eval_summary.EvalSummaryTests.test_ground_truth_review_candidates_are_cautious) ... ok
+test_injection_is_idempotent (test_make_eval_summary.EvalSummaryTests.test_injection_is_idempotent) ... ok
+test_missing_baseline_note_is_generated_from_json (test_make_eval_summary.EvalSummaryTests.test_missing_baseline_note_is_generated_from_json) ... ok
+test_missing_nodes_are_na_not_zero (test_make_eval_summary.EvalSummaryTests.test_missing_nodes_are_na_not_zero) ... ok
+test_null_is_not_converted_to_zero (test_make_eval_summary.EvalSummaryTests.test_null_is_not_converted_to_zero) ... ok
+test_profile_display_names_and_dsba_mapping (test_make_eval_summary.EvalSummaryTests.test_profile_display_names_and_dsba_mapping) ... ok
+test_profiles_heading_is_numbered (test_make_eval_summary.EvalSummaryTests.test_profiles_heading_is_numbered) ... ok
+test_recorded_error_patterns_and_splits (test_make_eval_summary.EvalSummaryTests.test_recorded_error_patterns_and_splits) ... ok
+test_tldr_uses_top_ranked_issue (test_make_eval_summary.EvalSummaryTests.test_tldr_uses_top_ranked_issue) ... ok
+test_all_six_profiles_and_every_printed_term_have_a_ledger (test_old2560_book_terms.BookTermTests.test_all_six_profiles_and_every_printed_term_have_a_ledger) ... ok
+test_alternatives_count_once_but_both_labels_must_exist (test_old2560_book_terms.BookTermTests.test_alternatives_count_once_but_both_labels_must_exist) ... ok
+test_development_probe_rejects_heading_name_and_wrong_hour_pattern (test_old2560_book_terms.BookTermTests.test_development_probe_rejects_heading_name_and_wrong_hour_pattern) ... ok
+test_readability_inspects_actual_plan_labels_not_just_catalog (test_old2560_book_terms.BookTermTests.test_readability_inspects_actual_plan_labels_not_just_catalog) ... ok
+test_repeated_wildcards_are_distinct_slots_not_duplicates (test_old2560_book_terms.BookTermTests.test_repeated_wildcards_are_distinct_slots_not_duplicates) ... ok
+test_version_validator_uses_existing_api_source_contract (test_old2560_book_terms.BookTermTests.test_version_validator_uses_existing_api_source_contract) ... ok
+test_wrong_hours_fail_even_when_integer_credit_total_matches (test_old2560_book_terms.BookTermTests.test_wrong_hours_fail_even_when_integer_credit_total_matches) ... ok
+test_wrong_version_or_printed_page_fails (test_old2560_book_terms.BookTermTests.test_wrong_version_or_printed_page_fails) ... ok
+test_adjacent_cooperative_alternatives_are_both_kept (test_placeholder_fidelity.PlaceholderFidelityTests.test_adjacent_cooperative_alternatives_are_both_kept) ... ok
+test_course_list_never_exposes_internal_slot_id (test_placeholder_fidelity.PlaceholderFidelityTests.test_course_list_never_exposes_internal_slot_id) ... ok
+test_credit_deficit_is_blocked_not_filled_with_invented_slots (test_placeholder_fidelity.PlaceholderFidelityTests.test_credit_deficit_is_blocked_not_filled_with_invented_slots) ... ok
+test_failed_replacement_preserves_existing_database (test_placeholder_fidelity.PlaceholderFidelityTests.test_failed_replacement_preserves_existing_database) ... ok
+test_frontend_source_has_pdf_and_book_page_and_clean_quote (test_placeholder_fidelity.PlaceholderFidelityTests.test_frontend_source_has_pdf_and_book_page_and_clean_quote) ... ok
+test_load_roundtrip_preserves_credit_options_and_backup (test_placeholder_fidelity.PlaceholderFidelityTests.test_load_roundtrip_preserves_credit_options_and_backup) ... ok
+test_markdown_restores_all_x_placeholder_code (test_placeholder_fidelity.PlaceholderFidelityTests.test_markdown_restores_all_x_placeholder_code) ... ok
+test_rowspan_code_list_recovers_each_printed_slot (test_placeholder_fidelity.PlaceholderFidelityTests.test_rowspan_code_list_recovers_each_printed_slot) ... ok
+test_same_ordinal_different_elective_families_do_not_merge (test_placeholder_fidelity.PlaceholderFidelityTests.test_same_ordinal_different_elective_families_do_not_merge) ... ok
+test_wildcard_and_credit_alternatives_are_lossless (test_placeholder_fidelity.PlaceholderFidelityTests.test_wildcard_and_credit_alternatives_are_lossless) ... ok
+test_actual_required_edge_is_not_rendered_as_none (test_prerequisite_evidence.EvidenceTests.test_actual_required_edge_is_not_rendered_as_none) ... ok
+test_ai_current_ui_does_not_invent_a_year (test_prerequisite_evidence.EvidenceTests.test_ai_current_ui_does_not_invent_a_year) ... ok
+test_audit_uses_real_retrieval_and_does_not_modify_database (test_prerequisite_evidence.EvidenceTests.test_audit_uses_real_retrieval_and_does_not_modify_database) ... ok
+test_cache_reports_current_request_latency (test_prerequisite_evidence.EvidenceTests.test_cache_reports_current_request_latency) ... ok
+test_changed_source_blocks_review_without_modifying_database (test_prerequisite_evidence.EvidenceTests.test_changed_source_blocks_review_without_modifying_database) ... Exception in thread Thread-2 (_readerthread):
+Traceback (most recent call last):
+  File "<LOCAL_USER>\AppData\Local\Python\pythoncore-3.11-64\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "<LOCAL_USER>\AppData\Local\Python\pythoncore-3.11-64\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "<LOCAL_USER>\AppData\Local\Python\pythoncore-3.11-64\Lib\subprocess.py", line 1599, in _readerthread
+    buffer.append(fh.read())
+                  ^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe0 in position 68: invalid continuation byte
+ERROR
+test_conflicting_none_review_cannot_remove_existing_requirement (test_prerequisite_evidence.EvidenceTests.test_conflicting_none_review_cannot_remove_existing_requirement) ... Exception in thread Thread-4 (_readerthread):
+Traceback (most recent call last):
+  File "<LOCAL_USER>\AppData\Local\Python\pythoncore-3.11-64\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "<LOCAL_USER>\AppData\Local\Python\pythoncore-3.11-64\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "<LOCAL_USER>\AppData\Local\Python\pythoncore-3.11-64\Lib\subprocess.py", line 1599, in _readerthread
+    buffer.append(fh.read())
+                  ^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe0 in position 68: invalid continuation byte
+ERROR
+test_course_name_in_explicit_curriculum_is_not_program_info (test_prerequisite_evidence.EvidenceTests.test_course_name_in_explicit_curriculum_is_not_program_info) ... ok
+test_empty_results_name_identity_and_do_not_assert_book_absence (test_prerequisite_evidence.EvidenceTests.test_empty_results_name_identity_and_do_not_assert_book_absence) ... ok
+test_existing_course_unknown_is_not_absent_or_none (test_prerequisite_evidence.EvidenceTests.test_existing_course_unknown_is_not_absent_or_none) ... ok
+test_existing_edge_remains_visible_with_partial_evidence_table (test_prerequisite_evidence.EvidenceTests.test_existing_edge_remains_visible_with_partial_evidence_table) ... ok
+test_explicit_other_book_year_is_not_ignored (test_prerequisite_evidence.EvidenceTests.test_explicit_other_book_year_is_not_ignored) ... ok
+test_latest_uses_stored_flag_not_assumed_year (test_prerequisite_evidence.EvidenceTests.test_latest_uses_stored_flag_not_assumed_year) ... ok
+test_readonly_diagnostics_reject_writes (test_prerequisite_evidence.EvidenceTests.test_readonly_diagnostics_reject_writes) ... ok
+test_review_ingest_backs_up_original_before_named_correction (test_prerequisite_evidence.EvidenceTests.test_review_ingest_backs_up_original_before_named_correction) ... ok
+test_thai_no_coop_does_not_select_coop (test_prerequisite_evidence.EvidenceTests.test_thai_no_coop_does_not_select_coop) ... ok
+test_unknown_requested_version_does_not_fall_back (test_prerequisite_evidence.EvidenceTests.test_unknown_requested_version_does_not_fall_back) ... ok
+test_verified_none_cites_description_and_retains_registration_uncertainty (test_prerequisite_evidence.EvidenceTests.test_verified_none_cites_description_and_retains_registration_uncertainty) ... ok
+test_all_program_queries_include_paired_folios_only_when_stored (test_program_metadata.ProgramMetadataTests.test_all_program_queries_include_paired_folios_only_when_stored) ... ok
+test_backup_restore_recovers_original_schema_and_facts (test_program_metadata.ProgramMetadataTests.test_backup_restore_recovers_original_schema_and_facts) ... ok
+test_changed_facts_refused_without_partial_schema (test_program_metadata.ProgramMetadataTests.test_changed_facts_refused_without_partial_schema) ... ok
+test_citation_only_preserves_all_facts_and_records_original (test_program_metadata.ProgramMetadataTests.test_citation_only_preserves_all_facts_and_records_original) ... ok
+test_idempotent_and_conflicting_approval_refused (test_program_metadata.ProgramMetadataTests.test_idempotent_and_conflicting_approval_refused) ... ok
+test_unverified_or_invalid_pages_refused (test_program_metadata.ProgramMetadataTests.test_unverified_or_invalid_pages_refused) ... ok
+test_wrong_version_and_wrong_plan_refused (test_program_metadata.ProgramMetadataTests.test_wrong_version_and_wrong_plan_refused) ... ok
+test_backup_preserves_original_and_isolated_rollback_recovers_it (test_program_requirements.RequirementTests.test_backup_preserves_original_and_isolated_rollback_recovers_it) ... ok
+test_immutable_review_is_idempotent_and_conflict_fails (test_program_requirements.RequirementTests.test_immutable_review_is_idempotent_and_conflict_fails) ... ok
+test_missing_rules_are_scoped_uncertainty_without_model_call (test_program_requirements.RequirementTests.test_missing_rules_are_scoped_uncertainty_without_model_call) ... ok
+test_recognizes_requirements_and_accelerated_planning_without_question_ids (test_program_requirements.RequirementTests.test_recognizes_requirements_and_accelerated_planning_without_question_ids) ... ok
+test_source_rule_is_not_an_enrollment_or_acceleration_grant (test_program_requirements.RequirementTests.test_source_rule_is_not_an_enrollment_or_acceleration_grant) ... ok
+test_wrong_version_rules_never_join_selected_program (test_program_requirements.RequirementTests.test_wrong_version_rules_never_join_selected_program) ... ok
+test_nested_numbers_and_original_objects_are_preserved (test_public_evidence.PublicEvidenceTests.test_nested_numbers_and_original_objects_are_preserved) ... ok
+test_thai_course_name_is_unchanged (test_public_evidence.PublicEvidenceTests.test_thai_course_name_is_unchanged) ... ok
+test_windows_and_escaped_paths_are_redacted (test_public_evidence.PublicEvidenceTests.test_windows_and_escaped_paths_are_redacted) ... ok
+test_all_paths_validated_before_any_restore (test_runtime_bundle.RuntimeBundleTests.test_all_paths_validated_before_any_restore) ... ok
+test_roundtrip_and_overwrite_refusal (test_runtime_bundle.RuntimeBundleTests.test_roundtrip_and_overwrite_refusal) ... ok
+test_unsafe_paths_rejected (test_runtime_bundle.RuntimeBundleTests.test_unsafe_paths_rejected) ... ok
+test_db_member_display_name_only (test_study_plan.StudyPlanTests.test_db_member_display_name_only) ... ok
+test_distinct_wildcards_never_collapse (test_study_plan.StudyPlanTests.test_distinct_wildcards_never_collapse) ... ok
+test_factual_row_values_never_changed (test_study_plan.StudyPlanTests.test_factual_row_values_never_changed) ... ok
+test_filtered_query_does_not_claim_total (test_study_plan.StudyPlanTests.test_filtered_query_does_not_claim_total) ... ok
+test_general_placeholder_not_malformed (test_study_plan.StudyPlanTests.test_general_placeholder_not_malformed) ... ok
+test_missing_evidence_fails_loudly (test_study_plan.StudyPlanTests.test_missing_evidence_fails_loudly) ... ok
+test_multiple_track_membership_not_shared (test_study_plan.StudyPlanTests.test_multiple_track_membership_not_shared) ... ok
+test_no_review_preserves_raw_alternatives_and_provenance (test_study_plan.StudyPlanTests.test_no_review_preserves_raw_alternatives_and_provenance) ... ok
+test_no_runtime_json_fallback (test_study_plan.StudyPlanTests.test_no_runtime_json_fallback) ... ok
+test_plain_text_preserves_or_alternative (test_study_plan.StudyPlanTests.test_plain_text_preserves_or_alternative) ... ok
+test_separate_plan_and_tracks (test_study_plan.StudyPlanTests.test_separate_plan_and_tracks) ... ok
+test_track_selection_keeps_shared (test_study_plan.StudyPlanTests.test_track_selection_keeps_shared) ... ok
+test_unreviewed_page_cannot_receive_facts (test_study_plan.StudyPlanTests.test_unreviewed_page_cannot_receive_facts) ... ok
+test_version_isolation (test_study_plan.StudyPlanTests.test_version_isolation) ... ok
+test_backend_frontend_uses_same_origin (test_web_routing.WebRoutingTests.test_backend_frontend_uses_same_origin) ... ok
+test_frontend_and_both_question_contracts_are_registered (test_web_routing.WebRoutingTests.test_frontend_and_both_question_contracts_are_registered) ... ok
+test_launcher_uses_bounded_elapsed_time_and_keeps_api_port_guard (test_web_routing.WebRoutingTests.test_launcher_uses_bounded_elapsed_time_and_keeps_api_port_guard) ... ok
+test_root_redirects_to_real_thai_frontend (test_web_routing.WebRoutingTests.test_root_redirects_to_real_thai_frontend) ... ok
+test_all_live_programs_year_sql_preserves_database_page_pairs (test_week11_handoff.ReadinessAndCitationTests.test_all_live_programs_year_sql_preserves_database_page_pairs) ... ok
+test_bad_evidence_does_not_make_clickable_invalid_pages (test_week11_handoff.ReadinessAndCitationTests.test_bad_evidence_does_not_make_clickable_invalid_pages) ... ok
+test_invalid_tags_response_is_not_ready (test_week11_handoff.ReadinessAndCitationTests.test_invalid_tags_response_is_not_ready) ... ok
+test_null_models_is_not_ready (test_week11_handoff.ReadinessAndCitationTests.test_null_models_is_not_ready) ... ok
+test_pairing_is_preserved_across_nonmonotonic_appendix_folios (test_week11_handoff.ReadinessAndCitationTests.test_pairing_is_preserved_across_nonmonotonic_appendix_folios) ... ok
+test_running_ollama_without_configured_model_is_not_ready (test_week11_handoff.ReadinessAndCitationTests.test_running_ollama_without_configured_model_is_not_ready) ... ok
+test_unpaired_lists_do_not_fabricate_printed_pages (test_week11_handoff.ReadinessAndCitationTests.test_unpaired_lists_do_not_fabricate_printed_pages) ... ok
+test_year_quote_is_not_a_semester_quote (test_week11_handoff.ReadinessAndCitationTests.test_year_quote_is_not_a_semester_quote) ... ok
+
+======================================================================
+ERROR: test_changed_source_blocks_review_without_modifying_database (test_prerequisite_evidence.EvidenceTests.test_changed_source_blocks_review_without_modifying_database)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<REPOSITORY>\ocr_final\tests\test_prerequisite_evidence.py", line 185, in test_changed_source_blocks_review_without_modifying_database
+    self.assertIn('Source changed',process.stderr)
+  File "<LOCAL_USER>\AppData\Local\Python\pythoncore-3.11-64\Lib\unittest\case.py", line 1137, in assertIn
+    if member not in container:
+       ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'NoneType' is not iterable
+
+======================================================================
+ERROR: test_conflicting_none_review_cannot_remove_existing_requirement (test_prerequisite_evidence.EvidenceTests.test_conflicting_none_review_cannot_remove_existing_requirement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<REPOSITORY>\ocr_final\tests\test_prerequisite_evidence.py", line 178, in test_conflicting_none_review_cannot_remove_existing_requirement
+    self.assertIn('no destructive overwrite',process.stderr)
+  File "<LOCAL_USER>\AppData\Local\Python\pythoncore-3.11-64\Lib\unittest\case.py", line 1137, in assertIn
+    if member not in container:
+       ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'NoneType' is not iterable
+
+----------------------------------------------------------------------
+Ran 139 tests in 3.174s
+
+FAILED (errors=2)
+  โหลดเข้า <TEMP>\tmp06ghq0m6\curriculum.db แล้ว
+    program            1 แถว
+    course             0 แถว
+    plan_item          1 แถว
+    prerequisite       0 แถว

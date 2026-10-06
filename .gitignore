@@ -1,0 +1,9 @@
+# Keep raw local diagnostics out of new publications; tracked historical files remain tracked.
+docs/results/
+*.db
+*.db-wal
+*.db-shm
+.env
+venv/
+.venv/
+__pycache__/

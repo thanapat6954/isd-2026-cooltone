@@ -1,0 +1,70 @@
+{
+  "scope": "Launcher safety/start/idempotency/stop only, not answer accuracy",
+  "steps": [
+    {
+      "name": "wrong_root_guard",
+      "command": [
+        "pwsh",
+        "-NoProfile",
+        "-File",
+        "<TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\scripts\\start_web.ps1",
+        "-Port",
+        "8000"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Exception: <TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\scripts\\start_web.ps1:19\nLine |\n  19 |          throw \"Port $Port is occupied; readiness check failed: $($_.E …\n     |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n     | Port 8000 is occupied; readiness check failed: A different application folder is serving this port.. No process\n     | was stopped.\n",
+      "passed": true
+    },
+    {
+      "name": "alternate_start",
+      "command": [
+        "pwsh",
+        "-NoProfile",
+        "-File",
+        "<TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\scripts\\start_web.ps1",
+        "-Port",
+        "8001"
+      ],
+      "exit_code": 0,
+      "stdout": "Backend ready: http://127.0.0.1:8001/frontend/\nLogs: <TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\work\\web\\backend-25691007-023139-267.stderr.log\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "already_running",
+      "command": [
+        "pwsh",
+        "-NoProfile",
+        "-File",
+        "<TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\scripts\\start_web.ps1",
+        "-Port",
+        "8001"
+      ],
+      "exit_code": 0,
+      "stdout": "Backend already running, database and configured model ready: http://127.0.0.1:8001/frontend/\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "alternate_stop",
+      "command": [
+        "pwsh",
+        "-NoProfile",
+        "-File",
+        "<TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\scripts\\stop_web.ps1",
+        "-Port",
+        "8001"
+      ],
+      "exit_code": 0,
+      "stdout": "Stopped the verified backend on port 8001. Ollama and databases are unchanged.\n",
+      "stderr": "",
+      "passed": true
+    }
+  ],
+  "test_port_stopped": true,
+  "original_application_preserved": true,
+  "database_count": 14,
+  "database_hashes_unchanged": true,
+  "passed": true
+}

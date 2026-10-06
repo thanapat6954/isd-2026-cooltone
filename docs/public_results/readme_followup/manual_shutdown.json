@@ -1,0 +1,7 @@
+{
+  "chunk_id": "59bd9b",
+  "wall_time_seconds": 0.1234579,
+  "exit_code": 1,
+  "original_token_count": 74,
+  "output": "\u001b[32mINFO\u001b[m:     127.0.0.1:64782 - \"\u001b[1mPOST /ask HTTP/1.1\u001b[22m\" \u001b[32m200 OK\r\n\u001b[m\u001b[32mINFO\u001b[m:     Shutting down\r\n\u001b[32mINFO\u001b[m:     Waiting for application shutdown.\r\n\u001b[32mINFO\u001b[m:     Application shutdown complete.\u001b[32m\r\nINFO\u001b[m:     Finished server process [\u001b[36m35272\u001b[m]\r\n\u001b[?9001l\u001b[?1004l"
+}

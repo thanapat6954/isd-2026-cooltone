@@ -25,7 +25,7 @@ from lab10_fastapi.curriculum_app.query_planner import QueryPlan
 VERSIONS = {'AI.pdf': ('AI', 2566), 'DSBA.pdf': ('DSBA', 2565), 'DSBA-60.pdf': ('DSBA', 2560),
             'IT.pdf': ('IT', 2565), 'IT-60.pdf': ('IT', 2560),
             'BIT-65.pdf': ('BIT', 2565), 'BIT-60.pdf': ('BIT', 2560)}
-EXCLUDED = {'venv', '.venv', 'tmp', '.git', 'node_modules', 'backups', 'ocr_page_cache'}
+EXCLUDED = {'venv', '.venv', 'tmp', '.git', 'node_modules', 'backups', 'handoff', 'verification', 'ocr_page_cache'}
 
 
 class NoGeneration:
@@ -67,7 +67,7 @@ def audit_dataset(path, app_root, references):
                 result['credits'] = {'actual': actual, 'declared': expected}
                 if actual != expected:
                     finding('program_credits', 'FAIL', f'นับได้ {actual} หน่วยกิต แต่ข้อมูลหลักสูตรระบุ {expected}')
-            required = {'is_placeholder', 'raw_code', 'printed_page_number', 'alternative_index'}
+            required = {'is_placeholder', 'raw_code', 'code_pattern', 'elective_type', 'printed_page_number', 'alternative_index'}
             missing = required - {c.name for c in info.objects['plan_item'].columns}
             if missing:
                 finding('fidelity_schema', 'FAIL', 'ยังไม่มีคอลัมน์: ' + ', '.join(sorted(missing)))

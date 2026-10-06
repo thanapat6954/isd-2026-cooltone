@@ -19,3 +19,7 @@ work/lab8b_*/**
 !work/lab8b_*/robustness/
 !work/lab8b_*/robustness/robustness_report_v2.json
 work/_archive_candidates_*/
+work/handoff/
+work/web/
+work/backups/
+work/verification/

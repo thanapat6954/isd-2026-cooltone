@@ -148,7 +148,7 @@ class EvidenceTests(unittest.TestCase):
         review_path = self.root/'reviews.json'
         review_path.write_text(json.dumps({'documents':[document]}),encoding='utf-8')
         output = self.root/'ingest.json'
-        process = subprocess.run([sys.executable,str(Path(__file__).resolve().parents[1]/'scripts/ingest_prerequisite_reviews.py'),
+        process = subprocess.run([sys.executable,'-X','utf8',str(Path(__file__).resolve().parents[1]/'scripts/ingest_prerequisite_reviews.py'),
             '--app-root',str(self.root),'--reviews',str(review_path),'--output',str(output),'--database',str(self.path),'--apply'],
             capture_output=True,text=True,encoding='utf-8',timeout=20)
         return process,output

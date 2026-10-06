@@ -1,0 +1,20 @@
+{
+  "scope": "Launcher safety/start/idempotency/stop only, not answer accuracy",
+  "steps": [
+    {
+      "name": "wrong_root_guard",
+      "command": [
+        "pwsh",
+        "-NoProfile",
+        "-File",
+        "<TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\scripts\\start_web.ps1",
+        "-Port",
+        "8000"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Exception: <TEMP>\\curriculum-readme-final-20261007\\checkout with spaces\\ocr_final\\scripts\\start_web.ps1:19\nLine |\n  19 |          throw \"Port $Port is occupied; readiness check failed: $($_.E …\n     |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n     | Port 8000 is occupied; readiness check failed: A different application folder is serving this port.. No process\n     | was stopped.\n",
+      "passed": true
+    }
+  ]
+}

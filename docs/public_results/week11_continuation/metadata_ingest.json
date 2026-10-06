@@ -1,0 +1,73 @@
+{
+  "scope": "citation-only; all curriculum facts preserved",
+  "applied": true,
+  "backup_folder": "<LIVE_APP>\\work\\backups\\program-metadata\\20261006T182740174826",
+  "databases": [
+    {
+      "profile": "IT-2560-coop",
+      "live": "<LIVE_APP>\\work\\lab8b_it_2560_coop\\curriculum.db",
+      "before_sha256": "d0b4bcc42c4139481d16f2115048a53b60b2052c5d1c5af228d79172c64a4293",
+      "backup": "<LIVE_APP>\\work\\backups\\program-metadata\\20261006T182740174826\\IT-2560-coop.db",
+      "backup_sha256": "3ada3b15b0be86313bae7bc5019c563265ccac8a8600205063ab437e88a47bc2",
+      "stage": "<LIVE_APP>\\work\\backups\\program-metadata\\20261006T182740174826\\staged\\IT-2560-coop.db",
+      "stage_sha256": "43cef882c6f8d0b2f1ad97dcbfc5e7b25f8396c62a121a7630f2a66a35bfc130",
+      "facts_sha256": "d3cfb4337914b8abc3071e37804ee71d2e6dfe0d8293ddb34a63f829a630b67f",
+      "changed": true,
+      "integrity": "ok",
+      "source_review": {
+        "program": "IT",
+        "version": 2560,
+        "plans": [
+          "coop",
+          "no-coop"
+        ],
+        "source_file": "IT-60.pdf",
+        "sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 6,
+        "book_page": 1,
+        "section": "หมวดที่ 1 ข้อมูลทั่วไป ข้อ 1, 4 และ 5.1",
+        "name_th_base": "เทคโนโลยีสารสนเทศ",
+        "total_credits": 130,
+        "years": 4,
+        "review_status": "visually_verified",
+        "image_sha256": "59f666df23ae9c7090b6b8c077fa8328a98d44f81e78f4a52d408cde1cd3159f",
+        "scope": "citation_only_existing_facts"
+      },
+      "after_sha256": "0c89e398762546e0a1a676d150712d2f3e02ffc06a1ed1155be4cb39c5ff3898",
+      "deployed": true
+    },
+    {
+      "profile": "IT-2560-no-coop",
+      "live": "<LIVE_APP>\\work\\lab8b_it_2560_no_coop\\curriculum.db",
+      "before_sha256": "d1026b5c3551b622141fe3112e3a180554ddbd4c96ecd3bbe7e558959a24737d",
+      "backup": "<LIVE_APP>\\work\\backups\\program-metadata\\20261006T182740174826\\IT-2560-no-coop.db",
+      "backup_sha256": "691692ffdfb79c7bd97a127b66c58b2ab0d12e0eee5e00ce9020f8a87ef4a882",
+      "stage": "<LIVE_APP>\\work\\backups\\program-metadata\\20261006T182740174826\\staged\\IT-2560-no-coop.db",
+      "stage_sha256": "13cc37b1ecc3746d2c0494c518a93c9d531a9d676965b3b1bd73c0c54d353530",
+      "facts_sha256": "4e0bb0ce894de8667dd3d41b832126705af7e8eb5d280f8fcf3cf8e36d5e6fbd",
+      "changed": true,
+      "integrity": "ok",
+      "source_review": {
+        "program": "IT",
+        "version": 2560,
+        "plans": [
+          "coop",
+          "no-coop"
+        ],
+        "source_file": "IT-60.pdf",
+        "sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 6,
+        "book_page": 1,
+        "section": "หมวดที่ 1 ข้อมูลทั่วไป ข้อ 1, 4 และ 5.1",
+        "name_th_base": "เทคโนโลยีสารสนเทศ",
+        "total_credits": 130,
+        "years": 4,
+        "review_status": "visually_verified",
+        "image_sha256": "59f666df23ae9c7090b6b8c077fa8328a98d44f81e78f4a52d408cde1cd3159f",
+        "scope": "citation_only_existing_facts"
+      },
+      "after_sha256": "e20085783bce9c6e18a78ab75979d51a22da696487dac12680a106e1a6e02f08",
+      "deployed": true
+    }
+  ]
+}

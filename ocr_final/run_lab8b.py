@@ -285,6 +285,15 @@ def run_profile(name: str, *, skip_lab7: bool, skip_eval: bool = False) -> None:
             '--backups', out / 'study_db_backups.json', '--database', out / 'curriculum.db',
             '--apply', '--output', out / 'study_db_ingest.json')
     run(LAB8, "verify", "-d", out / "curriculum.db", "-o", out / "verify.json")
+    if (ROOT / 'data/source_reviews/graduation_references.json').is_file():
+        run(ROOT / 'scripts/ingest_program_requirements.py', '--app-root', ROOT,
+            '--database', out / 'curriculum.db', '--apply',
+            '--output', out / 'program_requirement_ingest.json')
+
+    if (ROOT / 'data/source_reviews/program_metadata.json').is_file():
+        run(ROOT / 'scripts/ingest_program_metadata.py', '--app-root', ROOT,
+            '--database', out / 'curriculum.db', '--apply',
+            '--output', out / 'program_metadata_ingest.json')
 
     gold = profile.get("gold")
     if gold and not skip_eval:

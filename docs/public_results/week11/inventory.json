@@ -1,0 +1,785 @@
+{
+  "scope": "read-only inventory, not source accuracy",
+  "sources": [
+    {
+      "source_file": "AI.pdf",
+      "sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+      "bytes": 236667633
+    },
+    {
+      "source_file": "BIT-60.pdf",
+      "sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "bytes": 131488606
+    },
+    {
+      "source_file": "BIT-65.pdf",
+      "sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+      "bytes": 198031060
+    },
+    {
+      "source_file": "DSBA-60.pdf",
+      "sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "bytes": 142583017
+    },
+    {
+      "source_file": "DSBA.pdf",
+      "sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+      "bytes": 54264534
+    },
+    {
+      "source_file": "IT-60.pdf",
+      "sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "bytes": 203535073
+    },
+    {
+      "source_file": "IT.pdf",
+      "sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+      "bytes": 257458903
+    }
+  ],
+  "profiles": [
+    {
+      "profile": "legacy-course-catalog",
+      "database": "curriculum.db",
+      "sha256": "cdcad2ea9fc37edf0b85202bdc8498826b487ca90527a0add2cd30b27734fd1f",
+      "version": null,
+      "plan": null,
+      "counts": {
+        "courses": 6147
+      },
+      "missing_fidelity_columns": [
+        "alternative_index",
+        "code_pattern",
+        "elective_type",
+        "is_placeholder",
+        "printed_page_number",
+        "raw_code"
+      ],
+      "source_file": null
+    },
+    {
+      "profile": "AI-2566-coop",
+      "database": "work/lab8b_ai/curriculum.db",
+      "sha256": "964c09b1c393a89e51d5a6cc0fd4f94eb92271a9ab1763617a9dcde43b6b4fb2",
+      "version": 2566,
+      "plan": "coop",
+      "counts": {
+        "course": 299,
+        "plan_item": 41,
+        "prerequisite": 0,
+        "study_item": 0
+      },
+      "missing_fidelity_columns": [],
+      "source_file": "AI.pdf"
+    },
+    {
+      "profile": "BIT-2560-coop",
+      "database": "work/lab8b_bit_2560_coop/curriculum.db",
+      "sha256": "0aea627030d982a3171437783ae18f672ed5acc97d304938b5a747c65abfc234",
+      "version": 2560,
+      "plan": "coop",
+      "counts": {
+        "course": 38,
+        "plan_item": 42,
+        "prerequisite": 1,
+        "course_prerequisite_evidence": 1,
+        "study_item": 0
+      },
+      "missing_fidelity_columns": [],
+      "source_file": "BIT-60.pdf"
+    },
+    {
+      "profile": "BIT-2560-no-coop",
+      "database": "work/lab8b_bit_2560_no_coop/curriculum.db",
+      "sha256": "fb1553c46a53f48194539d125c899dbe7b775e5a4a0f29e1a927275d71c603ed",
+      "version": 2560,
+      "plan": "no-coop",
+      "counts": {
+        "course": 38,
+        "plan_item": 42,
+        "prerequisite": 2,
+        "course_prerequisite_evidence": 2,
+        "study_item": 0
+      },
+      "missing_fidelity_columns": [],
+      "source_file": "BIT-60.pdf"
+    },
+    {
+      "profile": "BIT-2565-coop",
+      "database": "work/lab8b_bit_2565_coop/curriculum.db",
+      "sha256": "28393c2f99b434f48f31792e899e83ad31ecfa4745b900c376694a227779e774",
+      "version": 2565,
+      "plan": "coop",
+      "counts": {
+        "course": 302,
+        "plan_item": 43,
+        "prerequisite": 0,
+        "study_item": 0
+      },
+      "missing_fidelity_columns": [
+        "alternative_index",
+        "code_pattern",
+        "elective_type",
+        "is_placeholder",
+        "raw_code"
+      ],
+      "source_file": "BIT-65.pdf"
+    },
+    {
+      "profile": "BIT-2565-no-coop",
+      "database": "work/lab8b_bit_2565_no_coop/curriculum.db",
+      "sha256": "e50eafe87bc349c544ad589ef681ddbd2487a38b558767f499c912be104f84f4",
+      "version": 2565,
+      "plan": "no-coop",
+      "counts": {
+        "course": 301,
+        "plan_item": 43,
+        "prerequisite": 0,
+        "study_item": 0
+      },
+      "missing_fidelity_columns": [
+        "alternative_index",
+        "code_pattern",
+        "elective_type",
+        "is_placeholder",
+        "raw_code"
+      ],
+      "source_file": "BIT-65.pdf"
+    },
+    {
+      "profile": "DSBA-2560-coop",
+      "database": "work/lab8b_dsba_2560_coop/curriculum.db",
+      "sha256": "dbb5358344e273d41fa7ba5eae71eb20bebab98ec96f1a397e80c9cf9f77bb94",
+      "version": 2560,
+      "plan": "coop",
+      "counts": {
+        "course": 39,
+        "plan_item": 44,
+        "prerequisite": 5,
+        "course_prerequisite_evidence": 5,
+        "study_item": 0
+      },
+      "missing_fidelity_columns": [],
+      "source_file": "DSBA-60.pdf"
+    },
+    {
+      "profile": "DSBA-2560-no-coop",
+      "database": "work/lab8b_dsba_2560_no_coop/curriculum.db",
+      "sha256": "95c36be82e381bee3ac6d85eb080a0d9feff4675dd2c84fe6532a77b75701424",
+      "version": 2560,
+      "plan": "no-coop",
+      "counts": {
+        "course": 38,
+        "plan_item": 44,
+        "prerequisite": 5,
+        "course_prerequisite_evidence": 5,
+        "study_item": 0
+      },
+      "missing_fidelity_columns": [],
+      "source_file": "DSBA-60.pdf"
+    },
+    {
+      "profile": "DSBA-2565-coop",
+      "database": "work/lab8b_dsba_coop/curriculum.db",
+      "sha256": "69a2499df390ba2b46c66d160482fdce40bd4397fd72941a03b4fa893532d4c4",
+      "version": 2565,
+      "plan": "coop",
+      "counts": {
+        "course": 294,
+        "plan_item": 45,
+        "prerequisite": 5,
+        "course_prerequisite_evidence": 3,
+        "study_item": 12
+      },
+      "missing_fidelity_columns": [],
+      "source_file": "DSBA.pdf"
+    },
+    {
+      "profile": "DSBA-2565-no-coop",
+      "database": "work/lab8b_dsba_no_coop/curriculum.db",
+      "sha256": "d7930414e0e92046345128da86b165bd2a4bc89f3f5c331d522047bbdf8f2c70",
+      "version": 2565,
+      "plan": "no-coop",
+      "counts": {
+        "course": 292,
+        "plan_item": 45,
+        "prerequisite": 5,
+        "course_prerequisite_evidence": 3,
+        "study_item": 12
+      },
+      "missing_fidelity_columns": [],
+      "source_file": "DSBA.pdf"
+    },
+    {
+      "profile": "IT-2560-coop",
+      "database": "work/lab8b_it_2560_coop/curriculum.db",
+      "sha256": "9d69dff5b86404ff8044839e7412748550b73dd0c71b301ff70fba44d8ba4007",
+      "version": 2560,
+      "plan": "coop",
+      "counts": {
+        "course": 58,
+        "plan_item": 64,
+        "prerequisite": 1,
+        "course_prerequisite_evidence": 1,
+        "study_item": 40
+      },
+      "missing_fidelity_columns": [],
+      "source_file": "IT-60.pdf"
+    },
+    {
+      "profile": "IT-2560-no-coop",
+      "database": "work/lab8b_it_2560_no_coop/curriculum.db",
+      "sha256": "37e2e966cc6299b05e047ede8df3a969c9baf5ecb7f9adde651248a43b7367fd",
+      "version": 2560,
+      "plan": "no-coop",
+      "counts": {
+        "course": 58,
+        "plan_item": 64,
+        "prerequisite": 4,
+        "course_prerequisite_evidence": 4,
+        "study_item": 42
+      },
+      "missing_fidelity_columns": [],
+      "source_file": "IT-60.pdf"
+    },
+    {
+      "profile": "IT-2565-coop",
+      "database": "work/lab8b_it_coop/curriculum.db",
+      "sha256": "027d80ecb51cfea54857e6ecf6524b32581ba542f569d2a05d0fe14c871e6169",
+      "version": 2565,
+      "plan": "coop",
+      "counts": {
+        "course": 305,
+        "plan_item": 53,
+        "prerequisite": 1,
+        "course_prerequisite_evidence": 4,
+        "study_item": 21
+      },
+      "missing_fidelity_columns": [
+        "alternative_index",
+        "code_pattern",
+        "elective_type",
+        "is_placeholder",
+        "raw_code"
+      ],
+      "source_file": "IT.pdf"
+    },
+    {
+      "profile": "IT-2565-no-coop",
+      "database": "work/lab8b_it_no_coop/curriculum.db",
+      "sha256": "f3a23f308c69de04c70e43b8dd7f2931ac88b1d41e4106966880b8ca417185c2",
+      "version": 2565,
+      "plan": "no-coop",
+      "counts": {
+        "course": 303,
+        "plan_item": 53,
+        "prerequisite": 1,
+        "course_prerequisite_evidence": 4,
+        "study_item": 21
+      },
+      "missing_fidelity_columns": [
+        "alternative_index",
+        "code_pattern",
+        "elective_type",
+        "is_placeholder",
+        "raw_code"
+      ],
+      "source_file": "IT.pdf"
+    }
+  ],
+  "ground_truth": [
+    {
+      "path": "data/ground_truth/AIT_academic_plan.json",
+      "sha256": "113a2d83db658dd33cfc87ce975e642cf6a35c93bdd39e1c45961301fd4fe510",
+      "field_record_counts": {
+        "code": 57,
+        "course_code": 0,
+        "name_th": 57,
+        "credits": 57,
+        "prerequisite": 57,
+        "year": 57,
+        "semester": 57,
+        "page_number": 0,
+        "printed_page_number": 0
+      },
+      "top_level": [
+        "courses",
+        "description",
+        "plan",
+        "program",
+        "source"
+      ],
+      "versions_recorded": [],
+      "sources_recorded": [],
+      "label_status": "must inspect source review provenance; presence/field counts are NOT verified coverage"
+    },
+    {
+      "path": "data/ground_truth/document_identity_reviews.json",
+      "sha256": "9bc778ead455e005c798f1da7f00652692d4059696a97d245f6031d037065292",
+      "field_record_counts": {
+        "code": 0,
+        "course_code": 0,
+        "name_th": 0,
+        "credits": 0,
+        "prerequisite": 0,
+        "year": 0,
+        "semester": 0,
+        "page_number": 0,
+        "printed_page_number": 0
+      },
+      "top_level": [
+        "reviews"
+      ],
+      "versions_recorded": [
+        "2566"
+      ],
+      "sources_recorded": [
+        "AI.pdf"
+      ],
+      "label_status": "must inspect source review provenance; presence/field counts are NOT verified coverage"
+    },
+    {
+      "path": "data/ground_truth/DSBA_academic_plan_coop.json",
+      "sha256": "19b72f9d060ee134cabb7cdc7a0ecdd50107090dc3ceefbd731eb1a9582f3c44",
+      "field_record_counts": {
+        "code": 44,
+        "course_code": 0,
+        "name_th": 44,
+        "credits": 44,
+        "prerequisite": 44,
+        "year": 44,
+        "semester": 44,
+        "page_number": 44,
+        "printed_page_number": 0
+      },
+      "top_level": [
+        "courses",
+        "description",
+        "plan",
+        "program",
+        "source"
+      ],
+      "versions_recorded": [],
+      "sources_recorded": [
+        "DSBA.pdf"
+      ],
+      "label_status": "must inspect source review provenance; presence/field counts are NOT verified coverage"
+    },
+    {
+      "path": "data/ground_truth/DSBA_academic_plan_no_coop.json",
+      "sha256": "a8a5ac014e202ab8e11d0aacb18dda3b2bd3c5bc3ac85f63001755eff5a03ff7",
+      "field_record_counts": {
+        "code": 45,
+        "course_code": 0,
+        "name_th": 45,
+        "credits": 45,
+        "prerequisite": 45,
+        "year": 45,
+        "semester": 45,
+        "page_number": 45,
+        "printed_page_number": 0
+      },
+      "top_level": [
+        "courses",
+        "description",
+        "plan",
+        "program",
+        "source"
+      ],
+      "versions_recorded": [],
+      "sources_recorded": [
+        "DSBA.pdf"
+      ],
+      "label_status": "must inspect source review provenance; presence/field counts are NOT verified coverage"
+    },
+    {
+      "path": "data/ground_truth/DSBA_ground_truth.json",
+      "sha256": "800a06e0b74e542b296611257885af12df1939fae45216559ffeac8f94ef1ee4",
+      "field_record_counts": {
+        "code": 79,
+        "course_code": 46,
+        "name_th": 92,
+        "credits": 90,
+        "prerequisite": 36,
+        "year": 49,
+        "semester": 49,
+        "page_number": 0,
+        "printed_page_number": 0
+      },
+      "top_level": [
+        "courses_master",
+        "curriculum_schedule",
+        "description",
+        "flexible_electives_pool",
+        "plans",
+        "program",
+        "source",
+        "source_file",
+        "source_pages_by_plan"
+      ],
+      "versions_recorded": [],
+      "sources_recorded": [
+        "DSBA.pdf"
+      ],
+      "label_status": "must inspect source review provenance; presence/field counts are NOT verified coverage"
+    },
+    {
+      "path": "data/ground_truth/general_education_ground_truth.json",
+      "sha256": "1b01660662ddcfca55ce0694089596b6bc7c358efd39022543909b34db82aa76",
+      "field_record_counts": {
+        "code": 266,
+        "course_code": 0,
+        "name_th": 266,
+        "credits": 266,
+        "prerequisite": 266,
+        "year": 0,
+        "semester": 0,
+        "page_number": 0,
+        "printed_page_number": 0
+      },
+      "top_level": [
+        "courses",
+        "description",
+        "source"
+      ],
+      "versions_recorded": [],
+      "sources_recorded": [],
+      "label_status": "must inspect source review provenance; presence/field counts are NOT verified coverage"
+    },
+    {
+      "path": "data/ground_truth/IT_academic_plan_coop.json",
+      "sha256": "85b297d75f4fb93826bdd8e1a8377b880c952caf0a1af28807ab4a409f906a68",
+      "field_record_counts": {
+        "code": 106,
+        "course_code": 0,
+        "name_th": 106,
+        "credits": 106,
+        "prerequisite": 106,
+        "year": 106,
+        "semester": 106,
+        "page_number": 0,
+        "printed_page_number": 0
+      },
+      "top_level": [
+        "courses",
+        "description",
+        "plan",
+        "program",
+        "source"
+      ],
+      "versions_recorded": [],
+      "sources_recorded": [],
+      "label_status": "must inspect source review provenance; presence/field counts are NOT verified coverage"
+    },
+    {
+      "path": "data/ground_truth/IT_academic_plan_no_coop.json",
+      "sha256": "c5b6a29fe280d4fff2c62a0a15b114422a3ba87274aaf9bcf4e80d22f6606b2c",
+      "field_record_counts": {
+        "code": 108,
+        "course_code": 0,
+        "name_th": 108,
+        "credits": 108,
+        "prerequisite": 108,
+        "year": 108,
+        "semester": 108,
+        "page_number": 0,
+        "printed_page_number": 0
+      },
+      "top_level": [
+        "courses",
+        "description",
+        "plan",
+        "program",
+        "source"
+      ],
+      "versions_recorded": [],
+      "sources_recorded": [],
+      "label_status": "must inspect source review provenance; presence/field counts are NOT verified coverage"
+    },
+    {
+      "path": "data/ground_truth/old2560_name_reviews.json",
+      "sha256": "4b274f8bf4e10059da1b6fd207081ee22ad2a73fea9c04e137e7e9c2d292d636",
+      "field_record_counts": {
+        "code": 13,
+        "course_code": 0,
+        "name_th": 13,
+        "credits": 0,
+        "prerequisite": 0,
+        "year": 0,
+        "semester": 0,
+        "page_number": 0,
+        "printed_page_number": 0
+      },
+      "top_level": [
+        "documents",
+        "purpose"
+      ],
+      "versions_recorded": [
+        "2560"
+      ],
+      "sources_recorded": [
+        "IT-60.pdf"
+      ],
+      "label_status": "must inspect source review provenance; presence/field counts are NOT verified coverage"
+    },
+    {
+      "path": "data/ground_truth/prerequisite_source_reviews.json",
+      "sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+      "field_record_counts": {
+        "code": 0,
+        "course_code": 0,
+        "name_th": 0,
+        "credits": 0,
+        "prerequisite": 0,
+        "year": 0,
+        "semester": 0,
+        "page_number": 14,
+        "printed_page_number": 14
+      },
+      "top_level": [
+        "documents",
+        "method",
+        "scope"
+      ],
+      "versions_recorded": [
+        "2560",
+        "2565"
+      ],
+      "sources_recorded": [
+        "BIT-60.pdf",
+        "DSBA-60.pdf",
+        "DSBA.pdf",
+        "IT-60.pdf",
+        "IT.pdf"
+      ],
+      "label_status": "must inspect source review provenance; presence/field counts are NOT verified coverage"
+    },
+    {
+      "path": "data/ground_truth/rules_ground_truth.json",
+      "sha256": "06e1b493dcf1b9d2bb2d8c86e569751e4469309cef854b5053ac641a83a15b02",
+      "field_record_counts": {
+        "code": 0,
+        "course_code": 0,
+        "name_th": 0,
+        "credits": 0,
+        "prerequisite": 0,
+        "year": 0,
+        "semester": 0,
+        "page_number": 0,
+        "printed_page_number": 0
+      },
+      "top_level": [
+        "description",
+        "programs",
+        "source"
+      ],
+      "versions_recorded": [],
+      "sources_recorded": [],
+      "label_status": "must inspect source review provenance; presence/field counts are NOT verified coverage"
+    },
+    {
+      "path": "data/ground_truth/study_plan_db_review.json",
+      "sha256": "10c4b1b88d011d2e3996cf89432055ad505e3d0d0324cf302f3a61cc88238a63",
+      "field_record_counts": {
+        "code": 0,
+        "course_code": 0,
+        "name_th": 1,
+        "credits": 0,
+        "prerequisite": 0,
+        "year": 0,
+        "semester": 0,
+        "page_number": 0,
+        "printed_page_number": 0
+      },
+      "top_level": [
+        "approved_pages",
+        "conflict_06016422",
+        "ingestion_sha256",
+        "presentation_only",
+        "reviewed_on",
+        "reviewer_method",
+        "scope",
+        "status",
+        "unresolved"
+      ],
+      "versions_recorded": [
+        "2565"
+      ],
+      "sources_recorded": [
+        "IT.pdf"
+      ],
+      "label_status": "must inspect source review provenance; presence/field counts are NOT verified coverage"
+    },
+    {
+      "path": "data/ground_truth/study_plan_relationships.json",
+      "sha256": "b56c308bd440d59d14ec552fa08466d3210b259d43b65dfd3864d4d7640b6257",
+      "field_record_counts": {
+        "code": 0,
+        "course_code": 0,
+        "name_th": 18,
+        "credits": 0,
+        "prerequisite": 0,
+        "year": 8,
+        "semester": 8,
+        "page_number": 0,
+        "printed_page_number": 0
+      },
+      "top_level": [
+        "evidence_files",
+        "review_method",
+        "schema_version",
+        "sources",
+        "terms",
+        "track_sets"
+      ],
+      "versions_recorded": [
+        "2560",
+        "2565"
+      ],
+      "sources_recorded": [
+        "DSBA.pdf",
+        "IT-60.pdf",
+        "IT.pdf"
+      ],
+      "label_status": "must inspect source review provenance; presence/field counts are NOT verified coverage"
+    },
+    {
+      "path": "data/ground_truth/versioned_eval_questions.json",
+      "sha256": "149aa4dc888e8259cd13a5a2bed1c4286e1aba03b158a916d925857c7c764a18",
+      "field_record_counts": {
+        "code": 0,
+        "course_code": 0,
+        "name_th": 0,
+        "credits": 0,
+        "prerequisite": 0,
+        "year": 0,
+        "semester": 0,
+        "page_number": 0,
+        "printed_page_number": 0
+      },
+      "top_level": [
+        "profiles"
+      ],
+      "versions_recorded": [
+        "2560",
+        "2565"
+      ],
+      "sources_recorded": [],
+      "label_status": "must inspect source review provenance; presence/field counts are NOT verified coverage"
+    }
+  ],
+  "renders": [
+    {
+      "source_file": "BIT-60.pdf",
+      "sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "pdf_page": 1,
+      "image": "BIT-60-49fbe2843fdd-001.png",
+      "image_sha256": "b28ff2342b6472a54c9d58db43c4aac2964723748aa88d4e3f14b3199cbc0a60",
+      "status": "rendered, NOT yet visually reviewed"
+    },
+    {
+      "source_file": "DSBA-60.pdf",
+      "sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "pdf_page": 1,
+      "image": "DSBA-60-6f812942774c-001.png",
+      "image_sha256": "a50fefd602bd291dd43a370b4292c866bebee85145d667f1a157cba0e6e7b4b3",
+      "status": "rendered, NOT yet visually reviewed"
+    },
+    {
+      "source_file": "IT-60.pdf",
+      "sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "pdf_page": 1,
+      "image": "IT-60-eded877e329f-001.png",
+      "image_sha256": "a732f55ee72ac48c56e17852c45965a9d3c1df925b24ddb7694b773ef143dc7b",
+      "status": "rendered, NOT yet visually reviewed"
+    },
+    {
+      "source_file": "BIT-65.pdf",
+      "sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+      "pdf_page": 1,
+      "image": "BIT-65-f7f8fba36276-001.png",
+      "image_sha256": "637b30ac9718b97d6f038990600106ca12c9b74e331509e0ca42f8d629781d2a",
+      "status": "rendered, NOT yet visually reviewed"
+    },
+    {
+      "source_file": "DSBA.pdf",
+      "sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+      "pdf_page": 1,
+      "image": "DSBA-01ead4c636b0-001.png",
+      "image_sha256": "a1fe99fc5abd90b16a66d001655694419a8dc1dcfc33191815e07fafc2d3c048",
+      "status": "rendered, NOT yet visually reviewed"
+    },
+    {
+      "source_file": "IT.pdf",
+      "sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+      "pdf_page": 1,
+      "image": "IT-aca97dc8b573-001.png",
+      "image_sha256": "15a60b2be64c8ca2a17c7936f32c94b76ee2d1c237608e77895ec6b2b0219f57",
+      "status": "rendered, NOT yet visually reviewed"
+    },
+    {
+      "source_file": "ch1_Introduction.pdf",
+      "sha256": "2544eabb0c81ada2a2a6dfa67bf13376112b88564a0ae9ce4a27c88f06e5c9a4",
+      "pdf_page": 5,
+      "image": "ch1_Introduction-2544eabb0c81-005.png",
+      "image_sha256": "5eba3655e702ada5e983888022336cbadec7cd00fe4bb717c9bedb8bde0514ef",
+      "status": "rendered, NOT yet visually reviewed"
+    },
+    {
+      "source_file": "ch1_Introduction.pdf",
+      "sha256": "2544eabb0c81ada2a2a6dfa67bf13376112b88564a0ae9ce4a27c88f06e5c9a4",
+      "pdf_page": 7,
+      "image": "ch1_Introduction-2544eabb0c81-007.png",
+      "image_sha256": "51f815f36a9f6011f0089ca7845be75a9bf05e6483c70a941e1c671bd5a7578f",
+      "status": "rendered, NOT yet visually reviewed"
+    },
+    {
+      "source_file": "L11_Front End Development_1.pdf",
+      "sha256": "25c83337ddd74b606f154c557de90d1b42d38c1fbe9f3e64c596f80d8a6e75bd",
+      "pdf_page": 9,
+      "image": "L11_Front End Development_1-25c83337ddd7-009.png",
+      "image_sha256": "12637d82b45535bfcf96519d3bc6451d8941ec3ae64e69e69be0f65021cc2bfb",
+      "status": "rendered, NOT yet visually reviewed"
+    },
+    {
+      "source_file": "L11_Front End Development_1.pdf",
+      "sha256": "25c83337ddd74b606f154c557de90d1b42d38c1fbe9f3e64c596f80d8a6e75bd",
+      "pdf_page": 16,
+      "image": "L11_Front End Development_1-25c83337ddd7-016.png",
+      "image_sha256": "e48b43ee418a3746e6f6a0f541715c522f1cd7d50e71d401cb9bc9b9c4b815f2",
+      "status": "rendered, NOT yet visually reviewed"
+    },
+    {
+      "source_file": "L11_Front End Development_1.pdf",
+      "sha256": "25c83337ddd74b606f154c557de90d1b42d38c1fbe9f3e64c596f80d8a6e75bd",
+      "pdf_page": 17,
+      "image": "L11_Front End Development_1-25c83337ddd7-017.png",
+      "image_sha256": "8fc852f165763a2f586602b6daf041cbfbc3d2bd99ccee2f951be563221e7a57",
+      "status": "rendered, NOT yet visually reviewed"
+    },
+    {
+      "source_file": "L11_Front End Development_1.pdf",
+      "sha256": "25c83337ddd74b606f154c557de90d1b42d38c1fbe9f3e64c596f80d8a6e75bd",
+      "pdf_page": 18,
+      "image": "L11_Front End Development_1-25c83337ddd7-018.png",
+      "image_sha256": "f46bb338753cf0f52a7c302b00949a41493141e940bfa37cb9155d1ff89e5622",
+      "status": "rendered, NOT yet visually reviewed"
+    },
+    {
+      "source_file": "L11_Front End Development_1.pdf",
+      "sha256": "25c83337ddd74b606f154c557de90d1b42d38c1fbe9f3e64c596f80d8a6e75bd",
+      "pdf_page": 28,
+      "image": "L11_Front End Development_1-25c83337ddd7-028.png",
+      "image_sha256": "3023b78eb62401a9ac99a203696fe3546d15f1e12b045230c074f10303b4d7b3",
+      "status": "rendered, NOT yet visually reviewed"
+    },
+    {
+      "source_file": "L11_Front End Development_1.pdf",
+      "sha256": "25c83337ddd74b606f154c557de90d1b42d38c1fbe9f3e64c596f80d8a6e75bd",
+      "pdf_page": 29,
+      "image": "L11_Front End Development_1-25c83337ddd7-029.png",
+      "image_sha256": "cea101957269c42bbc203812477273222e928c5490b351a98f033f227ddebf0e",
+      "status": "rendered, NOT yet visually reviewed"
+    }
+  ]
+}
