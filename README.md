@@ -50,7 +50,6 @@
 | 67070068 | pleum |
 | 67070257 | plattyr.pus |
 | 67070289 | nongingfah |
-| 67070306 | Skinny legends |
 
 ## โครงสร้างระบบ
 
