@@ -17,6 +17,7 @@ import requests
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from scripts.run_qa_gold import cases, evaluate
+from lab10_fastapi.curriculum_app.database import DatabaseRegistry
 
 
 def main():
@@ -53,7 +54,11 @@ def main():
     for key, identity, question, expectation in cases(dataset):
         if identity not in selected and expectation.get('level') != 'missing-evidence':
             selected[identity] = (question, expectation)
-    assert len(selected) == 14, 'Development coverage must include every runtime catalog'
+    registry = DatabaseRegistry(ROOT)
+    expected = {f'{db.program_id.split("-")[0]}-{db.curriculum_version}-{db.plan}'
+                for db in registry.active_programs}
+    assert set(selected) == expected, 'Substantive checks must cover every identified selectable profile'
+    result['legacy_note'] = 'Unresolved legacy identity: development uncertainty checks only; not substantive source-certified answers'
     owned = False
     try:
         for cycle in range(2):
