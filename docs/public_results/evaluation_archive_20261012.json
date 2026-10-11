@@ -77,5 +77,21 @@
     "audit_failure_preserved": true
   },
   "full_ui_suites_checked": false,
-  "source_rebuild_full_scope_complete": false
+  "source_rebuild_full_scope_complete": false,
+  "publication": {
+    "source_code_commit": "71246656f5cab63f1adf68bccc33d60d86b44c2d",
+    "remote_branch_verified": true,
+    "anonymous_raw_code_and_guides_match": true,
+    "branch_zip_checked_at_source_commit": {
+      "bytes": 12175295,
+      "sha256": "0e76a5fa65caf6bfaf7142679b7e6adb0e99e12cfa9eab62556c3d39b4826417",
+      "archive_root": "isd-2026-cooltone-week11_thanapat/",
+      "crc_passed": true
+    },
+    "downloaded_example_files": 42,
+    "downloaded_example_all_file_and_zip_hashes_verified": true,
+    "evidence_line_endings_preserved_by_gitattributes": true,
+    "powershell_utf8_bom_preserved": true,
+    "scope": "Publication receipt changes only documentation; runtime and example bytes remain at source_code_commit."
+  }
 }
