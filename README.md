@@ -298,7 +298,6 @@ OCR รอบที่ผิดใช้ 150 DPI/temp 0/retries 0, `scb10x/typho
 | 67070068 | pleum |
 | 67070257 | plattyr.pus |
 | 67070289 | nongingfah |
-| 67070306 | Skinny legends |
 
 - [AI reconstruction/source defects/scope boundaries](docs/AI_NATIVE_SCOPE_20261011.md)
 - [Mode A/B delivery และ safeguards เดิม](docs/TWO_MODE_HANDOFF_20261011.md)
