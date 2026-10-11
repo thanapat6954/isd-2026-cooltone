@@ -1,0 +1,13 @@
+{
+ "purpose":"Production approval independently transcribed from official rendered BIT source; no evaluation labels or questions",
+ "review_method":"Rendered BIT-65.pdf PDF87/book82 title and PDF93/book88 clause26 visually inspected 2026-10-08 and rechecked 2026-10-09; limited clause approval",
+ "reviews":[{
+  "program":"BIT","version":2565,"source_file":"BIT-65.pdf",
+  "sha256":"f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+  "pdf_page":93,"book_page":88,"regulation_year":2564,"section":"ภาคผนวก ก หมวด 7 ข้อ 26.1–26.5",
+  "topic":"graduation_rule_26","review_status":"visually_verified","review_scope":"partial_rules",
+  "approval_record":"Source reviewed by project auditor under authorized source-correction workflow; applies only to BIT2565 whose appendix contains this regulation. Other curricula not inferred.",
+  "rule_text":"ข้อ 26: ต้องเรียนครบหน่วยกิตและสอบผ่านทุกรายวิชาตามโครงสร้างหลักสูตร โดยมีคะแนนเฉลี่ยสะสมตามโครงสร้างหลักสูตรไม่ต่ำกว่า 2.00; คะแนนเฉลี่ยสะสมไม่ต่ำกว่า 2.00 และได้ระดับคะแนน English Exit Exam ตามประกาศสถาบันโดยผ่านความเห็นชอบของสภาวิชาการ; มีคุณสมบัติตามหมวด 11; ไม่มีหนี้สินหรือภาระผูกพันกับสถาบัน; และผ่านหลักเกณฑ์อื่นตามประกาศสภาสถาบัน ข้อความหน้าที่ตรวจไม่ได้ระบุตัวเลขเกณฑ์ English Exit Exam และไม่ได้ให้รายละเอียดหมวด 11 หรือประกาศอื่นครบ จึงยังยืนยันคุณสมบัติสำเร็จการศึกษารายบุคคลไม่ได้",
+  "unknown":["English Exit numerical threshold","full chapter11 conditions","other applicable announcements","individual graduation eligibility"]
+ }]
+}

@@ -8,8 +8,13 @@ function Assert-CurriculumBackend {
         throw 'A different application folder is serving this port.'
     }
     if ($IdentityOnly) { return }
-    if ($health.queryable_database_count -lt 1) { throw 'No queryable databases. Build/import data before starting.' }
-    if (-not $health.ollama_ready) { throw "Ollama or the configured model ($($health.model)) is unavailable." }
+    $expectedCount = 14
+    if ($health.build_contract.kind -eq 'academic-plan-only' -and $health.build_contract.partial -eq $true) {
+        $expectedCount = @($health.build_contract.profiles).Count
+        if ($expectedCount -lt 1 -or $health.expected_database_count -ne $expectedCount) { throw 'declared scope ไม่ถูกต้อง' }
+    }
+    if ($health.queryable_database_count -ne $expectedCount) { throw 'ฐานข้อมูลไม่ครบตาม scope: restore runtime-data ด้วย scripts/runtime_bundle.py หรือ rollback build ก่อนเริ่มแอป' }
+    if (-not $health.ollama_ready) { throw "Ollama/model ไม่พร้อม: เปิด Ollama แล้วรัน ollama pull $($health.model); Mode A ไม่ต้องมี OCR model" }
 }
 
 function Save-CurriculumProcess {

@@ -1,0 +1,6 @@
+{
+ "purpose":"production citation-only source approval; independently read printed folios, NOT evaluation expected answers",
+ "review_status":"visually_verified","review_date":"2026-10-09",
+ "evidence":"docs/results/it_plan_review_20261009/source_pages; original source images inspected/reused with unchanged source hash; PDF42/43 share the cooperative alternative table",
+ "reviews":[{"program":"IT","version":2565,"source_file":"IT.pdf","source_sha256":"aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa","pages":[[33,28],[36,31],[37,32],[40,35],[42,37],[43,38],[44,39]]}]
+}

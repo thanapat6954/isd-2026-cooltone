@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "purpose": "partial_source_evaluation",
+  "identity": {
+    "program": "IT",
+    "version": 2565,
+    "revision": null,
+    "plan": null
+  },
+  "scope": "shared course fields only; plan membership NOT inferred; reused development approvals, not independent held-out",
+  "unverified_fields": [
+    "full course coverage",
+    "plan membership",
+    "graduation conditions",
+    "complete L1-L4"
+  ],
+  "labels": [
+    {
+      "id": "prerequisite_source_reviews.json:IT.pdf:359:06066301",
+      "code": "06066301",
+      "expected": {
+        "prerequisite_status": "explicit_none",
+        "requires": []
+      },
+      "evidence": {
+        "source_file": "IT.pdf",
+        "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+        "pdf_page": 359,
+        "printed_page": 358,
+        "section": "course description",
+        "approval": "data/source_reviews/shared/prerequisite_source_reviews.json",
+        "approval_sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "prerequisite_source_reviews.json:IT.pdf:359:06066302",
+      "code": "06066302",
+      "expected": {
+        "prerequisite_status": "explicit_none",
+        "requires": []
+      },
+      "evidence": {
+        "source_file": "IT.pdf",
+        "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+        "pdf_page": 359,
+        "printed_page": 358,
+        "section": "course description",
+        "approval": "data/source_reviews/shared/prerequisite_source_reviews.json",
+        "approval_sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "prerequisite_source_reviews.json:IT.pdf:359:06066303",
+      "code": "06066303",
+      "expected": {
+        "prerequisite_status": "explicit_none",
+        "requires": []
+      },
+      "evidence": {
+        "source_file": "IT.pdf",
+        "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+        "pdf_page": 359,
+        "printed_page": 358,
+        "section": "course description",
+        "approval": "data/source_reviews/shared/prerequisite_source_reviews.json",
+        "approval_sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "prerequisite_source_reviews.json:IT.pdf:326:06016407",
+      "code": "06016407",
+      "expected": {
+        "prerequisite_status": "required",
+        "requires": [
+          "06016406"
+        ],
+        "name_th": "โครงงาน 2"
+      },
+      "evidence": {
+        "source_file": "IT.pdf",
+        "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+        "pdf_page": 326,
+        "printed_page": null,
+        "section": "course description",
+        "approval": "data/source_reviews/shared/prerequisite_source_reviews.json",
+        "approval_sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+        "review_sample_id": "IT-2565-coop-11",
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    }
+  ]
+}

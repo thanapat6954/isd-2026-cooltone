@@ -33,9 +33,12 @@ def apply_review(data: dict, review: dict) -> dict:
         raise ValueError('Reviewed term crosses source files')
     result['courses'] = [row for row in result.get('courses', []) if not is_term(row)]
     for row in review['rows']:
+        pdf_page = row.get('page_number', review['pdf_page'])
+        if pdf_page not in review.get('pdf_pages', [review['pdf_page']]):
+            raise ValueError('Row page outside visually approved term pages')
         result['courses'].append({**row, 'year': review['year'], 'semester': review['semester'],
-                                  'source_file': review['source_file'], 'page_number': review['pdf_page'],
-                                  'printed_page_number': review.get('printed_page'),
+                                  'source_file': review['source_file'], 'page_number': pdf_page,
+                                  'printed_page_number': row.get('printed_page_number', review.get('printed_page')),
                                   'prerequisite': None})
     totals = [row for row in result.get('term_totals', []) if not is_term(row)]
     totals.append({key: review[key] for key in ('year', 'semester', 'credits', 'row_count')}

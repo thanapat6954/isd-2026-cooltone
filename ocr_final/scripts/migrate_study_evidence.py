@@ -17,6 +17,11 @@ def sha(path):
     with path.open('rb') as stream: return hashlib.file_digest(stream, 'sha256').hexdigest()
 
 
+def plan_note(term, plan):
+    """Never copy a cooperative-only note into another plan's term."""
+    return term.get('note_by_plan', {}).get(plan, term['note'])
+
+
 def migrate(path, program, manifest, approval, input_hash):
     """Caller owns the isolated copy or a verified backup; no original OCR edits."""
     if approval.get('status') != 'visually_verified': raise ValueError('Missing visual approval')
@@ -47,7 +52,7 @@ def migrate(path, program, manifest, approval, input_hash):
             identity = (program['program_id'], term['version'], plan, term['year'], term['semester'], term['source_file'])
             total = term.get('printed_total_by_plan', {}).get(plan, term.get('printed_total'))
             connection.execute('INSERT OR IGNORE INTO study_term(program_id,version,plan,year,semester,source_file,source_sha256,printed_total,note,review_method) VALUES (?,?,?,?,?,?,?,?,?,?)',
-                               identity + (manifest['sources'][term['source_file']], total, term['note'], manifest['review_method']))
+                               identity + (manifest['sources'][term['source_file']], total, plan_note(term, plan), manifest['review_method']))
             tid = connection.execute('SELECT id FROM study_term WHERE program_id=? AND version=? AND plan=? AND year=? AND semester=? AND source_file=?', identity).fetchone()[0]
             for pdf, book in term['pages'][plan]:
                 connection.execute('INSERT OR IGNORE INTO study_page VALUES (?,?,?)', (tid,pdf,book))
@@ -117,9 +122,9 @@ def main():
     p.add_argument('--apply', action='store_true')
     p.add_argument('--deploy-evidence', type=Path)
     a=p.parse_args(); app=a.app_root.resolve()
-    manifest_path=app/'data/ground_truth/study_plan_relationships.json'
+    manifest_path=app/'data/source_reviews/shared/study_plan_relationships.json'
     manifest=json.loads(manifest_path.read_text(encoding='utf-8'))
-    approval=json.loads((ROOT/'data/ground_truth/study_plan_db_review.json').read_text(encoding='utf-8'))
+    approval=json.loads((ROOT/'data/source_reviews/shared/study_plan_db_review.json').read_text(encoding='utf-8'))
     for source, expected in manifest['sources'].items():
         if sha(app/'data/input'/source)!=expected: raise ValueError('Changed source '+source)
     baseline=json.loads(a.backups.read_text(encoding='utf-8'))

@@ -7,3 +7,9 @@ docs/results/
 venv/
 .venv/
 __pycache__/
+# Local instructor artifacts include source PDFs and databases; publish separately only when authorized.
+/delivery/
+# Historical OCR package is not the final application. Keep local inputs/evidence.
+/ocr_system/
+/docs/history/
+*.pyc

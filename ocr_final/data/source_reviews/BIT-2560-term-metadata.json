@@ -1,0 +1,28 @@
+{
+ "schema_version":1,"purpose":"Production term-only approval independently read from rendered BIT-60.pdf; not evaluation labels",
+ "source_sha256":"49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+ "curriculum_version":2560,"reviewed_on":"2026-10-10","term_metadata_years":[4],
+ "review_method":"Reused valid plan identity review; PDF26/book21 Year4 headings and totals, PDF30/book25 alternatives and total; PDF29/book24 carries coop Year4/S1 heading. Names/hours checked against rendered source, not DB answers.",
+ "profile_identity_reviews":{"bit-old-coop":{"program_id":"BIT-coop","plan":"coop","section":"Previously reviewed cooperative study plan"},"bit-old-no":{"program_id":"BIT-no-coop","plan":"no-coop","section":"Previously reviewed non-cooperative study plan"}},
+ "profiles":{
+ "bit-old-coop":[
+ {"status":"visually_verified","source_file":"BIT-60.pdf","pdf_page":30,"printed_page":25,"year":4,"semester":1,"credits":6,"row_count":2,"rows":[
+ {"code":"06036046","name_th":"สหกิจศึกษา","name_en":"COOPERATIVE EDUCATION","credits":"6(0-35-0)","alt_group":"domestic-or-overseas"},
+ {"code":"06036047","name_th":"สหกิจศึกษาต่างประเทศ","name_en":"OVERSEA COOPERATIVE EDUCATION","credits":"6(0-35-0)","alt_group":"domestic-or-overseas"}]},
+ {"status":"visually_verified","source_file":"BIT-60.pdf","pdf_page":30,"printed_page":25,"year":4,"semester":2,"credits":12,"row_count":4,"rows":[
+ {"code":"06036086","name_th":"หลักปรัชญาแห่งวิทยาศาสตร์","name_en":"PHILOSOPHY OF SCIENCE","credits":"3(3-0-6)"},
+ {"code":"06036088","name_th":"การคิดอย่างสร้างสรรค์","name_en":"CREATIVE THINKING","credits":"3(3-0-6)"},
+ {"code":"xxxxxxxx","name_th":"วิชาเลือกเสรี 1","name_en":"FREE ELECTIVE COURSE 1","credits":"3(3-0-6)"},
+ {"code":"xxxxxxxx","name_th":"วิชาเลือกเสรี 2","name_en":"FREE ELECTIVE COURSE 2","credits":"3(3-0-6)"}]}
+ ],
+ "bit-old-no":[
+ {"status":"visually_verified","source_file":"BIT-60.pdf","pdf_page":26,"printed_page":21,"year":4,"semester":1,"credits":9,"row_count":3,"rows":[
+ {"code":"06036019","name_th":"โครงงาน 1","name_en":"PROJECT 1","credits":"3(0-9-0)"},
+ {"code":"06036086","name_th":"หลักปรัชญาแห่งวิทยาศาสตร์","name_en":"PHILOSOPHY OF SCIENCE","credits":"3(3-0-6)"},
+ {"code":"xxxxxxx","name_th":"วิชาเลือกเสรี 1","name_en":"FREE ELECTIVE COURSE 1","credits":"3(3-0-6)"}]},
+ {"status":"visually_verified","source_file":"BIT-60.pdf","pdf_page":26,"printed_page":21,"year":4,"semester":2,"credits":9,"row_count":3,"rows":[
+ {"code":"06036020","name_th":"โครงงาน 2","name_en":"PROJECT 2","credits":"3(0-9-0)"},
+ {"code":"06036088","name_th":"การคิดอย่างสร้างสรรค์","name_en":"CREATIVE THINKING","credits":"3(3-0-6)"},
+ {"code":"xxxxxxx","name_th":"วิชาเลือกเสรี 2","name_en":"FREE ELECTIVE COURSE 2","credits":"3(3-0-6)"}]}
+ ]}
+}

@@ -43,7 +43,54 @@ class RuntimeBundleTests(unittest.TestCase):
                 restore_bundle(bundle, root/'target')
             self.assertFalse((root/'target').exists())
 
+    def test_complete_bundle_copies_pdfs_and_refuses_corruption_before_restore(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            app = root/'source'
+            (app/'data/input').mkdir(parents=True)
+            (app/'data/input/SYN.pdf').write_bytes(b'%PDF-synthetic-test-only')
+            with closing(sqlite3.connect(app/'curriculum.db')) as db:
+                db.execute('CREATE TABLE courses(course_code)')
+                db.commit()
+            export_bundle(app, root/'bundle', include_pdfs=True)
+            result = restore_bundle(root/'bundle', root/'target')
+            self.assertEqual(result['pdfs_restored'], 1)
+            self.assertEqual((root/'target/data/input/SYN.pdf').read_bytes(), b'%PDF-synthetic-test-only')
+            (root/'bundle/data/input/SYN.pdf').write_bytes(b'corrupt')
+            with self.assertRaises(ValueError):
+                restore_bundle(root/'bundle', root/'new')
+            self.assertFalse((root/'new').exists())
+
     def test_unsafe_paths_rejected(self):
         for path in ('../outside', 'C:/outside', 'work\\escape', ''):
             with self.subTest(path=path), self.assertRaises(ValueError):
                 within(Path.cwd(), path)
+
+    def test_reuse_pdfs_requires_matching_hash_and_preserves_defaults(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            source = root/'source'
+            (source/'data/input').mkdir(parents=True)
+            (source/'data/input/SYN.pdf').write_bytes(b'%PDF-test-only')
+            with closing(sqlite3.connect(source/'curriculum.db')) as db:
+                db.execute('CREATE TABLE courses(course_code)')
+                db.commit()
+            export_bundle(source, root/'bundle', include_pdfs=True)
+            target = root/'target'
+            (target/'data/input').mkdir(parents=True)
+            pdf = target/'data/input/SYN.pdf'
+            pdf.write_bytes(b'%PDF-test-only')
+            with self.assertRaises(FileExistsError):
+                restore_bundle(root/'bundle', target)
+            self.assertFalse((target/'curriculum.db').exists())
+            pdf.write_bytes(b'different-user-source')
+            with self.assertRaises(FileExistsError):
+                restore_bundle(root/'bundle', target, reuse_verified_pdfs=True)
+            self.assertFalse((target/'curriculum.db').exists())
+            pdf.write_bytes(b'%PDF-test-only')
+            result = restore_bundle(root/'bundle', target, reuse_verified_pdfs=True)
+            self.assertEqual(result['pdfs_reused'], ['data/input/SYN.pdf'])
+            self.assertEqual(result['pdfs_restored'], 0)
+            self.assertEqual(pdf.read_bytes(), b'%PDF-test-only')
+            with self.assertRaises(FileExistsError):
+                restore_bundle(root/'bundle', target, reuse_verified_pdfs=True)

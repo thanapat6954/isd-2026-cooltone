@@ -6,6 +6,7 @@ import os
 import sqlite3
 import sys
 import time
+from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any
 
@@ -26,8 +27,12 @@ os.environ["LAB8_MODEL_TEXT"] = settings.ollama_model
 from ocr_system import lab8b_curriculum_db as lab8b  # noqa: E402
 
 from .database import CurriculumDatabase, DatabaseRegistry  # noqa: E402
-from .model_service import QwenTextToSQL  # noqa: E402
+from .build_store import extraction_provenance
+from .model_service import QwenTextToSQL, ModelUnavailableError  # noqa: E402
 from .study_plan import PLAN_LABELS
+from .frontend_selection import validate_selected_year
+from .request_budget import TIMEOUT_MESSAGE
+from .source_viewer import source_path, identity as source_identity, printed_pages, render_page
 from .schemas import (  # noqa: E402
     AskRequest,
     AskResponse,
@@ -38,10 +43,20 @@ from .schemas import (  # noqa: E402
 
 
 STATIC_DIR = Path(__file__).resolve().parent / "static"
+@asynccontextmanager
+async def lifespan(application):
+    from .build_store import consumer_lock
+    with consumer_lock(settings.database_root.resolve()):
+        # Pin the pointer under the consumer lock before serving any requests.
+        global registry
+        registry = DatabaseRegistry(settings.database_root)
+        yield
+
 app = FastAPI(
     title=f"{settings.app_name} — Curriculum",
     description="Qwen text-to-SQL + SQLite curriculum application",
     version="1.0.0",
+    lifespan=lifespan,
 )
 app.add_middleware(
     CORSMiddleware,
@@ -74,6 +89,10 @@ def _frontend_question(request: FrontendAskRequest) -> str:
     }
     selected = request.curriculum.strip()
     curriculum = curriculum_aliases.get(selected.upper(), selected)
+    years={item.curriculum_version for item in registry.active_programs
+           if item.program_id.split('-')[0]==curriculum and item.curriculum_version is not None}
+    selected_year=(min(years) if request.version=='old' else max(years)) if years else None
+    validate_selected_year(request.question,selected_year,request.version)
     if curriculum == "AI" and request.version in {"latest", "revised"}:
         # "Current" is resolved using DB metadata, not another program's year.
         return f"หลักสูตร {curriculum} ฉบับปัจจุบัน: {request.question}"
@@ -207,6 +226,8 @@ def _frontend_sources(result: dict[str, Any]) -> list[dict[str, Any]]:
                 book_page = None
             citation_row = {**row, **({'source_file': citation['source_file']} if citation.get('source_file') else {})}
             section = _source_section(citation_row, str(result.get('intent') or ''))
+            if citation.get('field'):
+                section += ' — ' + str(citation['field'])
             key = (page, book_page, section)
             if key in seen:
                 continue
@@ -215,7 +236,7 @@ def _frontend_sources(result: dict[str, Any]) -> list[dict[str, Any]]:
                 "page": page,
                 "book_page": book_page,
                 "section": section,
-                "quote": quote,
+                "quote": citation.get('quote') or quote,
             })
     return sources
 
@@ -231,13 +252,19 @@ def health() -> dict:
     queryable = registry.active_catalogs
     ollama_ready = model.available()
     return {
-        "status": "ok" if queryable and ollama_ready else "degraded",
+        "status": "ok" if len(queryable) == registry.build_contract["expected_catalogs"] and queryable and ollama_ready else "degraded",
         "database_count": len(registry.databases),
+        "build_id": registry.build_id,
+        "build_contract": registry.build_contract,
+        "extraction_provenance": extraction_provenance(registry.discovery_root, registry.build_manifest),
+        "expected_database_count": registry.build_contract['expected_catalogs'],
+        "database_root": str(registry.discovery_root),
         "queryable_database_count": len(queryable),
         "databases": [item.public_metadata() for item in registry.databases],
         "model": settings.ollama_model,
         "ollama_ready": ollama_ready,
         "lab8b_module": str(Path(lab8b.__file__).resolve()),
+        "request_timeout_seconds": settings.request_timeout,
     }
 
 
@@ -296,6 +323,10 @@ def ask(request: AskRequest) -> dict:
         return model.ask(registry, request.question)
     except FileNotFoundError as exc:
         raise HTTPException(status_code=503, detail=str(exc)) from exc
+    except (TimeoutError, requests.Timeout) as exc:
+        raise HTTPException(status_code=504, detail=TIMEOUT_MESSAGE) from exc
+    except ModelUnavailableError as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
     except requests.RequestException as exc:
         raise HTTPException(status_code=503, detail="ติดต่อ Ollama ไม่ได้") from exc
     except (ValueError, json.JSONDecodeError, sqlite3.Error) as exc:
@@ -304,11 +335,30 @@ def ask(request: AskRequest) -> dict:
 
 @app.get('/api/source/{source_file}')
 def source_pdf(source_file: str):
-    allowed = {'AI.pdf', 'DSBA.pdf', 'DSBA-60.pdf', 'IT.pdf', 'IT-60.pdf', 'BIT-65.pdf', 'BIT-60.pdf'}
-    path = PROJECT_ROOT / 'data/input' / source_file
-    if source_file not in allowed or not path.is_file():
-        raise HTTPException(status_code=404, detail='ไม่พบเอกสารต้นฉบับที่อนุญาต')
+    path = source_path(PROJECT_ROOT,source_file)
     return FileResponse(path, media_type='application/pdf')
+
+
+@app.get('/source-viewer/{source_file}', include_in_schema=False)
+def source_viewer(source_file: str):
+    source_path(PROJECT_ROOT,source_file)
+    return FileResponse(FRONTEND_DIR/'source-viewer.html',media_type='text/html')
+
+
+@app.get('/api/source-info/{source_file}')
+def source_info(source_file: str, page: int = Query(1,ge=1)):
+    _,digest,count=source_identity(PROJECT_ROOT,source_file,page)
+    registry.refresh()
+    folios=printed_pages(registry,source_file,page)
+    return {'source_file':source_file,'sha256':digest,'pdf_page':page,'page_count':count,
+            'printed_page':folios[0] if len(folios)==1 else None,
+            'printed_page_candidates':folios,'mapping_status':'recorded_db_pair' if len(folios)==1 else 'unknown_or_conflicting'}
+
+
+@app.get('/api/source-page/{source_file}/{page}')
+def source_page(source_file: str, page: int):
+    return FileResponse(render_page(PROJECT_ROOT,source_file,page),media_type='image/png',
+                        headers={'Cache-Control':'no-cache'})
 
 
 @app.post("/ask", response_model=FrontendAskResponse)
@@ -325,10 +375,14 @@ def frontend_ask(request: FrontendAskRequest):
             "answer": answer,
             "study_plan": result.get('study_plan'),
             "sources": _frontend_sources(result),
-            "model": (settings.ollama_model + ' (evidence references → SQLite values)' if result.get('intent') == 'unknown' else 'SQLite (deterministic renderer)'),
+            "model": (result['model_used'] + ' (evidence references → SQLite values)' if result.get('model_used') else 'SQLite (cached result)' if result.get('cache_hit') else 'SQLite (deterministic renderer)'),
             "latency_ms": round((time.perf_counter() - started_at) * 1000),
             "confidence": None,
         }
+    except (TimeoutError, requests.Timeout):
+        return JSONResponse(status_code=504, content={"error": TIMEOUT_MESSAGE})
+    except ModelUnavailableError as exc:
+        return JSONResponse(status_code=503, content={"error": str(exc)})
     except requests.RequestException:
         return JSONResponse(status_code=503, content={"error": "ติดต่อ Ollama ไม่ได้"})
     except (FileNotFoundError, ValueError, json.JSONDecodeError, sqlite3.Error) as exc:

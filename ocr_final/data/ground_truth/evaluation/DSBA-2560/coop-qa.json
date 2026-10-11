@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "purpose": "development regression from reused visually reviewed book cells; NOT held-out",
+  "identity": {
+    "program": "DSBA",
+    "version": 2560,
+    "revision": null,
+    "plan": "coop"
+  },
+  "unverified_levels": [
+    "L3",
+    "L4"
+  ],
+  "groups": [
+    {
+      "program": "DSBA",
+      "versions": [
+        2560
+      ],
+      "plans": [
+        "coop"
+      ],
+      "cases": [
+        {
+          "question": "วิชา 06026100 มีกี่หน่วยกิต",
+          "code": "06026100",
+          "credits": 3,
+          "source": "DSBA-60.pdf",
+          "page": 30,
+          "book_page": 25,
+          "level": "L1",
+          "label_evidence": {
+            "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-030.png",
+            "image_sha256": "040caa2bfaf25f2a46210706d906c5520b8c24cc16e9275a46c334e2d1de5646",
+            "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+            "printed_cell": {
+              "code": "06026100",
+              "credits_raw": "3(2-2-5)"
+            }
+          }
+        },
+        {
+          "question": "วิชา 06026104 มีกี่หน่วยกิต",
+          "code": "06026104",
+          "credits": 3,
+          "source": "DSBA-60.pdf",
+          "page": 30,
+          "book_page": 25,
+          "level": "L1",
+          "label_evidence": {
+            "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-030.png",
+            "image_sha256": "040caa2bfaf25f2a46210706d906c5520b8c24cc16e9275a46c334e2d1de5646",
+            "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+            "printed_cell": {
+              "code": "06026104",
+              "credits_raw": "3(2-2-5)"
+            }
+          }
+        },
+        {
+          "question": "วิชา 90101007 มีกี่หน่วยกิต",
+          "code": "90101007",
+          "credits": 3,
+          "source": "DSBA-60.pdf",
+          "page": 30,
+          "book_page": 25,
+          "level": "L1",
+          "label_evidence": {
+            "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-030.png",
+            "image_sha256": "040caa2bfaf25f2a46210706d906c5520b8c24cc16e9275a46c334e2d1de5646",
+            "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+            "printed_cell": {
+              "code": "90101007",
+              "credits_raw": "3(3-0-6)"
+            }
+          }
+        },
+        {
+          "question": "วิชา 90201001 มีกี่หน่วยกิต",
+          "code": "90201001",
+          "credits": 3,
+          "source": "DSBA-60.pdf",
+          "page": 30,
+          "book_page": 25,
+          "level": "L1",
+          "label_evidence": {
+            "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-030.png",
+            "image_sha256": "040caa2bfaf25f2a46210706d906c5520b8c24cc16e9275a46c334e2d1de5646",
+            "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+            "printed_cell": {
+              "code": "90201001",
+              "credits_raw": "3(3-0-6)"
+            }
+          }
+        },
+        {
+          "question": "วิชา 90401013 มีกี่หน่วยกิต",
+          "code": "90401013",
+          "credits": 3,
+          "source": "DSBA-60.pdf",
+          "page": 30,
+          "book_page": 25,
+          "level": "L1",
+          "label_evidence": {
+            "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-030.png",
+            "image_sha256": "040caa2bfaf25f2a46210706d906c5520b8c24cc16e9275a46c334e2d1de5646",
+            "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+            "printed_cell": {
+              "code": "90401013",
+              "credits_raw": "3(3-0-6)"
+            }
+          }
+        },
+        {
+          "question": "ปี 1 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "source": "DSBA-60.pdf",
+          "page": 30,
+          "book_page": 25,
+          "level": "L2",
+          "label_evidence": {
+            "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-030.png",
+            "image_sha256": "040caa2bfaf25f2a46210706d906c5520b8c24cc16e9275a46c334e2d1de5646",
+            "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+            "printed_term_total": 18
+          }
+        }
+      ]
+    }
+  ]
+}

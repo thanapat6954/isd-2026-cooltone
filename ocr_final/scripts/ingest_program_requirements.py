@@ -41,7 +41,10 @@ def snapshot(source_path, target_path):
 def insert_review(connection, db, review, method, input_hash):
     """No replacement or UPDATE; conflicting prior approval must be re-reviewed."""
     connection.execute(DDL)
-    values = (db.program_id, db.curriculum_version, db.plan, 'graduation_reference',
+    topic=review.get('topic','graduation_reference')
+    if topic not in {'graduation_reference','graduation_rule_26'}:
+        raise ValueError('Unapproved requirement topic')
+    values = (db.program_id, db.curriculum_version, db.plan, topic,
               review['rule_text'], review['regulation_year'], review['source_file'], review['sha256'],
               review['pdf_page'], review['book_page'], review['section'], review['review_scope'], method, input_hash)
     old = connection.execute('SELECT * FROM program_requirement WHERE program_id=? AND curriculum_version=? AND plan=? AND topic=?', values[:4]).fetchone()
@@ -75,7 +78,8 @@ def main():
     matches = []
     for review in document['reviews']:
         source = app/'data/input'/review['source_file']
-        if review['review_status'] != 'visually_verified' or review['review_scope'] != 'reference_only' or sha(source) != review['sha256']:
+        allowed_scope={'graduation_reference':'reference_only','graduation_rule_26':'partial_rules'}
+        if review['review_status'] != 'visually_verified' or allowed_scope.get(review.get('topic','graduation_reference')) != review['review_scope'] or sha(source) != review['sha256']:
             raise ValueError('Unverified or changed source; repeat page review')
         profiles = [db for db in registry.active_programs
                     if (db.program_id or '').split('-')[0] == review['program'] and db.curriculum_version == review['version']

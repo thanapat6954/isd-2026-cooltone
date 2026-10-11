@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ต้นฉบับหลักสูตร</title><link rel="stylesheet" href="/frontend/source-viewer.css"></head>
+<body><header><a href="/frontend/">กลับไปถามข้อมูลหลักสูตร</a><h1>ต้นฉบับหลักสูตร</h1>
+<p id="identity">กำลังเปิดเอกสาร…</p><nav aria-label="เลือกหน้าต้นฉบับ"><button id="previous" disabled>หน้าก่อนหน้า</button>
+<form id="page-form"><label for="page">PDF หน้า</label><input id="page" type="number" min="1" value="1" required><button>เปิดหน้า</button></form>
+<button id="next" disabled>หน้าถัดไป</button><a id="download">เปิดไฟล์ PDF ต้นฉบับ</a></nav>
+<p id="mapping"></p><p>หมายเลข PDF คือหน้าจริงในไฟล์ ส่วนหน้าในเล่มแสดงเฉพาะคู่เลขหน้าที่มีหลักฐานในฐานข้อมูล ไม่คำนวณด้วย offset</p></header>
+<main><p id="status" role="status">กำลังแสดงหน้าต้นฉบับ…</p><div id="error" role="alert" hidden><p id="error-text"></p><button id="retry">ลองอีกครั้ง</button></div>
+<img id="page-image" hidden alt="หน้าต้นฉบับหลักสูตร"></main>
+<script type="module" src="/frontend/source-viewer.js"></script></body></html>

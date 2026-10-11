@@ -57,6 +57,12 @@ class CourseResponse(CourseCreate):
 
 
 class HealthResponse(BaseModel):
+    build_id: str = 'unversioned-bundled'
+    build_contract: dict[str, Any] = Field(default_factory=dict)
+    extraction_provenance: dict[str, Any] = Field(default_factory=dict)
+    expected_database_count: int = 14
+    database_root: str = ''
+    request_timeout_seconds: int = 180
     status: str
     database_count: int
     queryable_database_count: int

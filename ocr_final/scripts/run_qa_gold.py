@@ -27,6 +27,32 @@ def cases(dataset):
                     yield f'{identity}-{index+1}', identity, context + ': ' + case['question'], case
 
 
+def supports_citation(row, case):
+    """Match a paired file/PDF/book locator; never cross-pair aggregate arrays."""
+    evidence=[]
+    if row.get('source_file') and row.get('page_number'):
+        evidence.append({'source_file':row['source_file'],'page':row['page_number'],
+                         'book_page':row.get('printed_page_number')})
+    paired=row.get('page_evidence')
+    if paired:
+        try:
+            evidence.extend(json.loads(paired) if isinstance(paired,str) else paired)
+        except (TypeError,ValueError):
+            return False
+    elif row.get('source_files'):
+        files=str(row['source_files']).split(',')
+        pages=str(row.get('source_pages') or '').split(',')
+        books=str(row.get('source_printed_pages') or '').split(',')
+        if len(files)==len(pages)==1:
+            evidence.append({'source_file':files[0],'page':pages[0],
+                             'book_page':books[0] if len(books)==1 else None})
+    return any(isinstance(item,dict) and item.get('source_file')==case['source']
+               and item.get('page') not in (None,'')
+               and (not case.get('page') or str(item.get('page'))==str(case['page']))
+               and (not case.get('book_page') or str(item.get('book_page'))==str(case['book_page']))
+               for item in evidence)
+
+
 def evaluate(body, identity, case):
     rows = body.get('rows', [])
     answer = body.get('answer', '')
@@ -55,20 +81,24 @@ def evaluate(body, identity, case):
             errors.append('answer prerequisite NONE')
         if 'status' in case and not all(row.get('prerequisite_status') == case['status'] for row in applicable):
             errors.append('prerequisite status')
-        if case.get('requires') and not any(row.get('requires') == case['requires'] for row in applicable):
-            errors.append('required prerequisite')
-        if case.get('requires') and case['requires'] not in answer:
-            errors.append('answer prerequisite code')
+        required = case.get('requires')
+        if isinstance(required, list):
+            # SQL returns one prerequisite per row. Check the complete set, not row order.
+            observed = {str(row['requires']) for row in applicable if row.get('requires')}
+            if observed != set(required):
+                errors.append('required prerequisite')
+            if any(code not in answer for code in required):
+                errors.append('answer prerequisite code')
+        elif required:
+            if not any(row.get('requires') == required for row in applicable):
+                errors.append('required prerequisite')
+            if required not in answer:
+                errors.append('answer prerequisite code')
         if case.get('registration_uncertain') and 'ยังสรุปไม่ได้' not in answer:
             errors.append('unsupported registration conclusion')
     citation = None
     if case.get('source'):
-        supports = [row for row in applicable if (row.get('source_file') == case['source'] and row.get('page_number'))
-                    or (case['source'] in str(row.get('source_files') or '').split(',') and row.get('source_pages'))]
-        if case.get('page'):
-            supports = [row for row in supports if row.get('page_number') == case['page'] or str(case['page']) in str(row.get('source_pages') or '').split(',')]
-        if case.get('book_page'):
-            supports = [row for row in supports if row.get('printed_page_number') == case['book_page']]
+        supports = [row for row in applicable if supports_citation(row,case)]
         citation = bool(supports)
         if not citation:
             errors.append('source/page support')

@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "purpose": "partial_source_evaluation",
+  "identity": {
+    "program": "DSBA",
+    "version": 2560,
+    "revision": null,
+    "plan": null
+  },
+  "scope": "shared course fields only; plan membership NOT inferred; reused development approvals, not independent held-out",
+  "unverified_fields": [
+    "full course coverage",
+    "plan membership",
+    "graduation conditions",
+    "complete L1-L4"
+  ],
+  "labels": [
+    {
+      "id": "prerequisite_source_reviews.json:DSBA-60.pdf:182:06026113",
+      "code": "06026113",
+      "expected": {
+        "prerequisite_status": "required",
+        "requires": [
+          "06026104"
+        ],
+        "name_th": "การสร้างโปรแกรมทางสถิติ"
+      },
+      "evidence": {
+        "source_file": "DSBA-60.pdf",
+        "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+        "pdf_page": 182,
+        "printed_page": 177,
+        "section": "course description",
+        "approval": "data/source_reviews/shared/prerequisite_source_reviews.json",
+        "approval_sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+        "review_sample_id": "DSBA-2560-coop-07",
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "prerequisite_source_reviews.json:DSBA-60.pdf:183:06026114",
+      "code": "06026114",
+      "expected": {
+        "prerequisite_status": "required",
+        "requires": [
+          "06026108"
+        ],
+        "name_th": "กระบวนการธุรกิจและการวางแผนทรัพยากรองค์กร"
+      },
+      "evidence": {
+        "source_file": "DSBA-60.pdf",
+        "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+        "pdf_page": 183,
+        "printed_page": null,
+        "section": "course description",
+        "approval": "data/source_reviews/shared/prerequisite_source_reviews.json",
+        "approval_sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+        "review_sample_id": "DSBA-2560-coop-08",
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "prerequisite_source_reviews.json:DSBA-60.pdf:183:06026115",
+      "code": "06026115",
+      "expected": {
+        "prerequisite_status": "required",
+        "requires": [
+          "06026108"
+        ],
+        "name_th": "อัจฉริยะทางธุรกิจเบื้องต้น"
+      },
+      "evidence": {
+        "source_file": "DSBA-60.pdf",
+        "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+        "pdf_page": 183,
+        "printed_page": null,
+        "section": "course description",
+        "approval": "data/source_reviews/shared/prerequisite_source_reviews.json",
+        "approval_sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+        "review_sample_id": "DSBA-2560-coop-09",
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "prerequisite_source_reviews.json:DSBA-60.pdf:184:06026116",
+      "code": "06026116",
+      "expected": {
+        "prerequisite_status": "required",
+        "requires": [
+          "06026103"
+        ],
+        "name_th": "การวิเคราะห์ข้อมูลเชิงธุรกิจ"
+      },
+      "evidence": {
+        "source_file": "DSBA-60.pdf",
+        "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+        "pdf_page": 184,
+        "printed_page": null,
+        "section": "course description",
+        "approval": "data/source_reviews/shared/prerequisite_source_reviews.json",
+        "approval_sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+        "review_sample_id": "DSBA-2560-coop-10",
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "prerequisite_source_reviews.json:DSBA-60.pdf:189:06026128",
+      "code": "06026128",
+      "expected": {
+        "prerequisite_status": "required",
+        "requires": [
+          "06026127"
+        ],
+        "name_th": "โครงงานวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ 2"
+      },
+      "evidence": {
+        "source_file": "DSBA-60.pdf",
+        "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+        "pdf_page": 189,
+        "printed_page": null,
+        "section": "course description",
+        "approval": "data/source_reviews/shared/prerequisite_source_reviews.json",
+        "approval_sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+        "review_sample_id": "DSBA-2560-no-coop-11",
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    }
+  ]
+}

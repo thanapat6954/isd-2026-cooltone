@@ -19,20 +19,31 @@ def _elective_kind(row):
     name = str(row.get('name_th') or '')
     kind = str(row.get('elective_type') or '')
     category = str(row.get('category') or '')
-    if 'เสรี' in name or 'เสรี' in category or kind in {'free', 'free_elective'}:
+    # Explicit row names take precedence over broad/stale legacy categories.
+    if 'ภาษาและการสื่อสาร' in name or kind == 'language_elective':
+        return 'วิชาเลือกด้านภาษาและการสื่อสาร'
+    if 'มนุษยศาสตร์' in name:
+        return 'วิชาเลือกทางมนุษยศาสตร์'
+    if 'วิทยาศาสตร์และคณิตศาสตร์' in name or 'วิทยาศาสตร์กับคณิตศาสตร์' in name:
+        return 'วิชาเลือกทางวิทยาศาสตร์และคณิตศาสตร์'
+    if 'ศึกษาทั่วไป' in name or 'หมวดภาษา' in name:
+        return 'วิชาศึกษาทั่วไป'
+    if 'เสรี' in name or kind in {'free', 'free_elective'}:
         return 'วิชาเลือกเสรี'
-    if 'ศึกษาทั่วไป' in name or 'ศึกษาทั่วไป' in category or 'หมวดภาษา' in name or kind == 'general_education':
+    if 'ศึกษาทั่วไป' in category or kind == 'general_education':
         return 'วิชาศึกษาทั่วไป'
     if 'มนุษยศาสตร์' in name or kind == 'humanities_elective':
         return 'วิชาเลือกทางมนุษยศาสตร์'
     if 'วิทยาศาสตร์และคณิตศาสตร์' in name or kind == 'science_math_elective':
         return 'วิชาเลือกทางวิทยาศาสตร์และคณิตศาสตร์'
+    if 'เสรี' in category:
+        return 'วิชาเลือกเสรี'
     if row.get('is_placeholder') or _pattern(row) or str(row.get('code', '')).startswith('ELEC-'):
         return 'ข้อกำหนดวิชาเลือก'
     return None
 
 
-def build_study_plan(rows, question, evidence=None, *, required_only=False):
+def build_study_plan(rows, question, evidence=None, *, required_only=False, filtered_subset=False):
     """Only database-loaded evidence supplies curriculum facts and relationships."""
     evidence = evidence if isinstance(evidence, dict) else {}
     groups = OrderedDict()
@@ -61,7 +72,7 @@ def build_study_plan(rows, question, evidence=None, *, required_only=False):
             notes.append(term['note'])
             expected = {pid for pid, item in review.get('items', {}).items() if item['term_id'] == term['id']}
             missing = sorted(expected - {r.get('id') for r in term_rows})
-            if missing and not required_only:
+            if missing and not required_only and not filtered_subset:
                 notes.append('หลักฐานรายวิชาที่ค้นได้ยังไม่ครบตามตารางที่ตรวจ: plan_item ' + ', '.join(map(str, missing)))
         for row in term_rows:
             item = review.get('items', {}).get(row.get('id'), {})
@@ -105,7 +116,7 @@ def build_study_plan(rows, question, evidence=None, *, required_only=False):
     return {'cards': cards}, annotated
 
 
-def study_plan_text(payload):
+def study_plan_text(payload, include_english=False):
     lines = []
     for card in payload['cards']:
         lines.append(f"{card['program']} พ.ศ. {card['version']} — ปี {card['year']} ภาคการศึกษาที่ {card['semester']} — {card['plan_label']}")
@@ -121,8 +132,13 @@ def study_plan_text(payload):
                 if str(code).startswith('ELEC-'):
                     code = 'ไม่กำหนดรหัส'
                 name = row.get('name_th') or row.get('name_en') or 'เลือกจากรายวิชาในหมวดนี้ (ยังไม่ยืนยันชื่อหมวดจากข้อมูลที่นำเข้า)'
+                if include_english and row.get('name_en') and row['name_en'] != name:
+                    name += f" ({row['name_en']})"
                 hours = row.get('credits_raw')
                 suffix = f" ({hours})" if hours and 'หรือ' in hours else ''
                 lines.append(f"- {code} {name} — {row.get('credits')} หน่วยกิต{suffix}")
+        if card.get('printed_total') is not None:
+            lines.append(f"หน่วยกิตรวมตามตารางที่บันทึก: {card['printed_total']}")
         lines.extend(card['notes'])
+    lines.extend(payload.get('notes', []))
     return '\n'.join(lines)

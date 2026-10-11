@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "purpose": "development regression from reused visually reviewed book cells; NOT held-out",
+  "identity": {
+    "program": "BIT",
+    "version": 2560,
+    "revision": null,
+    "plan": "no-coop"
+  },
+  "unverified_levels": [
+    "L3",
+    "L4"
+  ],
+  "groups": [
+    {
+      "program": "BIT",
+      "versions": [
+        2560
+      ],
+      "plans": [
+        "no-coop"
+      ],
+      "cases": [
+        {
+          "question": "วิชา 06036001 มีกี่หน่วยกิต",
+          "code": "06036001",
+          "credits": 3,
+          "source": "BIT-60.pdf",
+          "page": 23,
+          "book_page": 18,
+          "level": "L1",
+          "label_evidence": {
+            "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-023.png",
+            "image_sha256": "0a57e6adaec55b4f15755b988ff1566e1c3bd4695947d0847267f312da4ff48a",
+            "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+            "printed_cell": {
+              "code": "06036001",
+              "credits_raw": "3(2-2-5)"
+            }
+          }
+        },
+        {
+          "question": "วิชา 06036021 มีกี่หน่วยกิต",
+          "code": "06036021",
+          "credits": 3,
+          "source": "BIT-60.pdf",
+          "page": 23,
+          "book_page": 18,
+          "level": "L1",
+          "label_evidence": {
+            "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-023.png",
+            "image_sha256": "0a57e6adaec55b4f15755b988ff1566e1c3bd4695947d0847267f312da4ff48a",
+            "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+            "printed_cell": {
+              "code": "06036021",
+              "credits_raw": "3(2-2-5)"
+            }
+          }
+        },
+        {
+          "question": "วิชา 06036027 มีกี่หน่วยกิต",
+          "code": "06036027",
+          "credits": 3,
+          "source": "BIT-60.pdf",
+          "page": 23,
+          "book_page": 18,
+          "level": "L1",
+          "label_evidence": {
+            "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-023.png",
+            "image_sha256": "0a57e6adaec55b4f15755b988ff1566e1c3bd4695947d0847267f312da4ff48a",
+            "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+            "printed_cell": {
+              "code": "06036027",
+              "credits_raw": "3(3-0-6)"
+            }
+          }
+        },
+        {
+          "question": "วิชา 06036081 มีกี่หน่วยกิต",
+          "code": "06036081",
+          "credits": 3,
+          "source": "BIT-60.pdf",
+          "page": 23,
+          "book_page": 18,
+          "level": "L1",
+          "label_evidence": {
+            "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-023.png",
+            "image_sha256": "0a57e6adaec55b4f15755b988ff1566e1c3bd4695947d0847267f312da4ff48a",
+            "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+            "printed_cell": {
+              "code": "06036081",
+              "credits_raw": "3(3-0-6)"
+            }
+          }
+        },
+        {
+          "question": "วิชา 06036083 มีกี่หน่วยกิต",
+          "code": "06036083",
+          "credits": 3,
+          "source": "BIT-60.pdf",
+          "page": 23,
+          "book_page": 18,
+          "level": "L1",
+          "label_evidence": {
+            "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-023.png",
+            "image_sha256": "0a57e6adaec55b4f15755b988ff1566e1c3bd4695947d0847267f312da4ff48a",
+            "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+            "printed_cell": {
+              "code": "06036083",
+              "credits_raw": "3(3-0-6)"
+            }
+          }
+        },
+        {
+          "question": "ปี 1 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "source": "BIT-60.pdf",
+          "page": 23,
+          "book_page": 18,
+          "level": "L2",
+          "label_evidence": {
+            "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-023.png",
+            "image_sha256": "0a57e6adaec55b4f15755b988ff1566e1c3bd4695947d0847267f312da4ff48a",
+            "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+            "printed_term_total": 18
+          }
+        }
+      ]
+    }
+  ]
+}

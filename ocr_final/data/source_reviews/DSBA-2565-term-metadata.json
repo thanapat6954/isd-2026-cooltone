@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "purpose": "Production term evidence only; independently inspected source tables, not evaluation labels",
+  "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+  "curriculum_version": 2565,
+  "reviewed_on": "2026-10-10",
+  "review_method": "Rendered source pages; plan headings PDF23/book22 and PDF30/book29; Year4 tables PDF29/book28 and PDF36/book35",
+  "term_metadata_years": [4],
+  "profile_identity_reviews": {
+    "dsba-coop": {"program_id": "DSBA-coop", "plan": "coop", "pdf_page": 30, "printed_page": 29, "section": "3.1.4.2"},
+    "dsba-no-coop": {"program_id": "DSBA-no-coop", "plan": "no-coop", "pdf_page": 23, "printed_page": 22, "section": "3.1.4.1"}
+  },
+  "profiles": {
+    "dsba-coop": [
+      {"status": "visually_verified", "source_file": "DSBA.pdf", "pdf_page": 36, "printed_page": 35,
+       "year": 4, "semester": 1, "credits": 12, "row_count": 4, "rows": [
+         {"code": "06026215", "name_th": "โครงงานวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ 2", "name_en": "PROJECT IN DATA SCIENCE AND BUSINESS ANALYTICS 2", "credits": "3(0-9-0)"},
+         {"code": "9064xxxx", "name_th": "วิชาเลือกหมวดวิชาศึกษาทั่วไป", "name_en": "ELECTIVE IN GENERAL EDUCATION", "credits": "3(3-0-6) หรือ 3(2-2-5)"},
+         {"code": "xxxxxxxx", "name_th": "วิชาเลือกเสรี 1", "name_en": "FREE ELECTIVE COURSE 1", "credits": "3(3-0-6) หรือ 3(2-2-5)"},
+         {"code": "xxxxxxxx", "name_th": "วิชาเลือกเสรี 2", "name_en": "FREE ELECTIVE COURSE 2", "credits": "3(3-0-6) หรือ 3(2-2-5)"}
+       ]},
+      {"status": "visually_verified", "source_file": "DSBA.pdf", "pdf_page": 36, "printed_page": 35,
+       "year": 4, "semester": 2, "credits": 6, "row_count": 2, "rows": [
+         {"code": "06026259", "name_th": "สหกิจศึกษาทางวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ", "name_en": "COOPERATIVE EDUCATION IN DATA SCIENCE AND BUSINESS ANALYTICS", "credits": "6(0-35-0)", "alt_group": "cooperative-choice"},
+         {"code": "06026260", "name_th": "สหกิจศึกษาต่างประเทศทางวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ", "name_en": "OVERSEA COOPERATIVE EDUCATION IN DATA SCIENCE AND BUSINESS ANALYTICS", "credits": "6(0-35-0)", "alt_group": "cooperative-choice"}
+       ]}
+    ],
+    "dsba-no-coop": [
+      {"status": "visually_verified", "source_file": "DSBA.pdf", "pdf_page": 29, "printed_page": 28,
+       "year": 4, "semester": 1, "credits": 9, "row_count": 3, "rows": [
+         {"code": "06026215", "name_th": "โครงงานวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ 2", "name_en": "PROJECT IN DATA SCIENCE AND BUSINESS ANALYTICS 2", "credits": "3(0-9-0)"},
+         {"code": "06026xxx", "name_th": "วิชาเลือกในกลุ่มวิชาเลือกหรือกลุ่มวิชาชีพเฉพาะด้าน 1", "name_en": "ELECTIVE IN ELECTIVE OR SPECIFIC PROFESSIONAL COURSES 1", "credits": "3(3-0-6) หรือ 3(2-2-5)"},
+         {"code": "06026xxx", "name_th": "วิชาเลือกในกลุ่มวิชาเลือกหรือกลุ่มวิชาชีพเฉพาะด้าน 2", "name_en": "ELECTIVE IN ELECTIVE OR SPECIFIC PROFESSIONAL COURSES 2", "credits": "3(3-0-6) หรือ 3(2-2-5)"}
+       ]},
+      {"status": "visually_verified", "source_file": "DSBA.pdf", "pdf_page": 29, "printed_page": 28,
+       "year": 4, "semester": 2, "credits": 9, "row_count": 3, "rows": [
+         {"code": "9064xxxx", "name_th": "วิชาเลือกหมวดวิชาศึกษาทั่วไป", "name_en": "ELECTIVE IN GENERAL EDUCATION", "credits": "3(3-0-6) หรือ 3(2-2-5)"},
+         {"code": "xxxxxxxx", "name_th": "วิชาเลือกเสรี 1", "name_en": "FREE ELECTIVE COURSE 1", "credits": "3(3-0-6) หรือ 3(2-2-5)"},
+         {"code": "xxxxxxxx", "name_th": "วิชาเลือกเสรี 2", "name_en": "FREE ELECTIVE COURSE 2", "credits": "3(3-0-6) หรือ 3(2-2-5)"}
+       ]}
+    ]
+  }
+}

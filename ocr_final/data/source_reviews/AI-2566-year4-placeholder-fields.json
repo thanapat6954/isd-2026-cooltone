@@ -1,0 +1,19 @@
+{
+  "purpose": "Targeted production field repair independently reviewed against AI.pdf PDF26/book22, not evaluation labels",
+  "status": "visually_verified", "reviewed_on": "2026-10-10",
+  "program_id": "AI", "version": 2566, "plan": "coop", "source_file": "AI.pdf",
+  "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+  "changes": [
+    {"table": "plan_item", "row_id": 37, "pdf_page": 26, "printed_page": 22,
+     "evidence": "Year4/S1 second row explicitly names วิชาเลือกหมวดวิชาศึกษาทั่วไป, not a major elective. Numeric credits remain 3.",
+     "before": {"elective_type": "major_elective"}, "values": {"elective_type": "general_education"}},
+    {"table": "plan_item", "row_id": 38, "pdf_page": 26, "printed_page": 22,
+     "evidence": "Year4/S1 language and communication row prints 90644xxx, independently distinct from general education 9064xxxx.",
+     "before": {"raw_code": "9064xxxx", "code_pattern": "9064XXXX"},
+     "values": {"raw_code": "90644xxx", "code_pattern": "90644XXX"}},
+    {"table": "plan_item", "row_id": 39, "pdf_page": 26, "printed_page": 22,
+     "evidence": "Year4/S1 FREE ELECTIVE COURSE 2 prints eight x characters. Preserve slot identity and numeric credits; only displayed raw pattern changes.",
+     "before": {"raw_code": "xXXXXxx", "code_pattern": "XXXXXXX"},
+     "values": {"raw_code": "xxxxxxxx", "code_pattern": "XXXXXXXX"}}
+  ]
+}

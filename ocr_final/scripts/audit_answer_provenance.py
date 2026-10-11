@@ -23,12 +23,13 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--app-root', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--url', default='http://127.0.0.1:8000')
     args = parser.parse_args()
     app = args.app_root.resolve()
     registry = DatabaseRegistry(app)
     files = [d.path for d in registry.active_catalogs]
     files += list((app / 'lab10_fastapi/curriculum_app').glob('*.py'))
-    files += [app / 'frontend/app.js', app / 'data/ground_truth/study_plan_relationships.json']
+    files += [app / 'frontend/app.js', app / 'data/source_reviews/shared/study_plan_relationships.json']
     before = {str(p): sha(p) for p in files}
     result = {'scope': 'Live API versus read-only replay of returned SQL; no source-book accuracy claim',
               'dependencies_before': before, 'cases': []}
@@ -43,7 +44,7 @@ def main():
             question = 'legacy วิชา 06066302 มีกี่หน่วยกิต'
         else:
             question = f'{db.curriculum_name} ปี 3 ภาคการศึกษาที่ 1 มีรายวิชาอะไรบ้าง'
-        response = requests.post('http://127.0.0.1:8000/api/ask', json={'question': question}, timeout=45)
+        response = requests.post(args.url.rstrip('/')+'/api/ask', json={'question': question}, timeout=45)
         body = response.json()
         case = {'profile': db.curriculum_name, 'question': question, 'status': response.status_code,
                 'body': body, 'replays': [], 'changes': [], 'unmatched_rows': []}
@@ -57,7 +58,7 @@ def main():
                 raise RuntimeError('Refusing non-query SQL replay')
             connection = open_readonly(path)
             try:
-                rows = [dict(row) for row in connection.execute(sql).fetchall()]
+                rows = [dict(row) for row in connection.execute(sql, query.get('parameters', ())).fetchall()]
             finally:
                 connection.close()
             case['replays'].append({'database_path': str(path), 'sql': sql, 'rows': rows})
@@ -79,7 +80,7 @@ def main():
         save()
     payload = {'curriculum': 'IT', 'version': 'latest',
                'question': 'ปี 3 ภาคการศึกษาที่ 1 มีรายวิชาอะไรบ้าง แผนสหกิจศึกษา'}
-    frontend = requests.post('http://127.0.0.1:8000/ask', json=payload, timeout=45)
+    frontend = requests.post(args.url.rstrip('/')+'/ask', json=payload, timeout=45)
     result['frontend_probe'] = {'request': payload, 'status': frontend.status_code,
                                 'body': frontend.json()}
     # Synthetic guard probe, never sent to the server or shown as a course fact.

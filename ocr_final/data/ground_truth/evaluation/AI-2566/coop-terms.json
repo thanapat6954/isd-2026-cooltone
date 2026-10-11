@@ -1,0 +1,571 @@
+{
+  "schema_version": 1,
+  "purpose": "partial_source_evaluation",
+  "identity": {
+    "program": "AI",
+    "version": 2566,
+    "plan": "coop"
+  },
+  "source_file": "AI.pdf",
+  "printed_total": 120,
+  "verified_fields": [
+    "code",
+    "credits_raw",
+    "year",
+    "semester",
+    "printed_credits",
+    "pdf_page",
+    "printed_page"
+  ],
+  "unverified_fields": [
+    "complete course names",
+    "categories",
+    "prerequisites",
+    "graduation conditions",
+    "L3",
+    "L4"
+  ],
+  "plan_evidence": "PDF23/book19 section3.3 has one study table; PDF26/book22 ends in alternative cooperative courses; no no-coop table observed on these four pages",
+  "terms": [
+    {
+      "year": 1,
+      "semester": 1,
+      "pdf_page": 23,
+      "printed_page": 19,
+      "printed_credits": 15,
+      "rows": [
+        [
+          "06046400",
+          "3(3-0-6)"
+        ],
+        [
+          "06046402",
+          "3(3-0-6)"
+        ],
+        [
+          "06066000",
+          "3(3-0-6)"
+        ],
+        [
+          "06066001",
+          "3(3-0-6)"
+        ],
+        [
+          "06066303",
+          "3(2-2-5)"
+        ],
+        [
+          "90641008",
+          "0(0-0-45)"
+        ]
+      ],
+      "source_file": "AI.pdf",
+      "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+      "image": "AI-268065523712-023.png",
+      "image_sha256": "1569ae1902f1d93aa7cf4ee5352e0f6fc3c3f659d06fbf0b6b16a5510fcd2c65",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06046400",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06046402",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06066000",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06066001",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "06066303",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 4
+        },
+        {
+          "code": "90641008",
+          "credits_raw": "0(0-0-45)",
+          "alternative_group": null,
+          "source_row_index": 5
+        }
+      ]
+    },
+    {
+      "year": 1,
+      "semester": 2,
+      "pdf_page": 23,
+      "printed_page": 19,
+      "printed_credits": 19,
+      "rows": [
+        [
+          "06046401",
+          "3(3-0-6)"
+        ],
+        [
+          "06046403",
+          "3(2-2-5)"
+        ],
+        [
+          "06066301",
+          "3(2-2-5)"
+        ],
+        [
+          "06046404",
+          "3(3-0-6)"
+        ],
+        [
+          "90641007",
+          "3(3-0-6)"
+        ],
+        [
+          "90641004",
+          "1(0-2-1)"
+        ],
+        [
+          "9064xxxx",
+          "3(x-x-x)"
+        ]
+      ],
+      "source_file": "AI.pdf",
+      "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+      "image": "AI-268065523712-023.png",
+      "image_sha256": "1569ae1902f1d93aa7cf4ee5352e0f6fc3c3f659d06fbf0b6b16a5510fcd2c65",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06046401",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06046403",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06066301",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06046404",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "90641007",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 4
+        },
+        {
+          "code": "90641004",
+          "credits_raw": "1(0-2-1)",
+          "alternative_group": null,
+          "source_row_index": 5
+        },
+        {
+          "code": "9064xxxx",
+          "credits_raw": "3(x-x-x)",
+          "alternative_group": null,
+          "source_row_index": 6
+        }
+      ]
+    },
+    {
+      "year": 2,
+      "semester": 1,
+      "pdf_page": 24,
+      "printed_page": 20,
+      "printed_credits": 18,
+      "rows": [
+        [
+          "06066300",
+          "3(2-2-5)"
+        ],
+        [
+          "06046405",
+          "3(3-0-6)"
+        ],
+        [
+          "06046406",
+          "3(3-0-6)"
+        ],
+        [
+          "06046409",
+          "3(3-0-6)"
+        ],
+        [
+          "06046413",
+          "3(3-0-6)"
+        ],
+        [
+          "90641009",
+          "3(3-0-6)"
+        ]
+      ],
+      "source_file": "AI.pdf",
+      "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+      "image": "AI-268065523712-024.png",
+      "image_sha256": "64fe1e07434830f90518ab5245b387538391a55198d2a141d0d2ddea6c4dde23",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06066300",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06046405",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06046406",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06046409",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "06046413",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 4
+        },
+        {
+          "code": "90641009",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 5
+        }
+      ]
+    },
+    {
+      "year": 2,
+      "semester": 2,
+      "pdf_page": 24,
+      "printed_page": 20,
+      "printed_credits": 19,
+      "rows": [
+        [
+          "06046407",
+          "3(3-0-6)"
+        ],
+        [
+          "06046408",
+          "3(2-2-5)"
+        ],
+        [
+          "06046410",
+          "3(3-0-6)"
+        ],
+        [
+          "06046412",
+          "3(3-0-6)"
+        ],
+        [
+          "06046411",
+          "3(3-0-6)"
+        ],
+        [
+          "90641010",
+          "3(3-0-6)"
+        ],
+        [
+          "90641005",
+          "1(0-2-1)"
+        ]
+      ],
+      "source_file": "AI.pdf",
+      "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+      "image": "AI-268065523712-024.png",
+      "image_sha256": "64fe1e07434830f90518ab5245b387538391a55198d2a141d0d2ddea6c4dde23",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06046407",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06046408",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06046410",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06046412",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "06046411",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 4
+        },
+        {
+          "code": "90641010",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 5
+        },
+        {
+          "code": "90641005",
+          "credits_raw": "1(0-2-1)",
+          "alternative_group": null,
+          "source_row_index": 6
+        }
+      ]
+    },
+    {
+      "year": 3,
+      "semester": 1,
+      "pdf_page": 25,
+      "printed_page": 21,
+      "printed_credits": 18,
+      "rows": [
+        [
+          "06046415",
+          "3(3-0-6)"
+        ],
+        [
+          "06046414",
+          "3(3-0-6)"
+        ],
+        [
+          "90642012",
+          "3(3-0-6)"
+        ],
+        [
+          "060464xx",
+          "6(3-0-6)"
+        ],
+        [
+          "06046440",
+          "3(2-2-5)"
+        ]
+      ],
+      "source_file": "AI.pdf",
+      "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+      "image": "AI-268065523712-025.png",
+      "image_sha256": "f14df03408306678ccfdf5f2eb8dfd0a7fa7e07bae07bd44a7db56716807370f",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06046415",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06046414",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "90642012",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "060464xx",
+          "credits_raw": "6(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "06046440",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 4
+        }
+      ]
+    },
+    {
+      "year": 3,
+      "semester": 2,
+      "pdf_page": 25,
+      "printed_page": 21,
+      "printed_credits": 13,
+      "rows": [
+        [
+          "060464xx",
+          "6(3-0-6)"
+        ],
+        [
+          "06046441",
+          "3(0-9-0)"
+        ],
+        [
+          "90641006",
+          "1(0-2-1)"
+        ],
+        [
+          "xxxxxxxx",
+          "3(x-x-x)"
+        ]
+      ],
+      "source_file": "AI.pdf",
+      "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+      "image": "AI-268065523712-025.png",
+      "image_sha256": "f14df03408306678ccfdf5f2eb8dfd0a7fa7e07bae07bd44a7db56716807370f",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "060464xx",
+          "credits_raw": "6(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06046441",
+          "credits_raw": "3(0-9-0)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "90641006",
+          "credits_raw": "1(0-2-1)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "xxxxxxxx",
+          "credits_raw": "3(x-x-x)",
+          "alternative_group": null,
+          "source_row_index": 3
+        }
+      ]
+    },
+    {
+      "year": 4,
+      "semester": 1,
+      "pdf_page": 26,
+      "printed_page": 22,
+      "printed_credits": 12,
+      "rows": [
+        [
+          "06046442",
+          "3(0-9-0)"
+        ],
+        [
+          "9064xxxx",
+          "3(x-x-x)"
+        ],
+        [
+          "90644xxx",
+          "3(x-x-x)"
+        ],
+        [
+          "xxxxxxxx",
+          "3(x-x-x)"
+        ]
+      ],
+      "source_file": "AI.pdf",
+      "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+      "image": "AI-268065523712-026.png",
+      "image_sha256": "0a54421fc6a5fed1d490773cc59be3f218d9dae0168967b2b68097812bc1a8fe",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06046442",
+          "credits_raw": "3(0-9-0)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "9064xxxx",
+          "credits_raw": "3(x-x-x)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "90644xxx",
+          "credits_raw": "3(x-x-x)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "xxxxxxxx",
+          "credits_raw": "3(x-x-x)",
+          "alternative_group": null,
+          "source_row_index": 3
+        }
+      ]
+    },
+    {
+      "year": 4,
+      "semester": 2,
+      "pdf_page": 26,
+      "printed_page": 22,
+      "printed_credits": 6,
+      "rows": [
+        [
+          "06046443",
+          "6(0-45-0)",
+          "coop-choice"
+        ],
+        [
+          "06046444",
+          "6(0-45-0)",
+          "coop-choice"
+        ]
+      ],
+      "source_file": "AI.pdf",
+      "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+      "image": "AI-268065523712-026.png",
+      "image_sha256": "0a54421fc6a5fed1d490773cc59be3f218d9dae0168967b2b68097812bc1a8fe",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06046443",
+          "credits_raw": "6(0-45-0)",
+          "alternative_group": "coop-choice",
+          "source_row_index": 0
+        },
+        {
+          "code": "06046444",
+          "credits_raw": "6(0-45-0)",
+          "alternative_group": "coop-choice",
+          "source_row_index": 1
+        }
+      ]
+    }
+  ]
+}

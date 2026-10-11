@@ -185,6 +185,11 @@ def build_models():
         elective_type: str | None = None
         credits_raw: str | None = None
         credit_options: list[dict[str, Any]] = Field(default_factory=list)
+        source_name_groups: list[dict[str, str]] = Field(default_factory=list)
+        bundle_id: str | None = None
+        bundle_label: str | None = None
+        selection_rule: dict = Field(default_factory=dict)
+        source_claims: list[dict] = Field(default_factory=list)
         printed_page_number: int | None = Field(default=None, ge=1)
         # เก็บเป็นคอลัมน์จริง ไม่ยุบรวมเป็น note — ไม่งั้นถามแยกหมวดไม่ได้เลย
         category: str | None = None   # หมวดวิชาศึกษาทั่วไป/เฉพาะ/เลือกเสรี (จาก Lab 7B)
@@ -249,6 +254,7 @@ def build_models():
         courses: list[Course] = []
         plan: list[PlanItem] = []
         prerequisites: list[Prerequisite] = []
+        term_sources: list[dict] = Field(default_factory=list)
 
     return Curriculum
 
@@ -323,6 +329,14 @@ CREATE TABLE IF NOT EXISTS plan_item_credit_option (
     PRIMARY KEY (plan_item_id, alternative_index)
 );
 
+CREATE TABLE IF NOT EXISTS plan_item_source_name (
+    plan_item_id INTEGER NOT NULL REFERENCES plan_item(id) ON DELETE CASCADE,
+    position INTEGER NOT NULL CHECK(position >= 1),
+    name_th TEXT NOT NULL,
+    name_en TEXT NOT NULL,
+    PRIMARY KEY(plan_item_id, position)
+);
+
 CREATE TABLE IF NOT EXISTS prerequisite (
     code     TEXT NOT NULL,
     requires TEXT NOT NULL,
@@ -373,23 +387,50 @@ LEFT JOIN course c ON c.code = p.code;
 -- ปี 0 คือ "ที่พัก" ของวิชาเลือกที่ยืดหยุ่นเรื่องภาคเรียน (ดู convert_lab7b)
 -- ไม่ใช่ภาคเรียนจริง จึงต้องกันออกจากคำถามประเภท MAX/MIN ต่อภาคเรียน
 -- ไม่งั้นหน่วยกิตที่ "พัก" ไว้ที่ 0/0 อาจถูกนับเป็นภาคที่มีหน่วยกิตมากสุดผิด ๆ
+CREATE TABLE IF NOT EXISTS plan_bundle (
+    year INTEGER NOT NULL, semester INTEGER NOT NULL, bundle_id TEXT NOT NULL,
+    label TEXT NOT NULL, rule_text TEXT NOT NULL, source_file TEXT NOT NULL,
+    rule_pdf_page INTEGER NOT NULL, rule_printed_page INTEGER NOT NULL,
+    PRIMARY KEY(year,semester,bundle_id)
+);
+CREATE TABLE IF NOT EXISTS plan_bundle_member (
+    plan_item_id INTEGER PRIMARY KEY REFERENCES plan_item(id) ON DELETE CASCADE,
+    year INTEGER NOT NULL, semester INTEGER NOT NULL, bundle_id TEXT NOT NULL,
+    FOREIGN KEY(year,semester,bundle_id) REFERENCES plan_bundle(year,semester,bundle_id)
+);
+CREATE TABLE IF NOT EXISTS plan_source_claim (
+    plan_item_id INTEGER NOT NULL REFERENCES plan_item(id) ON DELETE CASCADE,
+    field TEXT NOT NULL, source_file TEXT NOT NULL, pdf_page INTEGER NOT NULL,
+    printed_page INTEGER NOT NULL, literal TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS plan_term_source (
+    year INTEGER NOT NULL, semester INTEGER NOT NULL, credits INTEGER NOT NULL,
+    source_file TEXT NOT NULL, pdf_page INTEGER NOT NULL, printed_page INTEGER NOT NULL,
+    PRIMARY KEY(year,semester)
+);
+CREATE VIEW IF NOT EXISTS v_credit_unit AS
+SELECT p.year,p.semester,p.category,COALESCE(p.alt_group,'x'||p.id) AS grp,
+       MIN(p.credits) AS credits,1 AS n_courses,
+       MIN(p.source_file) AS source_file,MIN(p.page_number) AS page_number,
+       MIN(p.printed_page_number) AS printed_page_number
+FROM plan_item p LEFT JOIN plan_bundle_member m ON m.plan_item_id=p.id
+WHERE m.plan_item_id IS NULL
+GROUP BY p.year,p.semester,COALESCE(p.alt_group,'x'||p.id)
+UNION ALL
+SELECT year,semester,NULL,'whole-bundle',MIN(credits),MIN(n_courses),
+       MIN(source_file),MIN(page_number),MIN(printed_page_number)
+FROM (SELECT p.year,p.semester,m.bundle_id,SUM(p.credits) AS credits,
+      COUNT(*) AS n_courses,MIN(p.source_file) AS source_file,
+      MIN(p.page_number) AS page_number,MIN(p.printed_page_number) AS printed_page_number
+      FROM plan_bundle_member m JOIN plan_item p ON p.id=m.plan_item_id
+      GROUP BY p.year,p.semester,m.bundle_id)
+GROUP BY year,semester;
 CREATE VIEW IF NOT EXISTS v_semester_credits AS
-SELECT year, semester, SUM(credits) AS credits, COUNT(*) AS n_courses,
+SELECT year,semester,SUM(credits) AS credits,SUM(n_courses) AS n_courses,
        GROUP_CONCAT(DISTINCT source_file) AS source_files,
        GROUP_CONCAT(DISTINCT page_number) AS source_pages,
        GROUP_CONCAT(DISTINCT printed_page_number) AS source_printed_pages
-FROM (
-    SELECT year, semester,
-           COALESCE(alt_group, 'x' || id) AS grp,
-           MIN(credits) AS credits,
-           MIN(source_file) AS source_file,
-           MIN(page_number) AS page_number,
-           MIN(printed_page_number) AS printed_page_number
-    FROM plan_item
-    WHERE year >= 1
-    GROUP BY year, semester, COALESCE(alt_group, 'x' || id)
-)
-GROUP BY year, semester;
+FROM v_credit_unit WHERE year>=1 GROUP BY year,semester;
 
 -- หน่วยกิตรวมทั้งปี (ข้ามหลายเทอม) — เกิดจากคำถาม held-out ที่ prompt เดิม
 -- ไม่เคยเจอมาก่อน ("ปี 2 เรียนรวมทั้งปีกี่หน่วยกิต")
@@ -406,37 +447,18 @@ GROUP BY year;
 -- ตั้งใจ "ไม่" กรอง year >= 1 ออก เพราะวิชาเลือกเสรีจำนวนมากถูกเก็บที่
 -- ปี 0 (ยืดหยุ่นภาคเรียน) แต่ยังต้องถูกนับเข้าหมวดของมันอยู่ดี
 CREATE VIEW IF NOT EXISTS v_category_credits AS
-SELECT category, SUM(credits) AS credits, COUNT(*) AS n_courses,
+SELECT category,SUM(credits) AS credits,SUM(n_courses) AS n_courses,
        GROUP_CONCAT(DISTINCT source_file) AS source_files,
        GROUP_CONCAT(DISTINCT page_number) AS source_pages,
        GROUP_CONCAT(DISTINCT printed_page_number) AS source_printed_pages
-FROM (
-    SELECT category,
-           COALESCE(alt_group, 'x' || id) AS grp,
-           MIN(credits) AS credits,
-           MIN(source_file) AS source_file,
-           MIN(page_number) AS page_number,
-           MIN(printed_page_number) AS printed_page_number
-    FROM plan_item
-    WHERE category IS NOT NULL
-    GROUP BY category, COALESCE(alt_group, 'x' || id)
-)
-GROUP BY category;
-
--- หน่วยกิตรวมทั้งหลักสูตร (ทุกปีรวมปี 0) — ใช้เทียบกับ program.total_credits
--- ต้องไม่ใช้ SUM จาก v_semester_credits เพราะตัวนั้นกรองปี 0 ทิ้งไปแล้ว
+FROM v_credit_unit WHERE category IS NOT NULL GROUP BY category;
 CREATE VIEW IF NOT EXISTS v_total_credits AS
 SELECT SUM(credits) AS credits,
        GROUP_CONCAT(DISTINCT source_file) AS source_files,
        GROUP_CONCAT(DISTINCT page_number) AS source_pages,
        GROUP_CONCAT(DISTINCT printed_page_number) AS source_printed_pages
-FROM (
-    SELECT COALESCE(alt_group, 'x' || id) AS grp, MIN(credits) AS credits,
-           MIN(source_file) AS source_file, MIN(page_number) AS page_number,
-           MIN(printed_page_number) AS printed_page_number
-    FROM plan_item
-    GROUP BY COALESCE(alt_group, 'x' || id)
-);
+FROM v_credit_unit;
+
 """
 
 
@@ -853,7 +875,6 @@ def denormalize_gt(data: dict, target_plan: str = "coop") -> dict:
         # วิชาเลือกยืดหยุ่นทั่วไปผิด ๆ (3 หน่วยกิต แทนที่จะเป็น 6)
         master_info = master_map.get(code) or {}
         if not master_info:
-            import re
             for sub_code in re.findall(r"(?<!\d)\d{8}(?!\d)", code):
                 if sub_code in master_map:
                     master_info = master_map[sub_code]
@@ -861,6 +882,10 @@ def denormalize_gt(data: dict, target_plan: str = "coop") -> dict:
 
         flat_courses.append({
             "code": code,
+            # Keep individual master facts when the schedule prints A or B.
+            "course_options": {sub: master_map.get(sub, {}) for sub in
+                               re.findall(r"(?<!\d)\d{8}(?!\d)", str(code))}
+                              if len(re.findall(r"(?<!\d)\d{8}(?!\d)", str(code))) > 1 else {},
             "name_th": sched.get("name_th") or master_info.get("name_th"),
             "name_en": sched.get("name_en") or master_info.get("name_en"),
             "credits": sched.get("credits") or master_info.get("credits"),
@@ -882,6 +907,20 @@ def denormalize_gt(data: dict, target_plan: str = "coop") -> dict:
     }
 
 
+def _plan_credits(rows):
+    ordinary, bundles = {}, {}
+    for index, item in enumerate(rows):
+        if item.get('bundle_id'):
+            key = item['bundle_id']
+            bundles[key] = bundles.get(key, 0) + item['credits']
+        else:
+            key = item.get('alt_group') or f'row-{index}'
+            ordinary[key] = min(ordinary.get(key,item['credits']),item['credits'])
+    if bundles and len(set(bundles.values())) != 1:
+        raise ValueError('Whole specialization bundles have unequal credits')
+    return sum(ordinary.values()) + (next(iter(bundles.values())) if bundles else 0)
+
+
 def convert_lab7b(data: dict, *, program_id: str | None = None,
                   program_name: str | None = None,
                   total_credits: int | None = None,
@@ -891,7 +930,8 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
                   curriculum_version: int | None = None,
                   is_latest: bool = False,
                   plan_variant: str | None = None,
-                  printed_page_offset: int | None = None) -> tuple[dict, dict]:
+                  printed_page_offset: int | None = None,
+                  source_only: bool = False) -> tuple[dict, dict]:
     """
     แปล schema ผลลัพธ์ Lab 7B เป็น Lab 8B ด้วยกฎคงที่ โดยไม่เรียก LLM
 
@@ -1015,18 +1055,19 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
 
         # เฉพาะรหัสวิชาจริงเท่านั้นที่เข้า course table
         for code in course_codes:
+            option = src["course_options"].get(code, {}) if src.get("course_options") else src
             candidate = {
                 "code": code,
-                "name_th": str(src.get("name_th") or code).strip(),
-                "name_en": (str(src["name_en"]).replace("\n", " ").strip()
-                            if src.get("name_en") else None),
+                "name_th": str(option.get("name_th") or code).strip(),
+                "name_en": (str(option["name_en"]).replace("\n", " ").strip()
+                            if option.get("name_en") else None),
                 "credits": credit,
                 "lecture_h": lecture,
                 "lab_h": lab,
                 "self_h": self_h,
-                "description_th": src.get("description_th"),
+                "description_th": option.get("description_th"),
                 "source_file": src.get("source_file"),
-                "page_number": src.get("page_number"),
+                "page_number": option.get("page_number",src.get("page_number")),
             }
             old = course_by_code.get(code)
             if old is None:
@@ -1114,7 +1155,8 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
         )
         if not catalog_only:
             for code in plan_codes:
-                key = (year, semester, code, alt_group)
+                option = src["course_options"].get(code, {}) if src.get("course_options") else src
+                key = (year, semester, code, alt_group, src.get("bundle_id"))
                 if key not in seen_plan:
                     alternative_index = None
                     if alt_group:
@@ -1122,10 +1164,10 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
                         alternative_index = alternative_group_counts[alt_group]
                     plan.append({"year": year, "semester": semester,
                                  "code": code,
-                                 "name_th": (str(src.get("name_th")).strip()
-                                             if src.get("name_th") else None),
-                                 "name_en": (str(src.get("name_en")).replace("\n", " ").strip()
-                                             if src.get("name_en") else None),
+                                 "name_th": (str(option.get("name_th")).strip()
+                                             if option.get("name_th") else None),
+                                 "name_en": (str(option.get("name_en")).replace("\n", " ").strip()
+                                             if option.get("name_en") else None),
                                  "credits": credit,
                                  "credits_raw": str(credits_value).strip() or None,
                                  "credit_options": credit_options,
@@ -1138,12 +1180,17 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
                                  "category": category,
                                  "ctype": ctype, "note": note,
                                  "source_file": src.get("source_file"),
-                                 "page_number": pdf_page_number,
-                                 "printed_page_number": printed_page_number})
+                                 "page_number": option.get('page_number',pdf_page_number),
+                                 "printed_page_number": option.get('printed_page_number',printed_page_number),
+                                 "source_name_groups": src.get("source_name_groups", []),
+                                 "bundle_id": src.get("bundle_id"), "bundle_label": src.get("bundle_label"),
+                                 "selection_rule": src.get("selection_rule") or {},
+                                 "source_claims": option.get("source_claims",src.get("source_claims")) or []})
                     seen_plan.add(key)
 
-        pre_codes = _lab7b_codes(src.get("prerequisite"))
         for code in real_codes:
+            option = src["course_options"].get(code, {}) if src.get("course_options") else src
+            pre_codes = _lab7b_codes(option.get("prerequisite"))
             for required in pre_codes:
                 if required == code:
                     warnings.append(f"{code}: ข้าม prerequisite ที่อ้างถึงตัวเอง")
@@ -1161,7 +1208,7 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
     # Pair courses by their ordinal position inside each bundle so totals retain
     # all alternatives while counting two slots in Y2/S2 and three in Y3/S1.
     pid_hint = str(program_id or data.get("program") or "").upper()
-    if pid_hint.startswith("IT-"):
+    if pid_hint.startswith("IT-") and not source_only:
         it_specialization_slots_2565 = {
             (2, 2): {
                 "06016414": 1, "06016419": 1, "06016424": 1,
@@ -1259,13 +1306,7 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
             expected = int(declared_term["credits"])
         except (KeyError, TypeError, ValueError):
             continue
-        groups: dict[str, int] = {}
-        for i, item in enumerate(plan):
-            if (item["year"], item["semester"]) != term:
-                continue
-            group = item.get("alt_group") or f"row-{i}"
-            groups[group] = min(groups.get(group, item["credits"]), item["credits"])
-        actual = sum(groups.values())
+        actual = _plan_credits([p for p in plan if (p['year'],p['semester']) == term])
         missing = expected - actual
         if missing <= 0:
             if missing < 0:
@@ -1323,6 +1364,7 @@ def convert_lab7b(data: dict, *, program_id: str | None = None,
         "courses": list(course_by_code.values()),
         "plan": plan,
         "prerequisites": prerequisites,
+        "term_sources": data.get('term_totals') or [],
     }
     Curriculum = build_models()
     result = Curriculum.model_validate(result).model_dump()
@@ -1392,15 +1434,8 @@ def validate_conversion_fidelity(result: dict, source_data: dict) -> list[dict[s
             expected = int(declared["credits"])
         except (KeyError, TypeError, ValueError):
             continue
-        grouped: dict[str, int] = {}
-        matching = [
-            item for item in plan
-            if item.get("year") == year and item.get("semester") == semester
-        ]
-        for index, item in enumerate(matching):
-            key = str(item.get("alt_group") or f"row-{index}")
-            grouped[key] = min(grouped.get(key, item["credits"]), item["credits"])
-        actual = sum(grouped.values())
+        matching = [item for item in plan if item.get('year')==year and item.get('semester')==semester]
+        actual = _plan_credits(matching)
         if actual != expected:
             errors.append({
                 "kind": "term_credit_total_mismatch",
@@ -1420,15 +1455,8 @@ def validate_conversion_fidelity(result: dict, source_data: dict) -> list[dict[s
                 "actual": len(matching),
             })
 
-    grouped_total: dict[tuple[int, int, str], int] = {}
-    for index, item in enumerate(plan):
-        key = (
-            int(item["year"]),
-            int(item["semester"]),
-            str(item.get("alt_group") or f"row-{index}"),
-        )
-        grouped_total[key] = min(grouped_total.get(key, item["credits"]), item["credits"])
-    actual_total = sum(grouped_total.values())
+    actual_total = sum(_plan_credits([p for p in plan if (p['year'],p['semester'])==term])
+                       for term in {(p['year'],p['semester']) for p in plan})
     expected_total = int(result["program"]["total_credits"])
     if actual_total != expected_total:
         errors.append({
@@ -1563,6 +1591,20 @@ def cmd_load(args) -> None:
                  p.get("code_pattern"), p.get("elective_type"), p.get("credits_raw"),
                  p.get("category"), p.get("ctype"), p.get("note"),
                  p.get("source_file"), p.get("page_number"), p.get("printed_page_number")))
+            for position, name in enumerate(p.get("source_name_groups") or [], 1):
+                conn.execute("INSERT INTO plan_item_source_name VALUES (?,?,?,?)",
+                             (cursor.lastrowid, position, name['name_th'], name['name_en']))
+            if p.get('bundle_id'):
+                rule = p['selection_rule']
+                conn.execute('INSERT OR IGNORE INTO plan_bundle VALUES (?,?,?,?,?,?,?,?)',
+                    (p['year'],p['semester'],p['bundle_id'],p['bundle_label'],rule['text'],
+                     rule['source_file'],rule['pdf_page'],rule['printed_page']))
+                conn.execute('INSERT INTO plan_bundle_member VALUES (?,?,?,?)',
+                    (cursor.lastrowid,p['year'],p['semester'],p['bundle_id']))
+            for claim in p.get('source_claims') or []:
+                conn.execute('INSERT INTO plan_source_claim VALUES (?,?,?,?,?,?)',
+                    (cursor.lastrowid,claim['field'],p['source_file'],claim['pdf_page'],
+                     claim['printed_page'],claim['literal']))
             for option in p.get("credit_options") or []:
                 conn.execute(
                     "INSERT INTO plan_item_credit_option (plan_item_id, alternative_index,"
@@ -1576,6 +1618,11 @@ def cmd_load(args) -> None:
             conn.execute("INSERT OR REPLACE INTO prerequisite VALUES (?,?,?,?,?)",
                          (r["code"], r["requires"], r.get("kind", "pre"),
                           r.get("source_file"), r.get("page_number")))
+        for term in data.get('term_sources') or []:
+            if term.get('source_file') and term.get('page_number') and term.get('printed_page_number'):
+                conn.execute('INSERT INTO plan_term_source VALUES (?,?,?,?,?,?)',
+                    (term['year'],term['semester'],term['credits'],term['source_file'],
+                     term['page_number'],term['printed_page_number']))
 
         conn.commit()
         n = {t: conn.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0]

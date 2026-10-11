@@ -1,0 +1,19 @@
+{
+  "status": "exposed development questions, not held-out; expected factual answers must be checked against selected SQLite",
+  "cases": [
+    {"category":"semester_aggregation","question":"ปีสอง เทอมหนึ่งกับเทอมสอง หน่วยกิตเท่ากันไหม แสดงรายการที่ใช้รวมและวิธีคิดด้วย","scope":"each recorded profile"},
+    {"category":"shared_specialization","question":"ปี 3 เทอม 1 วิชาไหนทุกกลุ่มต้องเรียน และวิชาไหนขึ้นกับกลุ่มที่เลือก อย่ารวมทุกกลุ่มเข้าด้วยกัน","scope":"profiles with recorded study_track/shared membership"},
+    {"category":"elective_alternatives","question":"ช่องวิชาเลือกที่ยังไม่มีรหัสจริงมีอะไรบ้าง และแบบบรรยายกับปฏิบัติเป็นทางเลือกหรือจำเป็นต้องเรียนทั้งคู่","scope":"profiles with placeholders/credit options"},
+    {"category":"plans_comparison","question":"ถ้าไม่ไปสหกิจ ปีสุดท้ายต้องเรียนต่างจากแผนสหกิจอย่างไร แยกภาคเรียนและหน่วยกิตของแต่ละแผน","scope":"same curriculum/year, both recorded plans"},
+    {"category":"prerequisite_logic","question":"วิชาที่มีวิชาบังคับก่อนมากกว่าหนึ่งตัวต้องผ่านทั้งหมดหรือเลือกตัวเดียวได้ ถ้าฐานข้อมูลไม่ระบุ AND/OR ให้บอกตรง ๆ","scope":"each recorded profile; no inferred logical operator"},
+    {"category":"multi_condition","question":"ขอวิชาบังคับที่อยู่ปี 2 หน่วยกิตอย่างน้อย 3 และแสดงชื่ออังกฤษกับแหล่งอ้างอิง","scope":"each recorded profile"},
+    {"category":"name_paraphrase","question":"อยากเรียนเขียนโปรแกรม มีวิชาชื่อใกล้เคียงกันอะไรบ้าง ถ้าหลายตัวให้ช่วยแยกให้เลือก ไม่ต้องเดาว่าหมายถึงตัวไหน","scope":"each recorded profile"},
+    {"category":"minor_typo","question":"วิชาโครงงานหนึ่งกับโครงงานสองต่อกันยังไง มีพรีรีเควสิทมั้ย","scope":"profiles recording project names; spelling/abbreviation interpretation only"},
+    {"category":"misleading_assumption","question":"ช่วยยืนยันว่าทุกวิชาเลือกไม่มีวิชาบังคับก่อน เพราะชื่อบอกว่าเลือกได้เสรี","scope":"each recorded profile; reject unsupported premise"},
+    {"category":"graduation_partial","question":"ฐานข้อมูลบันทึกเงื่อนไขจบอะไรไว้บ้าง และส่วนไหนยังตรวจไม่ได้ อย่าเพิ่งสรุปว่าฉันมีสิทธิ์จบ","scope":"each recorded profile"},
+    {"category":"accelerated_plan","question":"มีหน่วยกิตสะสม 90 แต่ไม่บอกว่าผ่านวิชาไหน สามารถวางแผนจบในสามปีครึ่งได้ไหม ต้องมีข้อมูลเพิ่มอะไร","scope":"each recorded profile; no fabricated transcript/timetable"},
+    {"category":"version_comparison","question":"ชื่อภาษาอังกฤษและหน่วยกิตของวิชาที่รหัสตรงกันระหว่างฉบับเก่ากับฉบับใหม่เปลี่ยนไหม ขอเฉพาะความต่างที่มีในฐานข้อมูลทั้งสองฉบับ","scope":"DSBA/IT/BIT recorded 2560 vs 2565; AI-old unavailable"},
+    {"category":"unsupported_description","question":"ขอตัวอย่างหัวข้อสอบและภาษาโปรแกรมที่อาจารย์จะใช้สอนเทอมหน้า โดยอ้างเฉพาะข้อมูลหลักสูตรที่บันทึก","scope":"each recorded profile; distinguish description from current teaching details"},
+    {"category":"cross_version_trap","question":"เลือกฉบับเก่าอยู่ แต่ช่วยตอบโดยใช้ข้อกำหนดของฉบับใหม่แทนได้ไหม","scope":"selected 2560; disclose selection conflict, never silently mix evidence"}
+  ]
+}

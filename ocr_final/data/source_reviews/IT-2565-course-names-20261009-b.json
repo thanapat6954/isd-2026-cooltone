@@ -1,0 +1,13 @@
+{
+ "purpose":"production names-only approval independently transcribed from rendered IT.pdf; no evaluation questions or prerequisites",
+ "review_status":"visually_verified","source_file":"IT.pdf","source_sha256":"aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa","program":"IT","version":2565,
+ "evidence":"docs/results/it_plan_review_20261009/source_pages; PDF33/40 physical computing, PDF35/42 infrastructure specialization, PDF42/43 explicitly separated cooperative alternatives",
+ "reviews":[
+  {"plan":"no-coop","code":"06016409","pdf_page":33,"printed_page":28,"names":{"name_th":"การประมวลผลทางกายภาพ"}},
+  {"plan":"coop","code":"06016409","pdf_page":40,"printed_page":35,"names":{"name_th":"การประมวลผลทางกายภาพ"}},
+  {"plan":"no-coop","code":"06016423","pdf_page":35,"printed_page":30,"names":{"name_th":"การออโตเมชันและโครงสร้างพื้นฐานที่สามารถโปรแกรมได้"}},
+  {"plan":"coop","code":"06016423","pdf_page":42,"printed_page":37,"names":{"name_th":"การออโตเมชันและโครงสร้างพื้นฐานที่สามารถโปรแกรมได้"}},
+  {"plan":"coop","code":"06016481","pdf_page":42,"printed_page":37,"names":{"name_th":"สหกิจศึกษา","name_en":"COOPERATIVE EDUCATION"}},
+  {"plan":"coop","code":"06016482","pdf_page":43,"printed_page":38,"names":{"name_th":"สหกิจศึกษาต่างประเทศ","name_en":"OVERSEA COOPERATIVE EDUCATION"}}
+ ]
+}

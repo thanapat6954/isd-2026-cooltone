@@ -1,0 +1,5 @@
+{
+ "purpose":"page-selection locators only; not production course facts or evaluation answer import",
+ "review_status":"visually_verified","review_date":"2026-10-09",
+ "reviews":[{"source_file":"IT.pdf","source_sha256":"aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa","pages":[[25,20],[26,21],[28,23],[29,24],[33,28],[34,29],[40,35],[41,36],[42,37]],"reason":"ตรวจภาพโครงสร้าง วิชาเลือก และตารางรายภาค เก็บไว้เพราะเกี่ยวข้องกับคำถามหลักสูตร"}]
+}

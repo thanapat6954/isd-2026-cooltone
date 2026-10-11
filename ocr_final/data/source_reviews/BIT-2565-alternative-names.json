@@ -1,0 +1,12 @@
+{
+  "purpose": "Production names only, independently reviewed BIT-65 Year4 tables; not evaluation answers",
+  "program": "BIT", "version": 2565, "source_file": "BIT-65.pdf",
+  "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+  "review_status": "visually_verified", "reviewed_on": "2026-10-10",
+  "review_scope": "Reuse adequate visual evidence of PDF29/book24 and PDF35/book30. Each alternative's printed name independently read; description/prerequisite remain outside this names-only approval and must not be copied across options.",
+  "reviews": [
+    {"plan":"coop","code":"06036147","pdf_page":35,"printed_page":30,"names":{"name_th":"สหกิจศึกษา","name_en":"COOPERATIVE EDUCATION"}},
+    {"plan":"coop","code":"06036148","pdf_page":35,"printed_page":30,"names":{"name_th":"สหกิจศึกษาต่างประเทศ","name_en":"OVERSEA COOPERATIVE EDUCATION"}},
+    {"plan":"no-coop","code":"06036146","pdf_page":29,"printed_page":24,"names":{"name_th":"โครงงานทางด้านเทคโนโลยีสารสนเทศเชิงธุรกิจ 2","name_en":"PROJECT IN BUSINESS INFORMATION TECHNOLOGY 2"}}
+  ]
+}

@@ -1,0 +1,6 @@
+{
+ "purpose":"Production citation-only approval independently read from source images, not evaluation answer import",
+ "review_status":"visually_verified","review_date":"2026-10-09",
+ "evidence":"docs/results/viewer_source_20261009/source_pages: inspected printed folios and table identity on IT.pdf PDF31/32/35/38/39",
+ "reviews":[{"program":"IT","version":2565,"source_file":"IT.pdf","source_sha256":"aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa","pages":[[31,26],[32,27],[35,30],[38,33],[39,34]]}]
+}

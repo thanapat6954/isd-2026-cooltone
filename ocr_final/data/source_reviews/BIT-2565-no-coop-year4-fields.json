@@ -1,0 +1,229 @@
+{
+  "program_id": "BIT-no-coop",
+  "version": 2565,
+  "plan": "no-coop",
+  "source_file": "BIT-65.pdf",
+  "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+  "status": "visually_verified",
+  "reviewed_on": "2026-10-10",
+  "purpose": "Targeted production fields from independent visual review, not evaluation or isolated DB answers",
+  "mapping_basis": "Existing real codes and named wildcard identities anchor rows. Existing free slot maps sole printed free slot; recovered row maps sole missing approved requirement. Free1/2 are separate placeholder slots, not catalog courses. Preserve rowids and generated placeholders except proven missing real code.",
+  "changes": [
+    {
+      "table": "plan_item",
+      "row_id": 36,
+      "pdf_page": 29,
+      "printed_page": 24,
+      "evidence": "Independently reviewed table 06036115 ความมั่นคงของระบบสารสนเทศ; docs/BIT_YEAR4_SOURCE_CHAIN_20261010.md. No prerequisite/description inference.",
+      "before": {
+        "name_th": null,
+        "name_en": null,
+        "credits_raw": null,
+        "raw_code": null,
+        "code_pattern": null,
+        "is_placeholder": null,
+        "elective_type": null,
+        "code": "ELEC-SLOT-036"
+      },
+      "values": {
+        "name_th": "ความมั่นคงของระบบสารสนเทศ",
+        "name_en": "INFORMATION SYSTEM SECURITY",
+        "credits_raw": "3(3-0-6)",
+        "raw_code": "06036115",
+        "code_pattern": null,
+        "is_placeholder": 0,
+        "elective_type": null,
+        "code": "06036115"
+      }
+    },
+    {
+      "table": "plan_item",
+      "row_id": 37,
+      "pdf_page": 29,
+      "printed_page": 24,
+      "evidence": "Independently reviewed table 06036146 โครงงานทางด้านเทคโนโลยีสารสนเทศเชิงธุรกิจ 2; docs/BIT_YEAR4_SOURCE_CHAIN_20261010.md. No prerequisite/description inference.",
+      "before": {
+        "name_th": null,
+        "name_en": null,
+        "credits_raw": null,
+        "raw_code": null,
+        "code_pattern": null,
+        "is_placeholder": null,
+        "elective_type": null
+      },
+      "values": {
+        "name_th": "โครงงานทางด้านเทคโนโลยีสารสนเทศเชิงธุรกิจ 2",
+        "name_en": "PROJECT IN BUSINESS INFORMATION TECHNOLOGY 2",
+        "credits_raw": "3(0-9-0)",
+        "raw_code": "06036146",
+        "code_pattern": null,
+        "is_placeholder": 0,
+        "elective_type": null
+      }
+    },
+    {
+      "table": "plan_item",
+      "row_id": 38,
+      "pdf_page": 29,
+      "printed_page": 24,
+      "evidence": "Independently reviewed table 96642033 กฎหมายสำหรับคนรุ่นใหม่; docs/BIT_YEAR4_SOURCE_CHAIN_20261010.md. No prerequisite/description inference.",
+      "before": {
+        "name_th": null,
+        "name_en": null,
+        "credits_raw": null,
+        "raw_code": null,
+        "code_pattern": null,
+        "is_placeholder": null,
+        "elective_type": null
+      },
+      "values": {
+        "name_th": "กฎหมายสำหรับคนรุ่นใหม่",
+        "name_en": "LAW FOR NEW GENERATION",
+        "credits_raw": "3(3-0-6)",
+        "raw_code": "96642033",
+        "code_pattern": null,
+        "is_placeholder": 0,
+        "elective_type": null
+      }
+    },
+    {
+      "table": "plan_item",
+      "row_id": 39,
+      "pdf_page": 29,
+      "printed_page": 24,
+      "evidence": "Independently reviewed table 9664xxxx วิชาเลือกหมวดวิชาศึกษาทั่วไป สำหรับหลักสูตรนานาชาติ 2; docs/BIT_YEAR4_SOURCE_CHAIN_20261010.md. No prerequisite/description inference.",
+      "before": {
+        "name_th": null,
+        "name_en": null,
+        "credits_raw": null,
+        "raw_code": null,
+        "code_pattern": null,
+        "is_placeholder": null,
+        "elective_type": null
+      },
+      "values": {
+        "name_th": "วิชาเลือกหมวดวิชาศึกษาทั่วไป สำหรับหลักสูตรนานาชาติ 2",
+        "name_en": "GE ELECTIVE COURSE REQUIREMENT 2",
+        "credits_raw": "3(3-0-6)",
+        "raw_code": "9664xxxx",
+        "code_pattern": "9664XXXX",
+        "is_placeholder": 1,
+        "elective_type": "general_education"
+      }
+    },
+    {
+      "table": "plan_item",
+      "row_id": 40,
+      "pdf_page": 30,
+      "printed_page": 25,
+      "evidence": "Independently reviewed table 06036xxx วิชาเลือกทางเทคโนโลยีสารสนเทศทางธุรกิจ 1 หรือกลุ่มวิชาที่ 1-4; docs/BIT_YEAR4_SOURCE_CHAIN_20261010.md. No prerequisite/description inference.",
+      "before": {
+        "name_th": null,
+        "name_en": null,
+        "credits_raw": null,
+        "raw_code": null,
+        "code_pattern": null,
+        "is_placeholder": null,
+        "elective_type": null
+      },
+      "values": {
+        "name_th": "วิชาเลือกทางเทคโนโลยีสารสนเทศทางธุรกิจ 1 หรือกลุ่มวิชาที่ 1-4",
+        "name_en": "ELECTIVE COURSE IN BUSINESS INFORMATION TECHNOLOGY 1 OR COURSE GROUP 1-4",
+        "credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+        "raw_code": "06036xxx",
+        "code_pattern": "06036XXX",
+        "is_placeholder": 1,
+        "elective_type": "major_elective"
+      }
+    },
+    {
+      "table": "plan_item",
+      "row_id": 43,
+      "pdf_page": 30,
+      "printed_page": 25,
+      "evidence": "Independently reviewed table 06036xxx วิชาเลือกทางเทคโนโลยีสารสนเทศทางธุรกิจ 2 หรือกลุ่มวิชาที่ 1-4; docs/BIT_YEAR4_SOURCE_CHAIN_20261010.md. No prerequisite/description inference.",
+      "before": {
+        "name_th": null,
+        "name_en": null,
+        "credits_raw": null,
+        "raw_code": null,
+        "code_pattern": null,
+        "is_placeholder": null,
+        "elective_type": null
+      },
+      "values": {
+        "name_th": "วิชาเลือกทางเทคโนโลยีสารสนเทศทางธุรกิจ 2 หรือกลุ่มวิชาที่ 1-4",
+        "name_en": "ELECTIVE COURSE IN BUSINESS INFORMATION TECHNOLOGY 2 OR COURSE GROUP 1-4",
+        "credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+        "raw_code": "06036xxx",
+        "code_pattern": "06036XXX",
+        "is_placeholder": 1,
+        "elective_type": "major_elective"
+      }
+    },
+    {
+      "table": "plan_item",
+      "row_id": 41,
+      "pdf_page": 30,
+      "printed_page": 25,
+      "evidence": "Independently reviewed table xxxxxxxx วิชาเลือกเสรี 1; docs/BIT_YEAR4_SOURCE_CHAIN_20261010.md. No prerequisite/description inference.",
+      "before": {
+        "name_th": null,
+        "name_en": null,
+        "credits_raw": null,
+        "raw_code": null,
+        "code_pattern": null,
+        "is_placeholder": null,
+        "elective_type": null
+      },
+      "values": {
+        "name_th": "วิชาเลือกเสรี 1",
+        "name_en": "FREE ELECTIVE COURSE 1",
+        "credits_raw": "3(3-0-6)",
+        "raw_code": "xxxxxxxx",
+        "code_pattern": "XXXXXXXX",
+        "is_placeholder": 1,
+        "elective_type": "free_elective"
+      }
+    },
+    {
+      "table": "plan_item",
+      "row_id": 42,
+      "pdf_page": 30,
+      "printed_page": 25,
+      "evidence": "Independently reviewed table xxxxxxxx วิชาเลือกเสรี 2; docs/BIT_YEAR4_SOURCE_CHAIN_20261010.md. No prerequisite/description inference.",
+      "before": {
+        "name_th": null,
+        "name_en": null,
+        "credits_raw": null,
+        "raw_code": null,
+        "code_pattern": null,
+        "is_placeholder": null,
+        "elective_type": null
+      },
+      "values": {
+        "name_th": "วิชาเลือกเสรี 2",
+        "name_en": "FREE ELECTIVE COURSE 2",
+        "credits_raw": "3(3-0-6)",
+        "raw_code": "xxxxxxxx",
+        "code_pattern": "XXXXXXXX",
+        "is_placeholder": 1,
+        "elective_type": "free_elective"
+      }
+    }
+  ],
+  "new_courses": [
+    {
+      "printed_page": 24,
+      "evidence": "BIT-65.pdf PDF29/book24 no-coop security row independently reviewed, not borrowed from coop. Missing description/prerequisite stays unknown.",
+      "values": {
+        "code": "06036115",
+        "name_th": "ความมั่นคงของระบบสารสนเทศ",
+        "name_en": "INFORMATION SYSTEM SECURITY",
+        "credits": 3,
+        "source_file": "BIT-65.pdf",
+        "page_number": 29
+      }
+    }
+  ]
+}

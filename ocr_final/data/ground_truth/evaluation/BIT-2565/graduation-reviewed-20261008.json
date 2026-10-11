@@ -1,0 +1,17 @@
+{
+  "purpose": "Independent development source observations; not held-out and not production ingestion",
+  "source": "BIT-65.pdf",
+  "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+  "version": 2565,
+  "plans": ["coop", "no-coop"],
+  "review_status": "visually_verified_rendered_pages",
+  "regulation_identity": {"year":2564,"pdf_page":87,"printed_page":82},
+  "rules": [
+    {"section":"ข้อ 26.1","pdf_page":93,"printed_page":88,"text":"เรียนครบหน่วยกิตและสอบผ่านทุกรายวิชาตามโครงสร้างหลักสูตร และค่าระดับคะแนนเฉลี่ยสะสมตามโครงสร้างหลักสูตรไม่ต่ำกว่า 2.00","minimum_curriculum_gpa":2.0},
+    {"section":"ข้อ 26.2","pdf_page":93,"printed_page":88,"text":"ค่าระดับคะแนนเฉลี่ยสะสมไม่ต่ำกว่า 2.00 และคะแนน English Exit Exam ตามประกาศสถาบันโดยผ่านความเห็นชอบสภาวิชาการ","minimum_cumulative_gpa":2.0,"english_exit_threshold":null},
+    {"section":"ข้อ 26.3","pdf_page":93,"printed_page":88,"text":"เป็นผู้มีเกียรติและศักดิ์ศรีนักศึกษาตามหมวด 10"},
+    {"section":"ข้อ 26.4","pdf_page":93,"printed_page":88,"text":"ต้องไม่เป็นผู้มีหนี้สินหรือภาระผูกพันกับสถาบัน"},
+    {"section":"ข้อ 26.5","pdf_page":93,"printed_page":88,"text":"หลักเกณฑ์อื่นตามประกาศสถาบันโดยผ่านความเห็นชอบสภาวิชาการ"}
+  ],
+  "not_verified": ["English Exit Exam numerical threshold and current announcement", "all supplementary announcements", "applicability to another source book without checking its appendix", "full student graduation eligibility", "production retrieval of these newly reviewed rules"]
+}

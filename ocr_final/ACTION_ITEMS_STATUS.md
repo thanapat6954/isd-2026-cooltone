@@ -35,7 +35,7 @@ Use `--program it-no-coop` or `--program it-coop` to run exactly one track.
 ## 6. General-education fallback: integrated without guessing
 
 `run_lab8b.py` now passes
-`data/ground_truth/general_education_ground_truth.json` to every import. The file
+`data/source_reviews/shared/general_education_ground_truth.json` to every import. The file
 contains 266 unique catalog courses. Existing curriculum records take precedence;
 missing catalog records are added to `course` only. The importer never assigns a
 catalog course to a year/semester and never replaces a wildcard slot with an

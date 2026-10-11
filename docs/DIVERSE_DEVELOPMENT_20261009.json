@@ -1,0 +1,3290 @@
+{
+  "scope": "conservative development triage, not independently source-scored accuracy",
+  "n": 392,
+  "counts": {
+    "needs_substantive_review": 157,
+    "partial_rules_disclosed_needs_coverage_review": 28,
+    "technical_failure": 126,
+    "unrelated_program_answer": 81
+  },
+  "db_coverage": [
+    {
+      "database": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\curriculum.db",
+      "source_hash_unchanged": true,
+      "courses": null,
+      "descriptions": null,
+      "elective_slots": null,
+      "study_tracks": null,
+      "prerequisite_edges": null,
+      "graduation_rules": null
+    },
+    {
+      "database": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_ai\\curriculum.db",
+      "source_hash_unchanged": true,
+      "courses": 299,
+      "descriptions": 0,
+      "elective_slots": 7,
+      "study_tracks": 0,
+      "prerequisite_edges": 3,
+      "graduation_rules": 1
+    },
+    {
+      "database": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_bit_2560_coop\\curriculum.db",
+      "source_hash_unchanged": true,
+      "courses": 38,
+      "descriptions": 0,
+      "elective_slots": 4,
+      "study_tracks": 0,
+      "prerequisite_edges": 1,
+      "graduation_rules": 1
+    },
+    {
+      "database": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_bit_2560_no_coop\\curriculum.db",
+      "source_hash_unchanged": true,
+      "courses": 38,
+      "descriptions": 0,
+      "elective_slots": 4,
+      "study_tracks": 0,
+      "prerequisite_edges": 2,
+      "graduation_rules": 1
+    },
+    {
+      "database": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_bit_2565_coop\\curriculum.db",
+      "source_hash_unchanged": true,
+      "courses": 302,
+      "descriptions": 0,
+      "elective_slots": 0,
+      "study_tracks": 0,
+      "prerequisite_edges": 0,
+      "graduation_rules": 2
+    },
+    {
+      "database": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_bit_2565_no_coop\\curriculum.db",
+      "source_hash_unchanged": true,
+      "courses": 303,
+      "descriptions": 0,
+      "elective_slots": 0,
+      "study_tracks": 0,
+      "prerequisite_edges": 0,
+      "graduation_rules": 2
+    },
+    {
+      "database": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_dsba_2560_coop\\curriculum.db",
+      "source_hash_unchanged": true,
+      "courses": 39,
+      "descriptions": 0,
+      "elective_slots": 5,
+      "study_tracks": 0,
+      "prerequisite_edges": 5,
+      "graduation_rules": 1
+    },
+    {
+      "database": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_dsba_2560_no_coop\\curriculum.db",
+      "source_hash_unchanged": true,
+      "courses": 38,
+      "descriptions": 0,
+      "elective_slots": 6,
+      "study_tracks": 0,
+      "prerequisite_edges": 5,
+      "graduation_rules": 1
+    },
+    {
+      "database": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_dsba_coop\\curriculum.db",
+      "source_hash_unchanged": true,
+      "courses": 294,
+      "descriptions": 0,
+      "elective_slots": 9,
+      "study_tracks": 6,
+      "prerequisite_edges": 5,
+      "graduation_rules": 1
+    },
+    {
+      "database": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_dsba_no_coop\\curriculum.db",
+      "source_hash_unchanged": true,
+      "courses": 292,
+      "descriptions": 0,
+      "elective_slots": 11,
+      "study_tracks": 6,
+      "prerequisite_edges": 5,
+      "graduation_rules": 1
+    },
+    {
+      "database": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_coop\\curriculum.db",
+      "source_hash_unchanged": true,
+      "courses": 58,
+      "descriptions": 0,
+      "elective_slots": 6,
+      "study_tracks": 12,
+      "prerequisite_edges": 1,
+      "graduation_rules": 1
+    },
+    {
+      "database": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_2560_no_coop\\curriculum.db",
+      "source_hash_unchanged": true,
+      "courses": 58,
+      "descriptions": 0,
+      "elective_slots": 6,
+      "study_tracks": 12,
+      "prerequisite_edges": 4,
+      "graduation_rules": 1
+    },
+    {
+      "database": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_coop\\curriculum.db",
+      "source_hash_unchanged": true,
+      "courses": 305,
+      "descriptions": 0,
+      "elective_slots": 5,
+      "study_tracks": 6,
+      "prerequisite_edges": 1,
+      "graduation_rules": 1
+    },
+    {
+      "database": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final\\work\\lab8b_it_no_coop\\curriculum.db",
+      "source_hash_unchanged": true,
+      "courses": 303,
+      "descriptions": 0,
+      "elective_slots": 7,
+      "study_tracks": 6,
+      "prerequisite_edges": 1,
+      "graduation_rules": 1
+    }
+  ],
+  "cases": [
+    {
+      "id": "legacy-course-catalog-0-/api/ask",
+      "category": "semester_aggregation",
+      "profile": "legacy-course-catalog",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-0-/ask",
+      "category": "semester_aggregation",
+      "profile": "legacy-course-catalog",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-1-/api/ask",
+      "category": "shared_specialization",
+      "profile": "legacy-course-catalog",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-1-/ask",
+      "category": "shared_specialization",
+      "profile": "legacy-course-catalog",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-2-/api/ask",
+      "category": "elective_alternatives",
+      "profile": "legacy-course-catalog",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-2-/ask",
+      "category": "elective_alternatives",
+      "profile": "legacy-course-catalog",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-3-/api/ask",
+      "category": "plans_comparison",
+      "profile": "legacy-course-catalog",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-3-/ask",
+      "category": "plans_comparison",
+      "profile": "legacy-course-catalog",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-4-/api/ask",
+      "category": "prerequisite_logic",
+      "profile": "legacy-course-catalog",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-4-/ask",
+      "category": "prerequisite_logic",
+      "profile": "legacy-course-catalog",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-5-/api/ask",
+      "category": "multi_condition",
+      "profile": "legacy-course-catalog",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-5-/ask",
+      "category": "multi_condition",
+      "profile": "legacy-course-catalog",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-6-/api/ask",
+      "category": "name_paraphrase",
+      "profile": "legacy-course-catalog",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-6-/ask",
+      "category": "name_paraphrase",
+      "profile": "legacy-course-catalog",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-7-/api/ask",
+      "category": "minor_typo",
+      "profile": "legacy-course-catalog",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-7-/ask",
+      "category": "minor_typo",
+      "profile": "legacy-course-catalog",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-8-/api/ask",
+      "category": "misleading_assumption",
+      "profile": "legacy-course-catalog",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-8-/ask",
+      "category": "misleading_assumption",
+      "profile": "legacy-course-catalog",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-9-/api/ask",
+      "category": "graduation_partial",
+      "profile": "legacy-course-catalog",
+      "route": "/api/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-9-/ask",
+      "category": "graduation_partial",
+      "profile": "legacy-course-catalog",
+      "route": "/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-10-/api/ask",
+      "category": "accelerated_plan",
+      "profile": "legacy-course-catalog",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-10-/ask",
+      "category": "accelerated_plan",
+      "profile": "legacy-course-catalog",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-11-/api/ask",
+      "category": "version_comparison",
+      "profile": "legacy-course-catalog",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-11-/ask",
+      "category": "version_comparison",
+      "profile": "legacy-course-catalog",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-12-/api/ask",
+      "category": "unsupported_description",
+      "profile": "legacy-course-catalog",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-12-/ask",
+      "category": "unsupported_description",
+      "profile": "legacy-course-catalog",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-13-/api/ask",
+      "category": "cross_version_trap",
+      "profile": "legacy-course-catalog",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "legacy-course-catalog-13-/ask",
+      "category": "cross_version_trap",
+      "profile": "legacy-course-catalog",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "AI-2566-coop-0-/api/ask",
+      "category": "semester_aggregation",
+      "profile": "AI-2566-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "AI-2566-coop-0-/ask",
+      "category": "semester_aggregation",
+      "profile": "AI-2566-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "AI-2566-coop-1-/api/ask",
+      "category": "shared_specialization",
+      "profile": "AI-2566-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "AI-2566-coop-1-/ask",
+      "category": "shared_specialization",
+      "profile": "AI-2566-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "AI-2566-coop-2-/api/ask",
+      "category": "elective_alternatives",
+      "profile": "AI-2566-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "AI-2566-coop-2-/ask",
+      "category": "elective_alternatives",
+      "profile": "AI-2566-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "AI-2566-coop-3-/api/ask",
+      "category": "plans_comparison",
+      "profile": "AI-2566-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "AI-2566-coop-3-/ask",
+      "category": "plans_comparison",
+      "profile": "AI-2566-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "AI-2566-coop-4-/api/ask",
+      "category": "prerequisite_logic",
+      "profile": "AI-2566-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "AI-2566-coop-4-/ask",
+      "category": "prerequisite_logic",
+      "profile": "AI-2566-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "AI-2566-coop-5-/api/ask",
+      "category": "multi_condition",
+      "profile": "AI-2566-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "AI-2566-coop-5-/ask",
+      "category": "multi_condition",
+      "profile": "AI-2566-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "AI-2566-coop-6-/api/ask",
+      "category": "name_paraphrase",
+      "profile": "AI-2566-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "AI-2566-coop-6-/ask",
+      "category": "name_paraphrase",
+      "profile": "AI-2566-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "AI-2566-coop-7-/api/ask",
+      "category": "minor_typo",
+      "profile": "AI-2566-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "AI-2566-coop-7-/ask",
+      "category": "minor_typo",
+      "profile": "AI-2566-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "AI-2566-coop-8-/api/ask",
+      "category": "misleading_assumption",
+      "profile": "AI-2566-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "AI-2566-coop-8-/ask",
+      "category": "misleading_assumption",
+      "profile": "AI-2566-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "AI-2566-coop-9-/api/ask",
+      "category": "graduation_partial",
+      "profile": "AI-2566-coop",
+      "route": "/api/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "AI-2566-coop-9-/ask",
+      "category": "graduation_partial",
+      "profile": "AI-2566-coop",
+      "route": "/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "AI-2566-coop-10-/api/ask",
+      "category": "accelerated_plan",
+      "profile": "AI-2566-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "AI-2566-coop-10-/ask",
+      "category": "accelerated_plan",
+      "profile": "AI-2566-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "AI-2566-coop-11-/api/ask",
+      "category": "version_comparison",
+      "profile": "AI-2566-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "AI-2566-coop-11-/ask",
+      "category": "version_comparison",
+      "profile": "AI-2566-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "AI-2566-coop-12-/api/ask",
+      "category": "unsupported_description",
+      "profile": "AI-2566-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "AI-2566-coop-12-/ask",
+      "category": "unsupported_description",
+      "profile": "AI-2566-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "AI-2566-coop-13-/api/ask",
+      "category": "cross_version_trap",
+      "profile": "AI-2566-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "AI-2566-coop-13-/ask",
+      "category": "cross_version_trap",
+      "profile": "AI-2566-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-coop-0-/api/ask",
+      "category": "semester_aggregation",
+      "profile": "BIT-2560-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-coop-0-/ask",
+      "category": "semester_aggregation",
+      "profile": "BIT-2560-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-coop-1-/api/ask",
+      "category": "shared_specialization",
+      "profile": "BIT-2560-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-coop-1-/ask",
+      "category": "shared_specialization",
+      "profile": "BIT-2560-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-coop-2-/api/ask",
+      "category": "elective_alternatives",
+      "profile": "BIT-2560-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-coop-2-/ask",
+      "category": "elective_alternatives",
+      "profile": "BIT-2560-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-coop-3-/api/ask",
+      "category": "plans_comparison",
+      "profile": "BIT-2560-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-coop-3-/ask",
+      "category": "plans_comparison",
+      "profile": "BIT-2560-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-coop-4-/api/ask",
+      "category": "prerequisite_logic",
+      "profile": "BIT-2560-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-coop-4-/ask",
+      "category": "prerequisite_logic",
+      "profile": "BIT-2560-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-coop-5-/api/ask",
+      "category": "multi_condition",
+      "profile": "BIT-2560-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-coop-5-/ask",
+      "category": "multi_condition",
+      "profile": "BIT-2560-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-coop-6-/api/ask",
+      "category": "name_paraphrase",
+      "profile": "BIT-2560-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-coop-6-/ask",
+      "category": "name_paraphrase",
+      "profile": "BIT-2560-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-coop-7-/api/ask",
+      "category": "minor_typo",
+      "profile": "BIT-2560-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-coop-7-/ask",
+      "category": "minor_typo",
+      "profile": "BIT-2560-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-coop-8-/api/ask",
+      "category": "misleading_assumption",
+      "profile": "BIT-2560-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-coop-8-/ask",
+      "category": "misleading_assumption",
+      "profile": "BIT-2560-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-coop-9-/api/ask",
+      "category": "graduation_partial",
+      "profile": "BIT-2560-coop",
+      "route": "/api/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-coop-9-/ask",
+      "category": "graduation_partial",
+      "profile": "BIT-2560-coop",
+      "route": "/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-coop-10-/api/ask",
+      "category": "accelerated_plan",
+      "profile": "BIT-2560-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-coop-10-/ask",
+      "category": "accelerated_plan",
+      "profile": "BIT-2560-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-coop-11-/api/ask",
+      "category": "version_comparison",
+      "profile": "BIT-2560-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-coop-11-/ask",
+      "category": "version_comparison",
+      "profile": "BIT-2560-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-coop-12-/api/ask",
+      "category": "unsupported_description",
+      "profile": "BIT-2560-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-coop-12-/ask",
+      "category": "unsupported_description",
+      "profile": "BIT-2560-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-coop-13-/api/ask",
+      "category": "cross_version_trap",
+      "profile": "BIT-2560-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-coop-13-/ask",
+      "category": "cross_version_trap",
+      "profile": "BIT-2560-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-no-coop-0-/api/ask",
+      "category": "semester_aggregation",
+      "profile": "BIT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-no-coop-0-/ask",
+      "category": "semester_aggregation",
+      "profile": "BIT-2560-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-no-coop-1-/api/ask",
+      "category": "shared_specialization",
+      "profile": "BIT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-no-coop-1-/ask",
+      "category": "shared_specialization",
+      "profile": "BIT-2560-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-no-coop-2-/api/ask",
+      "category": "elective_alternatives",
+      "profile": "BIT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-no-coop-2-/ask",
+      "category": "elective_alternatives",
+      "profile": "BIT-2560-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-no-coop-3-/api/ask",
+      "category": "plans_comparison",
+      "profile": "BIT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-no-coop-3-/ask",
+      "category": "plans_comparison",
+      "profile": "BIT-2560-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-no-coop-4-/api/ask",
+      "category": "prerequisite_logic",
+      "profile": "BIT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-no-coop-4-/ask",
+      "category": "prerequisite_logic",
+      "profile": "BIT-2560-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-no-coop-5-/api/ask",
+      "category": "multi_condition",
+      "profile": "BIT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-no-coop-5-/ask",
+      "category": "multi_condition",
+      "profile": "BIT-2560-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-no-coop-6-/api/ask",
+      "category": "name_paraphrase",
+      "profile": "BIT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-no-coop-6-/ask",
+      "category": "name_paraphrase",
+      "profile": "BIT-2560-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-no-coop-7-/api/ask",
+      "category": "minor_typo",
+      "profile": "BIT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-no-coop-7-/ask",
+      "category": "minor_typo",
+      "profile": "BIT-2560-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-no-coop-8-/api/ask",
+      "category": "misleading_assumption",
+      "profile": "BIT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-no-coop-8-/ask",
+      "category": "misleading_assumption",
+      "profile": "BIT-2560-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-no-coop-9-/api/ask",
+      "category": "graduation_partial",
+      "profile": "BIT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-no-coop-9-/ask",
+      "category": "graduation_partial",
+      "profile": "BIT-2560-no-coop",
+      "route": "/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-no-coop-10-/api/ask",
+      "category": "accelerated_plan",
+      "profile": "BIT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-no-coop-10-/ask",
+      "category": "accelerated_plan",
+      "profile": "BIT-2560-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-no-coop-11-/api/ask",
+      "category": "version_comparison",
+      "profile": "BIT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-no-coop-11-/ask",
+      "category": "version_comparison",
+      "profile": "BIT-2560-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-no-coop-12-/api/ask",
+      "category": "unsupported_description",
+      "profile": "BIT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-no-coop-12-/ask",
+      "category": "unsupported_description",
+      "profile": "BIT-2560-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2560-no-coop-13-/api/ask",
+      "category": "cross_version_trap",
+      "profile": "BIT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2560-no-coop-13-/ask",
+      "category": "cross_version_trap",
+      "profile": "BIT-2560-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2565-coop-0-/api/ask",
+      "category": "semester_aggregation",
+      "profile": "BIT-2565-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2565-coop-0-/ask",
+      "category": "semester_aggregation",
+      "profile": "BIT-2565-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2565-coop-1-/api/ask",
+      "category": "shared_specialization",
+      "profile": "BIT-2565-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-1-/ask",
+      "category": "shared_specialization",
+      "profile": "BIT-2565-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2565-coop-2-/api/ask",
+      "category": "elective_alternatives",
+      "profile": "BIT-2565-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-2-/ask",
+      "category": "elective_alternatives",
+      "profile": "BIT-2565-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-3-/api/ask",
+      "category": "plans_comparison",
+      "profile": "BIT-2565-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2565-coop-3-/ask",
+      "category": "plans_comparison",
+      "profile": "BIT-2565-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2565-coop-4-/api/ask",
+      "category": "prerequisite_logic",
+      "profile": "BIT-2565-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-4-/ask",
+      "category": "prerequisite_logic",
+      "profile": "BIT-2565-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-5-/api/ask",
+      "category": "multi_condition",
+      "profile": "BIT-2565-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-5-/ask",
+      "category": "multi_condition",
+      "profile": "BIT-2565-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-6-/api/ask",
+      "category": "name_paraphrase",
+      "profile": "BIT-2565-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-6-/ask",
+      "category": "name_paraphrase",
+      "profile": "BIT-2565-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-7-/api/ask",
+      "category": "minor_typo",
+      "profile": "BIT-2565-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-7-/ask",
+      "category": "minor_typo",
+      "profile": "BIT-2565-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-8-/api/ask",
+      "category": "misleading_assumption",
+      "profile": "BIT-2565-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-8-/ask",
+      "category": "misleading_assumption",
+      "profile": "BIT-2565-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-9-/api/ask",
+      "category": "graduation_partial",
+      "profile": "BIT-2565-coop",
+      "route": "/api/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-9-/ask",
+      "category": "graduation_partial",
+      "profile": "BIT-2565-coop",
+      "route": "/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-10-/api/ask",
+      "category": "accelerated_plan",
+      "profile": "BIT-2565-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2565-coop-10-/ask",
+      "category": "accelerated_plan",
+      "profile": "BIT-2565-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2565-coop-11-/api/ask",
+      "category": "version_comparison",
+      "profile": "BIT-2565-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-11-/ask",
+      "category": "version_comparison",
+      "profile": "BIT-2565-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-12-/api/ask",
+      "category": "unsupported_description",
+      "profile": "BIT-2565-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-12-/ask",
+      "category": "unsupported_description",
+      "profile": "BIT-2565-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-13-/api/ask",
+      "category": "cross_version_trap",
+      "profile": "BIT-2565-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-coop-13-/ask",
+      "category": "cross_version_trap",
+      "profile": "BIT-2565-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-0-/api/ask",
+      "category": "semester_aggregation",
+      "profile": "BIT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2565-no-coop-0-/ask",
+      "category": "semester_aggregation",
+      "profile": "BIT-2565-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2565-no-coop-1-/api/ask",
+      "category": "shared_specialization",
+      "profile": "BIT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-1-/ask",
+      "category": "shared_specialization",
+      "profile": "BIT-2565-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2565-no-coop-2-/api/ask",
+      "category": "elective_alternatives",
+      "profile": "BIT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-2-/ask",
+      "category": "elective_alternatives",
+      "profile": "BIT-2565-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-3-/api/ask",
+      "category": "plans_comparison",
+      "profile": "BIT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2565-no-coop-3-/ask",
+      "category": "plans_comparison",
+      "profile": "BIT-2565-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2565-no-coop-4-/api/ask",
+      "category": "prerequisite_logic",
+      "profile": "BIT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-4-/ask",
+      "category": "prerequisite_logic",
+      "profile": "BIT-2565-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-5-/api/ask",
+      "category": "multi_condition",
+      "profile": "BIT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-5-/ask",
+      "category": "multi_condition",
+      "profile": "BIT-2565-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-6-/api/ask",
+      "category": "name_paraphrase",
+      "profile": "BIT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-6-/ask",
+      "category": "name_paraphrase",
+      "profile": "BIT-2565-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-7-/api/ask",
+      "category": "minor_typo",
+      "profile": "BIT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2565-no-coop-7-/ask",
+      "category": "minor_typo",
+      "profile": "BIT-2565-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-8-/api/ask",
+      "category": "misleading_assumption",
+      "profile": "BIT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-8-/ask",
+      "category": "misleading_assumption",
+      "profile": "BIT-2565-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-9-/api/ask",
+      "category": "graduation_partial",
+      "profile": "BIT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-9-/ask",
+      "category": "graduation_partial",
+      "profile": "BIT-2565-no-coop",
+      "route": "/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-10-/api/ask",
+      "category": "accelerated_plan",
+      "profile": "BIT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2565-no-coop-10-/ask",
+      "category": "accelerated_plan",
+      "profile": "BIT-2565-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2565-no-coop-11-/api/ask",
+      "category": "version_comparison",
+      "profile": "BIT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-11-/ask",
+      "category": "version_comparison",
+      "profile": "BIT-2565-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-12-/api/ask",
+      "category": "unsupported_description",
+      "profile": "BIT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-12-/ask",
+      "category": "unsupported_description",
+      "profile": "BIT-2565-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "BIT-2565-no-coop-13-/api/ask",
+      "category": "cross_version_trap",
+      "profile": "BIT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "BIT-2565-no-coop-13-/ask",
+      "category": "cross_version_trap",
+      "profile": "BIT-2565-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-coop-0-/api/ask",
+      "category": "semester_aggregation",
+      "profile": "DSBA-2560-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-coop-0-/ask",
+      "category": "semester_aggregation",
+      "profile": "DSBA-2560-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-coop-1-/api/ask",
+      "category": "shared_specialization",
+      "profile": "DSBA-2560-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-coop-1-/ask",
+      "category": "shared_specialization",
+      "profile": "DSBA-2560-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-2-/api/ask",
+      "category": "elective_alternatives",
+      "profile": "DSBA-2560-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-2-/ask",
+      "category": "elective_alternatives",
+      "profile": "DSBA-2560-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-3-/api/ask",
+      "category": "plans_comparison",
+      "profile": "DSBA-2560-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-coop-3-/ask",
+      "category": "plans_comparison",
+      "profile": "DSBA-2560-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-coop-4-/api/ask",
+      "category": "prerequisite_logic",
+      "profile": "DSBA-2560-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-4-/ask",
+      "category": "prerequisite_logic",
+      "profile": "DSBA-2560-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-5-/api/ask",
+      "category": "multi_condition",
+      "profile": "DSBA-2560-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-5-/ask",
+      "category": "multi_condition",
+      "profile": "DSBA-2560-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-6-/api/ask",
+      "category": "name_paraphrase",
+      "profile": "DSBA-2560-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-6-/ask",
+      "category": "name_paraphrase",
+      "profile": "DSBA-2560-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-7-/api/ask",
+      "category": "minor_typo",
+      "profile": "DSBA-2560-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-coop-7-/ask",
+      "category": "minor_typo",
+      "profile": "DSBA-2560-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-8-/api/ask",
+      "category": "misleading_assumption",
+      "profile": "DSBA-2560-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-8-/ask",
+      "category": "misleading_assumption",
+      "profile": "DSBA-2560-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-9-/api/ask",
+      "category": "graduation_partial",
+      "profile": "DSBA-2560-coop",
+      "route": "/api/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-9-/ask",
+      "category": "graduation_partial",
+      "profile": "DSBA-2560-coop",
+      "route": "/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-10-/api/ask",
+      "category": "accelerated_plan",
+      "profile": "DSBA-2560-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-coop-10-/ask",
+      "category": "accelerated_plan",
+      "profile": "DSBA-2560-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-coop-11-/api/ask",
+      "category": "version_comparison",
+      "profile": "DSBA-2560-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-11-/ask",
+      "category": "version_comparison",
+      "profile": "DSBA-2560-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-12-/api/ask",
+      "category": "unsupported_description",
+      "profile": "DSBA-2560-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-12-/ask",
+      "category": "unsupported_description",
+      "profile": "DSBA-2560-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-13-/api/ask",
+      "category": "cross_version_trap",
+      "profile": "DSBA-2560-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-coop-13-/ask",
+      "category": "cross_version_trap",
+      "profile": "DSBA-2560-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-no-coop-0-/api/ask",
+      "category": "semester_aggregation",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-no-coop-0-/ask",
+      "category": "semester_aggregation",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-no-coop-1-/api/ask",
+      "category": "shared_specialization",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-no-coop-1-/ask",
+      "category": "shared_specialization",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-no-coop-2-/api/ask",
+      "category": "elective_alternatives",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-no-coop-2-/ask",
+      "category": "elective_alternatives",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-no-coop-3-/api/ask",
+      "category": "plans_comparison",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-no-coop-3-/ask",
+      "category": "plans_comparison",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-no-coop-4-/api/ask",
+      "category": "prerequisite_logic",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-no-coop-4-/ask",
+      "category": "prerequisite_logic",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-no-coop-5-/api/ask",
+      "category": "multi_condition",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-no-coop-5-/ask",
+      "category": "multi_condition",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-no-coop-6-/api/ask",
+      "category": "name_paraphrase",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-no-coop-6-/ask",
+      "category": "name_paraphrase",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-no-coop-7-/api/ask",
+      "category": "minor_typo",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-no-coop-7-/ask",
+      "category": "minor_typo",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-no-coop-8-/api/ask",
+      "category": "misleading_assumption",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-no-coop-8-/ask",
+      "category": "misleading_assumption",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-no-coop-9-/api/ask",
+      "category": "graduation_partial",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-no-coop-9-/ask",
+      "category": "graduation_partial",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-no-coop-10-/api/ask",
+      "category": "accelerated_plan",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-no-coop-10-/ask",
+      "category": "accelerated_plan",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-no-coop-11-/api/ask",
+      "category": "version_comparison",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-no-coop-11-/ask",
+      "category": "version_comparison",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-no-coop-12-/api/ask",
+      "category": "unsupported_description",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-no-coop-12-/ask",
+      "category": "unsupported_description",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2560-no-coop-13-/api/ask",
+      "category": "cross_version_trap",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2560-no-coop-13-/ask",
+      "category": "cross_version_trap",
+      "profile": "DSBA-2560-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-coop-0-/api/ask",
+      "category": "semester_aggregation",
+      "profile": "DSBA-2565-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-coop-0-/ask",
+      "category": "semester_aggregation",
+      "profile": "DSBA-2565-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-coop-1-/api/ask",
+      "category": "shared_specialization",
+      "profile": "DSBA-2565-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-coop-1-/ask",
+      "category": "shared_specialization",
+      "profile": "DSBA-2565-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-coop-2-/api/ask",
+      "category": "elective_alternatives",
+      "profile": "DSBA-2565-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-coop-2-/ask",
+      "category": "elective_alternatives",
+      "profile": "DSBA-2565-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-coop-3-/api/ask",
+      "category": "plans_comparison",
+      "profile": "DSBA-2565-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-coop-3-/ask",
+      "category": "plans_comparison",
+      "profile": "DSBA-2565-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-coop-4-/api/ask",
+      "category": "prerequisite_logic",
+      "profile": "DSBA-2565-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-coop-4-/ask",
+      "category": "prerequisite_logic",
+      "profile": "DSBA-2565-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-coop-5-/api/ask",
+      "category": "multi_condition",
+      "profile": "DSBA-2565-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-coop-5-/ask",
+      "category": "multi_condition",
+      "profile": "DSBA-2565-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-coop-6-/api/ask",
+      "category": "name_paraphrase",
+      "profile": "DSBA-2565-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-coop-6-/ask",
+      "category": "name_paraphrase",
+      "profile": "DSBA-2565-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-coop-7-/api/ask",
+      "category": "minor_typo",
+      "profile": "DSBA-2565-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-coop-7-/ask",
+      "category": "minor_typo",
+      "profile": "DSBA-2565-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-coop-8-/api/ask",
+      "category": "misleading_assumption",
+      "profile": "DSBA-2565-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-coop-8-/ask",
+      "category": "misleading_assumption",
+      "profile": "DSBA-2565-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-coop-9-/api/ask",
+      "category": "graduation_partial",
+      "profile": "DSBA-2565-coop",
+      "route": "/api/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-coop-9-/ask",
+      "category": "graduation_partial",
+      "profile": "DSBA-2565-coop",
+      "route": "/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-coop-10-/api/ask",
+      "category": "accelerated_plan",
+      "profile": "DSBA-2565-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-coop-10-/ask",
+      "category": "accelerated_plan",
+      "profile": "DSBA-2565-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-coop-11-/api/ask",
+      "category": "version_comparison",
+      "profile": "DSBA-2565-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-coop-11-/ask",
+      "category": "version_comparison",
+      "profile": "DSBA-2565-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-coop-12-/api/ask",
+      "category": "unsupported_description",
+      "profile": "DSBA-2565-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-coop-12-/ask",
+      "category": "unsupported_description",
+      "profile": "DSBA-2565-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-coop-13-/api/ask",
+      "category": "cross_version_trap",
+      "profile": "DSBA-2565-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-coop-13-/ask",
+      "category": "cross_version_trap",
+      "profile": "DSBA-2565-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-no-coop-0-/api/ask",
+      "category": "semester_aggregation",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-no-coop-0-/ask",
+      "category": "semester_aggregation",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-no-coop-1-/api/ask",
+      "category": "shared_specialization",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-no-coop-1-/ask",
+      "category": "shared_specialization",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-no-coop-2-/api/ask",
+      "category": "elective_alternatives",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-no-coop-2-/ask",
+      "category": "elective_alternatives",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-no-coop-3-/api/ask",
+      "category": "plans_comparison",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-no-coop-3-/ask",
+      "category": "plans_comparison",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-no-coop-4-/api/ask",
+      "category": "prerequisite_logic",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-no-coop-4-/ask",
+      "category": "prerequisite_logic",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-no-coop-5-/api/ask",
+      "category": "multi_condition",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-no-coop-5-/ask",
+      "category": "multi_condition",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-no-coop-6-/api/ask",
+      "category": "name_paraphrase",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-no-coop-6-/ask",
+      "category": "name_paraphrase",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-no-coop-7-/api/ask",
+      "category": "minor_typo",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-no-coop-7-/ask",
+      "category": "minor_typo",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-no-coop-8-/api/ask",
+      "category": "misleading_assumption",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-no-coop-8-/ask",
+      "category": "misleading_assumption",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-no-coop-9-/api/ask",
+      "category": "graduation_partial",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-no-coop-9-/ask",
+      "category": "graduation_partial",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-no-coop-10-/api/ask",
+      "category": "accelerated_plan",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-no-coop-10-/ask",
+      "category": "accelerated_plan",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "DSBA-2565-no-coop-11-/api/ask",
+      "category": "version_comparison",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-no-coop-11-/ask",
+      "category": "version_comparison",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-no-coop-12-/api/ask",
+      "category": "unsupported_description",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-no-coop-12-/ask",
+      "category": "unsupported_description",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-no-coop-13-/api/ask",
+      "category": "cross_version_trap",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "DSBA-2565-no-coop-13-/ask",
+      "category": "cross_version_trap",
+      "profile": "DSBA-2565-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-0-/api/ask",
+      "category": "semester_aggregation",
+      "profile": "IT-2560-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-coop-0-/ask",
+      "category": "semester_aggregation",
+      "profile": "IT-2560-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-coop-1-/api/ask",
+      "category": "shared_specialization",
+      "profile": "IT-2560-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-coop-1-/ask",
+      "category": "shared_specialization",
+      "profile": "IT-2560-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-2-/api/ask",
+      "category": "elective_alternatives",
+      "profile": "IT-2560-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-2-/ask",
+      "category": "elective_alternatives",
+      "profile": "IT-2560-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-3-/api/ask",
+      "category": "plans_comparison",
+      "profile": "IT-2560-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-3-/ask",
+      "category": "plans_comparison",
+      "profile": "IT-2560-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-coop-4-/api/ask",
+      "category": "prerequisite_logic",
+      "profile": "IT-2560-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-4-/ask",
+      "category": "prerequisite_logic",
+      "profile": "IT-2560-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-5-/api/ask",
+      "category": "multi_condition",
+      "profile": "IT-2560-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-5-/ask",
+      "category": "multi_condition",
+      "profile": "IT-2560-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-6-/api/ask",
+      "category": "name_paraphrase",
+      "profile": "IT-2560-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-6-/ask",
+      "category": "name_paraphrase",
+      "profile": "IT-2560-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-7-/api/ask",
+      "category": "minor_typo",
+      "profile": "IT-2560-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-coop-7-/ask",
+      "category": "minor_typo",
+      "profile": "IT-2560-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-coop-8-/api/ask",
+      "category": "misleading_assumption",
+      "profile": "IT-2560-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-8-/ask",
+      "category": "misleading_assumption",
+      "profile": "IT-2560-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-9-/api/ask",
+      "category": "graduation_partial",
+      "profile": "IT-2560-coop",
+      "route": "/api/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-9-/ask",
+      "category": "graduation_partial",
+      "profile": "IT-2560-coop",
+      "route": "/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-10-/api/ask",
+      "category": "accelerated_plan",
+      "profile": "IT-2560-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-coop-10-/ask",
+      "category": "accelerated_plan",
+      "profile": "IT-2560-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-coop-11-/api/ask",
+      "category": "version_comparison",
+      "profile": "IT-2560-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-11-/ask",
+      "category": "version_comparison",
+      "profile": "IT-2560-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-12-/api/ask",
+      "category": "unsupported_description",
+      "profile": "IT-2560-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-12-/ask",
+      "category": "unsupported_description",
+      "profile": "IT-2560-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-coop-13-/api/ask",
+      "category": "cross_version_trap",
+      "profile": "IT-2560-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-coop-13-/ask",
+      "category": "cross_version_trap",
+      "profile": "IT-2560-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-no-coop-0-/api/ask",
+      "category": "semester_aggregation",
+      "profile": "IT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-no-coop-0-/ask",
+      "category": "semester_aggregation",
+      "profile": "IT-2560-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-no-coop-1-/api/ask",
+      "category": "shared_specialization",
+      "profile": "IT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-no-coop-1-/ask",
+      "category": "shared_specialization",
+      "profile": "IT-2560-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-no-coop-2-/api/ask",
+      "category": "elective_alternatives",
+      "profile": "IT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-no-coop-2-/ask",
+      "category": "elective_alternatives",
+      "profile": "IT-2560-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-no-coop-3-/api/ask",
+      "category": "plans_comparison",
+      "profile": "IT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-no-coop-3-/ask",
+      "category": "plans_comparison",
+      "profile": "IT-2560-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-no-coop-4-/api/ask",
+      "category": "prerequisite_logic",
+      "profile": "IT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-no-coop-4-/ask",
+      "category": "prerequisite_logic",
+      "profile": "IT-2560-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-no-coop-5-/api/ask",
+      "category": "multi_condition",
+      "profile": "IT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-no-coop-5-/ask",
+      "category": "multi_condition",
+      "profile": "IT-2560-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-no-coop-6-/api/ask",
+      "category": "name_paraphrase",
+      "profile": "IT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-no-coop-6-/ask",
+      "category": "name_paraphrase",
+      "profile": "IT-2560-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-no-coop-7-/api/ask",
+      "category": "minor_typo",
+      "profile": "IT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-no-coop-7-/ask",
+      "category": "minor_typo",
+      "profile": "IT-2560-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-no-coop-8-/api/ask",
+      "category": "misleading_assumption",
+      "profile": "IT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-no-coop-8-/ask",
+      "category": "misleading_assumption",
+      "profile": "IT-2560-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-no-coop-9-/api/ask",
+      "category": "graduation_partial",
+      "profile": "IT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-no-coop-9-/ask",
+      "category": "graduation_partial",
+      "profile": "IT-2560-no-coop",
+      "route": "/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-no-coop-10-/api/ask",
+      "category": "accelerated_plan",
+      "profile": "IT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-no-coop-10-/ask",
+      "category": "accelerated_plan",
+      "profile": "IT-2560-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-no-coop-11-/api/ask",
+      "category": "version_comparison",
+      "profile": "IT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-no-coop-11-/ask",
+      "category": "version_comparison",
+      "profile": "IT-2560-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-no-coop-12-/api/ask",
+      "category": "unsupported_description",
+      "profile": "IT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-no-coop-12-/ask",
+      "category": "unsupported_description",
+      "profile": "IT-2560-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2560-no-coop-13-/api/ask",
+      "category": "cross_version_trap",
+      "profile": "IT-2560-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2560-no-coop-13-/ask",
+      "category": "cross_version_trap",
+      "profile": "IT-2560-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2565-coop-0-/api/ask",
+      "category": "semester_aggregation",
+      "profile": "IT-2565-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2565-coop-0-/ask",
+      "category": "semester_aggregation",
+      "profile": "IT-2565-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2565-coop-1-/api/ask",
+      "category": "shared_specialization",
+      "profile": "IT-2565-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-1-/ask",
+      "category": "shared_specialization",
+      "profile": "IT-2565-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-2-/api/ask",
+      "category": "elective_alternatives",
+      "profile": "IT-2565-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-2-/ask",
+      "category": "elective_alternatives",
+      "profile": "IT-2565-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-3-/api/ask",
+      "category": "plans_comparison",
+      "profile": "IT-2565-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2565-coop-3-/ask",
+      "category": "plans_comparison",
+      "profile": "IT-2565-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2565-coop-4-/api/ask",
+      "category": "prerequisite_logic",
+      "profile": "IT-2565-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-4-/ask",
+      "category": "prerequisite_logic",
+      "profile": "IT-2565-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-5-/api/ask",
+      "category": "multi_condition",
+      "profile": "IT-2565-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-5-/ask",
+      "category": "multi_condition",
+      "profile": "IT-2565-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-6-/api/ask",
+      "category": "name_paraphrase",
+      "profile": "IT-2565-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-6-/ask",
+      "category": "name_paraphrase",
+      "profile": "IT-2565-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-7-/api/ask",
+      "category": "minor_typo",
+      "profile": "IT-2565-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2565-coop-7-/ask",
+      "category": "minor_typo",
+      "profile": "IT-2565-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-8-/api/ask",
+      "category": "misleading_assumption",
+      "profile": "IT-2565-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-8-/ask",
+      "category": "misleading_assumption",
+      "profile": "IT-2565-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-9-/api/ask",
+      "category": "graduation_partial",
+      "profile": "IT-2565-coop",
+      "route": "/api/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-9-/ask",
+      "category": "graduation_partial",
+      "profile": "IT-2565-coop",
+      "route": "/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-10-/api/ask",
+      "category": "accelerated_plan",
+      "profile": "IT-2565-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-10-/ask",
+      "category": "accelerated_plan",
+      "profile": "IT-2565-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2565-coop-11-/api/ask",
+      "category": "version_comparison",
+      "profile": "IT-2565-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-11-/ask",
+      "category": "version_comparison",
+      "profile": "IT-2565-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-12-/api/ask",
+      "category": "unsupported_description",
+      "profile": "IT-2565-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-12-/ask",
+      "category": "unsupported_description",
+      "profile": "IT-2565-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-13-/api/ask",
+      "category": "cross_version_trap",
+      "profile": "IT-2565-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-coop-13-/ask",
+      "category": "cross_version_trap",
+      "profile": "IT-2565-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-0-/api/ask",
+      "category": "semester_aggregation",
+      "profile": "IT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2565-no-coop-0-/ask",
+      "category": "semester_aggregation",
+      "profile": "IT-2565-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2565-no-coop-1-/api/ask",
+      "category": "shared_specialization",
+      "profile": "IT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-1-/ask",
+      "category": "shared_specialization",
+      "profile": "IT-2565-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-2-/api/ask",
+      "category": "elective_alternatives",
+      "profile": "IT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-2-/ask",
+      "category": "elective_alternatives",
+      "profile": "IT-2565-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-3-/api/ask",
+      "category": "plans_comparison",
+      "profile": "IT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2565-no-coop-3-/ask",
+      "category": "plans_comparison",
+      "profile": "IT-2565-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2565-no-coop-4-/api/ask",
+      "category": "prerequisite_logic",
+      "profile": "IT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-4-/ask",
+      "category": "prerequisite_logic",
+      "profile": "IT-2565-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-5-/api/ask",
+      "category": "multi_condition",
+      "profile": "IT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-5-/ask",
+      "category": "multi_condition",
+      "profile": "IT-2565-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-6-/api/ask",
+      "category": "name_paraphrase",
+      "profile": "IT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-6-/ask",
+      "category": "name_paraphrase",
+      "profile": "IT-2565-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-7-/api/ask",
+      "category": "minor_typo",
+      "profile": "IT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2565-no-coop-7-/ask",
+      "category": "minor_typo",
+      "profile": "IT-2565-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2565-no-coop-8-/api/ask",
+      "category": "misleading_assumption",
+      "profile": "IT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-8-/ask",
+      "category": "misleading_assumption",
+      "profile": "IT-2565-no-coop",
+      "route": "/ask",
+      "triage": "needs_substantive_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-9-/api/ask",
+      "category": "graduation_partial",
+      "profile": "IT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-9-/ask",
+      "category": "graduation_partial",
+      "profile": "IT-2565-no-coop",
+      "route": "/ask",
+      "triage": "partial_rules_disclosed_needs_coverage_review",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-10-/api/ask",
+      "category": "accelerated_plan",
+      "profile": "IT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2565-no-coop-10-/ask",
+      "category": "accelerated_plan",
+      "profile": "IT-2565-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2565-no-coop-11-/api/ask",
+      "category": "version_comparison",
+      "profile": "IT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-11-/ask",
+      "category": "version_comparison",
+      "profile": "IT-2565-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-12-/api/ask",
+      "category": "unsupported_description",
+      "profile": "IT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-12-/ask",
+      "category": "unsupported_description",
+      "profile": "IT-2565-no-coop",
+      "route": "/ask",
+      "triage": "unrelated_program_answer",
+      "status": 200
+    },
+    {
+      "id": "IT-2565-no-coop-13-/api/ask",
+      "category": "cross_version_trap",
+      "profile": "IT-2565-no-coop",
+      "route": "/api/ask",
+      "triage": "technical_failure",
+      "status": 422
+    },
+    {
+      "id": "IT-2565-no-coop-13-/ask",
+      "category": "cross_version_trap",
+      "profile": "IT-2565-no-coop",
+      "route": "/ask",
+      "triage": "technical_failure",
+      "status": 422
+    }
+  ]
+}

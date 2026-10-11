@@ -1,0 +1,333 @@
+{
+  "schema_version": 1,
+  "purpose": "partial_source_evaluation",
+  "identity": {
+    "program": "BIT",
+    "version": 2560,
+    "revision": null,
+    "plan": "coop"
+  },
+  "source_file": "BIT-60.pdf",
+  "printed_total": 126,
+  "provenance": {
+    "review_ledger": "docs/results/old2560_book_terms_verified.json",
+    "review_ledger_sha256": "fd792b18c9e306f4ec0ebda2bf06de3ef34a70ca424d2afee7a0c940fd284091",
+    "method": "reused rendered-page observations; no new visual review; not DB-derived"
+  },
+  "verified_fields": [
+    "code",
+    "credits_raw",
+    "year",
+    "semester",
+    "printed_credits",
+    "pdf_page",
+    "printed_page"
+  ],
+  "unverified_fields": [
+    "name_th",
+    "name_en",
+    "category",
+    "track membership",
+    "prerequisites",
+    "graduation requirements",
+    "L1-L4 independent Q&A"
+  ],
+  "terms": [
+    {
+      "year": 1,
+      "semester": 1,
+      "printed_credits": 18,
+      "pdf_page": 27,
+      "printed_page": 22,
+      "expected_options": [
+        {
+          "code": "06036001",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "06036021",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "06036027",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036081",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036083",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036085",
+          "credits_raw": "3(3-0-6)"
+        }
+      ],
+      "full_name_fields_verified": null,
+      "all_prerequisites_verified": null,
+      "source_file": "BIT-60.pdf",
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-027.png",
+      "image_sha256": "6ceb2715d8ec8e83746db19589f829938e390e01ee09fe1f3e357da8c7e94b1c",
+      "review_status": "manually_inspected_rendered_image"
+    },
+    {
+      "year": 1,
+      "semester": 2,
+      "printed_credits": 18,
+      "pdf_page": 27,
+      "printed_page": 22,
+      "expected_options": [
+        {
+          "code": "06036002",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036004",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036022",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "06036082",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036084",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036090",
+          "credits_raw": "3(3-0-6)"
+        }
+      ],
+      "full_name_fields_verified": null,
+      "all_prerequisites_verified": null,
+      "source_file": "BIT-60.pdf",
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-027.png",
+      "image_sha256": "6ceb2715d8ec8e83746db19589f829938e390e01ee09fe1f3e357da8c7e94b1c",
+      "review_status": "manually_inspected_rendered_image"
+    },
+    {
+      "year": 2,
+      "semester": 1,
+      "printed_credits": 18,
+      "pdf_page": 28,
+      "printed_page": 23,
+      "expected_options": [
+        {
+          "code": "06036003",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036005",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036023",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036028",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036087",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036089",
+          "credits_raw": "3(3-0-6)"
+        }
+      ],
+      "full_name_fields_verified": null,
+      "all_prerequisites_verified": null,
+      "source_file": "BIT-60.pdf",
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-028.png",
+      "image_sha256": "0861969efee8892aad87f84e1dbf58b4cb860c8d77be809c871a5e8178187774",
+      "review_status": "manually_inspected_rendered_image"
+    },
+    {
+      "year": 2,
+      "semester": 2,
+      "printed_credits": 18,
+      "pdf_page": 28,
+      "printed_page": 23,
+      "expected_options": [
+        {
+          "code": "06036006",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036008",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036011",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "06036012",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036013",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "06036024",
+          "credits_raw": "3(3-0-6)"
+        }
+      ],
+      "full_name_fields_verified": null,
+      "all_prerequisites_verified": null,
+      "source_file": "BIT-60.pdf",
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-028.png",
+      "image_sha256": "0861969efee8892aad87f84e1dbf58b4cb860c8d77be809c871a5e8178187774",
+      "review_status": "manually_inspected_rendered_image"
+    },
+    {
+      "year": 3,
+      "semester": 1,
+      "printed_credits": 18,
+      "pdf_page": 29,
+      "printed_page": 24,
+      "expected_options": [
+        {
+          "code": "06036007",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036009",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036010",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "06036014",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036025",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "060360xx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5)"
+        }
+      ],
+      "full_name_fields_verified": null,
+      "all_prerequisites_verified": null,
+      "source_file": "BIT-60.pdf",
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-029.png",
+      "image_sha256": "d9ffeda4ab3a604cc323db88c394b8b16ed261960b6b9cd2d51b3b83db535508",
+      "review_status": "manually_inspected_rendered_image"
+    },
+    {
+      "year": 3,
+      "semester": 2,
+      "printed_credits": 18,
+      "pdf_page": 29,
+      "printed_page": 24,
+      "expected_options": [
+        {
+          "code": "06036015",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "06036016",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036017",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036018",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036026",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "060360xx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5)"
+        }
+      ],
+      "full_name_fields_verified": null,
+      "all_prerequisites_verified": null,
+      "source_file": "BIT-60.pdf",
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-029.png",
+      "image_sha256": "d9ffeda4ab3a604cc323db88c394b8b16ed261960b6b9cd2d51b3b83db535508",
+      "review_status": "manually_inspected_rendered_image"
+    },
+    {
+      "year": 4,
+      "semester": 1,
+      "printed_credits": 6,
+      "pdf_page": 30,
+      "printed_page": 25,
+      "expected_options": [
+        {
+          "code": "06036046",
+          "credits_raw": "6(0-35-0)"
+        },
+        {
+          "code": "06036047",
+          "credits_raw": "6(0-35-0)"
+        }
+      ],
+      "full_name_fields_verified": null,
+      "all_prerequisites_verified": null,
+      "source_file": "BIT-60.pdf",
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-030.png",
+      "image_sha256": "56e99d6e0818650905b8cf6dc50a9c79fae92ab078c05b801e4e8ae6fd5863f5",
+      "review_status": "manually_inspected_rendered_image"
+    },
+    {
+      "year": 4,
+      "semester": 2,
+      "printed_credits": 12,
+      "pdf_page": 30,
+      "printed_page": 25,
+      "expected_options": [
+        {
+          "code": "06036086",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06036088",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "xxxxxxxx",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "xxxxxxxx",
+          "credits_raw": "3(3-0-6)"
+        }
+      ],
+      "full_name_fields_verified": null,
+      "all_prerequisites_verified": null,
+      "source_file": "BIT-60.pdf",
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "image": "ocr_final/tmp/pdfs/a1_pages/BIT-60-page-030.png",
+      "image_sha256": "56e99d6e0818650905b8cf6dc50a9c79fae92ab078c05b801e4e8ae6fd5863f5",
+      "review_status": "manually_inspected_rendered_image"
+    }
+  ]
+}

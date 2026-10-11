@@ -69,7 +69,7 @@ def main():
          '--printed-page-offset', str(config['printed_page_offset'])],
         [sys.executable, str(lab8), 'load', '-i', str(converted), '-d', str(db), '--replace'],
         [sys.executable, str(ROOT / 'scripts/ingest_prerequisite_reviews.py'), '--app-root', str(app),
-         '--database', str(db), '--reviews', str(ROOT / 'data/ground_truth/prerequisite_source_reviews.json'),
+         '--database', str(db), '--reviews', str(ROOT / 'data/source_reviews/shared/prerequisite_source_reviews.json'),
          '--output', str(args.output.with_name(args.output.stem + '_prerequisites.json')), '--apply'],
         [sys.executable, str(lab8), 'verify', '-d', str(db), '-o', str(folder / 'reviewed_verify_v2.json')],
     ]

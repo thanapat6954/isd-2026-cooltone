@@ -17,6 +17,29 @@ CHECKPOINT = PROJECT / "docs" / "results" / "a1_render_checkpoint.json"
 DPI = 180
 
 
+def render_page(source: Path, page_number: int, output_dir: Path, dpi: int = DPI) -> dict:
+    """Reuse only source/configuration/renderer-locked images; retain legacy images."""
+    identity = {'source_sha256': _sha256(source), 'pdf_page': page_number,
+                'dpi': dpi, 'alpha': False, 'renderer': pymupdf.VersionBind}
+    key = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
+    folder = output_dir / key
+    folder.mkdir(parents=True, exist_ok=True)
+    output = folder / f'{source.stem}-page-{page_number:03d}.png'
+    manifest = folder / 'render.json'
+    if manifest.exists():
+        saved = json.loads(manifest.read_text(encoding='utf-8'))
+        if saved['identity'] != identity or not output.exists() or saved['sha256'] != _sha256(output):
+            raise ValueError('Cached source render failed its dependency/integrity guard')
+        return {**saved, 'image': str(output), 'reused': True}
+    if output.exists():
+        raise ValueError('Interrupted render without provenance; use a fresh output directory')
+    with pymupdf.open(source) as document:
+        document[page_number - 1].get_pixmap(dpi=dpi, alpha=False).save(output)
+    saved = {'identity': identity, 'image': str(output), 'sha256': _sha256(output)}
+    manifest.write_text(json.dumps(saved, indent=2), encoding='utf-8')
+    return {**saved, 'reused': False}
+
+
 def _sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as stream:
@@ -33,30 +56,23 @@ def main() -> None:
     })
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     completed: list[dict] = []
-    open_docs: dict[str, pymupdf.Document] = {}
-    try:
-        for source_pdf, page_number in wanted:
+    for source_pdf, page_number in wanted:
             source = OCR_ROOT / "data" / "input" / source_pdf
-            output = OUTPUT_DIR / f"{source.stem}-page-{page_number:03d}.png"
-            if not output.exists():
-                document = open_docs.setdefault(source_pdf, pymupdf.open(source))
-                page = document[page_number - 1]
-                pixmap = page.get_pixmap(dpi=DPI, alpha=False)
-                pixmap.save(output)
+            rendered = render_page(source, page_number, OUTPUT_DIR)
+            output = Path(rendered['image'])
             completed.append({
                 "source_pdf": source_pdf,
                 "page_number": page_number,
                 "image": str(output.relative_to(PROJECT)).replace("\\", "/"),
                 "sha256": _sha256(output),
+                "identity": rendered['identity'],
+                "reused": rendered['reused'],
             })
             CHECKPOINT.write_text(json.dumps({
                 "dpi": DPI,
                 "completed": completed,
                 "remaining": len(wanted) - len(completed),
             }, indent=2), encoding="utf-8")
-    finally:
-        for document in open_docs.values():
-            document.close()
     print(json.dumps({"rendered_or_reused": len(completed), "checkpoint": str(CHECKPOINT)}, indent=2))
 
 

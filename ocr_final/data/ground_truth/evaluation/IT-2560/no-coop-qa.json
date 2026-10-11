@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "purpose": "development regression from reused visually reviewed book cells; NOT held-out",
+  "identity": {
+    "program": "IT",
+    "version": 2560,
+    "revision": null,
+    "plan": "no-coop"
+  },
+  "unverified_levels": [
+    "L3",
+    "L4"
+  ],
+  "groups": [
+    {
+      "program": "IT",
+      "versions": [
+        2560
+      ],
+      "plans": [
+        "no-coop"
+      ],
+      "cases": [
+        {
+          "question": "วิชา 06016301 มีกี่หน่วยกิต",
+          "code": "06016301",
+          "credits": 3,
+          "source": "IT-60.pdf",
+          "page": 27,
+          "book_page": 22,
+          "level": "L1",
+          "label_evidence": {
+            "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-027.png",
+            "image_sha256": "a8c6884f804601758139d54ee5805272044996396c835222e210c4d36876b4e5",
+            "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+            "printed_cell": {
+              "code": "06016301",
+              "credits_raw": "3(2-2-5)"
+            }
+          }
+        },
+        {
+          "question": "วิชา 06016314 มีกี่หน่วยกิต",
+          "code": "06016314",
+          "credits": 3,
+          "source": "IT-60.pdf",
+          "page": 27,
+          "book_page": 22,
+          "level": "L1",
+          "label_evidence": {
+            "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-027.png",
+            "image_sha256": "a8c6884f804601758139d54ee5805272044996396c835222e210c4d36876b4e5",
+            "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+            "printed_cell": {
+              "code": "06016314",
+              "credits_raw": "3(2-2-5)"
+            }
+          }
+        },
+        {
+          "question": "วิชา 06016319 มีกี่หน่วยกิต",
+          "code": "06016319",
+          "credits": 3,
+          "source": "IT-60.pdf",
+          "page": 27,
+          "book_page": 22,
+          "level": "L1",
+          "label_evidence": {
+            "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-027.png",
+            "image_sha256": "a8c6884f804601758139d54ee5805272044996396c835222e210c4d36876b4e5",
+            "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+            "printed_cell": {
+              "code": "06016319",
+              "credits_raw": "3(2-2-5)"
+            }
+          }
+        },
+        {
+          "question": "วิชา 90101007 มีกี่หน่วยกิต",
+          "code": "90101007",
+          "credits": 3,
+          "source": "IT-60.pdf",
+          "page": 27,
+          "book_page": 22,
+          "level": "L1",
+          "label_evidence": {
+            "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-027.png",
+            "image_sha256": "a8c6884f804601758139d54ee5805272044996396c835222e210c4d36876b4e5",
+            "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+            "printed_cell": {
+              "code": "90101007",
+              "credits_raw": "3(3-0-6)"
+            }
+          }
+        },
+        {
+          "question": "วิชา 90201001 มีกี่หน่วยกิต",
+          "code": "90201001",
+          "credits": 3,
+          "source": "IT-60.pdf",
+          "page": 27,
+          "book_page": 22,
+          "level": "L1",
+          "label_evidence": {
+            "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-027.png",
+            "image_sha256": "a8c6884f804601758139d54ee5805272044996396c835222e210c4d36876b4e5",
+            "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+            "printed_cell": {
+              "code": "90201001",
+              "credits_raw": "3(3-0-6)"
+            }
+          }
+        },
+        {
+          "question": "ปี 1 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "source": "IT-60.pdf",
+          "page": 27,
+          "book_page": 22,
+          "level": "L2",
+          "label_evidence": {
+            "image": "ocr_final/tmp/pdfs/a1_pages/IT-60-page-027.png",
+            "image_sha256": "a8c6884f804601758139d54ee5805272044996396c835222e210c4d36876b4e5",
+            "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+            "printed_term_total": 18
+          }
+        }
+      ]
+    }
+  ]
+}

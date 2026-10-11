@@ -1,0 +1,15 @@
+{
+  "purpose": "Production prerequisite approval independently inspected from rendered book page; not evaluation labels",
+  "documents": [
+    {
+      "source_file": "AI.pdf", "program": "AI", "curriculum_version": 2566,
+      "sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+      "page_number": 288, "printed_page_number": 284,
+      "codes": ["06046402", "06066000"], "status": "explicit_none",
+      "review_status": "visually_verified",
+      "review_evidence": ["Rendered complete PDF288/book284: 06046402 LINEAR ALGEBRA and 06066000 DISCRETE MATHEMATICS each explicitly print วิชาบังคับก่อน : ไม่มี / PREREQUISITE : None"],
+      "image_sha256": "9cafe549e0ac841d3ae982136c8d30142863bc8a54945d3f358eaa9c124fbfd3",
+      "scope": "Prerequisite statement only; does not grant registration eligibility or resolve other curriculum conditions"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+ "purpose":"Independent rendered-source development labels; not held-out; never a production input",
+ "reviewed_pages":[{"source":"AI.pdf","pdf_page":37,"printed_page":33,"scope":"PLO/name matrix only; prerequisite and registration conditions unknown"},{"source":"AI.pdf","pdf_page":287,"printed_page":283,"scope":"descriptions and explicit math/statistics group heading"},{"source":"AI.pdf","pdf_page":292,"printed_page":288,"scope":"descriptions; category not established on this page"},{"source":"BIT-65.pdf","pdf_page":238,"printed_page":233,"scope":"specific-course descriptions"},{"source":"BIT-65.pdf","pdf_page":274,"printed_page":269,"scope":"old/new comparison: 06036046->06036147 and 06036047->06036148; not a prerequisite source"}],
+ "groups":[
+  {"program":"AI","versions":[2566],"plans":["coop"],"cases":[
+   {"question":"วิชา 06046400 มีวิชาบังคับก่อนอะไร","code":"06046400","status":"explicit_none","name_th":"แคลคูลัส 1","source":"AI.pdf","page":287,"book_page":283,"level":"L2"},
+   {"question":"วิชา 06046401 มีวิชาบังคับก่อนอะไร","code":"06046401","requires":["06046400"],"source":"AI.pdf","page":287,"book_page":283,"level":"L2"},
+   {"question":"วิชา 06046406 มีวิชาบังคับก่อนอะไร","code":"06046406","requires":["06046401","06046402"],"source":"AI.pdf","page":292,"book_page":288,"level":"L2"},
+   {"question":"วิชา 06046407 มีวิชาบังคับก่อนอะไร","code":"06046407","status":"explicit_none","source":"AI.pdf","page":292,"book_page":288,"level":"L2"},
+   {"question":"วิชา 06046408 มีวิชาบังคับก่อนอะไร","code":"06046408","status":"explicit_none","source":"AI.pdf","page":292,"book_page":288,"level":"L2"}
+  ]},
+  {"program":"BIT","versions":[2565],"plans":["coop","no-coop"],"cases":[
+   {"question":"วิชา 06036100 มีวิชาบังคับก่อนอะไร","code":"06036100","status":"explicit_none","name_th":"พื้นฐานทางด้านเทคโนโลยีสารสนเทศ","source":"BIT-65.pdf","page":238,"book_page":233,"level":"L2"},
+   {"question":"วิชา 06036101 มีวิชาบังคับก่อนอะไร","code":"06036101","status":"explicit_none","name_th":"คณิตศาสตร์สำหรับธุรกิจ","source":"BIT-65.pdf","page":238,"book_page":233,"level":"L2"},
+   {"question":"วิชา 06036147 มีวิชาบังคับก่อนอะไร","code":"06036147","status":"explicit_none","name_th":"สหกิจศึกษา","source":"BIT-65.pdf","page":257,"book_page":252,"level":"L2"},
+   {"question":"วิชา 06036148 มีวิชาบังคับก่อนอะไร","code":"06036148","status":"explicit_none","name_th":"สหกิจศึกษาต่างประเทศ","source":"BIT-65.pdf","page":257,"book_page":252,"level":"L2"}
+  ]}
+ ],
+ "unverified":["registration permission beyond explicitly named prerequisites","full curriculum absence","full graduation conditions","other prerequisites","held-out accuracy"]
+}

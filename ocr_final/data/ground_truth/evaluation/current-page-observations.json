@@ -1,0 +1,38 @@
+{
+  "purpose": "development labels manually transcribed from rendered official pages; NOT held-out; never production input",
+  "review_date": "2026-10-08",
+  "verified_fields": ["code", "credits_raw", "year", "semester", "printed_credits", "pdf_page", "printed_page"],
+  "unverified_fields": ["complete course names", "categories", "prerequisites", "graduation conditions", "L3", "L4"],
+  "profiles": [
+    {"program":"BIT","version":2565,"plan":"no-coop","source_file":"BIT-65.pdf","printed_total":126,"terms":[
+      {"year":1,"semester":1,"pdf_page":26,"printed_page":21,"printed_credits":18,"rows":[["06036100","3(2-2-5)"],["06036101","3(3-0-6)"],["06036118","3(2-2-5)"],["96641001","2(1-2-3)"],["96641003","1(0-3-2)"],["96644007","3(3-0-6)"],["96644042","3(3-0-6)"]] },
+      {"year":1,"semester":2,"pdf_page":27,"printed_page":22,"printed_credits":18,"rows":[["06036102","3(3-0-6)"],["06036109","3(3-0-6)"],["06036119","3(2-2-5)"],["06036125","3(2-2-5)"],["96641002","3(3-0-6)"],["96644008","3(3-0-6)"]] },
+      {"year":2,"semester":1,"pdf_page":27,"printed_page":22,"printed_credits":18,"rows":[["06036103","3(3-0-6)"],["06036104","3(3-0-6)"],["06036105","3(3-0-6)"],["06036117","3(3-0-6)"],["06036120","3(3-0-6)"],["06036122","3(2-2-5)"]] },
+      {"year":2,"semester":2,"pdf_page":28,"printed_page":23,"printed_credits":18,"rows":[["06036108","3(3-0-6)"],["06036111","3(3-0-6)"],["06036112","3(2-2-5)"],["06036113","3(3-0-6)"],["06036124","3(3-0-6)"],["9664xxxx","3(3-0-6)"]] },
+      {"year":3,"semester":1,"pdf_page":28,"printed_page":23,"printed_credits":18,"rows":[["06036107","3(3-0-6)"],["06036110","3(3-0-6)"],["06036114","3(2-2-5)"],["06036121","3(3-0-6)"],["06036123","3(3-0-6)"],["96644xxx","3(3-0-6) หรือ 3(2-2-5)"]] },
+      {"year":3,"semester":2,"pdf_page":29,"printed_page":24,"printed_credits":12,"rows":[["06036106","3(3-0-6)"],["06036116","3(2-2-5)"],["06036145","3(0-9-0)"],["96643021","3(3-0-6)"]] },
+      {"year":4,"semester":1,"pdf_page":29,"printed_page":24,"printed_credits":12,"rows":[["06036115","3(3-0-6)"],["06036146","3(0-9-0)"],["96642033","3(3-0-6)"],["9664xxxx","3(3-0-6)"]] },
+      {"year":4,"semester":2,"pdf_page":30,"printed_page":25,"printed_credits":12,"rows":[["06036xxx","3(3-0-6) หรือ 3(2-2-5)"],["06036xxx","3(3-0-6) หรือ 3(2-2-5)"],["Xxxxxxxx","3(3-0-6)"],["Xxxxxxxx","3(3-0-6)"]] }
+    ]},
+    {"program":"BIT","version":2565,"plan":"coop","source_file":"BIT-65.pdf","printed_total":126,"terms":[
+      {"year":1,"semester":1,"pdf_page":31,"printed_page":26,"printed_credits":18,"rows":[["06036100","3(2-2-5)"],["06036101","3(3-0-6)"],["06036118","3(2-2-5)"],["96641001","2(1-2-3)"],["96641003","1(0-3-2)"],["96644007","3(3-0-6)"],["96644042","3(3-0-6)"]] },
+      {"year":1,"semester":2,"pdf_page":32,"printed_page":27,"printed_credits":18,"rows":[["06036102","3(3-0-6)"],["06036109","3(3-0-6)"],["06036119","3(2-2-5)"],["06036125","3(2-2-5)"],["96644008","3(3-0-6)"],["96641002","3(3-0-6)"]] },
+      {"year":2,"semester":1,"pdf_page":32,"printed_page":27,"printed_credits":18,"rows":[["06036103","3(3-0-6)"],["06036104","3(3-0-6)"],["06036105","3(3-0-6)"],["06036117","3(3-0-6)"],["06036120","3(3-0-6)"],["06036122","3(2-2-5)"]] },
+      {"year":2,"semester":2,"pdf_page":33,"printed_page":28,"printed_credits":18,"rows":[["06036108","3(3-0-6)"],["06036111","3(3-0-6)"],["06036112","3(2-2-5)"],["06036113","3(3-0-6)"],["06036124","3(3-0-6)"],["9664xxxx","3(3-0-6)"]] },
+      {"year":3,"semester":1,"pdf_page":33,"printed_page":28,"printed_credits":18,"rows":[["06036107","3(3-0-6)"],["06036110","3(3-0-6)"],["06036114","3(2-2-5)"],["06036121","3(3-0-6)"],["06036123","3(3-0-6)"],["96644xxx","3(3-0-6) หรือ 3(2-2-5)"]] },
+      {"year":3,"semester":2,"pdf_page":34,"printed_page":29,"printed_credits":15,"rows":[["06036106","3(3-0-6)"],["06036116","3(2-2-5)"],["96643021","3(3-0-6)"],["06036xxx","3(3-0-6) หรือ 3(2-2-5)"],["xxxxxxxx","3(3-0-6)"]] },
+      {"year":4,"semester":1,"pdf_page":35,"printed_page":30,"printed_credits":15,"rows":[["06036115","3(3-0-6)"],["96642033","3(3-0-6)"],["06036xxx","3(3-0-6) หรือ 3(2-2-5)"],["xxxxxxxx","3(3-0-6)"],["9664xxxx","3(3-0-6)"]] },
+      {"year":4,"semester":2,"pdf_page":35,"printed_page":30,"printed_credits":6,"rows":[["06036147","6(0-35-0)","coop-choice"],["06036148","6(0-35-0)","coop-choice"]] }
+    ]},
+    {"program":"AI","version":2566,"plan":"coop","source_file":"AI.pdf","printed_total":120,"plan_evidence":"PDF23/book19 section3.3 has one study table; PDF26/book22 ends in alternative cooperative courses; no no-coop table observed on these four pages","terms":[
+      {"year":1,"semester":1,"pdf_page":23,"printed_page":19,"printed_credits":15,"rows":[["06046400","3(3-0-6)"],["06046402","3(3-0-6)"],["06066000","3(3-0-6)"],["06066001","3(3-0-6)"],["06066303","3(2-2-5)"],["90641008","0(0-0-45)"]] },
+      {"year":1,"semester":2,"pdf_page":23,"printed_page":19,"printed_credits":19,"rows":[["06046401","3(3-0-6)"],["06046403","3(2-2-5)"],["06066301","3(2-2-5)"],["06046404","3(3-0-6)"],["90641007","3(3-0-6)"],["90641004","1(0-2-1)"],["9064xxxx","3(x-x-x)"]] },
+      {"year":2,"semester":1,"pdf_page":24,"printed_page":20,"printed_credits":18,"rows":[["06066300","3(2-2-5)"],["06046405","3(3-0-6)"],["06046406","3(3-0-6)"],["06046409","3(3-0-6)"],["06046413","3(3-0-6)"],["90641009","3(3-0-6)"]] },
+      {"year":2,"semester":2,"pdf_page":24,"printed_page":20,"printed_credits":19,"rows":[["06046407","3(3-0-6)"],["06046408","3(2-2-5)"],["06046410","3(3-0-6)"],["06046412","3(3-0-6)"],["06046411","3(3-0-6)"],["90641010","3(3-0-6)"],["90641005","1(0-2-1)"]] },
+      {"year":3,"semester":1,"pdf_page":25,"printed_page":21,"printed_credits":18,"rows":[["06046415","3(3-0-6)"],["06046414","3(3-0-6)"],["90642012","3(3-0-6)"],["060464xx","6(3-0-6)"],["06046440","3(2-2-5)"]] },
+      {"year":3,"semester":2,"pdf_page":25,"printed_page":21,"printed_credits":13,"rows":[["060464xx","6(3-0-6)"],["06046441","3(0-9-0)"],["90641006","1(0-2-1)"],["xxxxxxxx","3(x-x-x)"]] },
+      {"year":4,"semester":1,"pdf_page":26,"printed_page":22,"printed_credits":12,"rows":[["06046442","3(0-9-0)"],["9064xxxx","3(x-x-x)"],["90644xxx","3(x-x-x)"],["xxxxxxxx","3(x-x-x)"]] },
+      {"year":4,"semester":2,"pdf_page":26,"printed_page":22,"printed_credits":6,"rows":[["06046443","6(0-45-0)","coop-choice"],["06046444","6(0-45-0)","coop-choice"]] }
+    ]}
+  ]
+}

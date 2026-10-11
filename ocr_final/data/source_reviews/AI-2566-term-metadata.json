@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "purpose": "Production term evidence from independently rendered AI.pdf, not evaluation labels",
+  "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+  "curriculum_version": 2566, "reviewed_on": "2026-10-10",
+  "review_method": "AI.pdf PDF26/book22: Year4/S1 and S2 headings, four shared rows, domestic or overseas cooperative alternatives and printed totals. coop is existing single-plan internal profile identity, not evidence of an unprinted no-coop variant.",
+  "term_metadata_years": [4],
+  "profile_identity_reviews": {
+    "ai": {"program_id": "AI", "plan": "coop", "pdf_page": 26, "printed_page": 22, "section": "Year4 single study-plan table"}
+  },
+  "profiles": {"ai": [
+    {"status": "visually_verified", "source_file": "AI.pdf", "pdf_page": 26, "printed_page": 22,
+     "year": 4, "semester": 1, "credits": 12, "row_count": 4, "rows": [
+       {"code": "06046442", "name_th": "โครงงานเทคโนโลยีปัญญาประดิษฐ์ 2", "name_en": "PROJECT IN ARTIFICIAL INTELLIGENCE TECHNOLOGY 2", "credits": "3(0-9-0)"},
+       {"code": "9064xxxx", "name_th": "วิชาเลือกหมวดวิชาศึกษาทั่วไป", "name_en": "GENERAL EDUCATION COURSES", "credits": "3 (x-x-x)"},
+       {"code": "90644xxx", "name_th": "วิชาเลือกด้านภาษาและการสื่อสาร", "name_en": "LANGUAGE AND COMMUNICATION COURSES", "credits": "3 (x-x-x)"},
+       {"code": "xxxxxxxx", "name_th": "วิชาเลือกเสรี 2", "name_en": "FREE ELECTIVE COURSE 2", "credits": "3 (x-x-x)"}
+     ]},
+    {"status": "visually_verified", "source_file": "AI.pdf", "pdf_page": 26, "printed_page": 22,
+     "year": 4, "semester": 2, "credits": 6, "row_count": 2, "rows": [
+       {"code": "06046443", "name_th": "สหกิจศึกษาทางเทคโนโลยีปัญญาประดิษฐ์", "name_en": "COOPERATIVE EDUCATION IN ARTIFICIAL INTELLIGENCE TECHNOLOGY", "credits": "6(0-45-0)", "alt_group": "cooperative-choice"},
+       {"code": "06046444", "name_th": "สหกิจศึกษาต่างประเทศทางเทคโนโลยีปัญญาประดิษฐ์", "name_en": "OVERSEA COOPERATIVE EDUCATION IN ARTIFICIAL INTELLIGENCE TECHNOLOGY", "credits": "6(0-45-0)", "alt_group": "cooperative-choice"}
+     ]}
+  ]}
+}

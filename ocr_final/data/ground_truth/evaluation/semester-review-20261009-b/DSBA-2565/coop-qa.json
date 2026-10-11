@@ -1,0 +1,152 @@
+{
+  "purpose": "development/regression; NOT held-out",
+  "groups": [
+    {
+      "program": "DSBA",
+      "versions": [
+        2565
+      ],
+      "plans": [
+        "coop"
+      ],
+      "cases": [
+        {
+          "question": "ปี 1 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "source": "DSBA.pdf",
+          "page": 30,
+          "book_page": 29,
+          "level": "L2",
+          "label_evidence": {
+            "source_file": "DSBA.pdf",
+            "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+            "image": "DSBA-01ead4c636b0-030.png",
+            "image_sha256": "45ff09770d4e930e621c837072d13f31ebe06b1a3e2d6d6d4c499354be804e0b",
+            "pdf_page": 30,
+            "printed_page": 29,
+            "review_status": "manually_inspected_rendered_image"
+          }
+        },
+        {
+          "question": "ปี 1 ภาคการศึกษาที่ 2 เรียนกี่หน่วยกิต",
+          "credits": 21,
+          "source": "DSBA.pdf",
+          "page": 31,
+          "book_page": 30,
+          "level": "L2",
+          "label_evidence": {
+            "source_file": "DSBA.pdf",
+            "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+            "image": "DSBA-01ead4c636b0-031.png",
+            "image_sha256": "700ce8cbcf0f2b33a83a1fbe39fe8df6a62748c3887e8e4f7b883bcaa5a52bae",
+            "pdf_page": 31,
+            "printed_page": 30,
+            "review_status": "manually_inspected_rendered_image"
+          }
+        },
+        {
+          "question": "ปี 2 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "source": "DSBA.pdf",
+          "page": 32,
+          "book_page": 31,
+          "level": "L2",
+          "label_evidence": {
+            "source_file": "DSBA.pdf",
+            "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+            "image": "DSBA-01ead4c636b0-032.png",
+            "image_sha256": "afade56624c7e74151aeea848b13846abf4ad7dea1a9fe33471ba34a0dc6669a",
+            "pdf_page": 32,
+            "printed_page": 31,
+            "review_status": "manually_inspected_rendered_image"
+          }
+        },
+        {
+          "question": "ปี 2 ภาคการศึกษาที่ 2 เรียนกี่หน่วยกิต",
+          "credits": 21,
+          "source": "DSBA.pdf",
+          "page": 33,
+          "book_page": 32,
+          "level": "L2",
+          "label_evidence": {
+            "source_file": "DSBA.pdf",
+            "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+            "image": "DSBA-01ead4c636b0-033.png",
+            "image_sha256": "a0d4711ab4d8d2511b7e305440fa8d2cb69de6cf6d98a6b7c89516e6d8c419bd",
+            "pdf_page": 33,
+            "printed_page": 32,
+            "review_status": "manually_inspected_rendered_image"
+          }
+        },
+        {
+          "question": "ปี 3 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "source": "DSBA.pdf",
+          "page": 34,
+          "book_page": 33,
+          "level": "L2",
+          "label_evidence": {
+            "source_file": "DSBA.pdf",
+            "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+            "image": "DSBA-01ead4c636b0-034.png",
+            "image_sha256": "91371f1c6197ba16d08ce56af1fec6957a49fd2fba36c4eabb248014c4955d78",
+            "pdf_page": 34,
+            "printed_page": 33,
+            "review_status": "manually_inspected_rendered_image"
+          }
+        },
+        {
+          "question": "ปี 3 ภาคการศึกษาที่ 2 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "source": "DSBA.pdf",
+          "page": 35,
+          "book_page": 34,
+          "level": "L2",
+          "label_evidence": {
+            "source_file": "DSBA.pdf",
+            "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+            "image": "DSBA-01ead4c636b0-035.png",
+            "image_sha256": "5e06fb97e922ebe01e864977f5fb96c0b1bad253bd30fad7faebcb62fd456669",
+            "pdf_page": 35,
+            "printed_page": 34,
+            "review_status": "manually_inspected_rendered_image"
+          }
+        },
+        {
+          "question": "ปี 4 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 12,
+          "source": "DSBA.pdf",
+          "page": 36,
+          "book_page": 35,
+          "level": "L2",
+          "label_evidence": {
+            "source_file": "DSBA.pdf",
+            "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+            "image": "DSBA-01ead4c636b0-036.png",
+            "image_sha256": "aadc6d7c93fbe5368269ceae6a03e5f1c3ed5f657e8094b88ae6ef4058e6f656",
+            "pdf_page": 36,
+            "printed_page": 35,
+            "review_status": "manually_inspected_rendered_image"
+          }
+        },
+        {
+          "question": "ปี 4 ภาคการศึกษาที่ 2 เรียนกี่หน่วยกิต",
+          "credits": 6,
+          "source": "DSBA.pdf",
+          "page": 36,
+          "book_page": 35,
+          "level": "L2",
+          "label_evidence": {
+            "source_file": "DSBA.pdf",
+            "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+            "image": "DSBA-01ead4c636b0-036.png",
+            "image_sha256": "aadc6d7c93fbe5368269ceae6a03e5f1c3ed5f657e8094b88ae6ef4058e6f656",
+            "pdf_page": 36,
+            "printed_page": 35,
+            "review_status": "manually_inspected_rendered_image"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -64,8 +64,10 @@ def main():
         result['profiles'].append({'profile': db.curriculum_name, 'database': db.relative_path, 'sha256': sha(db.path),
                                   'version': db.curriculum_version, 'plan': db.plan, 'counts': counts,
                                   'missing_fidelity_columns': fidelity, 'source_file': (db.program or {}).get('source_file')})
-    for path in sorted((root / 'data/ground_truth').glob('*.json')):
-        result['ground_truth'].append(describe_json(path, root))
+    for folder, key in [('data/ground_truth', 'ground_truth'), ('data/source_reviews', 'source_reviews')]:
+        result.setdefault(key, [])
+        for path in sorted((root / folder).rglob('*.json')):
+            result[key].append(describe_json(path, root))
     for spec in args.render:
         import pymupdf
         path_text, page_text = spec.rsplit(':', 1)

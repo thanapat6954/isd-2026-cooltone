@@ -1,0 +1,15 @@
+{
+ "purpose":"development/regression independently transcribed table names; NOT held-out",
+ "groups":[
+  {"program":"IT","versions":[2565],"plans":["coop"],"cases":[
+   {"question":"วิชา 06016409 ชื่อวิชาอะไร","code":"06016409","name_th":"การประมวลผลทางกายภาพ","source":"IT.pdf","level":"L1"},
+   {"question":"วิชา 06016423 ชื่อวิชาอะไร","code":"06016423","name_th":"การออโตเมชันและโครงสร้างพื้นฐานที่สามารถโปรแกรมได้","source":"IT.pdf","level":"L1"},
+   {"question":"วิชา 06016481 ชื่อวิชาอะไร","code":"06016481","name_th":"สหกิจศึกษา","source":"IT.pdf","level":"L1"},
+   {"question":"วิชา 06016482 ชื่อวิชาอะไร","code":"06016482","name_th":"สหกิจศึกษาต่างประเทศ","source":"IT.pdf","level":"L1"}
+  ]},
+  {"program":"IT","versions":[2565],"plans":["no-coop"],"cases":[
+   {"question":"วิชา 06016409 ชื่อวิชาอะไร","code":"06016409","name_th":"การประมวลผลทางกายภาพ","source":"IT.pdf","level":"L1"},
+   {"question":"วิชา 06016423 ชื่อวิชาอะไร","code":"06016423","name_th":"การออโตเมชันและโครงสร้างพื้นฐานที่สามารถโปรแกรมได้","source":"IT.pdf","level":"L1"}
+  ]}
+ ]
+}

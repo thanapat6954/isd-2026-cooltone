@@ -23,3 +23,9 @@ work/handoff/
 work/web/
 work/backups/
 work/verification/
+
+# Generated source viewer cache and isolated builds are not submission inputs.
+work/source_page_cache/
+work/staging/
+work/builds/
+work/active-build.json

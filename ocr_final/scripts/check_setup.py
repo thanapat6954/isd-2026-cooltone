@@ -23,6 +23,8 @@ def main():
         from lab10_fastapi.curriculum_app.model_service import QwenTextToSQL
         from run_lab8b import PROFILES
         registry = DatabaseRegistry(settings.database_root)
+        profile_keys = registry.build_contract.get('profiles', list(PROFILES))
+        selected_profiles = {key:PROFILES[key] for key in profile_keys}
         reviews = ROOT/'data/source_reviews/graduation_references.json'
         expected = json.loads(reviews.read_text(encoding='utf-8'))['reviews'] if reviews.is_file() else []
         changed_sources = []
@@ -33,11 +35,13 @@ def main():
                     if hashlib.file_digest(stream, 'sha256').hexdigest() != item['sha256']:
                         changed_sources.append(item['source_file'])
         result.update({'queryable_profiles': [d.curriculum_name for d in registry.active_catalogs],
+                       'build_id': registry.build_id, 'database_root': str(registry.discovery_root),
+                       'build_contract': registry.build_contract,
                        'changed_source_pdfs': changed_sources,
                        'model': settings.ollama_model, 'model_installed_and_service_ready': QwenTextToSQL(settings, None).available(),
-                       'missing_profile_databases': [key for key, profile in PROFILES.items()
-                           if not (settings.database_root / profile['out'].relative_to(ROOT) / 'curriculum.db').is_file()],
-                       'missing_source_pdfs': sorted({p['input'].name for p in PROFILES.values() if not p['input'].is_file()}),
+                       'missing_profile_databases': [key for key, profile in selected_profiles.items()
+                           if not (registry.discovery_root / profile['out'].relative_to(ROOT) / 'curriculum.db').is_file()],
+                       'missing_source_pdfs': sorted({p['input'].name for p in selected_profiles.values() if not p['input'].is_file()}),
                        'invalid_databases': [d.relative_path for d in registry.databases if d.inspection_error]})
     result['ready'] = not result['missing_runtime_packages'] and bool(result.get('queryable_profiles')) and result.get('model_installed_and_service_ready', False) and not result.get('missing_profile_databases') and not result.get('missing_source_pdfs') and not result.get('changed_source_pdfs') and not result.get('invalid_databases')
     if args.output:

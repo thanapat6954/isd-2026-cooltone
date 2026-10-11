@@ -33,11 +33,11 @@ PROFILE_INFO = {
 NAME_SIMILARITY_THRESHOLD = 0.5
 ERROR_SAMPLE_LIMIT = 5
 GT_FILES = {
-    "dsba": "data/ground_truth/DSBA_academic_plan_coop.json",
-    "dsba-no-coop": "data/ground_truth/DSBA_academic_plan_no_coop.json",
-    "ai": "data/ground_truth/AIT_academic_plan.json",
-    "it-coop": "data/ground_truth/IT_academic_plan_coop.json",
-    "it-no-coop": "data/ground_truth/IT_academic_plan_no_coop.json",
+    "dsba": "data/ground_truth/evaluation/DSBA-2565/coop.json",
+    "dsba-no-coop": "data/ground_truth/evaluation/DSBA-2565/no-coop.json",
+    "ai": "data/ground_truth/evaluation/AI-2566/academic_plan.json",
+    "it-coop": "data/ground_truth/evaluation/IT-2565/coop.json",
+    "it-no-coop": "data/ground_truth/evaluation/IT-2565/no-coop.json",
 }
 GT_REVIEW_CANDIDATES = {
     ("dsba", "06026205"),

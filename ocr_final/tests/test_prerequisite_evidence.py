@@ -66,6 +66,16 @@ class EvidenceTests(unittest.TestCase):
         self.assertIn('เอกสารระบุว่าไม่มีวิชาบังคับก่อน', result['answer'])
         self.assertIn('ยังสรุปไม่ได้', result['answer'])
         self.assertEqual((row['source_file'],row['page_number'],row['printed_page_number']),('DSBA.pdf',319,318))
+        self.assertEqual(row['in_selected_plan'],0)
+        self.assertIn('ไม่ปรากฏในตารางแผนการเรียนของฐานข้อมูลที่เลือก',result['answer'])
+
+    def test_catalog_course_in_plan_is_not_labeled_outside_plan(self):
+        with closing(sqlite3.connect(self.path)) as connection:
+            connection.execute('INSERT INTO plan_item VALUES(?,?,?)',('06066302',2,1))
+            connection.commit()
+        result=self.assistant.ask(self.registry,self.question)
+        self.assertEqual(result['rows'][0]['in_selected_plan'],1)
+        self.assertNotIn('ไม่ปรากฏในตารางแผนการเรียน',result['answer'])
 
     def test_actual_required_edge_is_not_rendered_as_none(self):
         with closing(sqlite3.connect(self.path)) as connection:

@@ -91,6 +91,18 @@ class RequirementTests(unittest.TestCase):
             self.assertEqual(connection.execute('SELECT count(*) FROM course').fetchone()[0], 1)
             self.assertEqual(connection.execute("SELECT count(*) FROM sqlite_master WHERE name='program_requirement'").fetchone()[0], 0)
 
+    def test_partial_rule_is_separate_and_never_grants_eligibility(self):
+        self.ingest()
+        self.ingest(review={**self.review,'topic':'graduation_rule_26','review_scope':'partial_rules',
+                            'rule_text':'Synthetic partial rule; English threshold unknown'})
+        result=self.model.ask(self.registry,'หลักสูตร DSBA 2560 สหกิจ: เกณฑ์การสำเร็จการศึกษามีอะไรบ้าง')
+        self.assertEqual(len(result['rows']),2)
+        self.assertIn('English threshold unknown',result['answer'])
+        self.assertIn('ยังยืนยันไม่ได้',result['answer'])
+
+    def test_unapproved_topic_rejected(self):
+        with self.assertRaises(ValueError):self.ingest(review={**self.review,'topic':'anything'})
+
 
 if __name__ == '__main__':
     unittest.main()

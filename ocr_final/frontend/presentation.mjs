@@ -3,7 +3,7 @@ export function citationHref(base, filename, page) {
   if (!/^(AI|DSBA|DSBA-60|IT|IT-60|BIT-65|BIT-60)\.pdf$/.test(filename || '')) return null;
   const number = Number(page);
   if (!Number.isInteger(number) || number < 1) return null;
-  return `${base}/api/source/${encodeURIComponent(filename)}#page=${number}`;
+  return `${base}/source-viewer/${encodeURIComponent(filename)}?page=${number}`;
 }
 
 export function sourceFilename(section) {

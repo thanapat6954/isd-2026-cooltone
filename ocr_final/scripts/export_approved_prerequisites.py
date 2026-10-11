@@ -11,7 +11,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--review', type=Path, default=ROOT.parent / 'docs/results/a1_ground_truth_review.json')
     parser.add_argument('--manifest', type=Path, default=ROOT.parent / 'docs/results/pdf_manifest.json')
-    parser.add_argument('--output', type=Path, default=ROOT / 'data/ground_truth/prerequisite_source_reviews.json')
+    parser.add_argument('--output', type=Path, default=ROOT / 'data/source_reviews/shared/prerequisite_source_reviews.json')
     args = parser.parse_args()
     result = json.loads(args.output.read_text(encoding='utf-8'))
     sources = {item['file']:item['sha256'].lower() for item in json.loads(args.manifest.read_text(encoding='utf-8'))['files']}

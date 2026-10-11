@@ -1,0 +1,118 @@
+{
+  "purpose": "development/regression; NOT held-out",
+  "groups": [
+    {
+      "program": "IT",
+      "versions": [
+        2565
+      ],
+      "plans": [
+        "coop"
+      ],
+      "cases": [
+        {
+          "question": "ปี 2 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "source": "IT.pdf",
+          "page": 40,
+          "book_page": 35,
+          "level": "L2",
+          "label_evidence": {
+            "source_file": "IT.pdf",
+            "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+            "image": "IT-aca97dc8b573-040.png",
+            "image_sha256": "adb6622f4a994d06a7dddc3c70b5b152aa0a0ea61289d5b733633228a0a845f3",
+            "pdf_page": 40,
+            "printed_page": 35,
+            "review_status": "manually_inspected_rendered_image"
+          }
+        },
+        {
+          "question": "ปี 2 ภาคการศึกษาที่ 2 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "source": "IT.pdf",
+          "page": 41,
+          "book_page": 36,
+          "level": "L2",
+          "label_evidence": {
+            "source_file": "IT.pdf",
+            "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+            "image": "IT-aca97dc8b573-041.png",
+            "image_sha256": "8618da915f388ea3207f15f281eee295f7d5f2d20699229c8e64275bf1d2cc33",
+            "pdf_page": 41,
+            "printed_page": 36,
+            "review_status": "manually_inspected_rendered_image"
+          }
+        },
+        {
+          "question": "ปี 3 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "source": "IT.pdf",
+          "page": 42,
+          "book_page": 37,
+          "level": "L2",
+          "label_evidence": {
+            "source_file": "IT.pdf",
+            "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+            "image": "IT-aca97dc8b573-042.png",
+            "image_sha256": "772d3dc0a4487f6f331b279b28454b44b3fabb811eb1ce8d22b9114a433ed8ab",
+            "pdf_page": 42,
+            "printed_page": 37,
+            "review_status": "manually_inspected_rendered_image"
+          }
+        },
+        {
+          "question": "ปี 3 ภาคการศึกษาที่ 2 เรียนกี่หน่วยกิต",
+          "credits": 6,
+          "source": "IT.pdf",
+          "page": 43,
+          "book_page": 38,
+          "level": "L2",
+          "label_evidence": {
+            "source_file": "IT.pdf",
+            "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+            "image": "IT-aca97dc8b573-043.png",
+            "image_sha256": "e921fa451c192eae7823dee81ce7e8e83cf36da8b5781ca2a89f5b29de07ae1f",
+            "pdf_page": 43,
+            "printed_page": 38,
+            "review_status": "manually_inspected_rendered_image"
+          }
+        },
+        {
+          "question": "ปี 4 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "source": "IT.pdf",
+          "page": 43,
+          "book_page": 38,
+          "level": "L2",
+          "label_evidence": {
+            "source_file": "IT.pdf",
+            "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+            "image": "IT-aca97dc8b573-043.png",
+            "image_sha256": "e921fa451c192eae7823dee81ce7e8e83cf36da8b5781ca2a89f5b29de07ae1f",
+            "pdf_page": 43,
+            "printed_page": 38,
+            "review_status": "manually_inspected_rendered_image"
+          }
+        },
+        {
+          "question": "ปี 4 ภาคการศึกษาที่ 2 เรียนกี่หน่วยกิต",
+          "credits": 15,
+          "source": "IT.pdf",
+          "page": 44,
+          "book_page": 39,
+          "level": "L2",
+          "label_evidence": {
+            "source_file": "IT.pdf",
+            "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+            "image": "IT-aca97dc8b573-044.png",
+            "image_sha256": "ff64aa9b253e6d7d56c851d1d170887159d794afaca2a254718715245347ec8f",
+            "pdf_page": 44,
+            "printed_page": 39,
+            "review_status": "manually_inspected_rendered_image"
+          }
+        }
+      ]
+    }
+  ]
+}

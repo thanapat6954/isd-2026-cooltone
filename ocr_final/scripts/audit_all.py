@@ -25,7 +25,7 @@ from lab10_fastapi.curriculum_app.query_planner import QueryPlan
 VERSIONS = {'AI.pdf': ('AI', 2566), 'DSBA.pdf': ('DSBA', 2565), 'DSBA-60.pdf': ('DSBA', 2560),
             'IT.pdf': ('IT', 2565), 'IT-60.pdf': ('IT', 2560),
             'BIT-65.pdf': ('BIT', 2565), 'BIT-60.pdf': ('BIT', 2560)}
-EXCLUDED = {'venv', '.venv', 'tmp', '.git', 'node_modules', 'backups', 'handoff', 'verification', 'ocr_page_cache'}
+EXCLUDED = {'venv', '.venv', 'tmp', '.git', 'node_modules', 'backups', 'handoff', 'verification', 'ocr_page_cache', 'staging', 'builds'}
 
 
 class NoGeneration:
@@ -135,8 +135,10 @@ def main():
             if current_hash != item['sha256']:
                 continue
             references[item['source_file']] = [json.loads(line) for line in (manifest.parent / item['pages_file']).read_text(encoding='utf-8').splitlines()]
-    paths = sorted(path for path in app_root.rglob('*.db')
-                   if not any(part in EXCLUDED or part.startswith('_archive') for part in path.relative_to(app_root).parts))
+    from lab10_fastapi.curriculum_app.database import DatabaseRegistry
+    discovery_root = DatabaseRegistry(app_root).discovery_root
+    paths = sorted(path for path in discovery_root.rglob('*.db')
+                   if not any(part in EXCLUDED or part.startswith('_archive') for part in path.relative_to(discovery_root).parts))
     args.out.mkdir(parents=True, exist_ok=True)
     previous_path = args.out / 'audit_results.json'
     previous = json.loads(previous_path.read_text(encoding='utf-8')) if previous_path.exists() else None

@@ -1,0 +1,612 @@
+{
+  "program": "DSBA",
+  "version": 2565,
+  "plan": "no-coop",
+  "plan_evidence": "PDF23/book22 section3.1.4.1 explicitly says แผนการศึกษาที่ไม่เข้าโครงการสหกิจศึกษา",
+  "printed_total": 132,
+  "terms": [
+    {
+      "year": 1,
+      "semester": 1,
+      "pdf_page": 23,
+      "printed_page": 22,
+      "printed_credits": 18,
+      "rows": [
+        [
+          "06026200",
+          "3(3-0-6)"
+        ],
+        [
+          "06026202",
+          "3(3-0-6)"
+        ],
+        [
+          "06066101",
+          "3(3-0-6)"
+        ],
+        [
+          "06066303",
+          "3(2-2-5)"
+        ],
+        [
+          "90641001",
+          "2(1-2-3)"
+        ],
+        [
+          "90641003",
+          "1(0-3-2)"
+        ],
+        [
+          "90644007",
+          "3(3-0-6)"
+        ]
+      ],
+      "source_file": "DSBA.pdf",
+      "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+      "image": "DSBA-01ead4c636b0-023.png",
+      "image_sha256": "3af68ee6104f5a59298d8fe7cef28652f3c1c060d142eb9f2a235bed26f6668a",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06026200",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06026202",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06066101",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06066303",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "90641001",
+          "credits_raw": "2(1-2-3)",
+          "alternative_group": null,
+          "source_row_index": 4
+        },
+        {
+          "code": "90641003",
+          "credits_raw": "1(0-3-2)",
+          "alternative_group": null,
+          "source_row_index": 5
+        },
+        {
+          "code": "90644007",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 6
+        }
+      ]
+    },
+    {
+      "year": 1,
+      "semester": 2,
+      "pdf_page": 24,
+      "printed_page": 23,
+      "printed_credits": 21,
+      "rows": [
+        [
+          "06026201",
+          "3(3-0-6)"
+        ],
+        [
+          "06026203",
+          "3(2-2-5)"
+        ],
+        [
+          "06026205",
+          "3(3-0-6)"
+        ],
+        [
+          "06066001",
+          "3(3-0-6)"
+        ],
+        [
+          "90641002",
+          "3(3-0-6)"
+        ],
+        [
+          "90642033",
+          "3(3-0-6)"
+        ],
+        [
+          "90644008",
+          "3(3-0-6)"
+        ]
+      ],
+      "source_file": "DSBA.pdf",
+      "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+      "image": "DSBA-01ead4c636b0-024.png",
+      "image_sha256": "57df60d9fd7c949e655e51479e62ffb6868864f884f8c02791bd2d8f66dc162b",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06026201",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06026203",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06026205",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06066001",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "90641002",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 4
+        },
+        {
+          "code": "90642033",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 5
+        },
+        {
+          "code": "90644008",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 6
+        }
+      ]
+    },
+    {
+      "year": 2,
+      "semester": 1,
+      "pdf_page": 25,
+      "printed_page": 24,
+      "printed_credits": 18,
+      "rows": [
+        [
+          "06026206",
+          "3(2-2-5)"
+        ],
+        [
+          "06066000",
+          "3(3-0-6)"
+        ],
+        [
+          "06066300",
+          "3(2-2-5)"
+        ],
+        [
+          "06066302",
+          "3(2-2-5)"
+        ],
+        [
+          "06066304",
+          "3(3-0-6)"
+        ],
+        [
+          "90644xxx",
+          "3(3-0-6) หรือ 3(2-2-5)"
+        ]
+      ],
+      "source_file": "DSBA.pdf",
+      "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+      "image": "DSBA-01ead4c636b0-025.png",
+      "image_sha256": "3b148d6023bb4f50da3d0a821292eb2a55c0b0146a720faff2ced17fd759229e",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06026206",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06066000",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06066300",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06066302",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "06066304",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 4
+        },
+        {
+          "code": "90644xxx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 5
+        }
+      ]
+    },
+    {
+      "year": 2,
+      "semester": 2,
+      "pdf_page": 26,
+      "printed_page": 25,
+      "printed_credits": 21,
+      "rows": [
+        [
+          "06026204",
+          "3(3-0-6)"
+        ],
+        [
+          "06026207",
+          "3(2-2-5)"
+        ],
+        [
+          "06026208",
+          "3(3-0-6)"
+        ],
+        [
+          "06026209",
+          "3(2-2-5)"
+        ],
+        [
+          "06026210",
+          "3(3-0-6)"
+        ],
+        [
+          "06066102",
+          "3(3-0-6)"
+        ],
+        [
+          "06066301",
+          "3(2-2-5)"
+        ]
+      ],
+      "source_file": "DSBA.pdf",
+      "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+      "image": "DSBA-01ead4c636b0-026.png",
+      "image_sha256": "7ff6abc54ad6fa3836abd2d01fa97f1182f66d1824afedd3b97510c67d803565",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06026204",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06026207",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06026208",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06026209",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "06026210",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 4
+        },
+        {
+          "code": "06066102",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 5
+        },
+        {
+          "code": "06066301",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 6
+        }
+      ]
+    },
+    {
+      "year": 3,
+      "semester": 1,
+      "pdf_page": 27,
+      "printed_page": 26,
+      "printed_credits": 18,
+      "rows": [
+        [
+          "06026211",
+          "3(2-2-5)"
+        ],
+        [
+          "06026212",
+          "3(2-2-5)"
+        ],
+        [
+          "06026xxx",
+          "3(3-0-6) หรือ 3(2-2-5)"
+        ],
+        [
+          "06026xxx",
+          "3(3-0-6) หรือ 3(2-2-5)"
+        ],
+        [
+          "9064xxxx",
+          "3(3-0-6) หรือ 3(2-2-5)"
+        ],
+        [
+          "90644042",
+          "3(3-0-6)"
+        ]
+      ],
+      "source_file": "DSBA.pdf",
+      "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+      "image": "DSBA-01ead4c636b0-027.png",
+      "image_sha256": "6b6ffb59339cf6eba4c0e0a866b7906e1789ee6087cb64b28183913674ce374a",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06026211",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06026212",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06026xxx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06026xxx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "9064xxxx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 4
+        },
+        {
+          "code": "90644042",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 5
+        }
+      ]
+    },
+    {
+      "year": 3,
+      "semester": 2,
+      "pdf_page": 28,
+      "printed_page": 27,
+      "printed_credits": 18,
+      "rows": [
+        [
+          "06026213",
+          "3(2-2-5)"
+        ],
+        [
+          "06026214",
+          "3(0-9-0)"
+        ],
+        [
+          "06026xxx",
+          "3(3-0-6) หรือ 3(2-2-5)"
+        ],
+        [
+          "06026xxx",
+          "3(3-0-6) หรือ 3(2-2-5)"
+        ],
+        [
+          "06066100",
+          "3(3-0-6)"
+        ],
+        [
+          "90643021",
+          "3(3-0-6)"
+        ]
+      ],
+      "source_file": "DSBA.pdf",
+      "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+      "image": "DSBA-01ead4c636b0-028.png",
+      "image_sha256": "1bc06cf6d9defb3e5d1a618678b030c70e06a5e32f9e7ca4fbf3c0c3dadb2bad",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06026213",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06026214",
+          "credits_raw": "3(0-9-0)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06026xxx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06026xxx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "06066100",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 4
+        },
+        {
+          "code": "90643021",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 5
+        }
+      ]
+    },
+    {
+      "year": 4,
+      "semester": 1,
+      "pdf_page": 29,
+      "printed_page": 28,
+      "printed_credits": 9,
+      "rows": [
+        [
+          "06026215",
+          "3(0-9-0)"
+        ],
+        [
+          "06026xxx",
+          "3(3-0-6) หรือ 3(2-2-5)"
+        ],
+        [
+          "06026xxx",
+          "3(3-0-6) หรือ 3(2-2-5)"
+        ]
+      ],
+      "source_file": "DSBA.pdf",
+      "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+      "image": "DSBA-01ead4c636b0-029.png",
+      "image_sha256": "f9810a7f09d7ef4705d9a60272e580f787ab8ba1dca4104a72c42ae3f954c103",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06026215",
+          "credits_raw": "3(0-9-0)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06026xxx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06026xxx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 2
+        }
+      ]
+    },
+    {
+      "year": 4,
+      "semester": 2,
+      "pdf_page": 29,
+      "printed_page": 28,
+      "printed_credits": 9,
+      "rows": [
+        [
+          "9064xxxx",
+          "3(3-0-6) หรือ 3(2-2-5)"
+        ],
+        [
+          "xxxxxxxx",
+          "3(3-0-6) หรือ 3(2-2-5)"
+        ],
+        [
+          "xxxxxxxx",
+          "3(3-0-6) หรือ 3(2-2-5)"
+        ]
+      ],
+      "source_file": "DSBA.pdf",
+      "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+      "image": "DSBA-01ead4c636b0-029.png",
+      "image_sha256": "f9810a7f09d7ef4705d9a60272e580f787ab8ba1dca4104a72c42ae3f954c103",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "9064xxxx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "xxxxxxxx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "xxxxxxxx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 2
+        }
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "purpose": "partial_source_evaluation",
+  "identity": {
+    "program": "DSBA",
+    "version": 2565,
+    "plan": "no-coop"
+  },
+  "source_file": "DSBA.pdf",
+  "verified_fields": [
+    "code",
+    "credits_raw",
+    "year",
+    "semester",
+    "printed_credits",
+    "pdf_page",
+    "printed_page",
+    "alternative choices"
+  ],
+  "unverified_fields": [
+    "complete name transcription",
+    "category requirements",
+    "prerequisites",
+    "graduation rules"
+  ],
+  "observations_sha256": "bf2df9bc67fe10b1a52d528d53a40259b1f28ed4c6346eaf270b6a555cf3d326"
+}

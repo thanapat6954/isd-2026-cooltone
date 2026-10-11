@@ -1,0 +1,32 @@
+{
+ "purpose":"development/regression observations independently read from rendered source pages; NOT production or held-out",
+ "source_file":"DSBA.pdf",
+ "source_sha256":"01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+ "review_status":"visually_verified",
+ "verified_fields":["code","credits_raw","year","semester","printed_credits","pdf_page","printed_page","alternative choices"],
+ "unverified_fields":["complete name transcription","category requirements","prerequisites","graduation rules"],
+ "shared_elective_observation":"PDF27/28 and34/35: four distinct 06026xxx slots numbered1–4; each cell names data science/statistical analysis/data engineering groups. These are choices within slots, not three courses to sum. The study-plan cells alone do not establish all specialization requirements.",
+ "profiles":[
+  {"program":"DSBA","version":2565,"plan":"no-coop","plan_evidence":"PDF23/book22 section3.1.4.1 explicitly says แผนการศึกษาที่ไม่เข้าโครงการสหกิจศึกษา","printed_total":132,"terms":[
+   {"year":1,"semester":1,"pdf_page":23,"printed_page":22,"printed_credits":18,"rows":[["06026200","3(3-0-6)"],["06026202","3(3-0-6)"],["06066101","3(3-0-6)"],["06066303","3(2-2-5)"],["90641001","2(1-2-3)"],["90641003","1(0-3-2)"],["90644007","3(3-0-6)"]] },
+   {"year":1,"semester":2,"pdf_page":24,"printed_page":23,"printed_credits":21,"rows":[["06026201","3(3-0-6)"],["06026203","3(2-2-5)"],["06026205","3(3-0-6)"],["06066001","3(3-0-6)"],["90641002","3(3-0-6)"],["90642033","3(3-0-6)"],["90644008","3(3-0-6)"]] },
+   {"year":2,"semester":1,"pdf_page":25,"printed_page":24,"printed_credits":18,"rows":[["06026206","3(2-2-5)"],["06066000","3(3-0-6)"],["06066300","3(2-2-5)"],["06066302","3(2-2-5)"],["06066304","3(3-0-6)"],["90644xxx","3(3-0-6) หรือ 3(2-2-5)"]] },
+   {"year":2,"semester":2,"pdf_page":26,"printed_page":25,"printed_credits":21,"rows":[["06026204","3(3-0-6)"],["06026207","3(2-2-5)"],["06026208","3(3-0-6)"],["06026209","3(2-2-5)"],["06026210","3(3-0-6)"],["06066102","3(3-0-6)"],["06066301","3(2-2-5)"]] },
+   {"year":3,"semester":1,"pdf_page":27,"printed_page":26,"printed_credits":18,"rows":[["06026211","3(2-2-5)"],["06026212","3(2-2-5)"],["06026xxx","3(3-0-6) หรือ 3(2-2-5)"],["06026xxx","3(3-0-6) หรือ 3(2-2-5)"],["9064xxxx","3(3-0-6) หรือ 3(2-2-5)"],["90644042","3(3-0-6)"]] },
+   {"year":3,"semester":2,"pdf_page":28,"printed_page":27,"printed_credits":18,"rows":[["06026213","3(2-2-5)"],["06026214","3(0-9-0)"],["06026xxx","3(3-0-6) หรือ 3(2-2-5)"],["06026xxx","3(3-0-6) หรือ 3(2-2-5)"],["06066100","3(3-0-6)"],["90643021","3(3-0-6)"]] },
+   {"year":4,"semester":1,"pdf_page":29,"printed_page":28,"printed_credits":9,"rows":[["06026215","3(0-9-0)"],["06026xxx","3(3-0-6) หรือ 3(2-2-5)"],["06026xxx","3(3-0-6) หรือ 3(2-2-5)"]] },
+   {"year":4,"semester":2,"pdf_page":29,"printed_page":28,"printed_credits":9,"rows":[["9064xxxx","3(3-0-6) หรือ 3(2-2-5)"],["xxxxxxxx","3(3-0-6) หรือ 3(2-2-5)"],["xxxxxxxx","3(3-0-6) หรือ 3(2-2-5)"]] }
+  ]},
+  {"program":"DSBA","version":2565,"plan":"coop","plan_evidence":"PDF30/book29 section3.1.4.2 explicitly says แผนการศึกษาที่เข้าโครงการสหกิจศึกษา","printed_total":null,
+   "unverified_terms":[{"year":4,"semester":1,"pdf_page":36,"printed_page":35,"observed_total":12,"reason":"Source image starts with continuation row whose code/name are not visible; no inferred 06026215 label. Need inspect preceding page boundary/source rendering."}],
+   "terms":[
+   {"year":1,"semester":1,"pdf_page":30,"printed_page":29,"printed_credits":18,"rows":[["06026200","3(3-0-6)"],["06026202","3(3-0-6)"],["06066101","3(3-0-6)"],["06066303","3(2-2-5)"],["90641001","2(1-2-3)"],["90641003","1(0-3-2)"],["90644007","3(3-0-6)"]] },
+   {"year":1,"semester":2,"pdf_page":31,"printed_page":30,"printed_credits":21,"rows":[["06026201","3(3-0-6)"],["06026203","3(2-2-5)"],["06026205","3(3-0-6)"],["06066001","3(3-0-6)"],["90641002","3(3-0-6)"],["90642033","3(3-0-6)"],["90644008","3(3-0-6)"]] },
+   {"year":2,"semester":1,"pdf_page":32,"printed_page":31,"printed_credits":18,"rows":[["06026206","3(2-2-5)"],["06066000","3(3-0-6)"],["06066300","3(2-2-5)"],["06066302","3(2-2-5)"],["06066304","3(3-0-6)"],["90644xxx","3(3-0-6) หรือ 3(2-2-5)"]] },
+   {"year":2,"semester":2,"pdf_page":33,"printed_page":32,"printed_credits":21,"rows":[["06026204","3(3-0-6)"],["06026207","3(2-2-5)"],["06026208","3(3-0-6)"],["06026209","3(2-2-5)"],["06026210","3(3-0-6)"],["06066102","3(3-0-6)"],["06066301","3(2-2-5)"]] },
+   {"year":3,"semester":1,"pdf_page":34,"printed_page":33,"printed_credits":18,"rows":[["06026211","3(2-2-5)"],["06026212","3(2-2-5)"],["06026xxx","3(3-0-6) หรือ 3(2-2-5)"],["06026xxx","3(3-0-6) หรือ 3(2-2-5)"],["9064xxxx","3(3-0-6) หรือ 3(2-2-5)"],["90644042","3(3-0-6)"]] },
+   {"year":3,"semester":2,"pdf_page":35,"printed_page":34,"printed_credits":18,"rows":[["06026213","3(2-2-5)"],["06026214","3(0-9-0)"],["06026xxx","3(3-0-6) หรือ 3(2-2-5)"],["06026xxx","3(3-0-6) หรือ 3(2-2-5)"],["06066100","3(3-0-6)"],["90643021","3(3-0-6)"]] },
+   {"year":4,"semester":2,"pdf_page":36,"printed_page":35,"printed_credits":6,"rows":[["06026259","6(0-35-0)","coop-choice"],["06026260","6(0-35-0)","coop-choice"]] }
+  ]}
+ ]
+}

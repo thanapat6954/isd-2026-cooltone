@@ -1,0 +1,18 @@
+{
+ "purpose":"development/regression independently inspected source cells, NOT production or held-out",
+ "source_file":"IT.pdf","source_sha256":"aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+ "review_status":"visually_verified",
+ "verified_fields":["code","credits_raw","year","semester","printed_credits","pdf_page","printed_page","plan identity"],
+ "unverified_fields":["complete names","all remaining semesters","specialization selection conditions","category requirements","prerequisites","graduation rules"],
+ "specialization_observation":{"pdf_page":35,"printed_page":30,"status":"partial_visual_observation","groups":{"software":["06016416","06016417","06016418"],"infrastructure":["06016421","06016422","06016423"],"multimedia":["06016426","06016427","06016418"]},"warning":"Source shows separate specialization headings. Selection conditions need preceding structure pages; do not sum all three groups. 06016422 visible name is อินเทอร์เน็ตของสรรพสิ่ง / INTERNET OF THINGS, not the following row."},
+ "profiles":[
+  {"program":"IT","version":2565,"plan":"no-coop","printed_total":null,"plan_evidence":"PDF31/book26 section3.1.4.1 explicitly says แผนการศึกษาที่ไม่เข้าโครงการสหกิจศึกษา","terms":[
+   {"year":1,"semester":1,"pdf_page":31,"printed_page":26,"printed_credits":18,"rows":[["06016401","3(3-0-6)"],["06016402","3(2-2-5)"],["06016411","3(2-2-5)"],["06066303","3(2-2-5)"],["90641001","2(1-2-3)"],["90641003","1(0-3-2)"],["90644007","3(3-0-6)"]] },
+   {"year":1,"semester":2,"pdf_page":32,"printed_page":27,"printed_credits":18,"rows":[["06016408","3(2-2-5)"],["06066001","3(3-0-6)"],["06066101","3(3-0-6)"],["06066301","3(2-2-5)"],["90641002","3(3-0-6)"],["90644008","3(3-0-6)"]] }
+  ]},
+  {"program":"IT","version":2565,"plan":"coop","printed_total":null,"plan_evidence":"PDF38/book33 section3.1.4.2 explicitly says แผนการศึกษาสำหรับโครงการสหกิจศึกษา","terms":[
+   {"year":1,"semester":1,"pdf_page":38,"printed_page":33,"printed_credits":18,"rows":[["06016401","3(3-0-6)"],["06016402","3(2-2-5)"],["06016411","3(2-2-5)"],["06066303","3(2-2-5)"],["90641001","2(1-2-3)"],["90641003","1(0-3-2)"],["90644007","3(3-0-6)"]] },
+   {"year":1,"semester":2,"pdf_page":39,"printed_page":34,"printed_credits":18,"rows":[["06016408","3(2-2-5)"],["06066001","3(3-0-6)"],["06066101","3(3-0-6)"],["06066301","3(2-2-5)"],["90641002","3(3-0-6)"],["90644008","3(3-0-6)"]] }
+  ]}
+ ]
+}

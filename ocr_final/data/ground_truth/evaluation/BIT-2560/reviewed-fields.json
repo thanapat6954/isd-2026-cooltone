@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "purpose": "partial_source_evaluation",
+  "identity": {
+    "program": "BIT",
+    "version": 2560,
+    "revision": null,
+    "plan": null
+  },
+  "scope": "shared course fields only; plan membership NOT inferred; reused development approvals, not independent held-out",
+  "unverified_fields": [
+    "full course coverage",
+    "plan membership",
+    "graduation conditions",
+    "complete L1-L4"
+  ],
+  "labels": [
+    {
+      "id": "prerequisite_source_reviews.json:BIT-60.pdf:174:06036010",
+      "code": "06036010",
+      "expected": {
+        "prerequisite_status": "required",
+        "requires": [
+          "06036006"
+        ],
+        "name_th": "กระบวนการธุรกิจและการวางแผนทรัพยากรองค์กร"
+      },
+      "evidence": {
+        "source_file": "BIT-60.pdf",
+        "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+        "pdf_page": 174,
+        "printed_page": 97,
+        "section": "course description",
+        "approval": "data/source_reviews/shared/prerequisite_source_reviews.json",
+        "approval_sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+        "review_sample_id": "BIT-2560-coop-08",
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "prerequisite_source_reviews.json:BIT-60.pdf:178:06036020",
+      "code": "06036020",
+      "expected": {
+        "prerequisite_status": "required",
+        "requires": [
+          "06036019"
+        ],
+        "name_th": "โครงงาน 2"
+      },
+      "evidence": {
+        "source_file": "BIT-60.pdf",
+        "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+        "pdf_page": 178,
+        "printed_page": null,
+        "section": "course description",
+        "approval": "data/source_reviews/shared/prerequisite_source_reviews.json",
+        "approval_sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+        "review_sample_id": "BIT-2560-no-coop-14",
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    }
+  ]
+}

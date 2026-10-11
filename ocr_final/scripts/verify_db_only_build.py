@@ -35,9 +35,9 @@ def main():
     p.add_argument('--backups', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
     a = p.parse_args()
-    ingestion = a.app_root / 'data/ground_truth/study_plan_relationships.json'
+    ingestion = a.app_root / 'data/source_reviews/shared/study_plan_relationships.json'
     manifest = json.loads(ingestion.read_text(encoding='utf-8'))
-    approval = json.loads((ROOT / 'data/ground_truth/study_plan_db_review.json').read_text(encoding='utf-8'))
+    approval = json.loads((ROOT / 'data/source_reviews/shared/study_plan_db_review.json').read_text(encoding='utf-8'))
     original = json.loads(a.backups.read_text(encoding='utf-8'))
     old = {r['profile']: r for r in original['databases']}
     result = {'scope': 'Isolated replay of reviewed ingest on current DBs; not a full OCR/PDF rebuild', 'checks': []}

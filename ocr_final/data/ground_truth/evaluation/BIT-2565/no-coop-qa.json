@@ -1,0 +1,252 @@
+{
+  "schema_version": 1,
+  "purpose": "development labels manually transcribed from rendered official pages; NOT held-out; never production input",
+  "identity": {
+    "program": "BIT",
+    "version": 2565,
+    "plan": "no-coop"
+  },
+  "unverified_levels": [
+    "L3",
+    "L4"
+  ],
+  "groups": [
+    {
+      "program": "BIT",
+      "versions": [
+        2565
+      ],
+      "plans": [
+        "no-coop"
+      ],
+      "cases": [
+        {
+          "source": "BIT-65.pdf",
+          "page": 26,
+          "book_page": 21,
+          "label_evidence": {
+            "source_file": "BIT-65.pdf",
+            "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+            "pdf_page": 26,
+            "printed_page": 21,
+            "image": "BIT-65-f7f8fba36276-026.png",
+            "image_sha256": "a434c0d246d6946135261d9ffccaffa612525502fa060741839c7c3426895e46",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "ปี 1 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "level": "L2"
+        },
+        {
+          "source": "BIT-65.pdf",
+          "page": 26,
+          "book_page": 21,
+          "label_evidence": {
+            "source_file": "BIT-65.pdf",
+            "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+            "pdf_page": 26,
+            "printed_page": 21,
+            "image": "BIT-65-f7f8fba36276-026.png",
+            "image_sha256": "a434c0d246d6946135261d9ffccaffa612525502fa060741839c7c3426895e46",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "วิชา 06036100 มีกี่หน่วยกิต",
+          "code": "06036100",
+          "credits": 3,
+          "level": "L1"
+        },
+        {
+          "source": "BIT-65.pdf",
+          "page": 26,
+          "book_page": 21,
+          "label_evidence": {
+            "source_file": "BIT-65.pdf",
+            "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+            "pdf_page": 26,
+            "printed_page": 21,
+            "image": "BIT-65-f7f8fba36276-026.png",
+            "image_sha256": "a434c0d246d6946135261d9ffccaffa612525502fa060741839c7c3426895e46",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "วิชา 06036101 มีกี่หน่วยกิต",
+          "code": "06036101",
+          "credits": 3,
+          "level": "L1"
+        },
+        {
+          "source": "BIT-65.pdf",
+          "page": 26,
+          "book_page": 21,
+          "label_evidence": {
+            "source_file": "BIT-65.pdf",
+            "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+            "pdf_page": 26,
+            "printed_page": 21,
+            "image": "BIT-65-f7f8fba36276-026.png",
+            "image_sha256": "a434c0d246d6946135261d9ffccaffa612525502fa060741839c7c3426895e46",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "วิชา 06036118 มีกี่หน่วยกิต",
+          "code": "06036118",
+          "credits": 3,
+          "level": "L1"
+        },
+        {
+          "source": "BIT-65.pdf",
+          "page": 26,
+          "book_page": 21,
+          "label_evidence": {
+            "source_file": "BIT-65.pdf",
+            "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+            "pdf_page": 26,
+            "printed_page": 21,
+            "image": "BIT-65-f7f8fba36276-026.png",
+            "image_sha256": "a434c0d246d6946135261d9ffccaffa612525502fa060741839c7c3426895e46",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "วิชา 96641001 มีกี่หน่วยกิต",
+          "code": "96641001",
+          "credits": 2,
+          "level": "L1"
+        },
+        {
+          "source": "BIT-65.pdf",
+          "page": 26,
+          "book_page": 21,
+          "label_evidence": {
+            "source_file": "BIT-65.pdf",
+            "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+            "pdf_page": 26,
+            "printed_page": 21,
+            "image": "BIT-65-f7f8fba36276-026.png",
+            "image_sha256": "a434c0d246d6946135261d9ffccaffa612525502fa060741839c7c3426895e46",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "วิชา 96641003 มีกี่หน่วยกิต",
+          "code": "96641003",
+          "credits": 1,
+          "level": "L1"
+        },
+        {
+          "source": "BIT-65.pdf",
+          "page": 27,
+          "book_page": 22,
+          "label_evidence": {
+            "source_file": "BIT-65.pdf",
+            "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+            "pdf_page": 27,
+            "printed_page": 22,
+            "image": "BIT-65-f7f8fba36276-027.png",
+            "image_sha256": "7fc5969002d7e9aa8a5e8213b979c5e6d53b1d9a5ed2f70adbee2d8ed4bbe089",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "ปี 1 ภาคการศึกษาที่ 2 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "level": "L2"
+        },
+        {
+          "source": "BIT-65.pdf",
+          "page": 27,
+          "book_page": 22,
+          "label_evidence": {
+            "source_file": "BIT-65.pdf",
+            "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+            "pdf_page": 27,
+            "printed_page": 22,
+            "image": "BIT-65-f7f8fba36276-027.png",
+            "image_sha256": "7fc5969002d7e9aa8a5e8213b979c5e6d53b1d9a5ed2f70adbee2d8ed4bbe089",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "ปี 2 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "level": "L2"
+        },
+        {
+          "source": "BIT-65.pdf",
+          "page": 28,
+          "book_page": 23,
+          "label_evidence": {
+            "source_file": "BIT-65.pdf",
+            "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+            "pdf_page": 28,
+            "printed_page": 23,
+            "image": "BIT-65-f7f8fba36276-028.png",
+            "image_sha256": "522c16bdd606067183d5c1218315233752db8ea893bb85ff1b7d2756fa483f93",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "ปี 2 ภาคการศึกษาที่ 2 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "level": "L2"
+        },
+        {
+          "source": "BIT-65.pdf",
+          "page": 28,
+          "book_page": 23,
+          "label_evidence": {
+            "source_file": "BIT-65.pdf",
+            "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+            "pdf_page": 28,
+            "printed_page": 23,
+            "image": "BIT-65-f7f8fba36276-028.png",
+            "image_sha256": "522c16bdd606067183d5c1218315233752db8ea893bb85ff1b7d2756fa483f93",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "ปี 3 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "level": "L2"
+        },
+        {
+          "source": "BIT-65.pdf",
+          "page": 29,
+          "book_page": 24,
+          "label_evidence": {
+            "source_file": "BIT-65.pdf",
+            "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+            "pdf_page": 29,
+            "printed_page": 24,
+            "image": "BIT-65-f7f8fba36276-029.png",
+            "image_sha256": "52460e3dddd018fd8557d133c627d1cdebe01f3ceb1f6148cd751763cb020208",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "ปี 3 ภาคการศึกษาที่ 2 เรียนกี่หน่วยกิต",
+          "credits": 12,
+          "level": "L2"
+        },
+        {
+          "source": "BIT-65.pdf",
+          "page": 29,
+          "book_page": 24,
+          "label_evidence": {
+            "source_file": "BIT-65.pdf",
+            "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+            "pdf_page": 29,
+            "printed_page": 24,
+            "image": "BIT-65-f7f8fba36276-029.png",
+            "image_sha256": "52460e3dddd018fd8557d133c627d1cdebe01f3ceb1f6148cd751763cb020208",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "ปี 4 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 12,
+          "level": "L2"
+        },
+        {
+          "source": "BIT-65.pdf",
+          "page": 30,
+          "book_page": 25,
+          "label_evidence": {
+            "source_file": "BIT-65.pdf",
+            "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+            "pdf_page": 30,
+            "printed_page": 25,
+            "image": "BIT-65-f7f8fba36276-030.png",
+            "image_sha256": "9457e573bd5e7d08a6380bac28a4aaa51e4e5cfa57bca4535ef50b1321b7cc71",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "ปี 4 ภาคการศึกษาที่ 2 เรียนกี่หน่วยกิต",
+          "credits": 12,
+          "level": "L2"
+        }
+      ]
+    }
+  ]
+}

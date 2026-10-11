@@ -18,10 +18,10 @@ def main():
     parser.add_argument('--resume', action='store_true')
     args = parser.parse_args()
     app = args.app_root
-    manifest = json.loads((app/'data/ground_truth/study_plan_relationships.json').read_text(encoding='utf-8'))
+    manifest = json.loads((app/'data/source_reviews/shared/study_plan_relationships.json').read_text(encoding='utf-8'))
     dependencies = {str(p.relative_to(app)): hashlib.sha256(p.read_bytes()).hexdigest()
                     for p in [*sorted((app/'lab10_fastapi/curriculum_app').glob('*.py')),
-                              app/'data/ground_truth/study_plan_relationships.json',
+                              app/'data/source_reviews/shared/study_plan_relationships.json',
                               *sorted((app/'work').glob('lab8b_*/curriculum.db'))]}
     result = {'dependencies': dependencies, 'cases': [], 'links': []}
     if args.resume and args.output.is_file():

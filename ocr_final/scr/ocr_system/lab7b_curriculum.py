@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import base64
 import io
+import hashlib
 import json
 import os
 import re
@@ -41,6 +42,12 @@ NUM_CTX = int(os.getenv("LAB7B_NUM_CTX", "16384"))
 NUM_PREDICT = int(os.getenv("LAB7B_NUM_PREDICT", "8192"))
 OCR_NUM_CTX = int(os.getenv("LAB7B_OCR_NUM_CTX", "8192"))
 OCR_NUM_PREDICT = int(os.getenv("LAB7B_OCR_NUM_PREDICT", "2048"))
+OCR_TEMPERATURE = float(os.getenv("LAB7B_OCR_TEMPERATURE", "0.1"))
+OCR_RETRIES = int(os.getenv("LAB7B_OCR_RETRIES", "2"))
+if OCR_RETRIES < 0:
+    raise ValueError("LAB7B_OCR_RETRIES must be non-negative")
+if not 0 <= OCR_TEMPERATURE <= 2:
+    raise ValueError("LAB7B_OCR_TEMPERATURE must be between 0 and 2")
 
 PAGES_PER_CHUNK = int(os.getenv("LAB7_CHUNK", "1"))
 SKIP_BASELINE = os.getenv("LAB7_SKIP_BASELINE", "").strip() in ("1", "true", "yes")
@@ -472,6 +479,55 @@ def _recover_thai_name_from_ocr_table(document_text: str, code: str) -> str | No
     return "\n".join(thai_lines) or None
 
 
+def _ground_plan_table_fields(course: dict, document_text: str) -> None:
+    """Reject invented prerequisites and recover malformed titles from raw table cells only."""
+    if '<table' not in document_text.lower() or not re.search(r'ปีที่\s*\d+\s*ภาคการศึกษาที่\s*\d+', document_text):
+        return
+    if not re.search(r'วิชาบังคับก่อน|PREREQUISITE|PRE-REQUISITE', document_text, re.I):
+        course['prerequisite'] = None
+    english = str(course.get('name_en') or '')
+    if english and re.search(r'[A-Za-z]', english):
+        return
+    code = str(course.get('code') or '').strip()
+    match = re.search(rf'<td[^>]*>\s*{re.escape(code)}\s*</td>(.*?)(?=<td[^>]*>\s*\d{{8}}\s*</td>|</table>)',
+                      document_text, re.I | re.S) if code else None
+    course['name_en'] = None
+    if match:
+        cells = re.sub(r'<[^>]+>', ' ', match.group(1))
+        cells = re.sub(r'\d+\s*\(\s*\d+\s*-\s*\d+\s*-\s*\d+\s*\)', ' ', cells)
+        candidates = re.findall(r"\b[A-Z][A-Z0-9 '&.,()/\-]{3,}[A-Z0-9]\b", cells)
+        candidates = [value.strip() for value in candidates if re.search(r'[A-Z]{2}', value)]
+        if len(candidates) == 1:
+            course['name_en'] = candidates[0]
+
+
+def normalize_merged_code_cells(text: str) -> str:
+    """Split only explicit N-code/N-row cells, never printed alternative choices."""
+    pattern = re.compile(r'<tr>\s*<td\s+rowspan=["\'](\d+)["\']>\s*([\d\s]+)</td>(.*?)</tr>', re.I | re.S)
+    def replace(match):
+        count = int(match.group(1))
+        codes = re.findall(r'(?<!\d)\d{8}(?!\d)', match.group(2))
+        if not 2 <= count <= 8 or len(codes) != count:
+            return match.group(0)
+        tail = text[match.end():]
+        following = re.match(r'(?:\s*<tr>.*?</tr>){'+str(count-1)+r'}', tail, re.I | re.S)
+        if not following:
+            return match.group(0)
+        bodies = [match.group(3)] + re.findall(r'<tr>(.*?)</tr>', following.group(0), re.I | re.S)
+        # Each continuation must contain just the name and credits, no new code.
+        if any(len(re.findall(r'<td\b', body, re.I)) != 2 or re.search(r'\d{8}', body) for body in bodies):
+            return match.group(0)
+        return ''.join(f'<tr><td>{code}</td>{body}</tr>' for code, body in zip(codes, bodies))
+    # Include following rows in replacement only after the strict structural test.
+    for match in reversed(list(pattern.finditer(text))):
+        replacement = replace(match)
+        if replacement == match.group(0):
+            continue
+        following = re.match(r'(?:\s*<tr>.*?</tr>){'+str(int(match.group(1))-1)+r'}', text[match.end():], re.I | re.S)
+        text = text[:match.start()] + replacement + text[match.end()+following.end():]
+    return text
+
+
 def merge_chunks(chunks: list[dict]) -> dict:
     seen: set[tuple] = set()
     courses: list[dict] = []
@@ -525,17 +581,33 @@ def merge_chunks(chunks: list[dict]) -> dict:
 #  ส่วนที่ 7 - 9 — PIPELINES
 # ==============================================================================
 
-def pipeline_vlm(pages: list[bytes], outdir: Path, *,
+def extract_vlm_pages(pages: list[bytes], outdir: Path, *,
                  page_numbers: list[int] | None = None,
-                 source_file: str | None = None) -> dict:
+                 source_file: str | None = None) -> list[str]:
     md_pages: list[str] = []
+    cache = outdir / 'ocr_page_checkpoints'
+    cache.mkdir(parents=True, exist_ok=True)
     for i, png in enumerate(pages):
         print(f"    [ขั้น 1/2] Typhoon-OCR หน้า {i + 1}/{len(pages)}")
+        # A completed page survives interruption; cache inputs exclude all labels.
+        identity = {'schema': 1, 'image_sha256': hashlib.sha256(png).hexdigest(),
+                    'source_file': source_file, 'pdf_page': (page_numbers or list(range(1,len(pages)+1)))[i],
+                    'model': MODEL_OCR, 'host': OLLAMA_HOST, 'prompt': TYPHOON_PROMPT,
+                    'num_ctx': OCR_NUM_CTX, 'num_predict': OCR_NUM_PREDICT, 'temperature': OCR_TEMPERATURE}
+        key = hashlib.sha256(json.dumps(identity,sort_keys=True).encode()).hexdigest()
+        checkpoint = cache / (key + '.json')
+        if checkpoint.exists():
+            saved = json.loads(checkpoint.read_text(encoding='utf-8'))
+            if saved.get('identity') != identity or hashlib.sha256(saved['markdown'].encode()).hexdigest() != saved.get('markdown_sha256'):
+                raise ValueError('OCR checkpoint mismatch; preserve it and use a new output')
+            md_pages.append(saved['markdown'])
+            print('      ใช้ผล OCR ของหน้าที่เสร็จแล้วจาก checkpoint')
+            continue
         md = ""
         for attempt in range(2):
             md = ollama_chat(MODEL_OCR,
                              [{"role": "user", "content": TYPHOON_PROMPT}],
-                             images=[png], temperature=0.1,
+                             images=[png], temperature=OCR_TEMPERATURE, retries=OCR_RETRIES,
                              num_ctx=OCR_NUM_CTX,
                              num_predict=OCR_NUM_PREDICT)
             meaningful = re.sub(r"[^0-9A-Za-zก-๙]+", "", md)
@@ -549,10 +621,23 @@ def pipeline_vlm(pages: list[bytes], outdir: Path, *,
                 "ยกเลิกก่อนเขียนทับ pred_vlm.json เดิม"
             )
         md_pages.append(md)
+        stage = checkpoint.with_suffix('.partial')
+        stage.write_text(json.dumps({'identity': identity, 'markdown': md,
+            'markdown_sha256': hashlib.sha256(md.encode()).hexdigest(),
+            'status': 'model extraction, NOT independently verified source truth'},
+            ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+        stage.replace(checkpoint)
 
     (outdir / "intermediate_vlm.md").write_text(
         "\n\n---\n\n".join(md_pages), encoding="utf-8")
 
+    return md_pages
+
+
+def pipeline_vlm(pages: list[bytes], outdir: Path, *,
+                 page_numbers: list[int] | None = None,
+                 source_file: str | None = None) -> dict:
+    md_pages = extract_vlm_pages(pages, outdir, page_numbers=page_numbers, source_file=source_file)
     return _text_to_json_chunked(
         md_pages, page_numbers=page_numbers, source_file=source_file)
 
@@ -567,7 +652,7 @@ def _text_to_json_chunked(md_pages: list[str], *,
         part = md_pages[ci * PAGES_PER_CHUNK:(ci + 1) * PAGES_PER_CHUNK]
         print(f"    [ขั้น 2/2] จัด JSON ก้อนที่ {ci + 1}/{n_chunks} ({len(part)} หน้า)")
         try:
-            document_text = "\n\n".join(part)
+            document_text = normalize_merged_code_cells("\n\n".join(part))
             heading_re = re.compile(r"ปีที่\s*\d+\s*ภาคการศึกษาที่\s*\d+")
             headings = list(heading_re.finditer(document_text))
             extraction_parts = [document_text]
@@ -626,6 +711,7 @@ def _text_to_json_chunked(md_pages: list[str], *,
                 term_total["source_file"] = source_file
                 term_total["page_number"] = source_page
             for course in d.get("courses") or []:
+                _ground_plan_table_fields(course, document_text)
                 try:
                     term = (int(course.get("year")), int(course.get("semester")))
                 except (TypeError, ValueError):
@@ -867,7 +953,6 @@ def denormalize_gt(data: dict, target_plan: str = "coop") -> dict:
         # ซึ่งไม่ตรงกับคีย์เดี่ยวใน courses_master ตรง ๆ ต้องลองแตกรหัสย่อย
         master_info = master_map.get(code) or {}
         if not master_info:
-            import re
             for sub_code in re.findall(r"(?<!\d)\d{8}(?!\d)", code):
                 if sub_code in master_map:
                     master_info = master_map[sub_code]
@@ -875,6 +960,10 @@ def denormalize_gt(data: dict, target_plan: str = "coop") -> dict:
 
         flat_courses.append({
             "code": code,
+            # Preserve per-option master facts for downstream conversion.
+            "course_options": {sub: master_map.get(sub, {}) for sub in
+                               re.findall(r"(?<!\d)\d{8}(?!\d)", str(code))}
+                              if len(re.findall(r"(?<!\d)\d{8}(?!\d)", str(code))) > 1 else {},
             "name_th": sched.get("name_th") or master_info.get("name_th"),
             "name_en": sched.get("name_en") or master_info.get("name_en"),
             "credits": sched.get("credits") or master_info.get("credits"),

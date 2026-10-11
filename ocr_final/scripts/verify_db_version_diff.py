@@ -16,6 +16,7 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument('--app-root', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
+    p.add_argument('--url', default='http://127.0.0.1:8000')
     a = p.parse_args()
     registry = DatabaseRegistry(a.app_root)
     result = {'scope': 'L3 mechanical comparison of imported DB plan-course sets; book-wide completeness and independent source accuracy remain n/a', 'cases': []}
@@ -24,7 +25,7 @@ def main():
         for plan in ['coop', 'no-coop']:
             question = f"หลักสูตร {program} แผน{'สหกิจ' if plan=='coop' else 'ไม่เข้าร่วมสหกิจ'} วิชาใดมีในหลักสูตรเดิม แต่ไม่มีในหลักสูตรฉบับปรับปรุง"
             started = time.perf_counter()
-            response = requests.post('http://127.0.0.1:8000/api/ask', json={'question': question}, timeout=90)
+            response = requests.post(a.url.rstrip('/')+'/api/ask', json={'question': question}, timeout=90)
             body = response.json()
             expected, sources = {}, {}
             for query in body.get('queries', []):
@@ -39,7 +40,7 @@ def main():
                 expected[db.curriculum_version] = {str(r['code']) for r in rows}
                 sources[db.curriculum_version] = sorted({r.get('source_file') for r in rows if r.get('source_file')})
             difference = sorted(expected.get(2560, set()) - expected.get(2565, set()))
-            frontend = requests.post('http://127.0.0.1:8000/ask', json={'curriculum': program, 'version': 'all versions', 'question': question}, timeout=90)
+            frontend = requests.post(a.url.rstrip('/')+'/ask', json={'curriculum': program, 'version': 'all versions', 'question': question}, timeout=90)
             ui = frontend.json()
             codes_in_answer = set(re.findall(r'(?<!\d)\d{8}(?!\d)', body.get('answer', '')))
             ordinary = {code for code in difference if re.fullmatch(r'\d{8}', code)}

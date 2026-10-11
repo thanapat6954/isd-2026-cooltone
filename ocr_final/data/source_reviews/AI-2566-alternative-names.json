@@ -1,0 +1,17 @@
+{
+  "purpose": "Production names-only approval from rendered source pages; not evaluation answers",
+  "program": "AI", "version": 2566, "source_file": "AI.pdf",
+  "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+  "review_status": "visually_verified", "reviewed_on": "2026-10-10",
+  "review_scope": "Study-plan names individually visible PDF26/book22. Course descriptions independently inspected PDF303/book299 and PDF304/book300; both explicitly None prerequisites on PDF304, distinct Thai descriptions. Description-section English titles differ from the plan titles; this names-only approval preserves study-plan names and does not populate descriptions/prerequisites.",
+  "reviews": [
+    {"plan": "coop", "code": "06046443", "pdf_page": 26, "printed_page": 22, "names": {
+      "name_th": "สหกิจศึกษาทางเทคโนโลยีปัญญาประดิษฐ์",
+      "name_en": "COOPERATIVE EDUCATION IN ARTIFICIAL INTELLIGENCE TECHNOLOGY"
+    }},
+    {"plan": "coop", "code": "06046444", "pdf_page": 26, "printed_page": 22, "names": {
+      "name_th": "สหกิจศึกษาต่างประเทศทางเทคโนโลยีปัญญาประดิษฐ์",
+      "name_en": "OVERSEA COOPERATIVE EDUCATION IN ARTIFICIAL INTELLIGENCE TECHNOLOGY"
+    }}
+  ]
+}

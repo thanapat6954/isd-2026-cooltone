@@ -1,0 +1,9 @@
+{
+ "program_id":"DSBA-no-coop","version":2560,"plan":"no-coop","source_file":"DSBA-60.pdf","status":"visually_verified",
+ "source_sha256":"6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13","reviewed_on":"2026-10-10",
+ "purpose":"Restore original source-supported label after magnified source review invalidated this batch's earlier reading; preserve both repair records",
+ "changes":[{"table":"plan_item","row_id":41,"pdf_page":29,"printed_page":24,
+ "before":{"name_th":"วิชาเลือกทางวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ 2"},
+ "values":{"name_th":"วิชาเลือกทางพิเศษวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ 2"},
+ "evidence":"Magnified source PDF29/book24 dsba-old-elective-detail.png clearly prints พิเศษ; prior deletion of that word is retracted"}]
+}

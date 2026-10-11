@@ -1,0 +1,7 @@
+{
+  "purpose": "Development/regression labels independently inspected from AI.pdf PDF288/book284; not held-out, never production input",
+  "groups": [{"program":"AI","versions":[2566],"plans":["coop"],"cases":[
+    {"question":"วิชา 06046402 มีวิชาบังคับก่อนอะไร และถ้ายังไม่ผ่านสามารถลงทะเบียนได้หรือไม่","level":"L2","code":"06046402","status":"explicit_none","requires":[],"registration_uncertain":true,"source":"AI.pdf","page":288,"book_page":284},
+    {"question":"วิชา 06066000 มีวิชาบังคับก่อนอะไร และถ้ายังไม่ผ่านสามารถลงทะเบียนได้หรือไม่","level":"L2","code":"06066000","status":"explicit_none","requires":[],"registration_uncertain":true,"source":"AI.pdf","page":288,"book_page":284}
+  ]}]
+}

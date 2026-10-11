@@ -27,7 +27,7 @@ def main():
     folder.mkdir(parents=True, exist_ok=False)
     paths = [*sorted((app / 'lab10_fastapi').rglob('*.py')),
              *sorted((app / 'frontend').glob('*')),
-             app / 'data/ground_truth/study_plan_relationships.json']
+             app / 'data/source_reviews/shared/study_plan_relationships.json']
     paths = [x for x in paths if x.is_file()]
     result = {'backup_folder': str(folder), 'files': {}, 'databases': [], 'protected': {}}
     for path in paths:

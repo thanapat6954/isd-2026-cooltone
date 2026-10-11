@@ -1,0 +1,11 @@
+{
+  "purpose": "Production note correction from rendered IT-60.pdf PDF32/book27; no evaluation input",
+  "status": "visually_verified", "reviewed_on": "2026-10-10",
+  "program_id": "IT-no-coop", "version": 2560, "plan": "no-coop", "source_file": "IT-60.pdf",
+  "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+  "changes": [{"table": "study_term", "row_id": 4, "pdf_page": 32, "printed_page": 27,
+    "evidence": "Year4/S1 no-coop table prints 06016329,06016339,06016349 Project 1 under the three specialization headings, not cooperative courses. Plan identity follows the existing independently reviewed plan section.",
+    "before": {"note": "ในแผนสหกิจศึกษา เลือกสหกิจในประเทศหรือสหกิจต่างประเทศของแขนงเดียวกัน ไม่บวกทุกตัวเลือก"},
+    "values": {"note": "ตารางแผนไม่สหกิจศึกษาแสดงโครงงาน 1 แยกตามแขนงวิชา; ข้อมูลนี้ไม่ใช่รายวิชาสหกิจศึกษา"}
+  }]
+}

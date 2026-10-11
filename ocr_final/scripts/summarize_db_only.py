@@ -112,7 +112,7 @@ def main():
         for item in exports:
             writer.writerow({**item, 'citations': json.dumps(item['citations'], ensure_ascii=False)})
     before = load(REPO / 'docs/results/db_only_provenance_verified_20261004.json')
-    review = load(ROOT / 'data/ground_truth/study_plan_db_review.json')
+    review = load(ROOT / 'data/source_reviews/shared/study_plan_db_review.json')
     inventory = []
     for case in before['cases']:
         for change in case['changes']:
@@ -122,7 +122,7 @@ def main():
                               'source_file': source, 'pdf_page': row.get('page_number'),
                               'reviewed_pdf_and_book_pages': review['approved_pages'].get(source, []),
                               'resolution': 'SQLite relation/renderer identifier' if change['field'] == 'requirement_id' else 'Book-reviewed stored fact or stored-column query correction',
-                              'approval': 'ocr_final/data/ground_truth/study_plan_db_review.json'})
+                              'approval': 'ocr_final/data/source_reviews/shared/study_plan_db_review.json'})
     (a.output_dir / 'overlay_contribution_inventory.json').write_text(json.dumps(inventory, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     source_evidence = {'classification': dict(Counter(x['type'] for x in inventory)),
                        'fields': dict(Counter(x['field'] for x in inventory)),

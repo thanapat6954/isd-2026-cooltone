@@ -1,0 +1,589 @@
+{
+  "schema_version": 1,
+  "purpose": "partial_source_evaluation",
+  "identity": {
+    "program": "BIT",
+    "version": 2565,
+    "plan": "no-coop"
+  },
+  "source_file": "BIT-65.pdf",
+  "printed_total": 126,
+  "verified_fields": [
+    "code",
+    "credits_raw",
+    "year",
+    "semester",
+    "printed_credits",
+    "pdf_page",
+    "printed_page"
+  ],
+  "unverified_fields": [
+    "complete course names",
+    "categories",
+    "prerequisites",
+    "graduation conditions",
+    "L3",
+    "L4"
+  ],
+  "plan_evidence": null,
+  "terms": [
+    {
+      "year": 1,
+      "semester": 1,
+      "pdf_page": 26,
+      "printed_page": 21,
+      "printed_credits": 18,
+      "rows": [
+        [
+          "06036100",
+          "3(2-2-5)"
+        ],
+        [
+          "06036101",
+          "3(3-0-6)"
+        ],
+        [
+          "06036118",
+          "3(2-2-5)"
+        ],
+        [
+          "96641001",
+          "2(1-2-3)"
+        ],
+        [
+          "96641003",
+          "1(0-3-2)"
+        ],
+        [
+          "96644007",
+          "3(3-0-6)"
+        ],
+        [
+          "96644042",
+          "3(3-0-6)"
+        ]
+      ],
+      "source_file": "BIT-65.pdf",
+      "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+      "image": "BIT-65-f7f8fba36276-026.png",
+      "image_sha256": "a434c0d246d6946135261d9ffccaffa612525502fa060741839c7c3426895e46",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06036100",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06036101",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06036118",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "96641001",
+          "credits_raw": "2(1-2-3)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "96641003",
+          "credits_raw": "1(0-3-2)",
+          "alternative_group": null,
+          "source_row_index": 4
+        },
+        {
+          "code": "96644007",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 5
+        },
+        {
+          "code": "96644042",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 6
+        }
+      ]
+    },
+    {
+      "year": 1,
+      "semester": 2,
+      "pdf_page": 27,
+      "printed_page": 22,
+      "printed_credits": 18,
+      "rows": [
+        [
+          "06036102",
+          "3(3-0-6)"
+        ],
+        [
+          "06036109",
+          "3(3-0-6)"
+        ],
+        [
+          "06036119",
+          "3(2-2-5)"
+        ],
+        [
+          "06036125",
+          "3(2-2-5)"
+        ],
+        [
+          "96641002",
+          "3(3-0-6)"
+        ],
+        [
+          "96644008",
+          "3(3-0-6)"
+        ]
+      ],
+      "source_file": "BIT-65.pdf",
+      "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+      "image": "BIT-65-f7f8fba36276-027.png",
+      "image_sha256": "7fc5969002d7e9aa8a5e8213b979c5e6d53b1d9a5ed2f70adbee2d8ed4bbe089",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06036102",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06036109",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06036119",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06036125",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "96641002",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 4
+        },
+        {
+          "code": "96644008",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 5
+        }
+      ]
+    },
+    {
+      "year": 2,
+      "semester": 1,
+      "pdf_page": 27,
+      "printed_page": 22,
+      "printed_credits": 18,
+      "rows": [
+        [
+          "06036103",
+          "3(3-0-6)"
+        ],
+        [
+          "06036104",
+          "3(3-0-6)"
+        ],
+        [
+          "06036105",
+          "3(3-0-6)"
+        ],
+        [
+          "06036117",
+          "3(3-0-6)"
+        ],
+        [
+          "06036120",
+          "3(3-0-6)"
+        ],
+        [
+          "06036122",
+          "3(2-2-5)"
+        ]
+      ],
+      "source_file": "BIT-65.pdf",
+      "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+      "image": "BIT-65-f7f8fba36276-027.png",
+      "image_sha256": "7fc5969002d7e9aa8a5e8213b979c5e6d53b1d9a5ed2f70adbee2d8ed4bbe089",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06036103",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06036104",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06036105",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06036117",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "06036120",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 4
+        },
+        {
+          "code": "06036122",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 5
+        }
+      ]
+    },
+    {
+      "year": 2,
+      "semester": 2,
+      "pdf_page": 28,
+      "printed_page": 23,
+      "printed_credits": 18,
+      "rows": [
+        [
+          "06036108",
+          "3(3-0-6)"
+        ],
+        [
+          "06036111",
+          "3(3-0-6)"
+        ],
+        [
+          "06036112",
+          "3(2-2-5)"
+        ],
+        [
+          "06036113",
+          "3(3-0-6)"
+        ],
+        [
+          "06036124",
+          "3(3-0-6)"
+        ],
+        [
+          "9664xxxx",
+          "3(3-0-6)"
+        ]
+      ],
+      "source_file": "BIT-65.pdf",
+      "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+      "image": "BIT-65-f7f8fba36276-028.png",
+      "image_sha256": "522c16bdd606067183d5c1218315233752db8ea893bb85ff1b7d2756fa483f93",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06036108",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06036111",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06036112",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06036113",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "06036124",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 4
+        },
+        {
+          "code": "9664xxxx",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 5
+        }
+      ]
+    },
+    {
+      "year": 3,
+      "semester": 1,
+      "pdf_page": 28,
+      "printed_page": 23,
+      "printed_credits": 18,
+      "rows": [
+        [
+          "06036107",
+          "3(3-0-6)"
+        ],
+        [
+          "06036110",
+          "3(3-0-6)"
+        ],
+        [
+          "06036114",
+          "3(2-2-5)"
+        ],
+        [
+          "06036121",
+          "3(3-0-6)"
+        ],
+        [
+          "06036123",
+          "3(3-0-6)"
+        ],
+        [
+          "96644xxx",
+          "3(3-0-6) หรือ 3(2-2-5)"
+        ]
+      ],
+      "source_file": "BIT-65.pdf",
+      "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+      "image": "BIT-65-f7f8fba36276-028.png",
+      "image_sha256": "522c16bdd606067183d5c1218315233752db8ea893bb85ff1b7d2756fa483f93",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06036107",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06036110",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06036114",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06036121",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "06036123",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 4
+        },
+        {
+          "code": "96644xxx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 5
+        }
+      ]
+    },
+    {
+      "year": 3,
+      "semester": 2,
+      "pdf_page": 29,
+      "printed_page": 24,
+      "printed_credits": 12,
+      "rows": [
+        [
+          "06036106",
+          "3(3-0-6)"
+        ],
+        [
+          "06036116",
+          "3(2-2-5)"
+        ],
+        [
+          "06036145",
+          "3(0-9-0)"
+        ],
+        [
+          "96643021",
+          "3(3-0-6)"
+        ]
+      ],
+      "source_file": "BIT-65.pdf",
+      "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+      "image": "BIT-65-f7f8fba36276-029.png",
+      "image_sha256": "52460e3dddd018fd8557d133c627d1cdebe01f3ceb1f6148cd751763cb020208",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06036106",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06036116",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06036145",
+          "credits_raw": "3(0-9-0)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "96643021",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 3
+        }
+      ]
+    },
+    {
+      "year": 4,
+      "semester": 1,
+      "pdf_page": 29,
+      "printed_page": 24,
+      "printed_credits": 12,
+      "rows": [
+        [
+          "06036115",
+          "3(3-0-6)"
+        ],
+        [
+          "06036146",
+          "3(0-9-0)"
+        ],
+        [
+          "96642033",
+          "3(3-0-6)"
+        ],
+        [
+          "9664xxxx",
+          "3(3-0-6)"
+        ]
+      ],
+      "source_file": "BIT-65.pdf",
+      "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+      "image": "BIT-65-f7f8fba36276-029.png",
+      "image_sha256": "52460e3dddd018fd8557d133c627d1cdebe01f3ceb1f6148cd751763cb020208",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06036115",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06036146",
+          "credits_raw": "3(0-9-0)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "96642033",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "9664xxxx",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 3
+        }
+      ]
+    },
+    {
+      "year": 4,
+      "semester": 2,
+      "pdf_page": 30,
+      "printed_page": 25,
+      "printed_credits": 12,
+      "rows": [
+        [
+          "06036xxx",
+          "3(3-0-6) หรือ 3(2-2-5)"
+        ],
+        [
+          "06036xxx",
+          "3(3-0-6) หรือ 3(2-2-5)"
+        ],
+        [
+          "Xxxxxxxx",
+          "3(3-0-6)"
+        ],
+        [
+          "Xxxxxxxx",
+          "3(3-0-6)"
+        ]
+      ],
+      "source_file": "BIT-65.pdf",
+      "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+      "image": "BIT-65-f7f8fba36276-030.png",
+      "image_sha256": "9457e573bd5e7d08a6380bac28a4aaa51e4e5cfa57bca4535ef50b1321b7cc71",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06036xxx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06036xxx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "Xxxxxxxx",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "Xxxxxxxx",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 3
+        }
+      ]
+    }
+  ]
+}

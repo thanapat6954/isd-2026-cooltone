@@ -120,14 +120,17 @@ class DatabaseInfo:
 
 def open_readonly(path: Path) -> sqlite3.Connection:
     # Import at connection creation to avoid the DatabaseInfo/planner cycle.
-    from .query_planner import normalize_course_name
+    from .query_planner import normalize_course_name, course_name_matches
+    from .request_budget import remaining
     """Open one SQLite file in read-only/query-only mode."""
     uri = path.resolve().as_uri() + "?mode=ro"
-    connection = sqlite3.connect(uri, uri=True, timeout=5)
+    connection = sqlite3.connect(uri, uri=True, timeout=remaining(5))
     try:
         connection.row_factory = sqlite3.Row
         connection.create_function('normalize_course_name', 1,
                                    lambda value: normalize_course_name(str(value or '')), deterministic=True)
+        connection.create_function('course_name_matches', 2,
+                                   lambda value, term: course_name_matches(str(value or ''), str(term or '')), deterministic=True)
         connection.execute("PRAGMA query_only = ON")
         return connection
     except Exception:
@@ -217,14 +220,18 @@ class DatabaseRegistry:
 
     def __init__(self, root: Path):
         self.root = root.resolve()
+        from .build_store import selected_build
+        self.discovery_root, self.build_id, self.build_manifest = selected_build(self.root)
+        from .build_scope import contract
+        self.build_contract = contract(self.build_manifest)
         self.databases: list[DatabaseInfo] = []
         self.refresh()
 
     def refresh(self) -> list[DatabaseInfo]:
-        ignored = {".git", ".venv", "venv", "__pycache__", "node_modules", "backups", "handoff", "verification"}
+        ignored = {".git", ".venv", "venv", "__pycache__", "node_modules", "backups", "handoff", "verification", "builds", "staging", "attempts"}
         paths = [
-            path for path in self.root.rglob("curriculum.db")
-            if not any(part.casefold() in ignored for part in path.relative_to(self.root).parts)
+            path for path in self.discovery_root.rglob("curriculum.db")
+            if not any(part.casefold() in ignored for part in path.relative_to(self.discovery_root).parts)
         ]
         inspected = [inspect_database(path, self.root) for path in sorted(paths)]
 
@@ -267,7 +274,7 @@ class DatabaseRegistry:
         resolved = path.resolve()
         return next((item for item in self.databases if item.path == resolved), None)
 
-    def select(self, question: str, *, include_legacy: bool = False) -> list[DatabaseInfo]:
+    def select(self, question: str, *, include_legacy: bool = False, compare_versions=False, compare_plans=False) -> list[DatabaseInfo]:
         text = question.casefold()
         compact = re.sub(r"[_‐‑‒–—-]+", " ", text)
         if re.search(r"\blegacy\b|ฐานข้อมูลเดิม", compact):
@@ -324,15 +331,15 @@ class DatabaseRegistry:
                 if any((item.program_id or "").casefold().startswith(program) for program in programs)
             ]
         explicit_versions = {int(value) for value in re.findall(r'(?<!\d)(25\d{2})(?!\d)',compact)}
-        if len(explicit_versions) == 1 or (not explicit_versions and wants_2560 != wants_2565):
+        if not compare_versions and (len(explicit_versions) == 1 or (not explicit_versions and wants_2560 != wants_2565)):
             requested_version = next(iter(explicit_versions)) if explicit_versions else (2560 if wants_2560 else 2565)
             if not explicit_versions and wants_2565:
                 candidates = [item for item in candidates if (item.program or {}).get('is_latest')]
             else:
                 candidates = [item for item in candidates if item.curriculum_version == requested_version]
-        if no_coop:
+        if no_coop and not compare_plans:
             candidates = [item for item in candidates if item.plan == 'no-coop']
-        elif coop:
+        elif coop and not compare_plans:
             candidates = [
                 item for item in candidates
                 if item.plan == 'coop'
@@ -392,7 +399,7 @@ def normalize_sql(sql: str, max_rows: int) -> str:
     return statement
 
 
-def validate_sql(database: DatabaseInfo, sql: str, max_rows: int = 100) -> ValidationResult:
+def validate_sql(database: DatabaseInfo, sql: str, max_rows: int = 100, parameters=()) -> ValidationResult:
     statement = normalize_sql(sql, max_rows)
     references: list[str] = []
 
@@ -406,7 +413,7 @@ def validate_sql(database: DatabaseInfo, sql: str, max_rows: int = 100) -> Valid
     try:
         connection = open_readonly(database.path)
         connection.set_authorizer(authorizer)
-        connection.execute("EXPLAIN QUERY PLAN " + statement).fetchall()
+        connection.execute("EXPLAIN QUERY PLAN " + statement, parameters).fetchall()
     except sqlite3.Error as exc:
         raise SqlValidationError(str(exc)) from exc
     finally:
@@ -415,8 +422,10 @@ def validate_sql(database: DatabaseInfo, sql: str, max_rows: int = 100) -> Valid
     return ValidationResult(statement, tuple(sorted(set(references))))
 
 
-def execute_readonly(database: DatabaseInfo, sql: str, max_rows: int = 100) -> tuple[ValidationResult, list[dict[str, Any]]]:
-    validation = validate_sql(database, sql, max_rows)
+def execute_readonly(database: DatabaseInfo, sql: str, max_rows: int = 100, parameters=()) -> tuple[ValidationResult, list[dict[str, Any]]]:
+    from .request_budget import expired, check_deadline
+    check_deadline()
+    validation = validate_sql(database, sql, max_rows, parameters)
     connection: sqlite3.Connection | None = None
     try:
         connection = open_readonly(database.path)
@@ -426,12 +435,14 @@ def execute_readonly(database: DatabaseInfo, sql: str, max_rows: int = 100) -> t
         def progress() -> int:
             nonlocal steps
             steps += 1
-            return 1 if steps > 20_000 else 0
+            return 1 if steps > 20_000 or expired() else 0
 
         connection.set_progress_handler(progress, 1_000)
-        rows = [dict(row) for row in connection.execute(validation.sql).fetchmany(max_rows)]
+        rows = [dict(row) for row in connection.execute(validation.sql, parameters).fetchmany(max_rows)]
+        check_deadline()
         return validation, rows
     except sqlite3.Error as exc:
+        check_deadline()
         raise SqlValidationError(str(exc)) from exc
     finally:
         if connection is not None:

@@ -1,0 +1,9 @@
+{
+ "purpose":"Page-selection approvals only; not course-fact ingestion or evaluation answers",
+ "review_status":"visually_verified",
+ "reviews":[
+  {"source_file":"DSBA.pdf","source_sha256":"01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1","decision":"include","reason":"ตรวจภาพ PDF23–36 แล้ว เป็นแผนการศึกษาทั้งสองแผน แม้แถวต่อเนื่อง PDF36 ยังไม่ครบก็ต้องเก็บไว้ ไม่ตัดหน้าที่มีปัญหา","pages":[[23,22],[24,23],[25,24],[26,25],[27,26],[28,27],[29,28],[30,29],[31,30],[32,31],[33,32],[34,33],[35,34],[36,35]]},
+  {"source_file":"IT.pdf","source_sha256":"aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa","decision":"include","reason":"ตรวจภาพแล้ว: เงื่อนไขสหกิจ แผนการศึกษา และกลุ่มวิชาเฉพาะด้าน เป็นเนื้อหาที่ต้องเก็บ","pages":[[30,25],[31,26],[32,27],[35,30],[38,33],[39,34]]},
+  {"source_file":"BIT-65.pdf","source_sha256":"f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc","decision":"include","reason":"ตรวจภาพชื่อข้อบังคับและเกณฑ์สำเร็จการศึกษาข้อ26 ต้องเก็บ appendix ที่เกี่ยวข้อง ไม่ตัดเพียงเพราะเป็นภาคผนวก","pages":[[87,82],[93,88]]}
+ ]
+}

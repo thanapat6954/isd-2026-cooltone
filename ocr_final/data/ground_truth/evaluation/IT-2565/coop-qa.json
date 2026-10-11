@@ -1,0 +1,50 @@
+{
+  "purpose": "development/regression; NOT held-out",
+  "groups": [
+    {
+      "program": "IT",
+      "versions": [
+        2565
+      ],
+      "plans": [
+        "coop"
+      ],
+      "cases": [
+        {
+          "question": "ปี 1 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "source": "IT.pdf",
+          "page": 38,
+          "book_page": 33,
+          "level": "L2",
+          "label_evidence": {
+            "source_file": "IT.pdf",
+            "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+            "image": "IT-aca97dc8b573-038.png",
+            "image_sha256": "84714f49d4ef73c0c7ce5b79c9099a7268f2c54becbec2abce803aa91c7eb10c",
+            "pdf_page": 38,
+            "printed_page": 33,
+            "review_status": "manually_inspected_rendered_image"
+          }
+        },
+        {
+          "question": "ปี 1 ภาคการศึกษาที่ 2 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "source": "IT.pdf",
+          "page": 39,
+          "book_page": 34,
+          "level": "L2",
+          "label_evidence": {
+            "source_file": "IT.pdf",
+            "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+            "image": "IT-aca97dc8b573-039.png",
+            "image_sha256": "2ac54923ff2e62bdf9a013d4b96d758acccc60f03ad644ab85a7a1e72c825068",
+            "pdf_page": 39,
+            "printed_page": 34,
+            "review_status": "manually_inspected_rendered_image"
+          }
+        }
+      ]
+    }
+  ]
+}

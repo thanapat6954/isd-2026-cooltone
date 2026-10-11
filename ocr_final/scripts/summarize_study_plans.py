@@ -24,7 +24,7 @@ def main():
     gold = read('study_plan_gold_recovered.json')
     tests = read('study_plan_tests_verified.json')
     before = read('study_plan_before.json')
-    manifest = json.loads((ROOT/'data/ground_truth/study_plan_relationships.json').read_text(encoding='utf-8'))
+    manifest = json.loads((ROOT/'data/source_reviews/shared/study_plan_relationships.json').read_text(encoding='utf-8'))
     changed = [p for p, digest in api['dependencies'].items() if sha(app/p) != digest]
     for evidence in (gold, old):
         changed.extend('code/'+p for p, digest in evidence['dependencies']['code'].items()
@@ -42,7 +42,7 @@ def main():
     unit_n = int(re.search(r'Ran (\d+) tests',tests['runs'][0]['stderr'])[1])
     schema = re.search(r'ผ่าน\s+(\d+)\s*/\s*ไม่ผ่าน\s+(\d+)',tests['runs'][1]['stdout'])
     deployed_paths = ['frontend/app.js','frontend/index.html','frontend/style.css',
-                     'data/ground_truth/study_plan_relationships.json',
+                     'data/source_reviews/shared/study_plan_relationships.json',
                      *['lab10_fastapi/curriculum_app/'+name for name in
                        ['study_plan.py','main.py','model_service.py','query_planner.py','schemas.py']]]
     deployed = {p:sha(ROOT/p)==sha(app/p) for p in deployed_paths}

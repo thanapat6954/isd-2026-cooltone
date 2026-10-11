@@ -5,7 +5,7 @@ import { citationHref, sourceFilename, pageLabel, shouldSubmitOnEnter } from '..
 
 test('citations use only recorded allowlisted source identities and integer PDF pages', () => {
   for (const file of ['AI', 'DSBA', 'DSBA-60', 'IT', 'IT-60', 'BIT-65', 'BIT-60']) {
-    assert.equal(citationHref('http://localhost:8000', `${file}.pdf`, 41), `http://localhost:8000/api/source/${file}.pdf#page=41`);
+    assert.equal(citationHref('http://localhost:8000', `${file}.pdf`, 41), `http://localhost:8000/source-viewer/${file}.pdf?page=41`);
   }
   for (const file of ['../../IT.pdf', 'https://example.com/IT.pdf', 'Unknown.pdf', null]) assert.equal(citationHref('', file, 1), null);
   for (const page of [null, '', 0, -1, 1.5, 'NaN', '1&x=2']) assert.equal(citationHref('', 'IT.pdf', page), null);
@@ -45,4 +45,10 @@ test('control labels, error recovery, accessible tables and reduced motion are p
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /:focus-visible/);
   assert.doesNotMatch(css, /overflow-x: hidden/);
+});
+
+test('structured cards do not hide response-wide evidence limitations', () => {
+  const source = readFileSync(new URL('../frontend/app.js', import.meta.url), 'utf8');
+  assert.match(source, /\(payload\?\.notes \|\| \[\]\)\.forEach/);
+  assert.match(source, /add\(container, 'p', note, 'plan-note'\)/);
 });

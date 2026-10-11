@@ -1,0 +1,7 @@
+{
+ "purpose":"development/regression; NOT held-out; independently re-read DSBA.pdf PDF36/book35 with two renderers",
+ "groups":[{"program":"DSBA","versions":[2565],"plans":["coop"],"cases":[
+  {"question":"ปี 4 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต","credits":12,"source":"DSBA.pdf","page":36,"book_page":35,"level":"L2"},
+  {"question":"วิชา 06026215 มีกี่หน่วยกิต","code":"06026215","credits":3,"name_th":"โครงงานวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ 2","source":"DSBA.pdf","page":36,"book_page":35,"level":"L1"}
+ ]}]
+}

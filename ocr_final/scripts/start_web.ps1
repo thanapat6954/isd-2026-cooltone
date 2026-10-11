@@ -1,4 +1,4 @@
-param([int]$Port = 8000, [ValidateRange(5,120)][int]$StartupTimeoutSeconds = 60)
+param([ValidateRange(1,65535)][int]$Port = 8000, [ValidateRange(5,120)][int]$StartupTimeoutSeconds = 60)
 $ErrorActionPreference = 'Stop'
 $appRoot = Split-Path $PSScriptRoot -Parent
 $pythonPath = Join-Path $appRoot 'venv/Scripts/python.exe'
@@ -16,11 +16,14 @@ if ($listener) {
         Write-Output "Backend already running, database and configured model ready: $url/frontend/"
         exit 0
     } catch {
-        throw "Port $Port is occupied; readiness check failed: $($_.Exception.Message). No process was stopped."
+        throw "Port $Port is occupied; readiness check failed: มีโปรแกรมใช้อยู่ เลือก port ว่างด้วย -Port 8005 และเปิด URL ที่ launcher พิมพ์; ไม่หยุด process อื่น. $($_.Exception.Message)"
     }
 }
 $logFolder = Join-Path $appRoot 'work/web'
 New-Item -ItemType Directory -Path $logFolder -Force | Out-Null
+# Fail before spawning when artifacts/models are missing. This never runs OCR.
+& $pythonPath -X utf8 (Join-Path $PSScriptRoot 'check_setup.py')
+if ($LASTEXITCODE -ne 0) { throw 'ข้อมูลหรือ model ไม่พร้อม: ตรวจรายการข้างบน, restore PDFs/DB และ ollama pull qwen3:4b แล้วลองใหม่' }
 $runTag = Get-Date -Format 'yyyyMMdd-HHmmss-fff'
 $stdoutPath = Join-Path $logFolder "backend-$runTag.stdout.log"
 $stderrPath = Join-Path $logFolder "backend-$runTag.stderr.log"

@@ -1,0 +1,17 @@
+{
+  "purpose": "Production names-only approval, independent rendered source review; not evaluation answers",
+  "program": "DSBA", "version": 2565, "source_file": "DSBA.pdf",
+  "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+  "review_status": "visually_verified", "reviewed_on": "2026-10-10",
+  "review_scope": "Names individually visible PDF341/book340 and study-plan PDF36/book35. Both prerequisites explicitly None on PDF341, independently observed, not changed by this names-only approval. Thai descriptions differ; overseas text continues PDF342/book341. Description fields are not filled by this approval.",
+  "reviews": [
+    {"plan": "coop", "code": "06026259", "pdf_page": 341, "printed_page": 340, "names": {
+      "name_th": "สหกิจศึกษาทางวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ",
+      "name_en": "COOPERATIVE EDUCATION IN DATA SCIENCE AND BUSINESS ANALYTICS"
+    }},
+    {"plan": "coop", "code": "06026260", "pdf_page": 341, "printed_page": 340, "names": {
+      "name_th": "สหกิจศึกษาต่างประเทศทางวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ",
+      "name_en": "OVERSEA COOPERATIVE EDUCATION IN DATA SCIENCE AND BUSINESS ANALYTICS"
+    }}
+  ]
+}

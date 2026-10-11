@@ -31,7 +31,7 @@ def changes(db,reviews):
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--app-root',type=Path,required=True)
-    parser.add_argument('--reviews',type=Path,default=ROOT/'data/ground_truth/old2560_name_reviews.json')
+    parser.add_argument('--reviews',type=Path,default=ROOT/'data/source_reviews/shared/old2560_name_reviews.json')
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--apply',action='store_true')
     parser.add_argument('--database',type=Path)

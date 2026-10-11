@@ -17,7 +17,7 @@ from lab10_fastapi.curriculum_app.database import DatabaseRegistry,open_readonly
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--app-root',type=Path,default=ROOT)
-    parser.add_argument('--reviews',type=Path,default=ROOT/'data/ground_truth/document_identity_reviews.json')
+    parser.add_argument('--reviews',type=Path,default=ROOT/'data/source_reviews/shared/document_identity_reviews.json')
     parser.add_argument('--database',type=Path)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--apply',action='store_true')

@@ -1,0 +1,10 @@
+{
+  "purpose":"production citation-only approvals, separate from evaluation expected answers",
+  "review_status":"visually_verified",
+  "review_date":"2026-10-08",
+  "evidence":"docs/results/current_source_20261008/source_pages; all fourteen page images inspected",
+  "reviews":[
+    {"program":"BIT","version":2565,"source_file":"BIT-65.pdf","source_sha256":"f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc","pages":[[26,21],[27,22],[28,23],[29,24],[30,25],[31,26],[32,27],[33,28],[34,29],[35,30]]},
+    {"program":"AI","version":2566,"source_file":"AI.pdf","source_sha256":"268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f","pages":[[23,19],[24,20],[25,21],[26,22]]}
+  ]
+}

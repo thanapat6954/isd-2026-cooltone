@@ -6,6 +6,7 @@ import os
 from pathlib import Path
 import subprocess
 import sys
+import requests
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,31 +19,56 @@ def sha(path):
         return hashlib.file_digest(stream, 'sha256').hexdigest()
 
 
+def dependency_paths(app, root=ROOT):
+    """Lock both the deployed app and build inputs, including file-set changes."""
+    paths = [d.path for d in DatabaseRegistry(app).databases]
+    for base in {app.resolve(), root.resolve()}:
+        for directory, pattern in (
+            ('lab10_fastapi/curriculum_app', '*.py'),
+            ('scripts', '*.py'), ('scripts', '*.ps1'),
+            ('frontend', '*.*'), ('scr/ocr_system', '*.py'),
+        ):
+            paths.extend((base / directory).glob(pattern))
+        paths.extend((base / 'data/source_reviews').rglob('*.json'))
+        paths.extend((base / 'data/ground_truth').rglob('*.json'))
+        paths.extend((base / 'tests').glob('*.json'))
+        paths.extend((base / 'tests').glob('test_*.*'))
+        paths.extend(base.glob('*.py'))
+        paths.extend(base.glob('requirements*.txt'))
+    paths.extend((app / 'work').glob('lab8b_*/lab7b/pred_vlm.json'))
+    paths.extend((app / 'data/input').glob('*.pdf'))
+    return sorted({path.resolve() for path in paths if path.is_file()})
+
+
+def dependency_snapshot(app, root=ROOT):
+    return {str(path): sha(path) for path in dependency_paths(app, root)}
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('--app-root', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--resume', action='store_true')
+    p.add_argument('--url', default='http://127.0.0.1:8000', help='Actual backend listener for the development gold API run')
     a = p.parse_args()
     app, output = a.app_root.resolve(), a.output.resolve()
+    health_response=requests.get(a.url.rstrip('/')+'/api/health',timeout=10)
+    health_response.raise_for_status()
+    health=health_response.json()
+    if Path(health['lab8b_module']).resolve()!=app/'scr/ocr_system/lab8b_curriculum_db.py':
+        raise ValueError('Selected listener belongs to another application root')
+    expected_paths={str(d.path) for d in DatabaseRegistry(app).active_catalogs}
+    actual_paths={str(Path(d['database_path']).resolve()) for d in health['databases'] if d['queryable']}
+    if expected_paths!=actual_paths:
+        raise ValueError('Selected listener loaded a different database set; restart the owned backend')
     output.mkdir(parents=True, exist_ok=True)
-    paths = list((app/'lab10_fastapi/curriculum_app').glob('*.py'))
-    paths += [d.path for d in DatabaseRegistry(app).databases]
-    paths += list((ROOT/'tests').glob('*.json'))
-    paths += list((ROOT/'tests').glob('test_*.*'))
-    paths += list((ROOT/'scripts').glob('*.py'))
-    paths += list((ROOT/'scripts').glob('*.ps1'))
-    paths += list((ROOT/'frontend').glob('*.*'))
-    paths += [ROOT/'scr/ocr_system/lab8b_curriculum_db.py']
-    paths += list((app/'work').glob('lab8b_*/lab7b/pred_vlm.json'))
-    paths += list((app/'data/input').glob('*.pdf'))
-    dependencies = {str(path): sha(path) for path in paths}
+    dependencies = dependency_snapshot(app)
     state_path = output/'checks.json'
     state = {'purpose': 'observed regression/provenance, NOT full independent book accuracy',
-             'started_utc': datetime.now(timezone.utc).isoformat(), 'dependencies': dependencies, 'jobs': []}
+             'started_utc': datetime.now(timezone.utc).isoformat(), 'dependencies': dependencies, 'jobs': [], 'url': a.url, 'server_identity': health}
     if a.resume and state_path.exists():
         state = json.loads(state_path.read_text(encoding='utf-8'))
-        if state['dependencies'] != dependencies:
+        if state['dependencies'] != dependencies or state.get('url', 'http://127.0.0.1:8000') != a.url:
             raise ValueError('Dependencies changed; use a new output folder')
     def save():
         stage = state_path.with_suffix('.partial')
@@ -52,11 +78,11 @@ def main():
     jobs = [
         ('unit', [sys.executable, '-X', 'utf8', '-m', 'unittest', 'discover', '-s', 'tests', '-v']),
         ('schema', [sys.executable, '-X', 'utf8', 'scr/ocr_system/lab8b_curriculum_db.py', 'selftest']),
-        ('frontend', ['node', '--test', 'tests/test_frontend_presentation.mjs']),
-        ('gold', [sys.executable, '-X', 'utf8', 'scripts/run_qa_gold.py', '--app-root', str(app), '--runs', '1', '--output', str(output/'gold.json')]),
-        ('old2560', [sys.executable, '-X', 'utf8', 'scripts/run_old2560_qa.py', '--app-root', str(app), '--output', str(output/'old2560.json')]),
-        ('provenance', [sys.executable, '-X', 'utf8', 'scripts/audit_answer_provenance.py', '--app-root', str(app), '--output', str(output/'provenance.json')]),
-        ('version_sets', [sys.executable, '-X', 'utf8', 'scripts/verify_db_version_diff.py', '--app-root', str(app), '--output', str(output/'version_sets.json')]),
+        ('frontend', ['node', '--test', 'tests/test_frontend_presentation.mjs', 'tests/test_active_scope.mjs']),
+        ('gold', [sys.executable, '-X', 'utf8', 'scripts/run_qa_gold.py', '--app-root', str(app), '--url', a.url, '--runs', '1', '--output', str(output/'gold.json')]),
+        ('old2560', [sys.executable, '-X', 'utf8', 'scripts/run_old2560_qa.py', '--app-root', str(app), '--url', a.url, '--output', str(output/'old2560.json')]),
+        ('provenance', [sys.executable, '-X', 'utf8', 'scripts/audit_answer_provenance.py', '--app-root', str(app), '--url', a.url, '--output', str(output/'provenance.json')]),
+        ('version_sets', [sys.executable, '-X', 'utf8', 'scripts/verify_db_version_diff.py', '--app-root', str(app), '--url', a.url, '--output', str(output/'version_sets.json')]),
     ]
     save()
     done = {j['name'] for j in state['jobs'] if j['exit_code'] == 0}
@@ -74,7 +100,8 @@ def main():
             print('Stopped after failing check; raw output saved. No data or labels changed.')
             return 1
     state['running'] = None
-    state['dependencies_unchanged'] = all(sha(Path(path)) == value for path, value in dependencies.items())
+    # Re-discover files as well as rehashing: additions/deletions are changes too.
+    state['dependencies_unchanged'] = dependency_snapshot(app) == dependencies
     save()
     return 0 if state['dependencies_unchanged'] else 1
 

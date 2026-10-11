@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 import sqlite3
+import shutil
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -39,14 +40,15 @@ def snapshot(source, destination):
                 raise ValueError('Snapshot integrity failed: '+str(destination))
 
 
-def export_bundle(app, output):
+def export_bundle(app, output, include_pdfs=False):
     if output.exists():
         raise FileExistsError('Use a new bundle directory; existing artifacts are preserved')
     databases = DatabaseRegistry(app).active_catalogs
     if not databases:
         raise ValueError('No runtime databases found')
     output.mkdir(parents=True)
-    result = {'format': 1, 'scope': 'runtime snapshot; partial book review, NOT independent ground truth',
+    result = {'format': 1, 'includes_source_pdfs': include_pdfs,
+              'scope': 'runtime snapshot; partial book review, NOT independent ground truth',
               'databases': [], 'source_pdfs': []}
     for db in databases:
         target = within(output, db.relative_path)
@@ -55,12 +57,19 @@ def export_bundle(app, output):
                                    'sha256': sha(target), 'bytes': target.stat().st_size,
                                    'integrity': 'ok', 'version': db.curriculum_version, 'plan': db.plan})
     for path in sorted((app/'data/input').glob('*.pdf')):
-        result['source_pdfs'].append({'path': 'data/input/'+path.name, 'sha256': sha(path)})
+        relative = 'data/input/'+path.name
+        if include_pdfs:
+            target = within(output, relative)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(path, target)
+            if sha(target) != sha(path):
+                raise ValueError('Source PDF changed during export')
+        result['source_pdfs'].append({'path': relative, 'sha256': sha(path), 'bytes': path.stat().st_size})
     (output/'manifest.json').write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     return result
 
 
-def restore_bundle(bundle, app):
+def restore_bundle(bundle, app, reuse_verified_pdfs=False):
     manifest = json.loads((bundle/'manifest.json').read_text(encoding='utf-8'))
     if manifest.get('format') != 1 or not manifest.get('databases'):
         raise ValueError('Unsupported or empty runtime bundle')
@@ -78,10 +87,30 @@ def restore_bundle(bundle, app):
         if any(target == prior[1] for prior in planned):
             raise ValueError('Duplicate bundle path')
         planned.append((source, target))
-    # Verify every path/hash before writing anything. Source PDFs are separate inputs.
+    pdfs = []
+    reused_pdfs = []
+    if manifest.get('includes_source_pdfs'):
+        for item in manifest.get('source_pdfs', []):
+            source, target = within(bundle, item['path']), within(app, item['path'])
+            if not item['path'].startswith('data/input/') or source.suffix.lower() != '.pdf':
+                raise ValueError('Invalid PDF placement')
+            if sha(source) != item['sha256'] or any(target == prior[1] for prior in pdfs):
+                raise ValueError('Invalid or duplicate PDF')
+            if target.exists():
+                if not reuse_verified_pdfs or not target.is_file() or sha(target) != item['sha256']:
+                    raise FileExistsError('Restore never overwrites a source PDF: '+str(target))
+                reused_pdfs.append(item['path'])
+                continue
+            pdfs.append((source, target))
+    # Validate all artifact paths/hashes before writing any database or PDF.
     for source, target in planned:
         snapshot(source, target)
-    return {'restored': len(planned), 'source_pdfs_required_separately': manifest.get('source_pdfs', []),
+    for source, target in pdfs:
+        target.parent.mkdir(parents=True, exist_ok=True)
+        with source.open('rb') as src, target.open('xb') as dst:
+            shutil.copyfileobj(src, dst)
+    return {'restored': len(planned), 'pdfs_restored': len(pdfs), 'pdfs_reused': reused_pdfs,
+            'source_pdfs_required_separately': [] if pdfs else manifest.get('source_pdfs', []),
             'scope': manifest.get('scope')}
 
 
@@ -91,11 +120,13 @@ def main():
     ex = sub.add_parser('export')
     ex.add_argument('--app-root', type=Path, default=ROOT)
     ex.add_argument('--output', type=Path, required=True)
+    ex.add_argument('--include-pdfs', action='store_true', help='Prepare a complete local handoff, never publish automatically')
     re = sub.add_parser('restore')
     re.add_argument('--bundle', type=Path, required=True)
     re.add_argument('--app-root', type=Path, default=ROOT)
+    re.add_argument('--reuse-verified-pdfs', action='store_true', help='Reuse existing PDFs only when their SHA256 matches the bundle; never overwrite')
     args = p.parse_args()
-    result = export_bundle(args.app_root.resolve(), args.output.resolve()) if args.action == 'export' else restore_bundle(args.bundle.resolve(), args.app_root.resolve())
+    result = export_bundle(args.app_root.resolve(), args.output.resolve(), args.include_pdfs) if args.action == 'export' else restore_bundle(args.bundle.resolve(), args.app_root.resolve(), args.reuse_verified_pdfs)
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 

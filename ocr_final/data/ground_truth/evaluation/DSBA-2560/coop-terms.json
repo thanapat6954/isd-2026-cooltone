@@ -1,0 +1,341 @@
+{
+  "schema_version": 1,
+  "purpose": "partial_source_evaluation",
+  "identity": {
+    "program": "DSBA",
+    "version": 2560,
+    "revision": null,
+    "plan": "coop"
+  },
+  "source_file": "DSBA-60.pdf",
+  "printed_total": 126,
+  "provenance": {
+    "review_ledger": "docs/results/old2560_book_terms_verified.json",
+    "review_ledger_sha256": "fd792b18c9e306f4ec0ebda2bf06de3ef34a70ca424d2afee7a0c940fd284091",
+    "method": "reused rendered-page observations; no new visual review; not DB-derived"
+  },
+  "verified_fields": [
+    "code",
+    "credits_raw",
+    "year",
+    "semester",
+    "printed_credits",
+    "pdf_page",
+    "printed_page"
+  ],
+  "unverified_fields": [
+    "name_th",
+    "name_en",
+    "category",
+    "track membership",
+    "prerequisites",
+    "graduation requirements",
+    "L1-L4 independent Q&A"
+  ],
+  "terms": [
+    {
+      "year": 1,
+      "semester": 1,
+      "printed_credits": 18,
+      "pdf_page": 30,
+      "printed_page": 25,
+      "expected_options": [
+        {
+          "code": "06026100",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "06026104",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "90101007",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "90201001",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "90401013",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "90101xxx",
+          "credits_raw": "3(3-0-6)"
+        }
+      ],
+      "full_name_fields_verified": null,
+      "all_prerequisites_verified": null,
+      "source_file": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-030.png",
+      "image_sha256": "040caa2bfaf25f2a46210706d906c5520b8c24cc16e9275a46c334e2d1de5646",
+      "review_status": "manually_inspected_rendered_image"
+    },
+    {
+      "year": 1,
+      "semester": 2,
+      "printed_credits": 18,
+      "pdf_page": 30,
+      "printed_page": 25,
+      "expected_options": [
+        {
+          "code": "06026101",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06026105",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06026106",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "06026107",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "90201002",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "90401012",
+          "credits_raw": "3(3-0-6)"
+        }
+      ],
+      "full_name_fields_verified": null,
+      "all_prerequisites_verified": null,
+      "source_file": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-030.png",
+      "image_sha256": "040caa2bfaf25f2a46210706d906c5520b8c24cc16e9275a46c334e2d1de5646",
+      "review_status": "manually_inspected_rendered_image"
+    },
+    {
+      "year": 2,
+      "semester": 1,
+      "printed_credits": 19,
+      "pdf_page": 31,
+      "printed_page": 26,
+      "expected_options": [
+        {
+          "code": "06026102",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06026103",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06026108",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06026109",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "06026110",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06026111",
+          "credits_raw": "1(0-2-1)"
+        },
+        {
+          "code": "90201012",
+          "credits_raw": "3(3-0-6)"
+        }
+      ],
+      "full_name_fields_verified": null,
+      "all_prerequisites_verified": null,
+      "source_file": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-031.png",
+      "image_sha256": "5c9caa09cbfc70f209819cb8fc3394d901db003ab8d3b94673ffb765833773fe",
+      "review_status": "manually_inspected_rendered_image"
+    },
+    {
+      "year": 2,
+      "semester": 2,
+      "printed_credits": 19,
+      "pdf_page": 32,
+      "printed_page": 27,
+      "expected_options": [
+        {
+          "code": "06026112",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06026113",
+          "credits_raw": "1(0-2-1)"
+        },
+        {
+          "code": "06026114",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "06026115",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "06026116",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "06026117",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "90201026",
+          "credits_raw": "3(3-0-6)"
+        }
+      ],
+      "full_name_fields_verified": null,
+      "all_prerequisites_verified": null,
+      "source_file": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-032.png",
+      "image_sha256": "4a6a7c47b422fffe33f7be2c56e8b1703d8f68cabfd8a87ba6fafdb9510a20d2",
+      "review_status": "manually_inspected_rendered_image"
+    },
+    {
+      "year": 3,
+      "semester": 1,
+      "printed_credits": 18,
+      "pdf_page": 32,
+      "printed_page": 27,
+      "expected_options": [
+        {
+          "code": "06026118",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06026119",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06026120",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "06026121",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "06026122",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "90304004",
+          "credits_raw": "3(3-0-6)"
+        }
+      ],
+      "full_name_fields_verified": null,
+      "all_prerequisites_verified": null,
+      "source_file": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-032.png",
+      "image_sha256": "4a6a7c47b422fffe33f7be2c56e8b1703d8f68cabfd8a87ba6fafdb9510a20d2",
+      "review_status": "manually_inspected_rendered_image"
+    },
+    {
+      "year": 3,
+      "semester": 2,
+      "printed_credits": 16,
+      "pdf_page": 33,
+      "printed_page": 28,
+      "expected_options": [
+        {
+          "code": "06026123",
+          "credits_raw": "1(1-0-2)"
+        },
+        {
+          "code": "06026124",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "06026125",
+          "credits_raw": "3(2-2-5)"
+        },
+        {
+          "code": "06026126",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "06026127",
+          "credits_raw": "3(0-9-0)"
+        },
+        {
+          "code": "060261xx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5)"
+        }
+      ],
+      "full_name_fields_verified": null,
+      "all_prerequisites_verified": null,
+      "source_file": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-033.png",
+      "image_sha256": "869a497f8572941621cee3f2b3a5c42b5eb3c8fc65549d20f125c8a42a5a39a7",
+      "review_status": "manually_inspected_rendered_image"
+    },
+    {
+      "year": 4,
+      "semester": 1,
+      "printed_credits": 12,
+      "pdf_page": 33,
+      "printed_page": 28,
+      "expected_options": [
+        {
+          "code": "06026128",
+          "credits_raw": "3(0-9-0)"
+        },
+        {
+          "code": "xxxxxxxx",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "xxxxxxxx",
+          "credits_raw": "3(3-0-6)"
+        },
+        {
+          "code": "90xxxxxx",
+          "credits_raw": "3(3-0-6)"
+        }
+      ],
+      "full_name_fields_verified": null,
+      "all_prerequisites_verified": null,
+      "source_file": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-033.png",
+      "image_sha256": "869a497f8572941621cee3f2b3a5c42b5eb3c8fc65549d20f125c8a42a5a39a7",
+      "review_status": "manually_inspected_rendered_image"
+    },
+    {
+      "year": 4,
+      "semester": 2,
+      "printed_credits": 6,
+      "pdf_page": 34,
+      "printed_page": 29,
+      "expected_options": [
+        {
+          "code": "06026130",
+          "credits_raw": "6(0-35-0)"
+        },
+        {
+          "code": "06026131",
+          "credits_raw": "6(0-35-0)"
+        }
+      ],
+      "full_name_fields_verified": null,
+      "all_prerequisites_verified": null,
+      "source_file": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "image": "ocr_final/tmp/pdfs/a1_pages/DSBA-60-page-034.png",
+      "image_sha256": "180c33212bbf4c37d1e845550e598a1301cacd88d7458be396a563d42534c2ea",
+      "review_status": "manually_inspected_rendered_image"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+ "purpose":"production table approvals from page images, NOT evaluation expected answers",
+ "curriculum_version":2565,
+ "reviewed_on":"2026-10-10",
+ "term_metadata_years":[4],
+ "profile_identity_reviews":{
+  "it-coop":{"program_id":"IT-coop","plan":"coop","heading_pdf_page":38,"heading_printed_page":33,"section":"3.1.4.2 แผนการศึกษาสำหรับโครงการสหกิจศึกษา"},
+  "it-no-coop":{"program_id":"IT-no-coop","plan":"no-coop","heading_pdf_page":31,"heading_printed_page":26,"section":"3.1.4.1 แผนการศึกษาที่ไม่เข้าโครงการสหกิจศึกษา"}
+ },
+ "source_sha256":"aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+ "profiles":{
+  "it-coop":[
+   {"status":"visually_verified","source_file":"IT.pdf","pdf_page":43,"printed_page":38,"year":4,"semester":1,"credits":18,"row_count":6,"rows":[
+    {"code":"06016406","name_th":"โครงงาน 1","name_en":"PROJECT 1","credits":"3(0-9-0)"},
+    {"code":"060164xx","name_th":"วิชาเลือกทางเทคโนโลยีสารสนเทศ 1","name_en":"ELECTIVE COURSE IN INFORMATION TECHNOLOGY 1","credits":"3(3-0-6) หรือ 3(2-2-5) หรือ 3(0-6-3)","slot":"IT_ELECTIVE_1"},
+    {"code":"90643021","name_th":"ผู้ประกอบการสมัยใหม่","name_en":"MODERN ENTREPRENEURS","credits":"3(3-0-6)"},
+    {"code":"9064xxxx","name_th":"วิชาเลือกหมวดวิชาศึกษาทั่วไป 1","name_en":"ELECTIVE COURSE IN GENERAL EDUCATION 1","credits":"3(3-0-6)","slot":"GE_1"},
+    {"code":"xxxxxxxx","name_th":"วิชาเลือกเสรี 1","name_en":"FREE ELECTIVE COURSE 1","credits":"3(x-x-x)","slot":"FREE_1"},
+    {"code":"xxxxxxxx","name_th":"วิชาเลือกเสรี 2","name_en":"FREE ELECTIVE COURSE 2","credits":"3(x-x-x)","slot":"FREE_2"}
+   ]},
+   {"status":"visually_verified","source_file":"IT.pdf","pdf_page":44,"printed_page":39,"year":4,"semester":2,"credits":15,"row_count":5,"rows":[
+    {"code":"06016407","name_th":"โครงงาน 2","name_en":"PROJECT 2","credits":"3(0-9-0)"},
+    {"code":"06066100","name_th":"การบริหารโครงการเทคโนโลยีสารสนเทศ","name_en":"INFORMATION TECHNOLOGY PROJECT MANAGEMENT","credits":"3(3-0-6)"},
+    {"code":"90642033","name_th":"กฎหมายสำหรับคนรุ่นใหม่","name_en":"LAW FOR NEW GENERATION","credits":"3(3-0-6)"},
+    {"code":"90644042","name_th":"การสื่อสารและการนำเสนออย่างมืออาชีพ","name_en":"PROFESSIONAL COMMUNICATION AND PRESENTATION","credits":"3(3-0-6)"},
+    {"code":"9064xxxx","name_th":"วิชาเลือกหมวดวิชาศึกษาทั่วไป 2","name_en":"ELECTIVE COURSE IN GENERAL EDUCATION 2","credits":"3(3-0-6)","slot":"GE_2"}
+   ]}
+  ],
+  "it-no-coop":[
+   {"status":"visually_verified","source_file":"IT.pdf","pdf_page":36,"printed_page":31,"pdf_pages":[35,36],"year":3,"semester":2,"credits":15,"row_count":5,"rows":[
+    {"code":"060164xx","name_th":"วิชาเลือกทางเทคโนโลยีสารสนเทศ 1","name_en":"ELECTIVE COURSE IN INFORMATION TECHNOLOGY 1","credits":"3(3-0-6) หรือ 3(2-2-5) หรือ 3(0-6-3)","slot":"IT_ELECTIVE_1","page_number":35,"printed_page_number":30},
+    {"code":"060164xx","name_th":"วิชาเลือกทางเทคโนโลยีสารสนเทศ 2","name_en":"ELECTIVE COURSE IN INFORMATION TECHNOLOGY 2","credits":"3(3-0-6) หรือ 3(2-2-5) หรือ 3(0-6-3)","slot":"IT_ELECTIVE_2"},
+    {"code":"06066100","name_th":"การบริหารโครงการเทคโนโลยีสารสนเทศ","name_en":"INFORMATION TECHNOLOGY PROJECT MANAGEMENT","credits":"3(3-0-6)"},
+    {"code":"90642033","name_th":"กฎหมายสำหรับคนรุ่นใหม่","name_en":"LAW FOR NEW GENERATION","credits":"3(3-0-6)"},
+    {"code":"90644042","name_th":"การสื่อสารและการนำเสนออย่างมืออาชีพ","name_en":"PROFESSIONAL COMMUNICATION AND PRESENTATION","credits":"3(3-0-6)"}
+   ]},
+   {"status":"visually_verified","source_file":"IT.pdf","pdf_page":37,"printed_page":32,"year":4,"semester":1,"credits":15,"row_count":5,"rows":[
+    {"code":"06016406","name_th":"โครงงาน 1","name_en":"PROJECT 1","credits":"3(0-9-0)"},
+    {"code":"060164xx","name_th":"วิชาเลือกทางเทคโนโลยีสารสนเทศ 3","name_en":"ELECTIVE COURSE IN INFORMATION TECHNOLOGY 3","credits":"3(3-0-6) หรือ 3(2-2-5) หรือ 3(0-6-3)","slot":"IT_ELECTIVE_3"},
+    {"code":"90643021","name_th":"ผู้ประกอบการสมัยใหม่","name_en":"MODERN ENTREPRENEURS","credits":"3(3-0-6)"},
+    {"code":"9064xxxx","name_th":"วิชาเลือกหมวดวิชาศึกษาทั่วไป 1","name_en":"ELECTIVE COURSE IN GENERAL EDUCATION 1","credits":"3(3-0-6)","slot":"GE_1"},
+    {"code":"xxxxxxxx","name_th":"วิชาเลือกเสรี 1","name_en":"FREE ELECTIVE COURSE 1","credits":"3(x-x-x)","slot":"FREE_1"}
+   ]},
+   {"status":"visually_verified","source_file":"IT.pdf","pdf_page":37,"printed_page":32,"year":4,"semester":2,"credits":9,"row_count":3,"rows":[
+    {"code":"06016407","name_th":"โครงงาน 2","name_en":"PROJECT 2","credits":"3(0-9-0)"},
+    {"code":"9064xxxx","name_th":"วิชาเลือกหมวดวิชาศึกษาทั่วไป 2","name_en":"ELECTIVE COURSE IN GENERAL EDUCATION 2","credits":"3(3-0-6)","slot":"GE_2"},
+    {"code":"xxxxxxxx","name_th":"วิชาเลือกเสรี 2","name_en":"FREE ELECTIVE COURSE 2","credits":"3(x-x-x)","slot":"FREE_2"}
+   ]}
+  ]
+ }
+}

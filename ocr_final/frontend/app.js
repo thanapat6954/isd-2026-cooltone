@@ -1,4 +1,5 @@
-import { citationHref, sourceFilename, pageLabel, shouldSubmitOnEnter } from './presentation.mjs';
+import { availableOptions, scopeNotice } from './active_scope.mjs?v=1';
+import { citationHref, sourceFilename, pageLabel, shouldSubmitOnEnter } from './presentation.mjs?v=10';
 
 // Edit these constants when connecting to another backend or changing mock mode.
 // The backend serves /frontend/ on the same origin; standalone previews use 8000.
@@ -6,7 +7,7 @@ const API_BASE = window.location.pathname.startsWith("/frontend/")
   ? window.location.origin
   : "http://localhost:8000";
 const USE_MOCK = false;
-const REQUEST_TIMEOUT_MS = 30_000;
+let REQUEST_TIMEOUT_MS = 190_000;
 const SLOW_THRESHOLD_MS = 5_000;
 const MAX_HISTORY_ITEMS = 5;
 
@@ -47,6 +48,8 @@ const CURRICULUM_OPTIONS = [
     ],
   },
 ];
+let activeCurriculumOptions = CURRICULUM_OPTIONS;
+let scopeReady = USE_MOCK;
 
 // Examples use the source rubric's levels; unsupported L4 sources are not invented.
 const EXAMPLE_QUESTIONS = [
@@ -95,8 +98,10 @@ const elements = {
 const questionHistory = [];
 
 // Build both selectors from CURRICULUM_OPTIONS.
-function populateCurriculumOptions() {
-  CURRICULUM_OPTIONS.forEach((curriculum) => {
+function populateCurriculumOptions(options = CURRICULUM_OPTIONS) {
+  activeCurriculumOptions = options;
+  elements.curriculum.replaceChildren();
+  options.forEach((curriculum) => {
     const option = document.createElement("option");
     option.value = curriculum.value;
     option.textContent = curriculum.label;
@@ -107,17 +112,17 @@ function populateCurriculumOptions() {
 
 // Update versions when the selected curriculum changes.
 function populateVersionOptions() {
-  const selected = CURRICULUM_OPTIONS.find(
+  const selected = activeCurriculumOptions.find(
     (curriculum) => curriculum.value === elements.curriculum.value,
   );
   elements.version.replaceChildren();
-  selected.versions.forEach((version) => {
+  (selected?.versions || []).forEach((version) => {
     const option = document.createElement("option");
     option.value = version.value;
     option.textContent = version.label;
     elements.version.append(option);
   });
-  elements.selectionContext.textContent = selected.label;
+  elements.selectionContext.textContent = selected?.label || 'ไม่มี profile ที่พร้อมใช้';
 }
 
 // Return the Thai label while keeping the API value unchanged.
@@ -168,7 +173,7 @@ function setLoading(isLoading) {
   elements.curriculum.disabled = isLoading;
   elements.version.disabled = isLoading;
   elements.question.disabled = isLoading;
-  elements.askButton.disabled = isLoading;
+  elements.askButton.disabled = isLoading || !scopeReady;
   elements.retryButton.disabled = isLoading;
   elements.exampleList.querySelectorAll('button').forEach((button) => { button.disabled = isLoading; });
   elements.questionCard.classList.toggle("loading", isLoading);
@@ -250,7 +255,7 @@ async function requestMock(payload) {
   return response;
 }
 
-// Fetch the real API with a hard 30-second timeout.
+// Allow the server's shared generation budget plus a transport margin.
 async function requestApi(payload) {
   const controller = new AbortController();
   const timeoutId = window.setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
@@ -317,6 +322,7 @@ function renderStudyPlan(payload) {
     parent.append(node);
     return node;
   };
+  (payload?.notes || []).forEach((note) => add(container, 'p', note, 'plan-note'));
   cards.forEach((card) => {
     const article = add(container, 'article', null, 'study-plan-card');
     add(article, 'h3', `${card.program} พ.ศ. ${card.version} — ปี ${card.year} ภาคการศึกษาที่ ${card.semester}`);
@@ -394,7 +400,7 @@ function renderSuccess(data, roundTripMs, payload) {
 function renderError(error, category = "request") {
   const messages = {
     validation: "ตรวจสอบคำถามแล้วลองอีกครั้ง",
-    timeout: "คำขอใช้เวลานานกว่า 30 วินาที ลองใช้คำถามที่สั้นลงหรือตรวจสอบโมเดลของ backend",
+    timeout: "หมดเวลารอคำตอบตามขีดจำกัดของเซิร์ฟเวอร์ ลองใช้คำถามที่สั้นลงหรือตรวจสอบโมเดลของ backend",
     network: `ตรวจสอบว่า backend ทำงานอยู่และค่า API_BASE ถูกต้อง: ${API_BASE}`,
     request: "ลองอีกครั้ง หากยังพบปัญหาให้ตรวจสอบรายละเอียดใน Terminal ของ backend",
   };
@@ -476,6 +482,29 @@ function initializeApp() {
   elements.question.addEventListener("keydown", handleQuestionKeydown);
   elements.form.addEventListener("submit", handleSubmit);
   elements.retryButton.addEventListener('click', () => elements.form.requestSubmit());
+  if (USE_MOCK) return;
+  populateCurriculumOptions([]);
+  setLoading(true);
+  elements.modeBadge.textContent = 'กำลังตรวจชุดฐานข้อมูลที่เลือก';
+  fetch(`${API_BASE}/api/health`).then(response => {
+    if (!response.ok) throw new Error('health unavailable');
+    return response.json();
+  }).then(health => {
+    const options = availableOptions(CURRICULUM_OPTIONS, health);
+    populateCurriculumOptions(options);
+    scopeReady = options.length > 0;
+    elements.modeBadge.textContent = scopeNotice(health);
+    if (Number.isInteger(health.request_timeout_seconds) && health.request_timeout_seconds > 0) {
+      REQUEST_TIMEOUT_MS = (health.request_timeout_seconds + 10) * 1000;
+    }
+    setLoading(false);
+    elements.curriculum.disabled = elements.version.disabled = !scopeReady;
+  }).catch(() => {
+    scopeReady = false;
+    setLoading(false);
+    elements.curriculum.disabled = elements.version.disabled = true;
+    elements.modeBadge.textContent = 'ตรวจชุดฐานข้อมูลไม่ได้ — ยังไม่เปิดให้เลือก profile; ตรวจ backend แล้วโหลดหน้าใหม่';
+  });
 }
 
 initializeApp();

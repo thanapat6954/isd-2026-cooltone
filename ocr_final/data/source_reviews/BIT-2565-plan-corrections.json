@@ -1,0 +1,63 @@
+{
+ "purpose":"production ingestion corrections from inspected images, NOT evaluation answers",
+ "curriculum_version":2565,
+ "reviewed_on":"2026-10-10",
+ "term_metadata_years":[4],
+ "profile_identity_reviews":{
+  "bit-2565-coop":{"program_id":"BIT-coop","plan":"coop","heading_pdf_page":31,"heading_printed_page":26,"section":"3.1.4.2 แผนการศึกษาสำหรับโครงการสหกิจศึกษา"},
+  "bit-2565-no-coop":{"program_id":"BIT-no-coop","plan":"no-coop","heading_pdf_page":26,"heading_printed_page":21,"section":"3.1.4.1 แผนการศึกษาที่ไม่เข้าโครงการสหกิจศึกษา"}
+ },
+ "source_sha256":"f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+ "profiles":{
+  "bit-2565-coop":[
+   {"status":"visually_verified","source_file":"BIT-65.pdf","pdf_page":33,"printed_page":28,"year":3,"semester":1,"credits":18,"row_count":6,"reviewed_on":"2026-10-09","evidence":"docs/results/fresh_bit_coop_20261009/bit-pdf33-book28.png","review_scope":"อ่านตารางแผนสหกิจศึกษาจากภาพ PDF33 โดยตรง ไม่คัดลอก evaluation labels หรือแผนไม่สหกิจศึกษา; ตารางนี้ไม่ยืนยันวิชาบังคับก่อนหรือหมวดวิชา","rows":[
+    {"code":"06036107","name_th":"การบริหารโครงการเทคโนโลยีสารสนเทศ","name_en":"INFORMATION TECHNOLOGY PROJECT MANAGEMENT","credits":"3(3-0-6)"},
+    {"code":"06036110","name_th":"การวางแผนทรัพยากรองค์กร","name_en":"ENTERPRISE RESOURCE PLANNING","credits":"3(3-0-6)"},
+    {"code":"06036114","name_th":"การพัฒนาเว็บแอปพลิเคชันโดยใช้เฟรมเวิร์ก","name_en":"WEB APPLICATION DEVELOPMENT USING FRAMEWORKS","credits":"3(2-2-5)"},
+    {"code":"06036121","name_th":"การวิเคราะห์และออกแบบระบบสารสนเทศทางธุรกิจ","name_en":"BUSINESS INFORMATION SYSTEM ANALYSIS AND DESIGN","credits":"3(3-0-6)"},
+    {"code":"06036123","name_th":"เทคโนโลยีกลุ่มเมฆ","name_en":"CLOUD TECHNOLOGY","credits":"3(3-0-6)"},
+    {"code":"96644xxx","name_th":"วิชาเลือกด้านภาษาและการสื่อสาร","name_en":"ELECTIVE IN LANGUAGE AND COMMUNICATION","credits":"3(3-0-6) หรือ 3(2-2-5)","slot":"LANGUAGE_ELECTIVE"}
+   ]},
+   {"status":"visually_verified","source_file":"BIT-65.pdf","pdf_page":35,"printed_page":30,"year":4,"semester":2,"credits":6,"row_count":2,"rows":[
+    {"code":"06036147","name_th":"สหกิจศึกษา","name_en":"COOPERATIVE EDUCATION","credits":"6(0-35-0)","alt_group":"BIT_COOP_CHOICE"},
+    {"code":"06036148","name_th":"สหกิจศึกษาต่างประเทศ","name_en":"OVERSEA COOPERATIVE EDUCATION","credits":"6(0-35-0)","alt_group":"BIT_COOP_CHOICE"}
+   ]},
+   {"status":"visually_verified","source_file":"BIT-65.pdf","pdf_page":34,"printed_page":29,"year":3,"semester":2,"credits":15,"row_count":5,"rows":[
+    {"code":"06036106","name_th":"การจัดการข้อมูลธุรกิจและเทคโนโลยีเกิดใหม่","name_en":"MANAGING BUSINESS INFORMATION AND EMERGING TECHNOLOGIES","credits":"3(3-0-6)"},
+    {"code":"06036116","name_th":"การตลาดเชิงดิจิทัล","name_en":"DIGITAL MARKETING","credits":"3(2-2-5)"},
+    {"code":"96643021","name_th":"ผู้ประกอบการสมัยใหม่","name_en":"MODERN ENTREPRENEURS","credits":"3(3-0-6)"},
+    {"code":"06036xxx","name_th":"วิชาเลือกทางเทคโนโลยีสารสนเทศทางธุรกิจ 1 หรือกลุ่มวิชาที่ 1-4","name_en":"ELECTIVE COURSE IN BUSINESS INFORMATION TECHNOLOGY 1 OR COURSE GROUP 1-4","credits":"3(3-0-6) หรือ 3(2-2-5)","slot":"BIT_ELECTIVE_1"},
+    {"code":"xxxxxxxx","name_th":"วิชาเลือกเสรี 1","name_en":"FREE ELECTIVE COURSE 1","credits":"3(3-0-6)","slot":"FREE_ELECTIVE_1"}
+   ]},
+   {"status":"visually_verified","source_file":"BIT-65.pdf","pdf_page":35,"printed_page":30,"year":4,"semester":1,"credits":15,"row_count":5,"rows":[
+    {"code":"06036115","name_th":"ความมั่นคงของระบบสารสนเทศ","name_en":"INFORMATION SYSTEM SECURITY","credits":"3(3-0-6)"},
+    {"code":"96642033","name_th":"กฎหมายสำหรับคนรุ่นใหม่","name_en":"LAW FOR NEW GENERATION","credits":"3(3-0-6)"},
+    {"code":"06036xxx","name_th":"วิชาเลือกทางเทคโนโลยีสารสนเทศทางธุรกิจ 2 หรือกลุ่มวิชาที่ 1-4","name_en":"ELECTIVE COURSE IN BUSINESS INFORMATION TECHNOLOGY 2 OR COURSE GROUP 1-4","credits":"3(3-0-6) หรือ 3(2-2-5)","slot":"BIT_ELECTIVE_2"},
+    {"code":"xxxxxxxx","name_th":"วิชาเลือกเสรี 2","name_en":"FREE ELECTIVE COURSE 2","credits":"3(3-0-6)","slot":"FREE_ELECTIVE_2"},
+    {"code":"9664xxxx","name_th":"วิชาเลือกหมวดวิชาศึกษาทั่วไป สำหรับหลักสูตรนานาชาติ 2","name_en":"GE ELECTIVE COURSE REQUIREMENT 2","credits":"3(3-0-6)","slot":"GE_ELECTIVE_2"}
+   ]}
+  ],
+  "bit-2565-no-coop":[
+   {"status":"visually_verified","source_file":"BIT-65.pdf","pdf_page":30,"printed_page":25,"year":4,"semester":2,"credits":12,"row_count":4,"reviewed_on":"2026-10-10","review_scope":"อ่านภาพตาราง PDF30/book25; production approval แยกจาก development labels; ไม่ยืนยัน prerequisite หรือสิทธิลงทะเบียน","rows":[
+    {"code":"06036xxx","name_th":"วิชาเลือกทางเทคโนโลยีสารสนเทศทางธุรกิจ 1 หรือกลุ่มวิชาที่ 1-4","name_en":"ELECTIVE COURSE IN BUSINESS INFORMATION TECHNOLOGY 1 OR COURSE GROUP 1-4","credits":"3(3-0-6) หรือ 3(2-2-5)","slot":"BIT_ELECTIVE_1"},
+    {"code":"06036xxx","name_th":"วิชาเลือกทางเทคโนโลยีสารสนเทศทางธุรกิจ 2 หรือกลุ่มวิชาที่ 1-4","name_en":"ELECTIVE COURSE IN BUSINESS INFORMATION TECHNOLOGY 2 OR COURSE GROUP 1-4","credits":"3(3-0-6) หรือ 3(2-2-5)","slot":"BIT_ELECTIVE_2"},
+    {"code":"xxxxxxxx","name_th":"วิชาเลือกเสรี 1","name_en":"FREE ELECTIVE COURSE 1","credits":"3(3-0-6)","slot":"FREE_ELECTIVE_1"},
+    {"code":"xxxxxxxx","name_th":"วิชาเลือกเสรี 2","name_en":"FREE ELECTIVE COURSE 2","credits":"3(3-0-6)","slot":"FREE_ELECTIVE_2"}
+   ]},
+   {"status":"visually_verified","source_file":"BIT-65.pdf","pdf_page":28,"printed_page":23,"year":3,"semester":1,"credits":18,"row_count":6,"rows":[
+    {"code":"06036107","name_th":"การบริหารโครงการเทคโนโลยีสารสนเทศ","name_en":"INFORMATION TECHNOLOGY PROJECT MANAGEMENT","credits":"3(3-0-6)"},
+    {"code":"06036110","name_th":"การวางแผนทรัพยากรองค์กร","name_en":"ENTERPRISE RESOURCE PLANNING","credits":"3(3-0-6)"},
+    {"code":"06036114","name_th":"การพัฒนาเว็บแอปพลิเคชันโดยใช้เฟรมเวิร์ก","name_en":"WEB APPLICATION DEVELOPMENT USING FRAMEWORKS","credits":"3(2-2-5)"},
+    {"code":"06036121","name_th":"การวิเคราะห์และออกแบบระบบสารสนเทศทางธุรกิจ","name_en":"BUSINESS INFORMATION SYSTEM ANALYSIS AND DESIGN","credits":"3(3-0-6)"},
+    {"code":"06036123","name_th":"เทคโนโลยีกลุ่มเมฆ","name_en":"CLOUD TECHNOLOGY","credits":"3(3-0-6)"},
+    {"code":"96644xxx","name_th":"วิชาเลือกด้านภาษาและการสื่อสาร","name_en":"ELECTIVE IN LANGUAGE AND COMMUNICATION","credits":"3(3-0-6) หรือ 3(2-2-5)","slot":"LANGUAGE_ELECTIVE","category":"หมวดวิชาศึกษาทั่วไป","category_source_approval":"BIT-2565-no-coop-language-category.json","category_pdf_page":20,"category_printed_page":15}
+   ]},
+   {"status":"visually_verified","source_file":"BIT-65.pdf","pdf_page":29,"printed_page":24,"year":4,"semester":1,"credits":12,"row_count":4,"rows":[
+    {"code":"06036115","name_th":"ความมั่นคงของระบบสารสนเทศ","name_en":"INFORMATION SYSTEM SECURITY","credits":"3(3-0-6)"},
+    {"code":"06036146","name_th":"โครงงานทางด้านเทคโนโลยีสารสนเทศเชิงธุรกิจ 2","name_en":"PROJECT IN BUSINESS INFORMATION TECHNOLOGY 2","credits":"3(0-9-0)"},
+    {"code":"96642033","name_th":"กฎหมายสำหรับคนรุ่นใหม่","name_en":"LAW FOR NEW GENERATION","credits":"3(3-0-6)"},
+    {"code":"9664xxxx","name_th":"วิชาเลือกหมวดวิชาศึกษาทั่วไป สำหรับหลักสูตรนานาชาติ 2","name_en":"GE ELECTIVE COURSE REQUIREMENT 2","credits":"3(3-0-6)","slot":"GE_ELECTIVE_2"}
+   ]}
+  ]
+ }
+}

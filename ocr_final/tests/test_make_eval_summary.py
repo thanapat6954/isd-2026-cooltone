@@ -143,7 +143,7 @@ class EvalSummaryTests(unittest.TestCase):
         data = json.loads((ROOT / "work" / "robustness_summary.json").read_text(encoding="utf-8"))
         text = MODULE.generate(data)
         self.assertIn("ocr", data["dsba-no-coop"])
-        self.assertTrue((ROOT / "data" / "ground_truth" / "DSBA_academic_plan_no_coop.json").is_file())
+        self.assertTrue((ROOT / "data" / "ground_truth" / "evaluation" / "DSBA-2565" / "no-coop.json").is_file())
         self.assertIn("| `dsba-no-coop` | 94.4% (n=45) |", text)
         self.assertIn("| `dsba-no-coop` | 95.5% | 93.3% | 42 | 3 | 2 | 45 | 44 |", text)
         self.assertNotIn("`dsba-no-coop` ยังไม่มี OCR evaluation", text)

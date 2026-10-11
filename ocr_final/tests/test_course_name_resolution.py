@@ -61,6 +61,27 @@ class CourseNameTests(unittest.TestCase):
     def test_wildcard_is_not_search_operator(self):
         self.assertFalse(self.ask('%')['rows'])
 
+    def test_parameters_execute_as_values_not_sql(self):
+        from lab10_fastapi.curriculum_app.database import execute_readonly, SqlValidationError
+        db = self.registry.select('หลักสูตร IT 2560 สหกิจ')[0]
+        _, rows = execute_readonly(db, 'SELECT code FROM course WHERE code=?', parameters=['25600001'])
+        self.assertEqual([r['code'] for r in rows], ['25600001'])
+        _, rows = execute_readonly(db, 'SELECT code FROM course WHERE code=:code', parameters={'code': "25600001' OR 1=1 --"})
+        self.assertFalse(rows)
+        with self.assertRaises(SqlValidationError):
+            execute_readonly(db, 'SELECT code FROM course WHERE code=?', parameters=[])
+
+    def test_literal_substring_does_not_hide_canonical_candidates(self):
+        path = self.root/'work/lab8b_it_2560_coop/curriculum.db'
+        with closing(sqlite3.connect(path)) as db:
+            db.execute('INSERT INTO course VALUES(?,?,?,?,?,?,?,?,?)',
+                       ('25600003', 'การเขียนโปรแกรมเชิงวัตถุ', None, 3, 2, 2, 5, 'IT-60.pdf', 35))
+            db.commit()
+        self.registry.refresh()
+        result = self.assistant.ask(self.registry, 'หลักสูตร IT 2560 สหกิจ: อยากเรียนเขียนโปรแกรม มีวิชาชื่อใกล้เคียงกันอะไรบ้าง')
+        self.assertEqual({r['code'] for r in result['rows']}, {'25600001', '25600002', '25600003'})
+        self.assertIn('โปรดระบุรหัสวิชา', result['answer'])
+
     def test_name_prerequisite_detected_without_code(self):
         self.assertEqual(detect_intent('วิชาการโปรแกรมอุปกรณ์เคลื่อนที่มีวิชาบังคับก่อนอะไร').intent,'course_search')
         self.assertEqual(normalize_course_name('การสร้าง โปรแกรม'),'โปรแกรม')

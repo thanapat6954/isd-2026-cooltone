@@ -1,0 +1,12 @@
+{
+ "purpose":"Production ingestion from inspected AI.pdf PDF26/book22; not evaluation answers",
+ "source_sha256":"268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+ "profiles":{"ai":[
+  {"status":"visually_verified","source_file":"AI.pdf","pdf_page":26,"printed_page":22,"year":4,"semester":1,"credits":12,"row_count":4,"rows":[
+   {"code":"06046442","name_th":"โครงงานเทคโนโลยีปัญญาประดิษฐ์ 2","name_en":"PROJECT IN ARTIFICIAL INTELLIGENCE TECHNOLOGY 2","credits":"3(0-9-0)"},
+   {"code":"9064xxxx","name_th":"วิชาเลือกหมวดวิชาศึกษาทั่วไป","name_en":"GENERAL EDUCATION COURSES","credits":"3(x-x-x)","slot":"GE_ELECTIVE"},
+   {"code":"90644xxx","name_th":"วิชาเลือกด้านภาษาและการสื่อสาร","name_en":"LANGUAGE AND COMMUNICATION COURSES","credits":"3(x-x-x)","slot":"LANGUAGE_ELECTIVE"},
+   {"code":"xxxxxxxx","name_th":"วิชาเลือกเสรี 2","name_en":"FREE ELECTIVE COURSE 2","credits":"3(x-x-x)","slot":"FREE_ELECTIVE_2"}
+  ]}
+ ]}
+}

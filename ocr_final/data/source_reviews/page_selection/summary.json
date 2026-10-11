@@ -1,0 +1,51 @@
+[
+  {
+    "source_file": "AI.pdf",
+    "physical_pages": 346,
+    "include": 9,
+    "skip": 0,
+    "unreviewed": 337
+  },
+  {
+    "source_file": "DSBA.pdf",
+    "physical_pages": 403,
+    "include": 16,
+    "skip": 0,
+    "unreviewed": 387
+  },
+  {
+    "source_file": "DSBA-60.pdf",
+    "physical_pages": 258,
+    "include": 6,
+    "skip": 0,
+    "unreviewed": 252
+  },
+  {
+    "source_file": "IT.pdf",
+    "physical_pages": 429,
+    "include": 22,
+    "skip": 0,
+    "unreviewed": 407
+  },
+  {
+    "source_file": "IT-60.pdf",
+    "physical_pages": 327,
+    "include": 15,
+    "skip": 0,
+    "unreviewed": 312
+  },
+  {
+    "source_file": "BIT-65.pdf",
+    "physical_pages": 317,
+    "include": 15,
+    "skip": 0,
+    "unreviewed": 302
+  },
+  {
+    "source_file": "BIT-60.pdf",
+    "physical_pages": 242,
+    "include": 4,
+    "skip": 0,
+    "unreviewed": 238
+  }
+]

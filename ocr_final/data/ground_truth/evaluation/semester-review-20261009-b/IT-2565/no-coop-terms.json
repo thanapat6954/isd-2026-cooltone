@@ -1,0 +1,769 @@
+{
+  "program": "IT",
+  "version": 2565,
+  "plan": "no-coop",
+  "printed_total": 129,
+  "plan_evidence": "PDF31/book26 section3.1.4.1; reused verified plan header",
+  "terms": [
+    {
+      "year": 2,
+      "semester": 1,
+      "pdf_page": 33,
+      "printed_page": 28,
+      "printed_credits": 18,
+      "rows": [
+        [
+          "06016403",
+          "3(2-2-5)"
+        ],
+        [
+          "06016409",
+          "3(2-2-5)"
+        ],
+        [
+          "06016413",
+          "3(3-0-6)"
+        ],
+        [
+          "06066000",
+          "3(3-0-6)"
+        ],
+        [
+          "06066300",
+          "3(2-2-5)"
+        ],
+        [
+          "06066304",
+          "3(3-0-6)"
+        ]
+      ],
+      "source_file": "IT.pdf",
+      "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+      "image": "IT-aca97dc8b573-033.png",
+      "image_sha256": "35e147235fbd342ad58ffcfd366115ac07f649176cd2fc10a6d30aa932d466aa",
+      "review_status": "manually_inspected_rendered_image",
+      "page_evidence": [
+        {
+          "source_file": "IT.pdf",
+          "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+          "image": "IT-aca97dc8b573-033.png",
+          "image_sha256": "35e147235fbd342ad58ffcfd366115ac07f649176cd2fc10a6d30aa932d466aa",
+          "pdf_page": 33,
+          "printed_page": 28,
+          "review_status": "manually_inspected_rendered_image"
+        }
+      ],
+      "expected_options": [
+        {
+          "code": "06016403",
+          "credits_raw": "3(2-2-5)",
+          "name_th": "เทคโนโลยีสื่อประสม",
+          "name_en": "MULTIMEDIA TECHNOLOGY",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06016409",
+          "credits_raw": "3(2-2-5)",
+          "name_th": "การประมวลผลทางกายภาพ",
+          "name_en": "PHYSICAL COMPUTING",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06016413",
+          "credits_raw": "3(3-0-6)",
+          "name_th": "ระบบเครือข่ายเบื้องต้น",
+          "name_en": "INTRODUCTION TO NETWORK SYSTEMS",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06066000",
+          "credits_raw": "3(3-0-6)",
+          "name_th": "คณิตศาสตร์ไม่ต่อเนื่อง",
+          "name_en": "DISCRETE MATHEMATICS",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "06066300",
+          "credits_raw": "3(2-2-5)",
+          "name_th": "แนวคิดระบบฐานข้อมูล",
+          "name_en": "DATABASE SYSTEM CONCEPTS",
+          "alternative_group": null,
+          "source_row_index": 4
+        },
+        {
+          "code": "06066304",
+          "credits_raw": "3(3-0-6)",
+          "name_th": "การวิเคราะห์และออกแบบระบบสารสนเทศ",
+          "name_en": "INFORMATION SYSTEM ANALYSIS AND DESIGN",
+          "alternative_group": null,
+          "source_row_index": 5
+        }
+      ]
+    },
+    {
+      "year": 2,
+      "semester": 2,
+      "pdf_page": 34,
+      "printed_page": 29,
+      "printed_credits": 18,
+      "specialization_rule_pdf_page": 25,
+      "rows": [
+        [
+          "06016405",
+          "3(3-0-6)"
+        ],
+        [
+          "06016410",
+          "3(3-0-6)"
+        ],
+        [
+          "06016412",
+          "3(2-2-5)"
+        ],
+        [
+          "06066302",
+          "3(2-2-5)"
+        ],
+        [
+          "06016414",
+          "3(2-2-5)",
+          "specialization-position-1"
+        ],
+        [
+          "06016415",
+          "3(2-2-5)",
+          "specialization-position-2"
+        ],
+        [
+          "06016419",
+          "3(2-2-5)",
+          "specialization-position-1"
+        ],
+        [
+          "06016420",
+          "3(2-2-5)",
+          "specialization-position-2"
+        ],
+        [
+          "06016424",
+          "3(3-0-6)",
+          "specialization-position-1"
+        ],
+        [
+          "06016425",
+          "3(2-2-5)",
+          "specialization-position-2"
+        ]
+      ],
+      "source_file": "IT.pdf",
+      "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+      "image": "IT-aca97dc8b573-034.png",
+      "image_sha256": "65582ddbb7e175143ac3aeb4513f92952ae70712ab7b86296bbc2930851ac195",
+      "review_status": "manually_inspected_rendered_image",
+      "page_evidence": [
+        {
+          "source_file": "IT.pdf",
+          "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+          "image": "IT-aca97dc8b573-034.png",
+          "image_sha256": "65582ddbb7e175143ac3aeb4513f92952ae70712ab7b86296bbc2930851ac195",
+          "pdf_page": 34,
+          "printed_page": 29,
+          "review_status": "manually_inspected_rendered_image"
+        }
+      ],
+      "expected_options": [
+        {
+          "code": "06016405",
+          "credits_raw": "3(3-0-6)",
+          "name_th": "พื้นฐานความมั่นคงปลอดภัยไซเบอร์",
+          "name_en": "CYBERSECURITY FUNDAMENTALS",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06016410",
+          "credits_raw": "3(3-0-6)",
+          "name_th": "วิศวกรรมซอฟต์แวร์",
+          "name_en": "SOFTWARE ENGINEERING",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06016412",
+          "credits_raw": "3(2-2-5)",
+          "name_th": "โครงสร้างระบบคอมพิวเตอร์และระบบปฏิบัติการ",
+          "name_en": "COMPUTER ORGANIZATION AND OPERATING SYSTEM",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06066302",
+          "credits_raw": "3(2-2-5)",
+          "name_th": "การเขียนโปรแกรมเว็บพื้นฐาน",
+          "name_en": "FUNDAMENTAL WEB PROGRAMMING",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "06016414",
+          "credits_raw": "3(2-2-5)",
+          "name_th": "ระบบฐานข้อมูลแบบโนเอสคิวแอล",
+          "name_en": "NOSQL DATABASE SYSTEMS",
+          "alternative_group": "specialization-position-1",
+          "source_row_index": 4
+        },
+        {
+          "code": "06016415",
+          "credits_raw": "3(2-2-5)",
+          "name_th": "การเขียนโปรแกรมเชิงฟังก์ชัน",
+          "name_en": "FUNCTIONAL PROGRAMMING",
+          "alternative_group": "specialization-position-2",
+          "source_row_index": 5
+        },
+        {
+          "code": "06016419",
+          "credits_raw": "3(2-2-5)",
+          "name_th": "โครงสร้างพื้นฐานเครือข่ายการสื่อสาร",
+          "name_en": "COMMUNICATION NETWORK INFRASTRUCTURE",
+          "alternative_group": "specialization-position-1",
+          "source_row_index": 6
+        },
+        {
+          "code": "06016420",
+          "credits_raw": "3(2-2-5)",
+          "name_th": "ระบบโครงสร้างพื้นฐานและการบริการ",
+          "name_en": "INFRASTRUCTURE SYSTEMS AND SERVICES",
+          "alternative_group": "specialization-position-2",
+          "source_row_index": 7
+        },
+        {
+          "code": "06016424",
+          "credits_raw": "3(3-0-6)",
+          "name_th": "การออกแบบส่วนต่อประสานกับมนุษย์",
+          "name_en": "HUMAN INTERFACE DESIGN",
+          "alternative_group": "specialization-position-1",
+          "source_row_index": 8
+        },
+        {
+          "code": "06016425",
+          "credits_raw": "3(2-2-5)",
+          "name_th": "พื้นฐานการออกแบบทัศนศิลป์สำหรับสื่อปฏิสัมพันธ์",
+          "name_en": "VISUAL DESIGN FUNDAMENTALS FOR INTERACTIVE MEDIA",
+          "alternative_group": "specialization-position-2",
+          "source_row_index": 9
+        }
+      ]
+    },
+    {
+      "year": 3,
+      "semester": 1,
+      "pdf_page": 35,
+      "printed_page": 30,
+      "printed_credits": 18,
+      "specialization_rule_pdf_page": 25,
+      "rows": [
+        [
+          "06016404",
+          "3(2-2-5)"
+        ],
+        [
+          "06066102",
+          "3(3-0-6)"
+        ],
+        [
+          "90644xxx",
+          "3(3-0-6)"
+        ],
+        [
+          "06016416",
+          "3(3-0-6)",
+          "specialization-position-1"
+        ],
+        [
+          "06016417",
+          "3(2-2-5)",
+          "specialization-position-2"
+        ],
+        [
+          "06016418",
+          "3(2-2-5)",
+          "specialization-position-3"
+        ],
+        [
+          "06016421",
+          "3(3-0-6)",
+          "specialization-position-1"
+        ],
+        [
+          "06016422",
+          "3(2-2-5)",
+          "specialization-position-2"
+        ],
+        [
+          "06016423",
+          "3(2-2-5)",
+          "specialization-position-3"
+        ],
+        [
+          "06016426",
+          "3(2-2-5)",
+          "specialization-position-1"
+        ],
+        [
+          "06016427",
+          "3(2-2-5)",
+          "specialization-position-2"
+        ],
+        [
+          "06016418",
+          "3(2-2-5)",
+          "specialization-position-3"
+        ]
+      ],
+      "source_file": "IT.pdf",
+      "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+      "image": "IT-aca97dc8b573-035.png",
+      "image_sha256": "f698dee0ff617db8661a57804de59248981de8eedd1d05882e46e561d61d17fc",
+      "review_status": "manually_inspected_rendered_image",
+      "page_evidence": [
+        {
+          "source_file": "IT.pdf",
+          "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+          "image": "IT-aca97dc8b573-035.png",
+          "image_sha256": "f698dee0ff617db8661a57804de59248981de8eedd1d05882e46e561d61d17fc",
+          "pdf_page": 35,
+          "printed_page": 30,
+          "review_status": "manually_inspected_rendered_image"
+        }
+      ],
+      "expected_options": [
+        {
+          "code": "06016404",
+          "credits_raw": "3(2-2-5)",
+          "name_th": "เทคโนโลยีกลุ่มเมฆ",
+          "name_en": "CLOUD COMPUTING",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06066102",
+          "credits_raw": "3(3-0-6)",
+          "name_th": "ระบบสารสนเทศเพื่อการจัดการ",
+          "name_en": "MANAGEMENT INFORMATION SYSTEMS",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "90644xxx",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06016416",
+          "credits_raw": "3(3-0-6)",
+          "name_th": "วิศวกรรมความต้องการ",
+          "name_en": "REQUIREMENT ENGINEERING",
+          "alternative_group": "specialization-position-1",
+          "source_row_index": 3
+        },
+        {
+          "code": "06016417",
+          "credits_raw": "3(2-2-5)",
+          "name_th": "เครื่องมือและสภาพแวดล้อมสำหรับการพัฒนาซอฟต์แวร์",
+          "name_en": "SOFTWARE DEVELOPMENT TOOLS AND ENVIRONMENTS",
+          "alternative_group": "specialization-position-2",
+          "source_row_index": 4
+        },
+        {
+          "code": "06016418",
+          "credits_raw": "3(2-2-5)",
+          "name_th": "การพัฒนาเว็บฝั่งเซิร์ฟเวอร์",
+          "name_en": "SERVER-SIDE WEB DEVELOPMENT",
+          "alternative_group": "specialization-position-3",
+          "source_row_index": 5
+        },
+        {
+          "code": "06016421",
+          "credits_raw": "3(3-0-6)",
+          "name_th": "ความมั่นคงปลอดภัยโครงสร้างพื้นฐานทางเทคโนโลยีสารสนเทศ",
+          "name_en": "INFORMATION TECHNOLOGY INFRASTRUCTURE SECURITY",
+          "alternative_group": "specialization-position-1",
+          "source_row_index": 6
+        },
+        {
+          "code": "06016422",
+          "credits_raw": "3(2-2-5)",
+          "name_th": "อินเทอร์เน็ตของสรรพสิ่ง",
+          "name_en": "INTERNET OF THINGS",
+          "alternative_group": "specialization-position-2",
+          "source_row_index": 7
+        },
+        {
+          "code": "06016423",
+          "credits_raw": "3(2-2-5)",
+          "name_th": "การออโตเมชันและโครงสร้างพื้นฐานที่สามารถโปรแกรมได้",
+          "name_en": "INFRASTRUCTURE PROGRAMMABILITY AND AUTOMATION",
+          "alternative_group": "specialization-position-3",
+          "source_row_index": 8
+        },
+        {
+          "code": "06016426",
+          "credits_raw": "3(2-2-5)",
+          "name_th": "คอมพิวเตอร์กราฟิกส์และแอนิเมชัน",
+          "name_en": "COMPUTER GRAPHICS AND ANIMATION",
+          "alternative_group": "specialization-position-1",
+          "source_row_index": 9
+        },
+        {
+          "code": "06016427",
+          "credits_raw": "3(2-2-5)",
+          "name_th": "การออกแบบและพัฒนาเกมเบื้องต้น",
+          "name_en": "INTRODUCTION TO GAME DESIGN AND DEVELOPMENT",
+          "alternative_group": "specialization-position-2",
+          "source_row_index": 10
+        },
+        {
+          "code": "06016418",
+          "credits_raw": "3(2-2-5)",
+          "name_th": "การพัฒนาเว็บฝั่งเซิร์ฟเวอร์",
+          "name_en": "SERVER-SIDE WEB DEVELOPMENT",
+          "alternative_group": "specialization-position-3",
+          "source_row_index": 11
+        }
+      ]
+    },
+    {
+      "year": 3,
+      "semester": 2,
+      "pdf_page": 36,
+      "printed_page": 31,
+      "pdf_pages": [
+        35,
+        36
+      ],
+      "printed_credits": 15,
+      "rows": [
+        [
+          "060164xx",
+          "3(3-0-6) หรือ 3(2-2-5) หรือ 3(0-6-3)"
+        ],
+        [
+          "060164xx",
+          "3(3-0-6) หรือ 3(2-2-5) หรือ 3(0-6-3)"
+        ],
+        [
+          "06066100",
+          "3(3-0-6)"
+        ],
+        [
+          "90642033",
+          "3(3-0-6)"
+        ],
+        [
+          "90644042",
+          "3(3-0-6)"
+        ]
+      ],
+      "source_file": "IT.pdf",
+      "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+      "image": "IT-aca97dc8b573-036.png",
+      "image_sha256": "fd16d1bf3b77fd97caea0787b80f5780ed407bcb0c47f6c5d8ccea9306c19293",
+      "review_status": "manually_inspected_rendered_image",
+      "page_evidence": [
+        {
+          "source_file": "IT.pdf",
+          "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+          "image": "IT-aca97dc8b573-035.png",
+          "image_sha256": "f698dee0ff617db8661a57804de59248981de8eedd1d05882e46e561d61d17fc",
+          "pdf_page": 35,
+          "printed_page": 30,
+          "review_status": "manually_inspected_rendered_image"
+        },
+        {
+          "source_file": "IT.pdf",
+          "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+          "image": "IT-aca97dc8b573-036.png",
+          "image_sha256": "fd16d1bf3b77fd97caea0787b80f5780ed407bcb0c47f6c5d8ccea9306c19293",
+          "pdf_page": 36,
+          "printed_page": 31,
+          "review_status": "manually_inspected_rendered_image"
+        }
+      ],
+      "expected_options": [
+        {
+          "code": "060164xx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5) หรือ 3(0-6-3)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "060164xx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5) หรือ 3(0-6-3)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06066100",
+          "credits_raw": "3(3-0-6)",
+          "name_th": "การบริหารโครงการเทคโนโลยีสารสนเทศ",
+          "name_en": "INFORMATION TECHNOLOGY PROJECT MANAGEMENT",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "90642033",
+          "credits_raw": "3(3-0-6)",
+          "name_th": "กฎหมายสำหรับคนรุ่นใหม่",
+          "name_en": "LAW FOR NEW GENERATION",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "90644042",
+          "credits_raw": "3(3-0-6)",
+          "name_th": "การสื่อสารและการนำเสนออย่างมืออาชีพ",
+          "name_en": "PROFESSIONAL COMMUNICATION AND PRESENTATION",
+          "alternative_group": null,
+          "source_row_index": 4
+        }
+      ]
+    },
+    {
+      "year": 4,
+      "semester": 1,
+      "pdf_page": 37,
+      "printed_page": 32,
+      "printed_credits": 15,
+      "rows": [
+        [
+          "06016406",
+          "3(0-9-0)"
+        ],
+        [
+          "060164xx",
+          "3(3-0-6) หรือ 3(2-2-5) หรือ 3(0-6-3)"
+        ],
+        [
+          "90643021",
+          "3(3-0-6)"
+        ],
+        [
+          "9064xxxx",
+          "3(3-0-6)"
+        ],
+        [
+          "xxxxxxxx",
+          "3(x-x-x)"
+        ]
+      ],
+      "source_file": "IT.pdf",
+      "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+      "image": "IT-aca97dc8b573-037.png",
+      "image_sha256": "dac40d3831858c5bb9ccddcb5ebe9e59c7cf23fe4d799a92ac8d52ae54449b3e",
+      "review_status": "manually_inspected_rendered_image",
+      "page_evidence": [
+        {
+          "source_file": "IT.pdf",
+          "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+          "image": "IT-aca97dc8b573-037.png",
+          "image_sha256": "dac40d3831858c5bb9ccddcb5ebe9e59c7cf23fe4d799a92ac8d52ae54449b3e",
+          "pdf_page": 37,
+          "printed_page": 32,
+          "review_status": "manually_inspected_rendered_image"
+        }
+      ],
+      "expected_options": [
+        {
+          "code": "06016406",
+          "credits_raw": "3(0-9-0)",
+          "name_th": "โครงงาน 1",
+          "name_en": "PROJECT 1",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "060164xx",
+          "credits_raw": "3(3-0-6) หรือ 3(2-2-5) หรือ 3(0-6-3)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "90643021",
+          "credits_raw": "3(3-0-6)",
+          "name_th": "ผู้ประกอบการสมัยใหม่",
+          "name_en": "MODERN ENTREPRENEURS",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "9064xxxx",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "xxxxxxxx",
+          "credits_raw": "3(x-x-x)",
+          "alternative_group": null,
+          "source_row_index": 4
+        }
+      ]
+    },
+    {
+      "year": 4,
+      "semester": 2,
+      "pdf_page": 37,
+      "printed_page": 32,
+      "printed_credits": 9,
+      "rows": [
+        [
+          "06016407",
+          "3(0-9-0)"
+        ],
+        [
+          "9064xxxx",
+          "3(3-0-6)"
+        ],
+        [
+          "xxxxxxxx",
+          "3(x-x-x)"
+        ]
+      ],
+      "source_file": "IT.pdf",
+      "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+      "image": "IT-aca97dc8b573-037.png",
+      "image_sha256": "dac40d3831858c5bb9ccddcb5ebe9e59c7cf23fe4d799a92ac8d52ae54449b3e",
+      "review_status": "manually_inspected_rendered_image",
+      "page_evidence": [
+        {
+          "source_file": "IT.pdf",
+          "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+          "image": "IT-aca97dc8b573-037.png",
+          "image_sha256": "dac40d3831858c5bb9ccddcb5ebe9e59c7cf23fe4d799a92ac8d52ae54449b3e",
+          "pdf_page": 37,
+          "printed_page": 32,
+          "review_status": "manually_inspected_rendered_image"
+        }
+      ],
+      "expected_options": [
+        {
+          "code": "06016407",
+          "credits_raw": "3(0-9-0)",
+          "name_th": "โครงงาน 2",
+          "name_en": "PROJECT 2",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "9064xxxx",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "xxxxxxxx",
+          "credits_raw": "3(x-x-x)",
+          "alternative_group": null,
+          "source_row_index": 2
+        }
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "purpose": "partial_source_evaluation",
+  "identity": {
+    "program": "IT",
+    "version": 2565,
+    "plan": "no-coop"
+  },
+  "source_file": "IT.pdf",
+  "verified_fields": [
+    "code",
+    "credits_raw",
+    "year",
+    "semester",
+    "printed_credits",
+    "pdf_page",
+    "printed_page",
+    "plan identity",
+    "specialization membership and single-group choice"
+  ],
+  "unverified_fields": [
+    "full-catalog names",
+    "prerequisites",
+    "complete graduation eligibility"
+  ],
+  "observations_sha256": "63dd36f40dba001cb127c776395c122d136babc66ff6cc0ba31b6253e46f4da4",
+  "specialization_groups": {
+    "software": {
+      "label": "กลุ่มวิชาด้านการพัฒนาซอฟต์แวร์",
+      "year2_codes": [
+        "06016414",
+        "06016415"
+      ],
+      "year3_codes": [
+        "06016416",
+        "06016417",
+        "06016418"
+      ]
+    },
+    "infrastructure": {
+      "label": "กลุ่มวิชาด้านโครงสร้างพื้นฐานเทคโนโลยีสารสนเทศ",
+      "year2_codes": [
+        "06016419",
+        "06016420"
+      ],
+      "year3_codes": [
+        "06016421",
+        "06016422",
+        "06016423"
+      ]
+    },
+    "multimedia": {
+      "label": "กลุ่มวิชาด้านสื่อประสมสำหรับการพัฒนาสื่อเชิงโต้ตอบ เว็บ และเกม",
+      "year2_codes": [
+        "06016424",
+        "06016425"
+      ],
+      "year3_codes": [
+        "06016426",
+        "06016427",
+        "06016418"
+      ]
+    }
+  },
+  "structure_evidence": [
+    {
+      "pdf_page": 25,
+      "printed_page": 20,
+      "section": "3 กลุ่มวิชาบังคับเฉพาะสาขา",
+      "credits": 15,
+      "rule": "นักศึกษาต้องเลือกเรียนวิชาในกลุ่มวิชาใดกลุ่มวิชาหนึ่ง ตามกลุ่มวิชาพื้นฐานที่สนใจ"
+    },
+    {
+      "pdf_page": 26,
+      "printed_page": 21,
+      "section": "4 กลุ่มวิชาเลือกทางเทคโนโลยีสารสนเทศ",
+      "credits": 9
+    },
+    {
+      "pdf_page": 29,
+      "printed_page": 24,
+      "section": "โมดูลอาชีพสำหรับวิชาเลือกทางเทคโนโลยีสารสนเทศ",
+      "rule": "ไม่บังคับให้เลือกโมดูลใดโมดูลหนึ่ง เลือกวิชาที่ไม่อยู่ในโมดูลหรือหลายโมดูลได้"
+    },
+    {
+      "pdf_page": 30,
+      "printed_page": 25,
+      "section": "กลุ่มวิชาการศึกษาทางเลือก / หมวดวิชาเลือกเสรี",
+      "rule": "06016481 หรือ 06016482 แทนวิชาเลือกทางเทคโนโลยีสารสนเทศโดยได้รับความเห็นชอบจากคณะ; วิชาเลือกเสรี 6 หน่วยกิต",
+      "status": "reused prior rendered-page review"
+    }
+  ],
+  "counting_rule": "alternative_group identifies credit positions only; students choose ONE complete specialization group, not a mixture of positions. Count all three groups as alternatives, not summed requirements. Printed hours within one elective row are retained verbatim."
+}

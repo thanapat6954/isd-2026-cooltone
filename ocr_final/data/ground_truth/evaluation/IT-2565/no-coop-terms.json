@@ -1,0 +1,198 @@
+{
+  "program": "IT",
+  "version": 2565,
+  "plan": "no-coop",
+  "printed_total": null,
+  "plan_evidence": "PDF31/book26 section3.1.4.1 explicitly says แผนการศึกษาที่ไม่เข้าโครงการสหกิจศึกษา",
+  "terms": [
+    {
+      "year": 1,
+      "semester": 1,
+      "pdf_page": 31,
+      "printed_page": 26,
+      "printed_credits": 18,
+      "rows": [
+        [
+          "06016401",
+          "3(3-0-6)"
+        ],
+        [
+          "06016402",
+          "3(2-2-5)"
+        ],
+        [
+          "06016411",
+          "3(2-2-5)"
+        ],
+        [
+          "06066303",
+          "3(2-2-5)"
+        ],
+        [
+          "90641001",
+          "2(1-2-3)"
+        ],
+        [
+          "90641003",
+          "1(0-3-2)"
+        ],
+        [
+          "90644007",
+          "3(3-0-6)"
+        ]
+      ],
+      "source_file": "IT.pdf",
+      "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+      "image": "IT-aca97dc8b573-031.png",
+      "image_sha256": "65d524aeb7b785de31664b24e30b6bcde7215c5f1efaeef11ab26efb0ee30acd",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06016401",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06016402",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06016411",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06066303",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "90641001",
+          "credits_raw": "2(1-2-3)",
+          "alternative_group": null,
+          "source_row_index": 4
+        },
+        {
+          "code": "90641003",
+          "credits_raw": "1(0-3-2)",
+          "alternative_group": null,
+          "source_row_index": 5
+        },
+        {
+          "code": "90644007",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 6
+        }
+      ]
+    },
+    {
+      "year": 1,
+      "semester": 2,
+      "pdf_page": 32,
+      "printed_page": 27,
+      "printed_credits": 18,
+      "rows": [
+        [
+          "06016408",
+          "3(2-2-5)"
+        ],
+        [
+          "06066001",
+          "3(3-0-6)"
+        ],
+        [
+          "06066101",
+          "3(3-0-6)"
+        ],
+        [
+          "06066301",
+          "3(2-2-5)"
+        ],
+        [
+          "90641002",
+          "3(3-0-6)"
+        ],
+        [
+          "90644008",
+          "3(3-0-6)"
+        ]
+      ],
+      "source_file": "IT.pdf",
+      "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+      "image": "IT-aca97dc8b573-032.png",
+      "image_sha256": "60ec81cf6a2188a165f113563e1992eef67267cc801d40e01c68b2f95283c3ca",
+      "review_status": "manually_inspected_rendered_image",
+      "expected_options": [
+        {
+          "code": "06016408",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 0
+        },
+        {
+          "code": "06066001",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 1
+        },
+        {
+          "code": "06066101",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 2
+        },
+        {
+          "code": "06066301",
+          "credits_raw": "3(2-2-5)",
+          "alternative_group": null,
+          "source_row_index": 3
+        },
+        {
+          "code": "90641002",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 4
+        },
+        {
+          "code": "90644008",
+          "credits_raw": "3(3-0-6)",
+          "alternative_group": null,
+          "source_row_index": 5
+        }
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "purpose": "partial_source_evaluation",
+  "identity": {
+    "program": "IT",
+    "version": 2565,
+    "plan": "no-coop"
+  },
+  "source_file": "IT.pdf",
+  "verified_fields": [
+    "code",
+    "credits_raw",
+    "year",
+    "semester",
+    "printed_credits",
+    "pdf_page",
+    "printed_page",
+    "plan identity"
+  ],
+  "unverified_fields": [
+    "complete names",
+    "all remaining semesters",
+    "specialization selection conditions",
+    "category requirements",
+    "prerequisites",
+    "graduation rules"
+  ],
+  "observations_sha256": "e35a9b2f56c6adb5ea20bc633637cb3a68c5fb7bd1897303e667e145d8e9b4b6"
+}

@@ -1,0 +1,252 @@
+{
+  "schema_version": 1,
+  "purpose": "development labels manually transcribed from rendered official pages; NOT held-out; never production input",
+  "identity": {
+    "program": "AI",
+    "version": 2566,
+    "plan": "coop"
+  },
+  "unverified_levels": [
+    "L3",
+    "L4"
+  ],
+  "groups": [
+    {
+      "program": "AI",
+      "versions": [
+        2566
+      ],
+      "plans": [
+        "coop"
+      ],
+      "cases": [
+        {
+          "source": "AI.pdf",
+          "page": 23,
+          "book_page": 19,
+          "label_evidence": {
+            "source_file": "AI.pdf",
+            "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+            "pdf_page": 23,
+            "printed_page": 19,
+            "image": "AI-268065523712-023.png",
+            "image_sha256": "1569ae1902f1d93aa7cf4ee5352e0f6fc3c3f659d06fbf0b6b16a5510fcd2c65",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "ปี 1 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 15,
+          "level": "L2"
+        },
+        {
+          "source": "AI.pdf",
+          "page": 23,
+          "book_page": 19,
+          "label_evidence": {
+            "source_file": "AI.pdf",
+            "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+            "pdf_page": 23,
+            "printed_page": 19,
+            "image": "AI-268065523712-023.png",
+            "image_sha256": "1569ae1902f1d93aa7cf4ee5352e0f6fc3c3f659d06fbf0b6b16a5510fcd2c65",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "วิชา 06046400 มีกี่หน่วยกิต",
+          "code": "06046400",
+          "credits": 3,
+          "level": "L1"
+        },
+        {
+          "source": "AI.pdf",
+          "page": 23,
+          "book_page": 19,
+          "label_evidence": {
+            "source_file": "AI.pdf",
+            "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+            "pdf_page": 23,
+            "printed_page": 19,
+            "image": "AI-268065523712-023.png",
+            "image_sha256": "1569ae1902f1d93aa7cf4ee5352e0f6fc3c3f659d06fbf0b6b16a5510fcd2c65",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "วิชา 06046402 มีกี่หน่วยกิต",
+          "code": "06046402",
+          "credits": 3,
+          "level": "L1"
+        },
+        {
+          "source": "AI.pdf",
+          "page": 23,
+          "book_page": 19,
+          "label_evidence": {
+            "source_file": "AI.pdf",
+            "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+            "pdf_page": 23,
+            "printed_page": 19,
+            "image": "AI-268065523712-023.png",
+            "image_sha256": "1569ae1902f1d93aa7cf4ee5352e0f6fc3c3f659d06fbf0b6b16a5510fcd2c65",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "วิชา 06066000 มีกี่หน่วยกิต",
+          "code": "06066000",
+          "credits": 3,
+          "level": "L1"
+        },
+        {
+          "source": "AI.pdf",
+          "page": 23,
+          "book_page": 19,
+          "label_evidence": {
+            "source_file": "AI.pdf",
+            "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+            "pdf_page": 23,
+            "printed_page": 19,
+            "image": "AI-268065523712-023.png",
+            "image_sha256": "1569ae1902f1d93aa7cf4ee5352e0f6fc3c3f659d06fbf0b6b16a5510fcd2c65",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "วิชา 06066001 มีกี่หน่วยกิต",
+          "code": "06066001",
+          "credits": 3,
+          "level": "L1"
+        },
+        {
+          "source": "AI.pdf",
+          "page": 23,
+          "book_page": 19,
+          "label_evidence": {
+            "source_file": "AI.pdf",
+            "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+            "pdf_page": 23,
+            "printed_page": 19,
+            "image": "AI-268065523712-023.png",
+            "image_sha256": "1569ae1902f1d93aa7cf4ee5352e0f6fc3c3f659d06fbf0b6b16a5510fcd2c65",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "วิชา 06066303 มีกี่หน่วยกิต",
+          "code": "06066303",
+          "credits": 3,
+          "level": "L1"
+        },
+        {
+          "source": "AI.pdf",
+          "page": 23,
+          "book_page": 19,
+          "label_evidence": {
+            "source_file": "AI.pdf",
+            "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+            "pdf_page": 23,
+            "printed_page": 19,
+            "image": "AI-268065523712-023.png",
+            "image_sha256": "1569ae1902f1d93aa7cf4ee5352e0f6fc3c3f659d06fbf0b6b16a5510fcd2c65",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "ปี 1 ภาคการศึกษาที่ 2 เรียนกี่หน่วยกิต",
+          "credits": 19,
+          "level": "L2"
+        },
+        {
+          "source": "AI.pdf",
+          "page": 24,
+          "book_page": 20,
+          "label_evidence": {
+            "source_file": "AI.pdf",
+            "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+            "pdf_page": 24,
+            "printed_page": 20,
+            "image": "AI-268065523712-024.png",
+            "image_sha256": "64fe1e07434830f90518ab5245b387538391a55198d2a141d0d2ddea6c4dde23",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "ปี 2 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "level": "L2"
+        },
+        {
+          "source": "AI.pdf",
+          "page": 24,
+          "book_page": 20,
+          "label_evidence": {
+            "source_file": "AI.pdf",
+            "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+            "pdf_page": 24,
+            "printed_page": 20,
+            "image": "AI-268065523712-024.png",
+            "image_sha256": "64fe1e07434830f90518ab5245b387538391a55198d2a141d0d2ddea6c4dde23",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "ปี 2 ภาคการศึกษาที่ 2 เรียนกี่หน่วยกิต",
+          "credits": 19,
+          "level": "L2"
+        },
+        {
+          "source": "AI.pdf",
+          "page": 25,
+          "book_page": 21,
+          "label_evidence": {
+            "source_file": "AI.pdf",
+            "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+            "pdf_page": 25,
+            "printed_page": 21,
+            "image": "AI-268065523712-025.png",
+            "image_sha256": "f14df03408306678ccfdf5f2eb8dfd0a7fa7e07bae07bd44a7db56716807370f",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "ปี 3 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 18,
+          "level": "L2"
+        },
+        {
+          "source": "AI.pdf",
+          "page": 25,
+          "book_page": 21,
+          "label_evidence": {
+            "source_file": "AI.pdf",
+            "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+            "pdf_page": 25,
+            "printed_page": 21,
+            "image": "AI-268065523712-025.png",
+            "image_sha256": "f14df03408306678ccfdf5f2eb8dfd0a7fa7e07bae07bd44a7db56716807370f",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "ปี 3 ภาคการศึกษาที่ 2 เรียนกี่หน่วยกิต",
+          "credits": 13,
+          "level": "L2"
+        },
+        {
+          "source": "AI.pdf",
+          "page": 26,
+          "book_page": 22,
+          "label_evidence": {
+            "source_file": "AI.pdf",
+            "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+            "pdf_page": 26,
+            "printed_page": 22,
+            "image": "AI-268065523712-026.png",
+            "image_sha256": "0a54421fc6a5fed1d490773cc59be3f218d9dae0168967b2b68097812bc1a8fe",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "ปี 4 ภาคการศึกษาที่ 1 เรียนกี่หน่วยกิต",
+          "credits": 12,
+          "level": "L2"
+        },
+        {
+          "source": "AI.pdf",
+          "page": 26,
+          "book_page": 22,
+          "label_evidence": {
+            "source_file": "AI.pdf",
+            "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+            "pdf_page": 26,
+            "printed_page": 22,
+            "image": "AI-268065523712-026.png",
+            "image_sha256": "0a54421fc6a5fed1d490773cc59be3f218d9dae0168967b2b68097812bc1a8fe",
+            "review_status": "manually_inspected_rendered_image"
+          },
+          "question": "ปี 4 ภาคการศึกษาที่ 2 เรียนกี่หน่วยกิต",
+          "credits": 6,
+          "level": "L2"
+        }
+      ]
+    }
+  ]
+}

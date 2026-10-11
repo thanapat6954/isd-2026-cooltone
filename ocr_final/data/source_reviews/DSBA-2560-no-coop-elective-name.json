@@ -1,0 +1,10 @@
+{
+ "schema_version":1,"purpose":"Production correction independently approved from rendered DSBA-60.pdf PDF29/book24, not evaluation labels",
+ "program_id":"DSBA-no-coop","version":2560,"plan":"no-coop","source_file":"DSBA-60.pdf","status":"retracted",
+ "retraction":"Magnified source PDF29/book24 clearly includes พิเศษ. Restore original label with separately recorded targeted transaction; this approval must never apply again.",
+ "source_sha256":"6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13","reviewed_on":"2026-10-10",
+ "changes":[{"table":"plan_item","row_id":41,"pdf_page":29,"printed_page":24,
+ "before":{"name_th":"วิชาเลือกทางพิเศษวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ 2"},
+ "values":{"name_th":"วิชาเลือกทางวิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ 2"},
+ "source_evidence":"Year4/S1 second row: printed label contains no พิเศษ; English and credit alternatives unchanged"}]
+}

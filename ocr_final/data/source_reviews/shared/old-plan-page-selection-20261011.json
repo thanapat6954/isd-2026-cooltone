@@ -1,0 +1,223 @@
+{
+  "kind": "source-page-selection",
+  "reviewed_on": "2026-10-11",
+  "review_scope": "cover identity + plan heading/table relevance only; NOT complete field accuracy or OCR certification",
+  "review_method": "actual source covers, full IT PDF27 boundary, and page-heading/table image atlases inspected",
+  "profiles": [
+    {
+      "profile": "dsba-2560-no-coop",
+      "source_file": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "pages": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "images": [
+        {
+          "pdf_page": 25,
+          "sha256": "4c5bd9aadfd5f5f586f56f9adc001907fbe44834d3d06e2fe3447e2d3d9987a9"
+        },
+        {
+          "pdf_page": 26,
+          "sha256": "9568294e79078f79232eecf2d0864e4356f31b5b23fe3d81919b89fd1a0cbef1"
+        },
+        {
+          "pdf_page": 27,
+          "sha256": "6d533508498e8cc40f7b95a0358cb103197295980f0dbe31aabe41fde294b4a3"
+        },
+        {
+          "pdf_page": 28,
+          "sha256": "e6a2edd31a3115aae5d56309c3d500cb6ec6b2360b2bfd1d28c7cdc134fdfa72"
+        },
+        {
+          "pdf_page": 29,
+          "sha256": "0b8f5456014a94ebb802456cd7a41faa13f5f332f1679a7108a792ea027ac8b1"
+        }
+      ]
+    },
+    {
+      "profile": "dsba-2560-coop",
+      "source_file": "DSBA-60.pdf",
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "pages": [
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "images": [
+        {
+          "pdf_page": 30,
+          "sha256": "b6399af2d4c724eb1d5871ce80d3eebedb95125484f172075e2b94b5e65868cc"
+        },
+        {
+          "pdf_page": 31,
+          "sha256": "c86de066f4f9795336aec60afa6d96566a8475021620ebd16f42715b6ea11d55"
+        },
+        {
+          "pdf_page": 32,
+          "sha256": "40bb875b65a5b608d74fc274cdbd2a8b73d0bf912c022a1e2489ed6a6f6f66fa"
+        },
+        {
+          "pdf_page": 33,
+          "sha256": "acb0939f16cfbc86195158706b9b74c96f188ff9d8c56ac9bfd0b23b6d1d50e6"
+        },
+        {
+          "pdf_page": 34,
+          "sha256": "d809a339772cfc61a2023847394613b5ca35a3ae0e0d0635fd774ce69150b003"
+        }
+      ]
+    },
+    {
+      "profile": "it-2560-no-coop",
+      "source_file": "IT-60.pdf",
+      "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "pages": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "images": [
+        {
+          "pdf_page": 27,
+          "sha256": "179fa9aded46d30beb23b5b75444b90c7c82ed614841dca10989ed326773b417"
+        },
+        {
+          "pdf_page": 28,
+          "sha256": "64c046cc55bf9ed7474c7a9532e857c75526b9c8af1c5f01254d9dc3832502f0"
+        },
+        {
+          "pdf_page": 29,
+          "sha256": "4812a5a8dcd8b5c182b45aaba20a7820ef74c5a5c33b3dd841d6cc888c292e96"
+        },
+        {
+          "pdf_page": 30,
+          "sha256": "c76b91f11841bc431e9c6dcb614ac6f09e691cb4318778cf448f7cee618bfa47"
+        },
+        {
+          "pdf_page": 31,
+          "sha256": "055160867e1184c0568440741d92857a512746d327140e64160b3546acf1c57e"
+        },
+        {
+          "pdf_page": 32,
+          "sha256": "48b06834ebf23dcbe2c8d5ad8e2225fb358f09c143ab04ae5e7fe0078baceb59"
+        },
+        {
+          "pdf_page": 33,
+          "sha256": "94ac92be60803153f82b2b07c04b5b9c1702e31fbbcbff9b11301500deb89e11"
+        }
+      ]
+    },
+    {
+      "profile": "it-2560-coop",
+      "source_file": "IT-60.pdf",
+      "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "pages": [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "images": [
+        {
+          "pdf_page": 34,
+          "sha256": "7af4e59d35f2c48f72cbb1aa82ab09eed6d72f2cb725d9ad7ab1261fe8d78e18"
+        },
+        {
+          "pdf_page": 35,
+          "sha256": "9953769a93dd7aafc9140987ac47196d53f697e01c349930a1393db1b7accae9"
+        },
+        {
+          "pdf_page": 36,
+          "sha256": "865800ed6d7f6a1fdab77507edb307e998920f648256cd8ff85c85093376011f"
+        },
+        {
+          "pdf_page": 37,
+          "sha256": "7746d2eb4f7695aec9fc34720016c19a037a216d4e0bf1c858fb1de91a72d85b"
+        },
+        {
+          "pdf_page": 38,
+          "sha256": "af8e495449aa7ca9d195227edd72e65761af495d3cdf2bcbbc8b9e55828597b6"
+        },
+        {
+          "pdf_page": 39,
+          "sha256": "7846ae3978b8c5e5464631427eb627e400ee31d7d0d0bf236c1a9c1796d63a28"
+        },
+        {
+          "pdf_page": 40,
+          "sha256": "9cb9dcdc3df03eec11db9c4047c879fe4e230badec5e425ab951585e36a90f79"
+        }
+      ]
+    },
+    {
+      "profile": "bit-2560-no-coop",
+      "source_file": "BIT-60.pdf",
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "pages": [
+        23,
+        24,
+        25,
+        26
+      ],
+      "images": [
+        {
+          "pdf_page": 23,
+          "sha256": "7d6f9df3052dfa209414d43219c282b6532e932f652e35bffe4312bb56ec9046"
+        },
+        {
+          "pdf_page": 24,
+          "sha256": "3120992a038a2c0487b237c7612cda89350583b9bb6e77776b103ed896002649"
+        },
+        {
+          "pdf_page": 25,
+          "sha256": "c262d4f15d666e212532f5c4bcc39b0d3cdd8cbbd0e52700533d71e26bb79818"
+        },
+        {
+          "pdf_page": 26,
+          "sha256": "d612392fe651d245ff0765fd4e6636a1f5d6d5192e8d0513e9bc71a476ff484e"
+        }
+      ]
+    },
+    {
+      "profile": "bit-2560-coop",
+      "source_file": "BIT-60.pdf",
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "pages": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "images": [
+        {
+          "pdf_page": 27,
+          "sha256": "78651ba30e7188c7a15c2bec0763be93ebcfc3eb52d453e7743cd32563121cab"
+        },
+        {
+          "pdf_page": 28,
+          "sha256": "30ab732d5c4c2e3412320c8dfa3fe9842700a671971cb9bd1e2a2c68c48776cb"
+        },
+        {
+          "pdf_page": 29,
+          "sha256": "c2f0fec1ba83939b8623654388f4c2dc8f9f4b971886817dd30c38641134a224"
+        },
+        {
+          "pdf_page": 30,
+          "sha256": "995056a01c5cf2a4281ce92c5ff8fa9b439669af1e8f40c6cc02631c074a1433"
+        }
+      ]
+    }
+  ],
+  "unselected_pages": "retain existing decisions; unreviewed does not mean irrelevant"
+}

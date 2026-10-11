@@ -1,0 +1,124 @@
+{
+  "program_id": "BIT-no-coop",
+  "version": 2565,
+  "plan": "no-coop",
+  "source_file": "BIT-65.pdf",
+  "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+  "status": "visually_verified",
+  "reviewed_on": "2026-10-10",
+  "purpose": "Production field repair from independently inspected PDF28/book23, not raw OCR or evaluation labels",
+  "source_approval": "BIT-2565-plan-corrections.json / bit-2565-no-coop / PDF28",
+  "evidence": "docs/results/bit_manifest_controls_20261010/validated28-source.png; full source page and prior source-review plan identity PDF26; category/prerequisites not inferred",
+  "changes": [
+    {
+      "table": "plan_item",
+      "row_id": 26,
+      "pdf_page": 28,
+      "printed_page": 23,
+      "evidence": "Source PDF28 lower table / book23, no-coop continuation of section3.1.4.1. No category or prerequisite claims.",
+      "before": {
+        "name_th": null,
+        "name_en": null,
+        "credits_raw": null
+      },
+      "values": {
+        "name_th": "การบริหารโครงการเทคโนโลยีสารสนเทศ",
+        "name_en": "INFORMATION TECHNOLOGY PROJECT MANAGEMENT",
+        "credits_raw": "3(3-0-6)"
+      }
+    },
+    {
+      "table": "plan_item",
+      "row_id": 27,
+      "pdf_page": 28,
+      "printed_page": 23,
+      "evidence": "Source PDF28 lower table / book23, no-coop continuation of section3.1.4.1. No category or prerequisite claims.",
+      "before": {
+        "name_th": null,
+        "name_en": null,
+        "credits_raw": null
+      },
+      "values": {
+        "name_th": "การวางแผนทรัพยากรองค์กร",
+        "name_en": "ENTERPRISE RESOURCE PLANNING",
+        "credits_raw": "3(3-0-6)"
+      }
+    },
+    {
+      "table": "plan_item",
+      "row_id": 28,
+      "pdf_page": 28,
+      "printed_page": 23,
+      "evidence": "Source PDF28 lower table / book23, no-coop continuation of section3.1.4.1. No category or prerequisite claims.",
+      "before": {
+        "name_th": null,
+        "name_en": null,
+        "credits_raw": null
+      },
+      "values": {
+        "name_th": "การพัฒนาเว็บแอปพลิเคชันโดยใช้เฟรมเวิร์ก",
+        "name_en": "WEB APPLICATION DEVELOPMENT USING FRAMEWORKS",
+        "credits_raw": "3(2-2-5)"
+      }
+    },
+    {
+      "table": "plan_item",
+      "row_id": 29,
+      "pdf_page": 28,
+      "printed_page": 23,
+      "evidence": "Source PDF28 lower table / book23, no-coop continuation of section3.1.4.1. No category or prerequisite claims.",
+      "before": {
+        "name_th": null,
+        "name_en": null,
+        "credits_raw": null
+      },
+      "values": {
+        "name_th": "การวิเคราะห์และออกแบบระบบสารสนเทศทางธุรกิจ",
+        "name_en": "BUSINESS INFORMATION SYSTEM ANALYSIS AND DESIGN",
+        "credits_raw": "3(3-0-6)"
+      }
+    },
+    {
+      "table": "plan_item",
+      "row_id": 30,
+      "pdf_page": 28,
+      "printed_page": 23,
+      "evidence": "Source PDF28 lower table / book23, no-coop continuation of section3.1.4.1. No category or prerequisite claims.",
+      "before": {
+        "name_th": null,
+        "name_en": null,
+        "credits_raw": null
+      },
+      "values": {
+        "name_th": "เทคโนโลยีกลุ่มเมฆ",
+        "name_en": "CLOUD TECHNOLOGY",
+        "credits_raw": "3(3-0-6)"
+      }
+    },
+    {
+      "table": "plan_item",
+      "row_id": 31,
+      "pdf_page": 28,
+      "printed_page": 23,
+      "evidence": "Source PDF28 lower table / book23, no-coop continuation of section3.1.4.1. No category or prerequisite claims.",
+      "before": {
+        "name_th": null,
+        "name_en": null,
+        "credits_raw": null,
+        "raw_code": null,
+        "code_pattern": null,
+        "is_placeholder": null,
+        "elective_type": null
+      },
+      "values": {
+        "name_th": "วิชาเลือกด้านภาษาและการสื่อสาร",
+        "name_en": "ELECTIVE IN LANGUAGE AND COMMUNICATION",
+        "credits_raw": "3(3-0-6) หรือ 3(2-2-5)",
+        "raw_code": "96644xxx",
+        "code_pattern": "96644XXX",
+        "is_placeholder": 1,
+        "elective_type": "language_elective"
+      }
+    }
+  ]
+}

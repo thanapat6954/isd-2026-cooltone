@@ -7,8 +7,9 @@ import logging
 import re
 import time
 from collections import OrderedDict
+from contextvars import ContextVar
 from copy import deepcopy
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from types import ModuleType
 from typing import Any
 
@@ -26,13 +27,25 @@ from .database import (
 from .query_planner import QueryPlan, detect_intent, deterministic_sql, normalize_course_name
 from .study_plan import build_study_plan, study_plan_text
 from .study_evidence import read_study_evidence
+from .request_budget import REQUEST_DEADLINE, check_deadline
+from .sql_parameters import BoundSQL, constraint_sql
+from .query_planner import meaningful_name
+
+MODEL_CALLS = ContextVar('curriculum_model_calls', default=0)
 
 
 LOGGER = logging.getLogger("curriculum_app")
 
+
+class ModelUnavailableError(requests.RequestException):
+    """The service exists but the configured model is missing."""
+
 SQL_SCHEMA = {
     "type": "object",
-    "properties": {"sql": {"type": "string"}},
+    "properties": {"sql": {"type": "string"}, "parameters": {"anyOf": [
+        {"type": "array", "items": {"type": ["string", "number", "boolean", "null"]}},
+        {"type": "object", "additionalProperties": {"type": ["string", "number", "boolean", "null"]}}
+    ]}},
     "required": ["sql"],
     "additionalProperties": False,
 }
@@ -42,6 +55,45 @@ ANSWER_SCHEMA = {
     "required": ["answer"],
     "additionalProperties": False,
 }
+SEARCH_SCHEMA = {
+    'type': 'object', 'properties': {'terms': {'type': 'array', 'maxItems': 8,
+        'items': {'type': 'string'}}}, 'required': ['terms'], 'additionalProperties': False,
+}
+
+
+def literal_search_terms(question, terms):
+    """Only accept literal user spans, not model-invented factual filters."""
+    if not isinstance(terms, list):
+        return []
+    terms = [re.sub(r'^(?:(?:อธิบาย|เนื้อหา|คำอธิบาย|วิชา|รายวิชา|เกี่ยวกับ)\s*)+', '', term.strip())
+             for term in terms[:8] if isinstance(term, str)]
+    terms = [re.sub(r'(?:ต่อกัน|มีพรีรีเคว|มีวิชาบังคับก่อน|ต้องเรียนก่อน).*$', '', term).strip() for term in terms]
+    return list(dict.fromkeys(term.strip() for term in terms[:8]
+        if isinstance(term, str) and 2 <= len(term.strip()) <= 100
+        and term.strip().casefold() in question.casefold()
+        and not re.search(r'หลักสูตร|สหกิจ|ความสัมพันธ์|พรีรีเคว|prereq|^อธิบาย|\b(?:256\d|curriculum|relationship)\b', term, re.I)
+        and not re.fullmatch(r'\d{4}', term.strip())))
+
+
+def literal_course_mentions(question):
+    """Extract explicit name spans; database matching supplies candidate identity."""
+    spans = re.findall(r'(?:รายวิชา|วิชา)\s*(.+?)(?=ต่อกัน|สัมพันธ์|เกี่ยวข้อง|มีกี่|กี่หน่วยกิต|มีพรีรีเคว|มีวิชาบังคับก่อน|ต้องเรียน|[?？]|$)', question)
+    mentions = []
+    for span in spans:
+        for part in re.split(r'กับ|และ', span):
+            part = part.strip()
+            if meaningful_name(part) and not re.search(r'^(?:เลือก|บังคับ|เรียน|ชื่อ|ในหลักสูตร)', part):
+                mentions.append(part)
+    return literal_search_terms(question, mentions)
+
+
+def relationship_coverage_gap(rows, selected):
+    """Do not silently omit an evidence-empty plan from a multi-plan answer."""
+    supported = {row.get('_source', {}).get('curriculum_name') for row in rows if row.get('requires')}
+    missing = [item.curriculum_name for item in selected if item.curriculum_name not in supported]
+    if supported and missing:
+        return '\nยังไม่มีหลักฐานความสัมพันธ์ที่ตรงคำถามในผลที่ค้นจาก: ' + ', '.join(missing) + '; ไม่อนุมานว่าไม่มีวิชาบังคับก่อน และคำตอบข้างต้นไม่ครอบคลุมแผนเหล่านี้'
+    return ''
 
 CLAIM_SCHEMA = {
     'type': 'object', 'properties': {'claims': {'type': 'array', 'items': {
@@ -55,8 +107,74 @@ FACT_LABELS = {'code': 'รหัสวิชา', 'name_th': 'ชื่อภ�
     'year': 'ชั้นปี', 'semester': 'ภาคการศึกษา', 'requires': 'วิชาบังคับก่อน',
     'prerequisites': 'ข้อมูลวิชาบังคับก่อนที่บันทึก', 'description_th': 'คำอธิบายรายวิชา',
     'lecture_h': 'ชั่วโมงบรรยาย', 'lab_h': 'ชั่วโมงปฏิบัติ', 'self_h': 'ชั่วโมงศึกษาด้วยตนเอง',
-    'credits_raw': 'รูปแบบหน่วยกิต', 'prerequisite_status': 'สถานะหลักฐานวิชาบังคับก่อน',
+    'credits_raw': 'รูปแบบหน่วยกิต', 'kind': 'ประเภทความสัมพันธ์ที่บันทึก', 'prerequisite_status': 'สถานะหลักฐานวิชาบังคับก่อน',
     'rule_text': 'ข้อกำหนดที่ตรวจจากเล่ม', 'regulation_year': 'ปีของข้อบังคับที่อ้าง'}
+
+
+def fallback_evidence_need(question):
+    """Identify required evidence types, never supply curriculum facts."""
+    if re.search(r'หัวข้อสอบ|ข้อสอบ|exam topics?|assessment questions?|(?:เทอมหน้า|ภาคเรียนหน้า|next (?:term|semester)).*(?:สอน|ภาษา|teach)|(?:สอน|ภาษา).*(?:เทอมหน้า|ภาคเรียนหน้า|next (?:term|semester))', question, re.I):
+        return 'teaching_assessment'
+    if re.search(r'ความสัมพันธ์|เกี่ยวข้อง|เชื่อมโยง|สัมพันธ์|ต่อกัน|พรีรีเคว(?:สิท|ซิท)|relationship|relat(?:ed|ion)|prereq', question, re.I):
+        return 'relationship'
+    if re.search(r'รับรอง|ลงทะเบียน|เปิดสอน|จบได้|จบภายใน|guarantee|registration|offered', question, re.I):
+        return 'planning_conditions'
+    if re.search(r'เนื้อหา|คำอธิบาย|เรียนเกี่ยวกับ|เรียนอะไร|description|content|อธิบาย', question, re.I):
+        return 'description'
+    return None
+
+
+def literal_database_names(question, database):
+    """Recover explicitly named subjects even if topic generation drops one."""
+    if not database.has('course', 'name_th', 'name_en'):
+        return []
+    literal = question.replace("'", "''")
+    terms = []
+    for column in ('name_th', 'name_en'):
+        sql = (f"SELECT {column} FROM course WHERE LENGTH({column}) >= 3 "
+               f"AND INSTR(LOWER('{literal}'), LOWER({column})) > 0")
+        _, records = execute_readonly(database, sql, 100)
+        terms.extend(row[column] for row in records)
+    return list(dict.fromkeys(terms))
+
+
+def relationship_sql(course_sql, *, paired_pages=False):
+    """Require both endpoints to match the already validated subject retrieval."""
+    match = re.search(r'\bFROM course WHERE (.*?)(?:\s+LIMIT \d+)?\s*$', course_sql, re.I | re.S)
+    if not match:
+        return None
+    candidates = 'SELECT code FROM course WHERE ' + match[1]
+    if paired_pages:
+        return ('SELECT p.code, p.requires, p.kind, p.source_file, p.page_number, e.printed_page_number '
+                'FROM prerequisite p LEFT JOIN course_prerequisite_evidence e ON p.code=e.code '
+                'AND p.source_file=e.source_file AND p.page_number=e.page_number '
+                f'WHERE p.code IN ({candidates}) AND p.requires IN ({candidates})')
+    return ('SELECT code, requires, kind, source_file, page_number FROM prerequisite '
+            f'WHERE code IN ({candidates}) AND requires IN ({candidates})')
+
+
+def fallback_gap(question, rows, claims):
+    """Reject evidence-type substitution even when all selected values are real."""
+    need = fallback_evidence_need(question)
+    if not need:
+        return None
+    if need == 'teaching_assessment':
+        return 'ฐานข้อมูลหลักสูตรที่เลือกไม่มีหลักฐานหัวข้อสอบหรือแผนการสอนของอาจารย์ในภาคเรียนที่ถาม; ชื่อวิชา คำอธิบายหลักสูตร และหน่วยกิตไม่ยืนยันข้อมูลนี้'
+    if need == 'planning_conditions':
+        return 'ยังรับรองการลงทะเบียนหรือการจบตามเวลาที่ขอไม่ได้: ผลที่ดึงจาก SQLite ไม่มีข้อมูลยืนยันครบทั้งการเปิดรายวิชาในเทอมที่ต้องการ ผลการเรียนรายบุคคล และเงื่อนไขอนุญาตลงทะเบียน; ข้อกำหนดหลักสูตรที่มีไม่ใช่การรับรองสิทธิ์รายบุคคล'
+    selected = []
+    if isinstance(claims, list):
+        for claim in claims:
+            if isinstance(claim, dict) and type(claim.get('row_index')) is int and 0 <= claim['row_index'] < len(rows):
+                row = rows[claim['row_index']]
+                selected.extend((field, row.get(field)) for field in claim.get('fields', []) if isinstance(field, str))
+    if need == 'relationship':
+        # Descriptions alone do not establish a formally stated relationship.
+        if not any(field in {'requires', 'prerequisites'} and value for field, value in selected):
+            return 'ไม่มีหลักฐานความสัมพันธ์ระหว่างรายวิชาที่บันทึกไว้ในผลที่ดึงจาก SQLite; คำอธิบายหรือยอดรวมหลักสูตรเพียงอย่างเดียวไม่ยืนยันความสัมพันธ์'
+    elif not any(field == 'description_th' and value for field, value in selected):
+        return 'ผลที่ดึงจาก SQLite ไม่มีคำอธิบายรายวิชาที่ใช้ตอบคำถามเนื้อหา; ชื่อวิชา หน่วยกิต และระยะเวลาหลักสูตรไม่ทดแทนข้อมูลนี้'
+    return None
 
 
 def render_claims(rows, claims):
@@ -140,7 +258,7 @@ def _clean_model_text(text: str) -> str:
     return (fenced.group(1) if fenced else cleaned).strip()
 
 
-def _parse_json_object(raw: str, schema: dict[str, Any]) -> dict[str, str]:
+def _parse_json_object(raw: str, schema: dict[str, Any]) -> dict[str, Any]:
     text = _clean_model_text(raw)
     if not text:
         raise ValueError("Model returned an empty response")
@@ -161,7 +279,7 @@ def _parse_json_object(raw: str, schema: dict[str, Any]) -> dict[str, str]:
                 break
     if not isinstance(value, dict):
         raise ValueError("Model did not return a valid JSON object")
-    result: dict[str, str] = {}
+    result: dict[str, Any] = {}
     for key in schema.get("required", []):
         field = value.get(key)
         expected = schema.get('properties', {}).get(key, {}).get('type', 'string')
@@ -171,6 +289,17 @@ def _parse_json_object(raw: str, schema: dict[str, Any]) -> dict[str, str]:
         if not isinstance(field, str) or not field.strip():
             raise ValueError(f"Model response requires a non-empty string field: {key}")
         result[key] = field.strip()
+    for key, definition in schema.get('properties', {}).items():
+        if key in result or key not in value:
+            continue
+        field = value[key]
+        permitted = {option.get('type') for option in definition.get('anyOf', [])}
+        if permitted == {'array', 'object'} and isinstance(field, (list, dict)):
+            result[key] = field
+        elif definition.get('type') == 'string' and isinstance(field, str):
+            result[key] = field
+        else:
+            raise ValueError(f'Model returned an invalid optional field: {key}')
     return result
 
 
@@ -182,11 +311,15 @@ class QueryExecution:
     validation_columns: tuple[str, ...]
     repair_attempts: list[dict[str, str]]
     error: str | None = None
+    citation_queries: list[dict[str, Any]] = field(default_factory=list)
+    parameters: Any = field(default_factory=tuple)
 
     def public(self) -> dict[str, Any]:
         return {
+            'citation_queries': self.citation_queries,
             **self.database.public_metadata(),
             "sql": self.sql,
+            "parameters": self.parameters,
             "validation": "passed" if not self.error else "failed",
             "referenced_columns": list(self.validation_columns),
             "row_count": len(self.rows),
@@ -216,6 +349,36 @@ class QwenTextToSQL:
             return any(item.get('name', item.get('model')) == expected for item in models if isinstance(item, dict))
         except (requests.RequestException, ValueError, AttributeError):
             return False
+
+    @staticmethod
+    def _version_facts(rows):
+        groups = {}
+        for row in rows:
+            source = row.get('_source') or {}
+            code = str(row.get('code') or '')
+            if not re.fullmatch(r'\d{8}', code):
+                continue
+            key = (str(source.get('program_id') or '').split('-')[0].casefold(), source.get('plan'))
+            groups.setdefault(key, {}).setdefault(source.get('curriculum_version'), {}).setdefault(code, []).append(row)
+        lines, evidence, compared = [], [], 0
+        for versions in groups.values():
+            years = sorted(v for v in versions if type(v) is int)
+            if len(years) < 2:
+                continue
+            old, new = years[0], years[-1]
+            common = sorted(set(versions[old]) & set(versions[new]))
+            compared += len(common)
+            for code in common:
+                before, after = versions[old][code], versions[new][code]
+                values = lambda records: sorted({(str(r.get('name_en') or ''), str(r.get('credits_raw') or r.get('credits'))) for r in records})
+                if values(before) != values(after):
+                    lines.append(f"{code}: {before[0].get('_source', {}).get('curriculum_name')} {values(before)} → {after[0].get('_source', {}).get('curriculum_name')} {values(after)}")
+                    evidence.extend(before + after)
+            if common and not evidence:
+                evidence.extend(versions[old][common[0]] + versions[new][common[0]])
+        if not compared:
+            return 'ยังเปรียบเทียบไม่ได้: ต้องมีรหัสวิชาตรงกันจากทั้งสองฉบับของหลักสูตรและแผนเดียวกันใน SQLite', rows
+        return '\n'.join(lines or ['ไม่พบความต่างของชื่ออังกฤษและหน่วยกิตในรหัสที่ตรงกันที่ค้นได้']) + f'\nตรวจเทียบ {compared} รหัสในข้อมูลที่นำเข้า ไม่ใช่การยืนยันความครบถ้วนของทั้งเล่ม', evidence
 
     @staticmethod
     def _version_diff(rows: list[dict[str, Any]]) -> tuple[str, list[dict[str, Any]]]:
@@ -264,14 +427,25 @@ class QwenTextToSQL:
         return "รายวิชาที่มีในฉบับ 2560 แต่ไม่มีในฉบับ 2565 — " + "\n".join(lines), relevant
 
     def _chat(self, prompt: str, schema: dict[str, Any]) -> dict[str, str]:
-        raw = self.lab8b.ollama_generate(
+        deadline = REQUEST_DEADLINE.get()
+        remaining = self.config.request_timeout if deadline is None else deadline - time.perf_counter()
+        if remaining <= 0:
+            raise TimeoutError('หมดเวลาประมวลผลคำถาม ไม่สามารถยืนยันคำตอบได้')
+        try:
+            MODEL_CALLS.set(MODEL_CALLS.get() + 1)
+            raw = self.lab8b.ollama_generate(
             prompt,
             fmt=schema,
-            timeout=self.config.request_timeout,
+            timeout=min(self.config.request_timeout, remaining),
             model=self.config.ollama_model,
             num_ctx=8192,
             num_predict=512,
-        )
+            )
+        except requests.HTTPError as exc:
+            if exc.response is not None and exc.response.status_code == 404:
+                raise ModelUnavailableError(f'ไม่พบ model {self.config.ollama_model} ใน Ollama; ตรวจ ollama list และดาวน์โหลด model ที่ตั้งค่าไว้ก่อน') from exc
+            raise
+        check_deadline()
         return _parse_json_object(raw, schema)
 
     def make_sql(
@@ -283,30 +457,88 @@ class QwenTextToSQL:
         previous_sql: str | None = None,
         error: str | None = None,
     ) -> str:
+        if plan.intent == 'unknown' and fallback_evidence_need(question) == 'teaching_assessment':
+            # The supported schemas contain curriculum facts, not assessment or
+            # term-specific instructor plans. Do not retrieve unrelated facts.
+            if database.has('course', 'code', 'source_file', 'page_number'):
+                return 'SELECT code, source_file, page_number FROM course WHERE 0'
+            if database.has('courses', 'course_code', 'source_file', 'page_number'):
+                return 'SELECT course_code AS code, source_file, page_number FROM courses WHERE 0'
+            raise ValueError('Selected curriculum database is unavailable')
+        if (plan.intent == 'unknown' and fallback_evidence_need(question) in {'description', 'relationship'}
+                and database.schema_family == 'lab8b' and not database.has('course', 'code', 'name_th')):
+            raise ValueError(f'{database.curriculum_name}: ตารางหลักฐานรายวิชา course ไม่พร้อมใช้งาน; ไม่แทนด้วยข้อมูลแผนหรือยอดรวม')
+        if plan.intent == 'unknown' and fallback_evidence_need(question) == 'planning_conditions' and database.has('program_requirement', 'rule_text', 'source_file', 'page_number'):
+            return 'SELECT topic, rule_text, source_file, page_number, printed_page_number FROM program_requirement'
+        if plan.intent == 'unknown' and fallback_evidence_need(question) == 'planning_conditions' and database.schema_family == 'legacy-course-catalog':
+            # Schema confirms the legacy catalog has no enrollment/eligibility evidence.
+            return 'SELECT * FROM courses WHERE 0'
+        if (plan.intent == 'unknown' and fallback_evidence_need(question) == 'relationship'
+                and database.schema_family == 'legacy-course-catalog'):
+            # Unidentified legacy rows must never become an unrelated first-page
+            # catalog answer. Search only explicitly requested name candidates.
+            terms = literal_course_mentions(question)
+            predicates = [f"course_name_matches({field}, '{term.replace(chr(39), chr(39)*2)}')"
+                          for term in terms for field in ('course_name_th', 'course_name_en')]
+            where = ' OR '.join(predicates) if predicates else '0'
+            return ('SELECT course_code AS code, course_name_th AS name_th, course_name_en AS name_en, '
+                    'prerequisites, source_file, page_number FROM courses WHERE ' + where)
+        if plan.intent == 'unknown' and fallback_evidence_need(question) and database.has('course', 'code', 'name_th', 'description_th'):
+            # The model interprets topics; construction and version isolation remain deterministic.
+            explicit = literal_course_mentions(question)
+            result = {'terms': explicit} if explicit else self._chat(
+                'คัดเฉพาะคำหรือวลีชื่อวิชา/หัวข้อเนื้อหาจากคำถาม ห้ามเพิ่มคำที่ไม่มีในคำถาม '
+                'ไม่เลือกชื่อหลักสูตร ปี แผน คำสั่งอธิบาย หรือคำว่าความสัมพันธ์ '
+                'ตอบ JSON terms ถ้าไม่ชัดเจนให้ []\nคำถาม: ' + question, SEARCH_SCHEMA)
+            terms = list(dict.fromkeys(literal_database_names(question, database) + explicit + literal_search_terms(question, result.get('terms'))))
+            predicates = []
+            for term in terms:
+                # INSTR is literal substring matching, so wildcard characters cannot widen retrieval.
+                value = term.replace("'", "''")
+                predicates.extend(f"course_name_matches({field}, '{value}')" for field in ('name_th', 'name_en'))
+                predicates.append(f"INSTR(normalize_course_name(description_th), normalize_course_name('{value}')) > 0")
+            where = ' OR '.join(predicates) if predicates else 'code IS NULL'
+            return 'SELECT code, name_th, name_en, description_th, source_file, page_number FROM course WHERE ' + where
         repair = ""
         if previous_sql and error:
             repair = f"""
 SQL ก่อนหน้านี้ใช้ไม่ได้: {previous_sql}
+Bindings ก่อนหน้านี้: {json.dumps(getattr(previous_sql, 'parameters', ()), ensure_ascii=False)}
 ข้อผิดพลาดจาก SQLite/validator: {error}
-แก้ SQL โดยใช้เฉพาะ schema จริงด้านล่าง
+แก้ SQL และ bindings โดยใช้เฉพาะ schema จริงด้านล่าง; SQL ไม่มี marker ให้ parameters=[]; ห้ามส่งค่าที่ไม่มี marker หรือใส่ filter เพิ่มเพื่อใช้ bindings เดิม
 """
-        if database.has('program', 'name_th', 'total_credits', 'years'):
-            stored_hint = 'ข้อมูลหลักสูตรบันทึกใน program: SELECT name_th, name_en, total_credits, years, source_file, page_number FROM program ไม่ใส่ WHERE'
+        if database.has('course', 'code', 'name_th', 'description_th'):
+            stored_hint = ('คำถามเนื้อหารายวิชาใช้ course.description_th พร้อม code/name_th/source_file/page_number '
+                           'ตัวอย่างรูปแบบ SELECT code, name_th, description_th, source_file, page_number FROM course '
+                           'กรองชื่อหรือคำอธิบายด้วยคำที่ผู้ใช้ระบุเท่านั้น; ความสัมพันธ์ใช้ prerequisite.requires/kind เมื่อมีจริง '
+                           'ห้ามใช้ program แทนเนื้อหาหรือความสัมพันธ์; หากไม่มีหลักฐานให้คืนแถวที่เกี่ยวข้องพร้อมค่าที่ขาด ไม่เดา')
         elif database.has('courses', 'course_code', 'course_name_th', 'credits'):
             stored_hint = ('ฐานนี้ไม่มี program หรือข้อมูลปี/ยอดรวมหลักสูตร เป็น catalog ที่ยังไม่ระบุฉบับแน่ชัด '
                            'เลือกหลักฐานจริงได้ด้วย SELECT course_code AS code, course_name_th AS name_th, course_name_en AS name_en, credits, source_file, page_number FROM courses LIMIT 5 '
                            'ห้ามใช้ credits AS total_credits เพราะหน่วยกิตรายวิชาไม่ใช่ยอดรวมหลักสูตร')
         else:
             stored_hint = 'เลือกเฉพาะ column จริงตาม schema ไม่เปลี่ยนความหมายด้วย alias'
+        schema_text = database.schema_text()
+        if plan.intent == 'unknown':
+            # Keep operational review logs out of the model's factual retrieval context.
+            allowed = {'course', 'courses', 'prerequisite', 'course_prerequisite_evidence',
+                       'program', 'program_requirement', 'plan_item', 'v_study_plan'}
+            schema_text = '\n'.join(line for line in schema_text.splitlines()
+                                    if re.match(r'(?:TABLE|VIEW) (\w+)\(', line)
+                                    and re.match(r'(?:TABLE|VIEW) (\w+)\(', line)[1] in allowed)
         prompt = f"""แปลงคำถามเป็น SQLite SQL สำหรับฐานข้อมูลเดียวนี้
 
 ฐานข้อมูล: {database.curriculum_name}
 แผนคำถามที่โปรแกรมตรวจพบ: {json.dumps(plan.as_dict(), ensure_ascii=False)}
 schema จริง (ห้ามใช้ table หรือ column นอกเหนือจากนี้):
-{database.schema_text()}
+{schema_text}
 {repair}
 กติกา:
-- ตอบ JSON ที่มี key ชื่อ sql เท่านั้น
+- ตอบ JSON sql พร้อม parameters เมื่อใช้ ? หรือ :name; จำนวน/ชื่อ bindings ต้องตรงทุกตัว ห้ามเดาค่าเพิ่มเติม
+- parameters เป็น object ต้องใช้ :name ที่ชื่อเดียวกับทุก key ใน SQL; ห้ามใช้ ? กับ object
+- parameters เป็น array ต้องใช้ ? และจำนวนสมาชิกเท่ากับจำนวน ? ตามลำดับ
+- SQL ที่ใส่ค่าตรงๆ ไม่มี marker ต้องไม่มี parameters หรือใช้ [] หรือ {{}}; ห้ามคง bindings ของ SQL เก่า
+- ตัวอย่าง binding syntax เท่านั้น (ไม่ใช่ table หรือ facts ให้คัดลอก): WHERE field = :value กับ {{"value": "text"}}; WHERE field = ? กับ ["text"]; WHERE field = 'text' กับ []
 - ใช้ SELECT หรือ WITH เพียงคำสั่งเดียวและเป็น read-only
 - ใช้เฉพาะ table, view และ column ที่ปรากฏใน schema จริง
 - ห้ามสร้างเงื่อนไข year, semester, program หรือ course ที่ผู้ใช้ไม่ได้ระบุ
@@ -319,7 +551,8 @@ schema จริง (ห้ามใช้ table หรือ column นอก�
 
 คำถาม: {question}
 """
-        return _clean_model_text(self._chat(prompt, SQL_SCHEMA)["sql"])
+        proposal = self._chat(prompt, SQL_SCHEMA)
+        return BoundSQL(_clean_model_text(proposal['sql']), proposal.get('parameters', ()))
 
     def summarize(
         self,
@@ -328,6 +561,39 @@ schema จริง (ห้ามใช้ table หรือ column นอก�
         rows: list[dict[str, Any]],
         executions: list[QueryExecution],
     ) -> str:
+        missing_descriptions = []
+        if fallback_evidence_need(question) == 'planning_conditions':
+            rules = [row for row in rows if row.get('rule_text')]
+            claims = [{'row_index': index, 'fields': ['rule_text']} for index in range(len(rules))]
+            recorded = render_claims(rules, claims) if rules else None
+            return (recorded or self._insufficient(rows)) + ' — ' + fallback_gap(question, rows, [])
+        if fallback_evidence_need(question) == 'relationship':
+            relationships = [row for row in rows if row.get('requires')]
+            if not relationships:
+                return self._insufficient(rows) + ' — ' + fallback_gap(question, rows, [])
+            # A stored edge is a structured fact, not a free-text content inference.
+            claims = [{'row_index': index, 'fields': [field for field in ('code', 'requires', 'kind')
+                       if row.get(field) is not None]} for index, row in enumerate(relationships)]
+            answer = (render_claims(relationships, claims) or self._insufficient(rows)) + ' — แสดงเฉพาะความสัมพันธ์ที่บันทึกในตาราง prerequisite ไม่ยืนยันความเชื่อมโยงเนื้อหาอื่น'
+            pairs = {(row.get('code'), row.get('requires')) for row in relationships}
+            if len(pairs) > 1:
+                answer += '\nพบหลายคู่รายวิชาที่ตรงชื่อที่ถาม โปรดระบุรหัสหรือชื่อเต็มของคู่ที่ต้องการ ไม่เลือกคู่ใดให้โดยการเดา'
+            return answer
+        if fallback_evidence_need(question) == 'description':
+            missing_descriptions = [str(row.get('code') or row.get('name_th') or '')
+                                    for row in rows if not row.get('description_th')]
+            described = [row for row in rows if row.get('description_th')]
+            if not described:
+                answer = self._insufficient(rows) + ' — ' + fallback_gap(question, rows, [])
+                candidates = list(dict.fromkeys((str(row.get('code') or ''), str(row.get('name_th') or '')) for row in rows if row.get('code')))
+                if len(candidates) > 1:
+                    answer += ' — รายวิชาที่พบ: ' + '; '.join(code + ' ' + name for code, name in candidates)
+                    literal = normalize_course_name(question)
+                    if not any(normalize_course_name(name) in literal for _, name in candidates) and not re.search(r'ระหว่าง|กับ|และ|ทั้ง|เปรียบเทียบ|compare', question, re.I):
+                        answer += ' โปรดระบุว่าต้องการรายวิชาใด; การเลือกชื่อให้ชัดยังไม่ทดแทนคำอธิบายที่ขาดในฐานข้อมูล'
+                return answer
+            # Null rows are not description evidence; exclude them before reference selection.
+            rows = described
         sources = [
             {
                 "curriculum_name": item.database.curriculum_name,
@@ -348,6 +614,8 @@ intent: {plan.intent}
 - ห้ามส่งค่าหรือข้อความคำตอบเอง ระบบจะแสดงค่าจากแถวที่อ้างเท่านั้น
 - field ที่อนุญาต: {', '.join(FACT_LABELS)}
 - ถ้าหลักฐานไม่พอให้ claims เป็น [] ห้ามเดาหรืออนุมานสิทธิ์ลงทะเบียน
+- คำถามเนื้อหาต้องอ้าง description_th ไม่ใช่ชื่อหรือหน่วยกิตอย่างเดียว
+- ความสัมพันธ์ต้องมีหลักฐานความสัมพันธ์ที่บันทึกจริง ห้ามถือว่าชื่อหรือเนื้อหาคล้ายกันเป็นความสัมพันธ์ที่แหล่งข้อมูลระบุ
 - ถ้ามีหลายหลักสูตร ให้รายงานแยกตาม curriculum_name ห้ามบวกยอดข้ามหลักสูตร
 - ถ้าเป็นคำถามเปรียบเทียบ ให้เปรียบเทียบเฉพาะค่าที่แสดง
 - ถ้าไม่มีแถวข้อมูล ให้ตอบว่าไม่พบข้อมูลนี้ในฐานข้อมูลหลักสูตร
@@ -356,7 +624,15 @@ intent: {plan.intent}
             claims = self._chat(prompt, CLAIM_SCHEMA).get('claims')
         except (ValueError, json.JSONDecodeError):
             return self._insufficient(rows)
-        return render_claims(rows, claims) or self._insufficient(rows)
+        gap = fallback_gap(question, rows, claims)
+        if gap:
+            return self._insufficient(rows) + ' — ' + gap
+        answer = render_claims(rows, claims) or self._insufficient(rows)
+        if missing_descriptions:
+            answer += ' — รายวิชาที่ดึงมาแต่ไม่มีคำอธิบายใน SQLite: ' + ', '.join(missing_descriptions)
+        if fallback_evidence_need(question) == 'relationship':
+            answer += ' — แสดงเฉพาะความสัมพันธ์ที่บันทึกในตาราง prerequisite ไม่ยืนยันความเชื่อมโยงเนื้อหาอื่น'
+        return answer
 
     @staticmethod
     def _insufficient(rows):
@@ -387,10 +663,26 @@ intent: {plan.intent}
                         for row in rows if row.get('rule_text')]
             if not evidence:
                 return QwenTextToSQL._insufficient(rows)
-            caveat = 'หลักฐานที่ตรวจส่วนนี้เป็นการอ้างถึงข้อบังคับ ยังไม่ได้ตรวจรายละเอียดภาคผนวกทั้งหมด จึงยังยืนยันไม่ได้ว่าแผนของผู้เรียนผ่านเงื่อนไขจบครบแล้ว'
+            caveat = 'หลักฐานที่ตรวจส่วนนี้ครอบคลุมเฉพาะข้อบังคับที่อ้างหรือข้อที่ระบุ ยังไม่ได้ตรวจรายละเอียดภาคผนวกทั้งหมด จึงยังยืนยันไม่ได้ว่าแผนของผู้เรียนผ่านเงื่อนไขจบครบแล้ว'
             if plan.intent == 'study_feasibility':
                 caveat += ' และยังรับรองไม่ได้ว่าจะจบตามระยะเวลาที่ถาม ต้องตรวจวิชาบังคับก่อนและการเปิดรายวิชาจริงด้วย'
             return '\n'.join(evidence) + '\n' + caveat
+        if plan.intent == 'prerequisite_catalog':
+            groups = {}
+            for row in rows:
+                key = (row.get('_source', {}).get('curriculum_name', 'หลักสูตรที่เลือก'), row.get('code'))
+                if row.get('requires') or row.get('prerequisites'):
+                    groups.setdefault(key, []).append(row)
+            multiple = bool(re.search(r'มากกว่าหนึ่ง|หลาย|multiple', plan.search_term or '', re.I))
+            lines = []
+            for (curriculum, code), records in groups.items():
+                requirements = sorted({str(r.get('requires') or r.get('prerequisites')) for r in records})
+                if multiple and len(requirements) < 2:
+                    continue
+                lines.append(f"{curriculum}: {code} {records[0].get('name_th') or ''} — วิชาบังคับก่อนที่บันทึก: {', '.join(requirements)}")
+            identities = ', '.join(sorted({r.get('_source', {}).get('curriculum_name', 'หลักสูตรที่เลือก') for r in rows}))
+            scope = 'วิชาเลือกที่ระบุในแผนที่เลือก' if plan.elective_only else 'รายวิชาที่ตรงเงื่อนไข'
+            return '\n'.join(lines or [f'{identities}: ไม่พบรายการที่ตรงเงื่อนไขในข้อมูลวิชาบังคับก่อนที่นำเข้า']) + f'\nแสดงเฉพาะความสัมพันธ์ของ{scope}ที่บันทึกใน SQLite ไม่ใช่การตรวจครบทุกวิชา ข้อมูลนี้ไม่ยืนยันความสัมพันธ์ AND/OR หรือสิทธิ์ลงทะเบียน และข้อมูลที่ขาดไม่หมายถึงไม่มีวิชาบังคับก่อน'
         if plan.intent == "course_list":
             grouped: dict[str, list[dict[str, Any]]] = {}
             for row in rows:
@@ -468,7 +760,9 @@ intent: {plan.intent}
                     fact = f"วิชาบังคับก่อนที่ระบุคือ {requirement}"
                 else:
                     fact = "มีรายวิชานี้ในฐานข้อมูล แต่ข้อมูลวิชาบังคับก่อนยังไม่ยืนยันจากคำอธิบายรายวิชาในเล่มหลักสูตร"
-                answers.append(f"{curriculum}: วิชา {code} — {fact}")
+                name = row.get("name_th") or row.get("name_en") or ""
+                membership = " (มีคำอธิบายในเล่ม แต่ไม่ปรากฏในตารางแผนการเรียนของฐานข้อมูลที่เลือก)" if row.get('in_selected_plan') == 0 else ""
+                answers.append(f"{curriculum}: วิชา {code} {name}{membership} — {fact}")
             answers.append("ยังสรุปไม่ได้ว่าสามารถลงทะเบียนเมื่อยังไม่ผ่านวิชาบังคับก่อนได้หรือไม่ เพราะยังไม่มีหลักฐานข้อยกเว้นการลงทะเบียนที่ตรวจยืนยัน ต้องตรวจข้อบังคับหรือสอบถามฝ่ายทะเบียน")
             return "\n".join(dict.fromkeys(answers))
 
@@ -520,6 +814,16 @@ intent: {plan.intent}
                 formatted.append(
                     f"{curriculum}: {row.get('code', 'ไม่ระบุรหัส')} {name}{english}{credits}{hours}{citation}"
                 )
+            if plan.compare:
+                groups = {}
+                for row in rows:
+                    source = row.get('_source', {}).get('curriculum_name')
+                    groups.setdefault(source, {})[row.get('code')] = row.get('credits')
+                for source, values in groups.items():
+                    credits = list(values.values())
+                    if len(credits) == 2 and all(type(value) in {int, float} for value in credits):
+                        high, low = max(credits), min(credits)
+                        formatted.append(f'{source}: ผลต่างหน่วยกิต = {high} - {low} = {high-low} หน่วยกิต (คำนวณจากสองรายวิชาที่ดึงมา)')
             return "\n".join(formatted)
 
         if plan.intent == "program_info":
@@ -561,11 +865,11 @@ intent: {plan.intent}
             return model_answer
 
         # A single terse answer is acceptable only if it contains the grounded value.
-        if len(usable) == 1:
+        if len(usable) == 1 and not usable[0].get('calculation_rows'):
             value = str(usable[0][field])
             if value in model_answer and unit in model_answer:
                 return model_answer
-        else:
+        elif not any(row.get('calculation_rows') for row in usable):
             names = [str(row.get("_source", {}).get("curriculum_name", "")) for row in usable]
             if all(name and name.casefold() in model_answer.casefold() for name in names):
                 return model_answer
@@ -581,7 +885,45 @@ intent: {plan.intent}
                 source_files = row.get("source_files") or "เอกสารหลักสูตร"
                 source_pages = row.get("source_pages")
                 citation = f" (ที่มา: {source_files}{f' หน้า {source_pages}' if source_pages else ''})"
-            parts.append(f"{curriculum}: {row[field]} {unit}{citation}")
+            placement = f" ปี {row.get('year')} ภาค {row.get('semester')}" if plan.intent == 'semester_credits' else ''
+            parts.append(f"{curriculum}{placement}: {row[field]} {unit}{citation}")
+            if row.get('calculation_rows'):
+                items = json.loads(row['calculation_rows'])
+                has_bundles = any(len(r)>5 and r[5] for r in items)
+                parts.append(('รายวิชาร่วมและรายวิชาในชุดทางเลือก (เลือกทั้งชุดเดียว): ' if has_bundles else 'รายการที่ใช้คำนวณ: ')+', '.join(
+                    f"{r[0]} {r[3] if len(r)>3 and r[3] else 'ไม่ระบุชื่อในฐานข้อมูล'}: {r[1]} หน่วยกิต"
+                    +(f" [{r[4]}]" if len(r)>4 and r[4] else '')
+                    +(f" (กลุ่มทางเลือก {r[2]})" if r[2] else '')
+                    +(f" (ชุด {r[6] or r[5]})" if len(r)>6 and r[5] else '') for r in items))
+                # Match the view: one MIN credit contribution per alternative group.
+                contributions = []
+                alternatives = {}
+                bundles = {}
+                for item in items:
+                    if item[1] is None:
+                        continue
+                    if len(item)>5 and item[5]:
+                        bundles[item[5]] = bundles.get(item[5],0) + item[1]
+                    elif item[2]:
+                        alternatives.setdefault(item[2], []).append(item[1])
+                    else:
+                        contributions.append(item[1])
+                contributions.extend(min(values) for values in alternatives.values())
+                if bundles:
+                    if len(set(bundles.values())) != 1:
+                        parts.append('หน่วยกิตของชุดทางเลือกไม่ตรงกัน จึงยังยืนยันการคำนวณจากหลักฐานนี้ไม่ได้')
+                        continue
+                    contributions.append(next(iter(bundles.values())))
+                    parts.append('นับรายวิชาร่วมบวกหนึ่งชุดทั้งกลุ่ม; ไม่รวมหลายชุดหรือสลับรายวิชาแต่ละลำดับข้ามชุด')
+                if contributions:
+                    parts.append('การคำนวณ: '+' + '.join(str(value) for value in contributions)
+                                 +f' = {sum(contributions)} หน่วยกิต')
+                parts.append('นับแต่ละกลุ่มทางเลือกเพียงหนึ่งตัวเลือก; ยอดรวมจากแถว semester ใน SQLite')
+        if plan.intent == 'semester_credits' and len(usable) > 1:
+            for curriculum in {r.get('_source',{}).get('curriculum_name') for r in usable}:
+                values=[r[field] for r in usable if r.get('_source',{}).get('curriculum_name') == curriculum]
+                if len(values)==2:
+                    parts.append(f'{curriculum}: ผลต่าง = {max(values)} - {min(values)} = {max(values)-min(values)} หน่วยกิต')
         return "; ".join(parts)
 
     def _execute_one(
@@ -589,21 +931,30 @@ intent: {plan.intent}
         *, resolved_course_code: str | None = None,
     ) -> QueryExecution:
         sql = deterministic_sql(plan, database)
+        codes = list(dict.fromkeys(re.findall(r'(?<!\d)\d{8}(?!\d)', question)))
+        if sql and plan.intent == 'course_detail' and len(codes) > 1:
+            values = ', '.join("'" + code + "'" for code in codes)
+            sql = re.sub(r"\b(code|course_code)\s*=\s*'" + re.escape(plan.course_code) + "'",
+                         lambda match: match[1] + ' IN (' + values + ')', sql, flags=re.I)
         repairs: list[dict[str, str]] = []
         if sql is None:
             sql = self.make_sql(question, plan, database)
 
         for attempt in range(self.config.sql_repair_attempts + 1):
             try:
+                parameters = getattr(sql, 'parameters', ())
+                checked_sql = constraint_sql(sql, parameters)
                 if plan.intent == 'unknown':
                     validate_unknown_projection(sql)
-                    sql = normalize_redundant_program_filter(database, sql)
-                self._validate_plan_filters(question, plan, database, sql,resolved_course_code=resolved_course_code)
-                validation, raw_rows = execute_readonly(database, sql, self.config.max_rows)
+                    if fallback_evidence_need(question) and re.search(r'\b(?:FROM|JOIN)\s+program\b', sql, re.I):
+                        raise SqlValidationError('Course content/relationship questions require relevant course evidence, not program totals or duration')
+                    if not parameters:
+                        sql = normalize_redundant_program_filter(database, sql)
+                self._validate_plan_filters(question, plan, database, checked_sql,resolved_course_code=resolved_course_code)
+                validation, raw_rows = execute_readonly(database, sql, self.config.max_rows, parameters)
                 if plan.intent == 'course_search':
-                    literal_term = re.sub(r'\s+', '', plan.search_term or '').casefold()
-                    literal = [row for row in raw_rows if any(literal_term in re.sub(r'\s+', '',str(row.get(key) or '')).casefold() for key in ('name_th','name_en'))]
-                    raw_rows = literal or raw_rows
+                    # Keep every canonical-name candidate unless an exact full
+                    # name resolves it. A literal substring must not hide synonyms.
                     exact = [row for row in raw_rows if any(
                         normalize_course_name(str(row.get(key) or '')) == normalize_course_name(plan.search_term or '')
                         for key in ('name_th', 'name_en'))]
@@ -614,6 +965,7 @@ intent: {plan.intent}
                     rows=attach_source_metadata(raw_rows, database),
                     validation_columns=validation.referenced_columns,
                     repair_attempts=repairs,
+                    parameters=parameters,
                 )
             except SqlValidationError as exc:
                 error = str(exc)
@@ -623,7 +975,7 @@ intent: {plan.intent}
                     database.curriculum_name, attempt + 1, sql, error,
                 )
                 if attempt >= self.config.sql_repair_attempts:
-                    return QueryExecution(database, sql, [], (), repairs, error)
+                    return QueryExecution(database, sql, [], (), repairs, error, parameters=parameters)
                 # A deterministic query failing indicates a schema edge case; the real
                 # schema and SQLite error are then handed to Qwen for bounded repair.
                 sql = self.make_sql(
@@ -639,22 +991,43 @@ intent: {plan.intent}
         """Reject filters that contradict or exceed the detected user constraints."""
         where = re.search(r"\bwhere\b(.*?)(?:\bgroup\b|\border\b|\blimit\b|$)", sql, re.I | re.S)
         where_text = where.group(1) if where else ""
+        if plan.intent == 'plans_comparison':
+            where_text = re.sub(r'year\s*=\s*\(SELECT MAX\(year\) FROM plan_item\)', '1=1', where_text, flags=re.I)
         # ESCAPE is syntax, not an invented user filter. Only permit our fixed
         # escape character; keep the ordinary literal guard intact.
         where_text = re.sub(r"\bESCAPE\s+'\\'", '', where_text, flags=re.I)
+        # A literal being present in the question does not authorize using it
+        # on an unrelated field (e.g. curriculum year as a course-code filter).
+        for column, operator, literal in re.findall(
+            r"\b(code|course_code)\s*(=|LIKE)\s*'((?:''|[^'])*)'", where_text, re.I
+        ):
+            value = literal.replace("''", "'")
+            if operator.upper() == 'LIKE' and not value.strip('%_ '):
+                raise SqlValidationError('Course-code filter cannot be an unconstrained wildcard')
+            if re.fullmatch(r'%?25\d{2}%?', value) and re.search(r'หลักสูตร|ฉบับ|curriculum|version', question, re.I):
+                raise SqlValidationError('Curriculum version cannot be used as a course-code filter')
         if plan.year is None and re.search(r"\byear\s*(?:=|<|>|\bin\b|\bbetween\b)", where_text, re.I):
             raise SqlValidationError("SQL added a year filter that the user did not request")
         if plan.semester is None and re.search(
             r"\bsemester\s*(?:=|<|>|\bin\b|\bbetween\b)", where_text, re.I
         ):
             raise SqlValidationError("SQL added a semester filter that the user did not request")
+        for field, requested in (('year', plan.year), ('semester', plan.semester)):
+            if requested is None:
+                continue
+            allowed = set(plan.semesters or (requested,)) if field == 'semester' else {requested}
+            for value in re.findall(rf"\b{field}\s*=\s*'?([0-9]+)'?", where_text, re.I):
+                if int(value) not in allowed:
+                    raise SqlValidationError(f'SQL {field} filter contradicts the requested value')
         if where and re.search(r"\bfrom\s+program\b", sql, re.I):
             raise SqlValidationError(
                 "The selected database contains one program row; filtering program is redundant"
             )
         allowed_constants = {"pre", "corequisite"}
+        if plan.intent == 'elective_slots':
+            allowed_constants.update({'elec-', 'x'})
         if plan.intent in {'graduation_reference', 'study_feasibility'}:
-            allowed_constants.add('graduation_reference')
+            allowed_constants.update({'graduation_reference','graduation_rule_26'})
         # Only the internal, database-backed name resolver can authorize this
         # code. Do not exempt arbitrary plan/model-added course literals.
         if resolved_course_code == plan.course_code and re.fullmatch(r'\d{8}',resolved_course_code or ''):
@@ -663,7 +1036,17 @@ intent: {plan.intent}
             # This is a deterministic synonym expansion from the explicit
             # Thai/English "required course" intent, not a model-added filter.
             allowed_constants.add("required")
-        for literal in re.findall(r"'((?:''|[^'])*)'", where_text):
+        # Authorize synonyms only inside the category predicate, not arbitrary
+        # model-added description/name filters containing the same word.
+        elective_spans = []
+        if plan.elective_only and plan.intent in {'prerequisite_catalog', 'course_list'}:
+            elective_spans = [match.span() for match in re.finditer(
+                r"\b(?:LOWER\(\s*)?(?:\w+\.)?ctype\s*\)?\s*(?:=\s*'(?:เลือก|elective)'|LIKE\s*'%(?:เลือก|elective)%'|IN\s*\(\s*'(?:เลือก|elective)'(?:\s*,\s*'(?:เลือก|elective)')*\s*\))",
+                where_text, re.I)]
+        for literal_match in re.finditer(r"'((?:''|[^'])*)'", where_text):
+            literal = literal_match[1]
+            if any(start <= literal_match.start() < end for start, end in elective_spans):
+                continue
             if plan.intent == 'course_search' and plan.search_term:
                 pattern = '%' + normalize_course_name(plan.search_term).replace('%', '\\%').replace('_', '\\_') + '%'
                 if literal.replace("''", "'") == pattern:
@@ -684,7 +1067,75 @@ intent: {plan.intent}
                     f"SQL filtered program_id={identifier!r}, but this database contains {actual!r}"
                 )
 
+    @staticmethod
+    def _attach_page_pairs(execution):
+        """Resolve citation metadata exclusively from this selected SQLite database."""
+        database = execution.database
+        if database.has('plan_source_claim', 'plan_item_id', 'field', 'pdf_page', 'literal'):
+            for row in execution.rows:
+                if type(row.get('id')) is int:
+                    ids = str(row['id'])
+                elif isinstance(row.get('code'),str):
+                    code = row['code'].replace("'","''")
+                    ids = f"SELECT id FROM plan_item WHERE code='{code}'"
+                else:
+                    continue
+                sql = f'SELECT field,source_file,pdf_page AS page,printed_page AS book_page,literal AS quote FROM plan_source_claim WHERE plan_item_id IN ({ids})'
+                validation, records = execute_readonly(database, sql, 100)
+                execution.citation_queries.append({'sql':validation.sql,'rows':records})
+                if database.has('plan_bundle_member', 'plan_item_id', 'bundle_id'):
+                    sql = f"SELECT 'whole_bundle_rule' AS field,b.source_file,b.rule_pdf_page AS page,b.rule_printed_page AS book_page,b.rule_text AS quote FROM plan_bundle b JOIN plan_bundle_member m ON m.year=b.year AND m.semester=b.semester AND m.bundle_id=b.bundle_id WHERE m.plan_item_id IN ({ids})"
+                    validation, rules = execute_readonly(database,sql,10)
+                    execution.citation_queries.append({'sql':validation.sql,'rows':rules})
+                    records += rules
+                if records:
+                    row['page_evidence'] = records
+        if database.has('plan_term_source','year','semester','pdf_page'):
+            for row in execution.rows:
+                if type(row.get('year')) is int and 'credits' in row and 'code' not in row:
+                    condition = f"year={row['year']}"
+                    if type(row.get('semester')) is int:
+                        condition += f" AND semester={row['semester']}"
+                    sql = "SELECT 'term_total' AS field,source_file,pdf_page AS page,printed_page AS book_page,'รวม '||credits AS quote FROM plan_term_source WHERE "+condition
+                    validation, records = execute_readonly(database,sql,10)
+                    execution.citation_queries.append({'sql':validation.sql,'rows':records})
+                    if records:
+                        row['page_evidence'] = records
+        for filename, page in sorted({(row.get('source_file'), row.get('page_number'))
+                                      for row in execution.rows if isinstance(row.get('source_file'), str)
+                                      and type(row.get('page_number')) is int}):
+            pages = set()
+            for table in ('plan_item', 'program', 'course_prerequisite_evidence', 'program_requirement'):
+                if not database.has(table, 'source_file', 'page_number', 'printed_page_number'):
+                    continue
+                escaped = filename.replace("'", "''")
+                sql = (f'SELECT source_file, page_number, printed_page_number FROM {table} '
+                       f"WHERE source_file='{escaped}' AND page_number={page}")
+                validation, records = execute_readonly(database, sql, 100)
+                execution.citation_queries.append({'sql': validation.sql, 'rows': records})
+                pages.update(record['printed_page_number'] for record in records
+                             if type(record.get('printed_page_number')) is int and record['printed_page_number'] > 0)
+            if len(pages) == 1:
+                printed = next(iter(pages))
+                for row in execution.rows:
+                    if row.get('source_file') == filename and row.get('page_number') == page and row.get('printed_page_number') is None:
+                        row['printed_page_number'] = printed
+
     def ask(self, registry: DatabaseRegistry, question: str) -> dict[str, Any]:
+        # SQL repair and generation share one request budget, isolated per thread.
+        token = REQUEST_DEADLINE.set(time.perf_counter() + self.config.request_timeout)
+        model_token = MODEL_CALLS.set(0)
+        try:
+            check_deadline()
+            result = self._ask_with_budget(registry, question)
+            result['model_used'] = self.config.ollama_model if MODEL_CALLS.get() else None
+            check_deadline()
+            return result
+        finally:
+            MODEL_CALLS.reset(model_token)
+            REQUEST_DEADLINE.reset(token)
+
+    def _ask_with_budget(self, registry: DatabaseRegistry, question: str) -> dict[str, Any]:
         started = time.perf_counter()
         registry.refresh()
         fingerprint = tuple(
@@ -703,8 +1154,17 @@ intent: {plan.intent}
                 result['debug']['cache_hit'] = True
             return result
         plan = detect_intent(question)
+        partial_scope = getattr(registry, 'build_contract', {}).get('kind') == 'academic-plan-only'
+        if partial_scope:
+            from .build_scope import supports_plan_question, partial_answer_notice
+            if not supports_plan_question(plan, question):
+                return {'question': question, 'sql': '', 'rows': [], 'answer': partial_answer_notice(),
+                        'intent': plan.intent, 'selected_curricula': [], 'queries': [],
+                        'debug': None, 'model_used': None, 'partial_scope': True}
         include_legacy = plan.intent in {"course_detail", "course_search", "prerequisite"}
-        selected = registry.select(question, include_legacy=include_legacy)
+        selected = registry.select(question, include_legacy=include_legacy,
+            compare_versions=plan.intent in {'version_course_diff','version_fact_comparison'},
+            compare_plans=plan.intent == 'plans_comparison')
         if not selected:
             raise ValueError("ไม่พบฐานข้อมูลหลักสูตรที่ตรงกับคำถาม")
         planned = time.perf_counter()
@@ -716,6 +1176,25 @@ intent: {plan.intent}
             [item.relative_path for item in selected],
         )
         executions = [self._execute_one(question, plan, database) for database in selected]
+        if plan.intent == 'unknown' and fallback_evidence_need(question) == 'relationship':
+            related = []
+            for execution in executions:
+                database = execution.database
+                sql = relationship_sql(execution.sql, paired_pages=database.has('course_prerequisite_evidence', 'code', 'source_file', 'page_number', 'printed_page_number'))
+                if not sql or execution.error or not database.has('prerequisite', 'code', 'requires', 'kind'):
+                    continue
+                try:
+                    validate_unknown_projection(sql)
+                    parameters = execution.parameters
+                    self._validate_plan_filters(question, plan, database, constraint_sql(sql, parameters))
+                    validation, evidence = execute_readonly(database, sql, self.config.max_rows, parameters)
+                    related.append(QueryExecution(database, validation.sql, attach_source_metadata(evidence, database), validation.referenced_columns, [], parameters=parameters))
+                except SqlValidationError as exc:
+                    related.append(QueryExecution(database, sql, [], (), [], str(exc)))
+            executions.extend(related)
+        if plan.intent in {'unknown', 'prerequisite_catalog', 'version_fact_comparison'}:
+            for execution in executions:
+                self._attach_page_pairs(execution)
         if plan.intent == 'course_search' and any(word in question.casefold() for word in ('วิชาบังคับก่อน', 'prerequisite', 'ต้องเรียนอะไรมาก่อน')):
             codes = {row.get('code') for execution in executions for row in execution.rows}
             if len(codes) == 1:
@@ -744,12 +1223,27 @@ intent: {plan.intent}
             raise ValueError(f"ไม่สามารถค้นฐานข้อมูลได้: {errors}")
 
         study_plan = None
-        if rows and plan.intent == 'course_list':
+        if plan.intent == 'selection_clarification':
+            answer = 'คำถามขอใช้ฉบับใหม่แทนฉบับที่เลือก กรุณาเลือกฉบับที่ต้องการค้นให้ตรงกันก่อน: ' + ', '.join(item.curriculum_name for item in selected)
+        elif rows and plan.intent in {'course_list', 'elective_slots', 'plans_comparison'} and all(item.database.schema_family == 'lab8b' for item in executions):
             evidence = {item.database.curriculum_name: read_study_evidence(item.database) for item in executions}
-            study_plan, rows = build_study_plan(rows, question, evidence, required_only=plan.required_only)
-            answer = study_plan_text(study_plan)
+            study_plan, rows = build_study_plan(rows, question, evidence, required_only=plan.required_only,
+                                               filtered_subset=plan.intent == 'elective_slots')
+            # Keep limitations in the structured payload too, not only plain text.
+            study_plan['notes'] = []
+            if plan.intent == 'elective_slots':
+                study_plan['notes'].append('รูปแบบที่มีคำว่า “หรือ” ในหน่วยกิตเป็นตัวเลือกตามค่าที่บันทึก ไม่ใช่ให้เรียนทุกรูปแบบพร้อมกัน; ส่วนที่ไม่ระบุความสัมพันธ์ยังยืนยันไม่ได้')
+            if plan.intent == 'plans_comparison' and len({item.database.plan for item in executions}) < 2:
+                study_plan['notes'].append('ฐานข้อมูลที่เลือกมีข้อมูลเพียงแผนเดียว จึงยังเปรียบเทียบสองแผนไม่ได้')
+            if re.search(r'ทุกกลุ่ม|ร่วมทุก|กลุ่มที่เลือก', question):
+                for card in study_plan['cards']:
+                    if not any(section['kind'] == 'track' or section['title'] == 'รายวิชาร่วมทุกกลุ่ม' for section in card['sections']):
+                        study_plan['notes'].append(f"{card['program']} {card['version']} {card['plan_label']}: ข้อมูลความสัมพันธ์กลุ่มที่ค้นยังไม่พอจะแยกวิชาร่วมทุกกลุ่มจากวิชาเฉพาะกลุ่ม รายการข้างต้นไม่ยืนยันว่าทุกกลุ่มต้องเรียนทั้งหมด")
+            answer = study_plan_text(study_plan, include_english=bool(re.search(r'อังกฤษ|english', question, re.I)))
         elif rows and plan.intent == "version_course_diff":
             answer, rows = self._version_diff(rows)
+        elif rows and plan.intent == 'version_fact_comparison':
+            answer, rows = self._version_facts(rows)
         elif rows and plan.intent != "unknown":
             # Structured intents are rendered from database rows directly.
             # Qwen is reserved for genuinely ambiguous questions, which keeps
@@ -760,6 +1254,24 @@ intent: {plan.intent}
         else:
             searched = ", ".join(item.curriculum_name for item in selected)
             answer = f"ยังยืนยันข้อมูลที่ถามไม่ได้จากฐานข้อมูลที่ค้น: {searched} ข้อมูลที่นำเข้าอาจไม่ครบ จึงยังสรุปไม่ได้ว่ารายวิชาหรือเงื่อนไขนี้ไม่มีในเล่มหลักสูตร"
+            if plan.intent == 'unknown':
+                gap = fallback_gap(question, [], [])
+                if gap:
+                    answer += ' — ' + gap
+            if plan.intent == 'prerequisite_catalog':
+                if plan.elective_only:
+                    answer += ' — ค้นเฉพาะรายวิชาที่ฐานข้อมูลแผนที่เลือกระบุว่าเป็นวิชาเลือก ไม่ใช้วิชาบังคับอื่นแทน และยังตรวจยืนยันทุกวิชาเลือกไม่ได้'
+                answer += ' — ยังไม่มีข้อมูลวิชาบังคับก่อนที่ค้นได้เพื่อประเมินจำนวนหรือความสัมพันธ์ AND/OR ไม่อนุมานว่าไม่มีวิชาบังคับก่อนหรือมีสิทธิ์ลงทะเบียน'
+            if plan.intent in {'semester_credits', 'year_credits'} and any(item.schema_family == 'legacy-course-catalog' for item in selected):
+                answer += ' — catalog เดิมไม่มีข้อมูลชั้นปี/ภาคการศึกษาและยังไม่ยืนยันฉบับหลักสูตร จึงคำนวณยอดตามแผนที่ถามไม่ได้ ไม่ใช้ยอดรวมทุกแถวแทนยอดภาคเรียน'
+        if not answer.strip():
+            searched = ', '.join(item.curriculum_name for item in selected)
+            answer = f"ยังยืนยันข้อมูลที่ถามไม่ได้จากฐานข้อมูลที่ค้น: {searched} แถวที่ค้นพบไม่มี fields ที่จำเป็นสำหรับคำถามนี้ จึงไม่สามารถใช้แทนหลักฐานที่ขาดได้"
+        if plan.intent == 'unknown' and fallback_evidence_need(question) == 'relationship' and rows:
+            answer += relationship_coverage_gap(rows, selected)
+        if partial_scope:
+            from .build_scope import partial_answer_notice
+            answer += '\n\n' + partial_answer_notice()
         formatted = time.perf_counter()
         sql_map = {
             execution.database.curriculum_name: execution.sql for execution in executions

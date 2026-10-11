@@ -1,0 +1,354 @@
+{
+  "schema_version": 1,
+  "purpose": "partial_source_evaluation",
+  "identity": {
+    "program": "IT",
+    "version": 2560,
+    "revision": null,
+    "plan": null
+  },
+  "scope": "shared course fields only; plan membership NOT inferred; reused development approvals, not independent held-out",
+  "unverified_fields": [
+    "full course coverage",
+    "plan membership",
+    "graduation conditions",
+    "complete L1-L4"
+  ],
+  "labels": [
+    {
+      "id": "prerequisite_source_reviews.json:IT-60.pdf:233:06016323",
+      "code": "06016323",
+      "expected": {
+        "prerequisite_status": "required",
+        "requires": [
+          "06016317"
+        ],
+        "name_th": "การโปรแกรมอุปกรณ์เคลื่อนที่"
+      },
+      "evidence": {
+        "source_file": "IT-60.pdf",
+        "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 233,
+        "printed_page": 228,
+        "section": "course description",
+        "approval": "data/source_reviews/shared/prerequisite_source_reviews.json",
+        "approval_sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+        "review_sample_id": "IT-2560-coop-09",
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "prerequisite_source_reviews.json:IT-60.pdf:236:06016330",
+      "code": "06016330",
+      "expected": {
+        "prerequisite_status": "required",
+        "requires": [
+          "06016329"
+        ],
+        "name_th": "โครงงานทางด้านวิศวกรรมซอฟต์แวร์ 2"
+      },
+      "evidence": {
+        "source_file": "IT-60.pdf",
+        "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 236,
+        "printed_page": null,
+        "section": "course description",
+        "approval": "data/source_reviews/shared/prerequisite_source_reviews.json",
+        "approval_sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+        "review_sample_id": "IT-2560-no-coop-12",
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "prerequisite_source_reviews.json:IT-60.pdf:242:06016340",
+      "code": "06016340",
+      "expected": {
+        "prerequisite_status": "required",
+        "requires": [
+          "06016339"
+        ],
+        "name_th": "โครงงานทางด้านเทคโนโลยีเครือข่ายและระบบ 2"
+      },
+      "evidence": {
+        "source_file": "IT-60.pdf",
+        "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 242,
+        "printed_page": null,
+        "section": "course description",
+        "approval": "data/source_reviews/shared/prerequisite_source_reviews.json",
+        "approval_sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+        "review_sample_id": "IT-2560-no-coop-13",
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "prerequisite_source_reviews.json:IT-60.pdf:247:06016350",
+      "code": "06016350",
+      "expected": {
+        "prerequisite_status": "required",
+        "requires": [
+          "06016349"
+        ],
+        "name_th": "โครงงานทางด้านการพัฒนาสื่อประสมและเกม 2"
+      },
+      "evidence": {
+        "source_file": "IT-60.pdf",
+        "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 247,
+        "printed_page": null,
+        "section": "course description",
+        "approval": "data/source_reviews/shared/prerequisite_source_reviews.json",
+        "approval_sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+        "review_sample_id": "IT-2560-no-coop-14",
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "old2560_name_reviews.json:IT-60.pdf:37:06016324",
+      "code": "06016324",
+      "expected": {
+        "name_th": "วิศวกรรมความต้องการ",
+        "name_en": "REQUIREMENT ENGINEERING"
+      },
+      "evidence": {
+        "source_file": "IT-60.pdf",
+        "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 37,
+        "printed_page": 32,
+        "section": "academic plan",
+        "approval": "data/source_reviews/shared/old2560_name_reviews.json",
+        "approval_sha256": "4b274f8bf4e10059da1b6fd207081ee22ad2a73fea9c04e137e7e9c2d292d636",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "old2560_name_reviews.json:IT-60.pdf:37:06016325",
+      "code": "06016325",
+      "expected": {
+        "name_th": "การโปรแกรมเชิงบริการ",
+        "name_en": "SERVICE-ORIENTED PROGRAMMING"
+      },
+      "evidence": {
+        "source_file": "IT-60.pdf",
+        "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 37,
+        "printed_page": 32,
+        "section": "academic plan",
+        "approval": "data/source_reviews/shared/old2560_name_reviews.json",
+        "approval_sha256": "4b274f8bf4e10059da1b6fd207081ee22ad2a73fea9c04e137e7e9c2d292d636",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "old2560_name_reviews.json:IT-60.pdf:38:06016326",
+      "code": "06016326",
+      "expected": {
+        "name_th": "การทวนสอบและตรวจสอบซอฟต์แวร์",
+        "name_en": "SOFTWARE VERIFICATION AND VALIDATION"
+      },
+      "evidence": {
+        "source_file": "IT-60.pdf",
+        "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 38,
+        "printed_page": 33,
+        "section": "academic plan",
+        "approval": "data/source_reviews/shared/old2560_name_reviews.json",
+        "approval_sha256": "4b274f8bf4e10059da1b6fd207081ee22ad2a73fea9c04e137e7e9c2d292d636",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "old2560_name_reviews.json:IT-60.pdf:38:06016327",
+      "code": "06016327",
+      "expected": {
+        "name_th": "การพัฒนาคลาวด์แอปพลิเคชันระดับองค์กร",
+        "name_en": "CLOUD-BASED ENTERPRISE APPLICATION DEVELOPMENT"
+      },
+      "evidence": {
+        "source_file": "IT-60.pdf",
+        "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 38,
+        "printed_page": 33,
+        "section": "academic plan",
+        "approval": "data/source_reviews/shared/old2560_name_reviews.json",
+        "approval_sha256": "4b274f8bf4e10059da1b6fd207081ee22ad2a73fea9c04e137e7e9c2d292d636",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "old2560_name_reviews.json:IT-60.pdf:38:06016328",
+      "code": "06016328",
+      "expected": {
+        "name_th": "เครื่องมือและสภาพแวดล้อมสำหรับการพัฒนาซอฟต์แวร์",
+        "name_en": "SOFTWARE DEVELOPMENT TOOLS AND ENVIRONMENTS"
+      },
+      "evidence": {
+        "source_file": "IT-60.pdf",
+        "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 38,
+        "printed_page": 33,
+        "section": "academic plan",
+        "approval": "data/source_reviews/shared/old2560_name_reviews.json",
+        "approval_sha256": "4b274f8bf4e10059da1b6fd207081ee22ad2a73fea9c04e137e7e9c2d292d636",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "old2560_name_reviews.json:IT-60.pdf:39:06016393",
+      "code": "06016393",
+      "expected": {
+        "name_th": "สหกิจศึกษาทางด้านวิศวกรรมซอฟต์แวร์",
+        "name_en": "COOPERATIVE EDUCATION IN SOFTWARE ENGINEERING"
+      },
+      "evidence": {
+        "source_file": "IT-60.pdf",
+        "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 39,
+        "printed_page": 34,
+        "section": "academic plan",
+        "approval": "data/source_reviews/shared/old2560_name_reviews.json",
+        "approval_sha256": "4b274f8bf4e10059da1b6fd207081ee22ad2a73fea9c04e137e7e9c2d292d636",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "old2560_name_reviews.json:IT-60.pdf:39:06016394",
+      "code": "06016394",
+      "expected": {
+        "name_th": "สหกิจศึกษาต่างประเทศทางด้านวิศวกรรมซอฟต์แวร์",
+        "name_en": "OVERSEA COOPERATIVE EDUCATION IN SOFTWARE ENGINEERING"
+      },
+      "evidence": {
+        "source_file": "IT-60.pdf",
+        "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 39,
+        "printed_page": 34,
+        "section": "academic plan",
+        "approval": "data/source_reviews/shared/old2560_name_reviews.json",
+        "approval_sha256": "4b274f8bf4e10059da1b6fd207081ee22ad2a73fea9c04e137e7e9c2d292d636",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "old2560_name_reviews.json:IT-60.pdf:39:06016395",
+      "code": "06016395",
+      "expected": {
+        "name_th": "สหกิจศึกษาทางด้านการเทคโนโลยีเครือข่ายและระบบ",
+        "name_en": "COOPERATIVE EDUCATION IN NETWORK AND SYSTEM TECHNOLOGY"
+      },
+      "evidence": {
+        "source_file": "IT-60.pdf",
+        "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 39,
+        "printed_page": 34,
+        "section": "academic plan",
+        "approval": "data/source_reviews/shared/old2560_name_reviews.json",
+        "approval_sha256": "4b274f8bf4e10059da1b6fd207081ee22ad2a73fea9c04e137e7e9c2d292d636",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "old2560_name_reviews.json:IT-60.pdf:39:06016396",
+      "code": "06016396",
+      "expected": {
+        "name_th": "สหกิจศึกษาต่างประเทศทางด้านการเทคโนโลยีเครือข่ายและระบบ",
+        "name_en": "OVERSEA COOPERATIVE EDUCATION IN NETWORK AND SYSTEM TECHNOLOGY"
+      },
+      "evidence": {
+        "source_file": "IT-60.pdf",
+        "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 39,
+        "printed_page": 34,
+        "section": "academic plan",
+        "approval": "data/source_reviews/shared/old2560_name_reviews.json",
+        "approval_sha256": "4b274f8bf4e10059da1b6fd207081ee22ad2a73fea9c04e137e7e9c2d292d636",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "old2560_name_reviews.json:IT-60.pdf:39:06016397",
+      "code": "06016397",
+      "expected": {
+        "name_th": "สหกิจศึกษาทางด้านการพัฒนาสื่อประสมและเกม",
+        "name_en": "COOPERATIVE EDUCATION IN MULTIMEDIA AND GAME DEVELOPMENT"
+      },
+      "evidence": {
+        "source_file": "IT-60.pdf",
+        "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 39,
+        "printed_page": 34,
+        "section": "academic plan",
+        "approval": "data/source_reviews/shared/old2560_name_reviews.json",
+        "approval_sha256": "4b274f8bf4e10059da1b6fd207081ee22ad2a73fea9c04e137e7e9c2d292d636",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "old2560_name_reviews.json:IT-60.pdf:39:06016398",
+      "code": "06016398",
+      "expected": {
+        "name_th": "สหกิจศึกษาต่างประเทศทางด้านการพัฒนาสื่อประสมและเกม",
+        "name_en": "OVERSEA Cooperative Education in Multimedia and Game Development"
+      },
+      "evidence": {
+        "source_file": "IT-60.pdf",
+        "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 39,
+        "printed_page": 34,
+        "section": "academic plan",
+        "approval": "data/source_reviews/shared/old2560_name_reviews.json",
+        "approval_sha256": "4b274f8bf4e10059da1b6fd207081ee22ad2a73fea9c04e137e7e9c2d292d636",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "old2560_name_reviews.json:IT-60.pdf:32:06016329",
+      "code": "06016329",
+      "expected": {
+        "name_th": "โครงงานทางด้านวิศวกรรมซอฟต์แวร์ 1",
+        "name_en": "PROJECT IN SOFTWARE ENGINEERING 1"
+      },
+      "evidence": {
+        "source_file": "IT-60.pdf",
+        "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 32,
+        "printed_page": 27,
+        "section": "academic plan",
+        "approval": "data/source_reviews/shared/old2560_name_reviews.json",
+        "approval_sha256": "4b274f8bf4e10059da1b6fd207081ee22ad2a73fea9c04e137e7e9c2d292d636",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "old2560_name_reviews.json:IT-60.pdf:32:06016339",
+      "code": "06016339",
+      "expected": {
+        "name_th": "โครงงานทางด้านเทคโนโลยีเครือข่ายและระบบ 1",
+        "name_en": "PROJECT IN NETWORK AND SYSTEM TECHNOLOGY 1"
+      },
+      "evidence": {
+        "source_file": "IT-60.pdf",
+        "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+        "pdf_page": 32,
+        "printed_page": 27,
+        "section": "academic plan",
+        "approval": "data/source_reviews/shared/old2560_name_reviews.json",
+        "approval_sha256": "4b274f8bf4e10059da1b6fd207081ee22ad2a73fea9c04e137e7e9c2d292d636",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    }
+  ]
+}

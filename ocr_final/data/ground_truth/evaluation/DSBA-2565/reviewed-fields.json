@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "purpose": "partial_source_evaluation",
+  "identity": {
+    "program": "DSBA",
+    "version": 2565,
+    "revision": null,
+    "plan": null
+  },
+  "scope": "shared course fields only; plan membership NOT inferred; reused development approvals, not independent held-out",
+  "unverified_fields": [
+    "full course coverage",
+    "plan membership",
+    "graduation conditions",
+    "complete L1-L4"
+  ],
+  "labels": [
+    {
+      "id": "prerequisite_source_reviews.json:DSBA.pdf:319:06066301",
+      "code": "06066301",
+      "expected": {
+        "prerequisite_status": "explicit_none",
+        "requires": []
+      },
+      "evidence": {
+        "source_file": "DSBA.pdf",
+        "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+        "pdf_page": 319,
+        "printed_page": 318,
+        "section": "course description",
+        "approval": "data/source_reviews/shared/prerequisite_source_reviews.json",
+        "approval_sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "prerequisite_source_reviews.json:DSBA.pdf:319:06066302",
+      "code": "06066302",
+      "expected": {
+        "prerequisite_status": "explicit_none",
+        "requires": []
+      },
+      "evidence": {
+        "source_file": "DSBA.pdf",
+        "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+        "pdf_page": 319,
+        "printed_page": 318,
+        "section": "course description",
+        "approval": "data/source_reviews/shared/prerequisite_source_reviews.json",
+        "approval_sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    },
+    {
+      "id": "prerequisite_source_reviews.json:DSBA.pdf:319:06066303",
+      "code": "06066303",
+      "expected": {
+        "prerequisite_status": "explicit_none",
+        "requires": []
+      },
+      "evidence": {
+        "source_file": "DSBA.pdf",
+        "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+        "pdf_page": 319,
+        "printed_page": 318,
+        "section": "course description",
+        "approval": "data/source_reviews/shared/prerequisite_source_reviews.json",
+        "approval_sha256": "b9ccef70f648b6ef2c488fd119f0a9defc0deb54ef85638de2eebefd71fbad72",
+        "review_sample_id": null,
+        "status": "reused_visual_approval; not newly reviewed"
+      }
+    }
+  ]
+}

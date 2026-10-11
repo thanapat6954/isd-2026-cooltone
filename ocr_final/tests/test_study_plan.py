@@ -5,6 +5,34 @@ from lab10_fastapi.curriculum_app.study_plan import build_study_plan, study_plan
 
 
 class StudyPlanTests(unittest.TestCase):
+    def test_language_name_overrides_stale_free_category_without_rewriting_fact(self):
+        row = self.rows()[0]
+        row.update(code='ELEC-SYN',raw_code='99999xxx',is_placeholder=1,
+                   name_th='วิชาเลือกด้านภาษาและการสื่อสาร',category='หมวดวิชาเลือกเสรี')
+        payload, _ = build_study_plan([row], '', {})
+        self.assertEqual(payload['cards'][0]['sections'][0]['title'], 'วิชาเลือกด้านภาษาและการสื่อสาร')
+        self.assertIn('99999xxx', study_plan_text(payload))
+        self.assertEqual(payload['cards'][0]['sections'][0]['rows'][0]['category'], 'หมวดวิชาเลือกเสรี')
+    def test_specific_elective_name_not_overridden_by_stale_free_category(self):
+        row = self.rows()[0]
+        row.update(code='ELEC-SYN',is_placeholder=1,name_th='วิชาเลือกทางมนุษยศาสตร์ 2',category='หมวดวิชาเลือกเสรี')
+        payload, _ = build_study_plan([row], '', {})
+        self.assertEqual(payload['cards'][0]['sections'][0]['title'], 'วิชาเลือกทางมนุษยศาสตร์')
+        self.assertEqual(payload['cards'][0]['sections'][0]['rows'][0]['category'], 'หมวดวิชาเลือกเสรี')
+
+    def test_response_limitations_survive_structured_and_text_rendering(self):
+        payload, _ = self.build()
+        payload['notes'] = ['Synthetic missing-plan evidence limitation']
+        self.assertEqual(payload['notes'], ['Synthetic missing-plan evidence limitation'])
+        self.assertTrue(study_plan_text(payload).endswith(payload['notes'][0]))
+
+    def test_requested_english_names_remain_in_rendered_plan(self):
+        rows = self.rows()
+        rows[0]['name_en'] = 'SYNTHETIC COURSE NAME'
+        payload, _ = build_study_plan(rows, '', self.evidence)
+        self.assertIn('SYNTHETIC COURSE NAME', study_plan_text(payload, include_english=True))
+        self.assertNotIn('SYNTHETIC COURSE NAME', study_plan_text(payload))
+
     def setUp(self):
         self.evidence = {}
         for plan, pdf, book in [('coop',41,36), ('no-coop',34,29)]:

@@ -1,0 +1,3 @@
+# Minimal fresh VLM PDF pipeline; no EasyOCR/torch needed by database_build.py.
+-r requirements-web-tested.txt
+Pillow==12.3.0
