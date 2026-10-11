@@ -42,8 +42,19 @@ def main():
             path = root/db.curriculum_name/'curriculum.db'
             snapshot(db.path, path)
             targets[db.curriculum_version] = path
-        service = QwenTextToSQL(replace(settings, sql_repair_attempts=0), web.lab8b)
-        with patch.object(web, 'registry', DatabaseRegistry(root)), patch.object(web, 'model', service), TestClient(web.app) as client:
+        isolated_settings = replace(settings, database_root=root, sql_repair_attempts=0)
+        service = QwenTextToSQL(isolated_settings, web.lab8b)
+        def forbid_generation(*args, **kwargs):
+            raise AssertionError('Structured counterfactuals must use only the isolated SQLite evidence')
+        with (patch.object(web, 'settings', isolated_settings),
+              patch.object(web, 'registry', DatabaseRegistry(root)),
+              patch.object(web, 'model', service),
+              patch.object(web.lab8b, 'ollama_generate', side_effect=forbid_generation),
+              TestClient(web.app) as client):
+            actual = {db.path.resolve() for db in web.registry.active_catalogs}
+            if actual != {path.resolve() for path in targets.values()}:
+                raise ValueError('Lifespan did not activate exactly the disposable database snapshots')
+            result['isolated_database_paths'] = sorted(str(path) for path in actual)
             q = 'IT-2560-coop เกณฑ์การสำเร็จการศึกษามีอะไรบ้าง'
             before = client.post('/api/ask', json={'question': q})
             record('baseline-retrieved-reference', before.status_code == 200 and bool(before.json().get('rows')), before)

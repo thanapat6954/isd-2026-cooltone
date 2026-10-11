@@ -1,0 +1,3 @@
+# TestClient dependency for the verified Starlette 1.x / Python 3.11 environments.
+# Install runtime requirements-web-tested.txt separately before this test extra.
+httpx2==2.13.1

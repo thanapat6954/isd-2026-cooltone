@@ -1,4 +1,4 @@
-param([ValidateRange(1,65535)][int]$Port = 8000, [ValidateRange(5,120)][int]$StartupTimeoutSeconds = 60)
+﻿param([ValidateRange(1,65535)][int]$Port = 8000, [ValidateRange(5,120)][int]$StartupTimeoutSeconds = 60)
 $ErrorActionPreference = 'Stop'
 $appRoot = Split-Path $PSScriptRoot -Parent
 $pythonPath = Join-Path $appRoot 'venv/Scripts/python.exe'

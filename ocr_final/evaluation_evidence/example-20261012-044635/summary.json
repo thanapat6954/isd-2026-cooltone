@@ -1,0 +1,89 @@
+﻿{
+    "app_root":  "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+    "url":  "http://127.0.0.1:8026",
+    "node_executable":  "C:\\Users\\thana\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "suite":  "All",
+    "check_only":  false,
+    "jobs":  [
+                 {
+                     "name":  "checks",
+                     "status":  "ผ่าน",
+                     "exit_code":  0,
+                     "arguments":  [
+                                       "scripts/run_handoff_checks.py",
+                                       "--app-root",
+                                       "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+                                       "--url",
+                                       "http://127.0.0.1:8026",
+                                       "--output",
+                                       "C:\\Users\\thana\\AppData\\Local\\Temp\\curriculum-evaluation-20261012-044635-566\\checks"
+                                   ],
+                     "details":  null
+                 },
+                 {
+                     "name":  "metadata",
+                     "status":  "ผ่าน",
+                     "exit_code":  0,
+                     "arguments":  [
+                                       "scripts/verify_program_metadata.py",
+                                       "--url",
+                                       "http://127.0.0.1:8026",
+                                       "--output",
+                                       "C:\\Users\\thana\\AppData\\Local\\Temp\\curriculum-evaluation-20261012-044635-566\\metadata.json"
+                                   ],
+                     "details":  null
+                 },
+                 {
+                     "name":  "graduation",
+                     "status":  "ผ่าน",
+                     "exit_code":  0,
+                     "arguments":  [
+                                       "scripts/run_requirement_qa.py",
+                                       "--app-root",
+                                       "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+                                       "--url",
+                                       "http://127.0.0.1:8026",
+                                       "--output",
+                                       "C:\\Users\\thana\\AppData\\Local\\Temp\\curriculum-evaluation-20261012-044635-566\\graduation.json"
+                                   ],
+                     "details":  null
+                 },
+                 {
+                     "name":  "counterfactual",
+                     "status":  "ผ่าน",
+                     "exit_code":  0,
+                     "arguments":  [
+                                       "scripts/verify_requirement_isolation.py",
+                                       "--app-root",
+                                       "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+                                       "--output",
+                                       "C:\\Users\\thana\\AppData\\Local\\Temp\\curriculum-evaluation-20261012-044635-566\\counterfactual.json"
+                                   ],
+                     "details":  null
+                 },
+                 {
+                     "name":  "audit",
+                     "status":  "ตรวจเสร็จ; พบ FAIL 1372 / incomplete 4881 (ยังไม่รับรองข้อมูลครบ)",
+                     "exit_code":  1,
+                     "arguments":  [
+                                       "scripts/audit_all.py",
+                                       "--app-root",
+                                       "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+                                       "--out",
+                                       "C:\\Users\\thana\\AppData\\Local\\Temp\\curriculum-evaluation-20261012-044635-566\\audit"
+                                   ],
+                     "details":  {
+                                     "datasets":  16,
+                                     "failed_findings":  1372,
+                                     "incomplete_findings":  4881,
+                                     "execution_errors":  0
+                                 }
+                 },
+                 {
+                     "name":  "owned-backend-cleanup",
+                     "status":  "หยุดแล้ว",
+                     "exit_code":  0
+                 }
+             ],
+    "real_ui_checked":  false
+}

@@ -1,0 +1,292 @@
+{
+  "format_version": 1,
+  "label": "User-run All on LIVE, 2026-10-12 04:46; before archive helper was added; NOT a fresh clone test",
+  "archived_at_utc": "2026-10-11T23:16:58.095766+00:00",
+  "raw_source_directory": "C:\\Users\\thana\\AppData\\Local\\Temp\\curriculum-evaluation-20261012-044635-566",
+  "archiver_python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "observed_run": {
+    "app_root": "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+    "url": "http://127.0.0.1:8026",
+    "suite": "All",
+    "check_only": false,
+    "real_ui_checked": false,
+    "jobs": [
+      {
+        "name": "checks",
+        "status": "ผ่าน",
+        "exit_code": 0,
+        "arguments": [
+          "scripts/run_handoff_checks.py",
+          "--app-root",
+          "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+          "--url",
+          "http://127.0.0.1:8026",
+          "--output",
+          "C:\\Users\\thana\\AppData\\Local\\Temp\\curriculum-evaluation-20261012-044635-566\\checks"
+        ],
+        "details": null
+      },
+      {
+        "name": "metadata",
+        "status": "ผ่าน",
+        "exit_code": 0,
+        "arguments": [
+          "scripts/verify_program_metadata.py",
+          "--url",
+          "http://127.0.0.1:8026",
+          "--output",
+          "C:\\Users\\thana\\AppData\\Local\\Temp\\curriculum-evaluation-20261012-044635-566\\metadata.json"
+        ],
+        "details": null
+      },
+      {
+        "name": "graduation",
+        "status": "ผ่าน",
+        "exit_code": 0,
+        "arguments": [
+          "scripts/run_requirement_qa.py",
+          "--app-root",
+          "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+          "--url",
+          "http://127.0.0.1:8026",
+          "--output",
+          "C:\\Users\\thana\\AppData\\Local\\Temp\\curriculum-evaluation-20261012-044635-566\\graduation.json"
+        ],
+        "details": null
+      },
+      {
+        "name": "counterfactual",
+        "status": "ผ่าน",
+        "exit_code": 0,
+        "arguments": [
+          "scripts/verify_requirement_isolation.py",
+          "--app-root",
+          "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+          "--output",
+          "C:\\Users\\thana\\AppData\\Local\\Temp\\curriculum-evaluation-20261012-044635-566\\counterfactual.json"
+        ],
+        "details": null
+      },
+      {
+        "name": "audit",
+        "status": "ตรวจเสร็จ; พบ FAIL 1372 / incomplete 4881 (ยังไม่รับรองข้อมูลครบ)",
+        "exit_code": 1,
+        "arguments": [
+          "scripts/audit_all.py",
+          "--app-root",
+          "C:\\Users\\thana\\OneDrive\\เอกสาร\\ocr_final",
+          "--out",
+          "C:\\Users\\thana\\AppData\\Local\\Temp\\curriculum-evaluation-20261012-044635-566\\audit"
+        ],
+        "details": {
+          "datasets": 16,
+          "failed_findings": 1372,
+          "incomplete_findings": 4881,
+          "execution_errors": 0
+        }
+      },
+      {
+        "name": "owned-backend-cleanup",
+        "status": "หยุดแล้ว",
+        "exit_code": 0
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": "audit/audit_AI-2566-coop-c60dc05e.md",
+      "bytes": 1293,
+      "sha256": "f2e989f592752041935a263649c7002584164b23d3f5f97c5604804b678c18d1"
+    },
+    {
+      "path": "audit/audit_BIT-2560-coop-31479bf8.md",
+      "bytes": 1041,
+      "sha256": "67f32263958b170abb1481fe441190cb93db3a15187be6466a86052d7a52e9e4"
+    },
+    {
+      "path": "audit/audit_BIT-2560-no-coop-b0ae707e.md",
+      "bytes": 1047,
+      "sha256": "c788b4eccb212871b40c2219d76723652e175e0a33830f52a102a2465943972c"
+    },
+    {
+      "path": "audit/audit_BIT-2565-coop-088b37ca.md",
+      "bytes": 1305,
+      "sha256": "43bcfeb006ea12b9388ab393bccdd13ce27853fa9e68812268cf3b2794f8676b"
+    },
+    {
+      "path": "audit/audit_BIT-2565-no-coop-260cb559.md",
+      "bytes": 1311,
+      "sha256": "a3c08b386eb9d3d41023eeba2ff7a6f15d7245b0ec71ce815d54c1b63dd6e281"
+    },
+    {
+      "path": "audit/audit_DSBA-2560-coop-74705843.md",
+      "bytes": 1043,
+      "sha256": "23f67b73e1983ce617c3c2d3042a3ab51103e734d564932d091473a37be1ad79"
+    },
+    {
+      "path": "audit/audit_DSBA-2560-coop-c753fc11.md",
+      "bytes": 1045,
+      "sha256": "152f6c6dee8d3eea8f39930aaa6d2796f88123a505d897dc8df35817410fe814"
+    },
+    {
+      "path": "audit/audit_DSBA-2560-no-coop-3a975ac1.md",
+      "bytes": 1051,
+      "sha256": "dfe58627c0aaee4eefd9e618d18cb320c4a0798cd7f53c055405b9269852663c"
+    },
+    {
+      "path": "audit/audit_DSBA-2560-no-coop-d134a7bc.md",
+      "bytes": 1049,
+      "sha256": "9f6b656606161ad6193f93d0c7e21fbccd4566f0c5501f71500058747b4c78cb"
+    },
+    {
+      "path": "audit/audit_DSBA-2565-coop-9834b6d4.md",
+      "bytes": 1302,
+      "sha256": "214810988b898b4ce9ce5e1da232df2fd9bcb6b8efe6bbd775d3a1bed3b8852f"
+    },
+    {
+      "path": "audit/audit_DSBA-2565-no-coop-f45e11dd.md",
+      "bytes": 1308,
+      "sha256": "6a727634aaf0951a7eb707ccb66ef3b4c2e5aadbd953dff23e0b593f886c60ef"
+    },
+    {
+      "path": "audit/audit_IT-2560-coop-4c7e74ac.md",
+      "bytes": 1039,
+      "sha256": "777f63e3d0dc208a808fcd59ebbc22466c4c5ec4d995c33f2326b17ca81a20b5"
+    },
+    {
+      "path": "audit/audit_IT-2560-no-coop-7f1f8dd6.md",
+      "bytes": 1045,
+      "sha256": "2c034d9dbbf85e32578a8ffc33a770e201034d84ed4185474c571d630525fef6"
+    },
+    {
+      "path": "audit/audit_IT-2565-coop-7b1f22b2.md",
+      "bytes": 1604,
+      "sha256": "216611f2f92b14c630c987c8a4ad511eec3924e83fb5f51acb2a7f3d94afebe8"
+    },
+    {
+      "path": "audit/audit_IT-2565-no-coop-1d3b46a8.md",
+      "bytes": 1304,
+      "sha256": "c0680c13daed67db9a453b348bd58ecbeb0f88fb1b9ac0cd52b5635084d3d0c1"
+    },
+    {
+      "path": "audit/audit_legacy-course-catalog-9bde1ac4.md",
+      "bytes": 1770602,
+      "sha256": "6b313dc88b7257c2d2440cdab6aa8e351b63786a4c4a97018b5db873e4b42f20"
+    },
+    {
+      "path": "audit/audit_results.json",
+      "bytes": 3417921,
+      "sha256": "c8377d156a885c6e161b225e4d62c0f2b522a2ecf4e2c05172a5f3e72faf2c41"
+    },
+    {
+      "path": "audit.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "audit.stdout.log",
+      "bytes": 128,
+      "sha256": "664a461aa3168dcaed9e6d743bf546d45928ccedeb3f1ed3403e86ccda5c7a33"
+    },
+    {
+      "path": "checks/checks.json",
+      "bytes": 105601,
+      "sha256": "993c03d8904d98a8740dde4efcf5864c6e997e04ede9260126a19e248d9d255d"
+    },
+    {
+      "path": "checks/gold.json",
+      "bytes": 2304374,
+      "sha256": "0ba2a43279285d358473563c7180c34b993f8415c313c1b5bc7b715aca40b22c"
+    },
+    {
+      "path": "checks/old2560.json",
+      "bytes": 3384141,
+      "sha256": "1e235a895a2ee8ac490c6883f8a3e6240ac8daa70b97309e13e79142e23bce08"
+    },
+    {
+      "path": "checks/provenance.json",
+      "bytes": 1147393,
+      "sha256": "f3c165153c200cb203b0303ed0edbaadae907f9fb444165778af93a71c3041b5"
+    },
+    {
+      "path": "checks/version_sets.json",
+      "bytes": 1103549,
+      "sha256": "48a6c3a17e2eca2b2e03edc858858b266b36bae6296aafbb9ae0e6a62e59b0c5"
+    },
+    {
+      "path": "checks.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "checks.stdout.log",
+      "bytes": 230,
+      "sha256": "228f38dab5904deacbdeb9967f137bb2f32fb33b2dc537287b483e55b1ea8140"
+    },
+    {
+      "path": "counterfactual.json",
+      "bytes": 77927,
+      "sha256": "03c171584af4389972929477ade6c7715cc630e711ef6e0a3b8df47123d40d31"
+    },
+    {
+      "path": "counterfactual.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "counterfactual.stdout.log",
+      "bytes": 102,
+      "sha256": "2d188e95c512a77dc76c9f2e93f0501919729cc369f73b4597e9df9b830944db"
+    },
+    {
+      "path": "graduation.json",
+      "bytes": 1407577,
+      "sha256": "ed1924d141dd28b89b58d73f0f4a3c84fa81079096c43768359960c36e2a8964"
+    },
+    {
+      "path": "graduation.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "graduation.stdout.log",
+      "bytes": 200,
+      "sha256": "359db58e4bb6122901633ba30ee279eda24ea3a5cfa9649a992e8670736fc6d2"
+    },
+    {
+      "path": "health.json",
+      "bytes": 16580,
+      "sha256": "6f439fe74f69dcaa1d74ed742b07fad96c199f6293f0220b11c23a938ccb80e1"
+    },
+    {
+      "path": "metadata.json",
+      "bytes": 230044,
+      "sha256": "8e24ff96b0ea9d0e02744a1e871c1de0f468322c75b7e8c2e8da9b7ae0fe58a8"
+    },
+    {
+      "path": "metadata.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "metadata.stdout.log",
+      "bytes": 48,
+      "sha256": "b7e2ac502f5e70e071c65a78162ea3c88cbef7d0f479af4a3479c999afd92519"
+    },
+    {
+      "path": "REPORT.md",
+      "bytes": 2681,
+      "sha256": "56d8f2a712e02246cf37a681735adf6ee5329b6d28e48a6fda737321a364315e"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 4680,
+      "sha256": "1cd5f952525383d5c5c0155b6eebdc689ae64c2bb607be503fac32f010978183"
+    }
+  ],
+  "limits": [
+    "Checksums establish file integrity, not source-book accuracy or independent replication.",
+    "Original machine paths and test counts are preserved; new runs may differ.",
+    "Failed and incomplete findings remain in the original outputs."
+  ]
+}

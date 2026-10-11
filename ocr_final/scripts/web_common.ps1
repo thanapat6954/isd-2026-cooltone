@@ -1,7 +1,15 @@
-# Shared readiness and process-ownership checks. Never stop an unrelated server.
+﻿# Shared readiness and process-ownership checks. Never stop an unrelated server.
+function Get-CurriculumHealth {
+    param([string]$Url, [int]$TimeoutSec = 5)
+    # Windows PowerShell 5.1 can use ANSI for JSON without a charset header.
+    $response = Invoke-WebRequest "$Url/api/health" -UseBasicParsing -TimeoutSec $TimeoutSec
+    $json = [Text.Encoding]::UTF8.GetString($response.RawContentStream.ToArray())
+    return ($json | ConvertFrom-Json)
+}
+
 function Assert-CurriculumBackend {
     param([string]$Url, [string]$AppRoot, [switch]$IdentityOnly)
-    $health = Invoke-RestMethod "$Url/api/health" -TimeoutSec 5
+    $health = Get-CurriculumHealth -Url $Url
     $expectedModule = [IO.Path]::GetFullPath((Join-Path $AppRoot 'scr/ocr_system/lab8b_curriculum_db.py'))
     if (-not $health.lab8b_module -or -not [string]::Equals(
         [IO.Path]::GetFullPath($health.lab8b_module), $expectedModule, [StringComparison]::OrdinalIgnoreCase)) {

@@ -2,6 +2,8 @@
 
 โครงงาน P2 · Intelligent System Development · `isd-2026-cooltone`
 
+**Evaluation และหลักฐานรอบใหม่:** ใช้ [Code ZIP ล่าสุดของ week11_thanapat](https://github.com/thanapat6954/isd-2026-cooltone/archive/refs/heads/week11_thanapat.zip) คู่กับ runtime-data.zip ของ v9 แล้วทำตาม [คู่มือแตก ZIP/ตำแหน่งโฟลเดอร์ทีละขั้น](docs/INSTRUCTOR_ZIP_SETUP.md) รัน [Evaluation ด้วย PowerShell](ocr_final/RUN_EVALUATION.md) เพื่อสร้างผลรายคำถาม/logs/manifest/SHA256/ZIP ของเครื่องที่รันไว้ใน `ocr_final/evaluation_runs/` อัตโนมัติ อ่าน [ตัวอย่างหลักฐานที่ระบุรอบและข้อจำกัด](ocr_final/evaluation_evidence/README.md) ได้ใน branch นี้ ชุดโค้ด v9 ใน Release เป็น snapshot เดิม; DB/PDF ZIP ยังคงใช้เดิม
+
 **ชุด v9:** รวมคำสั่ง `scripts/rebuild_from_pdf.py` และ [คู่มือเริ่มจาก PDF](ocr_final/REBUILD_FROM_PDF.md) สำหรับ hybrid extraction ครบ 13 profiles เฉพาะแผนการศึกษา ตรวจ source → SQLite และ Q&A หน่วยกิต 105/105 กับชื่อ/หน่วยกิตรายวิชา 26/26 ผ่านแล้ว ยังไม่สร้าง catalog/prerequisites/rules/legacy ครบทั้งระบบ
 
 **ดาวน์โหลด [ชุดส่งอาจารย์ instructor-v9](https://github.com/thanapat6954/isd-2026-cooltone/releases/tag/instructor-v9)**: ต้องมีทั้ง `curriculum-project.zip` (โค้ด) และ `runtime-data.zip` (ฐานข้อมูล 14 snapshots + PDF 7 เล่ม) หรือ clone branch `week11_thanapat` แล้วดาวน์โหลดเฉพาะ runtime ZIP แอปอยู่ใน `ocr_final/` ข้อเท็จจริงขณะตอบมาจาก SQLite ที่เลือกเท่านั้น ไม่ใช้เฉลย evaluation หรือ JSON เติมข้อเท็จจริงหลังค้น SQL
@@ -18,6 +20,8 @@
 ## สารบัญ
 
 - [รับชุดส่งต่อ](#รับชุดส่งต่อ)
+- [แตก ZIP และจัดโฟลเดอร์ทีละขั้น](docs/INSTRUCTOR_ZIP_SETUP.md)
+- [รัน Evaluation และเก็บหลักฐาน](ocr_final/RUN_EVALUATION.md)
 - [ติดตั้งครั้งแรก](#ติดตั้งครั้งแรก)
 - [Mode A เปิดใช้งาน](#mode-a-เปิดใช้งาน)
 - [Mode B สร้างจากต้นฉบับ](#mode-b-สร้างจากต้นฉบับ)
@@ -28,54 +32,63 @@
 
 ## รับชุดส่งต่อ
 
-ดาวน์โหลดจาก [Release instructor-v9](https://github.com/thanapat6954/isd-2026-cooltone/releases/tag/instructor-v9):
+ดาวน์โหลด **โค้ดล่าสุดจาก branch week11_thanapat** และ **DB/PDF จาก Release instructor-v9**:
 
 | ไฟล์ | ใช้ทำอะไร |
 |---|---|
-| [curriculum-project.zip](https://github.com/thanapat6954/isd-2026-cooltone/releases/download/instructor-v9/curriculum-project.zip) | โค้ดจาก commit ที่ระบุใน manifest; มี README นี้ |
+| [isd-2026-cooltone-week11_thanapat.zip](https://github.com/thanapat6954/isd-2026-cooltone/archive/refs/heads/week11_thanapat.zip) | โค้ดล่าสุด รวมตัวรันเก็บหลักฐาน Evaluation; GitHub → Code → Download ZIP |
 | [runtime-data.zip](https://github.com/thanapat6954/isd-2026-cooltone/releases/download/instructor-v9/runtime-data.zip) | SQLite 14 ฐาน + PDF 7 เล่ม; จำเป็นทั้งเปิดแอปและ reconstruct |
-| [handoff-manifest.json](https://github.com/thanapat6954/isd-2026-cooltone/releases/download/instructor-v9/handoff-manifest.json) | Commit, SHA256 และขอบเขตของชุดส่งต่อ |
+| [handoff-manifest.json](https://github.com/thanapat6954/isd-2026-cooltone/releases/download/instructor-v9/handoff-manifest.json) | SHA256 ของ runtime ZIP และขอบเขตชุด v9; ไม่ใช่ commit ของ Code ZIP branch ที่อัปเดตภายหลัง |
 | [VERIFICATION.md](https://github.com/thanapat6954/isd-2026-cooltone/releases/download/instructor-v9/VERIFICATION.md) | ผลตรวจและข้อจำกัด; ไม่จำเป็นต่อ runtime |
 
-เปิด **PowerShell 7** ในโฟลเดอร์ที่ดาวน์โหลดไฟล์ ตรวจ SHA256 ให้ตรง manifest แล้วแตก ZIP ลงโฟลเดอร์ใหม่ที่ว่าง:
+ตัวอย่างให้อาจารย์เก็บ ZIP ทั้งสองไฟล์ใน Downloads แล้วแตกลงโฟลเดอร์ใหม่ **C:\CurriculumDemo** เปิด Windows PowerShell 5.1 หรือ PowerShell 7 แล้วรันทีละบรรทัด ถ้าไฟล์อยู่ที่อื่นให้เปลี่ยน zipFolder:
 
 ```powershell
-Get-FileHash .\curriculum-project.zip -Algorithm SHA256
-Get-FileHash .\runtime-data.zip -Algorithm SHA256
-Expand-Archive .\curriculum-project.zip -DestinationPath .\curriculum-handoff
-Expand-Archive .\runtime-data.zip -DestinationPath .\curriculum-handoff\supplied-artifacts
-Set-Location -LiteralPath .\curriculum-handoff\ocr_final
+$zipFolder = "$env:USERPROFILE\Downloads"
+$demoRoot = 'C:\CurriculumDemo'
+Get-FileHash -LiteralPath "$zipFolder\runtime-data.zip" -Algorithm SHA256
+Expand-Archive -LiteralPath "$zipFolder\isd-2026-cooltone-week11_thanapat.zip" -DestinationPath $demoRoot
+$projectRoot = Join-Path $demoRoot 'isd-2026-cooltone-week11_thanapat'
+Expand-Archive -LiteralPath "$zipFolder\runtime-data.zip" -DestinationPath (Join-Path $projectRoot 'supplied-artifacts')
+Set-Location -LiteralPath (Join-Path $projectRoot 'ocr_final')
+Test-Path .\scripts\runtime_bundle.py
+Test-Path ..\supplied-artifacts\runtime-data\manifest.json
 ```
 
-ไม่ต้องใช้โฟลเดอร์ LIVE ของผู้พัฒนา โครงสร้างหลังแตก:
+อาจารย์ใช้โฟลเดอร์ใหม่บนเครื่องตนเองได้ สอง Test-Path ต้องเป็น True และให้รันคำสั่งติดตั้ง/restore/Evaluation จาก **C:\CurriculumDemo\isd-2026-cooltone-week11_thanapat\ocr_final** โครงสร้าง **หลังแตก ZIP แต่ก่อน restore**:
 
 ```text
-curriculum-handoff/
-├── README.md
-├── AGENTS.md
-├── docs/                              คู่มือ รายงาน และ checkpoint
-├── supplied-artifacts/runtime-data/
-│   ├── manifest.json                  path/hash/source ของ 14 DB และ 7 PDF
-│   ├── build-lineage.json             origin ของแต่ละ snapshot
-│   ├── data/input/                    PDF ที่ส่งให้
-│   └── work/                          SQLite snapshots แยก profile
-└── ocr_final/
-    ├── frontend/                      เว็บและ citation viewer
-    ├── lab10_fastapi/                  API + SQL retrieval
-    ├── scr/ocr_system/                 rendering/OCR/parser/SQLite
-    ├── scripts/                       setup/build/activate/recovery
-    ├── data/source_reviews/           corrections และ page selection ที่เปิดเผย
-    ├── data/ground_truth/              evaluation; ห้ามใช้เป็น build/runtime facts
-    └── work/                          สร้างเมื่อ restore/build/start
+C:\CurriculumDemo\
+└── isd-2026-cooltone-week11_thanapat\
+    ├── README.md
+    ├── AGENTS.md
+    ├── docs\INSTRUCTOR_ZIP_SETUP.md   คู่มือทีละขั้น
+    ├── supplied-artifacts\           แตก runtime-data.zip ลงที่นี่
+    │   └── runtime-data\
+    │       ├── manifest.json
+    │       ├── build-lineage.json
+    │       ├── data\input\           PDF 7 เล่มในชุดส่งให้
+    │       ├── curriculum.db          legacy DB ในชุดส่งให้
+    │       └── work\lab8b_*\         DB ของอีก 13 profiles
+    └── ocr_final\                    เปิด PowerShell ที่นี่
+        ├── scripts\                  คำสั่ง restore และรัน tests
+        ├── frontend\                 เว็บ
+        ├── lab10_fastapi\             API
+        ├── scr\ocr_system\           OCR/parser/SQLite
+        ├── data\source_reviews\      แหล่งที่ตรวจอนุมัติแล้ว
+        ├── data\ground_truth\        evaluation; ไม่ใช้สร้าง runtime facts
+        └── evaluation_evidence\      ตัวอย่างผลจริงที่ระบุรอบ
 ```
 
-v9 ใช้ runtime bundle เดิมที่ SHA256 `39018bfa21a7a36ea4f92fde8eb4db5d671745679dddc90dead38d8f23ec9f07` รวมโค้ด hybrid และ source verification ไว้แล้ว ไม่ต้อง overlay patch เพิ่ม อ่าน [คู่มือ v9](docs/INSTRUCTOR_V9.md) และ release manifest สำหรับ commit/hash/ผลตรวจ เก็บ v8 และชุดก่อนหน้าไว้ตามเดิม การสร้างใหม่ 13 plans ไม่ใช่ full14replacement หรือ vision OCR ทั้งเล่ม
+หลัง restore แอปจะมี `ocr_final/curriculum.db`, `ocr_final/work/lab8b_*/curriculum.db` และ PDF ใน `ocr_final/data/input/` หลังรัน Evaluation จะมีหลักฐานใน **ocr_final/evaluation_runs/evaluation-วันเวลา-id/** พร้อม REPORT.md, JSON/logs รายข้อ, manifest/SHA256 และ evaluation-evidence.zip ทุกครั้งได้โฟลเดอร์ใหม่ ดูภาพแต่ละขั้นและคำสั่งใน [คู่มือแตก ZIP](docs/INSTRUCTOR_ZIP_SETUP.md)
+
+runtime bundle เดิมมี SHA256 `39018bfa21a7a36ea4f92fde8eb4db5d671745679dddc90dead38d8f23ec9f07` อ่าน [คู่มือ v9](docs/INSTRUCTOR_V9.md) และ release manifest สำหรับ origin ของ DB/PDF โค้ด branch ล่าสุดรวมตัวเก็บหลักฐานใหม่; curriculum-project.zip ใน release v9 ยังคงเป็น snapshot ก่อนเพิ่มตัวรันนี้ เก็บ v8/v9 เดิมไว้ตามเดิม การสร้างใหม่ 13 plans ไม่ใช่ full14replacement หรือ vision OCR ทั้งเล่ม
 
 ## ติดตั้งครั้งแรก
 
 | โปรแกรม | เวอร์ชันที่ทดสอบ / หน้าที่ | ตรวจใน PowerShell |
 |---|---|---|
-| Windows 11 + PowerShell 7 | ทดสอบ PowerShell 7.6.5; launcher ตรวจ Windows process ownership | `$PSVersionTable.PSVersion` |
+| Windows 11 + Windows PowerShell 5.1 / PowerShell 7 | ทดสอบ Evaluation/launcher บน 5.1.26100.9444 และมีผลเดิมบน 7.6.5; ตรวจ process ownership | `$PSVersionTable.PSVersion` |
 | Python 3.11 | ทดสอบ 3.11.9; ยังไม่รับรองรุ่นอื่น | `py -3.11 --version` |
 | Ollama | ทดสอบ 0.19.7; บริการ local สำหรับ answering/OCR | `ollama --version` |
 | Node.js | เฉพาะ frontend tests; ไม่ต้องมีเพื่อเปิดเว็บ | `node --version` |
@@ -84,12 +97,13 @@ v9 ใช้ runtime bundle เดิมที่ SHA256 `39018bfa21a7a36ea4f92f
 
 ### สร้าง environment และติดตั้ง packages
 
-จาก `curriculum-handoff/ocr_final/`:
+จาก `C:\CurriculumDemo\isd-2026-cooltone-week11_thanapat\ocr_final`:
 
 ```powershell
 py -3.11 -m venv venv
 .\venv\Scripts\Activate.ps1
 python -m pip install -r requirements-web-tested.txt
+python -m pip install -r requirements-evaluation-tested.txt
 python -m pip check
 ```
 

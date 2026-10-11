@@ -1,0 +1,81 @@
+{
+  "purpose": "Observed evaluation archival verification; not full-book accuracy or fresh-machine replication",
+  "date_local": "2026-10-12",
+  "branch": "week11_thanapat",
+  "repository_unit_tests": 411,
+  "live_full_run_unit_tests": 235,
+  "live_main_jobs": [
+    {
+      "name": "unit",
+      "exit_code": 0
+    },
+    {
+      "name": "schema",
+      "exit_code": 0
+    },
+    {
+      "name": "frontend",
+      "exit_code": 0
+    },
+    {
+      "name": "gold",
+      "exit_code": 0
+    },
+    {
+      "name": "old2560",
+      "exit_code": 0
+    },
+    {
+      "name": "provenance",
+      "exit_code": 0
+    },
+    {
+      "name": "version_sets",
+      "exit_code": 0
+    }
+  ],
+  "live_full_run_jobs": [
+    {
+      "name": "checks",
+      "exit_code": 0
+    },
+    {
+      "name": "metadata",
+      "exit_code": 0
+    },
+    {
+      "name": "graduation",
+      "exit_code": 0
+    },
+    {
+      "name": "counterfactual",
+      "exit_code": 0
+    },
+    {
+      "name": "audit",
+      "exit_code": 1
+    }
+  ],
+  "full_run_exit_code": 1,
+  "full_run_nonzero_reason": "Known source-audit findings; all system test groups and archive verification passed",
+  "live_full_run_archive_raw_files": 38,
+  "live_full_run_zip_sha256": "d2e3da3d3144fb37db0c11adc7534c346eb04b3a803b300589adacfd28bb5c84",
+  "protected_files": 111,
+  "protected_hashes_unchanged": true,
+  "default_archive_check_only": {
+    "exit_code": 0,
+    "verified_files": 3,
+    "startup_and_owned_cleanup_verified": true,
+    "scope": "No regression scores"
+  },
+  "published_example": {
+    "path": "ocr_final/evaluation_evidence/example-20261012-044635",
+    "origin": "Original user-run All on LIVE at 04:46, before adding archiver; raw output copied unchanged",
+    "raw_files": 38,
+    "raw_bytes": 14991565,
+    "zip_sha256": "9a1ef213af5d03db48dd2bf2c15655f318e212ec8f1b73d48817cd9608b571fb",
+    "audit_failure_preserved": true
+  },
+  "full_ui_suites_checked": false,
+  "source_rebuild_full_scope_complete": false
+}

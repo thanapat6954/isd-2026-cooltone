@@ -174,6 +174,7 @@ def detect_intent(question: str) -> QueryPlan:
         return QueryPlan("program_years", compare=compare, required_only=required_only)
     focus = text.rsplit(':',1)[-1].strip() if text.startswith('หลักสูตร') and ':' in text else text
     if not code and (re.search(r'^(?:(?:ขอ|อยากทราบ|บอก|แสดง)\s*)?(?:ชื่อ|ข้อมูล|รายละเอียด)(?:ของ)?\s*(?:หลักสูตร|สาขา|ปริญญา)',focus)
+                    or re.search(r'ชื่อ(?:ของ)?\s*(?:หลักสูตร|สาขา|ปริญญา)\s*(?:คือ|ว่า)?\s*อะไร',focus)
                     or re.search(r'(?:หลักสูตร|สาขา|ปริญญา)(?:นี้|\s+[A-Za-z][A-Za-z0-9-]*)?\s*(?:มี)?ชื่อ(?:ว่า)?อะไร|\bprogram name\b|\bdegree\b',focus,re.I)):
         return QueryPlan("program_info", compare=compare, required_only=required_only)
     if not code and "วิชา" in text and any(

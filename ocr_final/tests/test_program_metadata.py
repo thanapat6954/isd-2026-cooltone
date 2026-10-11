@@ -1,11 +1,14 @@
 """Isolated synthetic facts; production source reviews are not evaluation labels."""
 from contextlib import closing
+from dataclasses import replace
 from pathlib import Path
 import sqlite3
 import tempfile
 import unittest
 
 from lab10_fastapi.curriculum_app.database import DatabaseRegistry, execute_readonly
+from lab10_fastapi.curriculum_app.config import settings
+from lab10_fastapi.curriculum_app.model_service import QwenTextToSQL
 from lab10_fastapi.curriculum_app.query_planner import QueryPlan, deterministic_sql
 from scripts.ingest_program_metadata import apply_review, facts
 from scripts.ingest_program_requirements import snapshot
@@ -75,6 +78,19 @@ class ProgramMetadataTests(unittest.TestCase):
         for intent in ('program_info', 'program_total_credits', 'program_years'):
             _, rows = execute_readonly(db, deterministic_sql(QueryPlan(intent), db))
             self.assertEqual((rows[0]['page_number'], rows[0]['printed_page_number']), (6, 1))
+
+    def test_contextual_name_reads_selected_sqlite_without_model_service(self):
+        class NoGeneration:
+            def ollama_generate(self, *args, **kwargs):
+                raise AssertionError('Program names must come from SQLite without a model call')
+        self.apply()
+        registry = DatabaseRegistry(self.root)
+        model = QwenTextToSQL(replace(settings, database_root=self.root), NoGeneration())
+        result = model.ask(registry, 'หลักสูตร IT 2560 แผนสหกิจศึกษา ชื่อหลักสูตรคืออะไร')
+        self.assertEqual(result['intent'], 'program_info')
+        self.assertEqual(result['selected_curricula'], ['IT-2560-coop'])
+        self.assertEqual(result['rows'][0]['name_th'], 'Fixture (สหกิจศึกษา)')
+        self.assertEqual(result['rows'][0]['printed_page_number'], 1)
 
     def test_backup_restore_recovers_original_schema_and_facts(self):
         backup, isolated = self.root/'backup.db', self.root/'isolated.db'

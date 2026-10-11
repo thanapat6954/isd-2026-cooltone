@@ -6,6 +6,13 @@ class DiverseRoutingTests(unittest.TestCase):
     def test_explicit_program_name_still_routes_to_program_information(self):
         self.assertEqual(detect_intent('หลักสูตร AI ชื่อว่าอะไร').intent, 'program_info')
 
+    def test_program_name_after_identity_and_plan_without_colon(self):
+        for context in ('หลักสูตร IT 2560 แผนสหกิจศึกษา ',
+                        'หลักสูตร DSBA 2565 แผนไม่สหกิจศึกษา ',
+                        'หลักสูตร AI 2566: '):
+            with self.subTest(context=context):
+                self.assertEqual(detect_intent(context+'ชื่อหลักสูตรคืออะไร').intent, 'program_info')
+
     def test_written_thai_numbers_and_multiple_terms(self):
         plan=detect_intent('ปีสอง เทอมหนึ่งกับเทอมสอง หน่วยกิตเท่ากันไหม')
         self.assertEqual(plan.intent,'semester_credits')

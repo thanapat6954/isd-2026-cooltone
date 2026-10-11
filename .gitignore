@@ -13,3 +13,5 @@ __pycache__/
 /ocr_system/
 /docs/history/
 *.pyc
+# New evaluation runs are retained locally; only labeled example evidence is published.
+/ocr_final/evaluation_runs/
