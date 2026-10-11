@@ -1,5 +1,7 @@
 # ส่งต่ออาจารย์ — instructor-v8
 
+**ฉบับปัจจุบันคือ [instructor-v9](https://github.com/thanapat6954/isd-2026-cooltone/releases/tag/instructor-v9)**: รวม hybrid/PDF-only13plans และ DB ZIP14snapshots+7PDF ใช้ [คู่มือ v9](INSTRUCTOR_V9.md), [ผลซ้อม ZIP](public_results/instructor_v9/verification-summary.json) และ [ผลตรวจดาวน์โหลดสาธารณะ](public_results/instructor_v9/publication-verification.json) เนื้อหาด้านล่างเป็นผลส่ง v8 เดิมที่เก็บไว้ตามเดิม ไม่ใช่ขอบเขต source-only ล่าสุด
+
 ใช้ GitHub branch `week11_thanapat` และ [Release instructor-v8](https://github.com/thanapat6954/isd-2026-cooltone/releases/tag/instructor-v8) โค้ด/commit/hash ระบุใน release handoff-manifest ไม่ต้องมี sibling LIVE หรือไฟล์จากบัญชีผู้พัฒนา
 
 ## Final implementation

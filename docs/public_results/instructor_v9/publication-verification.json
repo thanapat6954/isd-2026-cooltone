@@ -1,0 +1,17 @@
+{
+  "release": "https://github.com/thanapat6954/isd-2026-cooltone/releases/tag/instructor-v9",
+  "published": "2026-10-11T19:06:54Z",
+  "code_commit": "74e0fade15db10aa706189a418bb8a931eea8bdf",
+  "anonymous_manifest_full_bytes_match": true,
+  "anonymous_code_full_sha256": "2f4e4094911704f8f7b1816a43d2727290054ab379bce40e182e4ceec5e60077",
+  "anonymous_code_crc_and_file_hashes": 446,
+  "anonymous_verification_full_bytes_match": true,
+  "github_server_asset_digests_match_all4": true,
+  "anonymous_runtime_zip_range": {
+    "status": 206,
+    "content_range": "bytes 0-1023/1241183806",
+    "zip_header_valid": true
+  },
+  "runtime_zip_note": "Full local CRC/SHA checked; unchanged bundle previously downloaded in v8. This round anonymous range + server full digest, not a fresh full runtime download.",
+  "non_documentation_changes_since_actual_zip_rehearsal": 0
+}
