@@ -137,6 +137,20 @@ class BuildSafetyTests(unittest.TestCase):
                 rebuild(self.app,['ai'],'raw',1,10,resume=candidate)
         self.assertEqual((candidate/'build.json').read_bytes(),before)
 
+    def test_full_source_diagnostic_accepts_font_encoding_but_cannot_activate(self):
+        review=Path(self.temp.name)/'font-review.json'
+        write(review,{'format':1,'kind':'reviewed-font-encoding','fonts':[]})
+        candidate=rebuild(self.app,['ai'],'reviewed',None,10,
+                          extraction_method='native',source_documents=True,font_review=review)
+        manifest=read(candidate/'build.json')
+        self.assertTrue(manifest['source_documents_requested'])
+        self.assertEqual(manifest['reviewed_input_scope'],'font-encoding-only; no course corrections')
+        self.assertEqual(read(candidate/'reviewed-inputs/font-encoding.json'),read(review))
+        self.assertFalse(validate(candidate,self.app)['ready'])
+        with self.assertRaises(ValueError):
+            activation(self.app,candidate)
+        self.assertFalse((self.app/'work/active-build.json').exists())
+
 
 if __name__=='__main__':
     unittest.main()

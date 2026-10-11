@@ -69,12 +69,14 @@ def export_bundle(app, output, include_pdfs=False):
     return result
 
 
-def restore_bundle(bundle, app, reuse_verified_pdfs=False):
+def restore_bundle(bundle, app, reuse_verified_pdfs=False, sources_only=False):
     manifest = json.loads((bundle/'manifest.json').read_text(encoding='utf-8'))
     if manifest.get('format') != 1 or not manifest.get('databases'):
         raise ValueError('Unsupported or empty runtime bundle')
     planned = []
-    for item in manifest['databases']:
+    if sources_only and not manifest.get('includes_source_pdfs'):
+        raise ValueError('This bundle does not contain source PDFs')
+    for item in ([] if sources_only else manifest['databases']):
         source, target = within(bundle, item['path']), within(app, item['path'])
         if target.exists():
             raise FileExistsError('Restore never overwrites an existing database: '+str(target))
@@ -125,8 +127,9 @@ def main():
     re.add_argument('--bundle', type=Path, required=True)
     re.add_argument('--app-root', type=Path, default=ROOT)
     re.add_argument('--reuse-verified-pdfs', action='store_true', help='Reuse existing PDFs only when their SHA256 matches the bundle; never overwrite')
+    re.add_argument('--sources-only', action='store_true', help='Restore source PDFs only for a fresh reconstruction; do not read or install bundled databases')
     args = p.parse_args()
-    result = export_bundle(args.app_root.resolve(), args.output.resolve(), args.include_pdfs) if args.action == 'export' else restore_bundle(args.bundle.resolve(), args.app_root.resolve(), args.reuse_verified_pdfs)
+    result = export_bundle(args.app_root.resolve(), args.output.resolve(), args.include_pdfs) if args.action == 'export' else restore_bundle(args.bundle.resolve(), args.app_root.resolve(), args.reuse_verified_pdfs,args.sources_only)
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 

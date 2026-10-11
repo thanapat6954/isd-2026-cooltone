@@ -1,0 +1,78 @@
+{
+  "format": 1,
+  "kind": "reviewed-font-encoding",
+  "reviewer": "Actual embedded glyph atlas visual comparison 2026-10-11",
+  "correction_scope": "Private-use Thai encoding only; no course facts; independently reviewed IT2560 embedded fonts",
+  "fonts": [
+    {
+      "source": "IT-60.pdf",
+      "pdf_page": 27,
+      "font": "FPVDVQ+THSarabunPSK",
+      "font_sha256": "7177623eedd77f46704b080b7492f7f235a165e2e3f9f777bee199ccb46f6777",
+      "atlas": "IT-60-1759-glyphs.png",
+      "private_codes": [
+        "F701",
+        "F702",
+        "F703",
+        "F705",
+        "F706",
+        "F709",
+        "F70A",
+        "F70B",
+        "F70C",
+        "F70E",
+        "F710",
+        "F712",
+        "F713"
+      ],
+      "mapping": {
+        "F701": "0E34",
+        "F702": "0E35",
+        "F703": "0E36",
+        "F705": "0E48",
+        "F706": "0E49",
+        "F709": "0E4C",
+        "F70A": "0E48",
+        "F70B": "0E49",
+        "F70C": "0E4A",
+        "F70E": "0E4C",
+        "F710": "0E31",
+        "F712": "0E47",
+        "F713": "0E48"
+      },
+      "atlas_sha256": "afff79345901963fa86901673ea075b69e7204667283ee4613e699d00f2b71af",
+      "review": "ตรวจภาพprivate glyphเทียบstandard Thai glyphในembeddedfontเดียวกัน ไม่แก้coursefacts"
+    },
+    {
+      "source": "IT-60.pdf",
+      "pdf_page": 27,
+      "font": "FPJZCG+THSarabunPSK,Bold",
+      "font_sha256": "529872df048399a7e90363812e3e307f0ef98521476332b53848589659ae093b",
+      "atlas": "IT-60-1746-glyphs.png",
+      "private_codes": [
+        "F701",
+        "F702",
+        "F703",
+        "F706",
+        "F70A",
+        "F70B",
+        "F70E",
+        "F710",
+        "F712"
+      ],
+      "mapping": {
+        "F701": "0E34",
+        "F702": "0E35",
+        "F703": "0E36",
+        "F706": "0E49",
+        "F70A": "0E48",
+        "F70B": "0E49",
+        "F70E": "0E4C",
+        "F710": "0E31",
+        "F712": "0E47"
+      },
+      "atlas_sha256": "b24a9cf0560c73de84fab7c069696d0778c7bbc4f7e288a23a28f506cac5fa2b",
+      "review": "ตรวจภาพprivate glyphเทียบstandard Thai glyphในembeddedfontเดียวกัน ไม่แก้coursefacts"
+    }
+  ]
+}

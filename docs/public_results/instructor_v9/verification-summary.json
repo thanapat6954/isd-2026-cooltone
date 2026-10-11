@@ -1,0 +1,196 @@
+{
+  "delivery": "instructor-v9",
+  "purpose": "actual ZIP/fresh environment/development verification, not independent full-book accuracy",
+  "unit_tests": 400,
+  "schema_checks": 30,
+  "frontend_checks": 11,
+  "development_gold": {
+    "passed": 70,
+    "total": 70,
+    "missing_evidence_cases": 18
+  },
+  "runtime_snapshots": 14,
+  "source_pdfs": 7,
+  "identified_selectable_profiles": 13,
+  "both_route_restart_checks": 52,
+  "runtime_database_hashes_unchanged": true,
+  "fresh_environment_steps": [
+    {
+      "name": "venv",
+      "exit_code": 0,
+      "seconds": 16.03
+    },
+    {
+      "name": "pip",
+      "exit_code": 0,
+      "seconds": 23.105
+    },
+    {
+      "name": "pip-check",
+      "exit_code": 0,
+      "seconds": 1.122
+    },
+    {
+      "name": "restore",
+      "exit_code": 0,
+      "seconds": 17.075
+    },
+    {
+      "name": "preflight",
+      "exit_code": 0,
+      "seconds": 2.87
+    },
+    {
+      "name": "unit",
+      "exit_code": 0,
+      "seconds": 27.287
+    },
+    {
+      "name": "schema",
+      "exit_code": 0,
+      "seconds": 0.436
+    },
+    {
+      "name": "frontend",
+      "exit_code": 0,
+      "seconds": 1.908
+    }
+  ],
+  "startup_restart_steps": [
+    {
+      "name": "start-0",
+      "exit": 0,
+      "seconds": 4.516
+    },
+    {
+      "name": "development-gold",
+      "exit": 0,
+      "seconds": 9.632
+    },
+    {
+      "name": "stop-0",
+      "exit": 0,
+      "seconds": 1.997
+    },
+    {
+      "name": "start-1",
+      "exit": 0,
+      "seconds": 4.973
+    },
+    {
+      "name": "stop-1",
+      "exit": 0,
+      "seconds": 2.002
+    },
+    {
+      "name": "missing-model",
+      "exit": 1,
+      "seconds": 2.953
+    },
+    {
+      "name": "missing-file",
+      "exit": 1,
+      "seconds": 2.896
+    },
+    {
+      "name": "occupied-port",
+      "exit": 1,
+      "seconds": 6.629
+    }
+  ],
+  "source_only": {
+    "build_id": "20261011T184936-4166eea1bc",
+    "initial_db_count": 0,
+    "profiles": 13,
+    "contract": "academic-plan-only",
+    "ready": true,
+    "native_profiles": 13,
+    "image_ocr_profiles": 0,
+    "scores": {
+      "plan-105": {
+        "passed": 105,
+        "total": 105
+      },
+      "course-26": {
+        "passed": 26,
+        "total": 26
+      }
+    },
+    "steps": [
+      {
+        "name": "venv-junction",
+        "exit_code": 0,
+        "seconds": 0.32
+      },
+      {
+        "name": "sources-only",
+        "exit_code": 0,
+        "seconds": 1.65
+      },
+      {
+        "name": "rebuild-all13",
+        "exit_code": 0,
+        "seconds": 274.94
+      },
+      {
+        "name": "preflight",
+        "exit_code": 0,
+        "seconds": 1.268
+      },
+      {
+        "name": "start",
+        "exit_code": 0,
+        "seconds": 4.592
+      },
+      {
+        "name": "plan-105",
+        "exit_code": 0,
+        "seconds": 11.184
+      },
+      {
+        "name": "course-26",
+        "exit_code": 0,
+        "seconds": 2.699
+      },
+      {
+        "name": "stop",
+        "exit_code": 0,
+        "seconds": 1.804
+      }
+    ]
+  },
+  "ui": {
+    "question": "วิชา 06046400 มีกี่หน่วยกิต",
+    "answer_credits": 3,
+    "source": "AI.pdf",
+    "pdf_page": 23,
+    "book_page": 19,
+    "source_viewer_image_inspected": true,
+    "console_warnings_errors": []
+  },
+  "audit": {
+    "datasets": 14,
+    "fail": 1372,
+    "incomplete": 51,
+    "missing_curricula": [],
+    "passed": false
+  },
+  "protected_original_hashes_checked": 77,
+  "protected_changed": [],
+  "model_service": "shared installed Ollama11434; no fresh model download or OS installer test",
+  "full_rebuild_complete": false,
+  "limitations": [
+    "catalog descriptions/prerequisites/program rules not rebuilt completely",
+    "legacy identity unresolved",
+    "independent held-out/full-book OCR/teacher hardware not measured"
+  ],
+  "packaging_repairs": [
+    "preserve source-review receipt bytes across Git checkout",
+    "include historical report fixture; no old OCR or DB build inputs"
+  ],
+  "prior_failures_preserved": [
+    "missing lineage invocation path",
+    "initial ZIP missing report fixture/receipt EOL mismatch",
+    "OneDrive blocked atomic QA output replacement; rerun in TEMP"
+  ]
+}

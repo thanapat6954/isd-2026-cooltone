@@ -1,0 +1,2 @@
+# Source-review receipts are referenced by byte hashes; preserve their original bytes.
+ocr_final/data/source_reviews/** -text whitespace=cr-at-eol

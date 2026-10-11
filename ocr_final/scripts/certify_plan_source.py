@@ -30,9 +30,11 @@ def main():
              'reviewer':a.reviewer,'profiles':{}}
     for item in manifest['databases']:
         extraction=read(candidate/item['extraction'])
-        if extraction.get('extraction_method')!='pdf-text-tables' or extraction.get('pending_pages') or extraction.get('material_defects'):
-            raise ValueError('Native complete plan extraction required; errors cannot be certified away')
-        if encoding and (len(extraction.get('reviewed_corrections',[]))!=1 or
+        native = extraction.get('extraction_method')=='pdf-text-tables'
+        raster = extraction.get('normalization_method')=='deterministic-physical-table-parser'
+        if not (native or raster) or extraction.get('pending_pages') or extraction.get('material_defects'):
+            raise ValueError('Complete source-table extraction required; errors cannot be certified away')
+        if encoding and native and (len(extraction.get('reviewed_corrections',[]))!=1 or
                          extraction['reviewed_corrections'][0].get('kind')!='reviewed-font-encoding'):
             raise ValueError('Encoding-only receipt cannot certify course corrections')
         validate_sql_chain(candidate,item)

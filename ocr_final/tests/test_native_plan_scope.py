@@ -31,6 +31,17 @@ class NativeSourceTests(unittest.TestCase):
         self.assertEqual(groups, [{'name_th':'ชื่อทางเลือก ก','name_en':'FIRST OPTION NAME'},
                                   {'name_th':'ชื่อทางเลือก ข','name_en':'SECOND OPTION NAME'}])
 
+    def test_older_branch_heading_is_a_whole_bundle_not_a_course_name(self):
+        def line(text,y):return {'text':text,'bbox':[0,y,100,y+1]}
+        codes=[line('12345678',20),line('12345679',40)]
+        names=[line('แขนงวิชาทดสอบ',5),line('ชื่อ ก',20),line('FIRST',30),
+               line('ชื่อ ข',40),line('SECOND',50)]
+        hours=[line('3(3-0-6)',20),line('3(2-2-5)',40)]
+        group=specialization_cell([codes,names,hours],names)
+        self.assertEqual(group['label'],'แขนงวิชาทดสอบ')
+        self.assertEqual(group['courses'][0]['name_th'],'ชื่อ ก')
+        self.assertEqual(group['courses'][1]['code'],'12345679')
+
     def test_missing_second_name_cannot_be_copied_from_first(self):
         with self.assertRaises(ValueError):
             bilingual_groups('ชื่อ ก\nFIRST NAME\nชื่อ ข')

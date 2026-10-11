@@ -27,3 +27,20 @@ class CatalogBoundaries(unittest.TestCase):
         self.assertTrue(SECTION.search('ภาคผนวก ฉ'))
         self.assertTrue(SECTION.search('กลุ่มวิชาโครงงานและสัมมนา'))
         self.assertFalse(SECTION.search('โครงงานนี้ใช้ความรู้จากหลายวิชา'))
+
+    def test_inline_credit_pattern_is_not_part_of_bilingual_name(self):
+        rows=[row('12345678 ชื่อวิชา 3(3-0-6)',75,100,1),
+              row('COURSE NAME',150,120,1),
+              row('วิชาบังคับก่อน : ไม่มี',150,140,1),
+              row('PREREQUISITE : None',150,160,1)]
+        header=catalog_headers(rows)[0]
+        self.assertEqual(header['name_th'],'ชื่อวิชา')
+        self.assertEqual(header['name_en'],'COURSE NAME')
+        self.assertEqual(header['credits_raw'],'3(3-0-6)')
+
+    def test_unreadable_page_does_not_borrow_next_page_prerequisite(self):
+        rows=[row('12345678 ชื่อวิชา',75,700,1),row('3(3-0-6)',450,700,1),
+              row('CHAPTER UNREADABLE SOURCE PAGE',0,0,2),
+              row('NAME ON PAGE THREE',150,100,3),
+              row('วิชาบังคับก่อน : ไม่มี',150,140,3)]
+        self.assertEqual(catalog_headers(rows)[0]['status'],'no_prerequisite_marker')

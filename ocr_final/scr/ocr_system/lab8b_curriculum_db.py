@@ -419,11 +419,15 @@ GROUP BY p.year,p.semester,COALESCE(p.alt_group,'x'||p.id)
 UNION ALL
 SELECT year,semester,NULL,'whole-bundle',MIN(credits),MIN(n_courses),
        MIN(source_file),MIN(page_number),MIN(printed_page_number)
-FROM (SELECT p.year,p.semester,m.bundle_id,SUM(p.credits) AS credits,
+FROM (SELECT year,semester,bundle_id,SUM(credits) AS credits,
       COUNT(*) AS n_courses,MIN(p.source_file) AS source_file,
       MIN(p.page_number) AS page_number,MIN(p.printed_page_number) AS printed_page_number
+      FROM (SELECT p.year,p.semester,m.bundle_id,COALESCE(p.alt_group,'x'||p.id) AS grp,
+                   MIN(p.credits) AS credits,MIN(p.source_file) AS source_file,
+                   MIN(p.page_number) AS page_number,MIN(p.printed_page_number) AS printed_page_number
       FROM plan_bundle_member m JOIN plan_item p ON p.id=m.plan_item_id
-      GROUP BY p.year,p.semester,m.bundle_id)
+      GROUP BY p.year,p.semester,m.bundle_id,COALESCE(p.alt_group,'x'||p.id)) p
+      GROUP BY year,semester,bundle_id)
 GROUP BY year,semester;
 CREATE VIEW IF NOT EXISTS v_semester_credits AS
 SELECT year,semester,SUM(credits) AS credits,SUM(n_courses) AS n_courses,
@@ -912,10 +916,15 @@ def _plan_credits(rows):
     for index, item in enumerate(rows):
         if item.get('bundle_id'):
             key = item['bundle_id']
-            bundles[key] = bundles.get(key, 0) + item['credits']
+            slots = bundles.setdefault(key,{})
+            slot = item.get('alt_group') or f'row-{index}'
+            if slot in slots and slots[slot] != item['credits']:
+                raise ValueError('Within-bundle alternatives have unequal credits')
+            slots[slot] = item['credits']
         else:
             key = item.get('alt_group') or f'row-{index}'
             ordinary[key] = min(ordinary.get(key,item['credits']),item['credits'])
+    bundles = {key:sum(slots.values()) for key,slots in bundles.items()}
     if bundles and len(set(bundles.values())) != 1:
         raise ValueError('Whole specialization bundles have unequal credits')
     return sum(ordinary.values()) + (next(iter(bundles.values())) if bundles else 0)

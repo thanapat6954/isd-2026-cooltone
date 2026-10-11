@@ -179,15 +179,15 @@ def specialization_cell(cells, positioned_names):
     The input contains only the current PDF cell and its line coordinates.
     """
     code_lines = [r for r in cells[0] if CODE.search(r['text'])]
-    if len(code_lines) < 2:
-        raise ValueError('Not a multi-course group cell')
+    if not code_lines:
+        raise ValueError('Not a source course group cell')
     codes = [CODE.findall(r['text']) for r in code_lines]
     if any(len(c) != 1 or clean(CODE.sub('', r['text'])) for c, r in zip(codes, code_lines)):
         raise ValueError('Group code lines ambiguous')
     boundary = code_lines[0]['bbox'][1] - 3
     heading = [r['text'] for r in positioned_names if r['bbox'][1] < boundary]
     body = [r['text'] for r in positioned_names if r['bbox'][1] >= boundary]
-    if not heading or not re.match(r'^กลุ่มวิชา', clean(' '.join(heading))):
+    if not heading or not re.match(r'^(?:กลุ่มวิชา|แขนงวิชา)', clean(' '.join(heading))):
         raise ValueError('Group heading is not geometrically separate from course names')
     names = bilingual_groups('\n'.join(body))
     patterns = CREDIT.findall('\n'.join(r['text'] for r in cells[2]))
@@ -353,7 +353,7 @@ def validate_sql_chain(candidate, item):
                 rule = row['selection_rule']
                 expected_bundles.add((row['year'],row['semester'],row['bundle_id'],row['bundle_label'],
                     rule['text'],rule['source_file'],rule['pdf_page'],rule['printed_page']))
-                expected_members.append((row['year'],row['semester'],codes[0],row['bundle_id']))
+                expected_members.extend((row['year'],row['semester'],code,row['bundle_id']) for code in codes)
             for code in codes:
                 option = row.get('course_options',{}).get(code,{})
                 for claim in option.get('source_claims',row.get('source_claims', [])):

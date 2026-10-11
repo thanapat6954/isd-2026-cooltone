@@ -33,6 +33,11 @@ def main():
         relative=path.relative_to(root/'docs')
         if path.is_file() and not any(p in {'results','history'} for p in relative.parts) and path.suffix!='.log':
             files.append(path)
+    # Historical evaluation report required by the report-rendering tests.
+    # This is not saved OCR or a database/build input; all other work is excluded.
+    report=root/'ocr_final/work/robustness_summary.json'
+    if report.is_file():
+        files.append(report)
     # Preserve raw evidence explicitly linked by the guide, not unrelated output trees.
     for target in re.findall(r'\]\((docs/results/[^)#]+)(?:#[^)]*)?\)',(root/'README.md').read_text(encoding='utf-8')):
         path=root/target

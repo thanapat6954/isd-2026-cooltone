@@ -15,6 +15,22 @@ from lab10_fastapi.curriculum_app.query_planner import QueryPlan, detect_intent,
 
 
 class CompoundTotalsTests(unittest.TestCase):
+    def test_nested_branch_choice_explains_one_course_and_six_credits(self):
+        items=[]
+        for branch in ('a','b','c'):
+            items += [[code,6,'internal-'+branch,'course','6(0-36-0)',branch,branch]
+                      for code in ('00000001','00000002')]
+        row={'year':4,'semester':1,'credits':6,'calculation_rows':json.dumps(items)}
+        answer=QwenTextToSQL._ground_answer(QueryPlan('semester_credits'),[row],'')
+        self.assertIn('เลือกหนึ่งแขนง แล้วเลือกหนึ่งรายวิชา',answer)
+        self.assertIn('6 = 6',answer)
+        self.assertNotIn('internal-',answer)
+        self.assertNotIn('= 18',answer)
+        items[1][1]=5;row['calculation_rows']=json.dumps(items)
+        answer=QwenTextToSQL._ground_answer(QueryPlan('semester_credits'),[row],'')
+        self.assertIn('ยังยืนยันการคำนวณ',answer)
+        self.assertNotIn('การคำนวณ:',answer)
+
     def test_whole_bundle_breakdown_counts_one_complete_bundle(self):
         items=[['00000001',3,None,'common','3(3-0-6)',None,None]]
         for bundle,values in [('a',[2,4]),('b',[1,5])]:

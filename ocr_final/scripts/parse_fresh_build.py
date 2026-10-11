@@ -20,6 +20,11 @@ def load(name, path):
     return module
 
 
+def is_raster_ocr(state):
+    renderer = state.get('dependencies', {}).get('renderer')
+    return state.get('method') != 'pdf-text-tables' and isinstance(renderer, dict) and renderer.get('layout') == 'raster-rows'
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--candidate', type=Path, required=True)
@@ -33,6 +38,7 @@ def main():
     raw = candidate/'raw'/args.profile
     state = read(raw/'manifest-extraction.json')
     native = state.get('method') == 'pdf-text-tables'
+    raster = is_raster_ocr(state)
     lab7 = load('fresh_lab7', sandbox/'scr/ocr_system/lab7b_curriculum.py')
     lab8 = load('fresh_lab8', sandbox/'scr/ocr_system/lab8b_curriculum_db.py')
     lab7.REQUEST_TIMEOUT = 120
@@ -53,6 +59,19 @@ def main():
             if sha(source_record) != row['parsed_sha256'] or sha(raw/f"page-{row['pdf_page']}.txt") != row['native_text_sha256']:
                 raise ValueError('fresh native extraction changed')
             result = read(source_record)
+        elif raster:
+            from scripts.ocr_plan_parser import parse_page
+            regions = []
+            for segment in row['segments']:
+                path = raw/f"page-{row['pdf_page']}-region-{segment['segment']}.md"
+                if sha(path) != segment['markdown_sha256']:
+                    raise ValueError('fresh raster transcription changed')
+                image = raw/f"page-{row['pdf_page']}-region-{segment['segment']}.png"
+                if sha(image) != segment['image_sha256']:
+                    raise ValueError('fresh raster source crop changed')
+                regions.append({**segment, 'text': path.read_text(encoding='utf-8')})
+            result = parse_page(regions, config['input'].name, row['pdf_page'], row['printed_book_page'])
+            write(raw/f"page-{row['pdf_page']}.plan.json", result)
         else:
             if sha(raw/f"page-{row['pdf_page']}.md") != row['markdown_sha256']:
                 raise ValueError('fresh markdown changed')
@@ -99,6 +118,11 @@ def main():
     if args.font_encoding_only:
         artifacts += [raw/'font-encoding-review.json', candidate/'reviewed-inputs/font-encoding.json']
     artifacts += list(raw.glob('selection-rule.*'))
+    if raster:
+        artifacts += list((raw/'raster_ocr_checkpoints').glob('*.json'))
+    rejected = raw.parent/(raw.name+'.native-rejected')
+    if state.get('hybrid',{}).get('native_attempt',{}).get('status') == 'rejected':
+        artifacts += [p for p in rejected.rglob('*') if p.is_file()]
     write(candidate/(args.profile+'.extraction.json'), {
         'status': 'parsed', 'source_sha256': state['dependencies']['source_sha256'],
         'pages': [r['pdf_page'] for r in state['processed']], 'pending_pages': state['pending_requested'],
@@ -110,6 +134,8 @@ def main():
         'artifacts': [{'path': p.relative_to(candidate).as_posix(), 'sha256': sha(p)} for p in artifacts],
         'mode': args.mode, 'reviewed_corrections': approvals, 'conversion': conversion,
         'extraction_method': state.get('method', 'vision-OCR'), 'ocr_performed': not native,
+        'normalization_method': 'deterministic-physical-table-parser' if raster else ('native-source-parser' if native else 'LLM-parser'),
+        'hybrid': state.get('hybrid'),
         'metadata_origin': 'source-recorded PROFILES code configuration; no database metadata read',
         'limitations': ['academic-plan pages only', 'no source review certification yet',
                         'no full catalog/description/rules/legacy reconstruction', 'prerequisites unknown when table lacks evidence']})

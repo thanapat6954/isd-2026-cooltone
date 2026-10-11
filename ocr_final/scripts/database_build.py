@@ -145,9 +145,10 @@ def validate(candidate, app, *, full=True):
                     raise ValueError('Raw build must not use reviewed corrections')
                 if manifest.get('reviewed_input_scope')=='font-encoding-only; no course corrections':
                     approvals = extraction.get('reviewed_corrections',[])
-                    if len(approvals)!=1 or approvals[0].get('kind')!='reviewed-font-encoding':
+                    native_encoding = extraction.get('extraction_method') == 'pdf-text-tables'
+                    if (native_encoding and (len(approvals)!=1 or approvals[0].get('kind')!='reviewed-font-encoding')) or (not native_encoding and approvals):
                         raise ValueError('Reviewed encoding provenance incomplete or includes course corrections')
-                    if sha(within(candidate,approvals[0]['path'])) != approvals[0]['sha256']:
+                    if approvals and sha(within(candidate,approvals[0]['path'])) != approvals[0]['sha256']:
                         raise ValueError('Reviewed encoding input changed')
                 if extraction.get('conversion',{}).get('warnings') or extraction.get('conversion',{}).get('fidelity_errors'):
                     raise ValueError('parser/table fidelity defects remain; preserve raw output and review source')
@@ -195,7 +196,7 @@ def validate(candidate, app, *, full=True):
                         raise ValueError('declared plan scope must include every recorded plan page')
                     with closing(readonly(within(candidate,item['path']))) as db:
                         validate_plan_terms(db, native=extraction.get('extraction_method') == 'pdf-text-tables')
-                    if extraction.get('extraction_method') == 'pdf-text-tables':
+                    if extraction.get('extraction_method') == 'pdf-text-tables' or extraction.get('normalization_method') == 'deterministic-physical-table-parser':
                         from scripts.source_native import validate_sql_chain
                         validate_sql_chain(candidate, item)
         except (ValueError, OSError, KeyError, sqlite3.Error) as exc:
@@ -330,7 +331,7 @@ def rebuild(app, profiles, mode, max_pages, timeout, resume=None, extraction_met
     """No previous DB/OCR/master/evaluation is copied into the isolated executor."""
     if source_documents and (extraction_method != 'native' or declared or resume):
         raise ValueError('--source-documents ใช้กับ native/new staging/full diagnostic scope; ยังไม่ใช่ certified plan-only หรือ full replacement')
-    if font_review and (mode != 'reviewed' or extraction_method != 'native' or resume or source_documents):
+    if font_review and (mode != 'reviewed' or extraction_method not in {'native','hybrid'} or resume):
         raise ValueError('--font-review ต้องใช้ --mode reviewed --extraction native และ staging ใหม่; ใช้เฉพาะ encoding ไม่รวม course corrections')
     candidate = resume.resolve() if resume else app/'work/staging'/identity()
     if resume and not candidate.is_relative_to((app/'work/staging').resolve()):
@@ -347,7 +348,7 @@ def rebuild(app, profiles, mode, max_pages, timeout, resume=None, extraction_met
         (sandbox/'data/input').mkdir(parents=True)
     manifest = {'format': 1, 'build_id': candidate.name, 'origin': 'fresh-'+mode,
                 'scope': ('fresh academic-plan '+('native PDF text/table extraction; not vision OCR'
-                           if extraction_method == 'native' else 'vision OCR')
+                           if extraction_method == 'native' else ('hybrid PDF text/tables with image OCR fallback' if extraction_method == 'hybrid' else 'vision OCR'))
                           +'; descriptions/rules/legacy require separate verified extraction'),
                 'databases': [], 'source_pdfs': [], 'profiles': {}, 'dependencies': [], 'running': None}
     if declared:
@@ -363,7 +364,7 @@ def rebuild(app, profiles, mode, max_pages, timeout, resume=None, extraction_met
         manifest['dependencies'].append({'kind': 'code', 'path': path.relative_to(ROOT).as_posix(), 'sha256': sha(path)})
     manifest['configuration'] = {k: v for k,v in env.items() if k.startswith(('LAB7', 'LAB8', 'OLLAMA'))}
     manifest['model_inventory'] = {}
-    if extraction_method == 'ocr' and any((app/'data/input'/PROFILES[name]['input'].name).exists() for name in profiles):
+    if extraction_method in {'ocr','hybrid'} and any((app/'data/input'/PROFILES[name]['input'].name).exists() for name in profiles):
         try:
             tags=requests.get(env.get('OLLAMA_HOST','http://127.0.0.1:11434').rstrip('/')+'/api/tags',timeout=5)
             tags.raise_for_status()
@@ -438,13 +439,18 @@ def rebuild(app, profiles, mode, max_pages, timeout, resume=None, extraction_met
         raw.parent.mkdir(exist_ok=True)
         command = [sys.executable, '-X', 'utf8', str(sandbox/'scripts/extract_manifest_pages.py'), '--manifest', str(selection_copy),
                    '--source-root', str(sandbox), '--output', str(raw)]
-        if extraction_method == 'native':
+        if extraction_method == 'ocr':
+            command += ['--layout', 'raster-rows']
+        if extraction_method in {'native','hybrid'}:
             if resume:
                 raise ValueError('native extraction ใช้ staging ใหม่; ไม่ reuse saved extraction')
             command = [sys.executable, '-X', 'utf8', str(sandbox/'scripts/source_native.py'),
                        '--pdf', str(sandbox/'data/input'/pdf.name), '--output', str(raw)]
             if font_review:
                 command += ['--font-review',str(reviewed_copy)]
+            if extraction_method == 'hybrid':
+                command[3] = str(sandbox/'scripts/hybrid_extract.py')
+                command += ['--manifest', str(selection_copy), '--source-root', str(sandbox)]
         for page in expected:
             command += ['--page', str(page)]
         if max_pages:
@@ -455,8 +461,9 @@ def rebuild(app, profiles, mode, max_pages, timeout, resume=None, extraction_met
         try:
             with (candidate/(name+'.ocr.log')).open('a' if resume else 'w', encoding='utf-8') as log:
                 result = subprocess.run(command, env=env, cwd=sandbox, stdout=log, stderr=log, timeout=timeout)
-            record['stages'].append({'name': 'render-source-native-tables' if extraction_method=='native' else 'render-preprocess-OCR', 'seconds': round(time.perf_counter()-started, 3), 'exit_code': result.returncode, 'command': command})
+            record['stages'].append({'name': 'hybrid-source-extraction' if extraction_method=='hybrid' else ('render-source-native-tables' if extraction_method=='native' else 'render-preprocess-OCR'), 'seconds': round(time.perf_counter()-started, 3), 'exit_code': result.returncode, 'command': command})
             extraction = read(raw/'manifest-extraction.json')
+            actual_native = extraction.get('method') == 'pdf-text-tables'
             record['pages'] = [r['pdf_page'] for r in extraction['processed']]
             record['pending_pages'] = sorted(set(expected)-set(record['pages']))
             record['material_defects'] = [flag for r in extraction['processed'] for flag in r['quality_flags']]
@@ -480,8 +487,8 @@ def rebuild(app, profiles, mode, max_pages, timeout, resume=None, extraction_met
                 manifest['databases']=[d for d in manifest['databases'] if d['profile']!=name]
             # Parsing uses only fresh markdown and source-recorded code configuration.
             command = [sys.executable, '-X', 'utf8', str(ROOT/'scripts/parse_fresh_build.py'), '--candidate', str(candidate), '--profile', name,
-                       '--mode', mode, '--app-root', str(app)]
-            if font_review:
+                       '--mode', 'raw' if extraction_method=='hybrid' and not actual_native else mode, '--app-root', str(app)]
+            if font_review and actual_native:
                 command += ['--font-encoding-only']
             started = time.perf_counter()
             with (candidate/(name+'.parse.log')).open('a' if resume else 'w', encoding='utf-8') as log:
@@ -495,6 +502,8 @@ def rebuild(app, profiles, mode, max_pages, timeout, resume=None, extraction_met
                 command = [sys.executable, '-X', 'utf8', str(sandbox/'scripts/source_catalog.py'),
                            '--pdf', str(sandbox/'data/input'/pdf.name), '--output', str(source_output),
                            '--staged-database', str(candidate/'work'/config['out'].name/'curriculum.db')]
+                if font_review:
+                    command += ['--font-review', str(candidate/'reviewed-inputs/font-encoding.json')]
                 started = time.perf_counter()
                 with (candidate/(name+'.source-documents.log')).open('w',encoding='utf-8') as log:
                     result = subprocess.run(command,env=env,stdout=log,stderr=log,cwd=sandbox,timeout=timeout)
@@ -536,7 +545,7 @@ def main():
     command.add_argument('--mode', choices=('raw', 'reviewed'), default='raw')
     command.add_argument('--max-pages', type=int)
     command.add_argument('--stage-timeout', type=int, default=900)
-    command.add_argument('--extraction', choices=('ocr','native'), default='ocr', help='native reads original PDF text/table cells; explicitly not OCR')
+    command.add_argument('--extraction', choices=('ocr','native','hybrid'), default='hybrid', help='hybrid reads PDF text/tables first, then uses image OCR after native rejection; routes are recorded')
     command.add_argument('--font-review',type=Path,help='Explicit source-reviewed font encoding only; native/reviewed/new build; no course corrections')
     command.add_argument('--scope', choices=('full','academic-plan-only'), default='full', help='Partial scope is explicit and cannot pass full activation')
     command.add_argument('--source-documents',action='store_true',help='Native full-PDF corpus/catalog candidates in staging; experimental, not certified replacement')

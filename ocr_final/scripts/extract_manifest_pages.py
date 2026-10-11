@@ -10,9 +10,12 @@ import requests
 import fitz
 import io
 import re
+import sys
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from scripts import raster_ocr
 
 
 def sha(path):
@@ -76,12 +79,26 @@ def replace_checkpoint(partial, checkpoint):
 
 
 def validate_completed(state, output):
+    if state.get('identity_image_sha256') and sha(output/'identity.png') != state['identity_image_sha256']:
+        raise ValueError('Source identity image changed; refuse resume')
     for row in state['processed']:
         number = row['pdf_page']
         if sha(output/f'page-{number}.md') != row['markdown_sha256']:
             raise ValueError('Completed markdown changed; preserve evidence and use a new output')
         if sha(output/f'page-{number}.png') != row['image_sha256']:
             raise ValueError('Completed page image changed; refuse resume')
+        for region in row.get('segments', []):
+            if not region.get('checkpoint'):
+                continue
+            ordinal = region['segment']
+            if (sha(output/f'page-{number}-region-{ordinal}.png') != region['image_sha256'] or
+                    sha(output/f'page-{number}-region-{ordinal}.md') != region['markdown_sha256']):
+                raise ValueError('Completed raster region changed; refuse resume')
+            for cell in region.get('cell_transcriptions', []):
+                stem = output/f"page-{number}-region-{ordinal}-cell-{cell['column']}"
+                if (sha(stem.with_suffix('.png')) != cell['image_sha256'] or
+                        sha(stem.with_suffix('.md')) != cell['markdown_sha256']):
+                    raise ValueError('Completed physical-cell transcription changed; refuse resume')
 
 
 def segment_image(png, count, crop_box=None, ink_threshold=None):
@@ -122,12 +139,16 @@ def main():
     parser.add_argument('--page', type=int, action='append', help='Only attempt these reviewed include pages (repeatable)')
     parser.add_argument('--segments', type=int, choices=(1, 2), default=1,
                         help='Experimental overlapping vertical crops; original coordinates retained')
+    parser.add_argument('--layout', choices=('page', 'raster-rows'), default='page',
+                        help='raster-rows detects image borders and OCRs each physical band without PDF text')
     parser.add_argument('--prompt-file', type=Path, help='Explicit isolated OCR prompt override; default prompt remains unchanged')
     parser.add_argument('--crop-box', type=int, nargs=4, metavar=('LEFT', 'TOP', 'RIGHT', 'BOTTOM'),
                         help='Experimental crop in original rendered pixels; full page retained for context')
     parser.add_argument('--region-context', help='Reviewed heading/context and reason for this page-specific region; metadata only, never added to the OCR prompt')
     parser.add_argument('--ink-threshold', type=int, help='Experimental luminance threshold 0..255; original image preserved')
     args = parser.parse_args()
+    if args.layout == 'raster-rows' and (args.segments != 1 or args.crop_box or args.ink_threshold is not None or args.prompt_file):
+        raise ValueError('raster-rows uses original full-page pixels and its transcription prompt; do not mix crop experiments')
     source = args.source_root.resolve()
     output = args.output.resolve()
     if output == source or source in output.parents or output == ROOT or ROOT in output.parents:
@@ -159,6 +180,8 @@ def main():
     if not model or not model.get('digest'):
         raise ValueError('Installed OCR model digest unavailable; cannot establish reuse identity')
     renderer = {'library': 'PyMuPDF', 'version': fitz.VersionBind, 'dpi': lab7.DPI,
+                'layout': args.layout,
+                'raster_segmenter_sha256': sha(ROOT/'scripts/raster_ocr.py') if args.layout == 'raster-rows' else None,
                 'segments': args.segments, 'overlap_pixels': 40 if args.segments > 1 else 0,
                 'crop_box': args.crop_box,
                 'region_context': args.region_context,
@@ -176,6 +199,9 @@ def main():
                     'prompt_sha256': hashlib.sha256(lab7.TYPHOON_PROMPT.encode()).hexdigest(),
                     'renderer': renderer, 'renderer_sha256': digest(renderer),
                     'generation_sha256': digest(generation)}
+    if args.layout == 'raster-rows':
+        dependencies['prompt'] = raster_ocr.PROMPT
+        dependencies['prompt_sha256'] = hashlib.sha256(raster_ocr.PROMPT.encode()).hexdigest()
     checkpoint = output/'manifest-extraction.json'
     if args.resume:
         state = json.loads(checkpoint.read_text(encoding='utf-8'))
@@ -189,6 +215,11 @@ def main():
         state = {'scope': 'raw reviewed-include page extraction only; no evaluation labels or DB ingestion',
                  'dependencies': dependencies, 'selection': selection, 'processed': [], 'failed': [],
                  'running': None, 'reuse_jobs': [], 'requested_pages': requested}
+        if args.layout == 'raster-rows':
+            # Cover pixels provide identity evidence; they never supply plan facts.
+            with fitz.open(pdf) as document:
+                document[0].get_pixmap(dpi=lab7.DPI).save(output/'identity.png')
+            state['identity_image_sha256'] = sha(output/'identity.png')
     cache = output/'ocr_page_checkpoints'
     cache.mkdir(exist_ok=True)
     for prior_job in args.reuse_page_job:
@@ -281,8 +312,14 @@ def main():
             requests.post = capture_post
             parts = []
             crops = []
-            for index, (png, box) in enumerate(segment_image(images[0], args.segments, args.crop_box, args.ink_threshold)
-                    if args.segments > 1 or args.crop_box or args.ink_threshold is not None else [(images[0], None)]):
+            if args.layout == 'raster-rows':
+                text, crops = raster_ocr.extract_regions(images[0], output, lab7,
+                    page_number=number, source_file=pdf.name, model_digest=model['digest'])
+                pieces = []
+            else:
+                pieces = (segment_image(images[0], args.segments, args.crop_box, args.ink_threshold)
+                    if args.segments > 1 or args.crop_box or args.ink_threshold is not None else [(images[0], None)])
+            for index, (png, box) in enumerate(pieces):
                 (output/f'page-{number}-segment-{index+1}.png').write_bytes(png)
                 state['running_segment'] = {'segment': index + 1, 'original_pixel_box': box,
                                            'image_sha256': hashlib.sha256(png).hexdigest()}
@@ -294,17 +331,20 @@ def main():
                               'image_sha256': hashlib.sha256(png).hexdigest()})
                 write_markdown(output/f'page-{number}-segment-{index+1}.md', raw)
                 parts.append(raw)
-            text = '\n\n<!-- overlapping source segment; review duplicates before parsing -->\n\n'.join(parts)
+            if args.layout != 'raster-rows':
+                text = '\n\n<!-- overlapping source segment; review duplicates before parsing -->\n\n'.join(parts)
             new_names = {p.name for p in cache.glob('*.json')}
             markdown_hash = write_markdown(output/f'page-{number}.md', text)
             state['processed'].append({'pdf_page': number,
                 'printed_book_page': manifest['pages'][number-1]['printed_book_page'],
-                'seconds': round(time.perf_counter()-started, 2), 'reused': new_names == cached_names,
+                'seconds': round(time.perf_counter()-started, 2),
+                'reused': all(r['reused'] for r in crops) if args.layout == 'raster-rows' else new_names == cached_names,
                 'image_sha256': hashlib.sha256(images[0]).hexdigest(),
                 'transport': transport,
                 'segments': crops,
                 'markdown_sha256': markdown_hash,
-                'quality_flags': quality_flags(text, args.segments),
+                'quality_flags': quality_flags(text, args.segments) +
+                    (['truncated_generation'] if any(t['response'].get('done_reason') == 'length' for t in transport) else []),
                 'interpretation': 'raw extraction, not independently verified field accuracy'})
         except Exception as exc:
             state['failed'].append({'pdf_page': number, 'error': str(exc), 'transport': transport,

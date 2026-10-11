@@ -10,6 +10,27 @@ from lab10_fastapi.curriculum_app.database import DatabaseRegistry
 
 
 class RuntimeBundleTests(unittest.TestCase):
+    def test_sources_only_does_not_read_or_install_snapshots(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            bundle = root/'bundle'
+            (bundle/'data/input').mkdir(parents=True)
+            pdf = bundle/'data/input/SYN.pdf'
+            pdf.write_bytes(b'%PDF-test-only')
+            from scripts.runtime_bundle import sha
+            manifest = {'format':1,'includes_source_pdfs':True,
+                        'databases':[{'path':'missing/curriculum.db','sha256':'unread'}],
+                        'source_pdfs':[{'path':'data/input/SYN.pdf','sha256':sha(pdf)}]}
+            (bundle/'manifest.json').write_text(json.dumps(manifest))
+            result = restore_bundle(bundle,root/'target',sources_only=True)
+            self.assertEqual(result['restored'],0)
+            self.assertEqual(result['pdfs_restored'],1)
+            self.assertEqual(list((root/'target').rglob('*.db')),[])
+            pdf.write_bytes(b'changed')
+            with self.assertRaises(ValueError):
+                restore_bundle(bundle,root/'bad',sources_only=True)
+            self.assertFalse((root/'bad').exists())
+
     def test_roundtrip_and_overwrite_refusal(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

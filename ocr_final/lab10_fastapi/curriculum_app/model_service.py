@@ -890,35 +890,44 @@ intent: {plan.intent}
             if row.get('calculation_rows'):
                 items = json.loads(row['calculation_rows'])
                 has_bundles = any(len(r)>5 and r[5] for r in items)
-                parts.append(('รายวิชาร่วมและรายวิชาในชุดทางเลือก (เลือกทั้งชุดเดียว): ' if has_bundles else 'รายการที่ใช้คำนวณ: ')+', '.join(
+                nested_choices = any(len(r)>5 and r[5] and r[2] for r in items)
+                parts.append(('รายวิชาร่วมและตัวเลือกตามแขนง (เลือกหนึ่งแขนง): ' if nested_choices else
+                              ('รายวิชาร่วมและรายวิชาในชุดทางเลือก (เลือกทั้งชุดเดียว): ' if has_bundles else 'รายการที่ใช้คำนวณ: '))+', '.join(
                     f"{r[0]} {r[3] if len(r)>3 and r[3] else 'ไม่ระบุชื่อในฐานข้อมูล'}: {r[1]} หน่วยกิต"
                     +(f" [{r[4]}]" if len(r)>4 and r[4] else '')
-                    +(f" (กลุ่มทางเลือก {r[2]})" if r[2] else '')
+                    +(' (ตัวเลือกภายในแขนง)' if nested_choices and r[2] else (' (รายวิชาทางเลือก)' if r[2] else ''))
                     +(f" (ชุด {r[6] or r[5]})" if len(r)>6 and r[5] else '') for r in items))
                 # Match the view: one MIN credit contribution per alternative group.
                 contributions = []
                 alternatives = {}
                 bundles = {}
-                for item in items:
+                for index, item in enumerate(items):
                     if item[1] is None:
                         continue
                     if len(item)>5 and item[5]:
-                        bundles[item[5]] = bundles.get(item[5],0) + item[1]
+                        slots = bundles.setdefault(item[5], {})
+                        slot = item[2] or f'row-{index}'
+                        slots.setdefault(slot, []).append(item[1])
                     elif item[2]:
                         alternatives.setdefault(item[2], []).append(item[1])
                     else:
                         contributions.append(item[1])
                 contributions.extend(min(values) for values in alternatives.values())
                 if bundles:
+                    if any(len(set(values)) != 1 for slots in bundles.values() for values in slots.values()):
+                        parts.append('หน่วยกิตของตัวเลือกภายในชุดไม่ตรงกัน จึงยังยืนยันการคำนวณจากหลักฐานนี้ไม่ได้')
+                        continue
+                    bundles = {key:sum(values[0] for values in slots.values()) for key,slots in bundles.items()}
                     if len(set(bundles.values())) != 1:
                         parts.append('หน่วยกิตของชุดทางเลือกไม่ตรงกัน จึงยังยืนยันการคำนวณจากหลักฐานนี้ไม่ได้')
                         continue
                     contributions.append(next(iter(bundles.values())))
-                    parts.append('นับรายวิชาร่วมบวกหนึ่งชุดทั้งกลุ่ม; ไม่รวมหลายชุดหรือสลับรายวิชาแต่ละลำดับข้ามชุด')
+                    parts.append('เลือกหนึ่งแขนง แล้วเลือกหนึ่งรายวิชาจากกลุ่มตัวเลือกภายในแขนงนั้น; นับหน่วยกิตครั้งเดียว'
+                                 if nested_choices else 'นับรายวิชาร่วมบวกหนึ่งชุดทั้งกลุ่ม; ไม่รวมหลายชุดหรือสลับรายวิชาแต่ละลำดับข้ามชุด')
                 if contributions:
                     parts.append('การคำนวณ: '+' + '.join(str(value) for value in contributions)
                                  +f' = {sum(contributions)} หน่วยกิต')
-                parts.append('นับแต่ละกลุ่มทางเลือกเพียงหนึ่งตัวเลือก; ยอดรวมจากแถว semester ใน SQLite')
+                parts.append('นับแต่ละกลุ่มทางเลือกเพียงหนึ่งตัวเลือก')
         if plan.intent == 'semester_credits' and len(usable) > 1:
             for curriculum in {r.get('_source',{}).get('curriculum_name') for r in usable}:
                 values=[r[field] for r in usable if r.get('_source',{}).get('curriculum_name') == curriculum]

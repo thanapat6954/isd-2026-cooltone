@@ -8,12 +8,17 @@ from scripts.source_native import (CODE, CREDIT, TERM, bilingual_groups, clean,
 
 def credit_total(rows):
     ordinary, bundles = 0, {}
-    for row in rows:
+    for index, row in enumerate(rows):
         credits = int(re.match(r'\d+', str(row.get('credits_raw') or row['credits'])).group())
         if row.get('bundle_id'):
-            bundles[row['bundle_id']] = bundles.get(row['bundle_id'], 0) + credits
+            slots = bundles.setdefault(row['bundle_id'], {})
+            slot = row.get('alt_group') or f'row-{index}'
+            if slot in slots and slots[slot] != credits:
+                raise ValueError('Within-bundle alternatives have unequal credits')
+            slots[slot] = credits
         else:
             ordinary += credits
+    bundles = {key: sum(slots.values()) for key, slots in bundles.items()}
     if bundles and len(set(bundles.values())) != 1:
         raise ValueError('Whole specialization bundles have unequal credits; no inferred slot pairing')
     return ordinary + (next(iter(bundles.values())) if bundles else 0)
@@ -78,6 +83,22 @@ def table_rows(page, table, decoder):
     return bool(headers), (code[0],code[2],name[2],table.bbox[2]), result
 
 
+def is_whole_bundle(raw):
+    codes = CODE.findall(raw['cells'][0])
+    if not codes or any(re.search(r'[xX]', c) for c in codes):
+        return False
+    positioned = raw['positioned']
+    code_lines = [r for r in positioned[0] if CODE.search(r['text'])]
+    if not code_lines:
+        return False
+    boundary = code_lines[0]['bbox'][1] - 3
+    # Older plans print one project per branch under a separate branch heading.
+    # These are three one-course bundles, governed by the source branch rule.
+    branch = any(r['bbox'][1] < boundary and re.match(r'^แขนงวิชา', r['text'])
+                 for r in positioned[1])
+    return branch or (len(codes)>1 and not explicit_course_choice(*raw['cells'][:2]))
+
+
 def parse_row(raw, year, semester, source_file, rule):
     code_text, name_text, credit_text = raw['cells']
     codes = CODE.findall(code_text)
@@ -86,10 +107,22 @@ def parse_row(raw, year, semester, source_file, rule):
     base = {'year':year,'semester':semester,'source_file':source_file,
             'page_number':raw['page'],'printed_page_number':raw['printed'],
             'source_claims':raw['claims'],'prerequisite':None,'type':None,'category':None}
-    if len(codes)>1 and not explicit_course_choice(code_text,name_text):
+    if is_whole_bundle(raw):
         if not rule:
             raise ValueError('Whole-group selection rule has no source evidence')
         positioned = raw['positioned']
+        if explicit_course_choice(code_text,name_text):
+            first = min(r['bbox'][1] for r in positioned[0] if CODE.search(r['text'])) - 3
+            heading = [r['text'] for r in positioned[1] if r['bbox'][1] < first]
+            body = [r for r in positioned[1] if r['bbox'][1] >= first]
+            label = clean(' '.join(heading))
+            if not re.match(r'^แขนงวิชา',label):
+                raise ValueError('Nested source choice has no separate branch heading')
+            inner = {**raw,'cells':[code_text,'\n'.join(r['text'] for r in body),credit_text],
+                     'positioned':[positioned[0],body,positioned[2]]}
+            parsed = parse_row(inner,year,semester,source_file,rule)
+            bundle = hashlib.sha256(re.sub(r'[\s,，]', '', label).encode('utf8')).hexdigest()[:16]
+            return [{**c,'bundle_id':bundle,'bundle_label':label,'selection_rule':rule} for c in parsed]
         group = specialization_cell(positioned,positioned[1])
         # Source heading punctuation/line wrapping is not a new group identity.
         canonical = re.sub(r'[\s,，]', '', group['label'])
@@ -138,11 +171,21 @@ def numbered_section(text):
     return (tuple(map(int, match[1].split('.'))), match[2]) if match else None
 
 
+def whole_group_rule(text):
+    """Retain the literal choice rule, including timing and faculty approval."""
+    patterns = (r'ต้องเลือกเรียนวิชาในกลุ่มวิชาใดกลุ่มวิชาหนึ่ง',
+                r'นักศึกษาจะต้องเลือกแขนงที่จะเรียน')
+    return next((line for line in text.splitlines()
+                 if any(re.search(pattern, line) for pattern in patterns)), None)
+
+
 def sequence(pdf, numbers, decoder, source_file):
     result, terms, pending, previous_number = {}, [], None, None
     rule, plan_section = None, None
     for number in numbers:
         page = pdf[number-1]; page_lines = lines(page,decoder=decoder)
+        if decoder is None and re.search(r'[\ue000-\uf8ff]', page.get_text()):
+            raise ValueError('Unreviewed private-use PDF glyphs; reviewed font decoding or image OCR required')
         folios = [int(r['text']) for r in page_lines if r['bbox'][1]<page.rect.height*.08 and r['text'].isdigit()]
         if len(set(folios)) != 1:
             raise ValueError(f'Printed page unresolved on PDF{number}')
@@ -201,19 +244,19 @@ def sequence(pdf, numbers, decoder, source_file):
         previous_number = number
     if pending:
         raise ValueError('Selected pages end before the unfinished term total')
-    needs_rule = any(len(CODE.findall(r['cells'][0]))>1 and not explicit_course_choice(*r['cells'][:2]) for t in terms for r in t['rows'])
+    needs_rule = any(is_whole_bundle(r) for t in terms for r in t['rows'])
     if needs_rule:
         # Only source PDF text is read. A rule is retained literally with its page;
         # it does not supply course names or an external specialization map.
         for index in reversed(range(min(numbers)-1)):
             text = '\n'.join(r['text'] for r in lines(pdf[index],decoder=decoder))
-            match = re.search(r'[^\n]*ต้องเลือกเรียนวิชาในกลุ่มวิชาใดกลุ่มวิชาหนึ่ง[^\n]*',text)
+            match = whole_group_rule(text)
             if match:
                 folios = [r['text'] for r in lines(pdf[index],decoder=decoder)
                           if r['bbox'][1]<pdf[index].rect.height*.08 and r['text'].isdigit()]
                 if len(set(folios)) != 1:
                     raise ValueError('Selection rule printed page unresolved')
-                candidate = {'text':clean(match[0]),'pdf_page':index+1,'printed_page':int(folios[0]),'source_file':source_file}
+                candidate = {'text':clean(match),'pdf_page':index+1,'printed_page':int(folios[0]),'source_file':source_file}
                 if rule and rule['text'] != candidate['text']:
                     raise ValueError('Multiple incompatible whole-group rules')
                 rule = candidate

@@ -1,0 +1,861 @@
+{
+  "format": 1,
+  "kind": "visually-reviewed-plan-fingerprints",
+  "reviewer": "Source-image review and preserved independent source approval, 2026-10-11",
+  "profiles": {
+    "ai": {
+      "source_sha256": "268065523712db993eec9699b106cc84c283898cd720b70ed56fe73afe80561f",
+      "pages": [
+        23,
+        24,
+        25,
+        26
+      ],
+      "facts_sha256": "c652da9740d035ca508ade15a8d05138aff02493c8040d2b33b0502703076bd2",
+      "verified_fields": [
+        "all_required_rows",
+        "alternative_associations",
+        "course_codes",
+        "hours",
+        "identity",
+        "names",
+        "no_invented_text",
+        "placeholders",
+        "plan_boundaries",
+        "prerequisite_unknowns",
+        "provenance"
+      ],
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "file": "identity.png",
+          "sha256": "efd3925dd66479070c97a2cef22c0a0d6018d0120f0a08b30218409251999577"
+        },
+        {
+          "pdf_page": 23,
+          "file": "page-23.png",
+          "sha256": "e935b3b4d89e6f7535163b16dab24eb171642c957150df3e3f8e498fa3d31dfe"
+        },
+        {
+          "pdf_page": 24,
+          "file": "page-24.png",
+          "sha256": "b85a821b1cc7d84eceba3835b9225dd7fe94d81be2c6d803da11e640be091af8"
+        },
+        {
+          "pdf_page": 25,
+          "file": "page-25.png",
+          "sha256": "4233017c0420267401b3b7b785fd26b5c8243131cac1fa94cab9a1854b43787c"
+        },
+        {
+          "pdf_page": 26,
+          "file": "page-26.png",
+          "sha256": "d061a62c8744a437f02f67e6210664d4217a190bef9e0b7136bc20d9f1799c14"
+        }
+      ],
+      "source_approval": {
+        "receipt": "fresh_ai_scope_20261011/delivery-native-candidate/source-validation.json",
+        "sha256": "25a0b45cdd762ea9687d3cf11d6e1c3a79a953c77266b8cb953ac4db327a463f"
+      }
+    },
+    "dsba-no-coop": {
+      "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+      "pages": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "facts_sha256": "d389d3fcd53eb00b06319e79716d5d57baaf983333cbd2a7411b0083a1554fc7",
+      "verified_fields": [
+        "all_required_rows",
+        "alternative_associations",
+        "course_codes",
+        "hours",
+        "identity",
+        "names",
+        "no_invented_text",
+        "placeholders",
+        "plan_boundaries",
+        "prerequisite_unknowns",
+        "provenance"
+      ],
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "file": "identity.png",
+          "sha256": "704d78d629866f21de7518d7de23ce3ac0e4ec33967a1e738cca8eb14e643df7"
+        },
+        {
+          "pdf_page": 23,
+          "file": "page-23.png",
+          "sha256": "988db31e61ae395564de866bf0646edde6733a95a95077fb4a96d8e1f5ce067d"
+        },
+        {
+          "pdf_page": 24,
+          "file": "page-24.png",
+          "sha256": "67ca8409b68ef79147af3e440ac45f60055b9af6bcb5e05345254fc32d232adc"
+        },
+        {
+          "pdf_page": 25,
+          "file": "page-25.png",
+          "sha256": "dcf2106793c3a51021eb5653c81da97edd4e084c833e1819684d2783d9105428"
+        },
+        {
+          "pdf_page": 26,
+          "file": "page-26.png",
+          "sha256": "f318ae5c27f5a72ce09bb7deb5b1ca4440608d529d1ff727f52136c0f5ca0f09"
+        },
+        {
+          "pdf_page": 27,
+          "file": "page-27.png",
+          "sha256": "dc572764246dd02bac3a19c0a22cf1796d092491df5d9722c38fdb593007f006"
+        },
+        {
+          "pdf_page": 28,
+          "file": "page-28.png",
+          "sha256": "c86e067471365adf545ec52a102f4393195f31b34da124c340c8b0b7bff150f8"
+        },
+        {
+          "pdf_page": 29,
+          "file": "page-29.png",
+          "sha256": "3d594f1753bd7bfdc98cc01b7485c6d027d80fb067631bc524747b77c3ed8831"
+        }
+      ],
+      "source_approval": {
+        "receipt": "source_scope_20261011/dsba-candidate-sealed/source-validation.json",
+        "sha256": "0bafab514d408f63cf008d26c07245f4b5405b20f11e50de27cde26cdf6954c7"
+      }
+    },
+    "dsba-coop": {
+      "source_sha256": "01ead4c636b04ce072064e5789332b89b678d12b9863f52a72d35a9d15b500a1",
+      "pages": [
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "facts_sha256": "c158e8f4fd84f5daec98c81cf0b8b2775dd5f214d547e140ec676f60b9067fda",
+      "verified_fields": [
+        "all_required_rows",
+        "alternative_associations",
+        "course_codes",
+        "hours",
+        "identity",
+        "names",
+        "no_invented_text",
+        "placeholders",
+        "plan_boundaries",
+        "prerequisite_unknowns",
+        "provenance"
+      ],
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "file": "identity.png",
+          "sha256": "704d78d629866f21de7518d7de23ce3ac0e4ec33967a1e738cca8eb14e643df7"
+        },
+        {
+          "pdf_page": 30,
+          "file": "page-30.png",
+          "sha256": "8df5712638e05bc96cfb344af8705f416c2987cd9889e8327f2f97cc76646098"
+        },
+        {
+          "pdf_page": 31,
+          "file": "page-31.png",
+          "sha256": "796a548a00c8ef57e52925b809c64f4b4c5d266c1b4d219d84f1bc54806c7288"
+        },
+        {
+          "pdf_page": 32,
+          "file": "page-32.png",
+          "sha256": "6f6baa3c02e0f888809d0557666075606b932d607aa5064e1c3d34e5229836b2"
+        },
+        {
+          "pdf_page": 33,
+          "file": "page-33.png",
+          "sha256": "fb4030b514bd7d535761077e4e4de2df1a214b6b29c106b90e12bf0abcf9747a"
+        },
+        {
+          "pdf_page": 34,
+          "file": "page-34.png",
+          "sha256": "f09d059b198d4d92e7e9cb5aca9a8cdf1489b40311a8df5df53c31ecf6657ed6"
+        },
+        {
+          "pdf_page": 35,
+          "file": "page-35.png",
+          "sha256": "645fe44f62e659d567fec190eb4880f0365b258672f9c42d95c095c72bcd9469"
+        },
+        {
+          "pdf_page": 36,
+          "file": "page-36.png",
+          "sha256": "71ade5221f499d7b0132b2e33613bfa2f7092a546e712f6b1c86327452e3add9"
+        }
+      ],
+      "source_approval": {
+        "receipt": "source_scope_20261011/dsba-candidate-sealed/source-validation.json",
+        "sha256": "0bafab514d408f63cf008d26c07245f4b5405b20f11e50de27cde26cdf6954c7"
+      }
+    },
+    "it-no-coop": {
+      "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+      "pages": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "facts_sha256": "e59565fe5c3b290f66a6f67ad2fa052c5177fcc950d0f3f80ec3f97742bbe9b5",
+      "verified_fields": [
+        "all_required_rows",
+        "alternative_associations",
+        "course_codes",
+        "hours",
+        "identity",
+        "names",
+        "no_invented_text",
+        "placeholders",
+        "plan_boundaries",
+        "prerequisite_unknowns",
+        "provenance"
+      ],
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "file": "identity.png",
+          "sha256": "2663093b01fceeec45b67432dc7df74ef7f0ab81874206d6f67e857981050fad"
+        },
+        {
+          "pdf_page": 31,
+          "file": "page-31.png",
+          "sha256": "837e23e34238d05e0416336cd150084cea563ad4c394fa414e1d2c7a262d41dd"
+        },
+        {
+          "pdf_page": 32,
+          "file": "page-32.png",
+          "sha256": "703e23f3933569de86506f4e3f15579d2715bc513bbb8abe2d8c2db80068d13b"
+        },
+        {
+          "pdf_page": 33,
+          "file": "page-33.png",
+          "sha256": "25a0ee4903bf204409daa43736a016aa238aa4580771b1548106555f50d2c7a9"
+        },
+        {
+          "pdf_page": 34,
+          "file": "page-34.png",
+          "sha256": "2297d2f621517e48b6e7499242f6fd23e10f3892547134b8bbc9fe988d0f6f81"
+        },
+        {
+          "pdf_page": 35,
+          "file": "page-35.png",
+          "sha256": "322af80c55f9d3d63a6c26314a0b3e8a5393a4eb924898d4e4af1de750ae6aed"
+        },
+        {
+          "pdf_page": 36,
+          "file": "page-36.png",
+          "sha256": "bb0973788b737a5e5399d7c50b79d78f0904e36382f57332c628dcbdb2de70a8"
+        },
+        {
+          "pdf_page": 37,
+          "file": "page-37.png",
+          "sha256": "fb587b2c0258c54aef0b78b7c0944c79a1193523b21fba0e88a7f1ee15d9828c"
+        },
+        {
+          "pdf_page": 25,
+          "file": "selection-rule.png",
+          "sha256": "9df805b5f4b6f07bf1a716dcae68e6819675967d5928e7cd370e5c26f1e07dad"
+        }
+      ],
+      "source_approval": {
+        "receipt": "source_scope_20261011/it-release-candidate-sealed/source-validation.json",
+        "sha256": "88bf86e795882af2824b7605eddf589ae14cf2eb867c129979ff58badc139beb"
+      }
+    },
+    "it-coop": {
+      "source_sha256": "aca97dc8b57308b30355e74e384c042d27d005310c6b4a9b72ecf79514543afa",
+      "pages": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "facts_sha256": "339666eeeb917ba38ef7b5c75d517af6536036a569e070fc5c81d51e7e54338a",
+      "verified_fields": [
+        "all_required_rows",
+        "alternative_associations",
+        "course_codes",
+        "hours",
+        "identity",
+        "names",
+        "no_invented_text",
+        "placeholders",
+        "plan_boundaries",
+        "prerequisite_unknowns",
+        "provenance"
+      ],
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "file": "identity.png",
+          "sha256": "2663093b01fceeec45b67432dc7df74ef7f0ab81874206d6f67e857981050fad"
+        },
+        {
+          "pdf_page": 38,
+          "file": "page-38.png",
+          "sha256": "6e1cbfeef88f10c6b88d9d6f202b0e868c65527470c4ad09906ebcd6d02d6073"
+        },
+        {
+          "pdf_page": 39,
+          "file": "page-39.png",
+          "sha256": "b9c556cd4e63874bbc0b66b116f129619cc209de1037b41d3219e5b67864a372"
+        },
+        {
+          "pdf_page": 40,
+          "file": "page-40.png",
+          "sha256": "de8d664b97068edf4a117709bd84cdf7fcf8668b8484323bdcb5adf9d60caaf2"
+        },
+        {
+          "pdf_page": 41,
+          "file": "page-41.png",
+          "sha256": "008db275bbf9ee7d33229d6bc6d4eed060c999131f099f42b79b1e14e2b70612"
+        },
+        {
+          "pdf_page": 42,
+          "file": "page-42.png",
+          "sha256": "6344040794485aa48a84d6abd05fc51fe3da97f59e5b0fb2ab523bd2b7d4deaf"
+        },
+        {
+          "pdf_page": 43,
+          "file": "page-43.png",
+          "sha256": "0a8414a78618d014ccc7f1efbcf08753213dec1f695d35ce83938856bf5d4271"
+        },
+        {
+          "pdf_page": 44,
+          "file": "page-44.png",
+          "sha256": "813b198133bc2106bb59bcd314574418b6242b1c05e9ce46541b67329aff2167"
+        },
+        {
+          "pdf_page": 25,
+          "file": "selection-rule.png",
+          "sha256": "9df805b5f4b6f07bf1a716dcae68e6819675967d5928e7cd370e5c26f1e07dad"
+        }
+      ],
+      "source_approval": {
+        "receipt": "source_scope_20261011/it-release-candidate-sealed/source-validation.json",
+        "sha256": "88bf86e795882af2824b7605eddf589ae14cf2eb867c129979ff58badc139beb"
+      }
+    },
+    "dsba-2560-coop": {
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "pages": [
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "facts_sha256": "6f0595fa102edfd6d94e3adcdafdc25bf37d5a021daea446aa4203a83f8a71ce",
+      "verified_fields": [
+        "all_required_rows",
+        "alternative_associations",
+        "course_codes",
+        "hours",
+        "identity",
+        "names",
+        "no_invented_text",
+        "placeholders",
+        "plan_boundaries",
+        "prerequisite_unknowns",
+        "provenance"
+      ],
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "file": "identity.png",
+          "sha256": "37d2bb92d01ae482840ed7a0c4d7d23e17c85c6bf00129b6e82bc5a58426c7bd"
+        },
+        {
+          "pdf_page": 30,
+          "file": "page-30.png",
+          "sha256": "655f86ca97794fa3c240f9060d06aa4db3474cb9c7ca22cf14b8a00d18b315fe"
+        },
+        {
+          "pdf_page": 31,
+          "file": "page-31.png",
+          "sha256": "65dfdbb0d92f4d9b87321b59e3d7078a93386f3d5be4a866015519091e67041a"
+        },
+        {
+          "pdf_page": 32,
+          "file": "page-32.png",
+          "sha256": "2f7d966562d9cf174abea7c03fddb65f09ffa011783e2295972b00e986fc2d33"
+        },
+        {
+          "pdf_page": 33,
+          "file": "page-33.png",
+          "sha256": "dfaa3990b2677a0c54c26dbad3fb51ea8afda53b0dc76884a0f0328916a72381"
+        },
+        {
+          "pdf_page": 34,
+          "file": "page-34.png",
+          "sha256": "f5e3a3160807f0de8ce0391105e4e02f6c2b3e030349db265fd6af055a87b3b4"
+        }
+      ],
+      "source_approval": {
+        "receipt": "source_scope_20261011/old-dsba-candidate-sealed/source-validation.json",
+        "sha256": "3209c688647b6dda036f9dc42709a10b0289158788af5d7e6697d17eb1500558"
+      }
+    },
+    "dsba-2560-no-coop": {
+      "source_sha256": "6f812942774c6298a0aacc8a82b8bada0d93429ee1dfab1b96f1232600f2de13",
+      "pages": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "facts_sha256": "56d9353ca2907af177c9e0a3aca8163037edf22d70b9b239f1de98cb733e204a",
+      "verified_fields": [
+        "all_required_rows",
+        "alternative_associations",
+        "course_codes",
+        "hours",
+        "identity",
+        "names",
+        "no_invented_text",
+        "placeholders",
+        "plan_boundaries",
+        "prerequisite_unknowns",
+        "provenance"
+      ],
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "file": "identity.png",
+          "sha256": "37d2bb92d01ae482840ed7a0c4d7d23e17c85c6bf00129b6e82bc5a58426c7bd"
+        },
+        {
+          "pdf_page": 25,
+          "file": "page-25.png",
+          "sha256": "5aa579c4f43a134e2c0f504d40f2c1f482238b4f62ec7105b127694830f54fc8"
+        },
+        {
+          "pdf_page": 26,
+          "file": "page-26.png",
+          "sha256": "631a636dd40d422bb5a1c2b7ac2d8e4ca9f67ad51f259f44a28c029b71d3e455"
+        },
+        {
+          "pdf_page": 27,
+          "file": "page-27.png",
+          "sha256": "2d384002ac2dea88412f43ceb0c4d22de5eddf6501d9f76ec2341aa750585372"
+        },
+        {
+          "pdf_page": 28,
+          "file": "page-28.png",
+          "sha256": "0aca5c127945afa878accd9cff9f6d0819c7e3acd8b26b974520bc1bf4f455f1"
+        },
+        {
+          "pdf_page": 29,
+          "file": "page-29.png",
+          "sha256": "7dd5ac53b1381fa67b0f6868b673a040a4264f138f7c5c9e48fcc51257b5a092"
+        }
+      ],
+      "source_approval": {
+        "receipt": "source_scope_20261011/old-three-candidate-sealed/source-validation.json",
+        "sha256": "1de17dc9377c38971000120afa5afff9ef519b2d5470cd94c106cef5ce4fd957"
+      }
+    },
+    "bit-2560-no-coop": {
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "pages": [
+        23,
+        24,
+        25,
+        26
+      ],
+      "facts_sha256": "faf30f8d80309c8d96514ad7f154f476b046e7a46ade5e573d4b9567d1fa249a",
+      "verified_fields": [
+        "all_required_rows",
+        "alternative_associations",
+        "course_codes",
+        "hours",
+        "identity",
+        "names",
+        "no_invented_text",
+        "placeholders",
+        "plan_boundaries",
+        "prerequisite_unknowns",
+        "provenance"
+      ],
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "file": "identity.png",
+          "sha256": "abd79bcd927f3b4e35b527bc2ac84426e25ede448481d8bb97506fbddfc901ce"
+        },
+        {
+          "pdf_page": 23,
+          "file": "page-23.png",
+          "sha256": "39a388f6d78cbcc935b9a2c2373dd4546dcf668e0e2fd59bc3f614e1e99ab48a"
+        },
+        {
+          "pdf_page": 24,
+          "file": "page-24.png",
+          "sha256": "336dbbc1a576dcbda10bb85559d9e03eec5d83cb129cfd9ff53fe0e2a09ccabe"
+        },
+        {
+          "pdf_page": 25,
+          "file": "page-25.png",
+          "sha256": "b6c1974f8585d259fc3a051b2d289b4d074ecb14013b7f113bb6bfeec5f2f137"
+        },
+        {
+          "pdf_page": 26,
+          "file": "page-26.png",
+          "sha256": "29f7ffbe4a921531346dd08a75191c6b8420837b65179f5f3ebc92ec1786dc54"
+        }
+      ],
+      "source_approval": {
+        "receipt": "source_scope_20261011/old-three-candidate-sealed/source-validation.json",
+        "sha256": "1de17dc9377c38971000120afa5afff9ef519b2d5470cd94c106cef5ce4fd957"
+      }
+    },
+    "bit-2560-coop": {
+      "source_sha256": "49fbe2843fddfb175fd597023c06b633f1ee95d9f6c39cbc3bb51aca7999b385",
+      "pages": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "facts_sha256": "b981f4006ee5bb998f2fe20d6e2680e8b2a2fc47c83fca0cef2b3b5272b8fe28",
+      "verified_fields": [
+        "all_required_rows",
+        "alternative_associations",
+        "course_codes",
+        "hours",
+        "identity",
+        "names",
+        "no_invented_text",
+        "placeholders",
+        "plan_boundaries",
+        "prerequisite_unknowns",
+        "provenance"
+      ],
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "file": "identity.png",
+          "sha256": "abd79bcd927f3b4e35b527bc2ac84426e25ede448481d8bb97506fbddfc901ce"
+        },
+        {
+          "pdf_page": 27,
+          "file": "page-27.png",
+          "sha256": "83f1166687a22058bb8a6be31100a4b6ada1badde775675dc093da3b7aba9a47"
+        },
+        {
+          "pdf_page": 28,
+          "file": "page-28.png",
+          "sha256": "3dbab39eff14dd0af512fa86511f86ef91b904e8e4a756fb11cb505a9da306de"
+        },
+        {
+          "pdf_page": 29,
+          "file": "page-29.png",
+          "sha256": "b4454e4a5040569321b931ef4b921cff2d65eebe392d1874e25ca5e9c52c4d5d"
+        },
+        {
+          "pdf_page": 30,
+          "file": "page-30.png",
+          "sha256": "d942f3f8718309edd5ed8134fd427b4bc7914d572c6617b88d2e4cdd95733bc5"
+        }
+      ],
+      "source_approval": {
+        "receipt": "source_scope_20261011/old-three-candidate-sealed/source-validation.json",
+        "sha256": "1de17dc9377c38971000120afa5afff9ef519b2d5470cd94c106cef5ce4fd957"
+      }
+    },
+    "bit-2565-no-coop": {
+      "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+      "pages": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "facts_sha256": "c1022656d8a9a03c61744563ee36615b5f50ee53da5da75d20848ae702bbe38c",
+      "verified_fields": [
+        "all_required_rows",
+        "alternative_associations",
+        "course_codes",
+        "hours",
+        "identity",
+        "names",
+        "no_invented_text",
+        "placeholders",
+        "plan_boundaries",
+        "prerequisite_unknowns",
+        "provenance"
+      ],
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "file": "identity.png",
+          "sha256": "3c9d8fe39f7675e4af524e36eb988947e96ff89c68d5031a2df8ecdba8ae3136"
+        },
+        {
+          "pdf_page": 26,
+          "file": "page-26.png",
+          "sha256": "0174b26b43c4393a54771f091467b7b60f5c8ae040181f361c66990cf09e2d0b"
+        },
+        {
+          "pdf_page": 27,
+          "file": "page-27.png",
+          "sha256": "220e4545856a525ed310d12fa3b24ddf3a3e1cc1977dcffa8eef93d04a42e1ca"
+        },
+        {
+          "pdf_page": 28,
+          "file": "page-28.png",
+          "sha256": "a0b81678e76425b964e1290c73050561f5c43c13c9513ee4a6b67d430926c539"
+        },
+        {
+          "pdf_page": 29,
+          "file": "page-29.png",
+          "sha256": "a3601140e74cef41178630dcffd0f6c307f974ef77b5564babd537f9056ba0b0"
+        },
+        {
+          "pdf_page": 30,
+          "file": "page-30.png",
+          "sha256": "6ebd1ad9d7b4d5e332739a08455d46fb836c186a88fc3704220d17a598a40e5f"
+        }
+      ],
+      "source_approval": {
+        "receipt": "font_table_rebuild_20261011/bit-final-candidate/source-validation.json",
+        "sha256": "6bf645eaf7f27e580336890d0612c7f8d3fabafc5c83c10eb4a9a47320ffad0a"
+      }
+    },
+    "bit-2565-coop": {
+      "source_sha256": "f7f8fba36276f772c757762a1e48879af8b54c3fe8ab3325e8f96996268891bc",
+      "pages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "facts_sha256": "d72ffce2ef9566295c66c1fc32e25c5dbb67a00831c6820c7ec5376d0366f590",
+      "verified_fields": [
+        "all_required_rows",
+        "alternative_associations",
+        "course_codes",
+        "hours",
+        "identity",
+        "names",
+        "no_invented_text",
+        "placeholders",
+        "plan_boundaries",
+        "prerequisite_unknowns",
+        "provenance"
+      ],
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "file": "identity.png",
+          "sha256": "3c9d8fe39f7675e4af524e36eb988947e96ff89c68d5031a2df8ecdba8ae3136"
+        },
+        {
+          "pdf_page": 31,
+          "file": "page-31.png",
+          "sha256": "e59cbdf8ca446b34c0f8dab3c3d869dbc51d1582cd0c9f97e53a7cea4954006f"
+        },
+        {
+          "pdf_page": 32,
+          "file": "page-32.png",
+          "sha256": "6db95b60f168fd73c3d2a4a8237ec652f4cfd9a0ca011fdbcbca98c494eb6357"
+        },
+        {
+          "pdf_page": 33,
+          "file": "page-33.png",
+          "sha256": "8c82621cd0ca73cef0f8bb3d5215980e0784b494e8622b28d00ac100fa3814d8"
+        },
+        {
+          "pdf_page": 34,
+          "file": "page-34.png",
+          "sha256": "077296e5073f2e8602169178ea385e38f77b293ba1af956acacec286ee303883"
+        },
+        {
+          "pdf_page": 35,
+          "file": "page-35.png",
+          "sha256": "60ab50f48e84a74679b8d234317cba46f93f2fdb1022cddd2ffb6a02ac62e940"
+        }
+      ],
+      "source_approval": {
+        "receipt": "font_table_rebuild_20261011/bit-final-candidate/source-validation.json",
+        "sha256": "6bf645eaf7f27e580336890d0612c7f8d3fabafc5c83c10eb4a9a47320ffad0a"
+      }
+    },
+    "it-2560-no-coop": {
+      "pages": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "verified_fields": [
+        "all_required_rows",
+        "alternative_associations",
+        "course_codes",
+        "hours",
+        "identity",
+        "names",
+        "no_invented_text",
+        "placeholders",
+        "plan_boundaries",
+        "prerequisite_unknowns",
+        "provenance"
+      ],
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "file": "identity.png",
+          "sha256": "d3e0247942f9320fa629e5578af48c1df7233b45ef9968ff8cb6633a14312949"
+        },
+        {
+          "pdf_page": 27,
+          "file": "page-27.png",
+          "sha256": "f8a9a030b129bebb8c384bc24a902a8e2f5fc5d5c0f4fdac868b53d42edb1456"
+        },
+        {
+          "pdf_page": 28,
+          "file": "page-28.png",
+          "sha256": "a3fadb14b62080196f6739d22768ddb05fe60cefbe8169f4c72aff457bd1926b"
+        },
+        {
+          "pdf_page": 29,
+          "file": "page-29.png",
+          "sha256": "51a22987afed5cbccabaae1cbf5b01d5f59a08429e2687be3f0f10e11388e65b"
+        },
+        {
+          "pdf_page": 30,
+          "file": "page-30.png",
+          "sha256": "c62847805be1451f8c78a22e64f6a91118dccba6ac893cbdf9b6dffcd2f82264"
+        },
+        {
+          "pdf_page": 31,
+          "file": "page-31.png",
+          "sha256": "43c0627c3181692bde10d54b49d9c9761d6e1862ec2471eea6c1d8c281d9a4e1"
+        },
+        {
+          "pdf_page": 32,
+          "file": "page-32.png",
+          "sha256": "982871134776f1ff203023156d0e5e4d9ada40b5389e64ae8742443e44b9265b"
+        },
+        {
+          "pdf_page": 33,
+          "file": "page-33.png",
+          "sha256": "07a1fa4fdd9ad081dbb64fc06ba99e62cf3394202434c497bf7b4197b09a4595"
+        },
+        {
+          "pdf_page": 18,
+          "file": "selection-rule.png",
+          "sha256": "7e2996418be94ad17494b38349fe150e4221d3d9eaa63a892a5f3ce7492a87cf"
+        }
+      ],
+      "facts_sha256": "6de0f5e81d62f4a3324b22af66412cb81a5369f1a409419fc93bd200a1723760",
+      "source_approval": {
+        "receipt": "ocr_reconstruction_repair_20261011/old-it-visual-source-approval.json",
+        "sha256": "16441830c87dcc21209d5aea036910e59d0affae9ee2b8c58bff418cf93e2c82"
+      }
+    },
+    "it-2560-coop": {
+      "pages": [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "source_sha256": "eded877e329f1c1ede974e9a708c337f18b9443c44c158b3478d0e74dcec556d",
+      "verified_fields": [
+        "all_required_rows",
+        "alternative_associations",
+        "course_codes",
+        "hours",
+        "identity",
+        "names",
+        "no_invented_text",
+        "placeholders",
+        "plan_boundaries",
+        "prerequisite_unknowns",
+        "provenance"
+      ],
+      "evidence": [
+        {
+          "pdf_page": 1,
+          "file": "identity.png",
+          "sha256": "d3e0247942f9320fa629e5578af48c1df7233b45ef9968ff8cb6633a14312949"
+        },
+        {
+          "pdf_page": 34,
+          "file": "page-34.png",
+          "sha256": "af2b29a20245733829baeee632d6dc76d2e2e3ccb828250546819f3154bd081e"
+        },
+        {
+          "pdf_page": 35,
+          "file": "page-35.png",
+          "sha256": "a37eba2f913652a13148b2bae04fb5f0d080755295d104adf73e256c01824c1c"
+        },
+        {
+          "pdf_page": 36,
+          "file": "page-36.png",
+          "sha256": "3929fcdc982960769b8a43a8dc98689b37ecb85ddf71cffd81957761979a5f67"
+        },
+        {
+          "pdf_page": 37,
+          "file": "page-37.png",
+          "sha256": "be3d9cffd09e3aef694851e244fe159f5cdbfa6c66d2e37b80c2694f62bd70ad"
+        },
+        {
+          "pdf_page": 38,
+          "file": "page-38.png",
+          "sha256": "18ce8292e360f1caa0ac89921d05d79b7150156da8d65bca571da4420cccc07c"
+        },
+        {
+          "pdf_page": 39,
+          "file": "page-39.png",
+          "sha256": "f6be5fde029b03f783d5a049fe7065f82ddd12e5f21fe148281aa89e9929ae27"
+        },
+        {
+          "pdf_page": 40,
+          "file": "page-40.png",
+          "sha256": "241e3ce67e4c164eb56ae05470261b7cfceca5b12b4dbe5bf3b172b5a333325a"
+        },
+        {
+          "pdf_page": 18,
+          "file": "selection-rule.png",
+          "sha256": "7e2996418be94ad17494b38349fe150e4221d3d9eaa63a892a5f3ce7492a87cf"
+        }
+      ],
+      "facts_sha256": "13f79988c9511763971fda9c860af6ef2f2b13825db1bff6b081bd9e6d2a0675",
+      "source_approval": {
+        "receipt": "ocr_reconstruction_repair_20261011/old-it-visual-source-approval.json",
+        "sha256": "16441830c87dcc21209d5aea036910e59d0affae9ee2b8c58bff418cf93e2c82"
+      }
+    }
+  }
+}

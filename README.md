@@ -2,12 +2,16 @@
 
 โครงงาน P2 · Intelligent System Development · `isd-2026-cooltone`
 
-**ดาวน์โหลดชุด v8 จาก [GitHub Release](https://github.com/thanapat6954/isd-2026-cooltone/releases/tag/instructor-v8)** หรือใช้โค้ดจาก branch `week11_thanapat` คู่กับ runtime bundle รุ่นเดียวกัน แอปอยู่ใน `ocr_final/` ของโครงการที่แตก ZIP ข้อเท็จจริงขณะตอบมาจาก SQLite ที่เลือกเท่านั้น ไม่ใช้เฉลย evaluation หรือ JSON เติมข้อเท็จจริงหลังค้น SQL
+**ชุด v9:** รวมคำสั่ง `scripts/rebuild_from_pdf.py` และ [คู่มือเริ่มจาก PDF](ocr_final/REBUILD_FROM_PDF.md) สำหรับ hybrid extraction ครบ 13 profiles เฉพาะแผนการศึกษา ตรวจ source → SQLite และ Q&A หน่วยกิต 105/105 กับชื่อ/หน่วยกิตรายวิชา 26/26 ผ่านแล้ว ยังไม่สร้าง catalog/prerequisites/rules/legacy ครบทั้งระบบ
+
+**ดาวน์โหลด [ชุดส่งอาจารย์ instructor-v9](https://github.com/thanapat6954/isd-2026-cooltone/releases/tag/instructor-v9)**: ต้องมีทั้ง `curriculum-project.zip` (โค้ด) และ `runtime-data.zip` (ฐานข้อมูล 14 snapshots + PDF 7 เล่ม) หรือ clone branch `week11_thanapat` แล้วดาวน์โหลดเฉพาะ runtime ZIP แอปอยู่ใน `ocr_final/` ข้อเท็จจริงขณะตอบมาจาก SQLite ที่เลือกเท่านั้น ไม่ใช้เฉลย evaluation หรือ JSON เติมข้อเท็จจริงหลังค้น SQL
+
+ถ้าต้องการ **เปิดทดสอบทันที** ทำขั้นตอนติดตั้งและ Mode A ด้านล่าง ถ้าต้องการ **เริ่มจากต้นฉบับโดยไม่ใช้ฐานข้อมูลเดิม** ทำตาม [คู่มือสร้างใหม่](ocr_final/REBUILD_FROM_PDF.md): ติดตั้ง `requirements-rebuild.txt` → restore เฉพาะ PDF ด้วย `--sources-only` → `rebuild_from_pdf.py --activate` → เปิดเว็บ ผลสร้างใหม่เป็น `academic-plan-only` ไม่ใช่ข้อมูลครบทั้ง runtime ZIP
 
 | โหมด | สถานะและขอบเขต |
 |---|---|
 | A — เปิดฐานข้อมูลที่ส่งให้ | ทดสอบจาก ZIP จริงแล้ว: 14 SQLite snapshots และ PDF 7 เล่ม ไม่ต้องรัน OCR |
-| B — native เฉพาะแผนการศึกษา | Pipeline ที่ส่งใน v8 มีหลักฐาน v7 fresh source-only 10 profiles: IT2565, DSBA2565/2560, BIT2565/2560 ทั้งสองแผน ใช้ reviewed font decoding + source validation **ไม่ใช่ vision OCR** |
+| B — hybrid เฉพาะแผนการศึกษา | สร้างจาก PDF ได้ครบ 13 profiles: AI2566 และ DSBA/IT/BIT2565/2560 ทุกแผน ใช้ native PDF + reviewed font decoding ก่อน แล้ว fallback image OCR เมื่ออ่านตรงไม่ได้ รอบที่ตรวจ 13 profiles อ่าน native ได้ทั้งหมด **ไม่ใช่ vision OCR ทั้งเล่ม** |
 | B — vision OCR / full book | ภาพ single-row ที่เลือกวัดได้ แต่ multi-row ยังมี defect; ยังไม่มี full OCR-to-database reconstruction ที่รับรอง |
 | B — แทนระบบครบทุก profile | **ยัง blocked**: catalog descriptions/program rules ยังตรวจไม่ครบ และ legacy ยังไม่มี identity หลักสูตร/ฉบับ/แผน ห้ามใช้ partial build แทนทั้งระบบ |
 
@@ -24,14 +28,14 @@
 
 ## รับชุดส่งต่อ
 
-ดาวน์โหลดจาก [Release instructor-v8](https://github.com/thanapat6954/isd-2026-cooltone/releases/tag/instructor-v8):
+ดาวน์โหลดจาก [Release instructor-v9](https://github.com/thanapat6954/isd-2026-cooltone/releases/tag/instructor-v9):
 
 | ไฟล์ | ใช้ทำอะไร |
 |---|---|
-| [curriculum-project.zip](https://github.com/thanapat6954/isd-2026-cooltone/releases/download/instructor-v8/curriculum-project.zip) | โค้ดจาก commit ที่ระบุใน manifest; มี README นี้ |
-| [runtime-data.zip](https://github.com/thanapat6954/isd-2026-cooltone/releases/download/instructor-v8/runtime-data.zip) | SQLite 14 ฐาน + PDF 7 เล่ม; จำเป็นทั้งเปิดแอปและ reconstruct |
-| [handoff-manifest.json](https://github.com/thanapat6954/isd-2026-cooltone/releases/download/instructor-v8/handoff-manifest.json) | Commit, SHA256 และขอบเขตของชุดส่งต่อ |
-| [VERIFICATION.md](https://github.com/thanapat6954/isd-2026-cooltone/releases/download/instructor-v8/VERIFICATION.md) | ผลตรวจและข้อจำกัด; ไม่จำเป็นต่อ runtime |
+| [curriculum-project.zip](https://github.com/thanapat6954/isd-2026-cooltone/releases/download/instructor-v9/curriculum-project.zip) | โค้ดจาก commit ที่ระบุใน manifest; มี README นี้ |
+| [runtime-data.zip](https://github.com/thanapat6954/isd-2026-cooltone/releases/download/instructor-v9/runtime-data.zip) | SQLite 14 ฐาน + PDF 7 เล่ม; จำเป็นทั้งเปิดแอปและ reconstruct |
+| [handoff-manifest.json](https://github.com/thanapat6954/isd-2026-cooltone/releases/download/instructor-v9/handoff-manifest.json) | Commit, SHA256 และขอบเขตของชุดส่งต่อ |
+| [VERIFICATION.md](https://github.com/thanapat6954/isd-2026-cooltone/releases/download/instructor-v9/VERIFICATION.md) | ผลตรวจและข้อจำกัด; ไม่จำเป็นต่อ runtime |
 
 เปิด **PowerShell 7** ในโฟลเดอร์ที่ดาวน์โหลดไฟล์ ตรวจ SHA256 ให้ตรง manifest แล้วแตก ZIP ลงโฟลเดอร์ใหม่ที่ว่าง:
 
@@ -65,7 +69,7 @@ curriculum-handoff/
     └── work/                          สร้างเมื่อ restore/build/start
 ```
 
-v8 ใช้ runtime bundle ที่ hash ตรงกับ v7/v6 เดิม และ pipeline native ที่ตรวจครบสิบ profiles ใน v7 ไม่ต้องใช้ v7.1 patch เพิ่ม ตรวจ fresh-download/startup ของชุดเผยแพร่ตาม [รายงานส่งต่อสุดท้าย](docs/FINAL_INSTRUCTOR_DELIVERY.md) **เก็บ v6/v7 เดิมไม่เปลี่ยน** Native reconstruction สิบ profiles ไม่ใช่ full14replacement และไม่ใช่ vision OCR
+v9 ใช้ runtime bundle เดิมที่ SHA256 `39018bfa21a7a36ea4f92fde8eb4db5d671745679dddc90dead38d8f23ec9f07` รวมโค้ด hybrid และ source verification ไว้แล้ว ไม่ต้อง overlay patch เพิ่ม อ่าน [คู่มือ v9](docs/INSTRUCTOR_V9.md) และ release manifest สำหรับ commit/hash/ผลตรวจ เก็บ v8 และชุดก่อนหน้าไว้ตามเดิม การสร้างใหม่ 13 plans ไม่ใช่ full14replacement หรือ vision OCR ทั้งเล่ม
 
 ## ติดตั้งครั้งแรก
 
@@ -152,7 +156,9 @@ Invoke-RestMethod http://127.0.0.1:8005/api/health
 
 Native ใช้ข้อความเดิมและ table geometry ใน PDF พร้อม render ภาพเพื่อตรวจ ไม่ได้ใช้ vision OCR หาก native text/association ไม่ชัดต้อง reject ไม่สลับไป bundle/curated master โดยเงียบ ไม่ reuse saved OCR เป็น fresh result
 
-### B1 — IT / DSBA / BIT native ที่ source-validated แล้ว
+### B1 — สร้างแผนการศึกษาใหม่
+
+สำหรับ v9 ใช้ [คู่มือสร้างใหม่จาก PDF](ocr_final/REBUILD_FROM_PDF.md) และ `scripts/rebuild_from_pdf.py --activate` ซึ่งรวมการสร้าง/ตรวจ source/เปิดใช้ 13 profiles ไว้แล้ว ตัวอย่าง low-level native ด้านล่างเก็บเป็นวิธีตรวจ candidate ด้วยตนเองจาก pipeline เดิม ไม่จำเป็นสำหรับคำสั่ง v9
 
 ติดตั้ง dependencies ขั้นตอนแรกแล้ว ไม่ต้องติดตั้ง Typhoon เพื่อ native rebuild เลือก profile pair หนึ่งแถวจากตาราง แล้วใช้ `rebuild --profiles` ตามตัวอย่าง ไม่เติมข้อมูลจาก bundled DB:
 
@@ -170,7 +176,7 @@ Native ใช้ข้อความเดิมและ table geometry ใน
 
 คำสั่งแรก reject เพราะยังไม่มี source review เป็น safety gate ไม่ใช่ extraction failure ตรวจภาพทุกหน้า/ปก/SQLfields และ rule25 แล้วบันทึก receipt+validate ด้วยคำสั่งต่อไปนี้ เปลี่ยนเฉพาะค่าprofilesเมื่อต้องการคู่แผนอื่น ทั้ง10profilesสร้างใน source-onlysandboxจากZIPจริงได้ ใช้reviewedfontencodingเท่านั้น **ไม่มีcoursecorrections** ITเลือกทั้งspecializationbundle/sharedcourseอยู่หลายmembershipและcitationแยก35→36/42→43 ไม่สรุปสิทธิผสมรายวิชาข้ามชุด
 
-IT2560ทั้งสองแผนยังreject: supporting-rule scanไปพบWingdings2ที่ยังไม่review; legacyยังไม่resolved Catalogdescriptions/rules/prereqs/fullbookยังไม่สร้างครบ จึงไม่ใช้partial10แทนfull14gate
+ข้อจำกัด IT2560 ของชุด v8 แก้แล้วใน v9 ด้วย exact-font review ที่ตรวจจากต้นฉบับ ทำให้แผนทั้ง 13 profiles ผ่าน source verification แต่ legacy ยังไม่ resolved และ catalog descriptions/rules/prerequisites/fullbook ยังไม่สร้างครบ จึงไม่ใช้ partial plan build แทน full14gate
 
 
 แทน `<build-id>` ด้วย ID ที่คำสั่งพิมพ์ ตรวจ `raw/<profile>/identity.png`, ทุก `page-*.png`, `page-*.plan.json`, `selection-rule.png` เมื่อมี และ SQLite ให้ครบ codes/ชื่อไทย-อังกฤษ/credits/hour alternatives/placeholder length/bundle/term/plan identity/source pages หากผิดห้ามยืนยัน receipt:
