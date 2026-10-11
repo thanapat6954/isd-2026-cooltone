@@ -1,0 +1,122 @@
+{
+  "scope": "fresh remote commit, new environment, reused declared installed model service; no independent OCR/full-book accuracy claim",
+  "tested_commit": "427bb7ad93f6d035f69c01fba428f7ed84173824",
+  "install_steps": [
+    {
+      "name": "venv",
+      "exit": 0,
+      "seconds": 17.701
+    },
+    {
+      "name": "pip",
+      "exit": 0,
+      "seconds": 24.721
+    },
+    {
+      "name": "pip-check",
+      "exit": 0,
+      "seconds": 0.741
+    },
+    {
+      "name": "download-runtime",
+      "exit": 0,
+      "seconds": 139.065
+    },
+    {
+      "name": "restore",
+      "exit": 0,
+      "seconds": 2.68
+    },
+    {
+      "name": "preflight",
+      "exit": 0,
+      "seconds": 1.706
+    }
+  ],
+  "runtime_steps": [
+    {
+      "name": "start-0",
+      "exit": 0,
+      "seconds": 5.33
+    },
+    {
+      "name": "development-gold",
+      "exit": 0,
+      "seconds": 8.606
+    },
+    {
+      "name": "stop-0",
+      "exit": 0,
+      "seconds": 1.759
+    },
+    {
+      "name": "start-1",
+      "exit": 0,
+      "seconds": 4.561
+    },
+    {
+      "name": "stop-1",
+      "exit": 0,
+      "seconds": 1.644
+    },
+    {
+      "name": "missing-model",
+      "exit": 1,
+      "seconds": 2.739
+    },
+    {
+      "name": "missing-file",
+      "exit": 1,
+      "seconds": 2.612
+    },
+    {
+      "name": "occupied-port",
+      "exit": 1,
+      "seconds": 6.567
+    }
+  ],
+  "runtime_db_count": 14,
+  "substantive_selectable_profiles": [
+    "AI-2566-coop",
+    "BIT-2560-coop",
+    "BIT-2560-no-coop",
+    "BIT-2565-coop",
+    "BIT-2565-no-coop",
+    "DSBA-2560-coop",
+    "DSBA-2560-no-coop",
+    "DSBA-2565-coop",
+    "DSBA-2565-no-coop",
+    "IT-2560-coop",
+    "IT-2560-no-coop",
+    "IT-2565-coop",
+    "IT-2565-no-coop"
+  ],
+  "recorded_route_checks": 52,
+  "gold": {
+    "passed": 70,
+    "n": 70,
+    "substantive_L1_L2": 52,
+    "missing_evidence_behavior": 18,
+    "not_heldout": true
+  },
+  "source_images_visually_reviewed": 11,
+  "source_claims_reviewed": 13,
+  "source_review_scope": "selected codes/names/credits/hours/explicit prerequisite NONE and paired citations; not full catalog certification",
+  "native_profile_count": 10,
+  "native_runtime_dependency_changes_from_v7": [],
+  "legacy_identity": "unresolved; no substantive source-certification claim",
+  "audit": {
+    "datasets": 14,
+    "FAIL": 1372,
+    "incomplete": 51
+  },
+  "unit": 357,
+  "schema": 30,
+  "frontend": 11,
+  "browser_click": "policy blocked",
+  "model_downloads": 0,
+  "free_bytes": 13822046208,
+  "database_hashes_unchanged": true,
+  "owned_backend_stopped": true,
+  "completed": true
+}

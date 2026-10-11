@@ -255,6 +255,9 @@ $backup = '.\work\backups\build-switch\<backup-id>'
 
 ## ขอบเขต ไฟล์ และผลวัด
 
+ชุดเผยแพร่ผ่าน fresh remote download + new venv/pip check + restore 14 DB/7 PDF ใช้ Qwen ที่ติดตั้งแล้วโดยเปิดเผย ตรวจ 13 selectable profiles ทั้งสอง API routes/start/restart และ missing-file/model/occupied-port ผ่าน Startup 5.330s/restart 4.561s; development70checks มี18missing-evidence checksที่ไม่ใช่คำตอบข้อเท็จจริง อ่าน [ผลตรวจชุดส่งต่อ](docs/FINAL_INSTRUCTOR_DELIVERY.md#ผล-fresh-remote-download-ที่เสร็จจริง) Nativeสิบprofilesเป็นผลsource-onlyที่ตรวจในv7 pipelineเดิม ไม่อ้างfreshvisionOCR/fullbookaccuracy
+
+
 | หลักสูตร/ฉบับ | แผน | PDF |
 |---|---|---|
 | AI 2566 | coop | `AI.pdf` |
