@@ -1,8 +1,8 @@
 # รัน Evaluation ด้วยไฟล์ PowerShell
 
-ใช้โค้ด week11 กับฐานข้อมูล 14 snapshots จาก runtime-data.zip (Mode A) ติดตั้ง Python venv/requirements-web-tested.txt, Node.js และเตรียม Ollama ตามคู่มือ INSTRUCTOR_V9.md ก่อน
+ใช้โค้ดชุดไฟนอลบน main (นำจาก week11_thanapat) กับฐานข้อมูล 14 snapshots จาก runtime-data.zip (Mode A) ติดตั้ง Python venv/requirements-web-tested.txt, Node.js และเตรียม Ollama ตามคู่มือ INSTRUCTOR_V9.md ก่อน
 
-เริ่มจาก ZIP ให้ทำตาม [คู่มือแตก ZIP และจัดโฟลเดอร์](https://github.com/thanapat6954/isd-2026-cooltone/blob/week11_thanapat/docs/INSTRUCTOR_ZIP_SETUP.md) (ไฟล์ docs/INSTRUCTOR_ZIP_SETUP.md ใน Code ZIP) มีเส้นทางก่อน/หลัง restore และแยก ZIP ของโค้ด ฐานข้อมูล และหลักฐานผลทดสอบ
+เริ่มจาก ZIP ให้ทำตาม [คู่มือแตก ZIP และจัดโฟลเดอร์](https://github.com/thanapat6954/isd-2026-cooltone/blob/main/docs/INSTRUCTOR_ZIP_SETUP.md) (ไฟล์ docs/INSTRUCTOR_ZIP_SETUP.md ใน Code ZIP) มีเส้นทางก่อน/หลัง restore และแยก ZIP ของโค้ด ฐานข้อมูล และหลักฐานผลทดสอบ
 
 ติดตั้ง dependency ของชุดทดสอบเพิ่มหนึ่งครั้งใน venv นี้:
 
@@ -53,7 +53,7 @@ ocr_final/evaluation_runs/evaluation-วันเวลา-id/
 
 ส่ง ZIP ผลทดสอบพร้อม SHA256SUMS.txt หรือส่งทั้งโฟลเดอร์ให้อาจารย์ได้ JSON มีคำตอบและ citations จริงให้อ่าน ไม่ใช่เพียงตัวเลขในรายงาน Hash ตรวจว่าไฟล์ไม่เปลี่ยนหลังเก็บ ไม่ใช่การรับรองความถูกต้องทั้งเล่ม อาจารย์รันคำสั่งเดิมเพื่อสร้างหลักฐานรอบของตนเองได้
 
-Git เก็บเฉพาะ [ตัวอย่างหลักฐานที่ระบุรอบ](https://github.com/thanapat6954/isd-2026-cooltone/blob/week11_thanapat/ocr_final/evaluation_evidence/README.md) ส่วน evaluation_runs ของผู้ใช้แต่ละเครื่องไม่ถูก commit อัตโนมัติ จำนวน Unit tests อาจต่างกันตามไฟล์ tests/เวอร์ชัน packages ในเครื่อง ให้ใช้ counts/command/dependency hashes ที่รอบนั้นบันทึกไว้
+Git เก็บเฉพาะ [ตัวอย่างหลักฐานที่ระบุรอบ](https://github.com/thanapat6954/isd-2026-cooltone/blob/main/ocr_final/evaluation_evidence/README.md) ส่วน evaluation_runs ของผู้ใช้แต่ละเครื่องไม่ถูก commit อัตโนมัติ จำนวน Unit tests อาจต่างกันตามไฟล์ tests/เวอร์ชัน packages ในเครื่อง ให้ใช้ counts/command/dependency hashes ที่รอบนั้นบันทึกไว้
 
 ถ้าต้องการรันเฉพาะชุดทดสอบพฤติกรรมระบบ (รวม Metadata, Graduation และ Counterfactual) ใช้:
 

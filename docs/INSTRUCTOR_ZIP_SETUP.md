@@ -6,10 +6,10 @@
 
 | ZIP | ดาวน์โหลด | หน้าที่ |
 |---|---|---|
-| isd-2026-cooltone-week11_thanapat.zip | [โค้ดล่าสุด branch week11_thanapat](https://github.com/thanapat6954/isd-2026-cooltone/archive/refs/heads/week11_thanapat.zip) หรือ GitHub → Code → Download ZIP | โค้ด คู่มือ tests และตัวอย่างหลักฐาน Evaluation ที่บันทึกไว้ |
+| isd-2026-cooltone-main.zip | [โค้ดชุดไฟนอลบน main](https://github.com/thanapat6954/isd-2026-cooltone/archive/refs/heads/main.zip) หรือ GitHub → Code → Download ZIP | โค้ด คู่มือ tests และตัวอย่างหลักฐาน Evaluation ที่บันทึกไว้ |
 | runtime-data.zip | [ฐานข้อมูลจาก instructor-v9](https://github.com/thanapat6954/isd-2026-cooltone/releases/download/instructor-v9/runtime-data.zip) | SQLite 14 snapshots + PDF ต้นฉบับ 7 เล่ม; ประมาณ 1.24 GB |
 
-โค้ด Evaluation ที่ปรับใหม่อยู่ใน branch week11_thanapat ให้ใช้ Code ZIP ลิงก์ข้างบน คู่มือ/โค้ดภายใน curriculum-project.zip ของ release v9 เป็น snapshot ก่อนเพิ่มตัวรันเก็บหลักฐานนี้ ส่วน runtime-data.zip ใช้ไฟล์เดิมได้เพราะรอบนี้ไม่ได้แก้ DB/PDF
+โค้ด Evaluation ที่ปรับใหม่อยู่ใน main โดยนำมาจาก week11_thanapat ให้ใช้ Code ZIP ลิงก์ข้างบน คู่มือ/โค้ดภายใน curriculum-project.zip ของ release v9 เป็น snapshot ก่อนเพิ่มตัวรันเก็บหลักฐานนี้ ส่วน runtime-data.zip ใช้ไฟล์เดิมได้เพราะรอบนี้ไม่ได้แก้ DB/PDF
 
 ZIP ผลทดสอบ evaluation-evidence.zip เป็นไฟล์ที่สร้าง **หลังทดสอบ** สำหรับอ่าน/ส่งหลักฐาน ไม่ใช้แทน Code ZIP หรือ runtime-data.zip
 
@@ -20,8 +20,8 @@ ZIP ผลทดสอบ evaluation-evidence.zip เป็นไฟล์ที
 ```powershell
 $zipFolder = "$env:USERPROFILE\Downloads"
 $demoRoot = 'C:\CurriculumDemo'
-Expand-Archive -LiteralPath "$zipFolder\isd-2026-cooltone-week11_thanapat.zip" -DestinationPath $demoRoot
-$projectRoot = Join-Path $demoRoot 'isd-2026-cooltone-week11_thanapat'
+Expand-Archive -LiteralPath "$zipFolder\isd-2026-cooltone-main.zip" -DestinationPath $demoRoot
+$projectRoot = Join-Path $demoRoot 'isd-2026-cooltone-main'
 Expand-Archive -LiteralPath "$zipFolder\runtime-data.zip" -DestinationPath (Join-Path $projectRoot 'supplied-artifacts')
 Set-Location -LiteralPath (Join-Path $projectRoot 'ocr_final')
 ```
@@ -32,7 +32,7 @@ Set-Location -LiteralPath (Join-Path $projectRoot 'ocr_final')
 
 ```text
 C:\CurriculumDemo\
-└── isd-2026-cooltone-week11_thanapat\    projectRoot
+└── isd-2026-cooltone-main\    projectRoot
     ├── README.md
     ├── docs\INSTRUCTOR_ZIP_SETUP.md
     ├── supplied-artifacts\

@@ -5,7 +5,9 @@ slide : https://drive.google.com/drive/folders/1zR3gXenBN80gGYxDo9qSUGFWHfCaAz5l
 
 โครงงาน P2 · Intelligent System Development · `isd-2026-cooltone`
 
-**Evaluation และหลักฐานรอบใหม่:** ใช้ [Code ZIP ล่าสุดของ week11_thanapat](https://github.com/thanapat6954/isd-2026-cooltone/archive/refs/heads/week11_thanapat.zip) คู่กับ runtime-data.zip ของ v9 แล้วทำตาม [คู่มือแตก ZIP/ตำแหน่งโฟลเดอร์ทีละขั้น](docs/INSTRUCTOR_ZIP_SETUP.md) รัน [Evaluation ด้วย PowerShell](ocr_final/RUN_EVALUATION.md) เพื่อสร้างผลรายคำถาม/logs/manifest/SHA256/ZIP ของเครื่องที่รันไว้ใน `ocr_final/evaluation_runs/` อัตโนมัติ อ่าน [ตัวอย่างหลักฐานที่ระบุรอบและข้อจำกัด](ocr_final/evaluation_evidence/README.md) ได้ใน branch นี้ ชุดโค้ด v9 ใน Release เป็น snapshot เดิม; DB/PDF ZIP ยังคงใช้เดิม
+**ชุดไฟนอลบน main:** ใช้ชุดโค้ดจาก week11_thanapat พร้อมคู่มือและหลักฐาน Evaluation ด้านล่าง
+
+**Evaluation และหลักฐานรอบใหม่:** ใช้ [Code ZIP ชุดไฟนอลบน main](https://github.com/thanapat6954/isd-2026-cooltone/archive/refs/heads/main.zip) คู่กับ runtime-data.zip ของ v9 แล้วทำตาม [คู่มือแตก ZIP/ตำแหน่งโฟลเดอร์ทีละขั้น](docs/INSTRUCTOR_ZIP_SETUP.md) รัน [Evaluation ด้วย PowerShell](ocr_final/RUN_EVALUATION.md) เพื่อสร้างผลรายคำถาม/logs/manifest/SHA256/ZIP ของเครื่องที่รันไว้ใน `ocr_final/evaluation_runs/` อัตโนมัติ อ่าน [ตัวอย่างหลักฐานที่ระบุรอบและข้อจำกัด](ocr_final/evaluation_evidence/README.md) ได้ใน branch นี้ ชุดโค้ด v9 ใน Release เป็น snapshot เดิม; DB/PDF ZIP ยังคงใช้เดิม
 
 **ชุด v9:** รวมคำสั่ง `scripts/rebuild_from_pdf.py` และ [คู่มือเริ่มจาก PDF](ocr_final/REBUILD_FROM_PDF.md) สำหรับ hybrid extraction ครบ 13 profiles เฉพาะแผนการศึกษา ตรวจ source → SQLite และ Q&A หน่วยกิต 105/105 กับชื่อ/หน่วยกิตรายวิชา 26/26 ผ่านแล้ว ยังไม่สร้าง catalog/prerequisites/rules/legacy ครบทั้งระบบ
 
@@ -35,11 +37,11 @@ slide : https://drive.google.com/drive/folders/1zR3gXenBN80gGYxDo9qSUGFWHfCaAz5l
 
 ## รับชุดส่งต่อ
 
-ดาวน์โหลด **โค้ดล่าสุดจาก branch week11_thanapat** และ **DB/PDF จาก Release instructor-v9**:
+ดาวน์โหลด **โค้ดชุดไฟนอลจาก main** และ **DB/PDF จาก Release instructor-v9**:
 
 | ไฟล์ | ใช้ทำอะไร |
 |---|---|
-| [isd-2026-cooltone-week11_thanapat.zip](https://github.com/thanapat6954/isd-2026-cooltone/archive/refs/heads/week11_thanapat.zip) | โค้ดล่าสุด รวมตัวรันเก็บหลักฐาน Evaluation; GitHub → Code → Download ZIP |
+| [isd-2026-cooltone-main.zip](https://github.com/thanapat6954/isd-2026-cooltone/archive/refs/heads/main.zip) | โค้ดล่าสุด รวมตัวรันเก็บหลักฐาน Evaluation; GitHub → Code → Download ZIP |
 | [runtime-data.zip](https://github.com/thanapat6954/isd-2026-cooltone/releases/download/instructor-v9/runtime-data.zip) | SQLite 14 ฐาน + PDF 7 เล่ม; จำเป็นทั้งเปิดแอปและ reconstruct |
 | [handoff-manifest.json](https://github.com/thanapat6954/isd-2026-cooltone/releases/download/instructor-v9/handoff-manifest.json) | SHA256 ของ runtime ZIP และขอบเขตชุด v9; ไม่ใช่ commit ของ Code ZIP branch ที่อัปเดตภายหลัง |
 | [VERIFICATION.md](https://github.com/thanapat6954/isd-2026-cooltone/releases/download/instructor-v9/VERIFICATION.md) | ผลตรวจและข้อจำกัด; ไม่จำเป็นต่อ runtime |
@@ -50,19 +52,19 @@ slide : https://drive.google.com/drive/folders/1zR3gXenBN80gGYxDo9qSUGFWHfCaAz5l
 $zipFolder = "$env:USERPROFILE\Downloads"
 $demoRoot = 'C:\CurriculumDemo'
 Get-FileHash -LiteralPath "$zipFolder\runtime-data.zip" -Algorithm SHA256
-Expand-Archive -LiteralPath "$zipFolder\isd-2026-cooltone-week11_thanapat.zip" -DestinationPath $demoRoot
-$projectRoot = Join-Path $demoRoot 'isd-2026-cooltone-week11_thanapat'
+Expand-Archive -LiteralPath "$zipFolder\isd-2026-cooltone-main.zip" -DestinationPath $demoRoot
+$projectRoot = Join-Path $demoRoot 'isd-2026-cooltone-main'
 Expand-Archive -LiteralPath "$zipFolder\runtime-data.zip" -DestinationPath (Join-Path $projectRoot 'supplied-artifacts')
 Set-Location -LiteralPath (Join-Path $projectRoot 'ocr_final')
 Test-Path .\scripts\runtime_bundle.py
 Test-Path ..\supplied-artifacts\runtime-data\manifest.json
 ```
 
-อาจารย์ใช้โฟลเดอร์ใหม่บนเครื่องตนเองได้ สอง Test-Path ต้องเป็น True และให้รันคำสั่งติดตั้ง/restore/Evaluation จาก **C:\CurriculumDemo\isd-2026-cooltone-week11_thanapat\ocr_final** โครงสร้าง **หลังแตก ZIP แต่ก่อน restore**:
+อาจารย์ใช้โฟลเดอร์ใหม่บนเครื่องตนเองได้ สอง Test-Path ต้องเป็น True และให้รันคำสั่งติดตั้ง/restore/Evaluation จาก **C:\CurriculumDemo\isd-2026-cooltone-main\ocr_final** โครงสร้าง **หลังแตก ZIP แต่ก่อน restore**:
 
 ```text
 C:\CurriculumDemo\
-└── isd-2026-cooltone-week11_thanapat\
+└── isd-2026-cooltone-main\
     ├── README.md
     ├── AGENTS.md
     ├── docs\INSTRUCTOR_ZIP_SETUP.md   คู่มือทีละขั้น
@@ -85,7 +87,7 @@ C:\CurriculumDemo\
 
 หลัง restore แอปจะมี `ocr_final/curriculum.db`, `ocr_final/work/lab8b_*/curriculum.db` และ PDF ใน `ocr_final/data/input/` หลังรัน Evaluation จะมีหลักฐานใน **ocr_final/evaluation_runs/evaluation-วันเวลา-id/** พร้อม REPORT.md, JSON/logs รายข้อ, manifest/SHA256 และ evaluation-evidence.zip ทุกครั้งได้โฟลเดอร์ใหม่ ดูภาพแต่ละขั้นและคำสั่งใน [คู่มือแตก ZIP](docs/INSTRUCTOR_ZIP_SETUP.md)
 
-runtime bundle เดิมมี SHA256 `39018bfa21a7a36ea4f92fde8eb4db5d671745679dddc90dead38d8f23ec9f07` อ่าน [คู่มือ v9](docs/INSTRUCTOR_V9.md) และ release manifest สำหรับ origin ของ DB/PDF โค้ด branch ล่าสุดรวมตัวเก็บหลักฐานใหม่; curriculum-project.zip ใน release v9 ยังคงเป็น snapshot ก่อนเพิ่มตัวรันนี้ เก็บ v8/v9 เดิมไว้ตามเดิม การสร้างใหม่ 13 plans ไม่ใช่ full14replacement หรือ vision OCR ทั้งเล่ม
+runtime bundle เดิมมี SHA256 `39018bfa21a7a36ea4f92fde8eb4db5d671745679dddc90dead38d8f23ec9f07` อ่าน [คู่มือ v9](docs/INSTRUCTOR_V9.md) และ release manifest สำหรับ origin ของ DB/PDF โค้ด main ชุดไฟนอลรวมตัวเก็บหลักฐานใหม่; curriculum-project.zip ใน release v9 ยังคงเป็น snapshot ก่อนเพิ่มตัวรันนี้ เก็บ v8/v9 เดิมไว้ตามเดิม การสร้างใหม่ 13 plans ไม่ใช่ full14replacement หรือ vision OCR ทั้งเล่ม
 
 ## ติดตั้งครั้งแรก
 
@@ -100,7 +102,7 @@ runtime bundle เดิมมี SHA256 `39018bfa21a7a36ea4f92fde8eb4db5d671745
 
 ### สร้าง environment และติดตั้ง packages
 
-จาก `C:\CurriculumDemo\isd-2026-cooltone-week11_thanapat\ocr_final`:
+จาก `C:\CurriculumDemo\isd-2026-cooltone-main\ocr_final`:
 
 ```powershell
 py -3.11 -m venv venv
