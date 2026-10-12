@@ -1,6 +1,6 @@
 # ผู้ช่วยค้นข้อมูลหลักสูตรจาก SQLite และ PDF
 
-demo clip : https://youtu.be/OTSBKJYc6Uw?si=ReGGyieV87JbqYrY
+demo clip : https://youtu.be/OTSBKJYc6Uw?si=ReGGyieV87JbqYrY  
 slide : https://drive.google.com/drive/folders/1zR3gXenBN80gGYxDo9qSUGFWHfCaAz5l?usp=sharing
 
 โครงงาน P2 · Intelligent System Development · `isd-2026-cooltone`
