@@ -1,5 +1,8 @@
 # ผู้ช่วยค้นข้อมูลหลักสูตรจาก SQLite และ PDF
 
+demo clip : https://youtu.be/OTSBKJYc6Uw?si=ReGGyieV87JbqYrY
+slide : https://drive.google.com/drive/folders/1zR3gXenBN80gGYxDo9qSUGFWHfCaAz5l?usp=sharing
+
 โครงงาน P2 · Intelligent System Development · `isd-2026-cooltone`
 
 **Evaluation และหลักฐานรอบใหม่:** ใช้ [Code ZIP ล่าสุดของ week11_thanapat](https://github.com/thanapat6954/isd-2026-cooltone/archive/refs/heads/week11_thanapat.zip) คู่กับ runtime-data.zip ของ v9 แล้วทำตาม [คู่มือแตก ZIP/ตำแหน่งโฟลเดอร์ทีละขั้น](docs/INSTRUCTOR_ZIP_SETUP.md) รัน [Evaluation ด้วย PowerShell](ocr_final/RUN_EVALUATION.md) เพื่อสร้างผลรายคำถาม/logs/manifest/SHA256/ZIP ของเครื่องที่รันไว้ใน `ocr_final/evaluation_runs/` อัตโนมัติ อ่าน [ตัวอย่างหลักฐานที่ระบุรอบและข้อจำกัด](ocr_final/evaluation_evidence/README.md) ได้ใน branch นี้ ชุดโค้ด v9 ใน Release เป็น snapshot เดิม; DB/PDF ZIP ยังคงใช้เดิม
