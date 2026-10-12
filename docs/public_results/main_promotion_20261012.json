@@ -1,0 +1,33 @@
+{
+  "source_promotion_commit": "f2c06ac621edbb61340ca590910d68368f9e158d",
+  "remote_refs": {
+    "refs/heads/main": "f2c06ac621edbb61340ca590910d68368f9e158d",
+    "refs/heads/week11_thanapat": "f2c06ac621edbb61340ca590910d68368f9e158d"
+  },
+  "merge_parents": [
+    "6f75a2ef44a59cbe11e4263bc0ecbb68ccd332b3",
+    "9b8c20c7611da50f9de0de4855266b96d42992ed"
+  ],
+  "runtime_and_example_equal_week11_source": true,
+  "only_promotion_docs_changed": [
+    "README.md",
+    "docs/INSTRUCTOR_ZIP_SETUP.md",
+    "docs/PROGRESS.md",
+    "ocr_final/RUN_EVALUATION.md"
+  ],
+  "old_main_history_preserved": true,
+  "anitcha_duplicate_not_in_final_tree": true,
+  "no_force_push": true,
+  "main_zip_bytes": 12156667,
+  "main_zip_sha256": "8534a27b6e290ba6cb1f79791db0b1b7f4c3dce55b7b34033b93270579e138f7",
+  "archive_root": "isd-2026-cooltone-main/",
+  "zip_crc_passed": true,
+  "db_bundle_unchanged": true,
+  "new_runtime_tests_required": false,
+  "downloaded_example": {
+    "raw_files": 38,
+    "zip_sha256": "9a1ef213af5d03db48dd2bf2c15655f318e212ec8f1b73d48817cd9608b571fb",
+    "all_file_manifest_zip_hashes_verified": true
+  },
+  "receipt_scope": "This following receipt commit changes only public verification and checkpoint; runtime/docs/sample match the promotion commit."
+}
